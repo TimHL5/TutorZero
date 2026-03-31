@@ -29,3 +29,75 @@
 [2026-03-31T19:31:40.459Z] [debug] [vite] connecting...
 [2026-03-31T19:31:40.463Z] [debug] [vite] connected.
 [2026-03-31T19:31:40.509Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-03-31T19:38:53.465Z] [debug] [vite] connecting...
+[2026-03-31T19:38:53.532Z] [debug] [vite] connected.
+[2026-03-31T19:38:53.557Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-03-31T19:38:58.114Z] [debug] [vite] connecting...
+[2026-03-31T19:38:58.141Z] [debug] [vite] connected.
+[2026-03-31T19:38:58.181Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-03-31T19:39:43.422Z] [debug] [vite] connecting...
+[2026-03-31T19:39:43.424Z] [debug] [vite] connected.
+[2026-03-31T19:39:43.525Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-03-31T19:39:49.487Z] [debug] [vite] connecting...
+[2026-03-31T19:39:49.497Z] [debug] [vite] connected.
+[2026-03-31T19:39:49.548Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-03-31T19:39:54.814Z] [debug] [vite] connecting...
+[2026-03-31T19:39:54.821Z] [debug] [vite] connected.
+[2026-03-31T19:39:54.877Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-03-31T19:40:06.831Z] [debug] [vite] connecting...
+[2026-03-31T19:40:06.844Z] [debug] [vite] connected.
+[2026-03-31T19:40:06.882Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-03-31T19:40:07.567Z] [debug] [vite] connecting...
+[2026-03-31T19:40:07.574Z] [debug] [vite] connected.
+[2026-03-31T19:40:07.590Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-03-31T19:40:08.218Z] [debug] [vite] connecting...
+[2026-03-31T19:40:08.224Z] [debug] [vite] connected.
+[2026-03-31T19:40:08.278Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-03-31T19:40:25.289Z] [debug] [vite] connecting...
+[2026-03-31T19:40:25.293Z] [debug] [vite] connected.
+[2026-03-31T19:40:25.425Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-03-31T19:40:50.584Z] [log] [vite] server connection lost. Polling for restart...
+[2026-03-31T19:40:50.828Z] [debug] [vite] connecting...
+[2026-03-31T19:40:50.839Z] [debug] [vite] connected.
+[2026-03-31T19:40:51.990Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-03-31T19:40:52.267Z] [log] [vite] server connection lost. Polling for restart...
+[2026-03-31T19:40:53.597Z] [debug] [vite] connecting...
+[2026-03-31T19:40:53.613Z] [debug] [vite] connected.
+[2026-03-31T19:40:53.796Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-03-31T19:43:01.951Z] [log] [vite] server connection lost. Polling for restart...
+[2026-03-31T19:43:15.966Z] [debug] [vite] connecting...
+[2026-03-31T19:43:16.491Z] [debug] [vite] connected.
+[2026-03-31T19:43:16.968Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-03-31T19:44:20.774Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:44:20.774Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:44:28.535Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:44:28.535Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:44:47.892Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:44:47.892Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:44:59.581Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:44:59.581Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:45:04.636Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:45:04.636Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:45:11.195Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:45:11.195Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:45:16.498Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:45:16.498Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:45:20.814Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:45:20.814Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:45:28.336Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:45:28.336Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:45:34.010Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:45:34.010Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:45:38.832Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:45:38.832Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:45:44.240Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:45:44.240Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:46:20.916Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:46:20.916Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:46:26.996Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:46:26.996Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:46:49.132Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
+[2026-03-31T19:46:49.132Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-03-31T19:46:54.612Z] [debug] [vite] connecting...
+[2026-03-31T19:46:54.667Z] [debug] [vite] connected.
+[2026-03-31T19:46:54.734Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

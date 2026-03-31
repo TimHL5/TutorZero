@@ -108,68 +108,75 @@ def parse_explanations(answers_pdf_path):
 
 
 def clean_page_text(text):
-    """Clean a single page's text, removing headers and footers."""
+    """Clean a single page's text, removing headers, footers, and boilerplate."""
     lines = text.split("\n")
 
-    # Remove footer: last lines matching "N\nCONTINUE" or just page numbers
-    while lines:
-        last = lines[-1].strip()
-        if not last or last == "CONTINUE" or re.match(r"^\d{1,3}$", last):
-            lines.pop()
-        elif last.startswith("Unauthorized"):
-            lines.pop()
+    # First pass: remove all known boilerplate lines wherever they appear
+    filtered = []
+    i = 0
+    while i < len(lines):
+        stripped = lines[i].strip()
+
+        # Skip "Unauthorized copying..." lines
+        if stripped.startswith("Unauthorized"):
+            i += 1
+            continue
+
+        # Skip "Module\nN" pairs (running headers)
+        if stripped == "Module" and i + 1 < len(lines) and re.match(r"^[12]$", lines[i + 1].strip()):
+            i += 2
+            continue
+
+        # Skip boilerplate text
+        if stripped in ("CONTINUE", "CO NTI N U E", "DIRECTIONS", "Reading and Writing",
+                       "Math", "Module"):
+            i += 1
+            continue
+        if re.match(r"^\d+\s+QUESTIONS?$", stripped):
+            i += 1
+            continue
+        if re.match(r"^\.{10,}$", stripped):
+            i += 1
+            continue
+
+        # Skip directions paragraph lines
+        skip_phrases = [
+            "The questions in this section address",
+            "includes one or more passages",
+            "single best answer",
+            "multiple-choice with four answer choices",
+            "Each question has a",
+            "Read each passage",
+            "and question carefully",
+            "best answer to the question",
+            "If you finish before time",
+            "Do not turn to any other",
+        ]
+        if any(phrase in lines[i] for phrase in skip_phrases):
+            i += 1
+            continue
+        if "reference information" in lines[i].lower() and "math" in lines[i].lower():
+            i += 1
+            continue
+        if "questions do not refer" in lines[i].lower():
+            i += 1
+            continue
+
+        filtered.append(lines[i])
+        i += 1
+
+    # Second pass: remove leading/trailing page numbers and empty lines
+    while filtered:
+        last = filtered[-1].strip()
+        if not last or re.match(r"^\d{1,3}$", last):
+            filtered.pop()
         else:
             break
 
-    # Remove header: "Module\nN" at start, but only the "Module" label + module number
-    # when they appear as a consecutive pair (not standalone question numbers)
-    while lines and not lines[0].strip():
-        lines.pop(0)
-    if len(lines) >= 2 and lines[0].strip() == "Module" and re.match(r"^[12]$", lines[1].strip()):
-        lines.pop(0)  # Remove "Module"
-        lines.pop(0)  # Remove module number
-    elif lines and lines[0].strip() == "Module":
-        lines.pop(0)
-    while lines and not lines[0].strip():
-        lines.pop(0)
+    while filtered and not filtered[0].strip():
+        filtered.pop(0)
 
-    # Remove dotted separator lines and directions boilerplate
-    cleaned = []
-    for line in lines:
-        stripped = line.strip()
-        if re.match(r"^\.{10,}$", stripped):
-            continue
-        if "If you finish before time" in line:
-            continue
-        if "Do not turn to any other" in line:
-            continue
-        if stripped in ("Reading and Writing", "Math", "CONTINUE", "CO NTI N U E"):
-            continue
-        if re.match(r"^\d+\s+QUESTIONS?$", stripped):
-            continue
-        if "The questions in this section address" in line:
-            continue
-        if "includes one or more passages" in line:
-            continue
-        if "single best answer" in line:
-            continue
-        if "multiple-choice with four answer choices" in line:
-            continue
-        if "Each question has a" in stripped:
-            continue
-        if "Read each passage" in line:
-            continue
-        if "and question carefully" in line:
-            continue
-        if "best answer to the question" in line:
-            continue
-        if "reference information" in line.lower() and "math" in line.lower():
-            continue
-        if "questions do not refer" in line.lower():
-            continue
-        cleaned.append(line)
-
-    return "\n".join(cleaned)
+    return "\n".join(filtered)
 
 
 def parse_questions_pdf(questions_pdf_path):
@@ -260,8 +267,10 @@ def parse_questions_pdf(questions_pdf_path):
 
             for i, line in enumerate(lines):
                 stripped = line.strip()
-                if re.match(r"^\d{1,2}$", stripped):
-                    num = int(stripped)
+                # Match question numbers, possibly prefixed with dash/bullet
+                q_num_match = re.match(r"^[-–—•]?\s*(\d{1,2})\s*$", stripped)
+                if q_num_match:
+                    num = int(q_num_match.group(1))
                     if 1 <= num <= max_q:
                         # Verify this looks like a question start:
                         # Look ahead more lines with lower threshold to catch

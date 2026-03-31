@@ -69,7 +69,7 @@
     "question_number": 5,
     "section": "math",
     "module": 1,
-    "question_text": "Activity \n---------~ \n---------~",
+    "question_text": "0",
     "passage_text": "",
     "options": [],
     "correct_answer": "A",
@@ -99,7 +99,7 @@
     "question_number": 7,
     "section": "math",
     "module": 1,
-    "question_text": "Nasir bought 9 storage bins that were each the same \nprice. He used a coupon for $ 63 off the entire \npurchase. The cost for the entire purchase after using \nthe coupon was $ 27. What was the original price, in \ndollars, for 1 storage bin? \n8 \nx \nf(x)\n0\n 29\n \n1\n 32",
+    "question_text": "Nasir bought 9 storage bins that were each the same \nprice. He used a coupon for $ 63 off the entire \npurchase. The cost for the entire purchase after using \nthe coupon was $ 27. What was the original price, in \ndollars, for 1 storage bin?",
     "passage_text": "",
     "options": [],
     "correct_answer": "10",
@@ -229,7 +229,7 @@
     "question_number": 14,
     "section": "math",
     "module": 1,
-    "question_text": "\"\"'-..I / \nX \nI~ \n,v \" \nL \nI..........._ \n·12 \n\" \n·14 \n·16 \nI\"\"'-.. \n' \n---------~ \n---------~ \n14 \n24x\ny\n 48\n+\n= \n6 +\nx\ny = \n72\nThe solution to the given system of equations is \n(x, y). What is the value of y ?",
+    "question_text": "\"\"'-..I / \nX \nI~ \n,v \" \nL \nI..........._ \n·12 \n\" \n·14 \n·16 \nI\"\"'-.. \n' \n---------~ \n---------~",
     "passage_text": "",
     "options": [],
     "correct_answer": "80",
@@ -354,7 +354,7 @@
     "question_number": 21,
     "section": "math",
     "module": 1,
-    "question_text": "The expression \n5\n5 45 \n6\n·\n 3 x",
+    "question_text": "The expression",
     "passage_text": "",
     "options": [],
     "correct_answer": "",
@@ -521,6 +521,21 @@
   },
   {
     "test_number": 4,
+    "question_number": 4,
+    "section": "math",
+    "module": 2,
+    "question_text": "x\ny\n+\n= 18\ny",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "A",
+    "correct_index": 0,
+    "is_spr": false,
+    "difficulty": "easy",
+    "explanation": "Choice A is correct. The second equation in the given system defines the value\nof x  as 5y . Substituting 5y  for x  into the first equation yields 5\n18\ny\ny\n+\n=\nor\n6\n18\ny =\n. Dividing each side of this equation by 6  yields\n3\ny =\n. Substituting 3  for\ny  in the second equation yields  ( )\n5 3\nx\n=\nor\n15\nx =\n. Therefore, the solution (\n)\n,\nx y\nto the given system of equations is (\n)\n15, 3 .\nChoice B is incorrect. Substituting 16  for x  and 2  for y  in the second equation\nyields  ( )\n5 2\n16\n=\n, which is not true. Therefore, (\n)\n16, 2  is not a solution to the given\nsystem of equations. Choice C is incorrect. Substituting 17 for x  and 1 for y\nin the second equation yields  ( )\n5 1\n17\n=\n, which is not true. Therefore, (\n)\n17, 1  is not\na solution to the given system of equations. Choice D is incorrect. Substituting\n18  for x  and 0  for y  in the second equation yields  ( )\n5 0\n18\n=\n, which is not true.\nTherefore, (\n)\n18, 0  is not a solution to the given system of equations.",
+    "has_figure": false
+  },
+  {
+    "test_number": 4,
     "question_number": 5,
     "section": "math",
     "module": 2,
@@ -577,10 +592,10 @@
     "question_text": "h x\n( ) = x2 −3\n \nWhich table gives three values of x and their \ncorresponding values of h x\n( ) for the given \nfunction h?",
     "passage_text": "",
     "options": [
-      "x 1 2 3 h(x) 4 5 6",
-      "x 1 2 3 h(x) −2 1 6",
-      "x 1 2 3 h(x) −1 1 3",
-      "x 1 2 3 h(x) −2"
+      "x",
+      "",
+      "",
+      ""
     ],
     "correct_answer": "B",
     "correct_index": 1,
@@ -654,7 +669,7 @@
     "question_number": 13,
     "section": "math",
     "module": 2,
-    "question_text": "The table summarizes the distribution of color and \nshape for 100 tiles of equal area. \nRed Blue Yellow Total \nSquare \n10",
+    "question_text": "The table summarizes the distribution of color and \nshape for 100 tiles of equal area. \nRed Blue Yellow Total \nSquare",
     "passage_text": "",
     "options": [],
     "correct_answer": ".3; 3/10",
@@ -684,14 +699,9 @@
     "question_number": 15,
     "section": "math",
     "module": 2,
-    "question_text": "A proposal for a new library was included on an \nelection ballot. A radio show stated that 3 times as \nmany people voted in favor of the proposal as people \nwho voted against it. A social media post reported \nthat 15,000 more people voted in favor of the \nproposal than voted against it. Based on these data, \nhow many people voted against the proposal?",
+    "question_text": "45 \nTotal \n30 \n30 \n40 \n100 \nIf one of these tiles is selected at random, what is the \nprobability of selecting a red tile? (Express your \nanswer as a decimal or fraction, not as a percent.)",
     "passage_text": "",
-    "options": [
-      "7,500",
-      "15,000",
-      "22,500",
-      "45,000"
-    ],
+    "options": [],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
@@ -728,9 +738,9 @@
     "passage_text": "",
     "options": [
       "0",
-      "1 7",
-      "4 3",
-      "4"
+      "1",
+      "",
+      ""
     ],
     "correct_answer": "B",
     "correct_index": 1,
@@ -748,8 +758,8 @@
     "passage_text": "",
     "options": [
       "−130",
-      "−13",
-      "23 − 2 D)",
+      "−13 C)",
+      "",
       ""
     ],
     "correct_answer": "D",
@@ -809,14 +819,9 @@
     "question_number": 23,
     "section": "math",
     "module": 2,
-    "question_text": "x \nf x\n( ) = 5,470(0.64)12 \nThe function f gives the value, in dollars, of a certain \npiece of equipment after x months of use. If the \nvalue of the equipment decreases each year by p % of \nits value the preceding year, what is the value of p ?",
+    "question_text": "− 2 \nD)",
     "passage_text": "",
-    "options": [
-      "4",
-      "5",
-      "36",
-      "64"
-    ],
+    "options": [],
     "correct_answer": "C",
     "correct_index": 2,
     "is_spr": false,
@@ -844,7 +849,7 @@
     "question_number": 25,
     "section": "math",
     "module": 2,
-    "question_text": "55 \nPentagon 20 \n10 \n15 \n45 \nTotal \n30 \n30 \n40 \n100 \nIf one of these tiles is selected at random, what is the \nprobability of selecting a red tile? (Express your \nanswer as a decimal or fraction, not as a percent.)",
+    "question_text": "55 \nPentagon 20",
     "passage_text": "",
     "options": [],
     "correct_answer": "D",
@@ -2264,7 +2269,7 @@
     "question_number": 5,
     "section": "math",
     "module": 1,
-    "question_text": "The table shows selected values from function f. \nx \nf(x) \n−1\n16 \n0 \n17 \n1",
+    "question_text": "i-v, \n,. \n\\ \n-",
     "passage_text": "",
     "options": [],
     "correct_answer": "B",
@@ -2279,7 +2284,7 @@
     "question_number": 6,
     "section": "math",
     "module": 1,
-    "question_text": "The graph of a system of linear equations is shown. \nThe solution to the system is (x, y). What is the value \nof x ?",
+    "question_text": "'/ \n-",
     "passage_text": "",
     "options": [],
     "correct_answer": "4",
@@ -2287,14 +2292,14 @@
     "is_spr": true,
     "difficulty": "medium",
     "explanation": "The correct answer is 4. A solution to a system of equations must satisfy each\nequation in the system. It follows that if\n,x y\n^\nh  is a solution to the system, the point\n,x y\n^\nh  lies on the graph in the xy-plane of each equation in the system. According\nto the graph, the point\n,x y\n^\nh  that lies on the graph of each equation in the system\nis\n,\n4 1\n^\nh. Therefore, the solution to the system is\n,\n4 1\n^\nh. It follows that the value of\nx  is 4.",
-    "has_figure": true
+    "has_figure": false
   },
   {
     "test_number": 5,
     "question_number": 7,
     "section": "math",
     "module": 1,
-    "question_text": "23, 27, 27, 32, 35, 36, 52 \nWhat is the range of the 7 scores shown?",
+    "question_text": "\\ \nI \n\\ V \n-",
     "passage_text": "",
     "options": [],
     "correct_answer": "29",
@@ -2309,20 +2314,15 @@
     "question_number": 8,
     "section": "math",
     "module": 1,
-    "question_text": "In the figure, line m is parallel to line n, and line k \nintersects both lines. Which of the following \nstatements is true?",
+    "question_text": "\\ \n-",
     "passage_text": "",
-    "options": [
-      "The value of x is less than 145.",
-      "The value of x is greater than 145.",
-      "The value of x is equal to 145.",
-      "The value of x cannot be determined."
-    ],
+    "options": [],
     "correct_answer": "C",
     "correct_index": 2,
     "is_spr": false,
     "difficulty": "medium",
     "explanation": "Choice C is correct. Vertical angles, or angles that are opposite each other when\ntwo lines intersect, are congruent. It’s given that line k  intersects line n. Based on\nthe figure, the angle with measure °\nx  and the angle with measure\n°\n145  are vertical\nangles. Therefore, the value of x  is equal to 145.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.",
-    "has_figure": true
+    "has_figure": false
   },
   {
     "test_number": 5,
@@ -2459,20 +2459,15 @@
     "question_number": 16,
     "section": "math",
     "module": 1,
-    "question_text": "The graph of the rational function f is shown, where y = f(x)\nand x ≥0. Which of the following is the graph of y = f(x) + 5, \nwhere x ≥0 ?",
+    "question_text": "0",
     "passage_text": "",
-    "options": [
-      "",
-      "Unauthorized copying or reuse of any part of this page is illegal.",
-      "D)",
-      ""
-    ],
+    "options": [],
     "correct_answer": "D",
     "correct_index": 3,
     "is_spr": false,
     "difficulty": "hard",
     "explanation": "Choice D is correct. It’s given that the graph of the rational function f  is shown,\nwhere y\nf x\n= ^ h  and x\n0\n$ . The graph shown passes through the point\n,\n3 3\n^\nh. It\nfollows that when the value of x  is 3, the value of f x\n^ h  is 3. When the value of f x\n^ h\nis 3, the value of f x\n5\n+\n^ h\nis 3\n5\n+ , or 8. Therefore, the graph of y\nf x\n5\n=\n+\n^ h\npasses\nthrough the point\n,\n3 8\n^\nh. Of the given choices, choice D is the only graph that\npasses through the point\n,\n3 8\n^\nh  and is therefore the graph of y\nf x\n5\n=\n+\n^ h\n.\nChoice A is incorrect. This is the graph of y\nf x\n5\n=\n-\n^ h\n, rather than y\nf x\n5\n=\n+\n^ h\n.\nChoice B is incorrect. This is the graph of y\nf x\n5\n= ^ h, rather than y\nf x\n5\n=\n+\n^ h\n.\nChoice C is incorrect and may result from conceptual or calculation errors.",
-    "has_figure": true
+    "has_figure": false
   },
   {
     "test_number": 5,
@@ -2879,14 +2874,9 @@
     "question_number": 12,
     "section": "math",
     "module": 2,
-    "question_text": "At a movie theater, there are a total of 350 customers. \nEach customer is located in either theater A, \ntheater B, or theater C. If one of these customers is \nselected at random, the probability of selecting a \ncustomer who is located in theater A is 0.48, and the \nprobability of selecting a customer who is located in \ntheater B is 0.24. How many customers are located in \ntheater C?",
+    "question_text": "-",
     "passage_text": "",
-    "options": [
-      "28",
-      "40",
-      "84",
-      "98"
-    ],
+    "options": [],
     "correct_answer": "D",
     "correct_index": 3,
     "is_spr": false,
@@ -3142,10 +3132,10 @@
     "question_text": "A circle in the xy-plane has its center at (−1, 1). \nLine t is tangent to this circle at the point (5, −4). \nWhich of the following points also lies on line t ?",
     "passage_text": "",
     "options": [
-      "0, 6 5      ",
-      "(4, 7)",
-      "(10, 2)",
-      "(11, 1)"
+      "0, 6",
+      "",
+      "",
+      ""
     ],
     "correct_answer": "C",
     "correct_index": 2,
@@ -4569,14 +4559,9 @@
     "question_number": 7,
     "section": "math",
     "module": 1,
-    "question_text": "f x\nx\n= 14 + 4\n( )\nThe function f represents the total cost, in dollars, of \nattending an arcade when x games are played. How \nmany games can be played for a total cost of $58? \n8 \nf x\nx\nb\n=\n+\n( )\nFor the linear function f, b is a constant. \nWhen x = 0, f x = 30\n( )\n. What is the value of b ?",
+    "question_text": "X \ny \ny \n5,000 \n5,000 \n4,000 \n4,000 \n3,000 \n3,000 \n2,000 \n2,000 \n1,000 \n1,000 \n• \nX \nX \n3 \n4 \n5 \n6 \n7",
     "passage_text": "",
-    "options": [
-      "−30",
-      "−1 30",
-      "1 30",
-      "30"
-    ],
+    "options": [],
     "correct_answer": "11",
     "correct_index": 0,
     "is_spr": true,
@@ -4589,7 +4574,7 @@
     "question_number": 8,
     "section": "math",
     "module": 1,
-    "question_text": "5 + 6. What is \nthe value of h(2) ?",
+    "question_text": "M \n30 \n~ \n~ 20 \n1= \nOJ) \n\"a>",
     "passage_text": "",
     "options": [],
     "correct_answer": "D",
@@ -4624,14 +4609,9 @@
     "question_number": 10,
     "section": "math",
     "module": 1,
-    "question_text": "A manager is responsible for ordering supplies for a \nshaved ice shop. The shop’s inventory starts with \n4,500 paper cups, and the manager estimates that 70 \nof these paper cups are used each day. Based on this \nestimate, in how many days will the supply of paper \ncups reach 1,700?",
+    "question_text": "::r:: \ny \nI \nI \n() \n~ \" \n~ \n\" \\ ' \\ \nX \n12345678910 \nTime (seconds) \n- --------~",
     "passage_text": "",
-    "options": [
-      "20",
-      "40",
-      "60",
-      "80"
-    ],
+    "options": [],
     "correct_answer": "B",
     "correct_index": 1,
     "is_spr": false,
@@ -4650,7 +4630,7 @@
       "x y 2 19 4 30 6 41",
       "x y 2 8 4 16 6 24",
       "x y 2 13 4 18 6 23",
-      "x y 2 13 4 21"
+      "x y"
     ],
     "correct_answer": "A",
     "correct_index": 0,
@@ -4664,14 +4644,9 @@
     "question_number": 12,
     "section": "math",
     "module": 1,
-    "question_text": "Which expression is equivalent to \nx\nx\nx\n+ 11\n+\n−5\n+ 5\n2\n2\n(\n)\n(\n)(\n) ?",
+    "question_text": "Which expression is equivalent to \nx\nx\nx\n+ 11\n+\n−5\n+ 5",
     "passage_text": "",
-    "options": [
-      "x x + 23 −14 4 2",
-      "x x + 23 + 96 4 2",
-      "x x + 12 + 121 4 2",
-      "x x + + 146"
-    ],
+    "options": [],
     "correct_answer": "B",
     "correct_index": 1,
     "is_spr": false,
@@ -4740,13 +4715,48 @@
       "y x = 2 + 18",
       "y x = 2 + 8",
       "y x = 8 + 2",
-      "y x = 3 + 26 17 P N C = 19 − ( ) The given equation relates the positive numbers P, N, and C. Which equation correctly expresses C in terms of P and N ?"
+      "y x = 3 + 26"
     ],
     "correct_answer": "C",
     "correct_index": 2,
     "is_spr": false,
     "difficulty": "hard",
     "explanation": "Choice C is correct. It’s given that the relationship between x  and y  is linear. An\nequation representing a linear relationship can be written in the form y\nmx\nb\n=\n+ ,\nwhere m  is the slope and b  is the y-coordinate of the y-intercept of the graph of\nthe relationship in the xy-plane. It’s given that for every increase in the value of x\nby 1, the value of y  increases by 8. The slope of a line can be expressed as the\nchange in y  over the change in x. Thus, the slope, m, of the line representing this\nrelationship can be expressed as 1\n8, or 8. Substituting 8  for m  in the equation\ny\nmx\nb\n=\n+\nyields y\nx\nb\n8\n=\n+ . It’s also given that when the value of x  is 2, the value\nof y  is 18. Substituting 2  for x  and 18  for y  in the equation y\nx\nb\n8\n=\n+\nyields\nb\n18\n8 2\n=\n+\n^ h\n, or\nb\n18\n16\n=\n+ . Subtracting 16  from each side of this equation\nyields\nb\n2= . Substituting 2  for b  in the equation y\nx\nb\n8\n=\n+\nyields y\nx\n8\n2\n=\n+ .\nTherefore, the equation y\nx\n8\n2\n=\n+\nrepresents this relationship.\nChoice A is incorrect. This equation represents a relationship where for every\nincrease in the value of x  by 1, the value of y  increases by 2, not 8, and when the\nvalue of x  is 2, the value of y  is 22, not 18. Choice B is incorrect. This equation\nrepresents a relationship where for every increase in the value of x  by 1, the value\nof y  increases by 2, not 8, and when the value of x  is 2, the value of y  is 12, not\n18. Choice D is incorrect. This equation represents a relationship where for every\nincrease in the value of x  by 1, the value of y  increases by 3, not 8, and when the\nvalue of x  is 2, the value of y  is 32, not 18.",
+    "has_figure": false
+  },
+  {
+    "test_number": 6,
+    "question_number": 17,
+    "section": "math",
+    "module": 1,
+    "question_text": "P\nN\nC\n=\n19 −\n(\n)\nThe given equation relates the positive numbers P, \nN, and C. Which equation correctly expresses C in \nterms of P and N ?",
+    "passage_text": "",
+    "options": [
+      "C P N = 19 +",
+      "C P N = 19 −",
+      "C P N = 19 +",
+      "C P N = 19 −"
+    ],
+    "correct_answer": "D",
+    "correct_index": 3,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice D is correct. It’s given that the values of P, N, and C  are positive.\nTherefore, dividing each side of the given equation by N  yields\nC\n19\nN\nP=\n-\n.\nSubtracting 19  from each side of this equation yields\nC\n19\nN\nP-\n=- . Dividing each\nside of this equation by\n1\n-  yields\nC\n19\nN\nP\n- =\n, or C\n19\nN\nP\n=\n- .\nChoice A is incorrect. This equation is equivalent to P\nNC\n19\n=\n-\n, not\nP\nN\nC\n19\n=\n-\n^\nh. Choice B is incorrect. This equation is equivalent to P\nNC\n19\n=\n-\n,\nnot P\nN\nC\n19\n=\n-\n^\nh. Choice C is incorrect. This equation is equivalent to\nP\nN C\n19\n=\n-\n^\nh, not P\nN\nC\n19\n=\n-\n^\nh.\n39",
+    "has_figure": false
+  },
+  {
+    "test_number": 6,
+    "question_number": 18,
+    "section": "math",
+    "module": 1,
+    "question_text": "w\nw\n+ 12\n−40 = 0",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "D",
+    "correct_index": 3,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice D is correct. Adding 40  to both sides of the given equation yields\nw\nw\n12\n40\n2+\n=\n. To complete the square, adding\n2\n2\n12\nb\nl , or 62, to both sides of this\nequation yields w\nw\n12\n6\n40\n6\n2\n2\n2\n+\n+\n=\n+\n, or w\n6\n76\n2\n+\n=\n^\nh\n. Taking the square root of\nboth sides of this equation yields w\n6\n76\n!\n+ =\n, or w\n6\n2 19\n!\n+ =\n. Subtracting\n6  from both sides of this equation yields w\n6\n2 19\n!\n=-\n. Therefore, the solutions\nto the given equation are\n6\n2 19\n- +\nand\n6\n2 19\n- -\n. Of these two solutions,\nonly\n6\n2 19\n- +\nis given as a choice.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice C is incorrect and may result from conceptual or calculation errors.",
     "has_figure": false
   },
   {
@@ -4839,14 +4849,9 @@
     "question_number": 24,
     "section": "math",
     "module": 1,
-    "question_text": "Right triangle ABC is shown. What is the value \nof \nA\ntan\n?",
+    "question_text": "Right triangle ABC is shown. What is the value \nof \nA\ntan\n? \nA)",
     "passage_text": "",
-    "options": [
-      "3 54",
-      "1",
-      "",
-      ""
-    ],
+    "options": [],
     "correct_answer": "C",
     "correct_index": 2,
     "is_spr": false,
@@ -4865,13 +4870,28 @@
       "C = 40(1.19)t",
       "C = 40(1.9)t",
       "C = 40(19)t",
-      "C = 40(2.9)t 26 x g(x) −27 3 −9 0 21 5 0"
+      "C = 40(2.9)t"
     ],
     "correct_answer": "D",
     "correct_index": 3,
     "is_spr": false,
     "difficulty": "advanced",
     "explanation": "Choice D is correct. It’s given that an exponential model estimates that the\nnumber of comments on an article increased by a fixed percentage at the end of\neach hour. Therefore, the model can be represented by an exponential equation of\nthe form C\nKat\n=\n, where C  is the estimated number of comments on the article\nt  hours after the article was first featured on the home page and K  and a  are\nconstants. It’s also given that when the article was first featured on the home\npage of the news website, there were 40  comments on the article. This means\nthat when t\n0\n= , C\n40\n=\n. Substituting 0  for t  and 40  for C  in the equation C\nKat\n=\nyields\nKa\n40\n0\n=\n, or\nK\n40=\n. It’s also given that the number of comments on the\narticle at the end of an hour had increased by\n%\n190\nof the number of comments\non the article at the end of the previous hour. Multiplying the percent increase by\nthe number of comments on the article at the end of the previous hour yields the\nnumber of estimated additional comments the article has on its home page:\n40\n100\n190\n`\nbj\nl, or 76  comments. Thus, the estimated number of comments for the\nfollowing hour is the sum of the comments from the end of the previous hour and\nthe number of additional comments, which is 40\n76\n+\n, or 116. This means that\nwhen t\n1\n= , C\n116\n=\n. Substituting 1 for t, 116  for C, and 40  for K  in the equation\nC\nKat\n=\nyields\na\n116\n40\n1\n=\n, or\na\n116\n40\n=\n. Dividing both sides of this equation by\n40  yields .\na\n2 9= . Substituting 40  for K  and .\n2 9  for a  in the equation C\nKat\n=\nyields\n.\nC\n40 2 9 t\n=\n^\nh . Thus, the equation that best represents this model is\n.\nC\n40 2 9 t\n=\n^\nh .\nChoice A is incorrect. This model represents a situation where the number of\ncomments at the end of each hour increased by\n%\n19\nof the number of comments\nat the end of the previous hour, rather than\n%\n190\n. Choice B is incorrect. This\nmodel represents a situation where the number of comments at the end of each\nhour increased by\n%\n90\nof the number of comments at the end of the previous\nhour, rather than\n%\n190\n. Choice C is incorrect. This model represents a situation\nwhere the number of comments at the end of each hour was 19  times the number\nof comments at the end of the previous hour, rather than increasing by\n%\n190\nof\nthe number of comments at the end of the previous hour.",
+    "has_figure": false
+  },
+  {
+    "test_number": 6,
+    "question_number": 26,
+    "section": "math",
+    "module": 1,
+    "question_text": "x \ng(x) \n−27\n3\n−9\n0",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "A",
+    "correct_index": 0,
+    "is_spr": false,
+    "difficulty": "advanced",
+    "explanation": "Choice A is correct. It’s given that the table shows values of x  and their\ncorresponding values of g x\n^ h, where g x\nx\nf x\n3\n= +\n^\n^\nh\nh . It’s also given that f  is a linear\nfunction. It follows that an equation that defines f  can be written in the form\nf x\nmx\nb\n=\n+\n^ h\n, where m  represents the slope and b  represents the y-coordinate\nof the y-intercept\n, b\n0\n^\nh  of the graph of y\nf x\n= ^ h  in the xy-plane. The slope of the\ngraph of y\nf x\n= ^ h  can be found using two points,\n,\nx y\n1\n1\n^\nh  and\n,\nx y\n2\n2\n^\nh, that are on the\ngraph of y\nf x\n= ^ h, and the formula m\n2\n1\n2\n1\nx\nx\ny\ny\n=\n-\n- . Since the table shows values of x\nand their corresponding values of g x\n^ h, substituting values of x  and g x\n^ h  in the\nequation g x\nx\nf x\n3\n= +\n^\n^\nh\nh  can be used to define function f. Using the first pair of values\nfrom the table, x\n27\n=-\nand g x\n3\n=\n^ h\n, yields 3\nf\n27\n3\n27\n=-\n+\n-\n^\nh , or 3\nf\n24\n27\n= -\n-\n^\nh. Multiplying\neach side of this equation by\n24\n-\nyields\nf\n72\n27\n-\n=\n-\n^\nh, so the point\n,\n27\n72\n-\n-\n^\nh\n43\nis on the graph of y\nf x\n= ^ h. Using the second pair of values from the table, x\n9\n=-\nand g x\n0\n=\n^ h\n, yields 0\nf\n9\n3\n9\n=- +\n-\n^\nh , or 0\nf\n6\n9\n= -\n-\n^\nh. Multiplying each side of this equation\nby\n6\n-  yields\nf\n0\n9\n=\n-\n^\nh, so the point\n,\n9 0\n-\n^\nh  is on the graph of y\nf x\n= ^ h.\nSubstituting\n,\n27\n72\n-\n-\n^\nh  and\n,\n9 0\n-\n^\nh  for\n,\nx y\n1\n1\n^\nh  and\n,\nx y\n2\n2\n^\nh, respectively, in the\nformula m\n2\n1\n2\n1\nx\nx\ny\ny\n=\n-\n-\nyields m\n9\n27\n0\n72\n=- - -\n- -\n^\n^\nh\nh, or m\n4\n= . Substituting 4  for m  in the\nequation f x\nmx\nb\n=\n+\n^ h\nyields f x\nx\nb\n4\n=\n+\n^ h\n. Since\nf\n0\n9\n=\n-\n^\nh, substituting\n9\n-  for\nx  and 0  for f x\n^ h  in the equation f x\nx\nb\n4\n=\n+\n^ h\nyields\nb\n0\n4\n9\n=\n-\n+\n^\nh\n, or\nb\n0\n36\n=-\n+ . Adding 36  to both sides of this equation yields\nb\n36= . It follows that\n36  is the y-coordinate of the y-intercept\n, b\n0\n^\nh  of the graph of y\nf x\n= ^ h. Therefore,\nthe y-intercept of the graph of y\nf x\n= ^ h  is\n,\n0 36\n^\nh.\nChoice B is incorrect. 12  is the y-coordinate of the y-intercept of the graph of\ny\ng x\n= ^ h. Choice C is incorrect. 4  is the slope of the graph of y\nf x\n= ^ h. Choice D is\nincorrect.\n9\n-  is the x-coordinate of the x-intercept of the graph of y\nf x\n= ^ h.",
     "has_figure": false
   },
   {
@@ -4939,14 +4959,9 @@
     "question_number": 4,
     "section": "math",
     "module": 2,
-    "question_text": "The graph of function f is shown, where y\nf x\n= ( ). \ny \n10 \n8 \n6 \n~ \n4 \n., \n,,,. \n2 \nI.; \n~ \nI \n~ \nX \n10 -8 -6 -4 \nI.A'\" \n2- 4- -6-~8- 10 \n... , 2 \n.,. \nI \n... \nI 4 \n... \nI \n'6 \nI \nlg \nI \n'16 \nWhich of the following describes function f ?",
+    "question_text": "The graph of function f is shown, where y\nf x\n= ( ). \ny",
     "passage_text": "",
-    "options": [
-      "Increasing linear",
-      "Decreasing linear",
-      "Increasing exponential",
-      "Decreasing exponential"
-    ],
+    "options": [],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
@@ -4959,14 +4974,9 @@
     "question_number": 5,
     "section": "math",
     "module": 2,
-    "question_text": "−6 + 8\n3\n2\n(\n)",
+    "question_text": "−6\n+ 8",
     "passage_text": "",
-    "options": [
-      "x x x",
-      "",
-      "",
-      ""
-    ],
+    "options": [],
     "correct_answer": "B",
     "correct_index": 1,
     "is_spr": false,
@@ -4976,12 +4986,32 @@
   },
   {
     "test_number": 6,
+    "question_number": 6,
+    "section": "math",
+    "module": 2,
+    "question_text": "~",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "6",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "medium",
+    "explanation": "The correct answer is 6. The first equation in the given system is x\n8\n= .\nSubstituting 8  for x  in the second equation in the given system yields\ny\n8\n3\n26\n+\n=\n. Subtracting 8  from both sides of this equation yields y\n3\n18\n=\n.\nDividing both sides of this equation by 3  yields y\n6\n= . Therefore, the value\nof y  is 6.",
+    "has_figure": false
+  },
+  {
+    "test_number": 6,
     "question_number": 7,
     "section": "math",
     "module": 2,
-    "question_text": "The amount of Hanna’s bill for a food order was $50. \nHanna gave a tip of 20% of the amount of the bill. \nWhat is the amount, in dollars, of the tip Hanna \ngave?",
+    "question_text": "",
     "passage_text": "",
-    "options": [],
+    "options": [
+      "2",
+      "",
+      "",
+      ""
+    ],
     "correct_answer": "10",
     "correct_index": 0,
     "is_spr": true,
@@ -4994,14 +5024,9 @@
     "question_number": 8,
     "section": "math",
     "module": 2,
-    "question_text": "Which expression is equivalent to x\nx\nx\n5\n−6\n+ 8\n5\n4\n3 ?",
+    "question_text": "Which expression is equivalent to x\nx\nx",
     "passage_text": "",
-    "options": [
-      "x x 5 −6 4( )",
-      "x x x",
-      "",
-      ""
-    ],
+    "options": [],
     "correct_answer": "B",
     "correct_index": 1,
     "is_spr": false,
@@ -5060,13 +5085,33 @@
       "Tavon will keep the vine plant for 9 months.",
       "The vine plant is expected to grow 9 inches each month.",
       "The vine plant is expected to grow to a maximum length of 9 inches.",
-      "The estimated length of the vine plant was 9 inches when Tavon purchased it. 12 x x x ( + 2)( −5)( + 9) = 0 What is a positive solution to the given equation?"
+      "The estimated length of the vine plant was 9 inches when Tavon purchased it."
     ],
     "correct_answer": "D",
     "correct_index": 3,
     "is_spr": false,
     "difficulty": "medium",
     "explanation": "Choice D is correct. It’s given that the function f  defined by f t\nt\n14\n9\n=\n+\n^ h\ngives\nthe estimated length, in inches, of a vine plant t  months after Tavon purchased it.\nFor a function defined by an equation of the form f t\nmt\nb\n=\n+\n^ h\n, where m  and b\nare constants, b  represents the value of f 0\n^ h, or the value of f t^ h  when the value\nof t  is 0. Therefore, for the function defined by f t\nt\n14\n9\n=\n+\n^ h\n, 9  represents the\nvalue of f t^ h  when the value of t  is 0. This means that 0  months after the vine\nplant was purchased, the estimated length of the vine plant was 9  inches.\nTherefore, the best interpretation of 9  in this context is the estimated length of\nthe vine plant was 9  inches when Tavon purchased it.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect. The vine plant is expected to grow 14  inches, not 9  inches,\neach month. Choice C is incorrect and may result from conceptual or calculation\nerrors.\n47",
+    "has_figure": false
+  },
+  {
+    "test_number": 6,
+    "question_number": 12,
+    "section": "math",
+    "module": 2,
+    "question_text": "x\nx\nx\n( + 2)( −5)( + 9) = 0\nWhat is a positive solution to the given equation?",
+    "passage_text": "",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "18"
+    ],
+    "correct_answer": "C",
+    "correct_index": 2,
+    "is_spr": false,
+    "difficulty": "medium",
+    "explanation": "Choice C is correct. Applying the zero product property to the given equation\nyields three equations: x\n2\n0\n+ = , x\n5\n0\n- = , and x\n9\n0\n+ = . Subtracting 2  from both\nsides of the equation x\n2\n0\n+ =\nyields x\n2\n=- . Adding 5  to both sides of the\nequation x\n5\n0\n- =\nyields x\n5\n= . Subtracting 9  from both sides of the equation\nx\n9\n0\n+ =\nyields x\n9\n=- . Therefore, the solutions to the given equation are\n2\n- , 5,\nand\n9\n- . It follows that a positive solution to the given equation is 5.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.",
     "has_figure": false
   },
   {
@@ -5163,8 +5208,8 @@
     "passage_text": "",
     "options": [
       "−8",
-      "−1 7",
-      "1 8 D)",
+      "−1",
+      "",
       ""
     ],
     "correct_answer": "B",
@@ -5179,7 +5224,7 @@
     "question_number": 19,
     "section": "math",
     "module": 2,
-    "question_text": "Number of cars \nMaximum number of \npassengers and crew \n3 \n174 \n5 \n284",
+    "question_text": "Number of cars \nMaximum number of \npassengers and crew",
     "passage_text": "",
     "options": [],
     "correct_answer": "A",
@@ -5194,7 +5239,7 @@
     "question_number": 20,
     "section": "math",
     "module": 2,
-    "question_text": "X",
+    "question_text": "If 4\n=",
     "passage_text": "",
     "options": [],
     "correct_answer": ".2916; .2917; 7/24",
@@ -5202,6 +5247,21 @@
     "is_spr": true,
     "difficulty": "hard",
     "explanation": "The correct answer is 24\n7 . An expression of the form\nam\nn\n, where m  and n  are\nintegers greater than 1 and a\n0\n$ , is equivalent to a n\nm. Therefore, the expression on\nthe right-hand side of the given equation,\n47\n3\n, is equivalent to 43\n7. Thus, 4\n4\nc\n8\n3\n7\n=\n.\nIt follows that c\n8\n3\n7\n= . Dividing both sides of this equation by 8  yields c\n24\n7\n=\n. Note\nthat 7/24, .2916, .2917, 0.219, and 0.292 are examples of ways to enter a correct\nanswer.",
+    "has_figure": false
+  },
+  {
+    "test_number": 6,
+    "question_number": 21,
+    "section": "math",
+    "module": 2,
+    "question_text": "x\ny\n−2 −4\n+ 7 = 117\n(\n)\n(\n)\nx\ny\n−2 + 4\n+ 7 = 442\n(\n)\n(\n)\nThe solution to the given system of equations is \nx y\n( , ). What is the value of \nx\n6( −2) ?",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "1677",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "hard",
+    "explanation": "The correct answer is ,\n1 677. Adding the first equation to the second equation in\nthe given system yields x\nx\ny\ny\n2\n2\n4\n7\n4\n7\n117\n442\n-\n+\n-\n+ -\n+\n+\n+\n=\n+\n^\n^\n^\n^\n^\nh\nh\nh\nh\nh\n, or\nx\n2\n2\n559\n-\n=\n^\nh\n. Multiplying both sides of this equation by 3  yields\n,\nx\n6\n2\n1 677\n-\n=\n^\nh\n. Therefore, the value of\nx\n6\n2\n-\n^\nh  is ,\n1 677.",
     "has_figure": false
   },
   {
@@ -5290,7 +5350,7 @@
       "y x = 46.8 + 5.9",
       "y x = 46.8 + 1.5",
       "y x = 12 + 5.9",
-      "y x = 12 + 1.5 27 x y y 48 −64 = 48 + 24 ry x = 1 8 −12 In the given system of equations, r is a constant. If the system has no solution, what is the value of r ?"
+      "y x = 12 + 1.5"
     ],
     "correct_answer": "A",
     "correct_index": 0,
@@ -5298,6 +5358,21 @@
     "difficulty": "advanced",
     "explanation": "Choice A is correct. An equation of a line of best fit for data set F can be written in\nthe form y\na\nbx\n= +\n, where a  is the y-coordinate of the y-intercept of the line of\nbest fit and b  is the slope. The line of best fit shown for data set E has a\ny-intercept at approximately\n,\n0 12\n^\nh. It’s given that data set F is created by\nmultiplying the y-coordinate of each data point from data set E by .\n3 9. It follows\nthat a line of best fit for data set F has a y-intercept at approximately\n,\n.\n0 12 3 9\n^\n^\nhh,\nor\n,\n.\n0 46 8\n^\nh. Therefore, the value of a  is approximately\n.\n46 8. The slope of a line\nthat passes through points\n,\nx y\n1\n1\n^\nh  and\n,\nx y\n2\n2\n^\nh  can be calculated as\n2\n1\n2\n1\nx\nx\ny\ny\n-\n- . Since\nthe line of best fit shown for data set E passes approximately through the point\n,\n12 30\n^\nh, it follows that a line of best fit for data set F passes approximately\nthrough the point\n,\n.\n12 30 3 9\n^\n^\nhh, or\n,\n12 117\n^\nh. Substituting\n,\n.\n0 46 8\n^\nh  and\n,\n12 117\n^\nh\nfor\n,\nx y\n1\n1\n^\nh  and\n,\nx y\n2\n2\n^\nh, respectively, in\n2\n1\n2\n1\nx\nx\ny\ny\n-\n-\nyields\n.\n12\n0\n117\n46 8\n-\n-\n, which is equivalent to\n.\n12\n70 2, or .\n5 85. Therefore, the value of b  is approximately .\n5 85, or approximately .\n5 9.\nThus,\n.\n.\ny\nx\n46 8\n5 9\n=\n+\ncould be an equation of a line of best fit for data set F.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice C is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect. This could be an equation of a line of best fit for data set E,\nnot data set F.\n52",
     "has_figure": true
+  },
+  {
+    "test_number": 6,
+    "question_number": 27,
+    "section": "math",
+    "module": 2,
+    "question_text": "x\ny\ny\n48 −64\n= 48 + 24\nry\nx\n= 1\n8 −12\nIn the given system of equations, r is a constant. If \nthe system has no solution, what is the value of r ?",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "-28",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "advanced",
+    "explanation": "The correct answer is\n28\n-\n. A system of two linear equations in two variables, x\nand y, has no solution if the lines represented by the equations in the xy-plane are\ndistinct and parallel. The graphs of two lines in the xy-plane represented by\nequations in the form Ax\nBy\nC\n+\n=\n, where A, B, and C  are constants, are parallel if\nthe coefficients for x  and y  in one equation are proportional to the\ncorresponding coefficients for x  and y  in the other equation. The first equation in\nthe given system,\nx\ny\ny\n48\n64\n48\n24\n-\n=\n+\n, can be written in the form Ax\nBy\nC\n+\n=\nby\nsubtracting\ny\n48\nfrom both sides of the equation to yield\nx\ny\n48\n112\n24\n-\n=\n. The\nsecond equation in the given system, ry\nx\n12\n8\n1\n= -\n, can be written in the form\nAx\nBy\nC\n+\n=\nby adding\nx\n12  to both sides of the equation to yield\nx\nry\n12\n8\n1\n+\n= . The\ncoefficient of x  in the second equation is  4\n1  times the coefficient of x  in the first\nequation. That is, 48\n12\n4\n1 =\nb l\n. For the lines to be parallel, the coefficient of y  in the\nsecond equation must also be 4\n1  times the coefficient of y  in the first equation.\nTherefore,\nr\n112 4\n1\n-\n=\nb l\n, or\nr\n28\n-\n= . Thus, if the given system has no solution, the\nvalue of r  is\n28\n-\n.",
+    "has_figure": false
   },
   {
     "test_number": 6,
@@ -5558,6 +5633,26 @@
     "difficulty": "medium",
     "explanation": "Choice A is the best answer because it presents a statement that, if true, would\nsupport the claim that the two exhibitions This Is the Day and The Dirty South\nshowcase the diverse media artists have used to represent the Black experience\nin the US. The text describes the thematic focus of the two exhibitions: religious\nand spiritual expressions in the Black community and the connections between\nvisual arts and music in Black culture in the American South between 1920 and\n2020. If these exhibits included works created with many different materials and\nmeans of artistic expression (such as paint, textiles, sculptural stone, and musical\nforms), they would display how artists have portrayed and responded to the Black\nexperience in the US as well as the variety of media that these artists have used\nto do so.\n9\nChoice B is incorrect because it focuses on the number of artists whose works\nwere included in the exhibitions, not on the means of expression that these\nartists have used. Therefore, the statement wouldn’t address the claim that\nthe exhibits showcased the different media artists have used to represent the\nBlack experience in the US. Choice C is incorrect because it focuses on how\nthe works that were included in the exhibitions were sourced, not on the means\nof expression the artists whose works were featured have used. Therefore, the\nstatement wouldn’t address the claim that the exhibits showcased the different\nmedia artists have used to represent the Black experience in the US. Choice D is\nincorrect. Although the statement focuses on similarities in the themes of the two\nexhibitions—that is, they both concern the Black experience in the US—it doesn’t\nmention the media that artists whose works were featured in the exhibitions have\nused to portray and respond to this experience.",
     "has_figure": false
+  },
+  {
+    "test_number": 6,
+    "question_number": 14,
+    "section": "reading_writing",
+    "module": 1,
+    "question_text": "Which choice best describes data from the graph that \nsupport the researchers’ conclusion?",
+    "passage_text": "600\n540\n480\n420\n360\n300\n240\n180\n120\n60\n0\nMean test score (higher scores\nindicate greater attentiveness)\nfirst\nsecond\nthird\nMean Attentiveness Scores by\nLeave Time Condition\nTest administration\nno leave\n2–4 days leave\n1–5 weeks leave\nTo investigate potential cognitive benefits of taking \nleave from work, psychologist Jan Packer and \ncolleagues conducted a six-month study of \nAustralian university staff members who took no \nleave from work during the study, took 2–4 days of \nleave, or took 1–5 weeks of leave. Tests of \nattentiveness were administered to participants three \ntimes during the study: at random for the no-leave \nstaff, and for the rest, one week before their leave, \none week following their return to work, and one \nweek after the second test administration. After \nanalyzing the results, the researchers concluded that \nlonger leave times might not confer a greater \ncognitive benefit than shorter leave times do.",
+    "options": [
+      "In the second test administration, participants who took 2–4 days of leave had higher average attentiveness scores than did those who took no leave, but in the third test administration, those who took no leave had higher average scores than those who took 1–5 weeks of leave.",
+      "In the first test administration, participants who took 2–4 days of leave had lower average attentiveness scores than did those who took 1–5 weeks of leave and those who took no leave.",
+      "In both the second and third test administrations, participants who took 2–4 days of leave had higher average attentiveness scores than did participants who took 1–5 weeks of leave.",
+      "In the second and third test administrations, participants who took 2–4 days of leave had higher average attentiveness scores than did those who took no leave."
+    ],
+    "correct_answer": "C",
+    "correct_index": 2,
+    "is_spr": false,
+    "difficulty": "medium",
+    "explanation": "Choice C is the best answer because it describes data from the graph that\nsupport Jan Packer and colleagues’ conclusion about the effect of leave time on\nthe attentiveness of university employees. According to the text, the researchers’\nstudy design included a group of employees who took no leave, a group who took\n2–4 days of leave, and a group who took 1–5 weeks of leave. The participants\nwho took leave were tested for attentiveness one week before their leave (the\nfirst test administration), one week after their return to work (the second test\nadministration), and two weeks after their return (the third test administration).\nThe participants who took no leave were tested three times at random. The graph\nshows that at one week after their return to work, participants who took only 2–4\ndays of leave had an average attentiveness score of between 540 and 600, while\nparticipants who took 1–5 weeks of leave had an average score of between 480\nand 540. At two weeks after their return to work, those who took only 2–4 days\nof leave had an average score of between 480 and 540, while those who took\n1–5 weeks of leave had an average score of approximately 480. In other words,\nthe graph shows that on both post-leave testing dates, participants with longer\nleave times had lower average attentiveness scores than those with shorter leave\ntimes. Since attentiveness is an indicator of cognitive functioning, these data\nconfirm Packer and colleagues’ conclusion that longer leave times might not\nconfer a greater cognitive benefit than shorter leave times do.\nChoice A is incorrect. The graph does show that in the second test administration,\nparticipants who took 2– 4 days of leave had higher average attentiveness\nscores than did those who took no leave and also shows that in the third test\nadministration, those who took no leave had higher average scores than those\nwho took 1–5 weeks of leave. But neither of these findings has a direct bearing\non the researchers’ conclusion, which concerns a comparison of participants\nwho took 2–4 days of leave with those who took 1–5 weeks, rather than a\ncomparison of either group with participants who took no leave. Choice B is\nincorrect. Although the graph does show that in the first test administration,\nparticipants who took 2–4 days of leave had lower average attentiveness scores\nthan did those who took 1–5 weeks of leave and those who took no leave, this\ntest administration occurred before any participants went on leave; therefore,\n10\nthese results have no bearing on the researchers’ conclusion about how the\namount of leave taken by participants affected their cognitive functioning.\nChoice D is incorrect. Although the graph does show that in the second and\nthird test administrations, participants who took 2–4 days of leave had higher\naverage attentiveness scores than did those who took no leave, the researchers’\nconclusion is about the effects of short leave compared with the effects of long\nleave, not the effects of short leave compared with the effects of no leave. These\nresults are therefore irrelevant to the conclusion.",
+    "has_figure": true
   },
   {
     "test_number": 6,
@@ -6630,7 +6725,7 @@
       "p 1.90 + 2 = 9.60",
       "p 1.90 −2 = 9.60",
       "p 1.90 + 2 = 9.60",
-      "p 1.90 −2 = 9.60 Unauthorized copying or reuse of any part of this page is illegal. 32 Module - --------~ 8"
+      "p 1.90 −2 = 9.60 Unauthorized copying or reuse of any part of this page is illegal. 32 Module - --------~"
     ],
     "correct_answer": "A",
     "correct_index": 0,
@@ -6644,7 +6739,7 @@
     "question_number": 5,
     "section": "math",
     "module": 1,
-    "question_text": "Temperature 4 \n(OF) \n3 \n2 \n1 \ny \n0 \n0 \n0 \n0 -' \n0 --', --\n0 \n---\nc-. \n0 \n,__ \n0 \n0 \n2,000 4,000 6,000 8,000 \nDistance above sea level (feet) \nX \n- --------~",
+    "question_text": "Temperature 4 \n(OF)",
     "passage_text": "",
     "options": [],
     "correct_answer": "D",
@@ -6695,7 +6790,7 @@
       "The estimated value of the tablet was $225 when it was purchased.",
       "The estimated value of the tablet 24 months after it was purchased was $225.",
       "The estimated value of the tablet had decreased by $225 in the 24 months after it was purchased.",
-      "The estimated value of the tablet decreased by approximately 2.25% each year after it was purchased. Unauthorized copying or reuse of any part of this page is illegal. 33 Module - --------- 7 6 ! 5 'o 4 ~ ~ 3 § 2 z 1 0 - - - - - I I ~ I I I I 0 8 9"
+      "The estimated value of the tablet decreased by approximately 2.25% each year after it was purchased. Unauthorized copying or reuse of any part of this page is illegal. 33 Module - ---------"
     ],
     "correct_answer": "A",
     "correct_index": 0,
@@ -6729,14 +6824,9 @@
     "question_number": 10,
     "section": "math",
     "module": 1,
-    "question_text": "The function f is defined by f x\nx\n= 1\n2\n+ 6\n( )\n(\n). What\nis the value of f 4\n( ) ?",
+    "question_text": "The function f is defined by f x\nx\n= 1",
     "passage_text": "",
-    "options": [
-      "20",
-      "12",
-      "10",
-      "5"
-    ],
+    "options": [],
     "correct_answer": "D",
     "correct_index": 3,
     "is_spr": false,
@@ -6752,10 +6842,10 @@
     "question_text": "The graph of a system of an absolute value function\nand a linear function is shown. What is the solution\nx y\n( , ) to this system of two equations?",
     "passage_text": "",
     "options": [
-      "(0, 8)",
-      "7 2, 9 2     ",
-      "−7 2, 9 2     ",
-      "(−3, 4) Unauthorized copying or reuse of any part of this page is illegal. 34 Module"
+      "(0, 8) B)",
+      "",
+      "",
+      ""
     ],
     "correct_answer": "C",
     "correct_index": 2,
@@ -6774,8 +6864,8 @@
     "options": [
       "y x = 2 6 + 3 ( )",
       "y x = 2 6 + 3 ( )",
-      "y x 2 = 2 6 + 3 ( ) ( )",
-      "y x"
+      "y x",
+      ""
     ],
     "correct_answer": "D",
     "correct_index": 3,
@@ -6786,17 +6876,42 @@
   },
   {
     "test_number": 7,
+    "question_number": 13,
+    "section": "math",
+    "module": 1,
+    "question_text": "If\np",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "294",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "medium",
+    "explanation": "The correct answer is 294. Subtracting 18  from each side of the given equation\nyields p\n36\n7\n6 =\n. Multiplying each side of this equation by 6\n7  yields p\n42\n=\n.\nMultiplying each side of this equation by 7  yields p\n7\n294\n=\n. Therefore, the value of\np\n7\nis 294.",
+    "has_figure": false
+  },
+  {
+    "test_number": 7,
+    "question_number": 14,
+    "section": "math",
+    "module": 1,
+    "question_text": "y\nx\nx\ny\n= 9 + 12\n+ 7\n= 20\nThe solution to the given system of equations is\nx y\n( , ). What is the value of y ?",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "3",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "medium",
+    "explanation": "The correct answer is 3. It’s given that y\nx\n9\n12\n=\n+\n. Substituting x\n9\n12\n+\nfor y  in\nthe second equation in the system, x\ny\n7\n20\n+\n=\n, yields x\nx\n7 9\n12\n20\n+\n+\n=\n^\nh\n, which\ngives x\nx\n63\n84\n20\n+\n+\n=\n, or\nx\n64\n84\n20\n+\n=\n. Subtracting 84  from each side of this\nequation yields\nx\n64\n64\n=-\n. Dividing each side of this equation by 64  yields\nx\n1\n=- . Substituting\n1\n-  for x  in the first equation in the system, y\nx\n9\n12\n=\n+\n,\nyields y\n9\n1\n12\n=\n-\n+\n^\nh\n, or y\n3\n= . Therefore, the value of y  is 3.",
+    "has_figure": false
+  },
+  {
+    "test_number": 7,
     "question_number": 15,
     "section": "math",
     "module": 1,
-    "question_text": "A circle in the xy-plane has the equation\nx\ny\nk\n−13\n+\n−\n= 64\n2\n2\n(\n)\n(\n)\n. Which of the following\ngives the center of the circle and its radius?",
+    "question_text": "A circle in the xy-plane has the equation\nx\ny\nk\n−13\n+\n−\n= 64",
     "passage_text": "",
-    "options": [
-      "The center is at k 13, ( ) and the radius is 8.",
-      "The center is at k, 13 ( ) and the radius is 8.",
-      "The center is at k, 13 ( ) and the radius is 64.",
-      "The center is at k 13, ( ) and the radius is 64."
-    ],
+    "options": [],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
@@ -6855,13 +6970,33 @@
       "2",
       "790",
       "1,580",
-      "40,000 19 n t w 12 −2 = −2 The given equation relates the variables n, t, and w, where n > 0, t > 0, and w t > . Which expression is equivalent to n ?"
+      "40,000"
     ],
     "correct_answer": "B",
     "correct_index": 1,
     "is_spr": false,
     "difficulty": "hard",
     "explanation": "Choice B is correct. It’s given that t  minutes after an initial observation, the\nnumber of bacteria in a population is\n,\n40 000 2\nt\n790\n^ h\n. This expression consists of the\ninitial number of bacteria,\n,\n40 000, multiplied by the expression 2\nt\n790. The time, in\nminutes, it takes for the number of bacteria to double is the increase in the value\nof t  that causes the expression 2\nt\n790  to double. Since the base is 2, the expression\n2\nt\n790  will double when the exponent increases by 1. Since the exponent of this\nexpression is\nt\n790, the exponent will increase by 1 when t  increases by 790.\nTherefore, the time, in minutes, it takes for the number of bacteria in the\npopulation to double is 790.\nAlternate approach: The initial number of bacteria in the population can be found\nby substituting 0  for t  in the given function. This yields\n,\nf 0\n40 000 2 790\n0\n=\n^\n^\nh\nh\n, or\n,\nf 0\n40 000\n=\n^ h\n. Therefore, the initial number of bacteria present in the population is\n,\n40 000, so the bacteria population will have doubled when\n,\nf t\n80 000\n=\n^ h\n.\n36\nSubstituting\n,\n80 000  for f t^ h  in the given function yields\n,\n,\n80 000\n40 000 2\nt\n790\n=\n^ h\n.\nDividing both sides of this equation by\n,\n40 000  yields 2\n2\nt\n790\n=\n, or 2\n2\nt\n1\n790\n=\n. It\nfollows that 1\nt\n790\n=\n. Multiplying both sides of this equation by 790  yields\nt\n790= .\nTherefore, the time, in minutes, it takes for the number of bacteria in the\npopulation to double is 790.\nChoice A is incorrect. This is the base of the exponent, not the time it takes for the\nnumber of bacteria in the population to double. Choice C is incorrect. This is the\nnumber of minutes it takes for the population to double twice. Choice D is\nincorrect. This is the number of bacteria that are initially observed, not the time it\ntakes for the number of bacteria in the population to double.",
+    "has_figure": false
+  },
+  {
+    "test_number": 7,
+    "question_number": 19,
+    "section": "math",
+    "module": 1,
+    "question_text": "n\nt\nw\n12 −2 = −2\nThe given equation relates the variables n, t, and w,\nwhere n > 0, t > 0, and w\nt\n> . Which expression is\nequivalent to n ?",
+    "passage_text": "",
+    "options": [
+      "tw",
+      "",
+      "",
+      ""
+    ],
+    "correct_answer": "D",
+    "correct_index": 3,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice D is correct. Adding t\n2  to each side of the given equation yields\nn\nw\nt\n12\n2\n2\n=- + . The fractions on the right side of this equation have a common\ndenominator of tw; therefore, the equation can be written as n\ntw\nw\ntw\nt\n12\n2\n2\n=\n-\n, or\nn\ntw\nw\nt\n12\n2\n2\n=\n-\n, which is equivalent to n\ntw\nw\nt\n12\n2\n=\n-\n^\nh. Dividing each side of this equation\nby 2  yields  n\ntw\nw\nt\n6=\n- . Since n, t, w, and w\nt\n-  are all positive quantities, taking the\nreciprocal of each side of the equation n\ntw\nw\nt\n6=\n-  yields an equivalent equation:\nn\nw\nt\ntw\n6=\n- . Multiplying each side of this equation by 6  yields n\nw\nt\ntw\n6\n=\n- .\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice C is incorrect. This is equivalent to n\n1  rather than n.",
     "has_figure": false
   },
   {
@@ -6931,10 +7066,25 @@
   },
   {
     "test_number": 7,
+    "question_number": 24,
+    "section": "math",
+    "module": 1,
+    "question_text": "s\n−",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "B",
+    "correct_index": 1,
+    "is_spr": false,
+    "difficulty": "advanced",
+    "explanation": "Choice B is correct. The linear relationship between x  and y  can be represented\nby an equation of the form y\ny\nm x\nx\n1\n1\n-\n=\n-\n^\nh, where m  is the slope of the graph of\nthe equation in the xy-plane and\n,\nx y\n1\n1\n^\nh  is a point on the graph. The slope of a line\ncan be found using two points on the line and the slope formula m\n2\n1\n1\n2\nx\nx\ny\ny\n=\n-\n-\n. Each\nvalue of x  and its corresponding value of y  in the table can be represented by a\npoint\n,x y\n^\nh. Substituting the points\n,s 21\n-\n^\nh  and\n,s 15\n^\nh  for\n,\nx y\n1\n1\n^\nh  and\n,\nx y\n2\n2\n^\nh,\nrespectively, in the slope formula yields m\ns\ns\n15\n21\n= - -\n-\n^\nh, which gives m\ns\n2\n6\n=- , or\nm\ns\n3\n=- . Substituting\ns\n3\n-\nfor m  and the point\n,s 15\n^\nh  for\n,\nx y\n1\n1\n^\nh  in the equation\ny\ny\nm x\nx\n1\n1\n-\n=\n-\n^\nh  yields y\nx\ns\n15\ns\n3\n-\n=-\n-\n^\nh. Distributing\ns\n3\n-\non the right-hand\nside of this equation yields y\n15\n3\ns\nx\n3\n-\n=-\n+ . Adding 15  to each side of this\nequation yields y\n18\ns\nx\n3\n=-\n+\n. Multiplying each side of this equation by s  yields\nsy\nx\ns\n3\n18\n=-\n+\n. Adding x\n3  to each side of this equation yields x\nsy\ns\n3\n18\n+\n=\n.\nTherefore, the equation x\nsy\ns\n3\n18\n+\n=\nrepresents this relationship.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice C is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.\n38",
+    "has_figure": false
+  },
+  {
+    "test_number": 7,
     "question_number": 25,
     "section": "math",
     "module": 1,
-    "question_text": "Value (dollars) 20 \n15 \n10 \n5 \ny \n0 \n0 \n0 \n0 ' \n0 \n0 \n0 \n0 \n~ \ni-.. \nI',, \n,-... --",
+    "question_text": "Value (dollars) 20",
     "passage_text": "",
     "options": [],
     "correct_answer": "C",
@@ -6955,13 +7105,28 @@
       "C d d = 26 + 26 ( )",
       "C d d = 26 + 52 ( )",
       "C d d = 52 −26 ( )",
-      "C d d = 52 + 78 ( ) 27 f x x x = −2 + 15 ( ) ( )( ) The function f is defined by the given equation. For what value of x does f x ( ) reach its minimum?"
+      "C d d = 52 + 78 ( )"
     ],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
     "difficulty": "advanced",
     "explanation": "Choice A is correct. It’s given that the cost of renting a carpet cleaner is $52  for\nthe first day and $26  for each additional day. Therefore, the cost C d\n^ h, in dollars,\nof renting the carpet cleaner for d  days is the sum of the cost for the first day,\n$52, and the cost for the additional d\n1\n-  days, $\nd\n26\n1\n-\n^\nh. It follows that\nC d\nd\n52\n26\n1\n=\n+\n-\n^\n^\nh\nh, which is equivalent to C d\nd\n52\n26\n26\n=\n+\n-\n^ h\n, or\nC d\nd\n26\n26\n=\n+\n^ h\n.\nChoice B is incorrect. This function gives the cost of renting a carpet cleaner for\nd  days if the cost is $78, not $52, for the first day and $26  for each additional\nday. Choice C is incorrect. This function gives the cost of renting a carpet cleaner\nfor d  days if the cost is $26, not $52, for the first day and $52, not $26, for each\nadditional day. Choice D is incorrect. This function gives the cost of renting a\ncarpet cleaner for d  days if the cost is $130, not $52, for the first day and $52,\nnot $26, for each additional day.",
+    "has_figure": false
+  },
+  {
+    "test_number": 7,
+    "question_number": 27,
+    "section": "math",
+    "module": 1,
+    "question_text": "f x\nx\nx\n=\n−2\n+ 15\n( )\n(\n)(\n)\nThe function f is defined by the given equation. For\nwhat value of x does f x\n( ) reach its minimum?",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "-13/2; -6.5",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "advanced",
+    "explanation": "The correct answer is\n2\n13\n-\n. The value of x  for which f x\n^ h  reaches its minimum can\nbe found by rewriting the given equation in the form f x\nx\nh\nk\n2\n=\n-\n+\n^\n^\nh\nh\n, where f x\n^ h\nreaches its minimum, k, when the value of x  is h. The given equation,\nf x\nx\nx\n2\n15\n=\n-\n+\n^\n^\n^\nh\nh\nh, can be rewritten as f x\nx\nx\n13\n30\n2\n=\n+\n-\n^ h\n. By completing the\nsquare, this equation can be rewritten as f x\nx\nx\n13\n30\n2\n2\n2\n2\n13\n2\n13\n=\n+\n+\n-\n-\n^\na\n`\n`\nh\nj k\nj ,\nwhich is equivalent to f x\nx\n2\n2\n13\n4\n289\n=\n+\n-\n^\n`\nh\nj\n, or f x\nx\n2\n2\n13\n4\n289\n=\n- -\n-\n^\n`\n`\nh\njj\n. Therefore,\nf x\n^ h  reaches its minimum when the value of x  is\n2\n13\n-\n. Note that -13/2 and -6.5 are\nexamples of ways to enter a correct answer.\nAlternate approach: The graph of y\nf x\n= ^ h  in the xy-plane is a parabola. The value\nof x  for the vertex of a parabola is the x-value of the midpoint between the two\nx-intercepts of the parabola. Since it’s given that f x\nx\nx\n2\n15\n=\n-\n+\n^\n^\n^\nh\nh\nh, it follows\nthat the two x-intercepts of the graph of y\nf x\n= ^ h  in the xy-plane occur when x\n2\n=\nand x\n15\n=-\n, or at the points\n,\n2 0\n^\nh  and\n,\n15 0\n-\n^\nh. The midpoint between two\npoints,\n,\nx y\n1\n1\n^\nh  and\n,\nx y\n2\n2\n^\nh, is\n,\n1\n2\n1\n2\nx\nx\ny\ny\n2\n2\n+\n+\nc\nm. Therefore, the midpoint between\n,\n2 0\n^\nh  and\n,\n15 0\n-\n^\nh  is\n,\n2\n2\n15\n2\n0\n0\n-\n+\nb\nl, or\n, 0\n2\n13\n-\nb\nl. It follows that f x\n^ h  reaches its\nminimum when the value of x  is\n2\n13\n-\n. Note that -13/2 and -6.5 are examples of\nways to enter a correct answer.\n39\nMath\nModule 2\n(27 questions)",
     "has_figure": false
   },
   {
@@ -7034,14 +7199,9 @@
     "question_number": 5,
     "section": "math",
     "module": 2,
-    "question_text": "−11, −9, 26\nA data set of three numbers is shown. If a number\nfrom this data set is selected at random, what is the\nprobability of selecting a positive number?",
+    "question_text": "J \n\\",
     "passage_text": "",
-    "options": [
-      "0",
-      "1 3",
-      "2 3",
-      "1"
-    ],
+    "options": [],
     "correct_answer": "B",
     "correct_index": 1,
     "is_spr": false,
@@ -7069,7 +7229,7 @@
     "question_number": 7,
     "section": "math",
     "module": 2,
-    "question_text": "The function f is defined by f x\nx\n= 5 1\n4 −\n+ 11\n4\n2\n( )\n\n\n\n\n\n\n.\nWhat is the value of f 1\n4\n\n\n\n\n\n?",
+    "question_text": "The function f is defined by f x\nx\n= 5 1\n4 −\n+ 11",
     "passage_text": "",
     "options": [],
     "correct_answer": "11/4; 2.75",
@@ -7099,14 +7259,9 @@
     "question_number": 9,
     "section": "math",
     "module": 2,
-    "question_text": "Which expression is equivalent to\nx\nx\nx\n23\n+ 2\n+ 9\n3\n2\n?",
+    "question_text": "Which expression is equivalent to\nx\nx\nx",
     "passage_text": "",
-    "options": [
-      "x x x",
-      "",
-      "",
-      ""
-    ],
+    "options": [],
     "correct_answer": "C",
     "correct_index": 2,
     "is_spr": false,
@@ -7157,10 +7312,10 @@
     "question_text": "In the given scatterplot, a line of best fit for the data\nis shown.\nWhich of the following is closest to the slope of the\nline of best fit shown?",
     "passage_text": "",
     "options": [
-      "0",
-      "1 2",
-      "1",
-      "2"
+      "0 B)",
+      "",
+      "",
+      ""
     ],
     "correct_answer": "D",
     "correct_index": 3,
@@ -7204,19 +7359,34 @@
     "question_number": 15,
     "section": "math",
     "module": 2,
-    "question_text": "+ 5\n−5 −35\n6\n2",
+    "question_text": "+ 5\n−5 −35",
     "passage_text": "",
-    "options": [
-      "x x 15 + 10 + 2 3 2",
-      "x x x",
-      "",
-      ""
-    ],
+    "options": [],
     "correct_answer": "C",
     "correct_index": 2,
     "is_spr": false,
     "difficulty": "medium",
     "explanation": "Choice C is correct. It’s given that t  represents the number of years since the\naccount was opened. Therefore, t\n10  represents the number of 10-year periods\nsince the account was opened. Since the value of the account doubles during\neach of these 10-year periods, the value of the account can be found by\nmultiplying the initial value by t\n10  factors of 2. This is equivalent to 2\nt\n10. It’s given\nthat the initial value of the account is $890. Therefore, the value of the account\nM t^ h, in dollars, t  years after the account was opened can be represented by\nM t\n890 2\nt\n10\n=\n^\n^\nh\nh .\nChoice A is incorrect. This equation represents the value of an account if the\nvalue of the account halves, not doubles, every 10  years. Choice B is incorrect.\nThis equation represents the value of an account if the value of the account\ndecreases by\n%\n90\n, not doubles, every 2, not 10, years. Choice D is incorrect. This\nequation represents the value of an account if the value of the account increases\nby a factor of 10, not doubles, every 2, not 10, years.",
+    "has_figure": false
+  },
+  {
+    "test_number": 7,
+    "question_number": 16,
+    "section": "math",
+    "module": 2,
+    "question_text": "y\nx\nx\n<\n< 22\nFor which of the following tables are all the values of\nx and their corresponding values of y solutions to the\ngiven system of inequalities?",
+    "passage_text": "",
+    "options": [
+      "x y 19 18 20 19 21 20",
+      "x y 19 20 20 21 21 22",
+      "x y 23 22 24 23 25 24",
+      "x y"
+    ],
+    "correct_answer": "A",
+    "correct_index": 0,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice A is correct. The inequality y\nx\n<\nindicates that for any solution to the\ngiven system of inequalities, the value of x  must be greater than the\ncorresponding value of y. The inequality x\n22\n<\nindicates that for any solution to\nthe given system of inequalities, the value of x  must be less than 22. Of the given\nchoices, only choice A contains values of x  that are each greater than the\ncorresponding value of y  and less than 22. Therefore, for choice A, all the values\nof x  and their corresponding values of y  are solutions to the given system of\ninequalities.\nChoice B is incorrect. The values in this table aren’t solutions to the inequality\ny\nx\n< . Choice C is incorrect. The values in this table aren’t solutions to the\ninequality x\n22\n<\n. Choice D is incorrect. The values in this table aren’t solutions to\nthe inequality y\nx\n<\nor the inequality x\n22\n<\n.\n43",
     "has_figure": false
   },
   {
@@ -7227,8 +7397,8 @@
     "question_text": "Which expression is equivalent to h q\nh q\n15 7\n5 21,\nwhere h > 0 and q > 0 ?",
     "passage_text": "",
     "options": [
-      "h q 10 14",
       "h q",
+      "",
       "",
       ""
     ],
@@ -7237,6 +7407,51 @@
     "is_spr": false,
     "difficulty": "hard",
     "explanation": "Choice A is correct. For positive values of a,\na\nn\nm\nm\nn\na\na =\n-\n^\nh, where m  and n  are\nintegers. Since it’s given that h\n0\n>\nand q\n0\n> , this property can be applied to\nrewrite the given expression as h\nq\n15\n5\n7\n21\n-\n-\n^\n^\n^\n^\nh\nh\nh\nh , which is equivalent to h\nq\n10\n14\n- . For\npositive values of a, a\nn\nn\na\n1\n=\n-\n. This property can be applied to rewrite the\nexpression h\nq\n10\n14\n-\nas h10\n14\nq\n1\n^\nch\nm, which is equivalent to\n14\n10\nq\nh\n.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice C is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.",
+    "has_figure": false
+  },
+  {
+    "test_number": 7,
+    "question_number": 18,
+    "section": "math",
+    "module": 2,
+    "question_text": "y\nx\ny\nx",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "D",
+    "correct_index": 3,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice D is correct. Adding the second equation to the first equation in the given\nsystem of equations yields y\ny\nx\nx\n3\n3\n4\n9\n17\n23\n-\n=\n+\n+\n-\n, or\nx\n0\n13\n6\n=\n- . Adding 6\nto each side of this equation yields\nx\n6\n13\n=\n. Multiplying each side of this equation\nby 3  yields\nx\n18\n39\n=\n. Therefore, the value of\nx\n39  is 18.\nChoice A is incorrect. This is the value of\nx\n39\n-\n, not\nx\n39 . Choice B is incorrect.\nThis is the value of\nx\n13\n-\n, not\nx\n39 . Choice C is incorrect. This is the value of\nx\n13 ,\nnot\nx\n39 .",
+    "has_figure": false
+  },
+  {
+    "test_number": 7,
+    "question_number": 19,
+    "section": "math",
+    "module": 2,
+    "question_text": "h t\nt\nb\n= −16\n+",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "B",
+    "correct_index": 1,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice B is correct. It’s given that the function h  estimates that the object is\n,\n3 364  feet above the ground when it’s dropped at t\n0\n= . Substituting ,\n3 364  for\nh t^ h  and 0  for t  in the function h  yields ,\nb\n3 364\n16 0 2\n=-\n+\n^ h\n, or ,\nb\n3 364= .\nSubstituting ,\n3 364  for b  in the function h  yields\n,\nh t\nt\n16\n3 364\n2\n=-\n+\n^ h\n. When the\nobject hits the ground, its height will be 0  feet above the ground. Substituting 0\nfor h t^ h  in\n,\nh t\nt\n16\n3 364\n2\n=-\n+\n^ h\nyields\n,\nt\n0\n16\n3 364\n2\n=-\n+\n. Adding\nt\n16 2  to each\nside of this equation yields\n,\nt\n16\n3 364\n2=\n. Dividing each side of this equation by 16\nyields\n.\nt\n210 25\n2=\n. Since the object will hit the ground at a positive number of\nseconds after it’s dropped, the value of t  can be found by taking the positive\nsquare root of each side of this equation, which yields\n.\nt\n14 50\n=\n. It follows that the\nfunction estimates the object will hit the ground approximately\n.\n14 50  seconds\nafter being dropped.\nChoice A is incorrect. The function estimates that .\n7 25  seconds after being\ndropped, the object’s height will be\n.\n,\n16 7 25\n3 364\n2\n-\n+\n^\nh\nfeet, or ,\n2 523  feet, above\nthe ground. Choice C is incorrect and may result from conceptual or calculation\nerrors. Choice D is incorrect and may result from conceptual or calculation errors.\n44",
+    "has_figure": false
+  },
+  {
+    "test_number": 7,
+    "question_number": 20,
+    "section": "math",
+    "module": 2,
+    "question_text": "x\nx",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "120",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "hard",
+    "explanation": "The correct answer is 120. The solutions to a quadratic equation of the form\nax\nbx\nc\n0\n2+\n+ =\ncan be calculated using the quadratic formula and are given by\nx\n2\na\nb\nb\nac\n2\n4\n=\n!\n-\n-\n. The given equation is in the form ax\nbx\nc\n0\n2+\n+ = , where a\n2\n= ,\nb\n8\n=- , and c\n7\n=- . It follows that the solutions to the given equation are\nx\n2\n2 2\n8\n8\n4 2\n7\n= !\n-\n-\n-\n^\n^\n^\n^\nh\nh\nh\nh, which is equivalent to  x\n4\n8\n64\n56\n= !\n+\n, or x\n4\n8\n120\n= !\n. It’s\ngiven that one solution to the equation x\nx\n2\n8\n7\n0\n2-\n- =\ncan be written as\nk\n4\n8-\n.\nThe solution\n4\n8\n120\n-\nis in this form. Therefore, the value of k  is 120.",
     "has_figure": false
   },
   {
@@ -7259,14 +7474,9 @@
     "question_number": 23,
     "section": "math",
     "module": 2,
-    "question_text": "+ 2 + 9\n2\n(\n)",
+    "question_text": "+ 2\n+ 9",
     "passage_text": "",
-    "options": [
-      "x x x 9 23 + 2 + 1 3 2 ( )",
-      "x x x",
-      "",
-      ""
-    ],
+    "options": [],
     "correct_answer": "C",
     "correct_index": 2,
     "is_spr": false,
@@ -7285,7 +7495,7 @@
       "188",
       "168",
       "84",
-      "71 25 x x y y + 14 + = 6 + 109"
+      "71"
     ],
     "correct_answer": "B",
     "correct_index": 1,
@@ -7296,10 +7506,25 @@
   },
   {
     "test_number": 7,
+    "question_number": 25,
+    "section": "math",
+    "module": 2,
+    "question_text": "x\nx\ny\ny\n+ 14 +\n= 6 + 109",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "C",
+    "correct_index": 2,
+    "is_spr": false,
+    "difficulty": "advanced",
+    "explanation": "Choice C is correct. It’s given that in the xy-plane, the graph of the given\nequation is a circle. The equation of a circle in the xy-plane can be written\nin the form x\nh\ny\nk\nr\n2\n2\n2\n-\n+\n-\n=\n^\n^\nh\nh\n, where\n,h k\n^\nh  is the center of the circle\nand r  is the length of the circle’s radius. Subtracting y\n6\nfrom both sides\nof the equation  x\nx\ny\ny\n14\n6\n109\n2\n2\n+\n+\n=\n+\nyields x\nx\ny\ny\n14\n6\n109\n2\n2\n+\n+\n-\n=\n.\nBy completing the square, this equation can be rewritten as\nx\nx\ny\ny\n14\n6\n109\n2\n2\n2\n2\n2\n2\n2\n14\n2\n6\n2\n14\n2\n6\n+\n+\n+\n-\n+\n=\n+\n+\n-\n-\na\n`\na\n`\n`\n`\nj k\nj k\nj\nj . This equation\n46\ncan be rewritten as x\nx\ny\ny\n14\n49\n6\n9\n109\n49\n9\n2\n2\n+\n+\n+\n-\n+\n=\n+\n+\n^\n^\nh\nh\n, or\nx\ny\n7\n3\n167\n2\n2\n+\n+\n-\n=\n^\n^\nh\nh\n. Therefore, r\n167\n2=\n. Taking the square root of both\nsides of this equation yields r\n167\n=\nand r\n167\n=-\n. Since r  is the length\nof the circle’s radius, r  must be positive. Therefore, the length of the circle’s\nradius is 167.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.",
+    "has_figure": false
+  },
+  {
+    "test_number": 7,
     "question_number": 26,
     "section": "math",
     "module": 2,
-    "question_text": "Unauthorized copying or reuse of any part of this page is illegal.\n45\nModule \n2 \n-- -\n-- -\n-- -",
+    "question_text": "Unauthorized copying or reuse of any part of this page is illegal.\n45\nModule",
     "passage_text": "",
     "options": [],
     "correct_answer": "B",
@@ -7311,12 +7536,32 @@
   },
   {
     "test_number": 7,
+    "question_number": 27,
+    "section": "math",
+    "module": 2,
+    "question_text": "y\ny\nx\nx\nk\n= −2.5\n=\n+ 8 +",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "14",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "advanced",
+    "explanation": "The correct answer is 14. It’s given by the first equation of the system of\nequations that\n.\ny\n2 5\n=-\n. Substituting\n.\n2 5\n-\nfor y  in the second given equation,\ny\nx\nx\nk\n8\n2\n=\n+\n+ , yields\n.\nx\nx\nk\n2 5\n8\n2\n-\n=\n+\n+ . Adding .\n2 5  to both sides of this\nequation yields\n.\nx\nx\nk\n0\n8\n2 5\n2\n=\n+\n+ +\n. A quadratic equation of the form\nax\nbx\nc\n0\n2\n=\n+\n+ , where a, b, and c  are constants, has no real solutions if and only\nif its discriminant, b\nac\n4\n2-\n, is negative. In the equation\n.\nx\nx\nk\n0\n8\n2 5\n2\n=\n+\n+ +\n,\nwhere k  is a positive integer constant, a\n1\n= , b\n8\n= , and\n.\nc\nk\n2 5\n= +\n. Substituting 1\nfor a, 8  for b, and\n.\nk\n2 5\n+\nfor c  in b\nac\n4\n2-\nyields\n.\nk\n8\n4 1\n2 5\n2-\n+\n^\n^h\nh, or\n.\nk\n64\n4\n2 5\n-\n+\n^\nh. Since this value must be negative,\n.\nk\n64\n4\n2 5\n0\n<\n-\n+\n^\nh\n. Adding\n.\nk\n4\n2 5\n+\n^\nh  to both sides of this inequality yields\n.\nk\n64\n4\n2 5\n<\n+\n^\nh. Dividing both\nsides of this inequality by 4  yields\n.\nk\n16\n2 5\n< +\n. Subtracting .\n2 5  from both sides of\nthis inequality yields\n.\nk\n13 5< . Since k  is a positive integer constant, the least\npossible value of k  is 14.",
+    "has_figure": false
+  },
+  {
+    "test_number": 7,
     "question_number": 1,
     "section": "reading_writing",
     "module": 1,
-    "question_text": "- --------~ \n- --------~ DIRECTI",
+    "question_text": "On the basis of extensive calculations and models,\nastronomers in the 1990s predicted that the collision\nof two neutron stars or a neutron star and a black\nhole could release a massive burst of gamma rays in\nan event called a kilonova. This ______\n______",
     "passage_text": "",
-    "options": [],
+    "options": [
+      "theory",
+      "evidence",
+      "constant",
+      "experiment"
+    ],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
@@ -7963,6 +8208,26 @@
     "difficulty": "advanced",
     "explanation": "",
     "has_figure": false
+  },
+  {
+    "test_number": 7,
+    "question_number": 1,
+    "section": "reading_writing",
+    "module": 2,
+    "question_text": "Which choice completes the text with the most\nlogical and precise word or phrase?",
+    "passage_text": "Taking photographs in the mid-1800s was\ncomplicated and expensive, but this changed with the\n1854 invention of the carte de visite, a small photo\nthat cost little to make. Carte de visite photos helped\nto ______\nphotography: they made it easy and\nenjoyable for everyday people to have their pictures\ntaken, and people at the time loved exchanging these\nsmall photos with friends and family.",
+    "options": [
+      "weaken",
+      "praise",
+      "popularize",
+      "isolate"
+    ],
+    "correct_answer": "C",
+    "correct_index": 2,
+    "is_spr": false,
+    "difficulty": "easy",
+    "explanation": "Choice C is the best answer because it most logically completes the text’s\ndiscussion of carte de visite photos. To “popularize” a technology is to allow it to\nbe used and appreciated widely. The text explains that unlike the photos produced\nby earlier forms of photographic technology, carte de visite photos were\ninexpensive and could easily be obtained by “everyday people,” who enjoyed\nexchanging the images. Therefore, carte de visite photos helped popularize\nphotography.\nChoice A is incorrect because the text indicates that instead of weakening the\nemerging technology of photography, carte de visite photos allowed it to be more\nwidely accessed and enjoyed by people. Choice B is incorrect. The text\nestablishes that large numbers of people enjoyed using carte de visite photos, so\nit can be inferred that these photos caused photography to be praised, or\ncelebrated. However, it wouldn’t make sense to say that inanimate objects—in this\ncase, photos—had praised photography; instead, carte de visite consumers\nthemselves would have praised it. Choice D is incorrect because the text explains\nthat rather than isolating photography, or limiting its availability, carte de visite\ntechnology made photography more widely accessible to people.",
+    "has_figure": true
   },
   {
     "test_number": 7,
@@ -8630,7 +8895,7 @@
       "It is between $4.15 and $4.31.",
       "It is either less than $4.15 or greater than $4.31.",
       "It is less than $4.15.",
-      "It is greater than $4.31. 6 x 2.6 + = 2.8 What value of x is the solution to the given equation?"
+      "It is greater than $4.31."
     ],
     "correct_answer": "A",
     "correct_index": 0,
@@ -8641,10 +8906,40 @@
   },
   {
     "test_number": 8,
+    "question_number": 6,
+    "section": "math",
+    "module": 1,
+    "question_text": "x\n2.6 +\n= 2.8\nWhat value of x is the solution to the given\nequation?",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "0.2; 1/5",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "medium",
+    "explanation": "The correct answer is .2. Subtracting .\n2 6  from each side of the given equation\nyields\n.\nx\n0 2\n=\n. Therefore, the value of x  that’s the solution to the given equation is\n.\n0 2. Note that .2 and 1/5 are examples of ways to enter a correct answer.",
+    "has_figure": false
+  },
+  {
+    "test_number": 8,
     "question_number": 7,
     "section": "math",
     "module": 1,
-    "question_text": "Out of 300 seeds that were planted, 80% sprouted.\nHow many of these seeds sprouted?\n8\nf x\nx\nb\n= 4 +\n( )\nFor the linear function f, b is a constant\nand f 7 = 28\n( )\n. What is the value of b ?",
+    "question_text": "Out of 300 seeds that were planted, 80% sprouted.\nHow many of these seeds sprouted?",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "240",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "medium",
+    "explanation": "The correct answer is 240. It’s given that\n%\n80\nof the 300  seeds sprouted.\nTherefore, the number of seeds that sprouted can be calculated by multiplying\nthe number of seeds that were planted by 100\n80 , which gives 300 100\n80\nb\nl, or 240.",
+    "has_figure": false
+  },
+  {
+    "test_number": 8,
+    "question_number": 8,
+    "section": "math",
+    "module": 1,
+    "question_text": "f x\nx\nb\n= 4 +\n( )\nFor the linear function f, b is a constant\nand f 7 = 28\n( )\n. What is the value of b ?",
     "passage_text": "",
     "options": [
       "0",
@@ -8652,11 +8947,11 @@
       "4",
       "7"
     ],
-    "correct_answer": "240",
+    "correct_answer": "A",
     "correct_index": 0,
-    "is_spr": true,
+    "is_spr": false,
     "difficulty": "medium",
-    "explanation": "The correct answer is 240. It’s given that\n%\n80\nof the 300  seeds sprouted.\nTherefore, the number of seeds that sprouted can be calculated by multiplying\nthe number of seeds that were planted by 100\n80 , which gives 300 100\n80\nb\nl, or 240.",
+    "explanation": "Choice A is correct. For the linear function f, it’s given that f 7\n28\n=\n^ h\n. Substituting\n7  for x  and 28  for f x\n^ h  in the given function yields\nb\n28\n4 7\n=\n+\n^ h\n, or\nb\n28\n28\n=\n+ .\nSubtracting 28  from each side of this equation yields\nb\n0= . Therefore, the value\nof b  is 0.\nChoice B is incorrect. Substituting 1 for b  in the given function yields f x\nx\n4\n1\n=\n+\n^ h\n.\nFor this function, when the value of x  is 7, the value of f x\n^ h  is 29, not 28. Choice C\nis incorrect. Substituting 4  for b  in the given function yields f x\nx\n4\n4\n=\n+\n^ h\n. For this\nfunction, when the value of x  is 7, the value of f x\n^ h  is 32, not 28. Choice D is\nincorrect. Substituting 7  for b  in the given function yields f x\nx\n4\n7\n=\n+\n^ h\n. For this\nfunction, when the value of x  is 7, the value of f x\n^ h  is 35, not 28.\n34",
     "has_figure": false
   },
   {
@@ -8730,13 +9025,28 @@
       "p = 0.96 15,000 x ( )",
       "p = 1.04 15,000 x ( )",
       "p = 15,000 0.96 x ( )",
-      "p = 15,000 1.04 x ( ) 13 a b a b 2 + 8 = 198 2 + 4 = 98 The solution to the given system of equations is a b , ( ). What is the value of b ?"
+      "p = 15,000 1.04 x ( )"
     ],
     "correct_answer": "D",
     "correct_index": 3,
     "is_spr": false,
     "difficulty": "medium",
     "explanation": "Choice D is correct. It’s given that a model predicts the population of Bergen in\n2005  was\n,\n15 000. The model also predicts that each year for the next 5  years,\nthe population increased by %\n4\nof the previous year’s population. The predicted\npopulation in one of these years can be found by multiplying the predicted\npopulation from the previous year by .\n1 04. Since the predicted population in\n2005  was\n,\n15 000, the predicted population 1 year later is\n,\n.\n15 000 1 04\n^\nh. The\npredicted population 2  years later is this value times .\n1 04, which is\n,\n.\n.\n15 000 1 04 1 04\n^\n^h\nh, or\n,\n.\n15 000 1 04 2\n^\nh . The predicted population 3  years later is\nthis value times .\n1 04, or\n,\n.\n15 000 1 04 3\n^\nh . More generally, the predicted population,\np, x  years after 2005  is represented by the equation\n,\n.\np\n15 000 1 04 x\n=\n^\nh .\nChoice A is incorrect. Substituting 0  for x  in this equation indicates the predicted\npopulation in 2005  was .\n0 96  rather than\n,\n15 000. Choice B is incorrect.\nSubstituting 0  for x  in this equation indicates the predicted population in 2005\nwas .\n1 04  rather than\n,\n15 000. Choice C is incorrect. This equation indicates the\npredicted population is decreasing, rather than increasing, by %\n4\neach year.",
+    "has_figure": false
+  },
+  {
+    "test_number": 8,
+    "question_number": 13,
+    "section": "math",
+    "module": 1,
+    "question_text": "a\nb\na\nb\n2 + 8\n= 198\n2 + 4\n= 98\nThe solution to the given system of equations is\na b\n,\n(\n). What is the value of b ?",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "25",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "medium",
+    "explanation": "The correct answer is 25. Subtracting the second equation from the first equation\nin the given system of equations yields\na\na\nb\nb\n2\n2\n8\n4\n198\n98\n-\n+\n-\n=\n-\n^\n^\nh\nh\n, which is\nequivalent to\nb\n0\n4\n100\n+\n=\n, or b\n4\n100\n=\n. Dividing each side of this equation by 4\nyields b\n25\n=\n.",
     "has_figure": false
   },
   {
@@ -8780,13 +9090,33 @@
       "w w + 9 ( )",
       "w",
       "9",
-      "w + 9 ( ) 17 p k j = 4 + 9 The given equation relates the distinct positive numbers p, k, and j. Which equation correctly expresses j4 + 9 in terms of p and k ?"
+      "w + 9 ( )"
     ],
     "correct_answer": "D",
     "correct_index": 3,
     "is_spr": false,
     "difficulty": "hard",
     "explanation": "Choice D is correct. It’s given that the expression w w\n9\n+\n^\nh  represents the area, in\nsquare centimeters, of a rectangular cutting board, where w  is the width, in\ncentimeters, of the cutting board. The area of a rectangle can be calculated by\nmultiplying its length by its width. It follows that the length, in centimeters, of the\ncutting board is represented by the expression w\n9\n+\n^\nh.\n36\nChoice A is incorrect. This expression represents the area, in square centimeters,\nof the cutting board, not its length, in centimeters. Choice B is incorrect. This\nexpression represents the width, in centimeters, of the cutting board, not its\nlength. Choice C is incorrect. This is the difference between the length, in\ncentimeters, and the width, in centimeters, of the cutting board, not its length, in\ncentimeters.",
+    "has_figure": false
+  },
+  {
+    "test_number": 8,
+    "question_number": 17,
+    "section": "math",
+    "module": 1,
+    "question_text": "p\nk\nj\n= 4 + 9\nThe given equation relates the distinct positive\nnumbers p, k, and j. Which equation correctly\nexpresses j4 + 9 in terms of p and k ?",
+    "passage_text": "",
+    "options": [
+      "j k p 4 + 9 =",
+      "j kp 4 + 9 =",
+      "j k p 4 + 9 = −",
+      "j p k 4 + 9 ="
+    ],
+    "correct_answer": "A",
+    "correct_index": 0,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice A is correct. To express j\n4\n9\n+\nin terms of p  and k, the given equation\nmust be solved for j\n4\n9\n+ . Since it’s given that j  is a positive number, j\n4\n9\n+\nis not\nequal to zero. Therefore, multiplying both sides of the given equation by j\n4\n9\n+\nyields the equivalent equation p\nj\nk\n4\n9\n+\n=\n^\nh\n. Since it’s given that p  is a positive\nnumber, p  is not equal to zero. Therefore, dividing each side of the equation\np\nj\nk\n4\n9\n+\n=\n^\nh\nby p  yields the equivalent equation j\n4\n9\np\nk\n+\n= .\nChoice B is incorrect. This equation is equivalent to p\nk\nj\n4\n9\n=\n+ . Choice C is incorrect.\nThis equation is equivalent to p\nk\nj\n4\n9\n= -\n- . Choice D is incorrect. This equation is\nequivalent to p\nk\nj\n4\n9\n=\n+\n^\nh.",
     "has_figure": false
   },
   {
@@ -8821,17 +9151,27 @@
   },
   {
     "test_number": 8,
+    "question_number": 20,
+    "section": "math",
+    "module": 1,
+    "question_text": "y\nx\nx\n=\n−14 + 22",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "7",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "hard",
+    "explanation": "The correct answer is 7. When an equation is of the form y\nax\nbx\nc\n2\n=\n+\n+ , where a,\nb, and c  are constants, the value of y  reaches its minimum when x\na\nb\n2\n=-\n. Since\nthe given equation is of the form y\nax\nbx\nc\n2\n=\n+\n+ , it follows that a\n1\n= , b\n14\n=-\n, and\nc\n22\n=\n. Therefore, the value of y  reaches its minimum when x\n2 1\n14\n=- -\n^\n^ h\nh, or x\n7\n= .",
+    "has_figure": false
+  },
+  {
+    "test_number": 8,
     "question_number": 21,
     "section": "math",
     "module": 1,
-    "question_text": "A small business owner budgets $2,200 to purchase\ncandles. The owner must purchase a minimum of\n200 candles to maintain the discounted pricing. If the\nowner pays $4.90 per candle to purchase small\ncandles and $11.60 per candle to purchase large\ncandles, what is the maximum number of large\ncandles the owner can purchase to stay within the\nbudget and maintain the discounted pricing?\n22\ny\nx\ny\nx\n≤\n+ 7\n≥−2 −1\nWhich point x y\n( , ) is a solution to the given system\nof inequalities in the xy-plane?",
+    "question_text": "A small business owner budgets $2,200 to purchase\ncandles. The owner must purchase a minimum of\n200 candles to maintain the discounted pricing. If the\nowner pays $4.90 per candle to purchase small\ncandles and $11.60 per candle to purchase large\ncandles, what is the maximum number of large\ncandles the owner can purchase to stay within the\nbudget and maintain the discounted pricing?",
     "passage_text": "",
-    "options": [
-      "(−14, 0)",
-      "(0, −14)",
-      "(0, 14)",
-      "(14, 0) Unauthorized copying or reuse of any part of this page is illegal. 36 Module"
-    ],
+    "options": [],
     "correct_answer": "182",
     "correct_index": 0,
     "is_spr": true,
@@ -8841,10 +9181,30 @@
   },
   {
     "test_number": 8,
+    "question_number": 22,
+    "section": "math",
+    "module": 1,
+    "question_text": "y\nx\ny\nx\n≤\n+ 7\n≥−2 −1\nWhich point x y\n( , ) is a solution to the given system\nof inequalities in the xy-plane?",
+    "passage_text": "",
+    "options": [
+      "(−14, 0)",
+      "(0, −14)",
+      "(0, 14)",
+      "(14, 0) Unauthorized copying or reuse of any part of this page is illegal. 36 Module"
+    ],
+    "correct_answer": "D",
+    "correct_index": 3,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice D is correct. A point\n,x y\n^\nh  is a solution to a system of inequalities in the\nxy-plane if substituting the x-coordinate and the y-coordinate of the point for x\nand y, respectively, in each inequality makes both of the inequalities true.\nSubstituting the x-coordinate and the y-coordinate of choice D, 14  and 0, for x\nand y, respectively, in the first inequality in the given system, y\nx\n7\n# + , yields\n0\n14\n7\n#\n+ , or 0\n21\n#\n, which is true. Substituting 14  for x  and 0  for y  in the\nsecond inequality in the given system, y\nx\n2\n1\n$-\n- , yields 0\n2 14\n1\n$-\n-\n^\nh\n, or\n0\n29\n$-\n, which is true. Therefore, the point\n,\n14 0\n^\nh  is a solution to the given\nsystem of inequalities in the xy-plane.\n38\nChoice A is incorrect. Substituting 14\n-\nfor x  and 0  for y  in the inequality\ny\nx\n7\n# +\nyields 0\n14\n7\n#-\n+ , or 0\n7\n#- , which is not true. Choice B is incorrect.\nSubstituting 0  for x  and 14\n-\nfor y  in the inequality  y\nx\n2\n1\n$-\n-  yields\n14\n2 0\n1\n$\n-\n-\n-\n^ h\n, or  14\n1\n$\n-\n- , which is not true. Choice C is incorrect. Substituting\n0  for x  and 14  for y  in the inequality y\nx\n7\n# +\nyields 14\n0\n7\n#\n+ , or 14\n7\n# , which\nis not true.",
+    "has_figure": false
+  },
+  {
+    "test_number": 8,
     "question_number": 23,
     "section": "math",
     "module": 1,
-    "question_text": "Weight (pounds) Frequency\n13\n12\n14\n8\n15\n5\n16\n7\n17\n9\n18\n10\n19",
+    "question_text": "Weight (pounds) Frequency\n13\n12\n14\n8\n15\n5\n16\n7\n17",
     "passage_text": "",
     "options": [],
     "correct_answer": "B",
@@ -8852,6 +9212,26 @@
     "is_spr": false,
     "difficulty": "advanced",
     "explanation": "Choice B is correct. The mean of a data set is the sum of the values in the data set\ndivided by the number of values in the data set. The new data set consists of the\nweights of the 71 tortoises in the original data set and one additional weight, 39.\nSince the additional weight, 39, is greater than any of the values in the original\ndata set, the mean of the new data set is greater than the mean of the original\ndata set. If a data set contains an odd number of data values, the median is\nrepresented by the middle data value in the list when the data values are listed in\nascending or descending order. Since the original data set consists of the weights\nof 71 tortoises and is in ascending order, the median of the original data set is\nrepresented by the middle value, or the 36th value. Based on the frequencies\nshown in the table, the 36th value in this data set is 17. If a data set contains an\neven number of data values, the median is between the two middle data values\nwhen the values are listed in ascending or descending order. Since the new data\nset consists of the weights of 72  tortoises, the median of the new data set is\nbetween the 36th and 37th data values when the values are arranged in\nascending order. To keep the data in ascending order, the additional value of 39\nwould be placed at the bottom of the frequency table with a frequency of 1.\nTherefore, based on the frequencies in the table, the 36th and 37th values in the\nnew data set are both 17. It follows that the median of the new data set is 17,\nwhich is the same as the median of the original data set. Therefore, the mean of\nthe new data set is greater than the mean of the original data set, and the medians\nof the two data sets are equal.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice C is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.",
+    "has_figure": false
+  },
+  {
+    "test_number": 8,
+    "question_number": 24,
+    "section": "math",
+    "module": 1,
+    "question_text": "x\nx\na x\n−29 =\n−\n−29\n(\n)(\n)\nWhich of the following are solutions to the given\nequation, where a is a constant and a > 30 ?\nI. a\nII. a + 1\nIII. 29",
+    "passage_text": "",
+    "options": [
+      "I and II only",
+      "I and III only",
+      "II and III only",
+      "I, II, and III"
+    ],
+    "correct_answer": "C",
+    "correct_index": 2,
+    "is_spr": false,
+    "difficulty": "advanced",
+    "explanation": "Choice C is correct. Subtracting the expression  x\n29\n-\n^\nh  from both sides of the\ngiven equation yields\nx\na x\nx\n0\n29\n29\n=\n-\n-\n-\n-\n^\n^\n^\nh\nh\nh, which can be rewritten as\nx\na x\nx\n0\n29\n1\n29\n=\n-\n-\n+ -\n-\n^\n^\n^\n^\nh\nh\nh\nh. Since the two terms on the right-hand side\nof this equation have a common factor of x\n29\n-\n^\nh, it can be rewritten as\nx\nx\na\n0\n29\n1\n=\n-\n- + -\n^\n^\n^\nh\nhh, or\nx\nx\na\n0\n29\n1\n=\n-\n- -\n^\n^h\nh. Since  x\na\n1\n- -  is equivalent\nto x\na\n1\n-\n+\n^\nh, the equation\nx\nx\na\n0\n29\n1\n=\n-\n- -\n^\n^h\nh  can be rewritten as\nx\nx\na\n0\n29\n1\n=\n-\n-\n+\n^\n^\n^\nh\nhh. By the zero product property, it follows that  x\n29\n0\n-\n=\nor\nx\na\n1\n0\n-\n+\n=\n^\nh\n. Adding 29  to both sides of the equation  x\n29\n0\n-\n=\nyields x\n29\n=\n.\nAdding a\n1\n+  to both sides of the equation  x\na\n1\n0\n-\n+\n=\n^\nh\nyields x\na\n1\n= + . Therefore,\nthe two solutions to the given equation are 29  and a\n1\n+ . Thus, only a\n1\n+  and 29,\nnot a, are solutions to the given equation.\n39\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.",
     "has_figure": false
   },
   {
@@ -9024,7 +9404,7 @@
     "question_number": 8,
     "section": "math",
     "module": 2,
-    "question_text": "6 .,,,,,.~ \n~ ,,,, \n~v \n4 \n.,,, \n2 \nl/ \n,J' , \n33 \nl'?f' -8 \n-6 \n-4 \n-2 \nu",
+    "question_text": "6 .,,,,,.~ \n~ ,,,, \n~v",
     "passage_text": "",
     "options": [],
     "correct_answer": "B",
@@ -9042,10 +9422,10 @@
     "question_text": "A producer is creating a video with a length of\n70 minutes. The video will consist of segments that\nare 1 minute long and segments that are 3 minutes\nlong. Which equation represents this situation,\nwhere x represents the number of 1-minute\nsegments and y represents the number of 3-minute\nsegments?",
     "passage_text": "",
     "options": [
-      "xy 4 = 70",
-      "x y 4( + ) = 70",
-      "x y 3 + = 70",
-      "x y + 3 = 70 Unauthorized copying or reuse of any part of this page is illegal. 43 Module"
+      "xy",
+      "",
+      "",
+      ""
     ],
     "correct_answer": "D",
     "correct_index": 3,
@@ -9064,7 +9444,7 @@
     "options": [
       "−2, 0 ( )",
       "0, −2 ( )",
-      "0, 1 10      D)",
+      "0, 1",
       ""
     ],
     "correct_answer": "D",
@@ -9079,13 +9459,13 @@
     "question_number": 11,
     "section": "math",
     "module": 2,
-    "question_text": "12 ,\nwhere a > 0 ?",
+    "question_text": "y\nx\n= −3\nx\ny\n4 +\n= 15\nThe solution to the given system of equations\nis x y\n( , ). What is the value of x ?",
     "passage_text": "",
     "options": [
-      "a132 12",
-      "a132 144",
-      "a132 121",
-      "a132"
+      "1",
+      "5",
+      "15",
+      "45"
     ],
     "correct_answer": "C",
     "correct_index": 2,
@@ -9099,14 +9479,9 @@
     "question_number": 12,
     "section": "math",
     "module": 2,
-    "question_text": "In the right triangle shown, what is the value of\nA\nsin\n?",
+    "question_text": "In the right triangle shown, what is the value of\nA\nsin\n?\nA)",
     "passage_text": "",
-    "options": [
-      "1 171",
-      "35 171",
-      "171 35",
-      "171"
-    ],
+    "options": [],
     "correct_answer": "B",
     "correct_index": 1,
     "is_spr": false,
@@ -9155,13 +9530,33 @@
       "3",
       "7",
       "36",
-      "44 16 If x x 9 4 −3 + 2 = 8 4 −3 + 18 ( ) ( ) , what is the value of x 4 −3 ?"
+      "44"
     ],
     "correct_answer": "D",
     "correct_index": 3,
     "is_spr": false,
     "difficulty": "medium",
     "explanation": "Choice D is correct. It’s given that the bowl starts with 20  ounces of water and\nhas 9  ounces of water remaining after a period of time has passed. The amount of\nwater the bowl has lost during the time period can be found by subtracting the\nremaining amount of water from the amount of water the bowl starts with, which\nyields 20\n9\n-\nounces, or 11 ounces. This means the bowl loses 11 ounces of water\nduring that period of time. It’s given that the amount of water decreases by\n1 ounce every 4  days. Letting t  represent the number of days the bowl has been\nuncovered, it follows that\nt\n4\n1\n11\n=\n. Multiplying both sides of this equation by t\n4\nyields t\n44\n=\n. Therefore, the bowl has been uncovered for 44  days.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice C is incorrect. This is the value of t  for the equation\nt\n4\n1\n9\n= , not\nt\n4\n1\n11\n=\n.",
+    "has_figure": false
+  },
+  {
+    "test_number": 8,
+    "question_number": 16,
+    "section": "math",
+    "module": 2,
+    "question_text": "If\nx\nx\n9 4 −3\n+ 2 = 8 4 −3\n+ 18\n(\n)\n(\n)\n, what is the value\nof\nx\n4 −3\n?",
+    "passage_text": "",
+    "options": [
+      "−16",
+      "−4",
+      "4",
+      "16"
+    ],
+    "correct_answer": "D",
+    "correct_index": 3,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice D is correct. The value of\nx\n4\n3\n-\ncan be found by isolating this expression\nin the given equation. Subtracting 2  from both sides of the given equation yields\nx\nx\n9 4\n3\n8 4\n3\n16\n-\n=\n-\n+\n^\n^\nh\nh\n. Subtracting\nx\n8 4\n3\n-\n^\nh  from both sides of this equation\nyields\nx\nx\n9 4\n3\n8 4\n3\n16\n-\n-\n-\n=\n^\n^\nh\nh\n, which gives\nx\n1 4\n3\n16\n-\n=\n^\nh\n, or\nx\n4\n3\n16\n-\n=\n.\nTherefore, the value of\nx\n4\n3\n-\nis 16.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect. This is the value of x, not\nx\n4\n3\n-\n. Choice C is incorrect and\nmay result from conceptual or calculation errors.",
     "has_figure": false
   },
   {
@@ -9306,6 +9701,26 @@
   },
   {
     "test_number": 8,
+    "question_number": 25,
+    "section": "math",
+    "module": 2,
+    "question_text": "x\ny\n2 + 3\n= 7\nx\ny\n10 + 15\n= 35\nFor each real number r, which of the following\npoints lies on the graph of each equation in the\nxy-plane for the given system?",
+    "passage_text": "",
+    "options": [
+      "r r 5 + 7, −5 + 35    ",
+      "r r −3 2 + 7 2,     ",
+      "r r , 2 3 + 7",
+      ""
+    ],
+    "correct_answer": "B",
+    "correct_index": 1,
+    "is_spr": false,
+    "difficulty": "advanced",
+    "explanation": "Choice B is correct. The two given equations are equivalent because the second\nequation can be obtained from the first equation by multiplying each side of the\nequation by 5. Thus, the graphs of the equations are coincident, so if a point lies\non the graph of one of the equations, it also lies on the graph of the other\nequation. A point\n,x y\n^\nh  lies on the graph of an equation in the xy-plane if and only\n48\nif this point represents a solution to the equation. It is sufficient, therefore, to find\nthe point that represents a solution to the first given equation. Substituting the\nx- and y-coordinates of choice B,\nr\n2\n3\n2\n7\n-\n+\nand r, for x  and y, respectively, in the\nfirst equation yields\nr\n2\n3\n7\nr\n2\n3\n2\n7\n-\n+\n+\n=\nb\nl\n, which is equivalent to\nr\nr\n3\n7\n3\n7\n-\n+\n+\n= , or\n7\n7\n= . Therefore, the point\n, r\nr\n2\n3\n2\n7\n-\n+\n`\nj  represents a solution to the first equation\nand thus lies on the graph of each equation in the xy-plane for the given system.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice C is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.",
+    "has_figure": true
+  },
+  {
+    "test_number": 8,
     "question_number": 27,
     "section": "math",
     "module": 2,
@@ -9324,15 +9739,20 @@
     "question_number": 1,
     "section": "reading_writing",
     "module": 1,
-    "question_text": "- --------~ \n- --------~ DIRECTIONS",
-    "passage_text": "",
-    "options": [],
+    "question_text": "Which choice completes the text with the most\nlogical and precise word or phrase?",
+    "passage_text": "As Mexico’s first president from an Indigenous\ncommunity, Benito Juarez became one of the most\n______ figures in his country’s history: among the\nmany significant accomplishments of his long tenure\nin office (1858–1872), Juarez consolidated the\nauthority of the national government and advanced\nthe rights of Indigenous peoples.",
+    "options": [
+      "unpredictable",
+      "important",
+      "secretive",
+      "ordinary"
+    ],
     "correct_answer": "B",
     "correct_index": 1,
     "is_spr": false,
     "difficulty": "easy",
     "explanation": "Choice B is the best answer because it most logically completes the text’s\ndiscussion of Juarez. In this context, “important” means marked by significant\nwork or consequence. The text indicates that Juarez, who was the first president\nof Mexico from an Indigenous community, became a certain kind of figure in\nMexico’s history. It then supports that claim by describing some of the “many\nsignificant accomplishments” from Juarez’s long tenure in office. This context\nconveys that Juarez is a significant and consequential figure in Mexico’s history.\nChoice A is incorrect because the text focuses on Juarez’s role as the first\npresident of Mexico from an Indigenous community and on his many major\naccomplishments during his lengthy time in office; nothing in the text suggests\nthat Juarez was “unpredictable,” or tended to behave in ways that couldn’t be\npredicted. Choice C is incorrect because nothing in the text suggests that Juarez\nwas a particularly “secretive” figure, or that he tended to keep things private or\nhidden from others. Instead, the text focuses on things that are known about\nJuarez: that he was the first president of Mexico from an Indigenous community,\nthat he had a lengthy tenure, and that his many major accomplishments included\nconsolidating the national government’s authority and advancing Indigenous\nrights. Choice D is incorrect because the text focuses on the idea that Juarez,\nwho was the first president of Mexico from an Indigenous community, had many\nmajor accomplishments during his lengthy time in office. Rather than suggesting\nthat Juarez was an “ordinary,” or common and typical, figure in Mexico’s history,\nthis context conveys that Juarez was instead a notable figure.",
-    "has_figure": false
+    "has_figure": true
   },
   {
     "test_number": 8,
@@ -9972,6 +10392,21 @@
     "is_spr": false,
     "difficulty": "advanced",
     "explanation": "",
+    "has_figure": false
+  },
+  {
+    "test_number": 8,
+    "question_number": 1,
+    "section": "reading_writing",
+    "module": 2,
+    "question_text": "Art scholars have noted that some colors seem to be\nmoreblank\nviewers than others. For example,\npeople tend to find paintings featuring blues and\ngreens more appealing than paintings featuring\nyellows and oranges. \nWhich choice completes the text with the most\nlogical and precise word or phrase?\n• confusing for\n• attractive to\n• corrected by\n• similar to",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "B",
+    "correct_index": 1,
+    "is_spr": false,
+    "difficulty": "easy",
+    "explanation": "Choice B is the best answer because it best completes the text’s discussion of\nhow viewers respond to colors. The text presents something art scholars have\nnoted and gives the example of people tending to find paintings with blues and\ngreens more appealing than those with yellows and oranges. This context\nconveys that certain colors are more “attractive to” viewers than other colors are.\nChoice A is incorrect because the text indicates only that people tend to find\nsome colors more appealing than others and gives no indication that certain\ncolors are ever “confusing for,” or puzzling to, viewers. Choice C is incorrect\nbecause the text discusses the relative appeal of certain colors in paintings but\ngives no indication that any colors would ever be “corrected by” viewers, or\nsomehow fixed or improved by them. Choice D is incorrect because it wouldn’t\nmake much sense to say that some colors are more “similar to” viewers than\nothers, which would suggest that colors and viewers are alike to different\ndegrees. Further, the text primarily emphasizes a difference, not a similarity, in\nhow appealing paintings tend to be based on the colors they contain.",
     "has_figure": false
   },
   {
@@ -10619,14 +11054,9 @@
     "question_number": 5,
     "section": "math",
     "module": 1,
-    "question_text": "Which expression is equivalent to x\nx\n9\n+ 5\n2\n?",
+    "question_text": "Which expression is equivalent to x\nx",
     "passage_text": "",
-    "options": [
-      "x x (9 + 5)",
-      "x x 5 (9 + 1)",
-      "x x 9 ( + 5)",
-      "x x (9 + 5)"
-    ],
+    "options": [],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
@@ -10639,7 +11069,7 @@
     "question_number": 6,
     "section": "math",
     "module": 1,
-    "question_text": "Each value in the data set shown represents the\nheight, in centimeters, of a plant. \n6, 10, 13, 2, 15, 22, 10, 4, 4, 4\nWhat is the mean height, in centimeters, of these\nplants?\nUnauthorized copying or reuse of any part of this page is illegal.\n32\nModule \n1 \n.\n, _ _ \n____,",
+    "question_text": "Each value in the data set shown represents the\nheight, in centimeters, of a plant. \n6, 10, 13, 2, 15, 22, 10, 4, 4, 4\nWhat is the mean height, in centimeters, of these\nplants?\nUnauthorized copying or reuse of any part of this page is illegal.\n32\nModule",
     "passage_text": "",
     "options": [],
     "correct_answer": "9",
@@ -10689,19 +11119,34 @@
     "question_number": 9,
     "section": "math",
     "module": 1,
-    "question_text": "John paid a total of $165 for a microscope by making\na down payment of $37 plus p monthly payments of\n$16 each. Which of the following equations\nrepresents this situation?",
+    "question_text": "+ 5",
     "passage_text": "",
-    "options": [
-      "p 16 −37 = 165",
-      "p 37 −16 = 165",
-      "p 16 + 37 = 165",
-      "p 37 + 16 = 165 10 y px −57 = The given equation relates the positive numbers p, x, and y. Which equation correctly expresses y in terms of p and x ?"
-    ],
+    "options": [],
     "correct_answer": "C",
     "correct_index": 2,
     "is_spr": false,
     "difficulty": "medium",
     "explanation": "Choice C is correct. It’s given that John made a $16  payment each month for\np  months. The total amount of these payments can be represented by the\nexpression\np\n16 . The down payment can be added to that amount to find the total\namount John paid, yielding the expression\np\n16\n37\n+\n. It’s given that John paid a\ntotal of $165. Therefore, the expression for the total amount John paid can be set\nequal to that amount, yielding the equation\np\n16\n37\n165\n+\n=\n.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.",
+    "has_figure": false
+  },
+  {
+    "test_number": 9,
+    "question_number": 10,
+    "section": "math",
+    "module": 1,
+    "question_text": "y\npx\n−57 =\nThe given equation relates the positive numbers p, x,\nand y. Which equation correctly expresses y in terms\nof p and x ?",
+    "passage_text": "",
+    "options": [
+      "y x p = 57 +",
+      "y px = + 57",
+      "y px = 57",
+      "y px = 57 Unauthorized copying or reuse of any part of this page is illegal. 33 Module"
+    ],
+    "correct_answer": "B",
+    "correct_index": 1,
+    "is_spr": false,
+    "difficulty": "medium",
+    "explanation": "Choice B is correct. Adding 57  to each side of the given equation yields\ny\npx\n57\n=\n+\n. Therefore, the equation y\npx\n57\n=\n+\ncorrectly expresses y  in terms\nof p  and x.\nChoice A is incorrect and may result from conceptual errors. Choice C is incorrect\nand may result from conceptual errors. Choice D is incorrect and may result from\nconceptual errors.",
     "has_figure": false
   },
   {
@@ -10735,7 +11180,7 @@
       "π 24",
       "π 48",
       "π 72",
-      "π 96 13 y x x y = −2 3 + = 40 The solution to the given system of equations is x y , ( ). What is the value of x ?"
+      "π 96"
     ],
     "correct_answer": "B",
     "correct_index": 1,
@@ -10746,10 +11191,25 @@
   },
   {
     "test_number": 9,
+    "question_number": 13,
+    "section": "math",
+    "module": 1,
+    "question_text": "y\nx\nx\ny\n= −2\n3 +\n= 40\nThe solution to the given system of equations is\nx y\n,\n(\n). What is the value of x ?",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "40",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "medium",
+    "explanation": "The correct answer is 40. It’s given in the first equation of the system that\ny\nx\n2\n=-\n. Substituting\nx\n2\n-\nfor y  in the second equation of the system yields\nx\nx\n3\n2\n40\n+ -\n=\n^\nh\n. Combining like terms on the left-hand side of this equation\nyields x\n40\n=\n. Therefore, the value of x  is 40.",
+    "has_figure": false
+  },
+  {
+    "test_number": 9,
     "question_number": 14,
     "section": "math",
     "module": 1,
-    "question_text": "Data value Frequency\n6\n3\n7\n3\n8\n8\n9\n8\n10\n9\n11\n11\n12\n9\n13\n0",
+    "question_text": "Data value Frequency\n6\n3\n7\n3\n8\n8\n9\n8\n10\n9\n11",
     "passage_text": "",
     "options": [],
     "correct_answer": "14",
@@ -10784,14 +11244,39 @@
     "question_number": 16,
     "section": "math",
     "module": 1,
-    "question_text": "= 190",
+    "question_text": "= 30",
     "passage_text": "",
-    "options": [],
+    "options": [
+      "x",
+      "",
+      "",
+      ""
+    ],
     "correct_answer": "D",
     "correct_index": 3,
     "is_spr": false,
     "difficulty": "hard",
     "explanation": "Choice D is correct. It’s given that a wire with a length of 106  inches is cut into\ntwo parts. It’s also given that one part has a length of x  inches and the other part\nhas a length of y  inches. This can be represented by the equation x\ny\n106\n+ =\n. It’s\nalso given that the value of x  is 6  more than 4  times the value of y. This can be\nrepresented by the equation x\ny\n4\n6\n=\n+ . Substituting y\n4\n6\n+\nfor x  in the equation\nx\ny\n106\n+ =\nyields y\ny\n4\n6\n106\n+ + =\n, or y\n5\n6\n106\n+ =\n. Subtracting 6  from each side\nof this equation yields  y\n5\n100\n=\n. Dividing each side of this equation by 5  yields\ny\n20\n=\n. Substituting 20  for y  in the equation x\ny\n4\n6\n=\n+\nyields x\n4 20\n6\n=\n+\n^\nh\n, or\nx\n86\n=\n.\nChoice A is incorrect. This value represents less than half of the total length of\n106  inches; however, x  represents the length of the longer part of the wire, since\nit’s given that the value of x  is 6  more than 4  times the value of y. Choice B is\nincorrect. This value represents less than half of the total length of 106  inches;\nhowever, x  represents the length of the longer part of the wire, since it’s given\nthat the value of x  is 6  more than 4  times the value of y. Choice C is incorrect.\nThis represents a part that is 6  more than the length of the other part, rather than\n6  more than 4  times the length of the other part.",
+    "has_figure": false
+  },
+  {
+    "test_number": 9,
+    "question_number": 17,
+    "section": "math",
+    "module": 1,
+    "question_text": "f x\nx\nx\nx\n=\n+ 6\n+ 5\n−4\n( )\n(\n)(\n)(\n)\nThe function f is given. Which table of values\nrepresents y\nf x\n=\n−3\n( )\n?",
+    "passage_text": "",
+    "options": [
+      "x y negative 6 negative 9 negative 5 negative 8",
+      "",
+      "",
+      ""
+    ],
+    "correct_answer": "B",
+    "correct_index": 1,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice B is correct. It’s given that f x\nx\nx\nx\n6\n5\n4\n=\n+\n+\n-\n^\n^\n^\n^\nh\nh\nh\nh  and y\nf x\n3\n=\n-\n^ h\n.\nSubstituting  x\nx\nx\n6\n5\n4\n+\n+\n-\n^\n^\n^\nh\nh\nh  for f x\n^ h  in the equation y\nf x\n3\n=\n-\n^ h\nyields\ny\nx\nx\nx\n6\n5\n4\n3\n=\n+\n+\n-\n-\n^\n^\n^\nh\nh\nh\n. Substituting\n6\n-  for x  in this equation yields\ny\n6\n6\n6\n5\n6\n4\n3\n= - +\n- +\n- -\n-\n^\n^\n^\nh\nh\nh\n, or y\n3\n=- . Substituting\n5\n-  for x  in the\nequation y\nx\nx\nx\n6\n5\n4\n3\n=\n+\n+\n-\n-\n^\n^\n^\nh\nh\nh\nyields y\n5\n6\n5\n5\n5\n4\n3\n= - +\n- +\n- -\n-\n^\n^\n^\nh\nh\nh\n, or\ny\n3\n=- . Substituting 4  for x  in the equation y\nx\nx\nx\n6\n5\n4\n3\n=\n+\n+\n-\n-\n^\n^\n^\nh\nh\nh\nyields\ny\n4\n6 4\n5 4\n4\n3\n=\n+\n+\n-\n-\n^\n^\n^\nh\nh\nh\n, or y\n3\n=- . Therefore, when x\n6\n=-  then y\n3\n=- ,\nwhen x\n5\n=-  then y\n3\n=- , and when x\n4\n=\nthen y\n3\n=- . Thus, the table of values\nin choice B represents y\nf x\n3\n=\n-\n^ h\n.\n36\nChoice A is incorrect. This table represents y\nx\n3\n= -\nrather than y\nf x\n3\n=\n-\n^ h\n.\nChoice C is incorrect. This table represents y\nx\n3\n= +\nrather than y\nf x\n3\n=\n-\n^ h\n.\nChoice D is incorrect. This table represents y\nf x\n3\n=\n+\n^ h\nrather than y\nf x\n3\n=\n-\n^ h\n.",
     "has_figure": false
   },
   {
@@ -10811,6 +11296,26 @@
   },
   {
     "test_number": 9,
+    "question_number": 19,
+    "section": "math",
+    "module": 1,
+    "question_text": "x\ny\ny\nhy\nx\n4 −9\n= 9 + 5\n= 2 + 4\nIn the given system of equations, h is a constant. If\nthe system has no solution, what is the value of h ?",
+    "passage_text": "",
+    "options": [
+      "negative 9",
+      "0",
+      "9",
+      "18"
+    ],
+    "correct_answer": "D",
+    "correct_index": 3,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice D is correct. A system of two linear equations in two variables, x  and y,\nhas no solution if the lines represented by the equations in the xy-plane are\ndistinct and parallel. The graphs of two lines in the xy-plane represented by\nequations in the form Ax\nBy\nC\n+\n=\n, where A, B, and C  are constants, are parallel if\nthe coefficients for x  and y  in one equation are proportional to the\ncorresponding coefficients in the other equation. The first equation in the given\nsystem can be written in the form  Ax\nBy\nC\n+\n=\nby subtracting y\n9\nfrom both sides\nof the equation to yield x\ny\n4\n18\n5\n-\n= . The second equation in the given system\ncan be written in the form  Ax\nBy\nC\n+\n=\nby subtracting x\n4  from both sides of the\nequation to yield\nx\nhy\n4\n2\n-\n+\n= . The coefficient of x  in this second equation,\n4\n- ,\nis\n1\n-  times the coefficient of x  in the first equation, 4. For the lines to be parallel,\nthe coefficient of y  in the second equation, h, must also be\n1\n-  times the\ncoefficient of y  in the first equation,\n18\n-\n. Thus, h\n1\n18\n=-\n-\n^\nh, or h\n18\n=\n.\nTherefore, if the given system has no solution, the value of h  is 18.\nChoice A is incorrect. If the value of h  is\n9\n- , then the given system would have\none solution, rather than no solution. Choice B is incorrect. If the value of h  is 0,\nthen the given system would have one solution, rather than no solution. Choice C\nis incorrect. If the value of h  is 9, then the given system would have one solution,\nrather than no solution.",
+    "has_figure": false
+  },
+  {
+    "test_number": 9,
     "question_number": 20,
     "section": "math",
     "module": 1,
@@ -10822,6 +11327,21 @@
     "is_spr": true,
     "difficulty": "hard",
     "explanation": "The correct answer is 52. It’s given that 13  is %\np\nof 25. It follows that\np\n25\n13\n100\n=\n.\nMultiplying both sides of this equation by 100  gives\np\n52= . Therefore, the value\nof p  is 52.\n37",
+    "has_figure": false
+  },
+  {
+    "test_number": 9,
+    "question_number": 21,
+    "section": "math",
+    "module": 1,
+    "question_text": "x\nx\n( −2)\n=\n3 + 34",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "-3",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "hard",
+    "explanation": "The correct answer is\n3\n- . Squaring both sides of the given equation yields\nx\nx\n2\n3\n34\n2\n-\n=\n+\n^\nh\n, which can be rewritten as  x\nx\nx\n4\n4\n3\n34\n2-\n+ =\n+\n. Subtracting x\n3\nand 34  from both sides of this equation yields x\nx\n7\n30\n0\n2-\n-\n= . This quadratic\nequation can be rewritten as x\nx\n10\n3\n0\n-\n+\n=\n^\n^h\nh\n. According to the zero product\nproperty, x\nx\n10\n3\n-\n+\n^\n^h\nh  equals zero when either x\n10\n0\n-\n=\nor x\n3\n0\n+ = . Solving\neach of these equations for x  yields x\n10\n=\nor x\n3\n=- . Therefore, the given\nequation has two solutions, 10  and\n3\n- . Of these two solutions,\n3\n-  is the smallest\nsolution to the given equation.",
     "has_figure": false
   },
   {
@@ -10855,13 +11375,28 @@
       "Decreasing exponential",
       "Decreasing linear",
       "Increasing exponential",
-      "Increasing linear 24 f x x x = 4 + 64 + 262"
+      "Increasing linear"
     ],
     "correct_answer": "D",
     "correct_index": 3,
     "is_spr": false,
     "difficulty": "advanced",
     "explanation": "Choice D is correct. It’s given that for  x\n0\n> , f x\n^ h  is equal to\n%\n201\nof x. This is\nequivalent to f x\nx\n100\n201\n=\n^ h\n, or\n.\nf x\nx\n2 01\n=\n^ h\n, for x\n0\n> . This function indicates that as\nx  increases, f x\n^ h  also increases, which means f  is an increasing function.\nFurthermore, f x\n^ h  increases at a constant rate of .\n2 01 for each increase of x  by 1.\nA function with a constant rate of change is linear. Thus, the function f  can be\ndescribed as an increasing linear function.\nChoice A is incorrect and may result from conceptual errors. Choice B is incorrect\nand may result from conceptual errors. Choice C is incorrect. This could describe\nthe function\n.\nf x\n2 01 x\n=\n^\n^\nh\nh , where f x\n^ h  is equal to\n%\n201\nof f x\n1\n-\n^\nh, not x, for  x\n0\n> .",
+    "has_figure": false
+  },
+  {
+    "test_number": 9,
+    "question_number": 24,
+    "section": "math",
+    "module": 1,
+    "question_text": "f x\nx\nx\n= 4\n+ 64 + 262",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "A",
+    "correct_index": 0,
+    "is_spr": false,
+    "difficulty": "advanced",
+    "explanation": "Choice A is correct. It’s given that g x\nf x\n5\n=\n+\n^\n^\nh\nh. Since f x\nx\nx\n4\n64\n262\n2\n=\n+\n+\n^ h\n, it\nfollows that f x\nx\nx\n5\n4\n5\n64\n5\n262\n2\n+\n=\n+\n+\n+\n+\n^\n^\n^\nh\nh\nh\n. Expanding the quantity  x\n5 2\n+\n^\nh\nin this equation yields f x\nx\nx\nx\n5\n4\n10\n25\n64\n5\n262\n2\n+\n=\n+\n+\n+\n+\n+\n^\n^\n^\nh\nh\nh\n. Distributing\nthe 4  and the 64  yields f x\nx\nx\nx\n5\n4\n40\n100\n64\n320\n262\n2\n+\n=\n+\n+\n+\n+\n+\n^\nh\n. Combining\nlike terms yields f x\nx\nx\n5\n4\n104\n682\n2\n+\n=\n+\n+\n^\nh\n. Therefore, g x\nx\nx\n4\n104\n682\n2\n=\n+\n+\n^ h\n.\nFor a quadratic function defined by an equation of the form g x\na x\nh\nk\n2\n=\n-\n+\n^\n^\nh\nh\n,\nwhere a, h, and k  are constants and a  is positive, g x\n^ h  reaches its minimum, k,\n38\nwhen the value of x  is h. The equation g x\nx\nx\n4\n104\n682\n2\n=\n+\n+\n^ h\ncan be\nrewritten in this form by completing the square. This equation is equivalent to\ng x\nx\nx\n4\n26\n682\n2\n=\n+\n+\n^\n^\nh\nh\n, or g x\nx\nx\n4\n26\n169\n169\n682\n2\n=\n+\n+\n-\n+\n^\n^\nh\nh\n. This\nequation can be rewritten as g x\nx\n4\n13\n169\n682\n2\n=\n+\n-\n+\n^\n^^\nh\nh\nh\n, or\ng x\nx\n4\n13\n4 169\n682\n2\n=\n+\n-\n+\n^\n^\n^\nh\nh\nh\n, which is equivalent to g x\nx\n4\n13\n6\n2\n=\n+\n+\n^\n^\nh\nh\n.\nThis equation is in the form g x\na x\nh\nk\n2\n=\n-\n+\n^\n^\nh\nh\n, where a\n4\n= , h\n13\n=-\n, and k\n6\n= .\nTherefore, g x\n^ h  reaches its minimum when the value of x  is\n13\n-\n.\nChoice B is incorrect. This is the value of x  for which f x\n^ h, rather than g x\n^ h,\nreaches its minimum. Choice C is incorrect and may result from conceptual or\ncalculation errors. Choice D is incorrect. This is the value of x  for which f x\n5\n-\n^\nh,\nrather than f x\n5\n+\n^\nh, reaches its minimum.",
     "has_figure": false
   },
   {
@@ -10966,16 +11501,31 @@
   },
   {
     "test_number": 9,
+    "question_number": 4,
+    "section": "math",
+    "module": 2,
+    "question_text": "x",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "B",
+    "correct_index": 1,
+    "is_spr": false,
+    "difficulty": "easy",
+    "explanation": "Choice B is correct. Adding the second equation in the given system to the first\nequation in the given system yields x\nx\ny\n3\n3\n12\n6\n+ -\n+\n=\n+ -\n^\n^\nh\nh, which is\nequivalent to y\n6\n= .\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice C is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.",
+    "has_figure": false
+  },
+  {
+    "test_number": 9,
     "question_number": 5,
     "section": "math",
     "module": 2,
     "question_text": "A line in the xy-plane has a slope of 1\n9 and passes\nthrough the point (0, 14). Which equation represents\nthis line?",
     "passage_text": "",
     "options": [
-      "y x = −1 9 −14",
-      "y x = −1 9 + 14",
-      "y x = 1 9 −14",
-      "y x = 1"
+      "y x = −1",
+      "",
+      "",
+      ""
     ],
     "correct_answer": "D",
     "correct_index": 3,
@@ -10989,7 +11539,7 @@
     "question_number": 6,
     "section": "math",
     "module": 2,
-    "question_text": "In the figure shown, line c intersects parallel lines s\nand t. What is the value of x ?\n7\nf x\nx\n( ) =\n+ 8",
+    "question_text": "In the figure shown, line c intersects parallel lines s\nand t. What is the value of x ?",
     "passage_text": "",
     "options": [],
     "correct_answer": "70",
@@ -11004,14 +11554,9 @@
     "question_number": 7,
     "section": "math",
     "module": 2,
-    "question_text": "days after it was born.",
+    "question_text": "f x\nx\n( ) =\n+ 8",
     "passage_text": "",
-    "options": [
-      "The predicted body mass of the animal was approximately 330",
-      "",
-      "",
-      ""
-    ],
+    "options": [],
     "correct_answer": "1",
     "correct_index": 0,
     "is_spr": true,
@@ -11044,9 +11589,14 @@
     "question_number": 9,
     "section": "math",
     "module": 2,
-    "question_text": "+ 14",
+    "question_text": "−14",
     "passage_text": "",
-    "options": [],
+    "options": [
+      "y x = −1",
+      "",
+      "",
+      ""
+    ],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
@@ -11079,14 +11629,9 @@
     "question_number": 11,
     "section": "math",
     "module": 2,
-    "question_text": "28\nAt least\n40 years old\n18\n89\n107\nTotal\n35\n100\n135\nThe table summarizes members of a local\norganization by age and whether they live east or\nwest of the river. If a member of the organization is\nselected at random, what is the probability that the\nselected member is at least 40 years old?",
+    "question_text": "28\nAt least\n40 years old",
     "passage_text": "",
-    "options": [
-      "28 135",
-      "35 135",
-      "100 135",
-      "107 135 4 x 3 = 12 x y −3 + = −6 The solution to the given system of equations is x y ( , ). What is the value of y ?"
-    ],
+    "options": [],
     "correct_answer": "C",
     "correct_index": 2,
     "is_spr": false,
@@ -11112,6 +11657,21 @@
     "is_spr": false,
     "difficulty": "medium",
     "explanation": "Choice D is correct. It’s given that the function w  models the volume of liquid, in\nmilliliters, in a container t  seconds after it begins draining from a hole at the\nbottom. The given function w t\nt\n300\n4\n=\n-\n^ h\ncan be rewritten as w t\nt\n4\n300\n=-\n+\n^ h\n.\nThus, for each increase of t  by 1, the value of w t^ h  decreases by 4 1\n^ h, or 4.\nTherefore, the predicted volume, in milliliters, draining from the container each\nsecond is 4  milliliters.\nChoice A is incorrect. This is the amount of liquid, in milliliters, in the container\nbefore the liquid begins draining. Choice B is incorrect and may result from\nconceptual errors. Choice C is incorrect and may result from conceptual errors.",
+    "has_figure": false
+  },
+  {
+    "test_number": 9,
+    "question_number": 13,
+    "section": "math",
+    "module": 2,
+    "question_text": "h x\nx\nb\n=\n+\n( )\nFor the linear function h, b is a constant and\nh 0 = 45\n( )\n. What is the value of b ?",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "45",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "medium",
+    "explanation": "The correct answer is 45. It’s given that h 0\n45\n=\n^ h\n. Therefore, for the given\nfunction h, when x\n0\n= , h x\n45\n=\n^ h\n. Substituting 0  for x  and 45  for h x\n^ h  in the\ngiven function, h x\nx\nb\n= +\n^ h\n, yields\nb\n45\n0\n= + , or\nb\n45= . Therefore, the value of b\nis 45.",
     "has_figure": false
   },
   {
@@ -11191,6 +11751,26 @@
   },
   {
     "test_number": 9,
+    "question_number": 18,
+    "section": "math",
+    "module": 2,
+    "question_text": "89\n107\nTotal\n35\n100\n135\nThe table summarizes members of a local\norganization by age and whether they live east or\nwest of the river. If a member of the organization is\nselected at random, what is the probability that the\nselected member is at least 40 years old?",
+    "passage_text": "",
+    "options": [
+      "28 135",
+      "35 135",
+      "100 135",
+      "107 135"
+    ],
+    "correct_answer": "B",
+    "correct_index": 1,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice B is correct. In the statement “m 330\n^\nh  is approximately equal to 362,” the\ninput of the function, 330, is the value of t, the elapsed time, in days, since the\nanimal was born. The approximate value of the function, 362, is the predicted\nbody mass, in kilograms, of the animal after that time has elapsed. Therefore, the\npredicted body mass of the animal was approximately 362 kg  330  days after it\nwas born.\nChoice A is incorrect. This would be the best interpretation of the statement\n“m 362\n^\nh  is approximately equal to 330.” Choice C is incorrect. The number\n7\n330  is\nthe number of weeks, not the number of days, after the animal was born. Choice D\nis incorrect. This would be the best interpretation of the statement “m 362\n^\nh  is\napproximately equal to\n7\n330.”",
+    "has_figure": false
+  },
+  {
+    "test_number": 9,
     "question_number": 19,
     "section": "math",
     "module": 2,
@@ -11245,7 +11825,7 @@
       "x y 3 21 5 47 8 86",
       "x y 3 26 5 42 8 86",
       "x y 3 16 5 42 8 81",
-      "x y 3 26 5 52"
+      "x y"
     ],
     "correct_answer": "D",
     "correct_index": 3,
@@ -11294,14 +11874,9 @@
     "question_number": 25,
     "section": "math",
     "module": 2,
-    "question_text": "Which expression is equivalent\nto y\nx\ny x\nx y\nxy\n+ 12\n−8 +\n( −8)\n−8\n2\n?",
+    "question_text": "Which expression is equivalent\nto y\nx\ny x\nx y\nxy\n+ 12\n−8 +\n( −8)\n−8",
     "passage_text": "",
-    "options": [
-      "xy y x y x y xy + + 4 −16 + 64 3 2",
-      "xy y x y xy x + 9 + 12 −8 + −8 2",
-      "xy xy y x y xy + 13 −8 −8 2 2",
-      "xy xy y x y x y xy + 13 −8 −16 + 64"
-    ],
+    "options": [],
     "correct_answer": "C",
     "correct_index": 2,
     "is_spr": false,
@@ -11369,7 +11944,7 @@
     "question_number": 2,
     "section": "reading_writing",
     "module": 1,
-    "question_text": ".\n, ________ \n____, \nOne challenge of generating electricity from ocean \nwaves is that wave power isn’t ______\nit varies in \nunpredictable ways that pose technological and \nplanning problems for electricity generation. \nWhich choice completes the text with the most \nlogical and precise word or phrase?",
+    "question_text": ".\n,",
     "passage_text": "",
     "options": [],
     "correct_answer": "D",
@@ -11390,7 +11965,7 @@
       "delegate",
       "compose",
       "interpret",
-      "renounce Unauthorized copying or reuse of any part of this page is illegal. 2 . ,"
+      "renounce Unauthorized copying or reuse of any part of this page is illegal."
     ],
     "correct_answer": "C",
     "correct_index": 2,
@@ -12634,13 +13209,13 @@
     "question_number": 4,
     "section": "math",
     "module": 1,
-    "question_text": "1.94\nThe table shows the exponential relationship\nbetween the number of years, x, since Hana started\ntraining in pole vault, and the estimated height h x\n( ),\nin meters, of her best pole vault for that year. Which\nof the following functions best represents this\nrelationship, where x ≤4 ?",
+    "question_text": "",
     "passage_text": "",
     "options": [
-      "h x = 1.12 0.23 x ( ) ( )",
-      "h x = 1.12 1.23 x ( ) ( )",
-      "h x = 1.23 0.12 x ( ) ( )",
-      "h x = 1.23 1.12 x ( ) ( )"
+      "2",
+      "",
+      "",
+      ""
     ],
     "correct_answer": "A",
     "correct_index": 0,
@@ -12704,7 +13279,7 @@
     "question_number": 8,
     "section": "math",
     "module": 1,
-    "question_text": "The table gives the distribution of votes for a new\nschool mascot and grade level for 80 students.\nGrade level\nMascot\nSixth Seventh Eighth Total\nBadger\n 4\n 9\n 9\n22\nLion\n 9",
+    "question_text": "The table gives the distribution of votes for a new\nschool mascot and grade level for 80 students.\nGrade level\nMascot\nSixth Seventh Eighth Total\nBadger",
     "passage_text": "",
     "options": [],
     "correct_answer": "C",
@@ -12719,14 +13294,9 @@
     "question_number": 9,
     "section": "math",
     "module": 1,
-    "question_text": "Triangles ABC and DEF are congruent, where A\ncorresponds to D, and B and E are right angles. The\nmeasure of angle A is 18°. What is the measure of\nangle F ?",
+    "question_text": "B)",
     "passage_text": "",
-    "options": [
-      "18°",
-      "72°",
-      "90°",
-      "162° Unauthorized copying or reuse of any part of this page is illegal. 36 Module"
-    ],
+    "options": [],
     "correct_answer": "B",
     "correct_index": 1,
     "is_spr": false,
@@ -12739,14 +13309,9 @@
     "question_number": 10,
     "section": "math",
     "module": 1,
-    "question_text": "If x\n4 + 2 = 12, what is the value of\nx\n16 + 8 ?",
+    "question_text": "X \n\\ \nI \n6 -4 -2 \nL1",
     "passage_text": "",
-    "options": [
-      "40",
-      "48",
-      "56",
-      "60"
-    ],
+    "options": [],
     "correct_answer": "B",
     "correct_index": 1,
     "is_spr": false,
@@ -12785,7 +13350,7 @@
       "Decreasing exponential",
       "Decreasing linear",
       "Increasing exponential",
-      "Increasing linear 13 x y x y 3 + 6 = 4 3 + 4 = 2 The solution to the given system of equations is x y , ( ). What is the value of y ?"
+      "Increasing linear"
     ],
     "correct_answer": "B",
     "correct_index": 1,
@@ -12796,10 +13361,25 @@
   },
   {
     "test_number": 10,
+    "question_number": 13,
+    "section": "math",
+    "module": 1,
+    "question_text": "x\ny\nx\ny\n3 + 6 = 4\n3 + 4 = 2\nThe solution to the given system of equations is\nx y\n,\n(\n). What is the value of y ?",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "1",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "medium",
+    "explanation": "The correct answer is 1. Subtracting the second equation from the first equation\nin the given system of equations yields\nx\nx\ny\ny\n3\n3\n6\n4\n4\n2\n-\n+\n-\n=\n-\n^\n^\nh\nh\n, which is\nequivalent to\ny\n0\n2\n2\n+ =\n, or\ny\n2\n2\n=\n. Dividing each side of this equation by 2  yields\ny\n1= .",
+    "has_figure": false
+  },
+  {
+    "test_number": 10,
     "question_number": 14,
     "section": "math",
     "module": 1,
-    "question_text": "The function f is defined by\nf x\nx\nx\nx\n( ) = ( −6)( −2)( + 6). In the xy-plane, the\ngraph of y\ng x\n=\n( ) is the result of translating the\ngraph of y\nf x\n= ( ) up 4 units. What is the value\nof g(0) ?",
+    "question_text": "'",
     "passage_text": "",
     "options": [],
     "correct_answer": "76",
@@ -12807,7 +13387,7 @@
     "is_spr": true,
     "difficulty": "medium",
     "explanation": "The correct answer is 76. It’s given that the graph of y\ng x\n= ^ h  is the result of\ntranslating the graph of y\nf x\n= ^ h  up 4  units in the xy-plane. It follows that the\ngraph of y\ng x\n= ^ h  is the same as the graph of y\nf x\n4\n=\n+\n^ h\n. Substituting g x\n^ h\nfor y  in the equation y\nf x\n4\n=\n+\n^ h\nyields g x\nf x\n4\n=\n+\n^\n^\nh\nh\n. It’s given that\nf x\nx\nx\nx\n6\n2\n6\n=\n-\n-\n+\n^\n^\n^\n^\nh\nh\nh\nh. Substituting x\nx\nx\n6\n2\n6\n-\n-\n+\n^\n^\n^\nh\nh\nh  for f x\n^ h  in the\nequation g x\nf x\n4\n=\n+\n^\n^\nh\nh\nyields g x\nx\nx\nx\n6\n2\n6\n4\n=\n-\n-\n+\n+\n^\n^\n^\n^\nh\nh\nh\nh\n. Substituting 0  for\nx  in this equation yields g 0\n0\n6 0\n2 0\n6\n4\n=\n-\n-\n+\n+\n^\n^\n^\n^\nh\nh\nh\nh\n, or g 0\n76\n=\n^ h\n. Thus, the\nvalue of g 0\n^ h  is 76.",
-    "has_figure": true
+    "has_figure": false
   },
   {
     "test_number": 10,
@@ -12834,8 +13414,8 @@
     "options": [
       "y = 1 2 44,000 t ( )",
       "y = 2 44,000 t ( )",
-      "y = 44,000 1 2 t     ",
-      "y = 44,000 2 t ( )"
+      "y = 44,000 1",
+      ""
     ],
     "correct_answer": "D",
     "correct_index": 3,
@@ -12849,7 +13429,7 @@
     "question_number": 17,
     "section": "math",
     "module": 1,
-    "question_text": "x\nh left parenthesis x right parenthesis\n0\n1.23\n2\n1.54",
+    "question_text": "x\nh left parenthesis x right parenthesis\n0\n1.23",
     "passage_text": "",
     "options": [],
     "correct_answer": "D",
@@ -12890,7 +13470,7 @@
       "x 3 y 17 5 27 7 37",
       "x y 3 17 5 35 7 37",
       "x y 3 25 5 35 7 45",
-      "x 3 y 21 5 31"
+      "x"
     ],
     "correct_answer": "A",
     "correct_index": 0,
@@ -12904,7 +13484,7 @@
     "question_number": 20,
     "section": "math",
     "module": 1,
-    "question_text": "Longhorn\n 4\n 6\n 4\n14\nTiger\n 6\n 9\n 9\n24\nTotal\n23",
+    "question_text": "Longhorn",
     "passage_text": "",
     "options": [],
     "correct_answer": "35",
@@ -12934,14 +13514,9 @@
     "question_number": 22,
     "section": "math",
     "module": 1,
-    "question_text": "The floor of a ballroom has an area of 600 square\nmeters. An architect creates a scale model of the floor\nof the ballroom, where the length of each side of the\nmodel is 1\n10 times the length of the corresponding\nside of the actual floor of the ballroom. What is the\narea, in square meters, of the scale model?",
+    "question_text": "Lion",
     "passage_text": "",
-    "options": [
-      "6",
-      "10",
-      "60",
-      "150"
-    ],
+    "options": [],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
@@ -12957,9 +13532,9 @@
     "question_text": "Which of the following equations represents a circle\nin the xy-plane that intersects the y-axis at exactly\none point?",
     "passage_text": "",
     "options": [
-      "x y ( −8) + ( −8) = 16 2 2",
-      "x y ( −8) + ( −4) = 16 2 2",
-      "x y ( −4) + ( −9) = 16 2",
+      "x y ( −8) + ( −8) = 16",
+      "",
+      "",
       ""
     ],
     "correct_answer": "C",
@@ -12974,14 +13549,9 @@
     "question_number": 24,
     "section": "math",
     "module": 1,
-    "question_text": "In triangles ABC and DEF, angles B and E each\nhave measure 27° and angles C and F each have\nmeasure 41°. Which additional piece of information\nis sufficient to determine whether triangle ABC is\ncongruent to triangle DEF ?",
+    "question_text": "Total",
     "passage_text": "",
-    "options": [
-      "The measure of angle A",
-      "The length of side AB",
-      "The lengths of sides BC and EF",
-      "No additional information is necessary."
-    ],
+    "options": [],
     "correct_answer": "C",
     "correct_index": 2,
     "is_spr": false,
@@ -13017,10 +13587,10 @@
     "question_text": "31\n80\nIf one of these students is selected at random, what is\nthe probability of selecting a student whose vote for\nnew mascot was for a lion?",
     "passage_text": "",
     "options": [
-      "1 9",
-      "1 5",
-      "1 4",
-      "2"
+      "1",
+      "",
+      "",
+      ""
     ],
     "correct_answer": "A",
     "correct_index": 0,
@@ -13094,14 +13664,9 @@
     "question_number": 4,
     "section": "math",
     "module": 2,
-    "question_text": "What is the perimeter, in inches, of a rectangle with a\nlength of 4 inches and a width of 9 inches?",
+    "question_text": "I",
     "passage_text": "",
-    "options": [
-      "13",
-      "17",
-      "22",
-      "26 5 m n p 7 = 2 + ( ) The given equation relates the positive numbers m, n, and p. Which equation correctly gives m in terms of n and p ?"
-    ],
+    "options": [],
     "correct_answer": "D",
     "correct_index": 3,
     "is_spr": false,
@@ -13114,14 +13679,9 @@
     "question_number": 5,
     "section": "math",
     "module": 2,
-    "question_text": "in this context?",
+    "question_text": "m\nn\np",
     "passage_text": "",
-    "options": [
-      "The number of large jars Keenan filled",
-      "The number of small jars Keenan filled",
-      "The total number of cups of vegetable broth in the large jars",
-      "The total number of cups of vegetable broth in the small jars"
-    ],
+    "options": [],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
@@ -13134,7 +13694,7 @@
     "question_number": 6,
     "section": "math",
     "module": 2,
-    "question_text": "73, 74, 75, 77, 79, 82, 84, 85, 91\nWhat is the median of the data shown?",
+    "question_text": "I",
     "passage_text": "",
     "options": [],
     "correct_answer": "79",
@@ -13149,9 +13709,14 @@
     "question_number": 7,
     "section": "math",
     "module": 2,
-    "question_text": "The function f is defined by f x\nx\n( ) = 4 . For what\nvalue of x does f x\n( ) = 8 ?",
+    "question_text": "= 2\n+\n(\n)\nThe given equation relates the positive numbers m,\nn, and p. Which equation correctly gives m in terms\nof n and p ?",
     "passage_text": "",
-    "options": [],
+    "options": [
+      "m n p = 2( + )",
+      "",
+      "",
+      ""
+    ],
     "correct_answer": "2",
     "correct_index": 0,
     "is_spr": true,
@@ -13201,6 +13766,21 @@
   },
   {
     "test_number": 10,
+    "question_number": 10,
+    "section": "math",
+    "module": 2,
+    "question_text": "y\ny\nx\n= 76\n=\n−5",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "B",
+    "correct_index": 1,
+    "is_spr": false,
+    "difficulty": "medium",
+    "explanation": "Choice B is correct. Since the point\n,x y\n^\nh  is an intersection point of the graphs of\nthe given equations in the xy-plane, the pair\n,x y\n^\nh  should satisfy both equations,\nand thus is a solution of the given system. According to the first equation, y\n76\n=\n.\nSubstituting 76  in place of y  in the second equation yields x\n5\n76\n2- =\n. Adding 5\nto both sides of this equation yields x\n81\n2=\n. Taking the square root of both sides\nof this equation yields two solutions: x\n9\n=\nand x\n9\n=- . Of these two solutions,\nonly\n9\n-  is given as a choice.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice C is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect. This is the value of coordinate y, rather than x, of the\nintersection point\n,x y\n^\nh.",
+    "has_figure": false
+  },
+  {
+    "test_number": 10,
     "question_number": 11,
     "section": "math",
     "module": 2,
@@ -13210,13 +13790,33 @@
       "29 28",
       "1",
       "28 29",
-      "0 12 x x 66 = 66 How many solutions does the given equation have?"
+      "0"
     ],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
     "difficulty": "medium",
     "explanation": "Choice A is correct. It’s given that each side of equilateral triangle S is multiplied\nby a scale factor of k  to create equilateral triangle T. Since the length of each side\nof triangle T is greater than the length of each side of triangle S, the scale factor\nof k  must be greater than 1. Of the given choices, only 28\n29  is greater than 1.\nChoice B is incorrect. If each side of equilateral triangle S is multiplied by a scale\nfactor of 1, the length of each side of triangle T would be equal to the length of\neach side of triangle S. Choice C is incorrect. If each side of equilateral triangle S\nis multiplied by a scale factor of 29\n28, the length of each side of triangle T would be\nless than the length of each side of triangle S. Choice D is incorrect and may\nresult from conceptual or calculation errors.\n43",
+    "has_figure": false
+  },
+  {
+    "test_number": 10,
+    "question_number": 12,
+    "section": "math",
+    "module": 2,
+    "question_text": "x\nx\n66\n= 66\nHow many solutions does the given equation have?",
+    "passage_text": "",
+    "options": [
+      "Exactly one",
+      "Exactly two",
+      "Infinitely many",
+      "Zero"
+    ],
+    "correct_answer": "C",
+    "correct_index": 2,
+    "is_spr": false,
+    "difficulty": "medium",
+    "explanation": "Choice C is correct. If the two sides of a linear equation are equivalent, then the\nequation is true for any value. If an equation is true for any value, it has infinitely\nmany solutions. Since the two sides of the given linear equation\nx\nx\n66\n66\n=\nare\nequivalent, the given equation has infinitely many solutions.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.",
     "has_figure": false
   },
   {
@@ -13292,9 +13892,9 @@
     "question_text": "Which expression is equivalent to\nx x\nx\nx\n8 ( −7) −3( −7)\n2 −14\n, where x > 7 ?",
     "passage_text": "",
     "options": [
-      "x −7 5",
-      "x 8 −3 2",
-      "x x x",
+      "x −7",
+      "",
+      "",
       ""
     ],
     "correct_answer": "B",
@@ -13400,13 +14000,28 @@
       "f x ( ) = 50(1.6)x+1",
       "f x ( ) = 80(1.6)x",
       "f x ( ) = 128(1.6)x−1",
-      "f x ( ) = 204.8(1.6)x−2 24 x x c −9 + 30 + = 0"
+      "f x ( ) = 204.8(1.6)x−2"
     ],
     "correct_answer": "C",
     "correct_index": 2,
     "is_spr": false,
     "difficulty": "advanced",
     "explanation": "Choice C is correct. For the form of the function in choice C,\n.\nf x\n128 1 6 x\n1\n=\n-\n^\n^\nh\nh\n,\nthe value of f 1\n^ h  can be found as\n.\n128 1 6 1\n1\n-\n^\nh\n, which is equivalent to\n.\n128 1 6 0\n^\nh , or\n128. Therefore, k\n128\n=\n, which is shown in\n.\nf x\n128 1 6 x\n1\n=\n-\n^\n^\nh\nh\nas the coefficient.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.\n46",
+    "has_figure": false
+  },
+  {
+    "test_number": 10,
+    "question_number": 24,
+    "section": "math",
+    "module": 2,
+    "question_text": "x\nx\nc\n−9\n+ 30 +\n= 0",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "C",
+    "correct_index": 2,
+    "is_spr": false,
+    "difficulty": "advanced",
+    "explanation": "Choice C is correct. It’s given that the equation\nx\nx\nc\n9\n30\n0\n2\n-\n+\n+ =\nhas exactly\none solution. A quadratic equation of the form ax\nbx\nc\n0\n2+\n+ =\nhas exactly one\nsolution if and only if its discriminant,\nac\nb\n4\n2\n-\n+\n, is equal to zero. It follows that for\nthe given equation, a\n9\n=-  and b\n30\n=\n. Substituting\n9\n-  for a  and 30  for b  into\nb\nac\n4\n2-\nyields\nc\n30\n4\n9\n2-\n-\n^\n^h\nh, or\nc\n900\n36\n+\n. Since the discriminant must equal\nzero,\nc\n900\n36\n0\n+\n= . Subtracting\nc\n36  from both sides of this equation yields\nc\n900\n36\n=-\n. Dividing each side of this equation by\n36\n-\nyields\nc\n25\n-\n= .\nTherefore, the value of c  is\n25\n-\n.\nChoice A is incorrect. If the value of c  is 3, this would yield a discriminant that is\ngreater than zero. Therefore, the given equation would have two solutions, rather\nthan exactly one solution. Choice B is incorrect. If the value of c  is 0, this would\nyield a discriminant that is greater than zero. Therefore, the given equation would\nhave two solutions, rather than exactly one solution. Choice D is incorrect. If the\nvalue of c  is\n53\n-\n, this would yield a discriminant that is less than zero. Therefore,\nthe given equation would have no real solutions, rather than exactly one solution.",
     "has_figure": false
   },
   {
@@ -13469,9 +14084,14 @@
     "question_number": 1,
     "section": "reading_writing",
     "module": 1,
-    "question_text": "- --------~ \n- --------~ DIRECTIONS",
-    "passage_text": "",
-    "options": [],
+    "question_text": "Which choice completes the text with the most\nlogical and precise word or phrase?",
+    "passage_text": "The general store was essential to daily life in the\nrural United States during the 1800s because it\nprovided the supplies that the people living in nearby\ncommunities needed. Also, the store was a _______\nof information. People socializing at the general store\nwould share news and help spread it throughout\ntheir communities.",
+    "options": [
+      "source",
+      "rival",
+      "condition",
+      "waste"
+    ],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
@@ -13790,7 +14410,7 @@
       "DptA confers defense against A. sicerae regardless of the presence of DptB.",
       "DptB protects against only one bacteria species, whereas DptA protects against multiple species.",
       "DptB may have developed as a specific defense against A. sicerae.",
-      "defense against A. sicerae is strongest when both DptA and DptB are present. Unauthorized copying or reuse of any part of this page is illegal. 9 - -- 110 100 1 90 ~ 80 ~ 70 Q) 60 ..... Cl$ 50 '\"' ~ 40 > .E 30 ;:I 20 en"
+      "defense against A. sicerae is strongest when both DptA and DptB are present. Unauthorized copying or reuse of any part of this page is illegal."
     ],
     "correct_answer": "C",
     "correct_index": 2,
@@ -13844,14 +14464,9 @@
     "question_number": 20,
     "section": "reading_writing",
     "module": 1,
-    "question_text": "Which choice completes the text so that it conforms\nto the conventions of Standard English?",
-    "passage_text": "The Alvarez theory, developed in 1980 by physicist\nLuis Walter Alvarez and his geologist son Walter\nAlvarez, maintained that the secondary effects of an\nasteroid impact caused many dinosaurs and other\nanimals to die ______\nit left unexplored the\nquestion of whether unrelated volcanic activity might\nhave also contributed to the mass extinctions.",
-    "options": [
-      "out but",
-      "out, but",
-      "out",
-      "out, Unauthorized copying or reuse of any part of this page is illegal."
-    ],
+    "question_text": "en",
+    "passage_text": "",
+    "options": [],
     "correct_answer": "B",
     "correct_index": 1,
     "is_spr": false,
@@ -14044,14 +14659,9 @@
     "question_number": 30,
     "section": "reading_writing",
     "module": 1,
-    "question_text": "Which choice completes the text with the most\nlogical transition?",
-    "passage_text": "If the formation of Earth’s mantle had been purely a\nproduct of core differentiation—whereby heavier\nelements sink toward the core and lighter elements\nrise—the upper mantle would be depleted of heavy\nsiderophile elements. Siderophiles are much more\nabundant in the mantle than predicted in that model,\nhowever. ______\nextraterrestrial material\ncontaining siderophiles, likely from asteroid or\ncomet impacts, almost certainly accreted to Earth\nfollowing core differentiation.",
-    "options": [
-      "That said,",
-      "Hence,",
-      "For example,",
-      "Likewise,"
-    ],
+    "question_text": ";:I",
+    "passage_text": "",
+    "options": [],
     "correct_answer": "B",
     "correct_index": 1,
     "is_spr": false,
@@ -14117,6 +14727,26 @@
     "is_spr": false,
     "difficulty": "advanced",
     "explanation": "",
+    "has_figure": false
+  },
+  {
+    "test_number": 10,
+    "question_number": 1,
+    "section": "reading_writing",
+    "module": 2,
+    "question_text": "Which choice completes the text with the most\nlogical and precise word or phrase?",
+    "passage_text": "In the early 1800s, the Cherokee scholar Sequoyah\ncreated the first script, or writing system, for an\nIndigenous language in the United States. Because it\nrepresented the sounds of spoken Cherokee so\naccurately, his script was easy to learn and thus\nquickly achieved ______\nuse: by 1830, over\n90 percent of the Cherokee people could read and\nwrite it.",
+    "options": [
+      "widespread",
+      "careful",
+      "unintended",
+      "infrequent"
+    ],
+    "correct_answer": "A",
+    "correct_index": 0,
+    "is_spr": false,
+    "difficulty": "easy",
+    "explanation": "Choice A is the best answer because it most logically completes the text’s\ndiscussion of the writing system created by Sequoyah. In this context,\n“widespread” means widely accepted or practiced. The text indicates that\nbecause Sequoyah’s script accurately represented the spoken sounds of the\nCherokee language and was easy to learn, nearly all Cherokee people were able to\nread and write it soon after it was created. This context demonstrates that the\nscript was widely used by the Cherokee people.\nChoice B is incorrect. In this context, “careful” would mean exercised with care\nand attentive concern. Although the work of creating a writing system likely\ninvolved great care, the text indicates that the system was “easy to learn,” which\nconflicts with the idea that using this system requires a noteworthy amount of\ncare. Choice C is incorrect because in this context “unintended” means not\ndeliberate. The idea that using Sequoyah’s script was unintentional conflicts\ndirectly with the claim that it was easy to learn and used by “over 90% of the\nCherokee people” by 1830. In fact, because one had to learn this system, it’s not\nclear how one could use it unintentionally. Choice D is incorrect because in this\ncontext “infrequent” means rare or not occurring often, which conflicts directly\nwith the claim that “over 90% of the Cherokee people” were using Sequoyah’s\nscript by 1830.",
     "has_figure": false
   },
   {
@@ -14324,7 +14954,7 @@
     "question_number": 12,
     "section": "reading_writing",
     "module": 2,
-    "question_text": "Number and Origin of Clamshell Tools Found at Different\nLevels Below the Surface in Neanderthal Cave\nDepth of tools found below Clamshells that Neanderthals Clamshells that Neanderthals\nsurface in cave (meters)\ncollected from the beach\nharvested from the seafloor\n3–4\n99\n33\n6–7\n1\n0\n4–5\n2\n0\n2–3\n7\n0\n5–6",
+    "question_text": "Number and Origin of Clamshell Tools Found at Different\nLevels Below the Surface in Neanderthal Cave\nDepth of tools found below Clamshells that Neanderthals Clamshells that Neanderthals\nsurface in cave (meters)\ncollected from the beach\nharvested from the seafloor\n3–4\n99",
     "passage_text": "",
     "options": [],
     "correct_answer": "A",
@@ -14359,7 +14989,7 @@
     "question_number": 14,
     "section": "reading_writing",
     "module": 2,
-    "question_text": "Employment by Sector in France and the United States, 1800–2012\n(% of total employment)\nAgriculture Manufacturing\nServices\nAgriculture Manufacturing Services\nYear\nin France\nin France\nin France\nin US\nin US\nin US\n1800\n64\n22\n14\n68\n18\n13\n1900\n43\n29\n28\n41\n28\n31\n1950\n32\n33\n35\n14\n33\n53\n2012\n3\n21\n76",
+    "question_text": "Employment by Sector in France and the United States, 1800–2012\n(% of total employment)\nAgriculture Manufacturing\nServices\nAgriculture Manufacturing Services\nYear\nin France\nin France\nin France\nin US\nin US\nin US\n1800\n64",
     "passage_text": "",
     "options": [],
     "correct_answer": "A",
@@ -14484,7 +15114,7 @@
     "question_number": 22,
     "section": "reading_writing",
     "module": 2,
-    "question_text": "- --\nPower Conversion Efficiency of \nLowest and Highest Performing \nSpin-coated and Spray-coated \nElectron Transport Layers \n18~-------------\n16--i---------, \n14 \n12 \n10",
+    "question_text": "- --\nPower Conversion Efficiency of \nLowest and Highest Performing \nSpin-coated and Spray-coated \nElectron Transport Layers \n18~-------------\n16--i---------,",
     "passage_text": "",
     "options": [],
     "correct_answer": "C",
@@ -14584,20 +15214,15 @@
     "question_number": 28,
     "section": "reading_writing",
     "module": 2,
-    "question_text": "Which choice completes the text with the most\nlogical transition?",
-    "passage_text": "In his 1925 book The Morphology of Landscape, US\ngeographer Carl Sauer challenged prevailing views\nabout how natural landscapes influence human\ncultures. ______\n Sauer argued that instead of being\nshaped entirely by their natural surroundings,\ncultures play an active role in their own development\nby virtue of their interactions with the environment.",
-    "options": [
-      "Similarly,",
-      "Finally,",
-      "Therefore,",
-      "Specifically,"
-    ],
+    "question_text": "41",
+    "passage_text": "",
+    "options": [],
     "correct_answer": "D",
     "correct_index": 3,
     "is_spr": false,
     "difficulty": "hard",
     "explanation": "Choice D is the best answer. “Specifically” logically signals that the information in\nthis sentence about Sauer’s argument—that, according to Sauer, cultures play a\nrole in their own development, as opposed to being shaped solely by natural\nsurroundings—provides specific, precise details elaborating on the more general\ninformation in the previous sentence about how Sauer challenged prevailing\nviews about how natural landscapes influence human cultures.\nChoice A is incorrect because “similarly” illogically signals that the information in\nthis sentence about Sauer’s argument is similar to, but separate from, the more\ngeneral information in the previous sentence. Instead, it provides specific, precise\ndetails elaborating on that information. Choice B is incorrect because “finally”\nillogically signals that the information in this sentence about Sauer’s argument\nindicates a last step in a process or a concluding summary. Instead, it provides\nspecific, precise details elaborating on the general information in the previous\nsentence. Choice C is incorrect because “therefore” illogically signals that the\n30\ninformation in this sentence about Sauer’s argument is a result of the more\ngeneral information in the previous sentence. Instead, it provides specific, precise\ndetails elaborating on that information.",
-    "has_figure": true
+    "has_figure": false
   },
   {
     "test_number": 10,
@@ -14644,14 +15269,9 @@
     "question_number": 31,
     "section": "reading_writing",
     "module": 2,
-    "question_text": "Which choice most\neffectively uses relevant information from the notes\nto accomplish this goal?",
-    "passage_text": "While researching a topic, a student has taken the\nfollowing notes:\n• Shaun Tan is an Australian author.\n• In 2008, he published Tales from Outer Suburbia,\na book of fifteen short stories.\n• The stories describe surreal events occurring in\notherwise ordinary suburban neighborhoods.\n• In 2018, he published Tales from the Inner City, a\nbook of twenty-five short stories.\n• The stories describe surreal events occurring in\notherwise ordinary urban settings.\nThe student wants to emphasize a similarity between\nthe two books by Shaun Tan.",
-    "options": [
-      "Shaun Tan’s book Tales from Outer Suburbia, which describes surreal events occurring in otherwise ordinary places, contains fewer short stories than Tales from the Inner City does.",
-      "Tales from Outer Suburbia was published in 2008, and Tales from the Inner City was published in 2018.",
-      "Unlike Tales from the Inner City, Shaun Tan’s book Tales from Outer Suburbia is set in suburban neighborhoods.",
-      "Shaun Tan’s books Tales from Outer Suburbia and Tales from the Inner City both describe surreal events occurring in otherwise ordinary places. Unauthorized copying or reuse of any part of this page is illegal."
-    ],
+    "question_text": "1950",
+    "passage_text": "",
+    "options": [],
     "correct_answer": "D",
     "correct_index": 3,
     "is_spr": false,
@@ -14684,14 +15304,9 @@
     "question_number": 33,
     "section": "reading_writing",
     "module": 2,
-    "question_text": "Which choice most effectively uses\nrelevant information from the notes to accomplish\nthis goal?",
-    "passage_text": "While researching a topic, a student has taken the\nfollowing notes:\n• In 1851, German American artist Emanuel Leutze\npainted Washington Crossing the Delaware.\n• His huge painting (149 × 255 inches) depicts the\nfirst US president crossing a river with soldiers in\nthe Revolutionary War.\n• In 2019, Cree artist Kent Monkman painted\nmistikôsiwak (Wooden Boat People): Resurgence of\nthe People.\n• Monkman’s huge painting (132 × 264 inches) was\ninspired by Leutze’s.\n• It portrays Indigenous people in a boat rescuing\nrefugees.\nThe student wants to emphasize a similarity between\nthe two paintings.",
-    "options": [
-      "Monkman, a Cree artist, finished his painting in 2019; Leutze, a German American artist, completed his in 1851.",
-      "Although Monkman’s painting was inspired by Leutze’s, the people and actions the two paintings portray are very different.",
-      "Leutze’s and Monkman’s paintings are both huge, measuring 149 × 255 inches and 132 × 264 inches, respectively.",
-      "Leutze’s painting depicts Revolutionary War soldiers, while Monkman’s depicts Indigenous people and refugees."
-    ],
+    "question_text": "6–7",
+    "passage_text": "",
+    "options": [],
     "correct_answer": "C",
     "correct_index": 2,
     "is_spr": false,
@@ -14710,7 +15325,7 @@
       "156",
       "66",
       "48",
-      "24 2 x 4 1 33 + = Which equation has the same solution as the given equation?"
+      "24"
     ],
     "correct_answer": "D",
     "correct_index": 3,
@@ -14724,7 +15339,7 @@
     "question_number": 2,
     "section": "math",
     "module": 1,
-    "question_text": "DIRECTIONS\nUse of a calculator is permitted for all questions.\nNOTES\nUnless otherwise indicated: \n \n▪All variables and expressions represent real numbers.\n \n▪Figures provided are drawn to scale.\n \n▪All figures lie in a plane.\n \n▪The domain of a given function f is the set of all real numbers x for which f x\n^ h \nis a real number.\nREFERENCE\nr\nA = r2\nC = 2 r\n \nw\nA = w\n \nh\nb\nA = bh\n1\n2\n \nc\na\nb\nc2 = a2 + b2\n \nSpecial Right Triangles\n30°\n60°\n45°\n45°\n2x\nx\ns\ns\nx 3\ns 2\nw\nh\nV = wh\n \nr\nh\nV = r2h\n \nr\nV = r3\n4\n3\n \nr\nh\nV = r2h\n1\n3\n \nw\nh\nV = wh",
+    "question_text": "DIRECTIONS\nUse of a calculator is permitted for all questions.\nNOTES\nUnless otherwise indicated: \n \n▪All variables and expressions represent real numbers.\n \n▪Figures provided are drawn to scale.\n \n▪All figures lie in a plane.\n \n▪The domain of a given function f is the set of all real numbers x for which f x\n^ h \nis a real number.\nREFERENCE\nr\nA = r2\nC = 2 r\n \nw\nA = w\n \nh\nb\nA = bh",
     "passage_text": "",
     "options": [],
     "correct_answer": "A",
@@ -14739,7 +15354,7 @@
     "question_number": 3,
     "section": "math",
     "module": 1,
-    "question_text": "The number of degrees of arc in a circle is 360.\nThe number of radians of arc in a circle is 2r.\nThe sum of the measures in degrees of the angles of a triangle is 180.\nModule",
+    "question_text": "r\nh\nV = r2h",
     "passage_text": "",
     "options": [],
     "correct_answer": "C",
@@ -14809,7 +15424,7 @@
     "question_number": 7,
     "section": "math",
     "module": 1,
-    "question_text": "= - +\n, where k is a constant. What is the \nvalue of k?",
+    "question_text": "x\ny\n125\n+\n=\nx\ny\ny\n155\n+\n+\n=\nThe solution to the given system of equations is \n,x y\n^\nh. What is the value of y?",
     "passage_text": "",
     "options": [],
     "correct_answer": "30",
@@ -14824,13 +15439,13 @@
     "question_number": 8,
     "section": "math",
     "module": 1,
-    "question_text": "In a chess tournament, each participant earns \n1 point for each game the participant plays that ends \nin a draw and 3 points for each game the participant \nwins. A certain participant in this tournament has \nearned 41 points. Which equation represents this \nsituation, where d represents the number of games \nthis participant has played that ended in a draw and \nw represents the number of games this participant \nhas won?",
+    "question_text": "40\n32\n2 -\n=\nWhat is the positive solution to the given equation?",
     "passage_text": "",
     "options": [
-      "d w 3 41 + =",
-      "d w 3 41 + =",
-      "d w 3 41 + =",
-      "d w 3 41 + ="
+      "3",
+      "4",
+      "9",
+      "72"
     ],
     "correct_answer": "A",
     "correct_index": 0,
@@ -14864,7 +15479,7 @@
     "question_number": 10,
     "section": "math",
     "module": 1,
-    "question_text": "of them to her neighbor. How many of the \nharvested cherry tomatoes did Amara give to her \nneighbor?\n7\nx\ny\n125\n+\n=\nx\ny\ny\n155\n+\n+\n=\nThe solution to the given system of equations is \n,x y\n^\nh. What is the value of y?",
+    "question_text": "of them to her neighbor. How many of the \nharvested cherry tomatoes did Amara give to her \nneighbor?",
     "passage_text": "",
     "options": [],
     "correct_answer": "C",
@@ -14891,12 +15506,32 @@
   },
   {
     "test_number": 11,
+    "question_number": 13,
+    "section": "math",
+    "module": 1,
+    "question_text": "x\ny",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "13",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "medium",
+    "explanation": "The correct answer is 13. It’s given that the equation x\ny\n8\n11\n170\n+\n=\ngives the\npossible combinations of the number of 2009  premium grade Log Cabin Pennies,\nx, and the number of 1996  select grade Lincoln Pennies, y, in a collection that is\nworth a total of $170. It’s also given that there are 6  1996  select grade Lincoln\nPennies in the collection, and thus y\n6\n= . Substituting 6  for y  in the given\nequation yields x\n8\n11 6\n170\n+\n=\n^ h\n, or x\n8\n66\n170\n+\n=\n. Subtracting 66  from both\nsides of this equation yields x\n8\n104\n=\n. Dividing both sides of this equation by 8\nyields x\n13\n=\n. Therefore, there are 13  2009  premium grade Log Cabin Pennies in\nthe collection.",
+    "has_figure": false
+  },
+  {
+    "test_number": 11,
     "question_number": 14,
     "section": "math",
     "module": 1,
-    "question_text": "The population of the town of Smithville doubled \nevery 75 years from 1659 to 1959. The population of \nthis town was \n,\n240 000 in 1959. What was the \npopulation of this town in 1659?",
+    "question_text": "2 -\n^\nh",
     "passage_text": "",
-    "options": [],
+    "options": [
+      "ts t s t",
+      "",
+      "",
+      ""
+    ],
     "correct_answer": "15000",
     "correct_index": 0,
     "is_spr": true,
@@ -14927,10 +15562,10 @@
     "question_text": "Which quadratic equation has exactly one distinct \nreal solution?",
     "passage_text": "",
     "options": [
-      "x 15 0 2 + = ^ h",
-      "x 15 45 2 + = - ^ h",
-      "x 15 45 2 + = ^ h",
-      "x 15 135 2 + = ^ h"
+      "x",
+      "",
+      "",
+      ""
     ],
     "correct_answer": "A",
     "correct_index": 0,
@@ -14959,20 +15594,15 @@
     "question_number": 18,
     "section": "math",
     "module": 1,
-    "question_text": "",
+    "question_text": "730\n+\n=\nThe given equations represent the possible numbers of beach chairs, x, \nand umbrellas, y, rented at a park last month and the total spent, in \ndollars, to rent those beach chairs and umbrellas. Which of the \nfollowing graphs represents this situation?",
     "passage_text": "",
-    "options": [
-      "cosQ",
-      "",
-      "",
-      ""
-    ],
+    "options": [],
     "correct_answer": "B",
     "correct_index": 1,
     "is_spr": false,
     "difficulty": "hard",
     "explanation": "Choice B is correct. The intercepts of the graph of each equation can be found by\nsubstituting 0  for one variable at a time. For the equation x\ny\n53\n+\n=\n, substituting\n0  for y  yields x\n53\n=\n, so the x-intercept of the graph of the equation is\n,\n53 0\n^\nh.\nSubstituting 0  for x  in this equation yields y\n53\n=\n, so the y-intercept of the graph\nof the equation is\n,\n0 53\n^\nh. Thus, the graph of the equation x\ny\n53\n+\n=\nhas\nintercepts at\n,\n53 0\n^\nh  and\n,\n0 53\n^\nh. For the equation\nx\ny\n11\n18\n730\n+\n=\n, substituting 0\n39\nfor y  yields x\n11\n730\n=\n, so the x-intercept of the graph of the equation is\napproximately\n,\n66 0\n^\nh. Substituting 0  for x  in this equation yields y\n18\n730\n=\n, so the\ny-intercept of the graph of the equation is approximately\n,\n0 41\n^\nh. Thus, the graph\nof the equation\nx\ny\n11\n18\n730\n+\n=\nhas intercepts at approximately\n,\n66 0\n^\nh  and\n,\n0 41\n^\nh. Choice B is a graph that shows one line with intercepts at\n,\n0 53\n^\nh  and\n,\n53 0\n^\nh  and another line with intercepts at approximately\n,\n0 41\n^\nh  and\n,\n66 0\n^\nh. Thus,\nchoice B represents this situation.\nChoice A is incorrect. This graph represents the equations y\nx\n=\nand\nx\ny\n11\n18\n730\n+\n=\n. Choice C is incorrect. This graph represents the equations\nx\ny\n53\n+\n=\nand\nx\ny\n11\n18\n730\n-\n+\n=\n. Choice D is incorrect. This graph represents\nthe equations y\n53\n=\nand\nx\ny\n11\n18\n730\n-\n+\n=\n.",
-    "has_figure": false
+    "has_figure": true
   },
   {
     "test_number": 11,
@@ -14982,8 +15612,8 @@
     "question_text": "In triangle QRS shown, QR\nRS\n<\n. Which expression \nrepresents the length of QS ?",
     "passage_text": "",
     "options": [
-      "cosQ 18",
-      "sinQ",
+      "cosQ",
+      "",
       "",
       ""
     ],
@@ -14999,7 +15629,7 @@
     "question_number": 20,
     "section": "math",
     "module": 1,
-    "question_text": "Circle A in the xy-plane has the equation \nx\ny\n5\n5\n25\n2\n2\n+\n+\n-\n=\n^\n^\nh\nh\n. Circle B has the same \ncenter as circle A. The radius of circle B is two times \nthe radius of circle A. The equation defining circle B \nin the xy-plane is x\ny\nk\n5\n5\n2\n2\n+\n+\n-\n=\n^\n^\nh\nh\n, where k \nis a constant. What is the value of k?\n21\nx\nx\n7\n5\n0\n2 +\n+\n=\nOne solution to the given equation can be written as \nx\nk",
+    "question_text": "Circle A in the xy-plane has the equation \nx\ny\n5\n5\n25\n2\n2\n+\n+\n-\n=\n^\n^\nh\nh\n. Circle B has the same \ncenter as circle A. The radius of circle B is two times \nthe radius of circle A. The equation defining circle B \nin the xy-plane is x\ny\nk\n5\n5\n2\n2\n+\n+\n-\n=\n^\n^\nh\nh\n, where k \nis a constant. What is the value of k?",
     "passage_text": "",
     "options": [],
     "correct_answer": "100",
@@ -15007,6 +15637,21 @@
     "is_spr": true,
     "difficulty": "hard",
     "explanation": "The correct answer is 100. An equation of a circle in the xy-plane can be written\nas x\nt\ny\nu\nr\n2\n2\n2\n-\n+\n-\n=\n^\n^\nh\nh\n, where the center of the circle is ,t u\n^\nh, the radius of the\ncircle is r, and where t, u, and r  are constants. It’s given that the equation of\ncircle A is x\ny\n5\n5\n25\n2\n2\n+\n+\n-\n=\n^\n^\nh\nh\n, which is equivalent to x\ny\n5\n5\n5\n2\n2\n2\n+\n+\n-\n=\n^\n^\nh\nh\n.\nTherefore, the center of circle A is\n,\n5 5\n-\n^\nh  and the radius of circle A is 5. It’s given\nthat circle B has the same center as circle A and that the radius of circle B is two\ntimes the radius of circle A. Therefore, the center of circle B is\n,\n5 5\n-\n^\nh  and the\nradius of circle B is 2 5\n^ h, or 10. Substituting 5\n-  for t, 5  for u, and 10  for r  in the\nequation x\nt\ny\nu\nr\n2\n2\n2\n-\n+\n-\n=\n^\n^\nh\nh\nyields x\ny\n5\n5\n10\n2\n2\n2\n+\n+\n-\n=\n^\n^\nh\nh\n, which is equivalent\nto x\ny\n5\n5\n100\n2\n2\n+\n+\n-\n=\n^\n^\nh\nh\n. It follows that the equation of circle B in the xy-plane is\nx\ny\n5\n5\n100\n2\n2\n+\n+\n-\n=\n^\n^\nh\nh\n. It’s also given that the equation defining circle B in the\nxy-plane is x\ny\nk\n5\n5\n2\n2\n+\n+\n-\n=\n^\n^\nh\nh\n, where k  is a constant. Therefore, the value of k\nis 100.\n40",
+    "has_figure": false
+  },
+  {
+    "test_number": 11,
+    "question_number": 21,
+    "section": "math",
+    "module": 1,
+    "question_text": "x\nx",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "29",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "hard",
+    "explanation": "The correct answer is 29. The solutions to a quadratic equation in the form\nax\nbx\nc\n0\n2 +\n+\n=\n, where a, b, and c  are constants, can be calculated using the\nquadratic formula, which gives two solutions: x\na\nb\nb\nac\n2\n4\n2\n= -\n+\n-\nand\nx\na\nb\nb\nac\n2\n4\n2\n= -\n-\n-\n. The given equation is in the form ax\nbx\nc\n0\n2 +\n+\n=\n, where a\n1\n= ,\nb\n7\n= , and c\n5\n= . It follows that one solution to the given quadratic equation is\nx\n2 1\n7\n7\n4 1\n5\n2\n= -\n+\n-\n]\n]\n]\ng\ng\ng, or x\n2\n7\n49\n20\n= -\n+\n-\n, which is equivalent to x\n2\n7\n29\n= -\n+\n. It’s\ngiven that one solution to the given equation can be written as x\nk\n2\n7\n= -\n+\n, where\nk  is a constant. It follows that the value of k  is 29.",
     "has_figure": false
   },
   {
@@ -15049,14 +15694,9 @@
     "question_number": 24,
     "section": "math",
     "module": 1,
-    "question_text": "Two lines intersect at exactly one point, forming two \nacute angles and two obtuse angles. The measure of \none of these angles is \n°\nx\n9\n140\n-\n^\nh . Which of the \nfollowing could NOT be the sum of the measures of \nany two of these angles?",
+    "question_text": "Two lines intersect at exactly one point, forming two \nacute angles and two obtuse angles. The measure of \none of these angles is \n°\nx",
     "passage_text": "",
-    "options": [
-      "° x 18 280 - + ^ h",
-      "° x 18 640 - + ^ h",
-      "° x 18 280 - ^ h",
-      "° 180 25 x y 2 9"
-    ],
+    "options": [],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
@@ -15089,7 +15729,7 @@
     "question_number": 2,
     "section": "math",
     "module": 2,
-    "question_text": "DIRECTIONS\nUse of a calculator is permitted for all questions.\nNOTES\nUnless otherwise indicated: \n \n▪All variables and expressions represent real numbers.\n \n▪Figures provided are drawn to scale.\n \n▪All figures lie in a plane.\n \n▪The domain of a given function f is the set of all real numbers x for which f x\n^ h \nis a real number.\nREFERENCE\nr\nA = r2\nC = 2 r\n \nw\nA = w\n \nh\nb\nA = bh\n1\n2\n \nc\na\nb\nc2 = a2 + b2\n \nSpecial Right Triangles\n30°\n60°\n45°\n45°\n2x\nx\ns\ns\nx 3\ns 2\nw\nh\nV = wh\n \nr\nh\nV = r2h\n \nr\nV = r3\n4\n3\n \nr\nh\nV = r2h\n1\n3\n \nw\nh\nV = wh",
+    "question_text": "DIRECTIONS\nUse of a calculator is permitted for all questions.\nNOTES\nUnless otherwise indicated: \n \n▪All variables and expressions represent real numbers.\n \n▪Figures provided are drawn to scale.\n \n▪All figures lie in a plane.\n \n▪The domain of a given function f is the set of all real numbers x for which f x\n^ h \nis a real number.\nREFERENCE\nr\nA = r2\nC = 2 r\n \nw\nA = w\n \nh\nb\nA = bh",
     "passage_text": "",
     "options": [],
     "correct_answer": "B",
@@ -15104,7 +15744,7 @@
     "question_number": 3,
     "section": "math",
     "module": 2,
-    "question_text": "The number of degrees of arc in a circle is 360.\nThe number of radians of arc in a circle is 2r.\nThe sum of the measures in degrees of the angles of a triangle is 180.\nModule",
+    "question_text": "r\nh\nV = r2h",
     "passage_text": "",
     "options": [],
     "correct_answer": "D",
@@ -15134,19 +15774,49 @@
     "question_number": 5,
     "section": "math",
     "module": 2,
-    "question_text": "The function f is defined by f x\nx\n9 2\n3\n=\n+\n^\n^\nh\nh. For \nwhat value of x does f x\n63\n=\n^ h\n?",
+    "question_text": "The function f is defined by f x\nx\n9 2",
     "passage_text": "",
-    "options": [
-      "2",
-      "5",
-      "7",
-      "30 6 x"
-    ],
+    "options": [],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
     "difficulty": "easy",
     "explanation": "Choice A is correct. Substituting 63  for f x\n^ h  in the given function yields\nx\n63\n9 2\n3\n=\n+\n^\nh. Dividing both sides of this equation by 9  yields\nx\n7\n2\n3\n=\n+ .\nSubtracting 3  from both sides of this equation yields\nx\n4\n2\n=\n. Dividing both sides\nof this equation by 2  yields\nx\n2 =\n. Therefore, f x\n63\n=\n^ h\nwhen the value of x  is 2.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice C is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.",
+    "has_figure": false
+  },
+  {
+    "test_number": 11,
+    "question_number": 6,
+    "section": "math",
+    "module": 2,
+    "question_text": "63\n-\n=\nThe solution to the given system of equations is \n,x y\n^\nh. What is the value of y?",
+    "passage_text": "",
+    "options": [
+      "63",
+      "11",
+      "10",
+      "3"
+    ],
+    "correct_answer": "8.6; 43/5",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "medium",
+    "explanation": "The correct answer is .\n8 6. Dividing both sides of the given equation by 10  yields\n.\nx\n8 6\n=\n. Therefore, .\n8 6  is the solution to the given equation. Note that 8.6 and\n43/5 are examples of ways to enter a correct answer.",
+    "has_figure": false
+  },
+  {
+    "test_number": 11,
+    "question_number": 7,
+    "section": "math",
+    "module": 2,
+    "question_text": ",\n( )\ny\na\n3 600\nx\n=\nThe given equation, where a is a positive constant, \ngives the predicted number of bacteria, y, in a \ngrowth medium x hours after the number of \nbacteria was initially measured. According to the \nequation, what was the predicted number of bacteria \ninitially measured in the growth medium?",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "3600",
+    "correct_index": 0,
+    "is_spr": true,
+    "difficulty": "medium",
+    "explanation": "The correct answer is ,\n3 600. The predicted number of bacteria initially measured\nin the growth medium is the value of y  when x\n0\n=\n. Substituting 0  for x  in the\ngiven equation yields\n,\ny\na\n3 600\n0\n=\n^ h . Since a  is positive, this equation is equivalent\nto\n,\ny\n3 600 1\n=\n^ h. Therefore, when x\n0\n=\n, the value of y  is ,\n3 600. Thus, the\npredicted number of bacteria initially measured in the growth medium is ,\n3 600.",
     "has_figure": false
   },
   {
@@ -15194,7 +15864,7 @@
     "question_number": 10,
     "section": "math",
     "module": 2,
-    "question_text": "86\n=\nWhat value of x is the solution to the given \nequation?\n7\n,\n( )\ny\na\n3 600\nx\n=\nThe given equation, where a is a positive constant, \ngives the predicted number of bacteria, y, in a \ngrowth medium x hours after the number of \nbacteria was initially measured. According to the \nequation, what was the predicted number of bacteria \ninitially measured in the growth medium?",
+    "question_text": "110\n=\nx\ny",
     "passage_text": "",
     "options": [],
     "correct_answer": "D",
@@ -15254,20 +15924,15 @@
     "question_number": 14,
     "section": "math",
     "module": 2,
-    "question_text": "What is the radius of the circle in the xy-plane \ndefined by x\ny\n2\n5\n169\n2\n2\n+\n+\n+\n=\n^\n^\nh\nh\n?  \n15\n50\n100\n150\n200\n250\nx\n‒200\n‒150\n‒100\n‒50\n50\n100\n150\n200\n250\n300\n350\ny\nO\nThe graph shows the estimated boiling point y, in \ndegrees Celsius, of a normal paraffin with a \nmolecular weight of x grams per mole, where \nx\n1\n280\n#\n#\n. Which statement is the best \ninterpretation of the point \n.\n,\n.\n149 02 186 05\n^\nh?",
+    "question_text": "What is the radius of the circle in the xy-plane \ndefined by x\ny",
     "passage_text": "",
-    "options": [
-      "A normal paraffin with a molecular weight of . 186 05 grams per mole has an estimated boiling point of . 149 02 degrees Celsius.",
-      "A normal paraffin with a molecular weight of . 149 02 grams per mole has an estimated boiling point of . 186 05 degrees Celsius.",
-      "The minimum estimated boiling point for normal paraffins corresponds to a paraffin with a molecular weight of . 149 02 grams per mole and an estimated boiling point of . 186 05 degrees Celsius.",
-      "The maximum estimated boiling point for normal paraffins corresponds to a paraffin with a molecular weight of . 149 02 grams per mole and an estimated boiling point of . 186 05 degrees Celsius."
-    ],
+    "options": [],
     "correct_answer": "13",
     "correct_index": 0,
     "is_spr": true,
     "difficulty": "medium",
     "explanation": "The correct answer is 13. The equation of a circle in the xy-plane can be written in\nthe form x\nh\ny\nk\nr\n2\n2\n2\n-\n+\n-\n=\n^\n^\nh\nh\n, where\n,h k\n^\nh  is the center of the circle and r  is the\nradius of the circle. It’s given that the circle in the xy-plane is defined by\nx\ny\n2\n5\n169\n2\n2\n+\n+\n+\n=\n^\n^\nh\nh\n. Therefore, r\n169\n2 =\n. Taking the positive square root of\nboth sides of this equation yields r\n13\n=\n. Thus, the radius of the circle is 13.",
-    "has_figure": true
+    "has_figure": false
   },
   {
     "test_number": 11,
@@ -15311,6 +15976,36 @@
   },
   {
     "test_number": 11,
+    "question_number": 17,
+    "section": "math",
+    "module": 2,
+    "question_text": "x\ng x\n^ h\n1\n32",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "D",
+    "correct_index": 3,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice D is correct. It’s given that for the linear function g, the table shows four\nvalues of x  and their corresponding values of g x\n^ h. It’s also given that the\nfunction can be written as g x\nmx\nb\n=\n+\n^ h\n, where m  and b  are constants. The table\nshows that when the value of x  is 1, the corresponding value of g x\n^ h  is 32.\nSubstituting 1 for x  and 32  for g x\n^ h  in g x\nmx\nb\n=\n+\n^ h\nyields\nm\nb\n32\n1\n=\n+\n^ h\n, or\nm\nb\n32 =\n+\n. Subtracting b  from both sides of this equation yields\nb\nm\n32 -\n=\n. The\ntable also shows that when the value of x  is 2, the corresponding value of g x\n^ h  is\n28. Substituting 2  for x  and 28  for g x\n^ h  in g x\nmx\nb\n=\n+\n^ h\nyields\nm\nb\n28\n2\n=\n+\n^ h\n, or\nm\nb\n28\n2\n=\n+\n. Substituting\nb\n32 -\nfor m  in this equation yields\nb\nb\n28\n2 32\n=\n-\n+\n^\nh\n.\nApplying the distributive property to the right-hand side of this equation yields\nb\nb\n28\n64\n2\n=\n-\n+\n, or\nb\n28\n64\n=\n-\n. Subtracting 64  from both sides of this equation\nyields\nb\n36\n-\n= - . Dividing both sides of this equation by 1\n-  yields\nb\n36 =\n.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect and may result from conceptual or calculation errors.\nChoice C is incorrect and may result from conceptual or calculation errors.",
+    "has_figure": false
+  },
+  {
+    "test_number": 11,
+    "question_number": 18,
+    "section": "math",
+    "module": 2,
+    "question_text": "x",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "B",
+    "correct_index": 1,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice B is correct. According to the table, f 24\n8\n= -\n^\nh\n, f 30\n8\n= -\n^\nh\n, and f 32\n8\n=\n^\nh\n.\nLet the quadratic function g  be defined by g x\nf x\n8\n=\n+\n^\n^\nh\nh\n. Therefore,\ng\nf\n24\n24\n8\n=\n+\n^\n^\nh\nh\n, g\nf\n30\n30\n8\n=\n+\n^\n^\nh\nh\n, and g\nf\n32\n32\n8\n=\n+\n^\n^\nh\nh\n. Substituting 8\n-  for\nf 24\n^\nh  in the equation g\nf\n24\n24\n8\n=\n+\n^\n^\nh\nh\nyields g 24\n8\n8\n= -\n+\n^\nh\n, or g 24\n0\n=\n^\nh\n.\nSubstituting 8\n-  for f 30\n^\nh  in the equation g\nf\n30\n30\n8\n=\n+\n^\n^\nh\nh\nyields g 30\n8\n8\n= -\n+\n^\nh\n,\nor g 30\n0\n=\n^\nh\n. Substituting 8  for f 32\n^\nh  in the equation g\nf\n32\n32\n8\n=\n+\n^\n^\nh\nh\nyields\ng 32\n8\n8\n=\n+\n^\nh\n, or g 32\n16\n=\n^\nh\n. By the factor theorem, if g 24\n0\n=\n^\nh\nand g 30\n0\n=\n^\nh\n,\nthen g x\nk x\nx\n24\n30\n=\n-\n-\n^\n^\n^\nh\nh\nh, where k  is a constant. Since g 32\n16\n=\n^\nh\n,\nsubstituting 32  for x  and 16  for g x\n^ h  in the equation g x\nk x\nx\n24\n30\n=\n-\n-\n^\n^\n^\nh\nh\nh\nyields\nk\n16\n32\n24 32\n30\n=\n-\n-\n^\n^h\nh, or\nk\n16\n8 2\n= ^\n^h\nh, which is equivalent to\nk\n16\n16\n=\n.\nDividing both sides of this equation by 16  yields\nk\n1 =\n. Substituting 1 for k  in the\nequation g x\nk x\nx\n24\n30\n=\n-\n-\n^\n^\n^\nh\nh\nh  yields g x\nx\nx\n24\n30\n=\n-\n-\n^\n^\n^\nh\nh\nh. Since\ng x\nf x\n8\n=\n+\n^\n^\nh\nh\n, it follows that g x\nf x\n8\n-\n=\n^\n^\nh\nh. Subtracting 8  from both sides of the\nequation g x\nx\nx\n24\n30\n=\n-\n-\n^\n^\n^\nh\nh\nh  yields g x\nx\nx\n8\n24\n30\n8\n-\n=\n-\n-\n-\n^\n^\n^\nh\nh\nh\n. Substituting\nf x\n^ h  for g x\n8\n-\n^ h\nin this equation yields f x\nx\nx\n24\n30\n8\n=\n-\n-\n-\n^\n^\n^\nh\nh\nh\n.\n48\nChoice A is incorrect. If this equation defined f, then when x\n24\n=\n, the value of\nf x\n^ h  would be 4, not 8\n- . Choice C is incorrect. If this equation defined f, then\nwhen x\n32\n=\n, the value of f x\n^ h  would be 32, not 8. Choice D is incorrect. If this\nequation defined f, then when x\n32\n=\n, the value of f x\n^ h  would be 32\n-\n, not 8.",
+    "has_figure": false
+  },
+  {
+    "test_number": 11,
     "question_number": 19,
     "section": "math",
     "module": 2,
@@ -15320,7 +16015,7 @@
       "811",
       "938",
       ", 51 904",
-      ", 75 978 20 p2 3 7"
+      ", 75 978"
     ],
     "correct_answer": "A",
     "correct_index": 0,
@@ -15340,7 +16035,7 @@
       "4",
       "16",
       "32",
-      "36 18 x 24 30 32 f x ^ h 8 -"
+      "36"
     ],
     "correct_answer": "",
     "correct_index": -1,
@@ -15354,14 +16049,9 @@
     "question_number": 21,
     "section": "math",
     "module": 2,
-    "question_text": "The number a is \n%\n55\n less than the number b. The \nnumber b is \n%\n320\n greater than 160. What is the \nvalue of a?\n22\nf x\nx\nx\n6\n60\n126\n2\n= -\n+\n-\n^ h\nThe function f is defined by the given equation. \nWhich of the following equivalent forms of the \nequation displays the maximum value of the \nfunction as a constant or coefficient?",
+    "question_text": "The number a is \n%\n55\n less than the number b. The \nnumber b is \n%\n320\n greater than 160. What is the \nvalue of a?",
     "passage_text": "",
-    "options": [
-      "f x x x x 6 42 18 126 2 = - + + - ^ h",
-      "f x x x x 6 7 18 7 = - - + - ^ ^ ^ h h h",
-      "f x x 6 5 24 2 = - - + ^ ^ h h",
-      "f x x x 6 7 3 = - - - ^ ^ ^ h h h"
-    ],
+    "options": [],
     "correct_answer": "1512/5; 302.4",
     "correct_index": 0,
     "is_spr": true,
@@ -15371,23 +16061,48 @@
   },
   {
     "test_number": 11,
+    "question_number": 22,
+    "section": "math",
+    "module": 2,
+    "question_text": "f x\nx\nx",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "C",
+    "correct_index": 2,
+    "is_spr": false,
+    "difficulty": "hard",
+    "explanation": "Choice C is correct. The given equation is quadratic. The maximum value of a\nfunction defined by a quadratic equation can be displayed as a constant in the\nvertex form of the equation, f x\na x\nh\nk\n2\n=\n-\n+\n^\n^\nh\nh\n, where the maximum value of the\nfunction is k, which occurs when x\nh\n=\n, and a  is a constant. The given equation\ncan be rewritten in this form by completing the square. To complete the square,\nthe given equation can be rewritten as f x\nx\nx\n6\n10\n126\n2\n= -\n-\n-\n^\n^\nh\nh\n, which is\nequivalent to f x\nx\nx\n6\n10\n25\n126\n6 25\n2\n= -\n-\n+\n-\n+\n^\n^\n^\nh\nh\nh, or f x\nx\n6\n5\n24\n2\n= -\n-\n+\n^\n^\nh\nh\n. This\nequation is in vertex form, where a\n6\n= - , h\n5\n= , and k\n24\n=\n. Therefore,\nf x\nx\n6\n5\n24\n2\n= -\n-\n+\n^\n^\nh\nh\ndisplays the maximum value, 24, of the function as a\nconstant.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice B is incorrect. This form displays one of the zeros, not the maximum value,\nof the function as a constant. Choice D is incorrect. This form displays the zeros,\nnot the maximum value, of the function as constants.",
+    "has_figure": false
+  },
+  {
+    "test_number": 11,
     "question_number": 23,
     "section": "math",
     "module": 2,
-    "question_text": "In the figure shown, WZ and XY intersect at \npoint Q, YQ\n21\n=\n, WQ\n70\n=\n, WX\n60\n=\n, and \nXQ\n120\n=\n. What is the length of YZ ?",
+    "question_text": "In the figure shown, WZ and XY intersect at \npoint Q, YQ",
     "passage_text": "",
-    "options": [
-      "18",
-      "36",
-      "120",
-      "200 24 x x 52 64 81 0 3 4 + - = ^ ^h h How many distinct real solutions does the given equation have?"
-    ],
+    "options": [],
     "correct_answer": "A",
     "correct_index": 0,
     "is_spr": false,
     "difficulty": "advanced",
     "explanation": "Choice A is correct. It’s given that WZ  and XY  intersect at point Q. It follows that\nWQX\n+\nand\nYQZ\n+\nare vertical angles, which means they are congruent to each\nother. The figure shows that\nW\n+\nand\nY\n+\nboth have a measure of °\na , so they are\ncongruent to each other. Therefore,\nQWX\n3\nand\nQYZ\n3\nare similar triangles,\nwhere WQ  corresponds to YQ  and WX  corresponds to YZ . Since the lengths of\ncorresponding sides in similar triangles are proportional, it follows that YQ\nYZ\nWQ\nWX\n=\n.\nIt’s given that YQ\n21\n=\n, WQ\n70\n=\n, and WX\n60\n=\n. Substituting 21 for YQ, 70  for WQ,\nand 60  for WX  in the equation YQ\nYZ\nWQ\nWX\n=\nyields YZ\n21\n70\n60\n=\n, or YZ\n21\n7\n6\n=\n. Multiplying each\nside of this equation by 21 yields YZ\n18\n=\n. Therefore, the length of YZ  is 18.\nChoice B is incorrect. This is the length of QZ , not YZ . Choice C is incorrect. This\nis the length of XQ, not YZ . Choice D is incorrect and may result from conceptual\nor calculation errors.",
     "has_figure": true
+  },
+  {
+    "test_number": 11,
+    "question_number": 24,
+    "section": "math",
+    "module": 2,
+    "question_text": "30\n32\nf x\n^ h",
+    "passage_text": "",
+    "options": [],
+    "correct_answer": "B",
+    "correct_index": 1,
+    "is_spr": false,
+    "difficulty": "advanced",
+    "explanation": "Choice B is correct. The given equation can be rewritten as\nx\nx\nx\nx\nx\n52\n4\n4\n16\n9\n9\n0\n2\n2\n2\n+\n-\n+\n-\n+\n=\n^\n^\n^\n^\nh\nh\nh\nh\n, which is equivalent to\nx\nx\nx\nx\nx\nx\n52\n4\n4\n16\n3\n3\n9\n0\n2\n2\n+\n-\n+\n-\n+\n+\n=\n^\n^\n^\n^\n^\nh\nh\nh\nh\nh\n. Applying the zero product\nproperty in this equation yields 52\n0\n=\n, x\n4\n0\n+\n=\n, x\nx\n4\n16\n0\n2 -\n+\n=\n, x\n3\n0\n-\n=\n,\nx\n3\n0\n+\n=\n, and x\n9\n0\n2 +\n=\n. The equation 52\n0\n=\nhas no solution. Subtracting 4  from\nboth sides of the equation x\n4\n0\n+\n=\nyields x\n4\n= - . Adding 3  to both sides of the\nequation x\n3\n0\n-\n=\nyields x\n3\n= . Subtracting 3  from both sides of the equation\nx\n3\n0\n+\n=\nyields x\n3\n= - . The discriminant of a quadratic equation of the form\nax\nbx\nc\n0\n2 +\n+\n=\nis b\nac\n4\n2 -\n. If the discriminant is positive, the equation has two\ndistinct real solutions. If the discriminant is zero, the equation has one distinct real\nsolution. If the discriminant is negative, the equation has no real solutions. In the\nequation x\nx\n4\n16\n0\n2 -\n+\n=\n, a\n1\n= , b\n4\n= - , and c\n16\n=\n. Substituting these values in\nthe equation for the discriminant, b\nac\n4\n2 -\n, yields\n4\n4 1 16\n2\n-\n-\n^\n^\n^\nh\nh\nh, or 48\n-\n. Since\n50\nthe discriminant is negative, this equation has no real solutions. In the equation\nx\n9\n0\n2 +\n=\n, a\n1\n= , b\n0\n=\n, and c\n9\n= . Substituting these values in the equation for the\ndiscriminant, b\nac\n4\n2 -\n, yields 0\n4 1 9\n2 -\n^\n^h\nh, or 36\n-\n. Since the discriminant is\nnegative, this equation has no real solutions. Therefore, the distinct real solutions\nto the given equation are x\n4\n= - , x\n3\n= , and x\n3\n= - . Thus, the given equation has\nexactly three distinct real solutions.\nChoice A is incorrect and may result from conceptual or calculation errors.\nChoice C is incorrect and may result from conceptual or calculation errors.\nChoice D is incorrect and may result from conceptual or calculation errors.",
+    "has_figure": false
   },
   {
     "test_number": 11,
@@ -15414,7 +16129,7 @@
     "question_number": 1,
     "section": "reading_writing",
     "module": 1,
-    "question_text": "DIRECTIONS\nModule",
+    "question_text": "Unauthorized copying or reuse of any part of this page is illegal.",
     "passage_text": "",
     "options": [],
     "correct_answer": "A",
@@ -16009,7 +16724,7 @@
     "question_number": 1,
     "section": "reading_writing",
     "module": 2,
-    "question_text": "DIRECTIONS\nModule",
+    "question_text": "Unauthorized copying or reuse of any part of this page is illegal.",
     "passage_text": "",
     "options": [],
     "correct_answer": "C",
@@ -16210,7 +16925,7 @@
       "Toronto",
       "Montréal",
       "Québec City",
-      "Halifax 12 90 80 70 60 50 40 30"
+      "Halifax 12 90 80 70 60 50 40"
     ],
     "correct_answer": "B",
     "correct_index": 1,

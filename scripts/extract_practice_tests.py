@@ -121,22 +121,51 @@ def clean_page_text(text):
         else:
             break
 
-    # Remove header: "Module\nN" at start
-    while lines:
-        first = lines[0].strip()
-        if not first or first == "Module" or re.match(r"^[12]$", first):
-            lines.pop(0)
-        else:
-            break
+    # Remove header: "Module\nN" at start, but only the "Module" label + module number
+    # when they appear as a consecutive pair (not standalone question numbers)
+    while lines and not lines[0].strip():
+        lines.pop(0)
+    if len(lines) >= 2 and lines[0].strip() == "Module" and re.match(r"^[12]$", lines[1].strip()):
+        lines.pop(0)  # Remove "Module"
+        lines.pop(0)  # Remove module number
+    elif lines and lines[0].strip() == "Module":
+        lines.pop(0)
+    while lines and not lines[0].strip():
+        lines.pop(0)
 
-    # Remove dotted separator lines
+    # Remove dotted separator lines and directions boilerplate
     cleaned = []
     for line in lines:
-        if re.match(r"^\.{10,}$", line.strip()):
+        stripped = line.strip()
+        if re.match(r"^\.{10,}$", stripped):
             continue
         if "If you finish before time" in line:
             continue
         if "Do not turn to any other" in line:
+            continue
+        if stripped in ("Reading and Writing", "Math", "CONTINUE", "CO NTI N U E"):
+            continue
+        if re.match(r"^\d+\s+QUESTIONS?$", stripped):
+            continue
+        if "The questions in this section address" in line:
+            continue
+        if "includes one or more passages" in line:
+            continue
+        if "single best answer" in line:
+            continue
+        if "multiple-choice with four answer choices" in line:
+            continue
+        if "Each question has a" in stripped:
+            continue
+        if "Read each passage" in line:
+            continue
+        if "and question carefully" in line:
+            continue
+        if "best answer to the question" in line:
+            continue
+        if "reference information" in line.lower() and "math" in line.lower():
+            continue
+        if "questions do not refer" in line.lower():
             continue
         cleaned.append(line)
 
@@ -158,23 +187,27 @@ def parse_questions_pdf(questions_pdf_path):
 
         ptype = "unknown"
 
-        # Detect section headers — multiple formats across test versions
+        # Detect section headers using specific pattern: "Module N" + section + question count
+        module_match = re.search(r"Module\s*\n?\s*(\d)", text)
         is_rw_header = (
-            ("directions" in text_lower and "reading and writing" in text_lower)
-            or ("reading and writing" in text_lower and "questions" in text_lower and current_section != "reading_writing")
+            module_match
+            and "reading and writing" in text_lower
+            and "33 questions" in text_lower
         )
         is_math_header = (
-            ("directions" in text_lower and "math" in text_lower and "reading" not in text_lower)
-            or ("math" in text_lower and "questions" in text_lower and "reading" not in text_lower and current_section != "math")
+            module_match
+            and "27 questions" in text_lower
+            and "math" in text_lower
+            and "reading" not in text_lower
         )
 
         if is_rw_header:
             current_section = "reading_writing"
-            current_module = 1 if not any(p[2] == "reading_writing" for p in page_info) else 2
+            current_module = int(module_match.group(1))
             ptype = "directions"
         elif is_math_header:
             current_section = "math"
-            current_module = 1 if not any(p[2] == "math" for p in page_info) else 2
+            current_module = int(module_match.group(1))
             ptype = "directions"
         elif "for multiple-choice questions" in text_lower:
             ptype = "instructions"
@@ -194,7 +227,8 @@ def parse_questions_pdf(questions_pdf_path):
     # Phase 2: Group content pages by module
     modules = {}  # (section, module) -> [page_indices]
     for page_idx, ptype, section, module in page_info:
-        if ptype in ("content", "stop_content") and section and module:
+        # Include directions pages that also contain questions (options A-D)
+        if ptype in ("content", "stop_content", "directions") and section and module:
             key = (section, module)
             if key not in modules:
                 modules[key] = []
@@ -230,10 +264,11 @@ def parse_questions_pdf(questions_pdf_path):
                     num = int(stripped)
                     if 1 <= num <= max_q:
                         # Verify this looks like a question start:
-                        # Next non-empty line should have substantial text
-                        for j in range(i + 1, min(i + 4, len(lines))):
+                        # Look ahead more lines with lower threshold to catch
+                        # math questions with fraction notation (short lines)
+                        for j in range(i + 1, min(i + 8, len(lines))):
                             next_line = lines[j].strip()
-                            if next_line and len(next_line) > 5:
+                            if next_line and len(next_line) > 2:
                                 q_starts.append((i, num))
                                 break
 

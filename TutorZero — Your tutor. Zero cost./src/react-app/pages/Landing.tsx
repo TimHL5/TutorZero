@@ -34,19 +34,19 @@ export default function LandingPage() {
             <nav className="flex items-center gap-4">
               <button
                 onClick={() => scrollToSection("how-it-works")}
-                className="text-base text-[#475569] hover:text-[#003366] transition-colors hidden sm:block py-2 px-2 min-h-[44px] flex items-center"
+                className="text-base text-[#475569] hover:text-[#003366] transition-colors hidden sm:block py-2 px-2 min-h-[44px] flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006BB6]/50 focus-visible:ring-offset-2"
               >
                 How It Works
               </button>
               <button
                 onClick={() => scrollToSection("pricing")}
-                className="text-base text-[#475569] hover:text-[#003366] transition-colors hidden sm:block py-2 px-2 min-h-[44px] flex items-center"
+                className="text-base text-[#475569] hover:text-[#003366] transition-colors hidden sm:block py-2 px-2 min-h-[44px] flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006BB6]/50 focus-visible:ring-offset-2"
               >
                 Pricing
               </button>
               <button
                 onClick={() => redirectToLogin()}
-                className="text-base text-[#475569] hover:text-[#003366] transition-colors py-2 px-2 min-h-[44px] flex items-center"
+                className="text-base text-[#475569] hover:text-[#003366] transition-colors py-2 px-2 min-h-[44px] flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006BB6]/50 focus-visible:ring-offset-2"
               >
                 Sign In
               </button>

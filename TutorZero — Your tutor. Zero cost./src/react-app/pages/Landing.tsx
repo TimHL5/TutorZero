@@ -31,22 +31,22 @@ export default function LandingPage() {
                 className="h-8"
               />
             </Link>
-            <nav className="flex items-center gap-6">
-              <button 
+            <nav className="flex items-center gap-4">
+              <button
                 onClick={() => scrollToSection("how-it-works")}
-                className="text-[15px] text-[#475569] hover:text-[#003366] transition-colors hidden sm:block"
+                className="text-[15px] text-[#475569] hover:text-[#003366] transition-colors hidden sm:block py-2 px-2 min-h-[44px] flex items-center"
               >
                 How It Works
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection("pricing")}
-                className="text-[15px] text-[#475569] hover:text-[#003366] transition-colors hidden sm:block"
+                className="text-[15px] text-[#475569] hover:text-[#003366] transition-colors hidden sm:block py-2 px-2 min-h-[44px] flex items-center"
               >
                 Pricing
               </button>
-              <button 
+              <button
                 onClick={() => redirectToLogin()}
-                className="text-[15px] text-[#475569] hover:text-[#003366] transition-colors"
+                className="text-[15px] text-[#475569] hover:text-[#003366] transition-colors py-2 px-2 min-h-[44px] flex items-center"
               >
                 Sign In
               </button>
@@ -277,10 +277,10 @@ export default function LandingPage() {
               alt="TutorZero" 
               className="h-7"
             />
-            <div className="flex items-center gap-6 text-sm text-white/60">
-              <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
-              <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-              <a href="mailto:support@tutorzero.com" className="hover:text-white transition-colors">Contact</a>
+            <div className="flex items-center gap-4 text-sm text-white/60">
+              <Link to="/terms" className="hover:text-white transition-colors py-3 px-1">Terms</Link>
+              <Link to="/privacy" className="hover:text-white transition-colors py-3 px-1">Privacy</Link>
+              <a href="mailto:support@tutorzero.com" className="hover:text-white transition-colors py-3 px-1">Contact</a>
             </div>
           </div>
           <p className="text-center sm:text-left text-sm text-white/40 mt-8">

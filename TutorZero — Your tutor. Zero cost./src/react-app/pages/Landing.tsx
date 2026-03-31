@@ -34,19 +34,19 @@ export default function LandingPage() {
             <nav className="flex items-center gap-4">
               <button
                 onClick={() => scrollToSection("how-it-works")}
-                className="text-[15px] text-[#475569] hover:text-[#003366] transition-colors hidden sm:block py-2 px-2 min-h-[44px] flex items-center"
+                className="text-base text-[#475569] hover:text-[#003366] transition-colors hidden sm:block py-2 px-2 min-h-[44px] flex items-center"
               >
                 How It Works
               </button>
               <button
                 onClick={() => scrollToSection("pricing")}
-                className="text-[15px] text-[#475569] hover:text-[#003366] transition-colors hidden sm:block py-2 px-2 min-h-[44px] flex items-center"
+                className="text-base text-[#475569] hover:text-[#003366] transition-colors hidden sm:block py-2 px-2 min-h-[44px] flex items-center"
               >
                 Pricing
               </button>
               <button
                 onClick={() => redirectToLogin()}
-                className="text-[15px] text-[#475569] hover:text-[#003366] transition-colors py-2 px-2 min-h-[44px] flex items-center"
+                className="text-base text-[#475569] hover:text-[#003366] transition-colors py-2 px-2 min-h-[44px] flex items-center"
               >
                 Sign In
               </button>
@@ -75,7 +75,7 @@ export default function LandingPage() {
           </p>
           
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-white tracking-[-0.02em] leading-[1.1] mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-white tracking-[-0.02em] leading-[1.1] mb-6" style={{ textWrap: 'balance' }}>
             Your tutor. Zero cost.
           </h1>
           
@@ -125,8 +125,8 @@ export default function LandingPage() {
             {/* Step 1 */}
             <div className="text-center md:text-left">
               <span className="text-[64px] font-bold text-[#4DA8DA]/30 leading-none">1</span>
-              <h3 className="text-[16px] font-bold text-[#003366] mt-2 mb-3">Take the Diagnostic</h3>
-              <p className="text-[14px] text-[#475569] leading-relaxed">
+              <h3 className="text-lg font-bold text-[#003366] mt-2 mb-3">Take the Diagnostic</h3>
+              <p className="text-base text-[#475569] leading-relaxed">
                 20 adaptive questions with confidence ratings reveal your real gaps — not just what you got wrong, but why.
               </p>
             </div>
@@ -134,8 +134,8 @@ export default function LandingPage() {
             {/* Step 2 */}
             <div className="text-center md:text-left">
               <span className="text-[64px] font-bold text-[#4DA8DA]/30 leading-none">2</span>
-              <h3 className="text-[16px] font-bold text-[#003366] mt-2 mb-3">Practice Your Weak Spots</h3>
-              <p className="text-[14px] text-[#475569] leading-relaxed">
+              <h3 className="text-lg font-bold text-[#003366] mt-2 mb-3">Practice Your Weak Spots</h3>
+              <p className="text-base text-[#475569] leading-relaxed">
                 Questions adapt in real-time. AI detects when you're frustrated and adjusts. You always have the final say.
               </p>
             </div>
@@ -143,8 +143,8 @@ export default function LandingPage() {
             {/* Step 3 */}
             <div className="text-center md:text-left">
               <span className="text-[64px] font-bold text-[#4DA8DA]/30 leading-none">3</span>
-              <h3 className="text-[16px] font-bold text-[#003366] mt-2 mb-3">Watch Your Score Climb</h3>
-              <p className="text-[14px] text-[#475569] leading-relaxed">
+              <h3 className="text-lg font-bold text-[#003366] mt-2 mb-3">Watch Your Score Climb</h3>
+              <p className="text-base text-[#475569] leading-relaxed">
                 Track your predicted score, master weak topics, and follow a study plan built around your schedule.
               </p>
             </div>
@@ -156,31 +156,31 @@ export default function LandingPage() {
       <section className="bg-[#F7F9FC] py-20 sm:py-28">
         <div className="max-w-[900px] mx-auto px-6 lg:px-8">
           <p className="text-label text-[#94A3B8] text-center mb-4">THE PROBLEM</p>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#003366] text-center mb-16">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#003366] text-center mb-16" style={{ textWrap: 'balance' }}>
             Personalized SAT prep costs $200/hour.
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* $200/hr Tutor */}
             <div className="p-6">
-              <h3 className="text-[15px] font-semibold text-[#003366] mb-3">$200/hr Tutor</h3>
-              <p className="text-[14px] text-[#475569] leading-relaxed">
+              <h3 className="text-lg font-bold text-[#003366] mb-3">$200/hr Tutor</h3>
+              <p className="text-base text-[#475569] leading-relaxed">
                 Adaptive, personalized, effective. Only available to wealthy students.
               </p>
             </div>
             
             {/* Free Tools */}
             <div className="p-6">
-              <h3 className="text-[15px] font-semibold text-[#003366] mb-3">Free Tools (Khan, etc.)</h3>
-              <p className="text-[14px] text-[#475569] leading-relaxed">
+              <h3 className="text-lg font-bold text-[#003366] mb-3">Free Tools (Khan, etc.)</h3>
+              <p className="text-base text-[#475569] leading-relaxed">
                 Same questions for everyone. No diagnosis. No adaptation.
               </p>
             </div>
             
-            {/* TutorZero - with blue left border */}
-            <div className="p-6 border-l-4 border-[#006BB6] bg-white rounded-r-lg shadow-subtle">
-              <h3 className="text-[15px] font-semibold text-[#003366] mb-3">TutorZero</h3>
-              <p className="text-[14px] text-[#475569] leading-relaxed">
+            {/* TutorZero */}
+            <div className="p-6 bg-white rounded-lg shadow-sm ring-1 ring-[#006BB6]/20">
+              <h3 className="text-lg font-bold text-[#003366] mb-3">TutorZero</h3>
+              <p className="text-base text-[#475569] leading-relaxed">
                 Adaptive AI + human input. Diagnoses real gaps. Free.
               </p>
             </div>
@@ -191,7 +191,7 @@ export default function LandingPage() {
       {/* Pricing Section */}
       <section id="pricing" className="bg-white py-20 sm:py-28">
         <div className="max-w-[800px] mx-auto px-6 lg:px-8">
-          <h2 className="text-h1 text-[#003366] text-center mb-3">Simple, honest pricing.</h2>
+          <h2 className="text-h1 text-[#003366] text-center mb-3" style={{ textWrap: 'balance' }}>Simple, honest pricing.</h2>
           <p className="text-body text-[#475569] text-center mb-12">
             The free tier is real. No trials, no bait-and-switch.
           </p>
@@ -204,7 +204,7 @@ export default function LandingPage() {
                 <span className="text-4xl font-bold text-[#003366]">$0</span>
                 <span className="text-sm text-[#94A3B8]">/forever</span>
               </div>
-              <p className="text-[15px] text-[#475569] mb-6">Everything you need to start improving.</p>
+              <p className="text-base text-[#475569] mb-6">Everything you need to start improving.</p>
               
               <div className="border-t border-[#E2E8F0] pt-6 space-y-3">
                 <FeatureItem>Full diagnostic test</FeatureItem>
@@ -239,7 +239,7 @@ export default function LandingPage() {
                 <span className="text-4xl font-bold text-white">$9.99</span>
                 <span className="text-sm text-white/60">/month</span>
               </div>
-              <p className="text-[15px] text-white/80 mb-6">The full private tutor experience.</p>
+              <p className="text-base text-white/80 mb-6">The full private tutor experience.</p>
               
               <div className="border-t border-white/10 pt-6 space-y-3">
                 <FeatureItem pro>Everything in Free, plus:</FeatureItem>

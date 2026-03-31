@@ -1,0 +1,251 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1278 | Topic: algebra / systems_of_equations
+Q: Hiro and Sofia purchased shirts and pants from a store. The price of each
+shirt purchased was the same and the price of each pair of pants
+purchased was the same. Hiro purchased 4 shirts and 2 pairs of pants for
+$86, and Sofia purchased 3 shirts and 5 pairs of pants for $166. Which of
+the following 
+Correct: A
+
+---
+[Question] ID: 1279 | Topic: algebra / systems_of_equations
+Q: Jy
+6 y
+Pt ttt det TTY I
+PT Tt Te TAL TT
+PEt TT Et VT
+Pi tT tT] EA ty Yt
+POCO RYE
+Pi TTT Pte
+~6-5-4-3-2-10] fi 2 3 4 5 6
+
+PTT ey
+PT tT TA ET
+Pit tT Taye tt ty ft
+PT Tt Tet tt ey Tt
+Pt TT Avie | yy tT
+
+The graph of a system of linear equations is shown. What is the solution (a2, y) to the system?
+A) (0,3)  B) (1,3)  C) (2, 3)  D) (3, 3)
+Correct: C
+
+---
+[Question] ID: 1280 | Topic: algebra / systems_of_equations
+Q: A petting zoo sells two types of tickets. The standard ticket, for admission
+only, costs $5. The premium ticket, which includes admission and food to
+give to the animals, costs $12. One Saturday, the petting zoo sold a total of
+250 tickets and collected a total of $2,300 from ticket sales. Which of 
+Correct: A
+
+---
+[Question] ID: 1281 | Topic: algebra / systems_of_equations
+Q: z= 10
+y=x+21
+The solution to the given system of equations is (a, y). What is the value of y?
+A) 2.1  B) 10 Cc. 21  C) 31
+Correct: D
+
+---
+[Question] ID: 1282 | Topic: algebra / systems_of_equations
+Q: VY EAKtG
+x=1
+
+What is the solution oy) to the given
+
+system of equations?
+A) (4,2)  B) (1,5) c. (2,3)  C) (2,7)
+Correct: B
+
+---
+[Question] ID: 1283 | Topic: algebra / systems_of_equations
+Q: A system of two linear equations is graphed in the xy-plane below.
+y
+Lr}20 POC a
+Eee EEA HH
+HAH EE
+COoSr ey rat
+S05 Se0ee) Se See
+HEE HEHE
+COAT
+HEPC
+COCOA
+He A
+COCEC 77
+S008)
+COCs eee
+C4
+CALA CC
+Ae
+ZC
+aay SSS SSeS See
+Say aneegeaeaeaeucacuea
+CACAO
+Va
+Which of the following points is the solution to
+
+A) (3,9)  B) (6,15) c. (8,10) b. (12,18)
+Correct: A
+
+---
+[Question] ID: 1284 | Topic: algebra / systems_of_equations
+Q: y=4r-9
+y= 19
+What is the solution (z, y) to the given system of equations?
+A) (4, 19)  B) (7,19) Cc. (19, 4)  C) (19, 7)
+Correct: B
+
+---
+[Question] ID: 1285 | Topic: algebra / systems_of_equations
+Q: Connor has c dollars and Maria has m dollars. Connor has 4 times as many dollars as Maria, and together they
+have a total of $25.00. Which system of equations represents this situation?
+A.c = 4m
+c+m= 25
+B.m = 4c
+c+m = 25
+C.c= 25m
+c+m=4
+D. m = 25c
+c+m=4
+Correct: A
+
+---
+[Question] ID: 1286 | Topic: algebra / systems_of_equations
+Q: A dance teacher ordered outfits for students for a dance recital. Outfits for
+boys cost $26, and outfits for girls cost $35. The dance teacher ordered a
+total of 28 outfits and spent $881. If b represents the number of outfits the
+dance teacher ordered for boys and g represents the number of outfits
+Correct: B
+
+---
+[Question] ID: 1287 | Topic: algebra / systems_of_equations
+Q: oo tat ee
+2x +y)+3y =85
+
+If xy) is the solution to the given system of
+
+equations, what is the value of y ?
+A) 10  B) 15 Cc. 60  C) 65
+Correct: B
+
+---
+[Question] ID: 1288 | Topic: algebra / systems_of_equations
+Q: ax +y¥=/79
+x=2
+If oy) is the solution to the given system of
+equations, what is the value of y ?
+A) 23  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1289 | Topic: algebra / systems_of_equations
+Q: An online bookstore sells novels and magazines. Each novel sells for $4,
+and each magazine sells for $1. If Sadie purchased a total of 11 novels and
+magazines that have a combined selling price of $20, how many novels did
+she purchase?
+
+A.2
+
+B.3
+
+Cc. 4
+
+D.5
+Correct: B
+
+---
+[Question] ID: 1290 | Topic: algebra / systems_of_equations
+Q: A discount airline sells a certain number of tickets, x, for a flight for $90
+each. It sells the number of remaining tickets, y, for $250 each. For a
+particular flight, the airline sold 120 tickets and collected a total of $27,600
+from the sale of those tickets. Which system of equations represents 
+A) ° 90x +250y = 27,600 x +y=120  B) ° 90x +250y = 120(27,600) x +y =27,600  C) ° 90x +250y = 120(27,600) 90x = 250y  D) * 420x + 120y = 27,600
+Correct: A
+
+---
+[Question] ID: 1291 | Topic: algebra / systems_of_equations
+Q: A movie theater charges $11 for each full-price ticket and $8.25 for each
+reduced-price ticket. For one movie showing, the theater sold a total of
+214 full-price and reduced-price tickets for $2,145. Which of the following
+systems of equations could be used to determine the number of full-price
+tick
+A) 117 +8625r=214 ft+r=214 Be 44 +8.25r=2,145 f+r=214 & g95f4+11r=2,145 f+r=2,145  B) 6.297 +11r=214
+Correct: B
+
+---
+[Question] ID: 1292 | Topic: algebra / systems_of_equations
+Q: Angela is playing a video game. In this game, players can score points only by collecting coins and stars.
+Each coin is worth c points, and each star is worth s points.
+« The first time she played, Angela scored 700 points. She collected 20 coins and 10 stars.
+« The second time she played, Angela sc
+Correct: B
+
+---
+[Question] ID: 1293 | Topic: algebra / systems_of_equations
+Q: AX EIV SD
+6x+26y=a
+
+In the given system of equations, a is a constant. If the system has infinitely
+
+many solutions, what is the value of a ?
+
+A.4
+
+B.9
+
+C. 36
+
+D. 54
+Correct: C
+
+---
+[Question] ID: 1294 | Topic: algebra / systems_of_equations
+Q: J
+10
+of | ttt tt | yy
+sf} tt tt | Yo
+NER
+AeNEES7EEee
+st iINIT A | I
+aN
+3 | VANE TTT TT
+13/78 RNEEEee
+Met TINT fT
+Pi TTT IN TT.
+O 12345 67 8 9 10
+The graph of a system of linear equations is shown. What is the solution (z, y) to the system?
+A) (2,3)  B) (3, 4) c. (4, 5)  C) (5, 6)
+Correct: B
+
+---
+[Question] ID: 1295 | Topic: algebra / systems_of_equations
+Q: y=4
+zr=y+6
+The solution to the given system of equations is (a, y). What is the value of x?
+A) 10  B) 6  C) 4  D) 2
+Correct: A
+
+---
+[Question] ID: 1296 | Topic: algebra / systems_of_equations
+Q: 5a = 15
+42 +y=—2
+The solution to the given system of equations is (x, y). What is the value of x + y?
+A.-17
+B. —13
+€. 13
+D.17
+Correct: C
+
+---
+[Question] ID: 1297 | Topic: algebra / systems_of_equations
+Q: z+y=18
+sy==x
+What is the solution (a, y) to the given system of equations?
+A) (15,3)  B) (16, 2) c. (17,1)  C) (18, 0)
+Correct: A

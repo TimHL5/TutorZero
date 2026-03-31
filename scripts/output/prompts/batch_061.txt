@@ -1,0 +1,191 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2664 | Topic: craft_structure / words_context
+Passage: Cat and Plum Blossoms is an important work of Nihonga, or classical Japanese painting. Unlike Kuroda Seiki, who adopted
+traditional European methods such as painting with oil on canvas, Hishida Shunso traditional Japanese approaches.
+For instance, Hishida produced Cat and Plum Blossoms by applying c...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) distrusted  B) embraced  C) released  D) overlooked
+Correct: B
+
+---
+[Question] ID: 2665 | Topic: craft_structure / words_context
+Passage: The following text is adapted from Nathaniel Hawthorne's 1837 story “Dr. Heidegger's Experiment.” The main
+
+character, a physician, is experimenting with rehydrating a dried flower.
+At first [the rose] lay lightly on the surface of the fluid, appearing to imbibe none of its moisture. Soon,
+however, ...
+Q: As used in the text, what does the phrase “a singular” most nearly mean?
+A) A lonely  B) A disagreeable  C) An acceptable  D) An extraordinary
+Correct: D
+
+---
+[Question] ID: 2666 | Topic: craft_structure / words_context
+Passage: The work of molecular biophysicist Enrique M. De La Cruz is known for traditional boundaries between
+academic disciplines. The university laboratory that De La Cruz runs includes engineers, biologists, chemists, and
+physicists, and the research the lab produces makes use of insights and techniques f...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) epitomizing  B) transcending  C) anticipating  D) reinforcing
+Correct: B
+
+---
+[Question] ID: 2667 | Topic: craft_structure / words_context
+Passage: The following text is from F. Scott Fitzgerald's 1925 novel The Great Gatsby.
+[Jay Gatsby] was balancing himself on the dashboard of his car with that resourcefulness of movement that
+is so peculiarly American—that comes, | suppose, with the absence of lifting work in youth and, even more,
+with the ...
+Q: As used in the text, what does the word “quality” most nearly mean?
+A) Standard  B) Prestige  C) Characteristic  D) Accomplishment
+Correct: C
+
+---
+[Question] ID: 2668 | Topic: craft_structure / words_context
+Passage: To develop a method for measuring snow depth with laser beams, NASA physicist Yongxiang Hu relied on
+identifying broad similarities between two seemingly different phenomena, Hu used information about how ants
+move inside colonies to calculate how the particles of light that make up laser beams trav...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) a collaboration  B) an accessory  C) a contradiction  D) an analogy
+Correct: D
+
+---
+[Question] ID: 2669 | Topic: craft_structure / words_context
+Passage: A journalist and well-respected art critic of nineteenth-century Britain, Lady Elizabeth Rigby Eastlake did not
+hesitate to publish reviews that went against popular opinion. One of her most divisive works was an essay
+questioning the idea of photography as an emerging medium for fine art: in the es...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) exposed  B) asserted  C) discovered  D) doubted
+Correct: B
+
+---
+[Question] ID: 2670 | Topic: craft_structure / words_context
+Passage: Stephen Hannock’'s luminous landscape paintings are appealing to viewers but have elicited little commentary
+from contemporary critics, a phenomenon that may be due to the very fact that the paintings seem so .
+Many critics focus their attention on art that is cryptic or overtly challenging....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) innovative  B) subversive  C) profound  D) accessible
+Correct: D
+
+---
+[Question] ID: 2671 | Topic: craft_structure / words_context
+Passage: In 2008 a complete set of ancient pessoi (glass game pieces) was uncovered from beneath a paving stone in
+modern-day Israel. Due to their small size, pesso/ were easily misplaced, making a whole set a rare find. This has
+led some experts to suggest that the set may have been buried intentionally; ho...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) speculate about  B) dismiss  C) expand on  D) catalog
+Correct: A
+
+---
+[Question] ID: 2672 | Topic: craft_structure / words_context
+Passage: The following text is adapted from Zora Neale Hurston’s 1921 short story “John Redding Goes to Sea.” John wants
+to travel far beyond the village where he lives near his mother, Matty.
+[John] had on several occasions attempted to reconcile his mother to the notion, but found it a difficult task.
+Matt...
+Q: As used in the text, what does the phrase “reconcile his mother to” most nearly mean?
+A) Get his mother to accept  B) Get his mother to apologize for  C) Get his mother to match  D) Get his mother to reunite with
+Correct: A
+
+---
+[Question] ID: 2673 | Topic: craft_structure / words_context
+Passage: Business researcher Melanie Brucks and colleagues found that remote video conference meetings may be less
+conducive to brainstorming than in-person meetings are. The researchers suspect that video meeting participants
+are focused on staring at the speaker on the screen and don’t allow their eyes or ...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) recommend  B) criticize  C) impede  D) construct
+Correct: C
+
+---
+[Question] ID: 2674 | Topic: craft_structure / words_context
+Passage: Mineralogical differences are detectable in samples collected from two locations on the near-Earth asteroid
+Ryugu, but such differences may not indicate substantial compositional variations in the asteroid. Cosmochemist
+Kazuhide Nagashima and colleagues note that at the small scale of the samples, t...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) neglected  B) redundant  C) ongoing  D) uniform
+Correct: D
+
+---
+[Question] ID: 2675 | Topic: craft_structure / words_context
+Passage: The percentage of US forest land that a 2023 federal report identified as being either mature or old growth exceeds other
+recent estimates. Given how little there is among scientists regarding the scope of these categories, this discrepancy
+shouldn't be surprising: forest researchers regularly dispu...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) deliberation  B) vigilance  C) interest  D) consensus
+Correct: D
+
+---
+[Question] ID: 2676 | Topic: craft_structure / words_context
+Passage: Economist Jingting Fan argues that the effects of international trade may display spatial variation at sub-national levels. For
+instance, imported goods may reduce expenses for a country’s average consumer, but for consumers living far from ports,
+high intranational transport costs could the price a...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) nullify  B) denigrate  C) underestimate  D) misconstrue
+Correct: A
+
+---
+[Question] ID: 2677 | Topic: craft_structure / words_context
+Passage: Stars form in cloudlike swirls of gas and dust that cannot be touched, but astrophysicist Nia Imara believes these formations
+need not remain completely to researchers: she uses simulation data and sophisticated 3D printers to produce
+interactive models of these stellar nurseries....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) repeatable  B) explicable  C) regrettable  D) intangible
+Correct: D
+
+---
+[Question] ID: 2678 | Topic: craft_structure / words_context
+Passage: Handedness, a preferential use of either the right or left hand, typically is easy to observe in humans. Because
+this trait is present but less in many other animals, animal-behavior researchers often employ tasks
+specially designed to reveal individual animals’ preferences for a certain hand or paw...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) recognizable  B) intriguing  C) significant  D) useful
+Correct: A
+
+---
+[Question] ID: 2679 | Topic: craft_structure / words_context
+Passage: In Nature Poem (2017), Kumeyaay poet Tommy Pico portrays his the natural world by honoring the
+centrality of nature within his tribe's traditional beliefs while simultaneously expressing his distaste for being in
+wilderness settings himself....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) responsiveness to  B) ambivalence toward  C) renunciation of  D) mastery over
+Correct: B
+
+---
+[Question] ID: 2680 | Topic: craft_structure / words_context
+Passage: Like the 1945 play it reimagines—Federico Garcia Lorca's The House of Bernarda Alba—Marcus Gardley's 2014
+play The House That Will Not Stand prominently features women. In both plays, the all-female cast an
+array of female characters, including a strong mother and several daughters dealing with indi...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) engulfs  B) encourages  C) comprises  D) provokes
+Correct: C
+
+---
+[Question] ID: 2681 | Topic: craft_structure / words_context
+Passage: During a 2014 archaeological dig in Spain, Vicente Lull and his team uncovered the skeleton of a woman from El
+Algar, an Early Bronze Age society, buried with valuable objects signaling a high position of power. This finding
+may persuade researchers who have argued that Bronze Age societies were rul...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) waive  B) concede  C) refute  D) require
+Correct: B
+
+---
+[Question] ID: 2682 | Topic: craft_structure / words_context
+Passage: In addition to being an accomplished psychologist himself, Francis Cecil Sumner was a increasing the
+opportunity for Black students to study psychology, helping to found the psychology department at Howard
+University, a historically Black university, in 1930....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) proponent of  B) supplement to  C) beneficiary of  D) distraction for
+Correct: A
+
+---
+[Question] ID: 2683 | Topic: craft_structure / words_context
+Passage: The following text is adapted from Nathaniel Hawthorne's 1844 short story “Drowne's Wooden Image." Drowne, a
+young man, is carving a wooden figure to decorate the front of a ship.
+Day by day, the work assumed greater precision, and settled its irregular and misty outline into distincter grace
+and be...
+Q: As used in the text, what does the word “assumed” most nearly mean?
+A) Acquired  B) Acknowledged  C) Imitated  D) Speculated
+Correct: A

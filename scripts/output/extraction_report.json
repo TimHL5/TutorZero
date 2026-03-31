@@ -1,0 +1,36 @@
+{
+  "total_questions": 2608,
+  "bank_questions": 1882,
+  "practice_questions": 726,
+  "by_section": {
+    "math": 1365,
+    "reading_writing": 1243
+  },
+  "by_topic": {
+    "advanced_math": 318,
+    "algebra": 501,
+    "geometry": 227,
+    "problem_solving": 319,
+    "craft_structure": 312,
+    "expression": 258,
+    "information_ideas": 385,
+    "conventions": 288
+  },
+  "by_difficulty": {
+    "easy": 425,
+    "medium": 1560,
+    "hard": 434,
+    "advanced": 189
+  },
+  "by_source": {
+    "question_bank": 1882,
+    "practice_test_4": 106,
+    "practice_test_5": 116,
+    "practice_test_6": 107,
+    "practice_test_7": 73,
+    "practice_test_8": 98,
+    "practice_test_9": 73,
+    "practice_test_10": 76,
+    "practice_test_11": 77
+  }
+}

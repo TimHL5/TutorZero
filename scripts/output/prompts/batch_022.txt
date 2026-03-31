@@ -1,0 +1,245 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1158 | Topic: algebra / linear_functions
+Q: The function f is defined by the equation f(x) = 100z + 2. What is the value of f(x) when xz = 9?
+A) 111  B) 118 c. 900  C) 902
+Correct: D
+
+---
+[Question] ID: 1159 | Topic: algebra / linear_functions
+Q: On January 1, 2015, a city's minimum hourly wage was $9.25. It will increase
+by $0.50 on the first day of the year for the next 5 years. Which of the
+following functions best models the minimum hourly wage, in dollars, x
+years after January 1, 2015, where x =1, 2,3, 4,5?
+A) f(x) = 9.25 -0.50x  B) f(x) =9.25x — 0.50 c. f(x) = 9.25 +0.50x  C) f(x) = 9.25x + 0.50
+Correct: C
+
+---
+[Question] ID: 1160 | Topic: algebra / linear_functions
+Q: The length, y, of a white whale was 162 centimeters (cm) when it was born and increased an average of 4.8 cm
+per month for the first 12 months after it was born. Which equation best represents this situation, where z is the
+number of months after the whale was born and y is the length, in cm, of the
+Correct: D
+
+---
+[Question] ID: 1161 | Topic: algebra / linear_functions
+Q: The function h is defined by h(a) = x + 200. What is the value of h(50)?
+A) 200  B) 250  C) 10,000  D) 50,200
+Correct: B
+
+---
+[Question] ID: 1162 | Topic: algebra / linear_functions
+Q: 3
+The graph of the function fis a line in the xy-plane. If the line has slope 4
+and #(0) =3, which of the following defines f?
+3
+he f)= roan 3
+3
+B. FOO a 4% +3
+c. f(x)=4x-3
+D. fx) =4x +3
+Correct: B
+
+---
+[Question] ID: 1163 | Topic: algebra / linear_functions
+Q: Oxygen gas is placed inside a tank with a constant volume. The graph shows the estimated temperature y, in
+kelvins, of the oxygen gas when its pressure is 2 atmospheres.
+y
+1,000
+OTE yr
+= my
+2 TTT A
+2 TTA
+2 oo EZ
+SL LAL
+5 OTE
+ons 4
+TELE
+Pe TT ET TT
+O 123 4567 8 9 10
+Pressure (atmospheres)
+What is the
+A) 6  B) 60 Cc. 700  C) 760
+Correct: C
+
+---
+[Question] ID: 1164 | Topic: algebra / linear_functions
+Q: Robert rented a truck to transport materials he purchased from a hardware
+store. He was charged an initial fee of $20.00 plus an additional $0.70 per
+mile driven. If the truck was driven 38 miles, what was the total amount
+Robert was charged?
+A) $46.60  B) $52.90  C) $66.90  D) $86.50
+Correct: A
+
+---
+[Question] ID: 1165 | Topic: algebra / linear_functions
+Q: P(t) = 250 + 10¢
+
+The population of snow leopards in a certain area can be modeled by the
+function P defined above, where P(t) is the population t years after 1990.
+
+Of the following, which is the best interpretation of the equation
+
+P(30) =550 2
+A) The snow leopard population in this area is predicted to be 30 in the year 2020.  B) The snow leopard population in this area is predicted to be 30 in the year 2030.  C) The snow leopard population in this area is predicted to be 550 in the year 2020  D) The snow leopard population in this area is predicted to be 550 in the year 2030
+Correct: C
+
+---
+[Question] ID: 1166 | Topic: algebra / linear_functions
+Q: Which of the following is the graph of the equation
+y=2x-5 in the xy-plane?
+A
+
+a4
+CCCs cere
+ee ca
+CCC eer
+COC eee
+Lert, ,
+
+2 TOL ers
+COOP
+COOP
+COOP
+2
+B
+
+a4
+KCCees cece
+NCCECCEee
+CACECCEELe
+CACC
+CONC, ,
+
+= CNC
+COREL
+COON
+CCCPRE TTT
+COs Te
+c.
+
+y
+Cool
+CCCP eee
+COOL
+CCOOZCCeeee
+Tore, ,
+
+= (Mors
+LCE CC
+C
+Correct: D
+
+---
+[Question] ID: 1167 | Topic: algebra / linear_functions
+Q: For the linear function f, f(0) = 17 and f(1) = 17. Which equation defines f?
+A) f(x) = 7  B) f(z) =1 Cc. f(z) =17  C) f(x) = 34
+Correct: C
+
+---
+[Question] ID: 1168 | Topic: algebra / linear_functions
+Q: Hydrogen is placed inside a container and kept at a constant pressure. The graph shows the estimated volume y, in liters, of
+the hydrogen when its temperature is z kelvins.
+Jy
+12
+re eee
+rt ETT TET TE | 4
+~ of FT TA
+@ stilt titted T
+= pL TIAL TT
+2 ef TILT
+EB eliiitttT ArT
+ee Oe Zee
+st TAT EE TT
+rt A 
+Correct: C
+
+---
+[Question] ID: 1169 | Topic: algebra / linear_functions
+Q: y
+10
+FETT TT Pate TT TT TT
+PETIT TT ete TTT
+PETIT TTT tT TT
+PETIT TTT eT TT
+FEET T TT STITT TTL
+PITT TTT att ter
+PELL LTT tt er
+PET Tt | tbe tT
+ae Gee
+BEEP Zane Re
+8-4 2 I 2 [4 |e | 8
+The graph of the linear function f is shown. What is the y-intercept of the graph of y = f(x)?
+A) ( — 5,0)  B) (2,0) c. (0, 2)  C) (0, —5)
+Correct: C
+
+---
+[Question] ID: 1170 | Topic: algebra / linear_functions
+Q: To repair a refrigerator, a technician charges $60 per hour for labor plus $120 for parts. Which function f represents the total
+amount, in dollars, the technician will charge for this job if it takes x hours?
+A) f(z) = x + 120  B) f(x) = 60a  C) f(x) = 60z + 120  D) f(x) = 602 — 120
+Correct: C
+
+---
+[Question] ID: 1171 | Topic: algebra / linear_functions
+Q: The function f is defined by f(z) = 80 — 6a. What is the value of f(7)?
+A) 13  B) 38  C) 74  D) 81
+Correct: B
+
+---
+[Question] ID: 1172 | Topic: algebra / linear_functions
+Q: For the linear function f, the graph of y = f(a) in the xy-plane has a slope of 2 and has a y-intercept at (0, —5). Which
+equation defines f?
+A) f(x) = $a —5  B) f(a) =-fa—5  C) f(z) = —22 —5  D) f(x) = 22 —5
+Correct: D
+
+---
+[Question] ID: 1173 | Topic: algebra / linear_functions
+Q: As part of a science project on evaporation, Amaya measured the height of a liquid in a container over a period of time. The
+function f(z) = 33 — 0.182 gives the estimated height, in centimeters (cm), of the liquid in the container x days after the
+start of the project. Which of the following is the
+A) The estimated height, in cm, of the liquid at the start of the project  B) The estimated height, in cm, of the liquid at the end of the project  C) The estimated change in the height, in cm, of the liquid each day  D) The estimated number of days for all of the liquid to evaporate
+Correct: A
+
+---
+[Question] ID: 1174 | Topic: algebra / linear_functions
+Q: Gabriella deposits $35 in a savings account at the end of each week. At the beginning of the 1st week of a year there was
+$600 in that savings account. How much money, in dollars, will be in the account at the end of the 4th week of that year?
+A) 460  B) 635  C) 639  D) 740
+Correct: D
+
+---
+[Question] ID: 1175 | Topic: algebra / linear_functions
+Q: In the linear function h, h(0) = 41 and h(1) = 40. Which equation defines h?
+A) h(a) = —a@ +41  B) h(x) = —x  C) A(x) = —41a  D) h(x) = —41
+Correct: A
+
+---
+[Question] ID: 1176 | Topic: algebra / linear_functions
+Q: The function g is defined by g(x) = 10x + 8. What is the value of g(x) when x = 8?
+A.0
+
+B.8
+
+c. 10
+
+D. 88
+Correct: D
+
+---
+[Question] ID: 1177 | Topic: algebra / linear_functions
+Q: The number y is 84 less than the number 2. Which equation represents the relationship between x and y?
+A.y=ax+ 84
+
+By= ye
+
+C.y = 84x
+
+D.y=a2- 84
+Correct: D

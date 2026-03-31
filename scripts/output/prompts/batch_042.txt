@@ -1,0 +1,227 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1746 | Topic: problem_solving / one_var_data
+Q: fe
+pete
+The frequency distribution above summarizes a set of data, where ais a
+positive integer. How much greater is the mean of the set of data than the
+median?
+A.0
+B.1
+G2
+D.3
+Correct: A
+
+---
+[Question] ID: 1747 | Topic: problem_solving / one_var_data
+Q: Two different teams consisting of 10 members each ran in a race. Each member’s completion time of the
+race was recorded. The mean of the completion times for each team was calculated and is shown below.
+Team A: 3.41 minutes
+Team B: 3.79 minutes
+Which of the following MUST be true?
+1. Every member of
+A) Ill only  B) | and Ill only  C) Il and III only  D) 1, Il, and Ill
+Correct: A
+
+---
+[Question] ID: 1748 | Topic: problem_solving / one_var_data
+Q: The mean score of 8 players in a basketball game was 14.5 points. If the
+highest individual score is removed, the mean score of the remaining 7
+players becomes 12 points. What was the highest score?
+A) 20  B) 24  C) 32  D) 36
+Correct: C
+
+---
+[Question] ID: 1749 | Topic: problem_solving / one_var_data
+Q: Each of the following frequency tables represents a data set. Which data set has the greatest mean?
+cof 4 |
+so | 8
+of] 6 |
+cw [es _
+pmo] 8
+of 5 |
+po | 8
+cw fs
+Correct: A
+
+---
+[Question] ID: 1750 | Topic: problem_solving / one_var_data
+Q: The mean amount of time that the 20 employees of a construction company
+have worked for the company is 6.7 years. After one of the employees
+leaves the company, the mean amount of time that the remaining
+employees have worked for the company is reduced to 6.25 years. How
+many years did the employee 
+A) 0.45  B) 2.30  C) 9.00  D) 15.25
+Correct: D
+
+---
+[Question] ID: 1751 | Topic: problem_solving / one_var_data
+Q: Data set F consists of 55 integers between 170 and 290. Data set G consists of all the integers in data set F as
+well as the integer 10. Which of the following must be less for data set F than for data set G?
+|. The mean
+ll. The median
+A) | only  B) Il only  C) | and Il  D) Neither | nor II
+Correct: D
+
+---
+[Question] ID: 1752 | Topic: problem_solving / one_var_data
+Q: Percent of Residents Who Earned
+a Bachelor's Degree or Higher
+State F 36.4%
+State G 35.5%
+A survey was given to residents of all 50 states asking if they had earned a
+bachelor's degree or higher. The results from 7 of the states are given in the
+table above. The median percent of residents who earne
+A) 0.05%  B) 0.95%  C) 1.22%  D) 7.45%
+Correct: B
+
+---
+[Question] ID: 1753 | Topic: problem_solving / one_var_data
+Q: po Masses (kilograms)
+fanarew] 24 [28 [86 | 51 | 28 | 27 |
+wera [x [st [27 [29 [33 | 20 |
+
+Andrew and Maria each collected six rocks, and the masses of the rocks are
+
+shown in the table above. The mean of the masses of the rocks Maria
+
+collected is 0.1 kilogram greater than the mean of the masses of
+A) 2.6  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1754 | Topic: problem_solving / one_var_data
+Q: For a certain computer game, individuals receive an integer score that ranges from 2 through 10. The table
+below shows the frequency distribution of the scores of the 9 players in group A and the 11 players in group B.
+Score
+Group
+alee
+2 {1 fo
+3 tt fo
+4 {2 [0 |
+sit fa
+ets | 2
+7 {0 | oo
+ei} | 2
+po ta
+A) 1  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1755 | Topic: problem_solving / one_var_data
+Q: e
+ee
+ee
+eee
+eee# ee
+——_—_+"_++—-+—-
+12 3 4 5
+Number of bursts
+The dot plot represents a data set of the number of bursts for 13 eruptions of a steam vent. If an additional eruption with 11
+bursts is added to this data set to create a new data set of 14 eruptions, which of the following measures will
+A) Land Il  B) | only  C) Il only  D) Neither | nor II
+Correct: C
+
+---
+[Question] ID: 1756 | Topic: problem_solving / one_var_data
+Q: Data set A consists of the heights of 75 objects and has a mean of 25 meters. Data set B consists of the heights
+of 50 objects and has a mean of 65 meters. Data set C consists of the heights of the 125 objects from data sets A
+and B. What is the mean, in meters, of data set C?
+A) 41  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1757 | Topic: problem_solving / one_var_data
+Q: Data set A consists of 10 positive integers less than 60. The list shown gives 9 of the integers from data set A.
+43, 45, 44, 43, 38, 39, 40, 46, 40
+
+The mean of these 9 integers is 42. If the mean of data set A is an integer that is greater than 42, what is the
+
+value of the largest integer from da
+A) 52  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1758 | Topic: problem_solving / one_var_data
+Q: ee
+ee ee ee
+
+Data set A and data set B each consist of 27 values. The table shows the frequencies of the values for each data
+set. Which of the following statements best compares the means of the two data sets?
+A) The mean of data set A is greater than the mean of data set B.  B) The mean of data set A is less than the mean of data set B.  C) The mean of data set A is equal to the mean of data set B.  D) There is not enough information to compare the means of the data sets.
+Correct: A
+
+---
+[Question] ID: 1759 | Topic: problem_solving / one_var_data
+Q: Group! +t {___]_ }—4
+Group 2 t+{_[_ -—+
+—+—_+_+—_++—_ +++ +++ +_ ++ ++
+20 22 24 26 28 30 = 32
+Mass (kilograms)
+The box plots summarize the masses, in kilograms, of two groups of gazelles. Based on the box plots, which of
+the following statements must be true?
+A) The mean mass of group 1 is greater than the mean mass of group 2.  B) The mean mass of group 1 is less than the mean mass of group 2.  C) The median mass of group 1 is greater than the median mass of group 2.  D) The median mass of group 1 is less than the median mass of group 2.
+Correct: C
+
+---
+[Question] ID: 1760 | Topic: problem_solving / percentages
+Q: A table of the US minimum wage for 6 different years is shown below.
+US
+minimum
+wage
+Year idole
+per
+hour)
+What was the percent increase of the minimum
+wage from 1960 to 1970?
+A) 30%  B) 60%  C) 62.5%  D) 120%
+Correct: B
+
+---
+[Question] ID: 1761 | Topic: problem_solving / percentages
+Q: The cost of a certain shirt is $20 before a 5% sales tax is added. What is
+the total cost, including sales tax, to purchase the shirt?
+A) $20.05  B) $20.50  C) $21.00  D) $25.00
+Correct: C
+
+---
+[Question] ID: 1762 | Topic: problem_solving / percentages
+Q: Last year, 200 students enrolled in an interior design program. This year, the number of students enrolled is 147%
+of last year's number. How many students are enrolled in the interior design program this year?
+A) 247  B) 294  C) 347  D) 394
+Correct: B
+
+---
+[Question] ID: 1763 | Topic: problem_solving / percentages
+Q: What is 23% of 100?
+A) 23  B) 46  C) 77  D) 123
+Correct: A
+
+---
+[Question] ID: 1764 | Topic: problem_solving / percentages
+Q: The length of the base of a certain parallelogram is 89% of the height of the parallelogram. Which expression
+represents the length of the base of the parallelogram, where A is the height of the parallelogram?
+A) 89h  B) 0.089h  C) 8.9h  D) 0.89h
+Correct: D
+
+---
+[Question] ID: 1765 | Topic: problem_solving / percentages
+Q: Where Do People Get Most of
+Their Medical Information?
+souteE Percent of
+those surveyed
+=
+o
+2
+Other/none of the above
+The table above shows a summary of 1,200 responses to a survey question.
+Based on the table, how many of those surveyed get most of their medical
+information from either a doctor or 
+A) 865  B) 887 Cc. 912  C) 926
+Correct: C

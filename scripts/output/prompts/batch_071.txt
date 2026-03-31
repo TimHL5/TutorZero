@@ -1,0 +1,188 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2896 | Topic: expression / transitions
+Passage: Scientists were able to isolate a relatively pure sample of selenium in 1817, the same year they first discovered the element's
+existence. the isolation process took longer for molybdenum, which was isolated in its pure form three years after
+scientists first discovered it....
+Q: Which choice completes the text with the most logical transition?
+A) By contrast,  B) Thus,  C) Similarly,  D) For instance,
+Correct: A
+
+---
+[Question] ID: 2897 | Topic: expression / transitions
+Passage: In a heated debate in biogeography, the field is divided between dispersalists and vicariancists. there are
+those who argue that dispersal is the most crucial determining factor in a species’ distribution, and those who
+insist that vicariance (separation due to geographic barriers) is. Biogeographer...
+Q: Which choice completes the text with the most logical transition?
+A) Furthermore,  B) By contrast,  C) Similarly,  D) That is,
+Correct: D
+
+---
+[Question] ID: 2898 | Topic: expression / transitions
+Passage: In 1815, while in exile in Jamaica, Venezuelan revolutionary Simon Bolivar penned a letter praising England's
+republican government and expressing hope that Latin American nations seeking independence from Spain might
+achieve something similar. The letter was addressed to a local merchant, Henry Cul...
+Q: Which choice completes the text with the most logical transition?
+A) additionally,  B) ultimately,  C) accordingly,  D) consequently,
+Correct: B
+
+---
+[Question] ID: 2899 | Topic: expression / transitions
+Passage: In 2009, the Craft and Folk Art Museum in Los Angeles hosted a special exhibition, Suefios/Yume, showcasing the
+works of local sculptor Dora de Larios. As suggested by the show's title (suefios and yume mean “dreams” in
+Spanish and Japanese, respectively), de Larios’s art reflects a mix of cultural ...
+Q: Which choice completes the text with the most logical transition?
+A) In addition,  B) In contrast,  C) Specifically,  D) Therefore,
+Correct: C
+
+---
+[Question] ID: 2900 | Topic: expression / transitions
+Passage: When one looks at the dark craggy vistas in Hitoshi Fugo's evocative photo series, one’s mind might wander off to
+the cratered surfaces of faraway planets. it's the series’ title, Flying Frying Pan, that brings one back to
+Earth, reminding the viewer that each photo is actually a close-up view of a ...
+Q: Which choice completes the text with the most logical transition?
+A) Consequently,  B) Alternatively,  C) Ultimately,  D) Additionally,
+Correct: C
+
+---
+[Question] ID: 2901 | Topic: expression / transitions
+Passage: Plato believed material objects to be crude representations of unseen ideal forms. In his view, such abstract,
+nonmaterial forms are the ultimate source of knowledge. Aristotle disagreed, positing that knowledge is best
+obtained through direct engagement with the material world; sensory experience o...
+Q: Which choice completes the text with the most logical transition?
+A) regardless,  B) admittedly,  C) in other words,  D) meanwhile,
+Correct: C
+
+---
+[Question] ID: 2902 | Topic: expression / transitions
+Passage: Magnetic levitation (maglev) trains are suspended above a track by powerful electromagnets, reducing friction
+and thus allowing for much faster speeds. Though maglev advocates in the US have long imagined these trains
+crisscrossing the country, their dream remains unrealized. of the handful of magle...
+Q: Which choice completes the text with the most logical transition?
+A) In fact,  B) To that end,  C) Nevertheless,  D) That said,
+Correct: A
+
+---
+[Question] ID: 2903 | Topic: expression / transitions
+Passage: Iraqi artist Nazik Al-Malaika, celebrated as the first Arabic poet to write in free verse, didn't reject traditional forms
+entirely; her poem “Elegy for a Woman of No Importance” consists of two ten-line stanzas and a standard number
+of syllables. Even in this superficially traditional work, Al-Mala...
+Q: Which choice completes the text with the most logical transition?
+A) therefore,  B) in fact,  C) moreover,  D) though,
+Correct: D
+
+---
+[Question] ID: 2904 | Topic: expression / transitions
+Passage: A 2017 study of sign language learners tested the role of iconicity—the similarity of a sign to the thing it
+represents—in language acquisition. The study found that the greater the iconicity of a sign, the more likely it was
+to have been learned. the correlation between acquisition and iconicity wa...
+Q: Which choice completes the text with the most logical transition?
+A) In fact,  B) In other words,  C) Granted,  D) As a result,
+Correct: C
+
+---
+[Question] ID: 2905 | Topic: expression / transitions
+Passage: “Tulip mania”—the rapid rise and sudden fall of the price of tulip bulbs in seventeenth-century Amsterdam—is
+often cited as an example of the perils of rampant market speculation. However, recent research has
+demonstrated that the episode was neither as frenzied nor as disastrous as has been thought...
+Q: Which choice completes the text with the most logical transition?
+A) for example,  B) by contrast,  C) nevertheless,  D) therefore,
+Correct: D
+
+---
+[Question] ID: 2906 | Topic: expression / transitions
+Passage: Seismologists Kaiqing Yuan and Barbara Romanowicz have proposed that the magma fueling Iceland’s more than
+30 active volcano systems emerges from deep within Earth. The great depths involved—nearly 3,000 km—mark
+Iceland's volcanoes as extreme outliers; many of Earth's volcanoes are fed by shallow po...
+Q: Which choice completes the text with the most logical transition?
+A) indeed,  B) nevertheless,  C) in addition,  D) consequently,
+Correct: A
+
+---
+[Question] ID: 2907 | Topic: expression / transitions
+Passage: With its clichéd imagery of suburban lawns and power lines, John Ashbery's 2004 poem “Ignorance of the Law Is
+No Excuse” may seem barren terrain for critical analysis. cultural critic Lauren Berlant finds fertile ground
+in just its first two stanzas, devoting most of a book chapter to deciphering th...
+Q: Which choice completes the text with the most logical transition?
+A) Likewise,  B) Nonetheless,  C) In turn,  D) That is,
+Correct: B
+
+---
+[Question] ID: 2908 | Topic: expression / transitions
+Passage: The Sun and other stars are powered by nuclear fusion reactions, in which two atoms collide to form a single
+heavier atom, releasing energy. Scientists have long believed that fusion has the potential to meet humanity's
+clean energy needs. prior to December 2022, no fusion reaction in a laboratory s...
+Q: Which choice completes the text with the most logical transition?
+A) For this reason,  B) Moreover,  C) Specifically,  D) That said,
+Correct: D
+
+---
+[Question] ID: 2909 | Topic: expression / transitions
+Passage: To perform a quad axel, a figure skater must leap into the air and complete four and a half rotations before landing, an
+extreme feat. in 2022, when 17-year-old Ilia Malinin landed the first quad axel—considered the most difficult quad
+jump—in a high-level competition, the audience was left awestruc...
+Q: Which choice completes the text with the most logical transition?
+A) Moreover,  B) Fittingly,  C) Next,  D) However,
+Correct: B
+
+---
+[Question] ID: 2910 | Topic: expression / transitions
+Passage: The mineral mtorolite is most commonly found in Zimbabwe. Mtorolite is cryptocrystalline, meaning that its crystalline
+structure is so fine that the individual crystals cannot be distinguished by the naked eye or even under a microscope. The
+crystals in microcrystalline minerals are also not visible...
+Q: Which choice completes the text with the most logical transition?
+A) thus,  B) for example,  C) that said,  D) similarly,
+Correct: C
+
+---
+[Question] ID: 2911 | Topic: expression / transitions
+Passage: Ugandan American professor Peter Nazareth believed that Elvis Presley's music is best understood not as a homogeneous
+collection but as an anthology (because Elvis showcased the contributions of a wide range of gospel, blues, and rock
+artists). Nazareth entitled his college course on Elvis and his m...
+Q: Which choice completes the text with the most logical transition?
+A) To that end,  B) In sum,  C) That is,  D) In addition,
+Correct: A
+
+---
+[Question] ID: 2912 | Topic: expression / transitions
+Passage: When soil becomes contaminated by toxic metals, it can be removed from the ground and disposed of in a landfill.
+contaminated soil can be detoxified via phytoremediation: plants that can withstand high concentrations
+
+of metals absorb the pollutants and store them in their shoots, which are then cut...
+Q: Which choice completes the text with the most logical transition?
+A) Alternatively,  B) Specifically,  C) For example,  D) As a result,
+Correct: A
+
+---
+[Question] ID: 2913 | Topic: expression / transitions
+Passage: The Madison is a type of line dance that involves neat rows of dancers performing a repeated sequence of steps in unison.
+many other dances are also defined by order, repetition, and synchronicity, but the Madison is distinguished by its
+
+extreme uniformity; when an auditorium full of dancers perfor...
+Q: Which choice completes the text with the most logical transition?
+A) However,  B) Of course,  C) Specifically,  D) Moreover,
+Correct: B
+
+---
+[Question] ID: 2914 | Topic: expression / transitions
+Passage: In the late twentieth century, scholars directed much discussion toward issues of spatiality. Adherents to quantitative
+analytical approaches delineated space with the use of GIS spatial technologies; cultural geographer Doreen Massey
+defined space as the product of “an ever-shifting social geometry...
+Q: Which choice completes the text with the most logical transition?
+A) for example,  B) by contrast,  C) as such,  D) likewise,
+Correct: B
+
+---
+[Question] ID: 2915 | Topic: expression / transitions
+Passage: Modernista architects championed nature in their designs. the wavy staircase and ornate floral tilework of Hospital de
+Sant Pau, a Modernista hospital designed by Lluis Doménech i Montaner, couldn't exactly grow in a forest. Still, one sees
+natural influences in Doménech i Montaner’s penchant for cu...
+Q: Which choice completes the text with the most logical transition?
+A) Furthermore,  B) Similarly,  C) Of course,  D) Thus,
+Correct: C

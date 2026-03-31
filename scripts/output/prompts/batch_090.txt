@@ -1,0 +1,183 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 3035 | Topic: conventions / boundaries
+Passage: A study published by Rice University geoscientist Ming Tang in 2019 offers a new explanation for the origin of
+Earth's structures called arcs, towering ridges that form when a dense oceanic plate subducts under a
+less dense continental plate, melts in the mantle below, and then rises and bursts thro...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) continents geological  B) continents: geological  C) continents; geological  D) continents. Geological
+Correct: B
+
+---
+[Question] ID: 3036 | Topic: conventions / boundaries
+Passage: The Organisation for Economic Co-operation and Development (OECD) tracks comparative price list data for its thirty-eight
+member countries. For instance, in July 2021, a hypothetical basket of goods priced at 100 US dollars (USD) in the United
+States would have cost 62 USD and 110 USD in fellow OECD...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) nations, Chile  B) nations; Chile  C) nations: Chile  D) nations Chile
+Correct: D
+
+---
+[Question] ID: 3037 | Topic: conventions / boundaries
+Passage: The pedagogy of the Suzuki method is rooted in several central by Japanese violinist Shinichi Suzuki, who sought to
+parallel the linguistic learning environment, the method emphasizes playing instruments from a very young age and teaches
+students as young as three to play simple classical pieces suc...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) tenets. Developed  B) tenets developed  C) tenets that, developed  D) tenets, developed
+Correct: A
+
+---
+[Question] ID: 3038 | Topic: conventions / boundaries
+Passage: During the decades-long movement to codify the rights of Latinos in the US, certain events were pivotal: the founding of
+social justice group the League of United Latin American Citizens in Katzenbach v. Morgan court decision in 1966,
+which affirmed the rights of Latino voters, is another such event...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) 1929. For one, the  B) 1929, for one, the  C) 1929 for one, the  D) 1929, for one. The
+Correct: D
+
+---
+[Question] ID: 3039 | Topic: conventions / boundaries
+Passage: The Austronesian language family includes Tagalog, Malagasy, and some 1,200 other languages throughout the Pacific,
+making it one of the largest language families in the world and of keen interest to___ of the University of Toronto....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) linguist, Diane Massam,  B) linguist, Diane Massam  C) linguist Diane Massam  D) linguist: Diane Massam
+Correct: C
+
+---
+[Question] ID: 3040 | Topic: conventions / boundaries
+Passage: Featuring works by the photographers Lola Alvarez Bravo and Else “Yva” Neulander-Simon, the 2021 exhibition The New
+Woman Behind the Camera set out to provide a wide-ranging overview of photography by women in the 1920s through the
+______ given the collection’s breadth of more than 120 photos, its e...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) 1950s, and  B) 1950s and  C) 1950s  D) 1950s,
+Correct: A
+
+---
+[Question] ID: 3041 | Topic: conventions / boundaries
+Passage: Philosopher Peter Kivy was a leading figure in musical evidenced by his belief that instead of evoking particular
+emotions, such as sadness or joy, compositions elicit a listener's emotional response to the structure and artistry of the
+music itself, Kivy’s approach to the study of music was decided...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) aesthetics as  B) aesthetics and as  C) aesthetics, as  D) aesthetics. As
+Correct: D
+
+---
+[Question] ID: 3042 | Topic: conventions / boundaries
+Passage: Recent analysis of 32532 Thereus—an outer solar system object orbiting the Sun between Jupiter and Saturn—has
+determined its color to be gray, suggesting an icy composition. Such interpretations are ultimately the object's gray
+coloration may be an incidental effect of radiation, solar wind, or coll...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) speculative, though  B) speculative, though;  C) speculative; though  D) speculative, though,
+Correct: B
+
+---
+[Question] ID: 3043 | Topic: conventions / boundaries
+Passage: As a behavioral economist, Katy Milkman of the University of Pennsylvania recognizes that people sometimes make
+irrational economic decisions. Milkman’s research can thus address anomalies that neoclassical economic assume
+that people are consistently rational decision-makers—cannot explain....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) models—which  B) models, which  C) models which  D) models which—
+Correct: A
+
+---
+[Question] ID: 3044 | Topic: conventions / boundaries
+Passage: In 2021, Mexican biologist Martha Lydia Macias-Rubalcava led a review of the scientific literature related to endophytic fungi
+(i-e., fungi that live inside a host researching 120 endophytic fungi- produced compounds, she found that their
+phytotoxicity can make them viable alternatives to chemical h...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) plant). By  B) plant), by  C) plant) and by  D) plant) by
+Correct: A
+
+---
+[Question] ID: 3045 | Topic: conventions / form_structure_sense
+Passage: In recent years, economists around the world have created new tools that quantify the overall well-being of a
+country’s citizens. Economists in India, for example, use an Ease of Living Index. This tool economic
+potential, sustainability, and citizens’ quality of life....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) measures  B) had measured  C) would have measured  D) will have been measuring
+Correct: A
+
+---
+[Question] ID: 3046 | Topic: conventions / form_structure_sense
+Passage: Mathematician and meteorologist Edward Lorenz used the metaphor of the “butterfly effect” to explain how
+seemingly minor events can have major impacts on future weather. According to Lorenz's metaphor, the wind
+from a butterfly flapping in Brazil might eventually grow into a storm elsewhere across t...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) its wings  B) its wings’  C) it's wing's  D) it's wings’
+Correct: A
+
+---
+[Question] ID: 3047 | Topic: conventions / form_structure_sense
+Passage: Led by Syrian American astronomer Shadia Habbal, the Solar Wind Sherpas are an intrepid team of scientists who
+travel the globe to study solar winds, the streams of particles emanating from the Sun that are only visible from
+certain locations during a total solar eclipse. When such an eclipse is imm...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) get  B) had gotten  C) got  D) were getting
+Correct: A
+
+---
+[Question] ID: 3048 | Topic: conventions / form_structure_sense
+Passage: Farouk El-Baz, a geologist and space scientist, ____ part of the team that selected the lunar landing sites for
+the Apollo program during the 1960s and 1970s....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) are  B) was  C) have been  D) were
+Correct: B
+
+---
+[Question] ID: 3049 | Topic: conventions / form_structure_sense
+Passage: Obsidian is a kind of volcanic glass formed when lava cools so quickly that the atoms inside it cannot arrange
+themselves in a crystalline structure. You more about obsidian’s structure, which is classified as
+amorphous, in a later chapter....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) had learned  B) had been learning  C) will learn  D) have learned
+Correct: C
+
+---
+[Question] ID: 3050 | Topic: conventions / form_structure_sense
+Passage: Midway through her 1968 jazz album A Monastic Trio, Alice Coltrane switches instruments, swapping the piano for
+the harp. With the same fluid style that Coltrane was famous for on piano, she her fingers across the harp
+strings and creates a radiant sound....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) sweep  B) are sweeping  C) were sweeping  D) sweeps
+Correct: D
+
+---
+[Question] ID: 3051 | Topic: conventions / form_structure_sense
+Passage: Objects ranging from the Kikkoman soy sauce bottle to the Yamaha VMAX motorcycle to the Komachi bullet train
+____ designed by twentieth-century industrial designer Kenji Ekuan....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) was  B) is  C) has been  D) were
+Correct: D
+
+---
+[Question] ID: 3052 | Topic: conventions / form_structure_sense
+Passage: While exploring Nevada's Gypsum Cave in 1930, Seneca and Abenaki archaeologist Bertha Parker made her most
+famous discovery: the skull of a now-extinct ground sloth (Nothrotheriops shastensis) alongside human-made
+tools. Parker's crucial finding was the first humans in North America as far back as 1...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) places  B) placed  C) place  D) to place
+Correct: D
+
+---
+[Question] ID: 3053 | Topic: conventions / form_structure_sense
+Passage: The African Games Co-production Market, one of over 180 annual international conferences supporting video
+game development, the growth of the African gaming industry by helping start-up studios in Africa find
+partners....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) promote  B) are promoting  C) promotes  D) have promoted
+Correct: C
+
+---
+[Question] ID: 3054 | Topic: conventions / form_structure_sense
+Passage: Earth is not a perfect sphere. Due to the gravitational pull, Earth bulges out on the sides closest to and
+farthest from the Moon. This distorting pull is known as a tidal force, and it is responsible for the changes in water
+levels that are called high and low tides....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) Moon's  B) Moons  C) Moons’  D) Moon
+Correct: A

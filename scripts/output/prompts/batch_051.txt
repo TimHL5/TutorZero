@@ -1,0 +1,402 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1926 | Topic: problem_solving / two_var_data
+Q: » 300
+
+gf 250
+
+2 200
+
+= 150
+
+i]
+
+B § 100
+
+5 g 50
+
+$000 2002 2004 2006 2008
+Graduating class year
+
+The line graph shows the number of graduates from the classes of 2001
+through 2007 at a certain school who enrolled in college within 24 months
+of graduation. Of the following, which class had the fewes
+A) 2002  B) 2004  C) 2005  D) 2007
+Correct: A
+
+---
+[Question] ID: 1927 | Topic: problem_solving / two_var_data
+Q: Theresa's Running Speed and Time
+8
+=e LOH TAT
+2 oL ATPASE TAT
+s 5. T/T TT TAY
+galt ttt
+z tf
+ea
+ott TTT yt Ty
+0 5 10 15 20 25 30
+Time (minutes)
+Theresa ran on a treadmill for thirty minutes, and her time and speed are
+shown on the graph above. According to the graph, which of the following
+statements
+A) Theresa ran at a constant speed for five minutes.  B) Theresa's speed was increasing for a longer period of time than it was decreasin  C) Theresa's speed decreased at a constant rate during the last five minutes.  D) Theresa's speed reached its maximum during the last ten minutes.
+Correct: B
+
+---
+[Question] ID: 1928 | Topic: problem_solving / two_var_data
+Q: an Density of Grape Juice
+1,400
+ea
+nt
+Soe tote, | |
+Pe ae
+ee
+perl Oe ol) ee
+ee ae
+ppt
+20% 30% 40% 50% 60% 70% 80%
+Concentration
+The densities of different concentrations of grape juice are shown in the
+scatterplot above. According to the trend shown by the data, which of the
+following is closest to 
+A) 1,200  B) 1,250  C) 1,300  D) 1,350
+Correct: C
+
+---
+[Question] ID: 1929 | Topic: problem_solving / two_var_data
+Q: Number of 3-D Movies Released by Year
+50
+3
+g 40
+6
+gy © 30
+23
+£ Ss 20
+Ze
+2 10
+; 0
+ew s SS s s s s s s
+Year
+According to the line graph above, between which two consecutive years
+was there the greatest change in the number of 3-D movies released?
+A) 2003-2004  B) 2008-2009  C) 2009-2010  D) 2010-2011
+Correct: D
+
+---
+[Question] ID: 1930 | Topic: problem_solving / two_var_data
+Q: y
+6
+ste} | fT
+Thr
+inne
+2
+iT TT fd
+Ue
+012345
+Which of the following could be an equation for a line of best
+fit for the data in the scatterplot?
+A.y=—x+6
+B.y=—-x-6
+C.y=6x+1
+D. y=6x-1
+Correct: A
+
+---
+[Question] ID: 1931 | Topic: problem_solving / two_var_data
+Q: Braking Distance versus Speed
+
+= 600
+
+2 500
+
+g 400
+
+2 300
+
+ba
+
+& 200
+
+2 100
+
+a
+
+0
+0 20 40 60 80
+Speed (miles per hour)
+The graph above shows the relationship between the speed of a particular
+car, in miles per hour, and its corresponding braking distance, in feet.
+Approximately how many feet greater
+A) 75  B) 125  C) 175  D) 250
+Correct: B
+
+---
+[Question] ID: 1932 | Topic: problem_solving / two_var_data
+Q: Number of Beach Visitors
+versus Temperature
+oo ee
+7
+560 rr
+a
+2 gol rrr yet
+§ a 2
+2 ao Pere
+$ a
+8 yo Ptr)
+g a
+¢ wot eet rrr
+EI A
+Z oI 4 Cee
+a
+sZt)
+a
+ep
+2 27° «29313335
+Average temperature (°C)
+Each dot in the scatterplot above represents the temperature and the
+number of people who visited a beach in
+A) 480  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1933 | Topic: problem_solving / two_var_data
+Q: The scatterplot shows the temperature y, in °F, recorded by a meteorologist at various times 2, in days since
+June 1.
+J
+i
+ott tt
+aed ee
+2 50
+fof | | TL Lt
+Ss
+pT
+a.
+& 30
+re
+wt EE
+PT TET TT Ty
+O x
+12 3 4 5 6 7 8
+Time (days since June 1)
+During which of the following time periods did the greatest incre
+A) From xz =6tor=7  B) From az = 5toz =6  C) Fromaz = 2tor=3  D) Frooma=1ltor=2
+Correct: C
+
+---
+[Question] ID: 1934 | Topic: problem_solving / two_var_data
+Q: A study was done to determine a new car’s stopping distance when it was traveling at different speeds. The
+study was done on a dry road with good surface conditions. The results are shown below, along with the
+graph of a quadratic function that models the data.
+Vehicle Stopping Distance
+y
+= 350
+& 30
+A) 25  B) 30  C) 210  D) 250
+Correct: C
+
+---
+[Question] ID: 1935 | Topic: problem_solving / two_var_data
+Q: Temperature and Elevation
+
+45
+
+waft | JT 7 7]
+eypl mw i> T tT Ty]
+x S
+geet
+z 41
+By) | | Sy tf
+Bz] | | | TX |
+sl | [ Tt tT Re
+
+yt | | [ ff e|
+
+FF KCK KF Fw
+
+Elevation (feet)
+
+The scatterplot above shows the high temperature on a certain day and the
+elevation of 8 different locations in the Lake Tahoe
+A) As the elevation increases, the temperature tends to increase.  B) As the elevation increases, the temperature tends to decrease.  C) As the elevation decreases, the temperature tends to decrease.  D) There is no association between the elevation and the temperature.
+Correct: B
+
+---
+[Question] ID: 1936 | Topic: problem_solving / two_var_data
+Q: Distance and Density of Planetoids
+in the Inner Solar System
+a
+55 SOE]
+8 ERSS SEERA
+8 ste EE HH
+2 ysf CPPS
+2 PCOOOCCERN Eee
+eS
+§ *COeCo reese
+A 350- PCP rrr rr Pst rr
+a
+3 OEE EEE Eres]
+0 04 08 12 16 2 24 28 3.2
+Distance from the Sun (AU)
+The scatterplot above shows the densities of 7 planetoids, in 
+A) 3.6  B) 4.1  C) 4.6  D) 5.5
+Correct: C
+
+---
+[Question] ID: 1937 | Topic: problem_solving / two_var_data
+Q: y
+20
+ee | | | | fo
+Bree
+oa
+ee TT TA
+ra
+af | | | |
+sf | JA |
+[La] | ft |
+of | | tt
+vt | | lh vdTl lth
+O 600 1,200 1,800
+Twelve data points are shown in the scatterplot. A line of best fit for the data is also shown. At a = 1,200, which of the
+following is closest to the y-value predicted by the line 
+A) 16  B) 14  C) 11  D) 6
+Correct: C
+
+---
+[Question] ID: 1938 | Topic: problem_solving / two_var_data
+Q: The scatterplot shows the relationship between the weight, in pounds, of each of 9 female gray wolves on April 30 and the
+number of offspring each gray wolf produced.
+J
+ee
+7
+eof | tt | ty
+oS 6
+tT tt yy
+eS 65
+rs oe ee
+So 4
+1)
+got} et tt
+ey
+3
+ed ee
+‘TEE
+x
+O" 10 20 30 40 50 60 70
+Weight (pounds)
+How ma
+Correct: C
+
+---
+[Question] ID: 1939 | Topic: problem_solving / two_var_data
+Q: An orchard owner recorded the weight, in pounds, of all nectarines that grew on a dwarf nectarine tree during each growing
+season after the tree's transplantation. The scatterplot shows this weight, in pounds, for each growing season after the tree's
+transplantation.
+J
+90
+
+Sot tt tl tt tet
+
+2 80
+
+3 
+A) 40  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1940 | Topic: problem_solving / two_var_data
+Q: The line graph shows the estimated number of chipmunks in a state park on April 1 of each year from 1989 to
+1999.
+22e "TLL
+n
+Ee 150
+= 2 oot | LI ANI LI I
+z a 100 y = ‘|
+22 ot ZVI WN
+___y
+ee Till iit itt
+- 0 6% 96 ofl
+9X oO oS ob o> DO)
+Roh Ro Rou ou cu CH Ac x “oy? Ro ce
+Year
+Based on the line graph
+A) 1989  B) 1994 c. 1995  C) 1998
+Correct: B
+
+---
+[Question] ID: 1941 | Topic: problem_solving / two_var_data
+Q: The scatterplot shows the relationship between two variables, x and y. A
+line of best fit for the data is also shown. Which of the following is closest to
+the difference between the y-coordinate of the data point with X = 1 and
+the y-value predicted by the line of best fit at x = 1?
+y
+12
+“EET
+10
+ot 
+Correct: A
+
+---
+[Question] ID: 1942 | Topic: problem_solving / two_var_data
+Q: In the given scatterplot, a line of best fit for the data is shown.
+J
+10
+of |i ttt tt ty
+ott lt ttt tt
+7Net Et EE
+ct PRT TE
+st} Nt tt
+wt tt TENT ET
+\SRRREaNee
+STEELE PN
+1a
+BREE
+O12 3 45 67 8 9 10
+Which of the following is closest to the slope of this line of best fit?
+A.7
+B. 0.7
+Cc. —0.7
+D. —7
+Correct: C
+
+---
+[Question] ID: 1943 | Topic: problem_solving / two_var_data
+Q: Which of the following is true about the values of 2” and
+9x +2? forx >0?
+A) For all X > O, it is true that 2% < 2x +2.  B) For all X > O, it is true that 2* = 2x +2.  C) There is a constant c such that if Q < x <¢, then 2* < 2x +2, but if y » ¢, then  D) There is a constant c such that if 0 <x <¢, then 2* > 2x +2, but if x >, then 2 
+Correct: C
+
+---
+[Question] ID: 1944 | Topic: problem_solving / two_var_data
+Q: The scatterplot shows the relationship between two variables, © and y. A line of best fit is also shown.
+J
+mutt t ttt tt tt tt
+PPT Ty TT TT EP TT TT
+pNP EL tt tt
+PINS TEP ET Et tt
+re
+SERN
+gt tT LIN, ET Tt
+PTE Py PIN EE Et
+6f ETT ET IEE TT TT
+PPT TT TT PAA TE TT
+aL tt ttt tt PNET
+PPP TTT PT PT PT Ph 
+A) —2.4  B) —0.8 Cc. 0.8  C) 2.4
+Correct: B
+
+---
+[Question] ID: 1945 | Topic: problem_solving / two_var_data
+Q: An inspector begins a day of work with a large sample of shirts that need to
+be checked for defects. The inspector works at a constant rate throughout
+the morning. What type of model is best to model the number of shirts
+remaining to be checked for defects at any given time throughout the
+morning?
+A) A linear model with a positive slope  B) A linear model with a negative slope  C) An exponential growth model  D) An exponential decay model
+Correct: B

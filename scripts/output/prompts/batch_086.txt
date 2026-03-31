@@ -1,0 +1,180 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2955 | Topic: conventions / boundaries
+Passage: The fine, powdery substance that covers the Moon's surface is called regolith. Because regolith is both readily
+available and high in oxygen scientists have wondered whether it could be used as a potential source of
+oxygen for future lunar settlements....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) content and  B) content,  C) content  D) content, and
+Correct: B
+
+---
+[Question] ID: 2956 | Topic: conventions / boundaries
+Passage: Psychophysicist Howard Moskowitz was hired by a soda company to determine how much artificial sweetener
+After conducting consumer taste tests, he found that no such ideal existed: participants expressed a wide
+
+range of preferences for different blends of sweetener, carbonization, and flavoring....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) do most people prefer in a diet drink?  B) do most people prefer in a diet drink.  C) most people prefer in a diet drink?  D) most people prefer in a diet drink.
+Correct: D
+
+---
+[Question] ID: 2957 | Topic: conventions / boundaries
+Passage: About 70,000 meteorites have been found on Earth. Although most meteorites are fragments of ___ hundred
+have been identified as being from the Moon or Mars....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) asteroids. Several  B) asteroids, several  C) asteroids; several  D) asteroids: several
+Correct: B
+
+---
+[Question] ID: 2958 | Topic: conventions / boundaries
+Passage: After the printing press was introduced in 1440, handwritten manuscripts from Europe's medieval period were
+often destroyed and the paper used for other purposes. In one instance, pages a collection of Norse tales
+dating to 1270 were discovered lining a bishop's miter (hat)....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) from:  B) from,  C) from  D) from—
+Correct: C
+
+---
+[Question] ID: 2959 | Topic: conventions / boundaries
+Passage: When particles are suspended in liquid (like pollen in a water glass), they will zigzag randomly through the liquid
+and collide with one another in perpetuity. This type of random, continuous is known as Brownian motion,
+can be observed throughout the natural world....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) movement: which  B) movement, which  C) movement which  D) movement. Which
+Correct: B
+
+---
+[Question] ID: 2960 | Topic: conventions / boundaries
+Passage: In 1959, the film industry debuted Smell-O-Vision. Theaters were fitted with specialized vents that emitted odors
+at specific points in a as the scent of roses when roses appeared in a scene. Smell-O-Vision failed to
+impress, however, with one reviewer declaring it “briefly weird and not very intere...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) movie such  B) movie; such  C) movie. Such  D) movie, such
+Correct: D
+
+---
+[Question] ID: 2961 | Topic: conventions / boundaries
+Passage: Robin Wall Kimmerer of the Citizen Potawatomi Nation is a bryologist, a plant scientist who specializes in mosses.
+To Kimmerer, mosses are Earth's most adaptable plants: they can clone enter a dormant state in times of
+drought, and grow in areas that don’t have soil....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) themselves;  B) themselves,  C) themselves. And  D) themselves
+Correct: B
+
+---
+[Question] ID: 2962 | Topic: conventions / boundaries
+Passage: In 1976, the Inuit rock group Sikumiut recorded the album People of the Ice. Though only their first record, it
+shows a band already skilled at the difficult task of making music that sounds easy and fun. On songs like
+“Utirumavunga,” Lucassie Koperqualuk's guitar riffs effortlessly Charlie Adams's ...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) blend, with  B) blend. With  C) blend; with  D) blend with
+Correct: D
+
+---
+[Question] ID: 2963 | Topic: conventions / boundaries
+Passage: In 2000, Nora de Hoyos Comstock, herself an owner of a successful consulting firm, sought to increase Latina
+representation in corporate founded Las Comadres para las Americas, an international community that for
+over two decades has served as a resource and information network for Latina business p...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) settings she  B) settings, she  C) settings and she  D) settings. She
+Correct: D
+
+---
+[Question] ID: 2964 | Topic: conventions / boundaries
+Passage: Fans of science fiction will _____ multiple references to classic sci-fi stories in Janelle Monde's song lyrics,
+including her recurring nods to the plot of the 1927 sci-fi film Metropolis....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) appreciate the  B) appreciate. The  C) appreciate, the  D) appreciate: the
+Correct: A
+
+---
+[Question] ID: 2965 | Topic: conventions / boundaries
+Passage: Winding through the ice atop Norway's Jotunheim Mountains is the Lendbreen pass, an ancient route that was
+used by hunters, farmers, traders, and travelers in the Middle Ages before eventually falling into disuse. Recently,
+archeologists have knives, horseshoes, wool tunics, and thousands of other a...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) unearthed:  B) unearthed,  C) unearthed—  D) unearthed
+Correct: D
+
+---
+[Question] ID: 2966 | Topic: conventions / boundaries
+Passage: In 1959, marine biologist Dr. Albert Jones founded the Underwater Adventure Seekers, a scuba diving that
+is the oldest club for Black divers in the United States and that has helped thousands of diving enthusiasts
+become certified in the field....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) club  B) club,  C) club—  D) club, and
+Correct: A
+
+---
+[Question] ID: 2967 | Topic: conventions / boundaries
+Passage: In the novel Things Fall Apart by Chinua Achebe, Okonkwo is a leader of Umuofia (a fictional Nigerian clan) and
+takes pride in his culture's traditions. However, when the arrival of European missionaries brings changes to
+Umuofia, the novel asks a central question: How ____...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) Umuofia's traditions will be affected.  B) will Umuofia's traditions be affected.  C) Umuofia’s traditions will be affected?  D) will Umuofia's traditions be affected?
+Correct: D
+
+---
+[Question] ID: 2968 | Topic: conventions / boundaries
+Passage: Dolores Huerta’s advocacy on behalf of farmworkers was rooted in her experience as a schoolteacher in Stockton, California,
+in the early 1950s. Hoping to help her students and their families outside the Huerta left teaching to start the Stockton
+chapter of the Community Service Organization, a group...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) classroom.  B) classroom;  C) classroom,  D) classroom
+Correct: C
+
+---
+[Question] ID: 2969 | Topic: conventions / boundaries
+Passage: In 2009, researchers determined that pottery fragments from a cave in China were close to 18,000 years old. These are some
+of the oldest _____ of pottery ever found....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) pieces:  B) pieces,  C) pieces  D) pieces—
+Correct: C
+
+---
+[Question] ID: 2970 | Topic: conventions / boundaries
+Passage: According to the University of Hawai'i at Manoa, aloha ‘aina is “a recognition, commitment, and practice sustaining the ea—
+or life breath” between the Hawaiian people and their natural environments. The concept has been proudly embodied
+Native Hawaiians for generations, contributing to the lush flo...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) by;  B) by:  C) by,  D) by
+Correct: D
+
+---
+[Question] ID: 2971 | Topic: conventions / boundaries
+Passage: The element carbon has the highest melting point _____ all the elements on the periodic table—3,500 degrees Celsius....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) of  B) of—  C) of,  D) of:
+Correct: A
+
+---
+[Question] ID: 2972 | Topic: conventions / boundaries
+Passage: Located in the northern United States, the Great Lakes Basin contains roughly 35,000 islands. Lake Superior has Grand
+Island, for example. Lake Michigan has Belle Isle. Lake Huron, though, is home the largest island of them all:
+Manitoulin Island....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) to;  B) to—  C) to  D) to,
+Correct: C
+
+---
+[Question] ID: 2973 | Topic: conventions / boundaries
+Passage: In her large-scale sculpture Casa-is/a, artist Edra Soto included references to her childhood in Puerto Rico. For example, the
+sculpture’s steel panels have a crisscrossing pattern inspired by the iron gates __...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) Soto would see in her neighborhood?  B) Soto would see in her neighborhood.  C) would Soto see in her neighborhood.  D) would Soto see in her neighborhood?
+Correct: B
+
+---
+[Question] ID: 2974 | Topic: conventions / boundaries
+Passage: Azulejos, mosaics made of glazed ceramic tiles, can be found throughout Portugal. These mosaics beautify places such as
+_____ stations, and public squares....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) libraries train  B) libraries: train  C) libraries—train  D) libraries, train
+Correct: D

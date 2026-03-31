@@ -1,0 +1,220 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1178 | Topic: algebra / linear_functions
+Q: | 0 | 20
+
+For the linear function f, the table shows three values of x and their corresponding values of f(a). Which
+equation defines f(x)?
+A) f(z) = 3a + 29  B) f(x) = 29x + 32  C) f(x) = 35x + 29  D) f(x) = 32x + 35
+Correct: A
+
+---
+[Question] ID: 1179 | Topic: algebra / linear_functions
+Q: lf y = 5x@ + 10, what is the value of y when x = 8?
+A) 50  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1180 | Topic: algebra / linear_functions
+Q: For a training program, Juan rides his bike at an average rate of 5.7 minutes per mile. Which function m models
+the number of minutes it will take Juan to ride x miles at this rate?
+
+B.m(z) =x2+5.7
+
+C.m(z) =a2—5.7
+
+D. m(a) = 5.7x
+Correct: D
+
+---
+[Question] ID: 1181 | Topic: algebra / linear_functions
+Q: For the linear function f, the graph of y = f(a) in the xy-plane has a slope of + and passes through the point (0,5). Which
+equation defines f?
+A) f(z) = Fe+5  B) f(x) = Fa+e c. f(a) = 4e-$  C) f(z) = 4a —5
+Correct: A
+
+---
+[Question] ID: 1182 | Topic: algebra / linear_functions
+Q: Area (square feet) | Water (gallons)
+2,520 4,536
+3,780 6,804
+5,040 9,072
+The buildings of a shopping center are designed to allow water to drain from the roof into gutters on the sides of the
+buildings. The table shows the relationship between the area 2, in square feet, of a roof and the amount of 
+A) f(x) = 0.62  B) f(z) = 1.82  C) f(x) = 2,2682  D) f(z) = 4,536x
+Correct: B
+
+---
+[Question] ID: 1183 | Topic: algebra / linear_functions
+Q: In science class, Diego conducted an experiment to learn about evaporation. Diego measured the height of fluid in a beaker
+over a period of time. The function f(z) = 39 — 0.18z gives the estimated height, in centimeters (cm), of the fluid in the
+beaker x days after the start of the experiment. Which
+A) The estimated height, in cm, of the fluid at the start of the experiment  B) The estimated height, in cm, of the fluid at the end of the experiment  C) The estimated change in the height, in cm, of the fluid each day  D) The estimated number of days for all the fluid to evaporate
+Correct: A
+
+---
+[Question] ID: 1184 | Topic: algebra / linear_functions
+Q: f(x) = a+ 4 The function f is defined by the given equation. What is the value of f(x) whenz = =?
+A) 1  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1185 | Topic: algebra / linear_functions
+Q: The function f is defined by f(x) = He + 55. What is the value of f(20)?
+A) 69  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1186 | Topic: algebra / linear_functions
+Q: According to a model, the head width, in millimeters, of a worker bumblebee
+can be estimated by adding 0.6 to four times the body weight of the bee, in
+grams. According to the model, what would be the head width, in
+millimeters, of a worker bumblebee that has a body weight of 0.5 grams?
+A) 2.6  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1187 | Topic: algebra / linear_functions
+Q: In the xy-plane, the graph of the linear function f contains the points (0, 3) and (7, 31). Which equation defines f
+_ where y = f(x)?
+A) f(x) = 28a + 34  B) f(«) = 30 +38 Cc. f(z) = 4443  C) f(a) = 7a + 3
+Correct: C
+
+---
+[Question] ID: 1188 | Topic: algebra / linear_functions
+Q: A team of workers has been moving cargo off of a ship. The equation below models the approximate
+number of tons of cargo, y, that remains to be moved x hours after the team started working.
+y =120—25x
+The graph of this equation in the xy-plane is a line. What is the best
+interpretation of the x-inte
+A) The team will have moved all the cargo in about 4.8 hours.  B) The team has been moving about 4.8 tons of cargo per hour.  C) The team has been moving about 25 tons of cargo per hour.  D) The team started with 120 tons of cargo to move.
+Correct: A
+
+---
+[Question] ID: 1189 | Topic: algebra / linear_functions
+Q: J
+500
+450 ee eee
+Pott
+got} tf rp
+ee
+350+ | | fT
+po | ft
+300 ee eee
+ee eee
+250 eee eee
+a eee
+200+ ae
+P| | pe
+i0+t 7 fT
+a ee eee
+100 a ee eee
+ee eee
+50 ee eee
+eee
+ee eee,
+O14 4567 8 9 10
+The graph of the function f, where y = f(z), gives the total cost y, in dollars, for a certain video game system
+an
+A) Each game costs $25.  B) The video game system costs $100.  C) The video game system costs $25.  D) Each game costs $100.
+Correct: A
+
+---
+[Question] ID: 1190 | Topic: algebra / linear_functions
+Q: The boiling point of water at sea level is 212 degrees Fahrenheit (°F). For
+every 550 feet above sea level, the boiling point of water is lowered by
+about 1°F. Which of the following equations can be used to find the boiling
+point B of water, in °F, x feet above sea level?
+
+x
+
+x
+
+x
+
+x
+Correct: D
+
+---
+[Question] ID: 1191 | Topic: algebra / linear_functions
+Q: _ &+7)
+
+f(x)= iz
+For the function f defined above, what is the
+value of §(9)— (1)?
+Al
+B.2
+
+i
+G. 4
+
+a
+bd. 4
+Correct: B
+
+---
+[Question] ID: 1192 | Topic: algebra / linear_functions
+Q: Lo | = |
+[2 | 4 |
+Some values of the linear function f are shown in the table
+above. What is the value of (3)?
+A.6
+B.7
+c.8
+D.9
+Correct: B
+
+---
+[Question] ID: 1193 | Topic: algebra / linear_functions
+Q: In the xy-plane, the points (—2,3) and (4, —5) lie on the graph of
+which of the following linear functions?
+A) f(x) =x4+5 f)=tx+4  B) 2 4 1 ¢ fX)= 7 B%*tyZ 3 p fH) = ~ xt
+Correct: C
+
+---
+[Question] ID: 1194 | Topic: algebra / linear_functions
+Q: er | SE
+g7CO VT
+eel A
+s,tT Vit ty
+E,tiAT TT
+g5/ VI TTT
+£i AL
+Ag’ TTT TT TT.
+GO 133-2 5 6 7
+Time (minutes)
+The graph above shows the distance traveled d, in feet, by a product ona
+conveyor belt m minutes after the product is placed on the belt. Which of
+the following equations correctly relates d and
+Correct: A
+
+---
+[Question] ID: 1195 | Topic: algebra / linear_functions
+Q: c(x) = mx +500
+A company's total cost c(x), in dollars, to produce x shirts is given by the
+function above, where mis a constant and X > Q. The total cost to produce
+100 shirts is $800. What is the total cost, in dollars, to produce 1000 shirts?
+(Disregard the $ sign when gridding your answer.)
+A) 3500  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1196 | Topic: algebra / linear_functions
+Q: A linear model estimates the population of a city from 1991 to 2015. The model estimates the population was 57
+thousand in 1991, 224 thousand in 2011, and x thousand in 2015. To the nearest whole number, what is the value
+of £?
+A) 257  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1197 | Topic: algebra / linear_functions
+Q: j(x) = max + 144
+For the linear function j, m is a constant and j(12) = 18. What is the value of (10)?
+A) 39  B) 0  C) 1  D) -1
+Correct: A

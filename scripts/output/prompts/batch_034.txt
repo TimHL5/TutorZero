@@ -1,0 +1,186 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2058 | Topic: geometry / area_volume
+Q: The circumference of the base of a right circular cylinder is 207 meters, and the height of the cylinder is 6 meters. What is
+the volume, in cubic meters, of the cylinder?
+A) 607  B) 1207  C) 6007  D) 2,4007
+Correct: C
+
+---
+[Question] ID: 2059 | Topic: geometry / circles
+Q: A < ? Cc
+8
+The circle above with center O has a circumference of 36.
+What is the length of minor arc AC?
+A.9
+B. 12
+Cc. 18
+D. 36
+Correct: A
+
+---
+[Question] ID: 2060 | Topic: geometry / circles
+Q: (x — 6)? + (y— 3)? =81
+The graph of the given equation in the xy-plane is a circle. What is the length of the radius of this circle?
+A.3
+B. 6
+C.9
+D. 81
+Correct: C
+
+---
+[Question] ID: 2061 | Topic: geometry / circles
+Q: What is the value of cos 365m 9
+1
+As
+B.1
+V3
+as
+bd. V3
+Correct: C
+
+---
+[Question] ID: 2062 | Topic: geometry / circles
+Q: The number of radians in a 720-degree angle can be written as jr, where
+a is aconstant. What is the value of a?
+A) 4  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2063 | Topic: geometry / circles
+Q: An angle has a measure of a radians. What is the measure of the angle in degrees?
+A) 81  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2064 | Topic: geometry / circles
+Q: In the xy-plane, a circle with radius 5 has center (-8,6). Which of the
+following is an equation of the circle?
+
+a. (x8) + (y +6)" =25
+
+g, (x +8)? +(y—6)? =25
+
+c. k-8) +(y +6)? =5
+
+bp, +8)? +(y-6)? =5
+Correct: B
+
+---
+[Question] ID: 2065 | Topic: geometry / circles
+Q: y
+“K |
+(|) a‘,
+sca ol
+In the xy-plane above, points P, Q, R, and T lie on the circle with center O.
+The degree measures of angles POQ@ and ROT are each 30°. What is the
+radian measure of angle QOR ?
+2
+A) 6 Sr  B) 4 2 CG. 3 ar  C) 3
+Correct: C
+
+---
+[Question] ID: 2066 | Topic: geometry / circles
+Q: A circle in the xy-plane has its center at (—4, 5) and the point (—8, 8) lies on the circle. Which equation
+represents this circle?
+
+A.(x— 4)? + (y+5)? =5
+
+B.(x+4)2+(y—5)?=5
+
+c.(x—4)? + (y +5)? = 25
+
+D.(x+4)? + (y—5)? = 25
+Correct: D
+
+---
+[Question] ID: 2067 | Topic: geometry / circles
+Q: An angle has a measure of a radians. What is the measure of the angle, in degrees?
+A) 192  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2068 | Topic: geometry / circles
+Q: In the xy-plane, the graph of the equation (a — 3)” + (y — 5)” = Qisa circle. The point (6, c), where cis a constant, lies
+on this circle. What is the value of c?
+A) 5  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2069 | Topic: geometry / circles
+Q: The measure of angle Z is 60°. What is the measure, in radians, of angle Z?
+A) a0  B) $0  C) an  D) 17
+Correct: B
+
+---
+[Question] ID: 2070 | Topic: geometry / circles
+Q: z?+58¢+y? =0
+In the xy-plane, the graph of the given equation is a circle. What are the coordinates (2, y) of the center of the circle?
+A) (0, 29)  B) (0, —29)  C) (29, 0)  D) ( — 29,0)
+Correct: D
+
+---
+[Question] ID: 2071 | Topic: geometry / circles
+Q: What is the center of the circle in the xy-plane defined by the equation (x — 1) +(y+ 7)? =1?
+A) ( — 1, —7)  B) (— 1,7) c. (1, —7)  C) (1,7)
+Correct: C
+
+---
+[Question] ID: 2072 | Topic: geometry / circles
+Q: M : N
+P
+
+Points M, N, and P lie on the circle shown. On this circle, minor arc MN has a length of 39 centimeters and major arc
+MPN has a length of 195 centimeters. What is the circumference, in centimeters, of the circle shown?
+A) 39  B) 156 c. 195  C) 234
+Correct: D
+
+---
+[Question] ID: 2073 | Topic: geometry / circles
+Q: cel lltC—C“‘“SOS~*~*~*”C
+(4y
+B
+A
+
+The circle above has center O, the length of arc ADC iS 5 ye, and
+x = 100. What is the length of arc ABE ?
+A) Sir  B) 1370  C) 1870 13  D) 2
+Correct: B
+
+---
+[Question] ID: 2074 | Topic: geometry / circles
+Q: xX°+20x +y*+ 16y = —20
+The equation above defines a circle in the xy-plane. What are the
+coordinates of the center of the circle?
+A) (—20,-16)  B) (-10,-8) c. (10,8) b. (20,16)
+Correct: B
+
+---
+[Question] ID: 2075 | Topic: geometry / circles
+Q: Ng
+c
+
+Point O is the center of the circle above, and the measure of “OAB is 30°.
+If the length of oc is 18, what is the length of arc AB,
+A) 970  B) 1270  C) 157  D) 187
+Correct: B
+
+---
+[Question] ID: 2076 | Topic: geometry / circles
+Q: The equation (x + 6)? +(y+ 3) = 121 defines a circle in the
+xy-plane. What is the radius of the circle?
+A) 11  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2077 | Topic: geometry / circles
+Q: A circle in the xy-plane has its center at (—4, —6). Line k is tangent to this circle at the point (—7, —7). What is
+the slope of line k?
+A) —3  B) -F  C) 4  D) 3
+Correct: A

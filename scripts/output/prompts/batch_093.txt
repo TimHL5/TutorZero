@@ -1,0 +1,181 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 3095 | Topic: conventions / form_structure_sense
+Passage: Because a cycle of lunar phases__ 29.5 days to complete, it's possible to observe two full moons in a single
+month, one at the beginning and one at the end....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) are taking  B) have taken  C) take  D) takes
+Correct: D
+
+---
+[Question] ID: 3096 | Topic: conventions / form_structure_sense
+Passage: After winning the 1860 presidential election, Abraham Lincoln appointed Edward Bates, Salmon P. Chase, and
+William H. Seward to his cabinet. Lincoln's decision was surprising, since each of these men had run against him,
+but historians have praised it, noting that Lincoln his rivals’ diverse talents...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) has leveraged  B) is leveraging  C) will leverage  D) leveraged
+Correct: D
+
+---
+[Question] ID: 3097 | Topic: conventions / form_structure_sense
+Passage: In knot theory (the mathematical study of curved, closed loops), knots are characterized by their crossing numbers—that is,
+the number of times the knotted thread crosses over itself. The trefoil knot and the figure-eight knot, each with a crossing
+number below five, among the simplest possible knot...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) was  B) are  C) has been  D) is
+Correct: B
+
+---
+[Question] ID: 3098 | Topic: conventions / form_structure_sense
+Passage: Inventor John Friedman created a prototype of the first flexible straw by inserting a screw into a paper straw and,
+using dental floss, binding the straw tightly around the When the floss and screw were removed, the
+resulting corrugations in the paper allowed the straw to bend easily over the edge o...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) screw's thread's.  B) screws’ threads.  C) screw's threads.  D) screws threads’.
+Correct: C
+
+---
+[Question] ID: 3099 | Topic: conventions / form_structure_sense
+Passage: The violins handmade in the seventeeth century by Italian craftsman Antonio Stradivari have been celebrated as
+some of the finest in the world. In close collaboration with musicians, Stradivari introduced changes to the shape
+of a traditional violin, flattening some of the instrument's curves and ma...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) those  B) one Cc. them  C) it
+Correct: D
+
+---
+[Question] ID: 3100 | Topic: conventions / form_structure_sense
+Passage: In many of her landscape paintings from the 1970s and 1980s, Lebanese American artist Etel Adnan worked to
+capture the essence of California's fog-shrouded Mount Tamalpais region through abstraction, using splotches of
+color to represent the area's features. Interestingly, the triangle representing ...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) are  B) have been  C) were  D) is
+Correct: D
+
+---
+[Question] ID: 3101 | Topic: conventions / form_structure_sense
+Passage: Based on genetic evidence, archaeologists have generally agreed that reindeer domestication began in the
+eleventh century CE. However, since uncovering fragments of a 2,000-year-old reindeer training harness in
+northern Siberia, may have begun much earlier....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) researcher Robert Losey has argued that domestication  B) researcher Robert Losey’s argument is that domestication  C) domestication, researcher Robert Losey has argued,  D) the argument researcher Robert Losey has made is that domestication
+Correct: A
+
+---
+[Question] ID: 3102 | Topic: conventions / form_structure_sense
+Passage: Professional American football player Fred Cox invented one of the world's most popular toys. In the 1970s, he
+came up with the idea for the Nerf football, which _____ of the harder and heavier regulation football....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) were a smaller, foam version  B) are smaller, foam versions  C) were smaller, foam versions  D) is a smaller, foam version
+Correct: D
+
+---
+[Question] ID: 3103 | Topic: conventions / form_structure_sense
+Passage: African American Percy Julian was a scientist and entrepreneur whose work helped people around the world to
+see. Named in 1999 as one of the greatest achievements by a US chemist in the past hundred years, led
+to the first mass-produced treatment for glaucoma....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) Julian synthesized the alkaloid physostigmine in 1935; it  B) in 1935 Julian synthesized the alkaloid physostigmine, which  C) Julian's 1935 synthesis of the alkaloid physostigmine  D) the alkaloid physostigmine was synthesized by Julian in 1935 and
+Correct: C
+
+---
+[Question] ID: 3104 | Topic: conventions / form_structure_sense
+Passage: Josephine Paddock and Florence Esté were among the 300 artists who exhibited at the 1913 Armory Show, a
+groundbreaking New York City art exhibition that introduced modernism to American audiences. Though shocking at the
+time, an abstract cubist painting exhibited by Marcel Duchamp —one of several wo...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) has entered  B) have entered  C) were entering  D) enter
+Correct: A
+
+---
+[Question] ID: 3105 | Topic: conventions / form_structure_sense
+Passage: The Proto-Nilotic language, common ancestor of fifty-five African languages with similar linguistic properties, ___ like all
+protolanguages, hypothetical: there’s no direct evidence these ancestral languages actually existed....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) is,  B) are,  C) have been,  D) were,
+Correct: A
+
+---
+[Question] ID: 3106 | Topic: conventions / form_structure_sense
+Passage: Anthropologist Livia Barbosa, of the Universidade Federal Fluminense in Brazil, food and sociability in contemporary
+Brazil—specifically, how foods such as cabidela (a rice and rabbit dish) and churrasco (a barbeque dish) function as central
+mechanisms in building social relationships, values, and i...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) studies  B) are studying  C) have studied  D) study
+Correct: A
+
+---
+[Question] ID: 3107 | Topic: conventions / form_structure_sense
+Passage: Every last second of space shuttle mission STS-79, which lasted ten days and three hours, ___ carefully monitored by a
+team of experts....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) have been  B) are  C) was  D) were
+Correct: C
+
+---
+[Question] ID: 3108 | Topic: conventions / form_structure_sense
+Passage: In January 1776, Thomas Paine published Common Sense, an appeal for freedom from the British monarchy that famously
+helped ignite the desire for independence among the American colonists. After the colonies achieved their independence,
+Paine moved to Paris, where the provocative would contribute to ...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) authors political writings  B) author's political writings  C) author's political writing’s  D) authors’ political writings’
+Correct: B
+
+---
+[Question] ID: 3109 | Topic: conventions / form_structure_sense
+Passage: Rabinal Achiis a precolonial Maya dance drama performed annually in Rabinal, a town in the Guatemalan
+highlands. Based on events that occurred when Rabinal was a city-state ruled by a king, had once been an
+ally of the king but was later captured while leading an invading force against him....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) Rabinal Achi tells the story of K'iche’ Achi, a military leader who  B) K'iche' Achi, the military leader in the story of Rabinal Achi,  C) the military leader whose story is told in Rabinal Achi, K'iche' Achi,  D) there was a military leader, K'iche’ Achi, who in Rabinal Achi
+Correct: A
+
+---
+[Question] ID: 3110 | Topic: conventions / form_structure_sense
+Passage: In the 1970s, Janaki Ammal, a prominent botanist, emerged as a powerful voice in India's environmental
+conservation movement. Her exhaustive chromosomal survey of plants in Silent Valley, a pristine tropical forest in
+Kerala, India, that is home to nearly 1,000 species of native flora (many of which...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) are  B) were  C) have been  D) was
+Correct: D
+
+---
+[Question] ID: 3111 | Topic: conventions / form_structure_sense
+Passage: The artistic talents of Barbara Chase-Riboud, most known for her 1979 historical novel Sally Hemings and the
+conversation it inspired, limited to the realm of prose: she first excelled in sculpture, where her affinity for
+bronze—a material she described as “timeless” due to its use across eras and c...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) hasn't been  B) wasn't  C) isn't  D) aren't
+Correct: D
+
+---
+[Question] ID: 3112 | Topic: conventions / form_structure_sense
+Passage: When they were first discovered in Australia in 1798, duck-billed, beaver-tailed platypuses so defied
+categorization that one scientist assigned them the name Ornithorhynchus paradoxus: "paradoxical bird-snout.”
+The animal, which lays eggs but also nurses young with milk, has since been classified a...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) they're  B) their  C) its  D) it's
+Correct: C
+
+---
+[Question] ID: 3113 | Topic: conventions / form_structure_sense
+Passage: Known as Earth's “living skin,” biocrusts are thin layers of soil held together by surface-dwelling microorganisms
+such as fungi, lichens, and cyanobacteria. Fortifying soil in arid ecosystems against erosion,...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) a recent study's estimate is that these crusts reduce global dust emissions by 6  B) an estimated 60 percent reduction in global dust emissions each year is due to t  C) these crusts reduce global dust emissions by an estimated 60 percent each year,   D) a recent study has estimated that these crusts reduce global dust emissions by 6
+Correct: C
+
+---
+[Question] ID: 3114 | Topic: conventions / form_structure_sense
+Passage: Ten of William Shakespeare's plays are classified as histories. Although each one of these plays, which include
+Henry V and Richard III, ona single historical figure (specifically, an English king), some, such as Henry VI
+Part One and Henry VI Part Two, feature different episodes from the same monar...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) focuses  B) focus  C) are focused  D) were focused
+Correct: A

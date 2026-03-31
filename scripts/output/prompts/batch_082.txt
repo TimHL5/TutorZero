@@ -1,0 +1,203 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2399 | Topic: information_ideas / evidence
+Passage: The variety of species with adaptations to produce toxins is matched by the variety of uses of those toxins: northern
+stargazers, for example, use toxins for defense, whereas tiger snakes use toxins for predation and skeleton shrimp use
+toxins for intraspecific competition. In fact, a species may ha...
+Q: Which finding, if true, would most directly support Galvez and colleagues’ conclusion?
+A) E. coli does not appear to be virulent for C. granosus even when transmitted fro  B) E. coliis frequently found in species preyed on by C. granosus and can survive e  C) C. granosus appears to be chemically sensitive to prey infected with E. coli and  D) Exposure to C. granosus venom also inhibits the growth of nonpathogenic bacteria
+Correct: B
+
+---
+[Question] ID: 2400 | Topic: information_ideas / evidence
+Passage: Banana Ripening Time at Different
+Temperatures with and without
+Ethylene Treatment
+12
+11
+10
+9
+ae 8
+Ss 7
+5 «6
+= 5
+eB 4
+3
+2
+; Gethylene @ no ethylene
+oG oG o& oG
+a \6 xd aN)
+Temperature (degrees Celsius)
+A student is conducting an experiment to test the effect of temperature and ethylene treatment on ...
+Q: Which choice most effectively uses data from the graph to complete the student's conclusion?
+A) 20°C is the ideal temperature at which to store bananas to slow ripening time.  B) for those bananas that were not treated with ethylene, differences in temperatur  C) bananas treated with ethylene ripen faster at 14°C and 16°C than at 18°C and 20°  D) ethylene was associated with a greater absolute change in ripening time at 14°C,
+Correct: D
+
+---
+[Question] ID: 2401 | Topic: information_ideas / evidence
+Passage: The ancient Greek concept of “mimesis,” a term used in the works of Plato, Aristotle, and other Greek philosophers in
+discussions of representational art—visual, performance, or literary art that aims to depict the real world—is a foundational
+concept of the Western philosophy of aesthetics. Mimesis...
+Q: Which statement, if true, would most directly support the claim by Halliwell presented in the text?
+A) One of the earliest appearances of mimesis’s root word, mimos, can be found in a  B) Both Plato's and Aristotle's theorizations of mimesis examine the psychological   C) Although several of Plato’s earliest philosophical works discuss aesthetic ideas  D) Although Plato's writings typically characterize representational art as an infe
+Correct: D
+
+---
+[Question] ID: 2402 | Topic: information_ideas / evidence
+Passage: Jean-Bernard Caron and colleagues recently discovered a cache of jellyfish fossils in the Burgess Shale, a site in the
+Canadian Rockies that is rich in fossils from the Cambrian period (over 500 million years ago). Caron and colleagues claim
+that these are the oldest jellyfish fossils ever discovere...
+Q: Which statement, if true, would most directly weaken the claim by Caron and colleagues about the fossils found in China and
+the United States?
+A) Sites in the Canadian Rockies from later periods than the Cambrian period have y  B) The fossils found in China and the United States are so poorly preserved that th  C) While ctenophore fossils have been discovered in China and the United States, th  D) The fossils discovered by Caron and colleagues in the Burgess Shale were better 
+Correct: B
+
+---
+[Question] ID: 2403 | Topic: information_ideas / inferences
+Passage: Microbes that live in shallow lakes and ponds produce methane, a harmful greenhouse gas. Ecologist Ralf Aben
+and his team wanted to see how different types of shallow-water plants might affect the amount of methane that
+escapes into the atmosphere. Aben’s team set up some water tanks with soil and m...
+Q: Which choice most logically completes the text?
+A) the presence of some kinds of underwater plants like watermilfoil helps prevent   B) shallow lakes and ponds release more methane than deeper bodies of water because  C) shallow lakes and ponds are more likely to contain algae than to contain either   D) having a mix of algae, underwater plants, and floating plants is the best way to
+Correct: A
+
+---
+[Question] ID: 2404 | Topic: information_ideas / inferences
+Passage: In their book Smart Pricing, Jagmohan Raju and Z. John Zhang consider musicians’ use of the nontraditional “pay
+as you wish" pricing model. This model generally offers listeners the choice to pay more or less than a suggested
+price for a song or album—or even to pay nothing at all. As the authors no...
+Q: Which choice most logically completes the text?
+A) prove financially successful for some musicians but disappointing for others.  B) hold greater financial appeal for bands than for individual musicians.  C) cause most musicians who use the model to lower the suggested prices of their so  D) more strongly reflect differences in certain musicians’ popularity than traditio
+Correct: A
+
+---
+[Question] ID: 2405 | Topic: information_ideas / inferences
+Passage: Arthur Conan Doyle's stories about detective Sherlock Holmes were published between 1887 and 1927. They have
+inspired countless successful adaptations, including comic strips, movies, and a television series Sherlock Hound,
+directed by Hayao Miyazaki, who is celebrated for his animated movies. Until...
+Q: Which choice most logically completes the text?
+A) Doyle's original stories will become hard to find.  B) people will become more interested in detective stories than they were in the 18  C) producing adaptations will become easier and less expensive.  D) the former copyright holders of Doyle's estate will return fees they collected.
+Correct: C
+
+---
+[Question] ID: 2406 | Topic: information_ideas / inferences
+Passage: One aspect of in-person shopping that online shopping can’t replicate is the opportunity to touch a product
+before buying it. Does this difference matter? In an experiment, researchers asked one group of participants to
+touch a mug and a toy, while another group was prohibited from touching the two ...
+Q: Which choice most logically completes the text?
+A) people who mainly shop online probably spend more money every month than people   B) in-person shopping may make products seem more valuable than they seem if only v  C) retailers with in-person and online stores should charge the same price for a gi  D) online retailers may be able to raise the prices they charge for products that a
+Correct: B
+
+---
+[Question] ID: 2407 | Topic: information_ideas / inferences
+Passage: Archaeologists have been debating the origin of a rare form of lead found in Shang dynasty (1766-1046 BCE)
+bronze artifacts since its presence was discovered in China in the 1990s. Different researchers have proposed
+theories on which regions of the world would have had the raw materials containing ...
+Q: Which choice most logically completes the text?
+A) Shang dynasty bronze pieces are rare and therefore more valuable than those from  B) the source of some of the raw materials used to make bronze was exploited only u  C) bronze was used for a short time during the Shang dynasty before different metal  D) methods used to analyze bronze artifacts are not useful on pieces that are dated
+Correct: B
+
+---
+[Question] ID: 2408 | Topic: information_ideas / inferences
+Passage: Off-off-Broadway theaters emerged in the late 1950s as a rebellion against mainstream Broadway theaters in New
+York, freeing artists to create productions that were more experimental than typical Broadway shows. One such
+artist was playwright Maria Irene Fornés. Working with off-off Broadway theater...
+Q: Which choice most logically completes the text?
+A) wrote plays that would have been too expensive to produce if someone else had di  B) recognized that staging an off-off-Broadway play was more complicated than stagi  C) would have been more famous if she had created plays that were mainstream instea  D) illustrates the artistic opportunity offered by off-off Broadway theaters.
+Correct: D
+
+---
+[Question] ID: 2409 | Topic: information_ideas / inferences
+Passage: North American gray wolves usually have mixed gray and white fur, but some members of the species have a
+version of a gene, or gene variant, that gives them a mostly black coat instead. Sarah Cubaynes and her team
+studied twelve populations of North American gray wolves. They found that the black-fu...
+Q: Which choice most logically completes the text?
+A) North American gray wolves experience more outbreaks of distemper virus than oth  B) the gene variant that results in black fur may be linked to immunity to the dist  C) the average life span of gray wolves is likely to increase over time because of   D) gray-furred wolves will soon replace black-furred wolves across North America.
+Correct: B
+
+---
+[Question] ID: 2410 | Topic: information_ideas / inferences
+Passage: In many cultures, a handshake can create trust between people. Engineer Jodo Avelino and his team are designing
+a robot to shake hands with a human in order to improve human-robot interactions. The robot hand adjusts its
+movements and pressure to better imitate the feel of a human hand. The research...
+Q: Which choice most logically completes the text?
+A) lifelike handshakes may make people more comfortable interacting with robots.  B) it's easier to program a robot to perform handshakes than it is to program a rob  C) people are less likely to interact with robots that don’t look like humans.  D) the robot in the researchers’ study may have uses other than interacting with hu
+Correct: A
+
+---
+[Question] ID: 2411 | Topic: information_ideas / inferences
+Passage: Martin Danéak, Wewin Tjiasmanto, and colleagues have identified a new carnivorous plant species (Nepenthes
+pudica) in Indonesia. Like other carnivorous plants, N. pudica has pitfall traps, or pitchers, that capture prey, but
+unlike others, the pitchers of N. pudica are located underground. The resea...
+Q: Which choice most logically completes the text?
+A) represents one of many undiscovered carnivorous plant species in the region.  B) formed pitchers early in development to absorb more moisture.  C) is buried by nearby animals as they forage along the ridges for food.  D) evolved to have underground traps to access more prey than would surface traps.
+Correct: D
+
+---
+[Question] ID: 2412 | Topic: information_ideas / inferences
+Passage: In the South Pacific, New Caledonian crows use two different kinds of stick tools. One tool is complex. The crows
+shape a stick from a rare plant into a hook. The other tool is basic. The crows find a stick without a hook on the
+ground. The hooked tool is harder to get but is much better than the ba...
+Q: Which choice most logically completes the text?
+A) hooked stick tools are more valuable to the crows than the stick tools without h  B) hooked stick tools are easier for most of the crows to hold than the stick tools  C) crows prefer to share their hooked stick tools but don't share the stick tools w  D) crows realize that both kinds of stick tools are less effective than their claws
+Correct: A
+
+---
+[Question] ID: 2413 | Topic: information_ideas / inferences
+Passage: Georgia Douglas Johnson wrote many plays in the 1920s and 1930s. At the time, professional theater companies
+rarely put on plays by Black women, so few of Johnson's plays made it to the stage. Only a small number of her
+plays were published in her lifetime. But that doesn't mean that Johnson never l...
+Q: Which choice most logically completes the text?
+A) an occasion for professional theater companies to put on plays.  B) an opportunity for Johnson to get feedback on her plays.  C) a way for Johnson to learn about plays that were produced in other cities.  D) subject matter for future plays by Johnson.
+Correct: B
+
+---
+[Question] ID: 2414 | Topic: information_ideas / inferences
+Passage: Alice Guy-Blaché directed hundreds of films between 1896 and 1920. She wanted audiences to feel like they were
+watching real people on screen. She would encourage actors in her films to behave naturally. Guy-Blaché even
+hung a large sign reading “Be Natural” in the studio where she made her films. A...
+Q: Which choice most logically completes the text?
+A) copied by many of Guy-Blaché's peers.  B) familiar to actors who had worked on other directors’ films.  C) very unusual for the period.  D) better than film acting today.
+Correct: C
+
+---
+[Question] ID: 2415 | Topic: information_ideas / inferences
+Passage: To create the poems in her 2017 collection One Last Word, poet Nikki Grimes used a writing method called the
+golden shovel. This method often involves choosing a line from an existing poem and then using each word from
+that line as the last word of each line in a new poem. Grimes wanted the poems in...
+Q: Which choice most logically completes the text?
+A) most reviewers didn’t understand Grimes's goal for One Last Word.  B) Grimes successfully used the golden shovel method to achieve her goal for One La  C) Langston Hughes and Georgia Douglas Johnson are two of Grimes's favorite poets.  D) Grimes inspired many other writers to create poems using the golden shovel metho
+Correct: B
+
+---
+[Question] ID: 2416 | Topic: information_ideas / inferences
+Passage: Researchers wanted to study how consumers’ reactions to an ad may be affected by other ads. The researchers
+began by showing study participants an ad for a product, with some seeing a less detailed ad and others seeing a
+more detailed one. Then, all participants viewed the same second ad for a store...
+Q: Which choice most logically completes the text?
+A) the number of people who viewed the ad.  B) the length of time viewing previous ads.  C) the amount of detail viewed in previous ads.  D) the time of day that the ad is viewed.
+Correct: C
+
+---
+[Question] ID: 2417 | Topic: information_ideas / inferences
+Passage: In the 1950s and ’60s, plant breeders created shorter varieties of wheat and rice plants with improved yields. Kelly Gillespie,
+Rex Bernardo, and other plant specialists are building on that work by exploring the development of shorter corn varieties.
+Greater height can allow individual plants to pr...
+Q: Which choice most logically completes the text?
+A) help improve yields of harvested corn by being more likely to survive in severe   B) be more likely to be uprooted due to the weight of the corn on the stalks.  C) require more land for planting than short varieties of wheat and rice typically   D) begin developing more ears of corn on each plant than the tallest variety of cor
+Correct: A
+
+---
+[Question] ID: 2418 | Topic: information_ideas / inferences
+Passage: In her 2021 article "Throwaway History: Towards a Historiography of Ephemera,” scholar Anne Garner discusses
+John Johnson (1882-1956), a devoted collector of items intended to be discarded, including bus tickets and
+campaign pamphlets. Johnson recognized that scholarly institutions considered his ex...
+Q: Which choice most logically completes the text?
+A) demonstrate the difficulties faced by contemporary historians in conducting rese  B) represent the challenge of incorporating examples of ephemera into the collectio  C) lend support to arguments by historians and other researchers who continue to as  D) illustrate both the relatively low scholarly regard in which ephemera was once h
+Correct: D

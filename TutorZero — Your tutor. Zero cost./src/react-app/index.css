@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* TutorZero Brand Color System */
+    /* Primary (90% of UI) */
+    --tz-navy: 210 100% 20%; /* #003366 */
+    --tz-white: 0 0% 100%; /* #FFFFFF */
+    --tz-off-white: 214 60% 97%; /* #F7F9FC */
+    
+    /* Accent (use sparingly) */
+    --tz-blue: 205 100% 36%; /* #006BB6 */
+    --tz-light-blue: 197 65% 58%; /* #4DA8DA */
+    --tz-green: 153 100% 32%; /* #00A651 */
+    --tz-light-green: 120 52% 94%; /* #E8F5E9 */
+    
+    /* Alert (very sparingly) */
+    --tz-orange: 24 91% 54%; /* #F47920 */
+    --tz-red: 0 74% 50%; /* #DC2626 */
+    
+    /* Neutral */
+    --tz-gray-600: 215 19% 35%; /* #475569 */
+    --tz-gray-400: 215 16% 62%; /* #94A3B8 */
+    --tz-gray-200: 214 32% 91%; /* #E2E8F0 */
+    --tz-gray-100: 213 27% 94%; /* #F1F5F9 */
+
+    /* Theme mapping */
+    --background: var(--tz-off-white);
+    --foreground: var(--tz-navy);
+    --card: var(--tz-white);
+    --card-foreground: var(--tz-navy);
+    --popover: var(--tz-white);
+    --popover-foreground: var(--tz-navy);
+    --primary: var(--tz-blue);
+    --primary-foreground: var(--tz-white);
+    --secondary: var(--tz-gray-100);
+    --secondary-foreground: var(--tz-navy);
+    --muted: var(--tz-off-white);
+    --muted-foreground: var(--tz-gray-600);
+    --accent: var(--tz-light-blue);
+    --accent-foreground: var(--tz-navy);
+    --destructive: var(--tz-red);
+    --destructive-foreground: var(--tz-white);
+    --success: var(--tz-green);
+    --success-foreground: var(--tz-white);
+    --warning: var(--tz-orange);
+    --warning-foreground: var(--tz-white);
+    --border: var(--tz-gray-200);
+    --input: var(--tz-gray-200);
+    --ring: var(--tz-blue);
+    --radius: 0.375rem;
+    
+    /* Chart colors */
+    --chart-1: var(--tz-blue);
+    --chart-2: var(--tz-light-blue);
+    --chart-3: var(--tz-green);
+    --chart-4: var(--tz-orange);
+    --chart-5: var(--tz-red);
+  }
+
+  .dark {
+    --background: 210 50% 8%; /* #0A1628 - navy-based, not pure black */
+    --foreground: 0 0% 98%;
+    --card: 210 40% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 210 40% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 205 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 30% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 210 30% 15%;
+    --muted-foreground: 215 16% 62%;
+    --accent: 197 50% 35%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 74% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 153 100% 38%;
+    --success-foreground: 0 0% 98%;
+    --warning: 24 91% 54%;
+    --warning-foreground: 0 0% 98%;
+    --border: 210 30% 22%;
+    --input: 210 30% 22%;
+    --ring: 205 100% 45%;
+    --chart-1: 205 100% 50%;
+    --chart-2: 197 65% 55%;
+    --chart-3: 153 100% 40%;
+    --chart-4: 24 91% 58%;
+    --chart-5: 0 74% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+  }
+}
+
+/* TutorZero brand color utilities */
+@layer utilities {
+  /* Navy */
+  .text-tz-navy { color: #003366; }
+  .bg-tz-navy { background-color: #003366; }
+  .border-tz-navy { border-color: #003366; }
+  
+  /* Blue */
+  .text-tz-blue { color: #006BB6; }
+  .bg-tz-blue { background-color: #006BB6; }
+  .border-tz-blue { border-color: #006BB6; }
+  
+  /* Light Blue */
+  .text-tz-light-blue { color: #4DA8DA; }
+  .bg-tz-light-blue { background-color: #4DA8DA; }
+  .border-tz-light-blue { border-color: #4DA8DA; }
+  
+  /* Green */
+  .text-tz-green { color: #00A651; }
+  .bg-tz-green { background-color: #00A651; }
+  .border-tz-green { border-color: #00A651; }
+  
+  /* Orange */
+  .text-tz-orange { color: #F47920; }
+  .bg-tz-orange { background-color: #F47920; }
+  .border-tz-orange { border-color: #F47920; }
+  
+  /* Grays */
+  .text-tz-gray-600 { color: #475569; }
+  .text-tz-gray-400 { color: #94A3B8; }
+  .bg-tz-gray-100 { background-color: #F1F5F9; }
+  .bg-tz-off-white { background-color: #F7F9FC; }
+  
+  /* Typography from spec */
+  .text-display {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  
+  .text-h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  
+  .text-h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .text-h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  .text-body {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  
+  .text-body-strong {
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+  
+  .text-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  
+  .text-small {
+    font-size: 0.8125rem;
+    font-weight: 400;
+  }
+  
+  /* Subtle shadows from spec */
+  .shadow-subtle {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  
+  /* Micro-interactions */
+  .hover-scale {
+    transition: transform 200ms ease;
+  }
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+}

@@ -1,0 +1,217 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1500 | Topic: advanced_math / nonlinear_equations
+Q: x°-—ax+12=0
+In the equation above, ais a constant and q > (. If the equation has two
+integer solutions, what is a possible value of a ?
+A) 7, 8, 13  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1501 | Topic: advanced_math / nonlinear_equations
+Q: The speed of sound in dry air, v, can be modeled by the formula
+v =331.3+0.606T, where T is the temperature in degrees Celsius and vis
+measured in meters per second. Which of the following correctly expresses
+T in terms of v ?
+v+0.606
+T=—_—
+A) 3313 v—0.606 T=—_—_——  B) 331.3 V+331.3 T= —_—_—  C) 0.606 V—-331.3 T= —_—_—  D) 0.606
+Correct: D
+
+---
+[Question] ID: 1502 | Topic: advanced_math / nonlinear_equations
+Q: Blood volume, Vg, in a human can be determined using the equation
+Var ==
+B 1—H _, where Vp is the plasma volume and H is the hematocrit (the
+fraction of blood volume that is red blood cells). Which of the following
+correctly expresses the hematocrit in terms of the blood volume and the
+plasma volume
+A) Ve V H-—  B) Vp Ve H=14+—2 Ge Vp  C) H= Ve _ Vp
+Correct: A
+
+---
+[Question] ID: 1503 | Topic: advanced_math / nonlinear_equations
+Q: xty=1f
+xy=f2
+If one solution to the system of equations above is XY),
+what is one possible value of x ?
+A) 8, 9  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1504 | Topic: advanced_math / nonlinear_equations
+Q: X= OXty
+y = -6x+36
+
+A solution to the given system of equations is (x.y). Which of the
+following is a possible value of xy ?
+
+A.0
+
+B.6
+
+Cc. 12
+
+D. 36
+Correct: A
+
+---
+[Question] ID: 1505 | Topic: advanced_math / nonlinear_equations
+Q: xe +x¥—-12=0
+If ais a solution of the equation above and
+a>, what is the value of a?
+A) 3  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1506 | Topic: advanced_math / nonlinear_equations
+Q: T=0.01(P —40,000)
+In a city, the property tax T, in dollars, is calculated using the formula
+above, where P is the value of the property, in dollars. Which of the
+following expresses the value of the property in terms of the property tax?
+A.P=1007—400
+B.P=1007+400
+c.P=100T—40,000
+D.P=1007+40,000
+Correct: D
+
+---
+[Question] ID: 1507 | Topic: advanced_math / nonlinear_equations
+Q: LT
+at
+Mm
+The formula above expresses the square of the speed v of a wave moving
+along a string in terms of tension T, mass m, and length L of the string.
+What is Tin terms of m, v, and L ?
+my
+T=——
+A. L
+m
+T=—
+Be WL
+mb
+T=—
+L
+p.-7a
+: my
+Correct: A
+
+---
+[Question] ID: 1508 | Topic: advanced_math / nonlinear_equations
+Q: 2y+6=2(x +3)
+If (x, y) is a solution of the system of equations above and
+X > 0, what is the value of xy ?
+A.1
+B. 2
+C.3
+D.9
+Correct: A
+
+---
+[Question] ID: 1509 | Topic: advanced_math / nonlinear_equations
+Q: 6x*+5x-7=0
+
+What are the solutions to the
+given equation?
+
+—54V 25+168
+A) 12 —§4V 25+168  B) 12 —54 36-168 con 12 —6++ 36-168  C) 12
+Correct: A
+
+---
+[Question] ID: 1510 | Topic: advanced_math / nonlinear_equations
+Q: y=x°-1
+
+y=3
+When the equations above are graphed in the xy-plane, what are the
+coordinates (x, y) of the points of intersection of the two graphs?
+A) (2,3) and (-2,3)  B) (2,4) and (-2,4) c. (3,8) and (—3,8) and (-./23)
+Correct: A
+
+---
+[Question] ID: 1511 | Topic: advanced_math / nonlinear_equations
+Q: 382? = 38(9)
+What is the negative solution to the given equation?
+A) -3  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1512 | Topic: advanced_math / nonlinear_equations
+Q: y=ax*-c
+
+In the equation above, a and c are positive constants. How many times does
+the graph of the equation above intersect the graph of the equation
+y=atc in the xy-plane?
+A) Zero  B) One  C) Two  D) More than two
+Correct: C
+
+---
+[Question] ID: 1513 | Topic: advanced_math / nonlinear_equations
+Q: 7x? — 20a — 32 = 0 Whatis the positive solution to the given equation?
+A) 4  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1514 | Topic: advanced_math / nonlinear_equations
+Q: y= — te
+The iver exetion relates the distinct positive numbers v, w, and x. Which equation correctly expresses w in terms of v and
+x?
+
+A.w = —150vz
+
+B.w = — He
+
+C.w = — Fp
+
+D.w=v+150z
+Correct: A
+
+---
+[Question] ID: 1515 | Topic: advanced_math / nonlinear_equations
+Q: 55
+c+6 7 x
+What is the positive solution to the given equation?
+A) 5  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1516 | Topic: advanced_math / nonlinear_equations
+Q: 147+5k=m
+The given equation relates the numbers j, k, and m. Which equation correctly expresses kin terms of jandm?
+_ m—-14j
+B.k = tm -— 14j
+_ 14j-m
+D.k = 5m -— 14)
+Correct: A
+
+---
+[Question] ID: 1517 | Topic: advanced_math / nonlinear_equations
+Q: p= 9+ te
+The given equation relates the numbers p and n, where 7 is not equal to 0 and p > 9. Which equation correctly
+expresses 7 in terms of p?
+An = pe
+Bn=f+9
+Ccn=f-9
+Dn= =
+Correct: D
+
+---
+[Question] ID: 1518 | Topic: advanced_math / nonlinear_equations
+Q: y = (x — 2)(x + 4)
+y= 6x —-12
+Which ordered pair (2, y) is the solution to the given system of equations?
+A) (0, 2)  B) (— 4, 2) c. (2,0)  C) (2, —4)
+Correct: C
+
+---
+[Question] ID: 1519 | Topic: advanced_math / nonlinear_equations
+Q: —42? — 7x = —36
+What is the positive solution to the given equation?
+B) t  C) 4  D) 7
+Correct: B

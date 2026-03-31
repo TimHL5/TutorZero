@@ -1,0 +1,260 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1906 | Topic: problem_solving / inference
+Q: A random sample of 50 people from a town with a population of 14,878
+were asked to name their favorite flavor of ice cream. If 7 people in the
+sample named chocolate as their favorite ice-cream flavor, about how many
+people in the town would be expected to name chocolate?
+A) 350  B) 2,100  C) 7,500  D) 10,500
+Correct: B
+
+---
+[Question] ID: 1907 | Topic: problem_solving / inference
+Q: A certain forest is 253 acres. To estimate the number of trees in the forest,
+a ranger randomly selects 5 different 1-acre parcels in the forest and
+determines the number of trees in each parcel. The numbers of trees in the
+sample acres are 51, 59, 45, 52, and 73. Based on the mean of the sample,
+wh
+A) 11,000 to 12,000  B) 12,500 to 13,500  C) 13,500 to 14,500  D) 18,000 to 19,000
+Correct: C
+
+---
+[Question] ID: 1908 | Topic: problem_solving / inference
+Q: At a large high school, 300 students were selected at random and were
+asked in a survey about a menu change in the school cafeteria. All 300
+students completed the survey. It was estimated that 38% of the students
+were in support of a menu change, with a margin of error of 5.5%. Which of
+the followi
+A) The percent of the students at the school who support a menu change is 38%.  B) The percent of the students at the school who support a menu change is greater t  C) Plausible values of the percent of the students at the school who support a menu  D) Plausible values of the number of the students at the school who support a menu 
+Correct: C
+
+---
+[Question] ID: 1909 | Topic: problem_solving / inference
+Q: In a study, the data from a random sample of a population had a mean of 37,
+with an associated margin of error of 3. Which of the following is the most
+appropriate conclusion that can be made about the population mean?
+A) It is less than 37.  B) It is greater than 37.  C) It is between 34 and 40.  D) It is less than 34 or greater than 40.
+Correct: C
+
+---
+[Question] ID: 1910 | Topic: problem_solving / inference
+Q: A company designs and makes handbags. To estimate the mean weight of the handbags made by the company on a
+particular day, a sample of the handbags made by the company on that day was selected at random. Based on the sample, it
+is estimated that the mean weight of all handbags made by the company on
+A) The mean weight of all handbags made by the company on that day is between 27.78  B) The actual weights of all handbags made by the company on that day are between 2  C) The actual weights of all handbags from the sample are between 27.78 oz and 27.8  D) The mean weight of all handbags made by the company on that day is 27.8 oz.
+Correct: A
+
+---
+[Question] ID: 1911 | Topic: problem_solving / inference
+Q: A study was done on the weights of different types of fish in a pond. A
+
+random sample of fish were caught and marked in order to ensure that none
+were weighed more than once. The sample contained 150 largemouth bass,
+
+of which 30% weighed more than 2 pounds. Which of the following
+
+conclusions is b
+A) The majority of all fish in the pond weigh less than 2 pounds.  B) The average weight of all fish in the pond is approximately 2 pounds.  C) Approximately 30% of all fish in the pond weigh more than 2 pounds.  D) Approximately 30% of all largemouth bass in the pond weigh more than 2 pounds.
+Correct: D
+
+---
+[Question] ID: 1912 | Topic: problem_solving / inference
+Q: A park ranger asked a random sample of visitors how far they hiked during
+their visit. Based on the responses, the estimated mean was found to be 4.5
+
+miles, with an associated margin of error of 0.5 miles. Which of the
+following is the best conclusion from these data?
+A) It is likely that all visitors hiked between 4 and 5 miles.  B) It is likely that most visitors hiked exactly 4.5 miles.  C) It is not possible that any visitor hiked less than 3 miles.  D) It is plausible that the mean distance hiked for all visitors is between 4 and 5
+Correct: D
+
+---
+[Question] ID: 1913 | Topic: problem_solving / inference
+Q: A sample consisting of 720 adults who own televisions was selected at random for a study. Based on the sample,
+it is estimated that 32% of all adults who own televisions use their televisions to watch nature shows, with an
+associated margin of error of 3.41%. Which of the following is the most plaus
+A) More than 35.41% of all adults who own televisions use their televisions to watc  B) Between 28.59% and 35.41% of all adults who own televisions use their television  C) Since the sample included adults who own televisions and not just those who use   D) Since the sample did not include all the people who watch nature shows, no concl
+Correct: B
+
+---
+[Question] ID: 1914 | Topic: problem_solving / inference
+Q: A bag containing 10,000 beads of assorted colors is purchased from a craft
+store. To estimate the percent of red beads in the bag, a sample of beads is
+selected at random. The percent of red beads in the bag was estimated to
+be 15%, with an associated margin of error of 2%. If ris the actual number
+
+Correct: B
+
+---
+[Question] ID: 1915 | Topic: problem_solving / inference
+Q: A store manager reviewed the receipts from 80 customers who were
+
+selected at random from all the customers who made purchases last
+Thursday. Of those selected, 20 receipts showed that the customer had
+
+purchased fruit. If 1,500 customers made purchases last Thursday, which of
+the following is the m
+A) Exactly 75 customers must have purchased fruit last Thursday.  B) Exactly 375 customers must have purchased fruit last Thursday.  C) The best estimate for the number of customers who purchased fruit last Thursday   D) The best estimate for the number of customers who purchased fruit last Thursday 
+Correct: D
+
+---
+[Question] ID: 1916 | Topic: problem_solving / inference
+Q: Arandom sample of 400 town voters were asked if they plan to vote for Candidate A or Candidate B for mayor.
+The results were sorted by gender and are shown in the table below.
+
+Plan to Plan to
+
+vote for | vote for
+
+Candidate | Candidate
+A B
+
+femal) 202 | 70
+Male | 34 | 144
+The town has a total of 6,
+A) 3540  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1917 | Topic: problem_solving / inference
+Q: From a population of 50,000 people, 1,000 were chosen at random and surveyed about a proposed piece of
+legislation. Based on the survey, it is estimated that 35% of people in the population support the legislation, with
+an associated margin of error of 3%. Based on these results, which of the follow
+A) 350  B) 650  C) 16,750  D) 31,750
+Correct: C
+
+---
+[Question] ID: 1918 | Topic: problem_solving / inference
+Q: To estimate the proportion of a population that has a certain characteristic, a random sample was selected from
+the population. Based on the sample, it is estimated that the proportion of the population that has the
+characteristic is 0.49, with an associated margin of error of 0.04. Based on this es
+A) It is plausible that the proportion is between 0.45 and 0.53.  B) It is plausible that the proportion is less than 0.45.  C) The proportion is exactly 0.49.  D) It is plausible that the proportion is greater than 0.53.
+Correct: A
+
+---
+[Question] ID: 1919 | Topic: problem_solving / inference
+Q: Talks on Does not talk
+Texting cell phone | oncell phone
+behavior daily daily Total
+Medium | 39 | ee | 03]
+In a study of cell phone use, 799 randomly selected US teens were asked
+how often they talked on a cell phone and about their texting behavior. The
+data are summarized in the table above. Based
+A) Approximately 3% of the teens in the study who are classified as heavy texters a  B) It is not possible that the percent of all US teens who are heavy texters is les  C) The percent of all US teens who are heavy texters is 33%.  D) It is doubtful that the percent of all US teens who are heavy texters is 35%.
+Correct: D
+
+---
+[Question] ID: 1920 | Topic: problem_solving / inference
+Q: Views on Nuclear
+Energy Use
+Strong]
+gly 56
+favor
+Somewhat
+214
+favor
+Somewhat
+104
+oppose
+Strong]
+gly 37
+oppose
+A researcher interviewed 411 randomly selected US residents and asked about their views on the use of nuclear
+energy. The table above summarizes the responses of the interviewees. If the pop
+A) 94  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1921 | Topic: problem_solving / inference
+Q: es | we [tee
+The results of two random samples of votes for a proposition are shown
+above. The samples were selected from the same population, and the
+margins of error were calculated using the same method. Which of the
+following is the most appropriate reason that the margin of error for sample
+Ais
+A) Sample A had a smaller number of votes that could not be recorded.  B) Sample A had a higher percent of favorable responses.  C) Sample A had a larger sample size.  D) Sample A had a smaller sample size.
+Correct: D
+
+---
+[Question] ID: 1922 | Topic: problem_solving / inference
+Q: In State X, Mr. Camp's eighth-grade class consisting of 26 students was
+surveyed and 34.6 percent of the students reported that they had at least
+two siblings. The average eighth-grade class size in the state is 26. If the
+students in Mr. Camp's class are representative of students in the state’s
+ei
+A) 16,200  B) 23,400  C) 30,600  D) 46,800
+Correct: C
+
+---
+[Question] ID: 1923 | Topic: problem_solving / two_var_data
+Q: a ee
+20 e
+18
+16
+° °
+12 .
+10 .
+8 . .
+6 ° °
+: ee
+2
+0 x
+0 1 2 3 4 & 6
+Of the following, which is the best model for
+the data in the scatterplot?
+A) ¥ =2x*—11x—-20  B) y=2x*—-11x +20 = 9y2_ = Cc. V=2x*-Oox—-3  C) y=2x?-5x +3
+Correct: B
+
+---
+[Question] ID: 1924 | Topic: problem_solving / two_var_data
+Q: ‘Temperature of a Cup of Coffee
+
+55 during an Experiment
+
+200 Tet yt ty
+~isottt tT TTT r rrr rye
+& yolLtt tt Pree
+© volt ttt try rr
+Spolt Te TT itr ttt
+& ot tie
+5 yoLt ttt tte | aan
+= oltl ITT TT TT? ¢ ¢ ¢ |
+& att tT TTT tt r itt ttt)
+
+gl t TTT TTT TTT ttt
+
++ + 4
+> "204060 80 100 120 140
+‘Time since
+A) Between 0 and 10 minutes  B) Between 30 and 40 minutes  C) Between 50 and 60 minutes  D) Between 90 and 100 minutes
+Correct: A
+
+---
+[Question] ID: 1925 | Topic: problem_solving / two_var_data
+Q: Temperature and Elevation
+
+45
+
+watt | JT 7 Tf
+aeylmet> tT tT Tf
+ger
+241 [IS
+>) eS
+Bz] | | | TN
+esl | Tt tT tT Re
+
+yt | | [ ff e|
+
+FF KF GF SF
+
+Elevation (feet)
+
+The scatterplot above shows the high temperature on a certain day and the
+elevation of 8 different locations in the Lake Tahoe Basin. A lin
+A) 37°F  B) 39°F CG. ATF  C) 43°F
+Correct: B

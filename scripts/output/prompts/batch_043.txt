@@ -1,0 +1,180 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1766 | Topic: problem_solving / percentages
+Q: Lani spent 15% of her 8-hour workday in meetings. How many minutes of
+her workday did she spend in meetings?
+
+A: 1.2
+
+B. 15
+
+Cc. 48
+
+D. 72
+Correct: D
+
+---
+[Question] ID: 1767 | Topic: problem_solving / percentages
+Q: There are 170 blocks in a container. Of these blocks, 10% are green. How many blocks in the container are
+green?
+A) 17  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1768 | Topic: problem_solving / percentages
+Q: Call Ratings
+
+[sess ss] | To
+A supervisor at a call center reviewed 500 calls taken by four employees
+and rated the employees’ performance on each call on a scale from 1 star to
+4 stars. The ratings for each employee are shown in the table above.
+According to the table, to the nearest whole percent,
+A) 3%  B) 11%  C) 16%  D) 32%
+Correct: B
+
+---
+[Question] ID: 1769 | Topic: problem_solving / percentages
+Q: There were approximately 113,000 occupational therapy jobs in the United
+States in 2012. The Bureau of Labor Statistics has projected that this
+number will increase by 29% from 2012 to 2022. Of the following, which is
+closest to the number of occupational therapy jobs the bureau has
+projected for th
+A) 115,900  B) 116,300  C) 142,000  D) 145,800
+Correct: D
+
+---
+[Question] ID: 1770 | Topic: problem_solving / percentages
+Q: A waiter receives tips from each customer. On average, the tip is 15% of the
+customer's bill. At this rate, which of the following is closest to the tip the
+waiter can expect when a customer has a bill that is $78.20?
+A) $8.00  B) $10.00  C) $12.00  D) $14.00
+Correct: C
+
+---
+[Question] ID: 1771 | Topic: problem_solving / percentages
+Q: During a sale, the original prices of all the items in a clothing store have
+been reduced by 20%. What is the sale price of a jacket with an original
+price of $50 ?
+A) $12  B) $30  C) $36  D) $40
+Correct: D
+
+---
+[Question] ID: 1772 | Topic: problem_solving / percentages
+Q: What is 10% of 370?
+A) 27  B) 37  C) 333  D) 360
+Correct: B
+
+---
+[Question] ID: 1773 | Topic: problem_solving / percentages
+Q: Rita's total bill at a restaurant was $25.00, including tax. If she left a tip of
+20% of the total bill, what was the amount of the tip?
+A) $3.50  B) $4.00  C) $4.50  D) $5.00
+Correct: D
+
+---
+[Question] ID: 1774 | Topic: problem_solving / percentages
+Q: What number is 20%
+greater than 60 ?
+A) 50  B) 72 Cc. 75  C) 132
+Correct: B
+
+---
+[Question] ID: 1775 | Topic: problem_solving / percentages
+Q: 21 is 21% of what number?
+A.0
+
+B.1
+
+C. 42
+
+D. 100
+Correct: D
+
+---
+[Question] ID: 1776 | Topic: problem_solving / percentages
+Q: Of 900,000 beads, 828,000 are silver. What percentage of the beads are silver?
+A) 8%  B) 36%  C) 72%  D) 92%
+Correct: D
+
+---
+[Question] ID: 1777 | Topic: problem_solving / percentages
+Q: What is 10% of 470?
+A) 37  B) 47  C) 423  D) 460
+Correct: B
+
+---
+[Question] ID: 1778 | Topic: problem_solving / percentages
+Q: What percentage of 300 is 75?
+A) 25%  B) 50%  C) 75%  D) 225%
+Correct: A
+
+---
+[Question] ID: 1779 | Topic: problem_solving / percentages
+Q: There are 350 objects in a box. Of these objects, 4% are balls. How many balls are in the box?
+A.4
+B.14
+Cc. 70
+D. 346
+Correct: B
+
+---
+[Question] ID: 1780 | Topic: problem_solving / percentages
+Q: For the finale of a TV show, viewers could use either social media or a text
+
+message to vote for their favorite of two contestants. The contestant
+
+receiving more than 50% of the vote won. An estimated 10% of the viewers
+voted, and 30% of the votes were cast on social media. Contestant 2
+
+earned 70
+A) If all viewers had voted, Contestant 2 would have won.  B) Viewers voting by social media were likely to be younger than viewers voting by   C) If all viewers who voted had voted by social media instead of by text message, C  D) Viewers voting by social media were more likely to prefer Contestant 2 than were
+Correct: D
+
+---
+[Question] ID: 1781 | Topic: problem_solving / percentages
+Q: During the first month of sales, a company sold 1,300,000 units of a certain
+type of smartphone. During the same month, 15% of the units sold were
+returned. If sales and the return rate remain the same for each of the next 5
+months, about how many units of this smartphone will be returned to the
+com
+A) 195,000  B) 975,000  C) 1,170,000  D) 6,630,000
+Correct: C
+
+---
+[Question] ID: 1782 | Topic: problem_solving / percentages
+Q: Which of the following represents the result of increasing the
+quantity x by 9%, where X > 0 ?
+A) 1.09%  B) 0.09x  C) x+9  D) x +0.09
+Correct: A
+
+---
+[Question] ID: 1783 | Topic: problem_solving / percentages
+Q: The number k is 36% greater than 50. If k is the product of
+50 and r, what is the value of r ?
+A) 36  B) 3.6  C) 1.36  D) 0.36
+Correct: C
+
+---
+[Question] ID: 1784 | Topic: problem_solving / percentages
+Q: The value of z is 1.13 times 100. The value of z is what percent greater than 100?
+A.11.3
+
+B. 13
+
+Cc. 130
+
+D. 213
+Correct: B
+
+---
+[Question] ID: 1785 | Topic: problem_solving / percentages
+Q: In a group, 40% of the items are red. Of all the red items in the group, 30% also have stripes. What percentage of
+the items in the group are red with stripes?
+A) 10%  B) 12%  C) 70%  D) 75%
+Correct: B

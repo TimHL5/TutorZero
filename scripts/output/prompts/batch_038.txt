@@ -1,0 +1,193 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2138 | Topic: geometry / lines_angles_triangles
+Q: A line intersects two parallel lines, forming four acute angles and four obtuse angles. The measure of one of these eight
+angles is (72 — 250)°. The sum of the measures of four of the eight angles is k”. Which of the following could NOT be
+equivalent to k, for all values of x?
+A) —142 + 1,540  B) 14% — 320  C) —28x + 1,720  D) 360
+Correct: A
+
+---
+[Question] ID: 2139 | Topic: geometry / right_triangles_trig
+Q: | DN
+7
+Note: Figure not drawn to scale.
+
+The lengths of the legs of a right triangle are shown. Which of the following is closest to the length of the triangle's
+hypotenuse? [Figure described in original]
+A) 3.2  B) 5  C) 7.6  D) 20
+Correct: C
+
+---
+[Question] ID: 2140 | Topic: geometry / right_triangles_trig
+Q: 45°
+24
+45° B
+X
+Note: Figure not drawn to scale.
+In the triangle shown, what is the value of 2? [Figure described in original]
+A) 24  B) 45  C) 48  D) 69
+Correct: A
+
+---
+[Question] ID: 2141 | Topic: geometry / right_triangles_trig
+Q: 73
+Note: Figure Ay drawn to scale.
+In the right triangle shown, what is the value of sin x °?
+A) ay  B) 23 c. 8 p. 338
+Correct: C
+
+---
+[Question] ID: 2142 | Topic: geometry / right_triangles_trig
+Q: Triangle ABC is similar to triangle DEF’, where angle A corresponds to angle D, and angles C and F are right angles. If
+cos B= x: what is the value of cos £7?
+A) oy  B) 35 c. bd. 2
+Correct: A
+
+---
+[Question] ID: 2143 | Topic: geometry / right_triangles_trig
+Q: G
+9
+6
+Note: Figure not drawn to scale.
+In the right triangle shown, which of the following is closest to the value of c? [Figure described in original]
+A) 7.5  B) 10.8 c.15  C) 58.5
+Correct: B
+
+---
+[Question] ID: 2144 | Topic: geometry / right_triangles_trig
+Q: B
+A C
+21
+In the figure above, what is the
+value of tan(Ay?
+20
+A) 29 21  B) 29 20 Cc. 21 21  C) 20
+Correct: C
+
+---
+[Question] ID: 2145 | Topic: geometry / right_triangles_trig
+Q: 21
+6
+a
+Note: Figure not drawn to scale.
+For the triangle shown, which expression represents the value of a? [Figure described in original]
+A) 21? — 62  B) 217 — 6? Cc. /21—6  C) 21-6
+Correct: A
+
+---
+[Question] ID: 2146 | Topic: geometry / right_triangles_trig
+Q: A right triangle has legs with lengths of 28 centimeters and 20 centimeters. What is the length of this triangle's
+hypotenuse, in centimeters?
+A) 8/6  B) 4/74  C) 48  D) 1,184
+Correct: B
+
+---
+[Question] ID: 2147 | Topic: geometry / right_triangles_trig
+Q: ns ;
+12
+In AABC above, what is the
+length of AD?
+A.4
+B.6
+c.642
+b. 6.73
+Correct: B
+
+---
+[Question] ID: 2148 | Topic: geometry / right_triangles_trig
+Q: The length of a rectangle's diagonal is 5/17, and the length of the rectangle’s shorter side is 5. What is the
+length of the rectangle’s longer side?
+A) V17  B) 20  C) 15V2  D) 400
+Correct: B
+
+---
+[Question] ID: 2149 | Topic: geometry / right_triangles_trig
+Q: Q
+
+pu R
+In the right triangle shown above, what
+is the length of PQ ?
+A) 4  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2150 | Topic: geometry / right_triangles_trig
+Q: a
+32
+Note: Figure not drawn to scale.
+In the triangle shown, what is the value of 2? [Figure described in original]
+A) 45  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2151 | Topic: geometry / right_triangles_trig
+Q: In AABC, ZBis a right angle and the length of BC is 136 millimeters. If cos. A = 2, what is the length, in millimeters, of
+AB?
+A) 34  B) 102  C) 136  D) 170
+Correct: B
+
+---
+[Question] ID: 2152 | Topic: geometry / right_triangles_trig
+Q: x.
+/ DN
+Z 35 Y
+Note: Figure not drawn to scale.
+Triangle XY Z shown is a right triangle. Which of the following has the same value as sin X? [Figure described in original]
+A) tan X  B) tan Y  C) cos X  D) cos Y
+Correct: D
+
+---
+[Question] ID: 2153 | Topic: geometry / right_triangles_trig
+Q: B
+/
+A c
+- 5
+Triangle ABC above is a right triangle, and sin(6) = 43.
+What is the length of side BC,
+A) 24  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2154 | Topic: geometry / right_triangles_trig
+Q: Note: Figure not drawn to scale.
+In the triangle shown, what is the value of sin 2°? [Figure described in original]
+A) 16/23  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2155 | Topic: geometry / right_triangles_trig
+Q: A graphic designer is creating a logo for a company. The logo is shown in
+the figure above. The logo is in the shape of a trapezoid and consists of
+three congruent equilateral triangles. If the perimeter of the logo is
+
+20 centimeters, what is the combined area of the shaded regions, in square
+centi
+A) 2/3  B) 4/3 c.8/3 bd. 16
+Correct: C
+
+---
+[Question] ID: 2156 | Topic: geometry / right_triangles_trig
+Q: B
+A c
+3
+In the figure above, fan 4.1 BC =15and
+DA =4, what is the length of DE ?
+A) 6  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2157 | Topic: geometry / right_triangles_trig
+Q: s
+12 — ; 5
+R T __
+In triangle RST above, point W (not shown) lies on RT. What is the
+value of cos(“RSW)-sin(ZWST) ?
+A) 0.0  B) 0  C) 1  D) -1
+Correct: A

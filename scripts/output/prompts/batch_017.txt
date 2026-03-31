@@ -1,0 +1,224 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1058 | Topic: algebra / linear_equations_one_var
+Q: The equation 9X +5 = alx + b), where a and b are constants, has no
+solutions. Which of the following must be true?
+lL@=9
+Il. pb=5
+5
+WP * 9
+A) None  B) | only  C) | and Il only  D) | and III only
+Correct: D
+
+---
+[Question] ID: 1059 | Topic: algebra / linear_equations_one_var
+Q: A science teacher is preparing the 5 stations of a science laboratory. Each
+station will have either Experiment A materials or Experiment B materials,
+but not both. Experiment A requires 6 teaspoons of salt, and Experiment B
+requires 4 teaspoons of salt. If x is the number of stations that will be s
+A) 5x  B) 10x  C) 2x+20  D) 10x +20
+Correct: C
+
+---
+[Question] ID: 1060 | Topic: algebra / linear_equations_one_var
+Q: A factory makes 9-inch, 7-inch, and 4-inch concrete screws. During a certain day, the number of 9-inch concrete screws that
+the factory makes is 5 times the number 7 of 7-inch concrete screws, and the number of 4-inch concrete screws is 22.
+During this day, the factory makes 100 concrete screws tota
+A) 9(5n) + 7n+ 4(22) = 100  B) 9n+7n+ 4n = 100  C) 5n + 22 = 100  D) 6n + 22 = 100
+Correct: D
+
+---
+[Question] ID: 1061 | Topic: algebra / linear_equations_one_var
+Q: How many solutions does the equation 10(15a — 9) = —15(6 — 10z) have?
+A) Exactly one  B) Exactly two  C) Infinitely many  D) Zero
+Correct: C
+
+---
+[Question] ID: 1062 | Topic: algebra / linear_equations_one_var
+Q: If 44 = 23, the value of z — 5 is between which of the following pairs of values?
+A) —9 and —7  B) —3 and 3  C) 4.5 and 5.5  D) 6.75 and 9.25
+Correct: B
+
+---
+[Question] ID: 1063 | Topic: algebra / linear_equations_one_var
+Q: What value of ¢ is the solution to the equation 0.8¢ — 0.46 = 8(t — 0.001) + 1.9?
+A) -49/150  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1064 | Topic: algebra / linear_equations_one_var
+Q: A manufacturing plant makes 10-inch, 9-inch, and 7-inch frying pans. During a certain day, the number of 10-inch frying pans
+that the manufacturing plant makes is 4 times the number 7 of 9-inch frying pans it makes, and the number of 7-inch frying
+pans it makes is 10. During this day, the manufactur
+A) 10(4n) + 9n + 7(10) = 100  B) 10n + 9n + 7n = 100  C) 4n + 10 = 100  D) 5n + 10 = 100
+Correct: D
+
+---
+[Question] ID: 1065 | Topic: algebra / linear_equations_one_var
+Q: 122+28 _
+125528 — 45 = r(2 8)
+In the given equation, s andr are constants, and s > 0. If the equation has infinitely many solutions, what is the value of s?
+A) 403  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1066 | Topic: algebra / linear_equations_two_var
+Q: A store sells two different-sized containers of a certain Greek yogurt. The store's sales of this Greek yogurt
+totaled 1,277.94 dollars last month. The equation 5.482 + 7.30y = 1,277.94 represents this situation, where ©
+is the number of smaller containers sold and y is the number of larger containe
+A) 5.48  B) 7.30y  C) 7.30  D) 5.482
+Correct: A
+
+---
+[Question] ID: 1067 | Topic: algebra / linear_equations_two_var
+Q: Line kis defined by y = 3” + 15. Line 7 is perpendicular to line k in the xy-plane. What is the slope of line 7?
+A.-¥
+
+B. +5
+
+C.-+
+
+D.-+
+Correct: A
+
+---
+[Question] ID: 1068 | Topic: algebra / linear_equations_two_var
+Q: 3at+4b=25
+
+A shipping company charged a customer $25 to ship some small boxes and
+some large boxes. The equation above represents the relationship between
+a, the number of small boxes, and b, the number of large boxes, the
+customer had shipped. If the customer had 3 small boxes shipped, how
+many lar
+Correct: B
+
+---
+[Question] ID: 1069 | Topic: algebra / linear_equations_two_var
+Q: xty=75
+
+The equation above relates the number of minutes, x, Maria spends running
+each day and the number of minutes, y, she spends biking each day. In the
+equation, what does the number 75 represent?
+A) The number of minutes spent running each day  B) The number of minutes spent biking each day  C) The total number of minutes spent running and biking each day  D) The number of minutes spent biking for each minute spent running
+Correct: C
+
+---
+[Question] ID: 1070 | Topic: algebra / linear_equations_two_var
+Q: A total of 364 paper straws of equal length were used to construct two types of polygons: triangles and
+rectangles. The triangles and rectangles were constructed so that no two polygons had a common side. The
+equation 3x2 + 4y = 364 represents this situation, where x is the number of triangles const
+A) lf 24 triangles were constructed, then 73 rectangles were constructed.  B) If 24 triangles were constructed, then 73 paper straws were used.  C) If 73 triangles were constructed, then 24 rectangles were constructed.  D) If 73 triangles were constructed, then 24 paper straws were used.
+Correct: A
+
+---
+[Question] ID: 1071 | Topic: algebra / linear_equations_two_var
+Q: The equation y=0Ax models the relationship between the number of
+different pieces of music a certain pianist practices, y, during an x-minute
+practice session. How many pieces did the pianist practice if the session
+lasted 30 minutes?
+
+A.1
+
+B. 3
+
+Cc. 10
+
+D. 30
+Correct: B
+
+---
+[Question] ID: 1072 | Topic: algebra / linear_equations_two_var
+Q: y
+Se eee
+CPT rrr. ,
+[Peet TT
+Pt Ty | PAT
+TTT TTT yey
+Which of the following is an equation of the graph
+shown in the xy-plane above?
+1
+a ea
+B.y=—-x—-4
+__,-4
+c.¥ 4
+D.y=—4x-1
+Correct: A
+
+---
+[Question] ID: 1073 | Topic: algebra / linear_equations_two_var
+Q: An employee at a restaurant prepares sandwiches and salads. It takes the employee 1.5 minutes to prepare a
+sandwich and 1.9 minutes to prepare a salad. The employee spends a total of 46.1 minutes preparing x
+sandwiches and y salads. Which equation represents this situation?
+
+A.1.92 + 1.5y = 46.1
+
+B.
+Correct: B
+
+---
+[Question] ID: 1074 | Topic: algebra / linear_equations_two_var
+Q: Jy
+207
+18 Pot TT
+NRT fT fp pt yt
+16 PNT fT fT
+a Ne eee eee
+5 14 Po oTN TT fT tT ft
+g Pot NJ tT ft ft
+o 42 Pot TNT fy yy
+a Nee eee
+So 10 Pot | TNT
+a Pot tT tf KPT yt
+% 8 Pot tT tT TN
+3 ee eee eee
+° 6 pot ft tT dP TN
+on pot ft ft fT te NT
+4 pot ft tf ft PN
+ee eee eee
+2 pot ft tT NT
+pot fT ft NRT
+PN x
+
+Correct: B
+
+---
+[Question] ID: 1075 | Topic: algebra / linear_equations_two_var
+Q: A city’s total expense budget for one year was x million dollars. The city
+budgeted y million dollars for departmental expenses and 201 million dollars
+for all other expenses. Which of the following represents the relationship
+between x and y in this context?
+
+A.x+y=201
+
+B.x-y=201
+
+C.2x—-y=201
+
+D. y
+Correct: B
+
+---
+[Question] ID: 1076 | Topic: algebra / linear_equations_two_var
+Q: 4x+3y=24
+Mario purchased 4 binders that cost x dollars each and 3 notebooks that
+cost y dollars each. If the given equation represents this situation, which of
+the following is the best interpretation of 24 in this context?
+A) The total cost, in dollars, for all binders purchased  B) The total cost, in dollars, for all notebooks purchased  C) The total cost, in dollars, for all binders and notebooks purchased  D) The difference in the total cost, in dollars, between the number of binders and 
+Correct: C
+
+---
+[Question] ID: 1077 | Topic: algebra / linear_equations_two_var
+Q: A gardener buys two kinds of fertilizer. Fertilizer A contains 60% filler
+materials by weight and Fertilizer B contains 40% filler materials by weight.
+Together, the fertilizers bought by the gardener contain a total of
+
+240 pounds of filler materials. Which equation models this relationship,
+where 
+A) 0.4x + 0.6y =240  B) 0.6x + 0.4y = 240  C) 40x +60y = 240  D) 60x +40y =240
+Correct: B

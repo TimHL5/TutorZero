@@ -1,0 +1,187 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1018 | Topic: algebra / linear_equations_one_var
+Q: If 5a = 20, what is the value of 152?
+A.7
+
+B. 12
+
+C. 23
+
+D. 60
+Correct: D
+
+---
+[Question] ID: 1019 | Topic: algebra / linear_equations_one_var
+Q: What is the solution to the
+equation Jy +3 = 7?
+
+A.1
+
+B: 1.5
+
+C:2
+
+D.4
+Correct: C
+
+---
+[Question] ID: 1020 | Topic: algebra / linear_equations_one_var
+Q: If 3a — 27 = 24, what is the value of x — 9?
+Al
+
+B.8
+
+C. 24
+
+D. 35
+Correct: B
+
+---
+[Question] ID: 1021 | Topic: algebra / linear_equations_one_var
+Q: 3x + 5(x + 4) = 76 What value of z is the solution to the given equation?
+A.7
+
+B.8
+
+C. 56
+
+D. 72
+Correct: A
+
+---
+[Question] ID: 1022 | Topic: algebra / linear_equations_one_var
+Q: 13x” = 112 — x What value of z is the solution to the given equation?
+A) 8  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1023 | Topic: algebra / linear_equations_one_var
+Q: If 32 = 30, what is the value of 32 — 12?
+A) —2  B) 18  C) 22  D) 42
+Correct: B
+
+---
+[Question] ID: 1024 | Topic: algebra / linear_equations_one_var
+Q: z+ 40 = 95
+What value of z is the solution to the given equation?
+A) 55  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1025 | Topic: algebra / linear_equations_one_var
+Q: If 6 + 2 = 9, what is the value of 18 + 32?
+A) 27  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1026 | Topic: algebra / linear_equations_one_var
+Q: 3 more than 8 times a number z is equal to 83. Which equation represents this situation?
+A) (3)(8)a = 83  B) 8a = 83+ 3  C) 32+ 8 = 83  D) 8% + 3 = 83
+Correct: D
+
+---
+[Question] ID: 1027 | Topic: algebra / linear_equations_one_var
+Q: Nasir bought 9 storage bins that were each the same price. He used a coupon for $63 off the entire purchase.
+The cost for the entire purchase after using the coupon was $27. What was the original price, in dollars, for 1
+storage bin?
+A) 10  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1028 | Topic: algebra / linear_equations_one_var
+Q: If = = 5, what is the value of 3?
+A) 0.2  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1029 | Topic: algebra / linear_equations_one_var
+Q: What value of z is the solution to the equation 16x + 24 = 24x?
+A.—4
+3
+B.S
+1
+Cc.
+D.3
+Correct: D
+
+---
+[Question] ID: 1030 | Topic: algebra / linear_equations_one_var
+Q: lf 32 — 8 = 7, what is the value of 3a + 8?
+A.-1
+
+B.5
+
+C.13
+
+D. 23
+Correct: D
+
+---
+[Question] ID: 1031 | Topic: algebra / linear_equations_one_var
+Q: 3(2x —6)-11 =4(x -3)+6
+If x is the solution to the equation above,
+what is the value of X — 3?
+23
+A) 2? ‘7  B) ? 15 c. 2 1S  C) 2
+Correct: B
+
+---
+[Question] ID: 1032 | Topic: algebra / linear_equations_one_var
+Q: 2n+6=14
+
+A tree had a height of 6 feet when it was planted. The equation above can
+be used to find how many years n it took the tree to reach a height of 14
+feet. Which of the following is the best interpretation of the number 2 in this
+context?
+A) The number of years it took the tree to double its height  B) The average number of feet that the tree grew per year  C) The height, in feet, of the tree when the tree was 1 year old  D) The average number of years it takes similar trees to grow 14 feet
+Correct: B
+
+---
+[Question] ID: 1033 | Topic: algebra / linear_equations_one_var
+Q: 2¢ + 16 = a(x + 8)
+In the given equation, @ is a constant. If the equation has infinitely many solutions, what is the value of a?
+A) 2  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1034 | Topic: algebra / linear_equations_one_var
+Q: (b-2)x =8
+In the given equation, b is a constant. If the equation has no
+solution, what is the value of b ?
+A.2
+B.4
+C.6
+D. 10
+Correct: A
+
+---
+[Question] ID: 1035 | Topic: algebra / linear_equations_one_var
+Q: a(3—x)—b = -—1-2x
+In the equation above, a and b are constants. If the equation has infinitely
+many solutions, what are the values of a and b ?
+A) g=9andp=1  B) g=gandh=f  C) q=—Pandpas  D) g=—-—Pandh=-5
+Correct: B
+
+---
+[Question] ID: 1036 | Topic: algebra / linear_equations_one_var
+Q: An agricultural scientist studying the growth of corn plants recorded the
+height of a corn plant at the beginning of a study and the height of the plant
+each day for the next 12 days. The scientist found that the height of the
+plant increased by an average of 1.20 centimeters per day for the 12 days
+A) 22.4  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1037 | Topic: algebra / linear_equations_one_var
+Q: 2(p +1)+8(p—-1)=5p
+What value of p is the solution of
+the equation above?
+A) 1.2  B) 0  C) 1  D) -1
+Correct: A

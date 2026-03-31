@@ -1,0 +1,187 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2459 | Topic: information_ideas / inferences
+Passage: During their larval phase, numerous species of coral reef fish are drawn toward areas where light is present. To better
+understand how artificial light at night (ALAN) might affect some coral reef fish, researchers explored the effect of exposure
+to low levels of ALAN on the reproductive success of ...
+Q: Which choice most logically completes the text?
+A) ocellaris that settle in areas with low levels of ALAN have significantly higher  B) A. ocellaris that settle in areas without ALAN do. the reproductive success of A  C) exposed to low levels of ALAN. the reproductive success of A. ocellaris is more   D) than the reproductive success of other species of coral reef fish is. the spawni
+Correct: B
+
+---
+[Question] ID: 2460 | Topic: information_ideas / inferences
+Passage: Overgrazing by purple sea urchins has caused many kelp forests along North America’s west coast to be replaced by urchin
+barrens—areas stripped of vegetation and covered in purple sea urchins. Urchins in barrens persist in a state of starvation
+that lessens their nutritional value—and thus their app...
+Q: Which choice most logically completes the text?
+sunflower sea stars are willing to hunt sea urchins, but if given a choice, they will prey on other more nutritious marine
+A) animals instead. sunflower sea Stars are reluctant to feed on both nutritionally  B) unlikely to thrive in kelp forests. sunflower sea Stars are less likely to consu  C) sunflower sea stars at a high risk of extinction. sunflower sea stars do not alw  D) recovery a potentially important tool for controlling urchin barrens.
+Correct: D
+
+---
+[Question] ID: 2461 | Topic: information_ideas / inferences
+Passage: In a three-year study of parasitic infections by Anomotaenia brevis tapeworms in Temnothorax nylanderi ants, entomologist
+Susanne Foitzik and colleagues found something unexpected: rather than reducing its host's fitness, as is typical of
+parasites, A. brevis greatly extends the lifespan of a T. nyl...
+Q: Which choice most logically completes the text?
+uninfected workers are at high risk for direct exposure to A. brevis in the course of providing social care to the infected
+A) workers in the nest. need to compensate for reduced contributions within the col  B) the uninfected workers. high level of activity maintained by the uninfected work  C) disperse when the nest is attacked by a predator. average lifespan of T. nylande  D) range covered by the study.
+Correct: B
+
+---
+[Question] ID: 2462 | Topic: information_ideas / inferences
+Passage: In the early nineteenth century, some Euro-American farmers in the northeastern United States used agricultural
+techniques developed by the Haudenosaunee (Iroquois) people centuries earlier, but it seems that few of those
+farmers had actually seen Haudenosaunee farms firsthand. Barring the possibili...
+Q: Which choice most logically completes the text?
+A) those farmers learned the techniques from other people who were more directly in  B) the crops typically cultivated by Euro-American farmers in the northeastern Unit  C) Haudenosaunee farming techniques were widely used in regions outside the northea  D) Euro-American farmers only began to recognize the benefits of Haudenosaunee farm
+Correct: A
+
+---
+[Question] ID: 2463 | Topic: information_ideas / inferences
+Passage: One theory behind human bipedalism speculates that it originated in a mostly ground-based ancestor that
+practiced four-legged “knuckle-walking,” like chimpanzees and gorillas do today, and eventually evolved into
+moving upright on two legs. But recently, researchers observed orangutans, another rela...
+Q: Which choice most logically completes the text?
+A) bipedalism evolved because it was advantageous to a tree-dwelling ancestor of hu  B) bipedalism must have evolved simultaneously with knuckle-walking and tree-climbi  C) moving between the ground and the trees would have been difficult without bipeda  D) a knuckle-walking human ancestor could have easily moved bipedally in trees.
+Correct: A
+
+---
+[Question] ID: 2464 | Topic: information_ideas / inferences
+Passage: The increased integration of digital technologies throughout the process of book creation in the late 20th and
+early 21st centuries lowered the costs of book production, but those decreased costs have been most significant
+in the manufacturing and distribution process, which occurs after the authori...
+Q: Which choice most logically completes the text?
+A) digital technologies made it easier than it had been previously for authors to w  B) customers generally expected the cost of books to decline relative to the cost o  C) publishers increased the variety of their offerings by printing more unique titl  D) the costs of writing, editing, and designing a book were less affected by the te
+Correct: D
+
+---
+[Question] ID: 2465 | Topic: information_ideas / inferences
+Passage: Volunteering, or giving time for a community service for free, is a valuable form of civic engagement because
+helping in a community is also good for society as a whole. In a survey of youths in the United States, most young
+people said that they believe volunteering is a way to help people on an in...
+Q: Which choice most logically completes the text?
+A) many young people think they can volunteer only within their own communities.  B) volunteering may be even more helpful than many young people think it is.  C) volunteering can help society overall more than it can help individual people.  D) many young people may not know how to find ways to volunteer their time.
+Correct: B
+
+---
+[Question] ID: 2466 | Topic: information_ideas / inferences
+Passage: Ancestral Puebloans, the civilization from which present-day Pueblo tribes descended, emerged as early as 1500
+B.C.E. in an area of what is now the southwestern United States and dispersed suddenly in the late 1200s C.E.,
+abandoning established villages with systems for farming crops and turkeys. Re...
+Q: Which choice most logically completes the text?
+A) conditions of the terrains in the Rio Grande Valley and Mesa Verde had greater s  B) some Ancestral Puebloans migrated to the Rio Grande Valley in the late 1200s and  C) Indigenous peoples living in the Rio Grande Valley primarily planted crops and d  D) the Ancestral Puebloans of Mesa Verde likely adopted the farming practices of In
+Correct: B
+
+---
+[Question] ID: 2467 | Topic: information_ideas / inferences
+Passage: Ratified by more than 90 countries, the Nagoya Protocol is an international agreement ensuring that Indigenous
+communities are compensated when their agricultural resources and knowledge of wild plants and animals are
+utilized by agricultural corporations. However, the protocol has shortcomings. For...
+Q: Which choice most logically completes the text?
+A) diminishing the monetary reward that corporations might derive from their agreem  B) limiting the research that corporations conduct on the resources of the Indigeno  C) preventing independent observers from determining whether the agreements guarant  D) discouraging Indigenous communities from learning new methods for harvesting pla
+Correct: C
+
+---
+[Question] ID: 2468 | Topic: information_ideas / inferences
+Passage: Many of William Shakespeare's tragedies address broad themes that still appeal to today's audiences. For
+instance, Romeo and Juliet, which is set in the Italy of Shakespeare's time, tackles the themes of parents versus
+children and love versus hate, and the play continues to be read and produced wid...
+Q: Which choice most logically completes the text?
+A) many theatergoers and readers today are likely to find Shakespeare's history pla  B) some of Shakespeare's tragedies are more relevant to today's audiences than twen  C) Romeo and Juliet is the most thematically accessible of all Shakespeare's traged  D) experts in English history tend to prefer Shakespeare's history plays to his oth
+Correct: A
+
+---
+[Question] ID: 2469 | Topic: information_ideas / inferences
+Passage: In a 2017 article, historian Jasmine Kilburn-Toppin explains that in early modern London, members of the city’s guilds (trade
+and artisanal associations) were participants in a civic culture in which gift giving both signaled and conferred social status.
+Research on this phenomenon has tended to foc...
+Q: Which choice most logically completes the text?
+A) ensured that knowledge of the materials and techniques used by members of the cr  B) emphasized ostentatious offerings in the case of the largest guilds and prosaic   C) functioned as a way for craft guild members to maintain and enhance their profes  D) conferred greater social status when the recipient belonged to one of London's l
+Correct: C
+
+---
+[Question] ID: 2470 | Topic: information_ideas / inferences
+Passage: With the ongoing expansion of e-commerce, consumers are expecting faster and faster delivery of goods, but delivery
+companies continue to struggle with last-mile logistics (the final step in delivery to consumers) due to challenges such as
+complex and inefficient delivery routes. Innovations to miti...
+Q: Which choice most logically completes the text?
+A) consumers’ expectations for reduced delivery times may be outstripping what is v  B) a better understanding of consumers’ expectations for delivery is needed so that  C) rapid delivery is a leading factor in consumer satisfaction, and therefore deliv  D) there may not be sufficient incentive for delivery companies to attempt to solve
+Correct: A
+
+---
+[Question] ID: 2471 | Topic: information_ideas / inferences
+Passage: Arthurian legends (tales related to the character of King Arthur) derive from many sources, such as Vita Sancti Cadoci,
+composed in the 11th century, and Culhwch and Olwen from the second half of the 12th century. One of the most significant
+sources, Geoffrey of Monmouth’'s History of the Kings of B...
+Q: Which choice most logically completes the text?
+A) Roman de Brut is more historically accurate than History, because Culhwch and Ol  B) Geoffrey of Monmouth was unaware of stories of the Round Table when composing hi  C) Geoffrey of Monmouth’s accounts of Arthurian legends in his History are more sim  D) the Arthurian legends that the author of Vita Sancti Cadoci drew on would not ha
+Correct: D
+
+---
+[Question] ID: 2472 | Topic: information_ideas / inferences
+Passage: The Mammillaria cactus M. boolii occurs naturally only in the state of Sonora in Mexico, and the smallness of its range
+makes it especially vulnerable to extinction. The traditional single-species approach to conservation emphasizes the need to
+focus on individual species most at risk, like M. booli...
+Q: Which choice most logically completes the text?
+A) lead to a better understanding of how the distribution of Mammillaria species th  B) allow conservationists to better consider how climatic changes affecting Sonora   C) erroneously shift the focus of conservation efforts away from M. boolii itself.  D) fail to consider the ways in which the survival of M. boolii may be influenced b
+Correct: D
+
+---
+[Question] ID: 2473 | Topic: information_ideas / inferences
+Passage: One recognized social norm of gift giving is that the time spent obtaining a gift will be viewed as a reflection of the gift’s
+thoughtfulness. Marketing experts Farnoush Reshadi, Julian Givi, and Gopal Das addressed this view in their studies of
+norms specifically surrounding the giving of gift card...
+Q: Which choice most logically completes the text?
+A) gift givers likely overestimate the amount of effort required to use digital gif  B) physical gift cards are likely preferred by gift recipients because the tangible  C) physical gift cards are likely less desirable to gift recipients than digital gi  D) gift givers likely perceive digital gift cards as requiring relatively low effor
+Correct: D
+
+---
+[Question] ID: 2950 | Topic: conventions / boundaries
+Passage: While one requires oxygen and one does _____ and anaerobic respiration are both forms of cellular respiration—
+that is, they are processes by which cells break down glucose to use as energy....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) not aerobic  B) not. Aerobic  C) not, aerobic  D) not; aerobic
+Correct: C
+
+---
+[Question] ID: 2951 | Topic: conventions / boundaries
+Passage: Human-made (synthetic) fibers used in clothes and many other consumer products are more durable than most
+natural plant the manufacture of synthetic fibers requires toxic chemical solvents that can pollute air and
+water....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) fibers,  B) fibers but  C) fibers  D) fibers, but
+Correct: D
+
+---
+[Question] ID: 2952 | Topic: conventions / boundaries
+Passage: Emperor Ashoka ruled the Maurya Empire in South Asia from roughly 270 to 232 BCE. He is known for enforcing a
+moral code called the Law of Piety, which established the sanctity of animal the just treatment of the
+elderly, and the abolition of the slave trade....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) life  B) life;  C) life:  D) life,
+Correct: D
+
+---
+[Question] ID: 2953 | Topic: conventions / boundaries
+Passage: A subseasonal weather forecast attempts to predict weather conditions three to four weeks in its
+predictions are therefore more short-term than those of the seasonal forecast, which attempts to predict the
+weather more than a month in advance....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) advance,  B) advance  C) advance;  D) advance and
+Correct: C
+
+---
+[Question] ID: 2954 | Topic: conventions / boundaries
+Passage: In her book The Woman Warrior: Memoirs of a Girlhood Among Ghosts, author Maxine Hong Kingston examines
+themes childhood, womanhood, and Chinese American identity by intertwining autobiography and
+mythology....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) of:  B) of  C) of —  D) of,
+Correct: B

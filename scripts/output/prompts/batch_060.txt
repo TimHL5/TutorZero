@@ -1,0 +1,189 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2644 | Topic: craft_structure / words_context
+Passage: The following text is from Darcie Little Badger’s 2021 novel A Snake Falls to Earth. Nina is looking at old family photographs.
+Nina couldn't stop looking at the sepia-toned photograph in an oak frame. Propped on the window ledge, it featured a
+portrait of Great-Great-Grandmother Rosita as a young w...
+Q: As used in the text, what does the word “featured” most nearly mean?
+A) Displayed  B) Questioned  C) Approved  D) Ignored
+Correct: A
+
+---
+[Question] ID: 2645 | Topic: craft_structure / words_context
+Passage: Researcher Lucy Salazar is using radiocarbon dating to study Machu Picchu, an ancient Incan fortress in the Andes
+Mountains. She and her colleagues have found that the site’s age differs from the estimate: it is approximately 20
+years older than scholars thought when first encountering Machu Picchu ...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) genuine  B) intentional  C) independent  D) original
+Correct: D
+
+---
+[Question] ID: 2646 | Topic: craft_structure / words_context
+Passage: The following text is adapted from Lewis Carroll’s 1871 novel Through the Looking-Glass, and What Alice Found There. Alice,
+a child, is talking to her cat.
+“Do you hear the snow against the window-panes, Kitty? How nice and soft it sounds! Just as if someone was kissing
+the window all over outside.”...
+Q: As used in the text, what does the word “soft” most nearly mean?
+A) Gentle  B) Sensitive  C) Shapeless  D) Bland
+Correct: A
+
+---
+[Question] ID: 2647 | Topic: craft_structure / words_context
+Passage: The following text is adapted from Charles Chesnutt’s 1899 story “The Wife of His Youth.” Mr. Ryder is hosting a formal
+gathering where he will propose marriage to the woman he has been courting.
+[A] younger and less cautious man would long since have spoken. But he had made up his mind, and had onl...
+Q: As used in the text, what does the word “determine” most nearly mean?
+A) Choose  B) Influence  C) Demonstrate  D) Measure
+Correct: A
+
+---
+[Question] ID: 2648 | Topic: craft_structure / words_context
+Passage: When marine biologist Brittany Williams played different ocean recordings to groups of oyster larvae, groups that heard
+sounds of a healthy oyster reef were the most . They were twice as likely as other groups to show signs of making a
+permanent home. This suggests that playing recordings of a healt...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) responsive  B) inactive  C) liked  D) distressed
+Correct: A
+
+---
+[Question] ID: 2649 | Topic: craft_structure / words_context
+Passage: Manul cats are small, shy felines. They live mostly alone in out-of-the-way parts of Asia, such as on Mount Everest. These
+cats have been difficult to research because their habitats are so__ large populations of humans....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) full of  B) drawn to  C) responsible for  D) distant from
+Correct: D
+
+---
+[Question] ID: 2650 | Topic: craft_structure / words_context
+Passage: Archaeologist Erika Karuzas works with the Confederated Salish and Kootenai Tribes of Montana to preserve culturally
+significant sites. In 2015 they decided that creating a new national trail connecting many of these sites would their
+preservation efforts, because the US government provides some pro...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) inspire  B) ignore  C) promote  D) reduce
+Correct: C
+
+---
+[Question] ID: 2651 | Topic: craft_structure / words_context
+Passage: The following text is adapted from José Marti’s 1891 poem “At the Salon” (translated by Cecil Charles in 1898). The speaker
+describes a painting featuring a female figure.
+From the sterile soilnoray Of hope in a blade of green, Nor sheltering roof is seen—
+Though the skies are heavy and gray. Ah, th...
+Q: As used in the text, what does the word “sheltering” most nearly mean?
+A) Protective  B) Restrictive  C) Affectionate  D) Suspicious
+Correct: A
+
+---
+[Question] ID: 2652 | Topic: craft_structure / words_context
+Passage: Following the principles of community-based participatory research, tribal nations and research institutions are
+equal partners in health studies conducted on reservations. A collaboration between the Crow Tribe and Montana
+State University this model: tribal citizens worked alongside scientists to ...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) circumvents  B) eclipses  C) fabricates  D) exemplifies
+Correct: D
+
+---
+[Question] ID: 2653 | Topic: craft_structure / words_context
+Passage: Artificially delivering biomolecules to plant cells is an important component of protecting plants from pathogens,
+but it is difficult to transmit biomolecules through the layers of the plant cell wall. Markita del Carpio Landry and
+her colleagues have shown that it may be possible to this problem b...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) conceptualize  B) neglect  C) illustrate  D) overcome
+Correct: D
+
+---
+[Question] ID: 2654 | Topic: craft_structure / words_context
+Passage: Research conducted by planetary scientist Katarina Miljkovic suggests that the Moon's surface may not
+accurately early impact events. When the Moon was still forming, its surface was softer, and asteroid or
+meteoroid impacts would have left less of an impression; thus, evidence of early impacts may ...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) reflect  B) receive  C) evaluate  D) mimic
+Correct: A
+
+---
+[Question] ID: 2655 | Topic: craft_structure / words_context
+Passage: Anthropologist Kristian J. Carlson and colleagues examined the fossilized clavicle and shoulder bones of a 3.6-
+million-year-old early hominin known as “Little Foot.” They found that these bones were the clavicle and
+shoulder bones of modern apes that are frequent climbers, such as gorillas and chim...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) surpassed by  B) comparable to  C) independent of  D) obtained from
+Correct: B
+
+---
+[Question] ID: 2656 | Topic: craft_structure / words_context
+Passage: The Cambrian explosion gets its name from the sudden appearance and rapid diversification of animal remains in
+the fossil record about 541 million years ago, during the Cambrian period. Some scientists argue that this
+change in the fossil record might be because of a shift in many organisms to body ...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) catastrophic  B) elusive  C) abrupt  D) imminent
+Correct: C
+
+---
+[Question] ID: 2657 | Topic: craft_structure / words_context
+Passage: Particle physicists like Ayana Holloway Arce and Aida El-Khadra spend much of their time what is invisible
+to the naked eye: using sophisticated technology, they closely examine the behavior of subatomic particles, the
+smallest detectable parts of matter....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) selecting  B) inspecting  C) creating  D) deciding
+Correct: B
+
+---
+[Question] ID: 2658 | Topic: craft_structure / words_context
+Passage: British painter Peter Edwards has a___ painting portraits of notable figures from a variety of different fields. These
+characteristic works include his esteemed portraits of poet Wendy Cope and soccer player and coach Ryan Griggs....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) complaint about  B) reputation for  C) question about  D) requirement for
+Correct: B
+
+---
+[Question] ID: 2659 | Topic: craft_structure / words_context
+Passage: The National Heritage Fellowship was created to publicly exceptional folk and traditional artists in the United States.
+In 2015, the fellowship was given to the circus aerialist (mid-air acrobat) Dolly Jacobs to celebrate her lifetime contributions
+to the arts....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) startle  B) recognize  C) familiarize  D) convey
+Correct: B
+
+---
+[Question] ID: 2660 | Topic: craft_structure / words_context
+Passage: The following text is adapted from Mary Seacole’s 1857 autobiography Wonderful Adventures of Mrs. Seacole in Many
+Lands.
+That journey across the Isthmus [of Panama], insignificant in distance as it was, was by no means an easy one. It
+seemed as if nature had determined to throw every conceivable obs...
+Q: As used in the text, what does the word “conceivable” most nearly mean?
+A) Obvious  B) Imaginable  C) Straightforward  D) Uninterrupted
+Correct: B
+
+---
+[Question] ID: 2661 | Topic: craft_structure / words_context
+Passage: The following text is from Jhumpa Lahiri’s 2003 novel The Namesake. Gogol, a child, is at a beach in Massachusetts with his
+father.
+On the beach Gogol collects rocks, digs tunnels in the sand. He and his father wander barefoot, their pant legs rolled
+halfway up their calves.
+©2003 by Jhumpa Lahiri...
+Q: As used in the text, what does the word “collects” most nearly mean?
+A) Increases  B) Makes  C) Ignores  D) Gathers
+Correct: D
+
+---
+[Question] ID: 2662 | Topic: craft_structure / words_context
+Passage: The following text is adapted from John Matheus’s 1925 short story “Fog.”
+The fog extended its tentacles over city and river, gradually obliterating traces of familiar landscapes. At five-thirty the
+old Panhandle bridge, supported by massive sandstone pillars, stalwart, as when erected fifty years b...
+Q: As used in the text, what does the word “supported” most nearly mean?
+A) Held up  B) Encouraged  C) Improved on  D) Defended
+Correct: A
+
+---
+[Question] ID: 2663 | Topic: craft_structure / words_context
+Passage: The equipment from the Apollo Moon landings (1969-1972), such as radiation detectors and temperature probes, remains
+there to this day, but the data from these missions were mostly inaccessible until a recent data-transfer project made them
+. This project has allowed researcher Seiichi Nagihara to m...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) predictable  B) complicated  C) representative  D) available
+Correct: D

@@ -1,0 +1,197 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1038 | Topic: algebra / linear_equations_one_var
+Q: 1
+
+If Ax > 7 75 what is the
+value of 8x —1?
+A) 2 _9  B) 8 2 G 2  C) -10
+Correct: D
+
+---
+[Question] ID: 1039 | Topic: algebra / linear_equations_one_var
+Q: Megan's regular wage at her job is p dollars per hour for the first 8 hours of
+work in a day plus 1.5 times her regular hourly wage for work in excess of
+
+8 hours that day. On a given day, Megan worked for 10 hours, and her total
+earnings for that day were $137.50. What is Megan's regular hourly wag
+A) $11.75  B) $12.50  C) $13.25  D) $13.75
+Correct: B
+
+---
+[Question] ID: 1040 | Topic: algebra / linear_equations_one_var
+Q: The width of a rectangular dance floor is w feet. The length of the floor is 6
+feet longer than its width. Which of the following expresses the perimeter,
+in feet, of the dance floor in terms of w ?
+A) 2wt+6  B) 4w+12 Cc. w? +6 b. w? +6w
+Correct: B
+
+---
+[Question] ID: 1041 | Topic: algebra / linear_equations_one_var
+Q: if 2, — 5) +3(x —5) = 10, what is
+the value of y—5 ?
+A) 2  B) 5 em,  C) 12
+Correct: A
+
+---
+[Question] ID: 1042 | Topic: algebra / linear_equations_one_var
+Q: $(@+5) — $(a@+5) =-7
+What value of z is the solution to the given equation?
+A) —12  B) —5 Cc. 79  C) 204
+Correct: C
+
+---
+[Question] ID: 1043 | Topic: algebra / linear_equations_one_var
+Q: A candle is made of 17 ounces of wax. When the candle is burning, the amount of wax in the candle decreases by
+1 ounce every 4 hours. If 6 ounces of wax remain in this candle, for how many hours has it been burning?
+
+A.3
+
+B.6
+
+C. 24
+
+D. 44
+Correct: D
+
+---
+[Question] ID: 1044 | Topic: algebra / linear_equations_one_var
+Q: If 2(3t — 10) + t = 40 + 4t, what is the value of 3¢?
+A) 60  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1045 | Topic: algebra / linear_equations_one_var
+Q: If 5(a@ + 4) = 4(x + 4) + 29, what is the value of 2 + 4?
+A) —4  B) 25 Cc. 29  C) 33
+Correct: C
+
+---
+[Question] ID: 1046 | Topic: algebra / linear_equations_one_var
+Q: The cost to rent a commercial fishing boat from a certain company is $950 for the first 2 hours and an additional $50 per
+hour for each hour after the first 2 hours. If the total cost to rent the commercial fishing boat from the company for t hours,
+where t > 2, is $1,100, which equation represents 
+A) 950(t — 2) + 50¢ = 1,100  B) 950(2t) + 50¢ = 1,100 Cc. 950 + 50(¢ — 2) = 1,100  C) 950 + 50(2t) = 1,100
+Correct: C
+
+---
+[Question] ID: 1047 | Topic: algebra / linear_equations_one_var
+Q: A museum rents tablets to visitors. The museum earns revenue of $14 for each tablet rented for the day. On Wednesday, the
+museum earned $406 in profit from renting tablets after paying daily expenses of $112. How many tablets did the museum
+rent on Wednesday? (profit = total revenue — total expenses
+A) 37  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1048 | Topic: algebra / linear_equations_one_var
+Q: If 46 = 16 + 2(x — 8), what is the value of 2(a — 8)?
+A.16
+
+B. 23
+
+Cc. 30
+
+D. 38
+Correct: C
+
+---
+[Question] ID: 1049 | Topic: algebra / linear_equations_one_var
+Q: A company that creates and sells tape dispensers calculates its monthly profit, in dollars, by subtracting its fixed monthly
+costs, in dollars, from its monthly sales revenue, in dollars. The equation 15,000 = 2.00z — 4,500 represents this situation
+for a month where z tape dispensers are created an
+A) The monthly sales revenue, in dollars, from selling x tape dispensers  B) The monthly sales revenue, in dollars, from each tape dispenser sold  C) The monthly cost, in dollars, of creating each tape dispenser  D) The monthly cost, in dollars, of creating x tape dispensers
+Correct: A
+
+---
+[Question] ID: 1050 | Topic: algebra / linear_equations_one_var
+Q: Hector used a tool called an auger to remove corn from a storage bin at a
+constant rate. The bin contained 24,000 bushels of corn when Hector
+began to use the auger. After 5 hours of using the auger, 19,350 bushels of
+corn remained in the bin. If the auger continues to remove corn at this rate,
+what
+A) 3  B) 7 Cc. 8  C) 12
+Correct: D
+
+---
+[Question] ID: 1051 | Topic: algebra / linear_equations_one_var
+Q: Alan drives an average of 100 miles each week. His car can travel an
+average of 25 miles per gallon of gasoline. Alan would like to reduce his
+weekly expenditure on gasoline by $5. Assuming gasoline costs $4 per
+gallon, which equation can Alan use to determine how many fewer average
+miles, m, he sho
+Correct: D
+
+---
+[Question] ID: 1052 | Topic: algebra / linear_equations_one_var
+Q: 3(ke + 13) = Ba +36
+In the given equation, k is a constant. The equation has no solution. What is the value of k?
+A) 16/17  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1053 | Topic: algebra / linear_equations_one_var
+Q: A certain product costs a company $65 to make. The product is sold by a
+salesperson who earns a commission that is equal to 20% of the sales price
+of the product. The profit the company makes for each unit is equal to the
+sales price minus the combined cost of making the product and the
+commission. 
+A) (100(1 -—0.2)-65)u =6,840  B) (100—-65)(1 -0.8)u =6,840 c. 0.8(100)-65u =6,840 b. (0.2(100) +65)u =6,840
+Correct: A
+
+---
+[Question] ID: 1054 | Topic: algebra / linear_equations_one_var
+Q: 5(¢+ 3) — 7(t +3) = 38
+What value of t is the solution to the given equation?
+A) -22  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1055 | Topic: algebra / linear_equations_one_var
+Q: Townsend Realty Group Investments
+Property Purchase Monthly rental
+address price (dollars) | price (dollars)
+Clearwater
+128,000 950
+Lane
+Driftwood
+. 176,000 1,310
+Drive
+Edgemont
+70,000 515
+Street
+Glenview
+140,000 1,040
+Street
+Hamilton
+. 450,000 3,365
+Circle
+The Townsend Realty Group invested in the 
+A) $350,000  B) $291,700  C) $233,300  D) $175,000
+Correct: B
+
+---
+[Question] ID: 1056 | Topic: algebra / linear_equations_one_var
+Q: Each side of a 30-sided polygon has one of three lengths. The number of sides with length 8 centimeters (cm)
+is 5 times the number of sides n with length 3 cm. There are 6 sides with length 4 cm. Which equation must be
+true for the value of n?
+
+A.5n +6 = 30
+
+B.6n + 6 = 30
+
+C. 8n + 8n + 4n = 30
+
+D. 8
+Correct: B
+
+---
+[Question] ID: 1057 | Topic: algebra / linear_equations_one_var
+Q: If ae = a the value of z + 6 is between which of the following pairs of values?
+A) —7 and —3  B) —2 and 2  C) 2 and 7  D) 8 and 13
+Correct: B

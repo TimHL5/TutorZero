@@ -1,0 +1,233 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1460 | Topic: advanced_math / equivalent_expressions
+Q: The expression i “2 can be rewritten as ae — Kx F k) where kis a
+positive constant. What is the value of k ?
+
+A.2
+
+B.6
+
+c.V¥2
+
+bd. V6
+Correct: D
+
+---
+[Question] ID: 1461 | Topic: advanced_math / equivalent_expressions
+Q: Which of the following is
+b 2
+(+5)
+equivalent to 2/2
+b?
+2
+a+
+A) 2 b2 2 qe +—  B) 4 ps Bs be Cc. 2 2 be a? + ab+—  C) 4
+Correct: D
+
+---
+[Question] ID: 1462 | Topic: advanced_math / equivalent_expressions
+Q: x? +6x—-7
+— > = ard
+The equation x+7 is true for all x # —#, where a and d
+are integers. What is the value of q@+q?
+A) -8  B) —1 c.0  C) 1
+Correct: C
+
+---
+[Question] ID: 1463 | Topic: advanced_math / equivalent_expressions
+Q: Which of the following expressions is
+x?—2x—5
+equivalentto x—3 ?
+20
+x-5-——
+A) x-3 10 x-5-——  B) x-3 8 x+1-— Cc. x=3 2 x+1-—  C) x-3
+Correct: D
+
+---
+[Question] ID: 1464 | Topic: advanced_math / equivalent_expressions
+Q: (7532+ 100y")+ 1001 0y*—110)
+The expression above can be written in the form ay” +b , where a and b
+are constants. What is the value of a+b?
+A) 6632  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1465 | Topic: advanced_math / equivalent_expressions
+Q: If ¢=c¢+d, which of the following is equivalent to the
+expression x°—c* -2cd— d*>
+
+a. (x +a)
+
+B. (x-a)®
+
+c. (x + a)(x — a)
+
+b. X*-ax-a?
+Correct: C
+
+---
+[Question] ID: 1466 | Topic: advanced_math / equivalent_expressions
+Q: If a and c are positive numbers, which of the following is
+equivalent to ¥ (a+ c)? “Yat,
+A) a+c¢  B) a? +c" c. a +2ac+c* b. ac?
+Correct: C
+
+---
+[Question] ID: 1467 | Topic: advanced_math / equivalent_expressions
+Q: One of the factors of 2a? + 42x? + 208z is x + b, where bis a positive constant. What is the smallest possible
+value of b?
+A) 8  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1468 | Topic: advanced_math / equivalent_expressions
+Q: Which ex ion i an’
+pression is equivalent to —
+. ; 42-5 HW?
+(w+1)(4e—5) ~
+=i
+B. 30-6
+c, -——_1__
+(w+1)(4a—5)
+D. ——2-_
+(w+1)(4a—5)
+Correct: D
+
+---
+[Question] ID: 1469 | Topic: advanced_math / equivalent_expressions
+Q: Which of the following expressions is(are) a factor of 3x? + 20a — 63?
+l 2-9
+ll. 32 —7
+A) | only  B) Il only  C) land Il  D) Neither | nor II
+Correct: B
+
+---
+[Question] ID: 1470 | Topic: advanced_math / nonlinear_equations
+Q: 6x —Sy > 12
+Which of the following inequalities is equivalent
+to the inequality above?
+A.x-y>2
+B. 2x —3y >4
+C.3x-—2y>4
+D. 3y—2x >2
+Correct: B
+
+---
+[Question] ID: 1471 | Topic: advanced_math / nonlinear_equations
+Q: Jy
+9
+Piaf} tt it | |
+PEt tt Ey | ee
+tot | Ae |
+Piet tT | Yet ttt
+Pit TA ET tt
+Llio| | | | tt
+Ean
+7
+PTT TT TT TT TT
+2-10 123456789
+CECE EEC EY
+The graph of a system of a linear equation and a nonlinear equation is shown. What is the solution (a, y) to this
+system?
+A) (0,0)  B) (0, 2)  C) (2, 4)  D) (4,0)
+Correct: C
+
+---
+[Question] ID: 1472 | Topic: advanced_math / nonlinear_equations
+Q: Which of the following is a solution to the
+equation 2x?-4= x? ?
+
+A.1
+
+B.2
+
+C.3
+
+D. 4
+Correct: B
+
+---
+[Question] ID: 1473 | Topic: advanced_math / nonlinear_equations
+Q: —29r=s
+The given equation relates the positive numbers ar, and s. Which equation correctly expresses qg in terms of r
+and s?
+A.q=s-—29r
+B.g=s+29r
+C.q = 29rs
+D. q = — 397
+Correct: B
+
+---
+[Question] ID: 1474 | Topic: advanced_math / nonlinear_equations
+Q: xt+y=12
+y=x?
+If xy) is a solution to the system of equations above, which of the
+following is a possible value of x?
+A.0
+B.1
+C.2
+D.3
+Correct: D
+
+---
+[Question] ID: 1475 | Topic: advanced_math / nonlinear_equations
+Q: VW
+p=—
+t
+The power P produced by a machine is represented by the equation above,
+where W is the work performed during an amount of time t. Which of the
+following correctly expresses W in terms of P and t ?
+A.W=Pt
+p
+p. W=>
+t
+co Wp
+D.W=P+t
+Correct: A
+
+---
+[Question] ID: 1476 | Topic: advanced_math / nonlinear_equations
+Q: jc —2|=9
+What is one possible solution to the given equation?
+A) 11, -7  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1477 | Topic: advanced_math / nonlinear_equations
+Q: x* =64
+Which of the following values of x
+satisfies the given equation?
+A.—-8
+B.4
+c. 32
+D.128
+Correct: A
+
+---
+[Question] ID: 1478 | Topic: advanced_math / nonlinear_equations
+Q: The total revenue from sales of a product can be calculated using the
+formula | = PQ, where T is the total revenue, P is the price of the product,
+and Q is the quantity of the product sold. Which of the following equations
+gives the quantity of product sold in terms of P and T ?
+p
+Q=—
+A) T T Q=—  B) P  C) Q=PT  D) Q=T-P
+Correct: B
+
+---
+[Question] ID: 1479 | Topic: advanced_math / nonlinear_equations
+Q: b= 42c
+The given equation relates the positive numbers b, c, and f. 1 hick equation correctly expresses c in terms of b
+and f?
+A.c= aT
+B.c=>2
+C.c = 42bf
+Dc=42-—b-—f
+Correct: A

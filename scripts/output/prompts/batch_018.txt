@@ -1,0 +1,238 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1078 | Topic: algebra / linear_equations_two_var
+Q: In the xy-plane, a line has a slope of 6 and passes through the point (0,8).
+Which of the following is an equation of this line?
+A) y=6x+8  B) y=6x +46  C) y=8x+6  D) y=8x +48
+Correct: A
+
+---
+[Question] ID: 1079 | Topic: algebra / linear_equations_two_var
+Q: The equation 40z + 20y = 160 represents the number of sweaters, 2, and number of shirts, y, that Yesenia
+purchased for $160. If Yesenia purchased 2 sweaters, how many shirts did she purchase?
+
+A.3
+
+B.4
+
+c.8
+
+D. 40
+Correct: B
+
+---
+[Question] ID: 1080 | Topic: algebra / linear_equations_two_var
+Q: Tony spends $80 per month on public transportation. A 10-ride pass costs
+$12.50, and a single-ride pass costs $1.50. If g represents the number of
+10-ride passes Tony buys in a month and t represents the number of single-
+ride passes Tony buys in a month, which of the following equations best
+repres
+Correct: D
+
+---
+[Question] ID: 1081 | Topic: algebra / linear_equations_two_var
+Q: Characteristics for Rock Types
+Weight per volume Cost per
+Rock type gmP 3 P
+(Ib/ft~) pound
+
+A city is planning to build a rock retaining wall, a monument, and a garden in
+a park. The table above shows four rock types that will be considered for
+use in the project. Also shown for each rock type is it
+A) The cost of the granite and sandstone needed for the project  B) The cost of the basalt and limestone needed for the project  C) The cost of the basalt needed for the project  D) The cost of the sandstone needed for the project
+Correct: A
+
+---
+[Question] ID: 1082 | Topic: algebra / linear_equations_two_var
+Q: Pe fe
+The table above shows some pairs of x values and y values. Which of the
+following equations could represent the relationship between x and y ?
+A) y= 2x+3  B) y=3x-2  C) y=4x-1  D) y = 5x
+Correct: A
+
+---
+[Question] ID: 1083 | Topic: algebra / linear_equations_two_var
+Q: A shipment consists of 5-pound boxes and 10-pound boxes with a total weight of 220 pounds. There are 13 10-
+pound boxes in the shipment. How many 5-pound boxes are in the shipment?
+
+A.5
+
+B. 10
+
+C.13
+
+D. 18
+Correct: D
+
+---
+[Question] ID: 1084 | Topic: algebra / linear_equations_two_var
+Q: y= 70z+8
+
+Which table gives three values of x and their corresponding values of y for the given equation?
+i
+;
+po | 7 |
+4 | 86 |
+c
+po | 0 |
+[0
+.
+Correct: A
+
+---
+[Question] ID: 1085 | Topic: algebra / linear_equations_two_var
+Q: F=2.50x + 7.00y
+
+In the equation above, F represents the total amount of money, in dollars, a
+food truck charges for x drinks and y salads. The price, in dollars, of each
+drink is the same, and the price, in dollars, of each salad is the same. Which
+of the following is the best interpretation for th
+A) The price, in dollars, of one drink  B) The price, in dollars, of one salad  C) The number of drinks bought during the day  D) The number of salads bought during the day
+Correct: B
+
+---
+[Question] ID: 1086 | Topic: algebra / linear_equations_two_var
+Q: J
+10 =
+of | | | eT
+eter tT | | | tl
+TELE LL
+st tt tT Tt Te
+of | | tt Tt tt
+wet EEE TE Ty tt
+3 Ft tT TE TT
+ott tt et tt tt
+te
+BREE
+O 12345 67 8 9 10
+What is the y-intercept of the line graphed?
+A) (0, —8)  B) (0, -4) c. (0, 0)  C) (0,8)
+Correct: D
+
+---
+[Question] ID: 1087 | Topic: algebra / linear_equations_two_var
+Q: The equation 46 = 2a + 2b gives the relationship between the side lengths a and 6 of a certain parallelogram. If
+a = 9, what is the value of b?
+A) 14  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1088 | Topic: algebra / linear_equations_two_var
+Q: The y-intercept of the graph of y = —6zx — 32 in the xy-plane is (0, y). What is the value of y?
+A) -32  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1089 | Topic: algebra / linear_equations_two_var
+Q: In 2010, a swim club had a total of 35 swimmers, each classified as either advanced or intermediate. From 2010 to 2020,
+the number of advanced swimmers in the club increased by approximately 53%, and the number of intermediate swimmers
+in the club increased by approximately 44%. The total number of 
+A) 1.53a + 1.49b = 35(1.44)  B) 1.49a + 0.53b = 35(1.44)  C) 1.53a + 1.44b = 35(1.49)  D) 1.44a + 1.53b = 35(1.49)
+Correct: C
+
+---
+[Question] ID: 1090 | Topic: algebra / linear_equations_two_var
+Q: y
+TAT TT
+PTT Pry Ty
+PTT TEA TT
+PTT PAT TT
+TE ENS
+-5 -4 =3=2-10 h 23:45
+
+Halon
+
+LY TU
+
+SCNT
+
+ret | ALT
+
+What is the equation of the line shown in
+the xy-plane above?
+
+A.y=3x-3
+
+B.y=—-3x+3
+
+1
+ge Vogr 3
+=e ty +3
+D. y 3
+Correct: B
+
+---
+[Question] ID: 1091 | Topic: algebra / linear_equations_two_var
+Q: Davio bought some potatoes and celery. The potatoes cost $0.69 per pound, and the celery cost $0.99 per
+pound. If Davio spent $5.34 in total and bought twice as many pounds of celery as pounds of potatoes, how many
+pounds of celery did Davio buy?
+
+A.2
+
+B. 2.5
+
+C. 2.67
+
+D. 4
+Correct: D
+
+---
+[Question] ID: 1092 | Topic: algebra / linear_equations_two_var
+Q: Naomi bought both rabbit snails and nerite snails for a total of $52. Each rabbit snail costs $8 and each nerite snail costs $6
+. If Naomi bought 2 nerite snails, how many rabbit snails did she buy?
+
+A.5
+
+B. 12
+
+c.14
+
+D. 50
+Correct: A
+
+---
+[Question] ID: 1093 | Topic: algebra / linear_equations_two_var
+Q: A line in the xy-plane has a slope of -$ and passes through the point (0, 3). Which equation represents this line?
+Ay= ta —3
+By= te +3
+C.y= 5a —3
+D.y= $a +3
+Correct: B
+
+---
+[Question] ID: 1094 | Topic: algebra / linear_equations_two_var
+Q: The equation 46 = 2a + 2y gives the perimeter of a rectangular rug that has length 2, in feet, and width y, in feet. The
+width of the rug is 8 feet. What is the length, in feet, of the rug?
+A) 15  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1095 | Topic: algebra / linear_equations_two_var
+Q: A food truck buys forks for $0.04 each and plates for $0.48 each. The total cost of x forks and y plates is $661.76. Which
+equation represents this situation?
+A) 0.48x — 0.04y = 661.76  B) 0.042 — 0.48y = 661.76  C) 0.482 + 0.04y = 661.76  D) 0.04% + 0.48y = 661.76
+Correct: D
+
+---
+[Question] ID: 1096 | Topic: algebra / linear_equations_two_var
+Q: A teacher is creating an assignment worth 70 points. The assignment will consist of questions worth 1 point and
+questions worth 3 points. Which equation represents this situation, where x represents the number of 1-point
+questions and y represents the number of 3-point questions?
+A) day = 70  B) 4(x + y) = 70  C) 32+y= 70  D) 2 + 3y = 70
+Correct: D
+
+---
+[Question] ID: 1097 | Topic: algebra / linear_equations_two_var
+Q: z+y = 350
+
+The given equation relates the total number of maple trees, 7, and the total number of birch trees, y, planted in a 14-acre
+forest preserve. If 245 maple trees were planted in the forest preserve, how many birch trees were planted in the forest
+preserve?
+A) 14  B) 25 c. 105  C) 245
+Correct: C

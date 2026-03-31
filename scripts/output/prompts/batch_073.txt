@@ -1,0 +1,195 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2219 | Topic: information_ideas / central_ideas
+Passage: A common assumption among art historians is that the invention of photography in the mid-nineteenth century
+displaced the painted portrait in the public consciousness. The diminishing popularity of the portrait miniature,
+which coincided with the rise of photography, seems to support this claim. How...
+Q: Based on the text, what can be concluded about the diminishing popularity of the portrait miniature in the
+nineteenth century?
+A) Factors other than the rise of photography may be more directly responsible for   B) Although portrait miniatures became less common than photographs, they were wide  C) The popularity of the portrait miniature likely persisted for longer than art hi  D) As demand for portrait miniatures decreased, portrait artists likely shifted the
+Correct: A
+
+---
+[Question] ID: 2220 | Topic: information_ideas / central_ideas
+Passage: Biologists have predicted that birds’ feather structures vary with habitat temperature, but this hadn't been tested
+in mountain environments. Ornithologist Sahas Barve studied feathers from 249 songbird species inhabiting
+different elevations—and thus experiencing different temperatures—in the Himal...
+Q: Which choice best states the main idea of the text?
+A) Barve's investigation shows that some species of Himalayan songbirds have evolve  B) Barve found an association between habitat temperature and feather structure amo  C) Barve discovered that songbirds have adapted to their environment by growing fea  D) The results of Barve’s study suggest that the ability of birds to withstand cold
+Correct: B
+
+---
+[Question] ID: 2221 | Topic: information_ideas / central_ideas
+Passage: Paleontologists searching for signs of ancient life have found many fossilized specimens of prehistoric human
+ancestors, including several from the Pleistocene era discovered in a geological formation in the Minatogawa
+quarry in Japan. However, to study the emergence of the earliest multicellular or...
+Q: What does the text indicate about the geological formation at Mistaken Point?
+A) It holds a greater number of fossils but from a smaller variety of species than   B) It has provided evidence that the earliest human species may have emerged before  C) It is widely considered by paleontologists to be the most valuable source of inf  D) It contains specimens from an older time period than those found in the formatio
+Correct: D
+
+---
+[Question] ID: 2222 | Topic: information_ideas / central_ideas
+Passage: The following text is adapted from Edgar Allan Poe's 1849 story “Landor's Cottage.”
+During a pedestrian trip last summer, through one or two of the river counties of New York, | found myself, as
+the day declined, somewhat embarrassed about the road | was pursuing. The land undulated very
+remarkably;...
+Q: Which choice best states the main idea of the text?
+A) The narrator remembers a trip he took and admits to getting lost.  B) The narrator recalls fond memories of a journey that he took through some beauti  C) The narrator describes what he saw during a long trip through a frequently visit  D) The narrator explains the difficulties he encountered on a trip and how he overc
+Correct: A
+
+---
+[Question] ID: 2223 | Topic: information_ideas / central_ideas
+Passage: Philadelphia's Black Pearl Chamber Orchestra, founded by Jeri Lynne Johnson, performs classical music, from
+well-known compositions by Beethoven to contemporary works by Jessie Montgomery. For the orchestra's
+iConduct! program, Johnson invites community members to learn some basic elements of conduc...
+Q: Which choice best states the main idea of the text?
+A) The Black Pearl orchestra performs music from all over the world but mostly perf  B) Johnson founded the Black Pearl orchestra to perform classical music by contempo  C) The Black Pearl orchestra gives community members the chance to both listen to a  D) Johnson has community members conduct an orchestra to demonstrate how difficult 
+Correct: C
+
+---
+[Question] ID: 2224 | Topic: information_ideas / central_ideas
+Passage: To dye wool, Navajo (Diné) weaver Lillie Taylor uses plants and vegetables from Arizona, where she lives. For
+example, she achieved the deep reds and browns featured in her 2003 rug /n the Path of the Four Seasons by
+using Arizona dock roots, drying and grinding them before mixing the powder with wa...
+Q: Which choice best states the main idea of the text?
+A) Reds and browns are not commonly featured in most of Taylor's rugs.  B) Taylor draws on local resources in the approach she uses to dye wool.  C) Taylor finds it difficult to locate Arizona dock root in the desert.  D) In the Path of the Four Seasons is widely acclaimed for its many colors and inno
+Correct: B
+
+---
+[Question] ID: 2225 | Topic: information_ideas / central_ideas
+Passage: The painter Maria Izquierdo played an important role in the development of twentieth-century Mexican art, but her
+work has never been well-known in the United States except among art historians. One reason for Izquierdo's
+relative obscurity is the enormous popularity of some of her peers. In particu...
+Q: Which choice best states the main idea of the text?
+A) Izquierdo's work is not as well-known in the United States as it should be becau  B) During Izquierdo's lifetime, her paintings were displayed in galleries in the Un  C) Izquierdo painted some of the same subjects that Kahlo and Rivera painted but us  D) Few of Izquierdo’s works are in galleries today because she produced only a smal
+Correct: A
+
+---
+[Question] ID: 2226 | Topic: information_ideas / central_ideas
+Passage: Many intellectual histories of the Black Power movement of the 1960s and 1970s rely heavily on essays and other
+explicitly ideological works as primary sources, a tendency that can overrepresent the perspectives of a small
+number of thinkers, most of whom were male. Historian Ashley D. Farmer has sh...
+Q: Which choice best describes the main idea of the text?
+A) Farmer's methods and research have enriched the historical understanding of the   B) Before Farmer's research, historians had largely ignored the intellectual dimens  C) Other historians of the Black Power movement have criticized Farmer's use of unc  D) The figures in the Black Power movement whom historians tend to cite would have 
+Correct: A
+
+---
+[Question] ID: 2227 | Topic: information_ideas / central_ideas
+Passage: In many of his sculptures, artist Richard Hunt uses broad forms rather than extreme accuracy to hint at specific
+people or ideas. In his first major work, Arachne (1956), Hunt constructed the mythical character Arachne, a
+weaver who was changed into a spider, by welding bits of steel together into s...
+Q: Which choice best states the text's main idea about Hunt?
+A) He often depicts the subjects of his sculptures using an unrealistic style.  B) He uses different kinds of materials depending on what kind of sculpture he plan  C) He tends to base his art on important historical figures rather than on fictiona  D) He has altered his approach to sculpture over time, and his works have become in
+Correct: A
+
+---
+[Question] ID: 2228 | Topic: information_ideas / central_ideas
+Passage: The following text is adapted from Robert Louis Stevenson's 1883 novel Treasure Island. Bill is a sailor staying at
+the Admiral Benbow, an inn run by the narrator's parents.
+
+Every day when [Bill] came back from his stroll he would ask if any seafaring men had gone by along the road. At
+first we tho...
+Q: According to the text, why does Bill regularly ask about “seafaring men"?
+A) He's hoping to find an old friend and fellow sailor.  B) He's trying to secure a job as part of the crew on a new ship.  C) He isn’t sure that other guests at the inn will be welcoming of sailors.  D) He doesn't want to encounter any other sailor unexpectedly.
+Correct: D
+
+---
+[Question] ID: 2229 | Topic: information_ideas / central_ideas
+Passage: The following text is adapted from Guy de Maupassant's nineteenth-century short story “The Trip of Le Horla”
+(translated by Albert M. C. McMaster, A. E. Henderson, Mme. Quesada, et al.). The narrator is part of a group
+traveling in a hot-air balloon at night.
+The earth no longer seems to exist, it i...
+Q: Which choice best states the main idea of the text?
+A) The narrator feels a growing sense of isolation even though his companions are n  B) The narrator and his companions are completely absorbed in the change in perspec  C) The narrator and his companions are troubled by the disorienting effects of the   D) The narrator is pleasantly surprised by his companions’ unrestrained enthusiasm 
+Correct: B
+
+---
+[Question] ID: 2230 | Topic: information_ideas / central_ideas
+Passage: The recovery of a 1,000-year-old Chinese shipwreck in the Java Sea near present-day Indonesia has yielded a
+treasure trove of artifacts, including thousands of small ceramic bowls. Using a portable X-ray fluorescence
+analyzer tool, Lisa Niziolek and her team were able to detect the chemical composit...
+Q: Which choice best states the main idea of the text?
+A) Because of a new technology, researchers can locate and recover more shipwrecks   B) Researchers have been able to identify the location of a number of Chinese kilns  C) With the help of a special tool, researchers have determined the likely origin o  D) Before the invention of portable X-ray fluorescence, researchers needed to take 
+Correct: C
+
+---
+[Question] ID: 2231 | Topic: information_ideas / central_ideas
+Passage: The following text is adapted from Christina Rossetti’s 1881 poem “Monna Innominata 2.”
+| wish | could remember that first day,
+First hour, first moment of your meeting me,
+If bright or dim the season, it might be
+Summer or Winter for [all] | can say;
+So unrecorded did it slip away,
+So blind was | t...
+Q: Which choice best states the main idea of the text?
+A) The speaker celebrates how the passage of time has strengthened a relationship t  B) Because the speaker did not anticipate how important a relationship would become  C) As the anniversary of the beginning of an important relationship approaches, the  D) After years of neglecting a once valuable relationship, the speaker worries it m
+Correct: B
+
+---
+[Question] ID: 2232 | Topic: information_ideas / central_ideas
+Passage: The ice melted on a Norwegian mountain during a particularly warm summer in 2019, revealing a 1,700-year-old
+sandal to a mountaineer looking for artifacts. The sandal would normally have degraded quickly, but it was instead
+well preserved for centuries by the surrounding ice. According to archaeolog...
+Q: What does the text indicate about the discovery of the sandal?
+A) Temperatures contributed to both protecting and revealing the sandal.  B) The discovery revealed that the Roman Empire had more influence on Norway than a  C) Archaeologists would have found the sandal eventually without help from the gene  D) The sandal would have degraded if it hadn't been removed from the ice.
+Correct: A
+
+---
+[Question] ID: 2233 | Topic: information_ideas / central_ideas
+Passage: To protect themselves when being attacked, hagfish—jawless marine animals that resemble eels—will release
+large quantities of slimy, mucus-like threads. Because these threads are unusually strong and elastic, scientist
+Atsuko Negishi and her colleagues have been trying to recreate them in a lab as a...
+Q: Which choice best states the text's main idea?
+A) The slimy threads that hagfish release might help researchers create a new kind   B) Hagfish have inspired researchers to develop a new petroleum-based fabric.  C) Hagfish are not well suited to being raised in captivity.  D) The ability of hagfish to slime their attackers compensates for their being jawl
+Correct: A
+
+---
+[Question] ID: 2234 | Topic: information_ideas / central_ideas
+Passage: Using the Stratospheric Observatory for Infrared Astronomy (SOFIA), a team of astronomers mapped out the magnetic field
+of G47, one of the Milky Way's galactic bones (dense clouds of gas and dust that run through the middle of the arm of a
+spiral galaxy). Surprisingly, the map revealed a magnetic fi...
+Q: According to the text, what was surprising about the researchers’ mapping of the magnetic field of galactic bone G47?
+A) It showed a weaker magnetic field than expected.  B) It implied that previous mappings of the magnetic field were inaccurate.  C) It produced magnetic field measurements similar to those for other galactic bone  D) It revealed a magnetic field that wasn’t uniform.
+Correct: D
+
+---
+[Question] ID: 2235 | Topic: information_ideas / central_ideas
+Passage: The following text is from Ahmet Hamdi Tanpinar's 1961 novel The Time Regulation Institute (translated from the Turkish in
+2014 by Maureen Freely and Alexander Dawe). The narrator was once involved with the Time Regulation Institute, a fictional
+bureaucracy that regulates the time of Turkey's clocks...
+Q: Which choice best states the main idea of the text?
+A) A person was fortunate enough to have found love despite his obvious shortcoming  B) An exceptionally talented person professes humility to avoid intimidating others  C) A person appreciates the extensive time he passed in the company of someone he d  D) A truly brilliant person lets ideas mature in his mind before expressing them al
+Correct: C
+
+---
+[Question] ID: 2236 | Topic: information_ideas / central_ideas
+Passage: In present-day Chiapas, Mexico, archaeologist Robert Rosenswig, remote-sensing specialist Ricardo Lépez-Torrijos, and
+colleagues have located 41 smaller settlements surrounding the ancient Mesoamerican city of Izapa. The researchers have
+concluded that these settlements were culturally linked to Iza...
+Q: Which choice best states the main idea of the text?
+Researchers have determined that the arrangement of Izapa’s structures was based on those of other nearby
+A) settlements. Cultural ceremonies in Izapa seem to have played a more important r  B) surrounding settlements did. Although archaeologists have learned much about Iza  C) settlements that surrounded it. Researchers have inferred that Izapa was related  D) similarity of their construction.
+Correct: D
+
+---
+[Question] ID: 2237 | Topic: information_ideas / central_ideas
+Passage: Paleontologist Alan Tennyson and colleagues studied fossil bones found in New Zealand that are more than 55 million years
+old. The researchers determined that the fossil bones belonged to two previously unknown species of prehistoric penguins.
+Moreover, they estimated that one of the two penguin spe...
+Q: Based on the text, which choice best describes the two previously unknown penguin species?
+A) They are frequently studied by paleontologists.  B) They are no longer living species.  C) They were smaller than penguin species that exist today.  D) They spent little of their lives in water.
+Correct: B
+
+---
+[Question] ID: 2238 | Topic: information_ideas / central_ideas
+Q: A contraction of “you all,” the pronoun “y’all” has long been used as a plural version of “you” in the South and in Black
+communities around the US. In recent decades, most other English-speaking communities in the US have begun to use
+“y'all.” What explains its rise in popularity? Many varieties of
+A) How many other plural versions of the pronoun “you” are there in English, beside  B) Why has the pronoun “y'all” become more widely used in the US?  C) When was the first recorded use of the pronoun “y‘all” in the English language?  D) Is “y'all” commonly used in English-speaking regions of the world besides the US
+Correct: B

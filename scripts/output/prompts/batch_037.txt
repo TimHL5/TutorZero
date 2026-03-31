@@ -1,0 +1,229 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2118 | Topic: geometry / lines_angles_triangles
+Q: Cc
+
+Zo
+
+A E
+
+Note: Figure not drawn to scale.
+In the figure above, segments AE and BD are parallel. If angle BDC
+measures 58° and angle ACE measures 62°, what is the measure of angle
+CAE ? [Figure described in original]
+A) 58°  B) 60°  C) 62°  D) 120°
+Correct: B
+
+---
+[Question] ID: 2119 | Topic: geometry / lines_angles_triangles
+Q: Triangles ABC and DEF are congruent, where A corresponds to D, and B and E are right angles. The measure of angle
+A is 69°. What is the measure, in degrees, of angle F'?
+A) 21  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2120 | Topic: geometry / lines_angles_triangles
+Q: S R Q
+
+oS
+
+Note: Figure not drawn to scale.
+
+In triangle POR, QR is extended to point S. The measure of 7PQR is 132°, and the measure of 7PRS is 163°. What is
+the measure of ZQPR? [Figure described in original]
+A) 48°  B) 31°  C) 24°  D) 17°
+Correct: B
+
+---
+[Question] ID: 2121 | Topic: geometry / lines_angles_triangles
+Q: In triangle DEF, the measure of angle D is 47° and the measure of angle Fis 97°. In triangle RST’, the measure of angle
+Ris 47° and the measure of angle S is 97°. Which of the following additional pieces of information is needed to determine
+whether triangle DEF is similar to triangle RST?
+A) The measure of angle F  B) The measure of angle 7’  C) The measure of angle F' and the measure of angle T’  D) No additional information is needed.
+Correct: D
+
+---
+[Question] ID: 2122 | Topic: geometry / lines_angles_triangles
+Q: C
+Va
+A E
+
+Note: Figure not drawn to scale.
+
+In the figure shown, triangle C_A Fis similar to triangle CBD. The measure of angle CBD is 57°, and AE = 26(BD).
+What is the measure of angle CAE? [Figure described in original]
+A) (26 - 57)°  B) (26 + 57)°  C) 57°  D) 26°
+Correct: C
+
+---
+[Question] ID: 2123 | Topic: geometry / lines_angles_triangles
+Q: B
+D E A
+Note: Figure not drawn to scale.
+In the figure, AC = C'D. The measure of angle EBC is 45°, and the measure of angle AC'D is 104°. What is
+the value of ©? [Figure described in original]
+A) 83  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2124 | Topic: geometry / lines_angles_triangles
+Q: P Q R S T V
+W
+xX
+U
+Note: Figure not drawn to scale.
+In the figure shown, points Q, R, S, and T lie on line segment PV, and line segment RU intersects line segment
+SX at point W. The measure of ZSQX is 48°, the measure of 7S XQ is 86", the measure of ZSWU is 85°,
+and the measure of ZVTU is 162°. What
+A) 123  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2125 | Topic: geometry / lines_angles_triangles
+Q: Intersecting lines r, s, and tare shown below.
+s
+106°
+x
+t
+What is the value of x ?
+A) 97  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2126 | Topic: geometry / lines_angles_triangles
+Q: N Q
+Py, as R
+In the figure above, MQ and NR intersect at point P, WP = QP, and
+Ad = PR. What is the measure, in degrees, of “ QNR ? (Disregard the
+degree symbol when gridding your answer.)
+A) 30  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2127 | Topic: geometry / lines_angles_triangles
+Q: aaa
+PAN
+M é P
+
+In the figure above, what is the
+
+length of NQ ?
+A) 2.2  B) 2.3  C) 2.4 D: 2.5
+Correct: C
+
+---
+[Question] ID: 2128 | Topic: geometry / lines_angles_triangles
+Q: * aan ——— —
+
+OA
+R U
+
+In the figure above, RT = TL.
+
+What is the value of x ?
+A) 72  B) 66 Cc. 64  C) 58
+Correct: C
+
+---
+[Question] ID: 2129 | Topic: geometry / lines_angles_triangles
+Q: B
+rae
+AS
+Note: Figure not drawn to scale.
+The area of triangle ABC above is at least 48 but no more than 60. If y is an
+integer, what is one possible value of x ? [Figure described in original]
+A) 10/3,  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2130 | Topic: geometry / lines_angles_triangles
+Q: In triangle RST, angle T is a right angle, point L lies on RS, point K lies on ST, and LK is parallel to RT. If the
+length of RT is 72 units, the length of LK is 24 units, and the area of triangle RST is 792 square units, what is
+the length of AT, in units?
+A) 44/3  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2131 | Topic: geometry / lines_angles_triangles
+Q: a S
+a
+v°
+
+q
+t fo}
+
+w
+
+w°
+Note: Figure not drawn to scale.
+
+In the figure, parallel lines g and t are intersected by lines r and s. If a = 43 and b = 122, what is the value of w? [Figure described in original]
+A) 50.5  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2132 | Topic: geometry / lines_angles_triangles
+Q: B
+yAN
+Note: Figure not drawn to scale.
+In the figure above, BN} =6§ and AN =6.
+What is the length of DC > [Figure described in original]
+A) 4.5  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2133 | Topic: geometry / lines_angles_triangles
+Q: W Y
+° \
+Z
+x
+Note: Figure not drawn to scale.
+In the figure shown, WZ and XY intersect at point Q. YQ = 63, WQ = 70,WX = 60, and XQ = 120. What is the
+length of YZ? [Figure described in original]
+A) 54  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2134 | Topic: geometry / lines_angles_triangles
+Q: Ss
+U V R
+Note: Figure not drawn to scale.
+In the figure, RT’ = TU, the measure of angle VST is 29°, and the measure of angle RV'S is 41°. What is the value of x? [Figure described in original]
+A) 156  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2135 | Topic: geometry / lines_angles_triangles
+Q: In triangles LIM N and RST’, angles L and R each have measure 60°, LN = 10, and RT’ = 30. Which
+additional piece of information is sufficient to prove that triangle LM N is similar to triangle RST?
+A) MN =T7and ST =7  B) MN =7and ST = 21  C) The measures of angles M and S' are 70° and 60°, respectively.  D) The measures of angles M and T are 70° and 50°, respectively.
+Correct: D
+
+---
+[Question] ID: 2136 | Topic: geometry / lines_angles_triangles
+Q: B
+A D Cc
+Note: Figure not drawn to scale.
+In the figure shown, AD = 424 and AB = Sar, What is the length of DC? [Figure described in original]
+A) 3  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2137 | Topic: geometry / lines_angles_triangles
+Q: Quadrilaterals PQRS and W XY Z are similar, where P, Q, and R correspond to W, X, and Y, respectively. The measure
+of ZS is 135°, PS = 45, and WZ = 9. What is the measure of 7Z?
+
+A.5°
+
+B. 27°
+
+Cc. 45°
+
+D. 135°
+Correct: D

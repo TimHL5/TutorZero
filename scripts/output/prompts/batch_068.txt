@@ -1,0 +1,200 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2836 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e The National Congress of American Indians (NCAI) was founded in 1944 by representatives of fifty tribal
+governments.
+¢ The NCAI was created to protect the sovereignty of Indigenous tribes.
+¢ Napoleon B. Johnson (Cherokee) was the ...
+Q: Which choice most effectively uses relevant information from
+the notes to accomplish this goal?
+A) The NCAI, founded by representatives of fifty tribal governments, had Napoleon B  B) Founded in 1944, the NCAI was created by representatives of tribal governments f  C) The NCAI's advocacy was key to the passing of Public Law 96-638, legislation for  D) In 1975, the NCAI passed the Indian Self-Determination and Education Assistance 
+Correct: C
+
+---
+[Question] ID: 2837 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e Phobetor, a name drawn from Greek mythology, is an exoplanet that orbits the star PSR B1257+12, also known as
+Lich.
+e Phobetor’s mass is 0.01 times that of Jupiter, or 0.01 Jupiter masses.
+e Mastika, which means “gem” or “jewel” i...
+Q: Which choice most effectively uses relevant
+information from the notes to accomplish this goal?
+A) Exoplanets that are named Phobetor orbit Lich, and those that are named Mastika   B) Even though Phobetor and Mastika are both exoplanets, their masses are different  C) Many stars have both a designation and a proper name; for instance, PSR B1257+12  D) Exoplanet names have diverse origins, a fact that can be seen in the cases of Ph
+Correct: D
+
+---
+[Question] ID: 2838 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e Ina 2023 study, environmental scientist Jazmin Locke-Rodriguez and colleagues tested the use of floating treatment
+wetlands (FTWs) in Florida.
+¢ FTWs are artificial floating platforms of plants used to remediate polluted or nutrie...
+Q: Which choice most effectively uses relevant information from the
+notes to accomplish this goal?
+A) The authors concluded that marigolds grown on FTWs were “commercially viable,’ h  B) In a 2023 study, Locke-Rodriguez and colleagues found that marigolds cultivated   C) Locke-Rodriguez and colleagues found that FTWs using marigolds not only helped r  D) FTWs using marigolds, Locke-Rodriguez and colleagues found, yielded 65 flower bl
+Correct: C
+
+---
+[Question] ID: 2839 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+* Two opposing theories of vision divided scholars for many centuries.
+e The ancient Greek mathematician Euclid (circa 300 BCE) supported the extramission theory.
+¢ This theory held that the eyes emit a form of radiation that illumi...
+Q: Which choice most effectively uses relevant
+information from the notes to accomplish this goal?
+A) Scholars were divided between the extramission and intromission theories of visi  B) Through two opposing theories of vision—extramission and intromission—Euclid, Ar  C) While Ibn al-Haytham largely settled the debate in the eleventh century, Aristot  D) Before the eleventh century, the ancient Greek philosopher Aristotle supported t
+Correct: A
+
+---
+[Question] ID: 2840 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+¢ British scholar Robert Plot described fossilized dinosaur bones in his 1676 book The Natural History of Oxfordshire.
+e Plot earned a reputation for being the first person to have discovered dinosaur remains.
+¢ In 1990, archaeologi...
+Q: Which choice most effectively
+uses relevant information from the notes to accomplish this goal?
+A) Benoit challenged Plot's reputation for being the first person to have discovere  B) Evidence that Khoesan and Basotho peoples may have found an M. carinatus phalanx  C) According to Benoit's analysis of the 1990 discovery, Indigenous peoples in sout  D) In 1990, more than three centuries after Plot claimed in his book that he had fo
+Correct: B
+
+---
+[Question] ID: 2841 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+¢ Digital Light Synthesis (DLS) is a form of additive manufacturing that utilizes light to rapidly cure liquid resin into
+high-quality, 3D objects.
+e Step 1: Ultraviolet (UV) light images are projected up into a pool of liquid resin...
+Q: Which choice most effectively uses relevant information from the
+notes to accomplish this goal?
+A) DLS is a form of additive manufacturing that creates a “dead zone” in which UV l  B) DLS cures 3D objects by passing through a “dead zone,” adding layers to the obje  C) In DLS, UV light images are projected into a liquid resin pool to cure a 3D obje  D) In DLS, UV light is projected into layers of liquid resin until the resin solidi
+Correct: C
+
+---
+[Question] ID: 2842 | Topic: expression / transitions
+Passage: It has long been thought that humans first crossed a land bridge into the Americas approximately 13,000 years
+ago. based on radiocarbon dating of samples uncovered in Mexico, a research team recently suggested
+that humans may have arrived more than 30,000 years ago—much earlier than previously thoug...
+Q: Which choice completes the text with the most logical transition?
+A) As a result,  B) Similarly,  C) However,  D) In conclusion,
+Correct: C
+
+---
+[Question] ID: 2843 | Topic: expression / transitions
+Passage: Researchers believe that pieces of hull found off Oregon's coast are from a Spanish cargo ship that was lost in
+1697. Stories passed down among the area's Confederated Tribes of Siletz Indians support this belief.
+
+Siletz stories describe how blocks of beeswax, an item the ship had been carrying, be...
+Q: Which choice completes the text with the most logical transition?
+A) For this reason,  B) For example,  C) However,  D) Likewise,
+Correct: B
+
+---
+[Question] ID: 2844 | Topic: expression / transitions
+Passage: Before the 1847 introduction of the US postage stamp, the cost of postage was usually paid by the recipient of a
+letter rather than the sender, and recipients were not always able or willing to pay promptly. collecting this
+fee could be slow and arduous, and heaps of unpaid-for, undeliverable mail p...
+Q: Which choice completes the text with the most logical transition?
+A) Regardless,  B) On the contrary,  C) Consequently,  D) For example,
+Correct: C
+
+---
+[Question] ID: 2845 | Topic: expression / transitions
+Passage: A potter choosing which type of clay to use for a piece considers two key factors: the desired look of the piece
+and its intended use. earthenware clay is often used for decorative pieces because of its rustic look. This
+type of clay is not often used in industrial settings, though, because it is le...
+Q: Which choice completes the text with the most logical transition?
+A) In other words,  B) Regardless,  C) In conclusion,  D) For example,
+Correct: D
+
+---
+[Question] ID: 2846 | Topic: expression / transitions
+Passage: In Gothic architecture, flying buttresses are large arches that help support a building's exterior walls. Before the
+Gothic era, cathedrals’ heavy ceilings had to be supported by thick, short walls, but the invention of flying
+buttresses eliminated this need. Gothic cathedrals could be built with th...
+Q: Which choice completes the text with the most logical transition?
+A) Similarly,  B) For instance,  C) Nevertheless,  D) As a result,
+Correct: D
+
+---
+[Question] ID: 2847 | Topic: expression / transitions
+Passage: Tyrian purple was a highly prized dye among the Phoenicians (an ancient civilization located in present-day
+Lebanon). The Phoenicians were famous for using this natural dye to color their clothes a distinctive purple.
+the name “Phoenicia” itself, some historians claim, may have originally meant “lan...
+Q: Which choice completes the text with the most logical transition?
+A) In fact,  B) Regardless,  C) Lastly,  D) On the contrary,
+Correct: A
+
+---
+[Question] ID: 2848 | Topic: expression / transitions
+Passage: As a young historian in the 1950s, Alixa Naff began interviewing fellow Arab American immigrants about their
+experiences straddling two cultures. Over the next few decades, Naff conducted more than 450 such interviews,
+also known as oral histories. she collected photographs and other artifacts that ...
+Q: Which choice completes the text with the most logical transition?
+A) In other words,  B) On the contrary,  C) In addition,  D) Today,
+Correct: C
+
+---
+[Question] ID: 2849 | Topic: expression / transitions
+Passage: In June, female loggerhead sea turtles will swim back to the sandy beaches where they were born to lay eggs of
+their own. First, the turtle will dig her nest in the sand. she will lay up to 100 eggs in the nest. Finally, she
+will cover it all with sand, before returning to the ocean....
+Q: Which choice completes the text with the most logical transition?
+A) By contrast,  B) Similarly,  C) Next,  D) For example,
+Correct: C
+
+---
+[Question] ID: 2850 | Topic: expression / transitions
+Passage: Practical movie effects, such as the use of actual locations in a film, provide a more realistic visual experience
+than computer-generated imagery (CGI) does, but giving audiences the “real thing” can be prohibitively
+expensive. many filmmakers use a blended approach, employing practical effects whe...
+Q: Which choice completes the text with the most logical transition?
+A) Similarly,  B) For this reason,  C) Furthermore,  D) In other words,
+Correct: B
+
+---
+[Question] ID: 2851 | Topic: expression / transitions
+Passage: In the 1850s, William Still was instrumental in helping nearly 1,000 people escape from slavery, earning him the
+moniker “the Father of the Underground Railroad.” despite the fame of his contributions during his lifetime,
+Still is discussed far less today than other prominent Black abolitionists fro...
+Q: Which choice completes the text with the most logical transition?
+A) For example,  B) However,  C) Specifically,  D) Similarly,
+Correct: B
+
+---
+[Question] ID: 2852 | Topic: expression / transitions
+Passage: In 2018, Kurt Luther and Vikram Mohanty created the web-based tool Civil War Photo Sleuth (CWPS). A user
+uploading an unknown Civil War soldier's photograph to CWPS first tags the photo with all known information.
+CWPS's facial-recognition software analyzes twenty-seven different physical features a...
+Q: Which choice completes the text with the most logical transition?
+A) Then,  B) In fact,  C) Likewise,  D) For example,
+Correct: A
+
+---
+[Question] ID: 2853 | Topic: expression / transitions
+Passage: Arkansas aviator Louise Thaden was already a record breaker when she won the inaugural National Women's Air
+Derby, a race from California to Ohio, in August of 1929. in December of 1928, Thaden had set an aviation
+record when she reached an altitude of 20,269 feet in a Travel Air biplane....
+Q: Which choice completes the text with the most logical transition?
+A) Earlier,  B) However,  C) Next,  D) As a result,
+Correct: A
+
+---
+[Question] ID: 2854 | Topic: expression / transitions
+Passage: With darkness falling, a mother elephant loses sight of her calf and wants to make sure it is safe. she
+releases an infrasonic call for the calf to hear. Infrasonic sound is below the range of human hearing, but many
+animals can hear these sounds from several miles away....
+Q: Which choice completes the text with the most logical transition?
+A) For example,  B) For this reason,  C) Nowadays,  D) Similarly,
+Correct: B
+
+---
+[Question] ID: 2855 | Topic: expression / transitions
+Passage: The number of dark spots that appear on the Sun, known as sunspots, can vary greatly. For example, there were
+about 180 sunspots in November 2001.___ there were only about 2 sunspots in December 2008....
+Q: Which choice completes the text with the most logical transition?
+A) In other words,  B) Similarly,  C) Therefore,  D) By comparison,
+Correct: D

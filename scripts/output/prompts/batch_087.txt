@@ -1,0 +1,182 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2975 | Topic: conventions / boundaries
+Passage: Many Samoans enjoy a sport called kilikiti. This bat-and-ball game was derived from ____kilikiti differs from cricket in a
+few key ways....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) cricket but:  B) cricket but,  C) cricket, but  D) cricket, but,
+Correct: C
+
+---
+[Question] ID: 2976 | Topic: conventions / boundaries
+Passage: By analyzing ice cores from Greenland and Antarctica, a research team at Sweden's Lund University discovered evidence of a
+solar storm that occurred 9,200 years ago. Scientists had previously thought the Sun to be in a relatively “quiet” phase at that
+the Lund team’s finding suggests otherwise....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) time but  B) time, but  C) time,  D) time
+Correct: B
+
+---
+[Question] ID: 2977 | Topic: conventions / boundaries
+Passage: The algaita is a double reed wind instrument from West Africa. The reed of a wind instrument is the mouthpiece___ A
+double reed contains two pieces of cane that vibrate and produce sound as air passes between them....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) where sound is made?  B) where is sound made.  C) where sound is made.  D) where is sound made?
+Correct: C
+
+---
+[Question] ID: 2978 | Topic: conventions / boundaries
+Passage: Both Sona Charaipotra, an Indian American, and Dhonielle Clayton, an African American, grew up frustrated by the
+lack of diverse characters in books for young people. In 2011, these two writers joined forces to found CAKE
+Literary, a book packaging specializes in the creation and promotion of storie...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) company,  B) company that  C) company  D) company, that
+Correct: B
+
+---
+[Question] ID: 2979 | Topic: conventions / boundaries
+Passage: Where ___ Interestingly, it was invented by an author. It first appears in the novel Through the Looking Glass by English
+author Lewis Carroll....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) did the word “chortle” come from.  B) the word “chortle” did come from?  C) did the word “chortle” come from?  D) the word “chortle” come from.
+Correct: C
+
+---
+[Question] ID: 2980 | Topic: conventions / boundaries
+Passage: At 1,377 meters, the Tsing Ma Bridge in China is one of the longest suspension bridges in the ____ the Golden Gate Bridge
+in the United States, at 1,280 meters, is even longer....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) world but  B) world, but,  C) world,  D) world, but
+Correct: D
+
+---
+[Question] ID: 2981 | Topic: conventions / boundaries
+Passage: In early 1700s England, it was legal for shops to sell prints of artists’ engravings without the artists’ permission. This
+changed in 1735 with the passage of the Engravers’ Copyright gave engravers control over the distribution and sale of
+all prints made from their designs....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) Act, which  B) Act; which  C) Act. Which  D) Act
+Correct: A
+
+---
+[Question] ID: 2982 | Topic: conventions / boundaries
+Passage: Photosynthesis, the mechanism by which plants use sunlight to turn carbon dioxide and water into__is
+fueled in part by an enzyme called Photosystem II that harvests energy-giving electrons from water molecules....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) nutrients  B) nutrients and  C) nutrients,  D) nutrients—
+Correct: C
+
+---
+[Question] ID: 2983 | Topic: conventions / boundaries
+Passage: Po'Pay was a Tewa leader from Ohkay Owingeh, a pueblo located about twenty-five miles north of present-day
+Santa Fe, New Mexico. He was instrumental in organizing the Pueblo Revolt of as a result of his leadership,
+the Spanish colonizers were expelled from the region for a time....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) 1680  B) 1680 and  C) 1680,  D) 1680, and
+Correct: D
+
+---
+[Question] ID: 2984 | Topic: conventions / boundaries
+Passage: In 2008, two years after the death of science fiction writer Octavia Butler, the Huntington Library in
+
+received a collection of more than 8,000 items, including Butler's private notes, research materials, manuscripts,
+photos, and drawings. Today, the Octavia E. Butler Collection is one of the most ...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) California,  B) California:  C) California—  D) California
+Correct: D
+
+---
+[Question] ID: 2985 | Topic: conventions / boundaries
+Passage: Archaeologists have estimated that the pre-Columbian Native American city of Cahokia, located across the
+Mississippi River from modern-day St. Louis, Missouri, had as many as 20,000 inhabitants in the year 1150
+it one of the largest cities in North America at the time....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) CE making  B) CE. Making  C) CE, making  D) CE; making
+Correct: C
+
+---
+[Question] ID: 2986 | Topic: conventions / boundaries
+Passage: Detroit natives Timothy Paule and Nicole Lindsey have combined their two passions, Detroit and beekeeping, to
+improve the health of their city’s flowers and other vegetation. In 2017, the couple converted a vacant lot in the
+city into an in the years that followed they acquired nine additional lots ...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) apiary,  B) apiary, and  C) apiary and  D) apiary
+Correct: B
+
+---
+[Question] ID: 2987 | Topic: conventions / boundaries
+Passage: Santa Clara Pueblo artist Roxanne Swentzell’s sculpture Mud Woman Rolls On consists of five human figures
+made of clay and plant fiber and arranged in descending size; each figure holds the smaller one in front of it. The
+arrangement of the figures, according to represents her idea that “we all come...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) Swenizell  B) Swentzell,  C) Swentzell:  D) Swentzell—
+Correct: B
+
+---
+[Question] ID: 2988 | Topic: conventions / boundaries
+Passage: Nine months before Rosa Parks made history by refusing to comply with the segregated seating policy ona
+Montgomery, Alabama, bus, a fifteen-year-old Montgomery girl named Claudette Colvin was arrested for the
+same to some historians, Colvin's arrest led to Parks's action and eventually to the desegr...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) offense. According  B) offense, according  C) offense according  D) offense and according
+Correct: A
+
+---
+[Question] ID: 2989 | Topic: conventions / boundaries
+Passage: It is generally true that technological change is a linear process, in which once-useful technologies are replaced
+by new and better the reawakening of interest in the steam engine (from advocates of carbon-neutral rail
+travel) reminds us that ostensibly obsolete technologies may be brought back int...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) ones, even so;  B) ones even so,  C) ones; even so,  D) ones, even so,
+Correct: C
+
+---
+[Question] ID: 2990 | Topic: conventions / boundaries
+Passage: In 2017, artists Isabel and Ruben Toledo redesigned the costumes and sets for The Miami City Ballet's production
+of The to reviewers, the Toledos’ designs helped infuse the production with elements of Miami's Latin
+American culture....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) Nutcracker according,  B) Nutcracker, according  C) Nutcracker according  D) Nutcracker. According
+Correct: D
+
+---
+[Question] ID: 2991 | Topic: conventions / boundaries
+Passage: Humans were long thought to have begun occupying the Peruvian settlement of Machu Picchu between 1440 and
+1450 CE. However, a team led by anthropologist Dr. Richard Burger used accelerator mass spectrometry to
+uncover evidence that it was occupied 1420 CE, according to Burger, humans were likely inh...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) earlier. In  B) earlier, in  C) earlier, which in  D) earlier in
+Correct: A
+
+---
+[Question] ID: 2992 | Topic: conventions / boundaries
+Passage: According to Naomi Nakayama of the University of Edinburgh, the reason seeds from a dying dandelion appear to
+float in the air while is that their porous plumes enhance drag, allowing the seeds to stay airborne long
+enough for the wind to disperse them throughout the surrounding area....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) falling,  B) falling:  C) falling;  D) falling
+Correct: D
+
+---
+[Question] ID: 2993 | Topic: conventions / boundaries
+Passage: In 1727, dramatist Lewis Theobald presented a new play, Double Falsehood, at a London theater. Theobald
+claimed that his drama was based on a little-known play by William Shakespeare, Cardenio. Many, including poet
+Alexander Pope, were historians have determined that Shakespeare's company did perfor...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) skeptical but  B) skeptical, but  C) skeptical,  D) skeptical
+Correct: B
+
+---
+[Question] ID: 2994 | Topic: conventions / boundaries
+Passage: Luci Tapahonso is the inaugural poet laureate of the Navajo Nation. Her book Sdanii Dahataal/The Women Are
+Singing—a combination of fiction and memoir, poetry and serves as a testament to her versatility as a
+writer....
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) prose;  B) prose  C) prose,  D) prose—
+Correct: D

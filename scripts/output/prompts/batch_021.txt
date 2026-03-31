@@ -1,0 +1,246 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1138 | Topic: algebra / linear_equations_two_var
+Q: 2a + ay = 7 Which table gives three values of x and their corresponding values of y for the given equation?
+s
+,
+‘
+"
+92
+4 | |
+Correct: D
+
+---
+[Question] ID: 1139 | Topic: algebra / linear_equations_two_var
+Q: For line h, the table shows three values of x and their corresponding values of y. Line kis the result of translating
+line h down 5 units in the xy-plane. What is the x-intercept of line k?
+A) (— 38,0)  B) (— $,0) c.(- $,0) b. (— 32,0)
+Correct: D
+
+---
+[Question] ID: 1140 | Topic: algebra / linear_equations_two_var
+Q: 5G + 45R = 380
+At a school fair, students can win colored tokens that are worth a different number of points depending on the
+color. One student won G green tokens and F red tokens worth a total of 380 points. The given equation
+represents this situation. How many more points is a red token worth th
+A) 40  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1141 | Topic: algebra / linear_equations_two_var
+Q: In the xy-plane, line £ passes through the point (0, 0) and is parallel to the line represented by the equation
+y = 8x + 2. If line £ also passes through the point (3, d), what is the value of d?
+A) 24  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1142 | Topic: algebra / linear_equations_two_var
+Q: The graph of 7z + 2y = —31 in the zy-plane has an x-intercept at (a, 0) and a y-intercept at (0,6), where a
+and bare constants. What is the value of bo
+
+a.—t
+
+B. —2
+
+c.2
+
+pb. f
+Correct: D
+
+---
+[Question] ID: 1143 | Topic: algebra / linear_equations_two_var
+Q: y
+COCO
+Tei Td eds¢ey tiie dake
+TTT TTT eer eet et ee eT
+fife pote feof] ft
+BRR eee
+mm pati} dtd |
+en ~S ee Eee
+[TTT] SSL TTT
+COCOA
+}rgrgegesseeaearars, x
+
+-10-8 -6 +4 -2-f 0
+|
+
+TTT Tt ty 2 EERE
+Toit fe tafe pth pepe
+PT Tt ty yy ERE
+Let
+PTT ett Tt EERE
+fh -fe-isti fei} ] ff
+PTT TTT ey EERE
+PPT TTT ep
+A) f(x) = —Fa—12  B) f(z) = —4a+16  C) f(v) =-Fart+2  D) f(z) =-fa-14
+Correct: A
+
+---
+[Question] ID: 1144 | Topic: algebra / linear_equations_two_var
+Q: 22+ 3y=7
+10z + 15y = 35
+For each real number 7, which of the following points lies on the graph of each equation in
+the xy-plane for the given system?
+@ (£4+7,-£435)
+3 7
+(-3 +37)
+2 7
+© ( F+4)
+® (-¥+H)
+Correct: B
+
+---
+[Question] ID: 1145 | Topic: algebra / linear_equations_two_var
+Q: Line pis defined by 4y + 8z = 6. Line r is perpendicular to line p in the xy-plane. What is the slope of line r?
+A) 0.5  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1146 | Topic: algebra / linear_equations_two_var
+Q: J
+PCE NE TTT re.
+-10-9 -8 -7 -69 Ol 1
+PTT TT ING Pa
+Pt tT TT tT INE ET
+Pt tT ET ET NG
+Pit tT tT te tT TN
+PT tT tT Tt TT TIN
+Pit} Ee tT ET eT
+Pt tT ETT ET it
+PTT Te ET it
+PEEP ee
+Line kis shown in the xy-plane. Line 7 (not shown) is perpendicular to line k. What is the slope of line 7?
+A) 1.2  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1147 | Topic: algebra / linear_functions
+Q: The front of a roller-coaster car is at the bottom of a hill and is 15 feet
+above the ground. If the front of the roller-coaster car rises at a constant
+rate of 8 feet per second, which of the following equations gives the height
+h, in feet, of the front of the roller-coaster car s seconds after it 
+Correct: A
+
+---
+[Question] ID: 1148 | Topic: algebra / linear_functions
+Q: 2x-1
+
+; f(x)=——
+If fis the function defined by 3
+what is the value of (5) ?
+
+as
+A) 3 i  B) 3  C) 3  D) 9
+Correct: C
+
+---
+[Question] ID: 1149 | Topic: algebra / linear_functions
+Q: d= 16t
+The given equation represents the distance d, in inches, where t represents the number of seconds since an
+object started moving. Which of the following is the best interpretation of 16 in this context?
+A) The object moved a total of 16 inches.  B) The object moved a total of 16¢ inches.  C) The object is moving at a rate of 16 inches per second.  D) The object is moving at a rate of th inches per second.
+Correct: C
+
+---
+[Question] ID: 1150 | Topic: algebra / linear_functions
+Q: The function g is defined by g(x) = —x +8.
+What is the value of g(0)?
+A) —8  B) O Cc. 4 D 8
+Correct: D
+
+---
+[Question] ID: 1151 | Topic: algebra / linear_functions
+Q: The line graphed in the xy-plane below models the total cost, in dollars, for a cab ride, y, in a certain city
+during nonpeak hours based on the number of miles traveled, x.
+Total Cost for a Cab Ride
+y
+ds
+Fe
+a
+eee ea
+2 op LOO
+4“ COPZT Terre
+22
+EH
+8 sLZVrrrrrrrr
+LAr
+PT
+rc
+0 5 10
+Distance traveled (mi
+A) $2.00  B) $2.60  C) $3.00  D) $5.00
+Correct: A
+
+---
+[Question] ID: 1152 | Topic: algebra / linear_functions
+Q: The graph shown models the number of candy bars a certain machine wraps with a label in x seconds.
+Jy
+3 249,
+ay _—— ——— ——
+a 220 [1 f |
+5 a [> f +]
+~ 180¢-——— Tf 1
+4 A
+Ss 1607-—7—7f
+os
+& 140-7 fF
+= 120{—~-f/--—__|—_—__
+8 [tf
+we 1007——7f
+ro) OY
+, 807,
+2 6¢4f¢_/.—_
+| A
+5 40,-/--——__—__—_
+Z 2ff/—_
+A
+0 
+A) 2  B) 40  C) 78  D) 80
+Correct: B
+
+---
+[Question] ID: 1153 | Topic: algebra / linear_functions
+Q: pat 3 |
+Some values of the linear function f are shown in the table above.
+Which of the following defines f ?
+A) f(x) =2x +3  B) f(x) =3x+2 c. f(x) =4x+1  C) f(x) =5x
+Correct: C
+
+---
+[Question] ID: 1154 | Topic: algebra / linear_functions
+Q: The function h is defined by h(x) = 3a — 7. What is the value of h(—2)?
+A) -13  B) —10 c.10  C) 13
+Correct: A
+
+---
+[Question] ID: 1155 | Topic: algebra / linear_functions
+Q: Marisol drove 3 hours from City A to City B. The equation below estimates the distance d, in miles, Marisol
+traveled after driving for t hours.
+d=45t
+
+Which of the following does 45 represent in the equation?
+A) Marisol took 45 trips from City A to City B.  B) The distance between City A and City B is 45 miles.  C) Marisol drove at an average speed of about 45 miles per hour.  D) It took Marisol 45 hours to drive from City A to City B.
+Correct: C
+
+---
+[Question] ID: 1156 | Topic: algebra / linear_functions
+Q: T=1,000+18h
+In the equation above, 7 represents Brittany's total take-home pay, in
+dollars, for her first week of work, where h represents the number of hours
+she worked that week and 1,000 represents a sign-on bonus. If Brittany's
+total take-home pay was $1,576, for how many hours was Brittany paid
+A) 16  B) 32 CG; 55  C) 88
+Correct: B
+
+---
+[Question] ID: 1157 | Topic: algebra / linear_functions
+Q: The function g is defined as g(x) = 5x +4, where a is a constant. If
+g(4)=31, what is the value of a?
+A) 30  B) 22  C) 11  D) -—23
+Correct: C

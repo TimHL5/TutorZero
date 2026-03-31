@@ -1,0 +1,249 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2379 | Topic: information_ideas / evidence
+Passage: In countries with right-hand traffic, drivers who want to make a left turn at a traffic intersection with stoplights have to wait
+for either a gap in oncoming traffic or a designated left-turn signal to turn green. At busy intersections, this often causes a
+backup of vehicles waiting to turn left or...
+Q: Which finding, if true, would most directly support the researcher’s claim?
+In a town that installed left-turn signals at all busy intersections, seven out of ten survey respondents agreed with the
+A) statement “the streets in my community are easier to navigate by motor vehicle t  B) without left-turn signals than at intersections with such signals. After a city   C) to reach more addresses in the city daily, on average, and therefore deliver mor  D) longer to complete their routes after the restriction took effect than they did 
+Correct: C
+
+---
+[Question] ID: 2380 | Topic: information_ideas / evidence
+Passage: Mean Time (in Seconds) Spent per Flower for Four Pollinator Genera
+Pollinator | Seconds per intact Seconds per Seconds per intact | Seconds per damaged
+genus pin flower damaged pin flower thrum flower thrum flower
+ons [2] ee]
+To study how floral damage affects the behavior of pollinators, such as be...
+Q: Which choice best describes data from the table that support the researchers’ conclusion?
+For pin flowers, damage led to longer times per flower in all pollinator genera, whereas for thrum flowers, damage led to
+A) longer times per flower only in Habropoda and Osmia. Compared with pollinators b  B) damaged pin flowers but more time on damaged thrum flowers. Damage led to shorte  C) longer times per thrum flower in one pollinator genus (Habropoda). Pollinators b  D) flowers.
+Correct: A
+
+---
+[Question] ID: 2381 | Topic: information_ideas / evidence
+Passage: Three Studies' Estimated Average Velocity of LMC
+
+Study year | Estimated average velocity
+
+Murai and Fujimoto 1980 344 km/s
+
+Kallivayalil and colleagues| 2006 378 km/s
+
+Gardiner and colleagues 1994 297 km/s
+In 2006, Nitya Kallivayalil and colleagues calculated the most accurate estimate yet of the a...
+Q: Which choice most effectively uses data from the table to complete the statement?
+A) above 344 km/s but below 378 km/s.  B) above 297 km/s but below 344 km/s.  C) above 378 km/s.  D) below 297 km/s.
+Correct: A
+
+---
+[Question] ID: 2382 | Topic: information_ideas / evidence
+Passage: Many archaeologists will tell you that categorizing excavated fragments of pottery by style, period, and what
+objects they belong to relies not only on standard criteria, but also on instinct developed over years of practice. In
+a recent study, however, researchers trained a deep-learning computer m...
+Q: Which finding, if true, would most directly support the researchers’ claim?
+A) In the researchers’ study, the model was able to categorize the pottery fragment  B) In the researchers’ study, neither the model nor the archeologists were able to   C) A survey of archaeologists showed that categorizing pottery fragments limits the  D) A survey of archaeologists showed that few of them received dedicated training i
+Correct: C
+
+---
+[Question] ID: 2383 | Topic: information_ideas / evidence
+Passage: Ablation Rates for Three Elements in
+Cosmic Dust, by Dust Source
+"element [sec] aSt| HTC | o66|
+ion [20%] 20% 00% [26
+Earth's atmosphere is bombarded by cosmic dust originating from several sources: short-period comets (SPCs),
+particles from the asteroid belt (ASTs), Halley-type comets (HTCs), and O...
+Q: Which choice most effectively uses data from the table to complete the example?
+A) iron from SPC dust is 20%.  B) sodium from OCC dust is 100%.  C) iron from HTC dust is 90%.  D) sodium from AST dust is 75%.
+Correct: C
+
+---
+[Question] ID: 2384 | Topic: information_ideas / evidence
+Passage: Economic Policy Uncertainty in
+on the United Kingdom, 2005-2010
+aan
+S
+‘= 200
+c=
+oO
+iS)
+5,8 150
+2
+35
+= = 100
+i} , : ;
+s n i tax and public spending policy
+o
+z= 50 G trade policy
+> . :
+Ww M general economic policy
+20 0
+& KP Gh Gh GH of
+~ a a ee
+Year
+High levels of public uncertainty about which econom...
+Q: Which choice most effectively uses data from the graph to illustrate the claim?
+A) aligned closely with uncertainty about tax and public spending policy in 2005 bu  B) was substantially lower than uncertainty about tax and public spending policy ea  C) reached its highest level between 2005 and 2010 in the same year that uncertaint  D) was substantially lower than uncertainty about trade policy in 2005 and substant
+Correct: D
+
+---
+[Question] ID: 2385 | Topic: information_ideas / evidence
+Passage: Black beans (Phaseolus vulgaris) are a nutritionally dense food, but they are difficult to digest in part because of
+their high levels of soluble fiber and compounds like raffinose. They also contain antinutrients like tannins and
+trypsin inhibitors, which interfere with the body's ability to extrac...
+Q: Which finding from Granito and Alvarez's research, if true, would most directly support their claim?
+A) When cooked, fermented beans contained significantly more trypsin inhibitors and  B) Fermented beans contained significantly less soluble fiber and raffinose than no  C) When the fermented beans were analyzed, they were found to contain two microorga  D) Both fermented and nonfermented black beans contained significantly fewer trypsi
+Correct: B
+
+---
+[Question] ID: 2386 | Topic: information_ideas / evidence
+Passage: Art collectives, like the United States- and Vietnam-based collective The Propeller Group or Cuba's Los
+Carpinteros, are groups of artists who agree to work together: perhaps for stylistic reasons, or to advance certain
+shared political ideals, or to help mitigate the costs of supplies and studio sp...
+Q: Which quotation from the interviews best illustrates the journalist's claim?
+A) "The first collective | joined included many amazingly talented artists, and we   B) “We work together, but that doesn't mean that individual projects are equally th  C) “Having worked as a member of a collective for several years, it's sometimes har  D) “Sometimes an artist from outside the collective will choose to collaborate with
+Correct: A
+
+---
+[Question] ID: 2387 | Topic: information_ideas / evidence
+Passage: Boldly mixing elements of poetry, fiction, drama, philosophy, and manifesto, Puerto Rican writer Giannina Braschi
+creates cross-genre literature that explores themes such as immigration and independence. Her works have
+inspired responses from individuals across different fields and in a wide range o...
+Q: Which quotation from a scholarly review of Braschi's work best supports the student's claim?
+A) "Braschi is the focus of a 2020 collection of essays in which fifteen scholars f  B) "Braschi's eagerness to push boundaries and blend genres within literature invit  C) “Before settling in New York City, where she would go on to become a college pro  D) “In addition to her creative literary works, Braschi has produced academic piece
+Correct: B
+
+---
+[Question] ID: 2388 | Topic: information_ideas / evidence
+Passage: "The Young Girl" is a 1920 short story by Katherine Mansfield. In the story, the narrator takes an unnamed
+
+seventeen-year-old girl and her younger brother out for a meal. In describing the teenager, Mansfield frequently
+
+contrasts the character's pleasant appearance with her unpleasant attitude, as...
+Q: Which quotation from “The Young Girl" most effectively illustrates the claim?
+A) “| heard her murmur, ‘I can't bear flowers on a table.’ They had evidently been   B) “While we waited she took out a little, gold powder-box with a mirror in the lid  C) “I saw, after that, she couldn't stand this place a moment longer, and, indeed,   D) "She didn’t even take her gloves off. She lowered her eyes and drummed on the ta
+Correct: B
+
+---
+[Question] ID: 2389 | Topic: information_ideas / evidence
+Passage: O Pioneers! is a 1913 novel by Willa Cather. In the novel, Cather depicts Alexandra Bergson as a person who takes
+comfort in understanding the world around her:...
+Q: Which quotation from O Pioneers! most effectively illustrates the claim?
+A) "She looked fixedly up the bleak street as if she were gathering her strength to  B) “She had never known before how much the country meant to her. The chirping of t  C) “Alexandra drew her shawl closer about her and stood leaning against the frame o
+Correct: D
+
+---
+[Question] ID: 2390 | Topic: information_ideas / evidence
+Passage: In the “language nest” model of education, Indigenous children learn the language of their people by using it as
+the medium of instruction and socialization at pre-K or elementary levels. In their 2016 study of a school in an
+Anishinaabe community in Ontario, Canada, scholars Lindsay Morcom and Step...
+Q: Which finding, if true, would most strongly support the researchers’ prediction?
+A) Anishinaabe adults who didn't attend the school feel roughly the same degree of   B) After transferring to the school, new students experience an increase in both fl  C) As adults, former students of the school are just as likely to continue living i  D) As they complete secondary and higher education, former students of the school e
+Correct: D
+
+---
+[Question] ID: 2391 | Topic: information_ideas / evidence
+Passage: King Lear is a circa 1606 play by William Shakespeare. In the play, the character of King Lear attempts to test his
+three daughters’ devotion to him. He later expresses regret for his actions, as is evident when he ____...
+Q: Which choice most effectively uses a quotation from King Lear to illustrate the claim?
+A) says of himself, “| am aman / more sinned against than sinning.”  B) says during a growing storm, "This tempest will not give me leave to ponder / On  C) says to himself while striking his head, “Beat at this gate that let thy folly i  D) says of himself, “I will do such things— / What they are yet, | know not; but th
+Correct: C
+
+---
+[Question] ID: 2392 | Topic: information_ideas / evidence
+Passage: Effects of Mycorrhizal Fungi on 3 Plant Species
+Average mass of plants grownin | Average mass of plants grown
+Plant Mycorrhizal | soil containing mycorrhizal fungi (in | in soil treated to kill fungi (in
+species host grams) grams)
+Mycorrhizal fungi in soil benefits many plants, substantially increas...
+Q: Which choice most effectively uses data from the table to complete the statement?
+A) broccoli grown in soil containing mycorrhizal fungi had a slightly higher averag  B) corn grown in soil containing mycorrhizal fungi had a higher average mass than b  C) marigolds grown in soil containing mycorrhizal fungi had a much higher average m  D) corn had the highest average mass of all three species grown in soil that had be
+Correct: A
+
+---
+[Question] ID: 2393 | Topic: information_ideas / evidence
+Passage: In a series of experiments, Julio Sevilla and Claudia Townsend showed that manipulating the space between products in
+store displays can influence consumers’ views of those products. Participants in several of the experiments regarded the
+same products in the same (generic) retail settings as signif...
+Q: Which finding from the experiment with Tiffany & Co. and Forever 21, if true, would most directly support the conclusion
+presented in the text?
+A) At Tiffany & Co., participants judged jewelry spaced far apart to be substantial  B) At both Tiffany & Co. and Forever 21, participants judged jewelry spaced far apa  C) Participants judged jewelry spaced far apart at Tiffany & Co. to be similar in v  D) When jewelry was spaced far apart, participants judged the jewelry at Tiffany & 
+Correct: A
+
+---
+[Question] ID: 2394 | Topic: information_ideas / evidence
+Passage: Delta 15-N Values in Seagrass Samples from Four Sites on the Yucatan, 2016-2017
+| site | February 2016 | October 2016 | February 2017 | October 2017
+Because water from natural, uncontaminated sources is less enriched with the stable nitrogen isotope 15\ than wastewater
+from human activities is, the ...
+Q: Which choice best describes data from the table that support the underlined conclusion?
+A) Although delta 15-N values were generally higher in Akumal Bay and Tulum than in  B) Delta 15-N values reached their lowest level in February 2017 in both Akumal Bay  C) Although all sites showed considerable variation in delta 15-N values, the value  D) In Akumal Bay and Tulum, delta 15-N values fluctuated considerably across the th
+Correct: D
+
+---
+[Question] ID: 2395 | Topic: information_ideas / evidence
+Passage: Water flowing around an obstruction creates vortices (patterns of swirls) of varying size; by detecting the vortices, fish can
+determine the size and position of the obstruction. Testing by Yuzo R. Yanagisuru, Otar Akanyeti, and James C. Liao using
+models of three head shapes—narrow (low ratio of wi...
+Q: Which finding, if true, would most directly support the second research team’s hypothesis?
+A) A study using obstructions that created medium-sized vortices in low-visibility   B) A study using obstructions that created medium-sized vortices in low-visibility   C) A study using obstructions that created medium-sized vortices in low-visibility   D) A study using obstructions that created medium-sized vortices in low-visibility 
+Correct: C
+
+---
+[Question] ID: 2396 | Topic: information_ideas / evidence
+Passage: Neurobiologists Laura Cuaya, Raul Hernandez-Pérez, and colleagues investigated the language detection abilities of
+eighteen dogs. The researchers monitored the brain activity of Joey (an Australian shepherd), Mini (a mixed breed), and
+other dogs while the animals listened to three recordings: one of...
+Q: Which finding from the study, if true, would most directly support the team’s conclusion?
+A) Long-headed dogs accustomed to hearing Spanish tended to show more brain activit  B) Compared with shorter-headed dogs, longer-headed dogs showed a greater differenc  C) The pattern of brain activity that long-headed dogs showed when hearing the scra  D) Compared with shorter-headed dogs, longer-headed dogs showed a greater differenc
+Correct: B
+
+---
+[Question] ID: 2397 | Topic: information_ideas / evidence
+Passage: Jasmonic and Salicylic Acid Levels
+in Tomato Plants
+_" 250
+E Sb
+= -2 200
+> 3 H control plants
+[=|
+g & 150 O plants exposed to air from
+a whitefly-free plants and then
+De
+Sg 100 infested
+oO
+a g Hf plants exposed to air from
+5 50 whitefly-infested plants and then
+<2 . infested
+& &
+o> eye
+ow Ne
+ss we
+S...
+Q: Which choice best describes data from the graph that support the researchers’ conclusion?
+A) When plants exposed to air from whitefly-free plants were infested, they produce  B) When plants exposed to air from whitefly-infested plants were infested, they pro  C) When plants exposed to air from whitefly-free plants were infested, they produce  D) When plants exposed to air from whitefly-infested plants were infested, they pro
+Correct: A
+
+---
+[Question] ID: 2398 | Topic: information_ideas / evidence
+Passage: Data Sources for Neptune Temperature Analysis
+Observation
+Observatory Data type years
+TEXES (Texas Echelon Cross Echelle
+( Gemini Observatory spectroscopy 2007, 2019
+Spectrograph)
+T-ReCS (Thermal-Region Camera infrared
+( g Gemini Observatory . . 2007, 2010
+Spectrograph) imaging
+infrared
+LWS (Long Wa...
+Q: Which choice most effectively uses data from the table to complete the text?
+A) 2007 using TEXES at the Gemini Observatory.  B) 2007 using T-ReCS at the Gemini Observatory.  C) 2006 using VISIR at the European Southern Observatory.  D) 2003 using LWS at the W.M. Keck Observatory.
+Correct: C

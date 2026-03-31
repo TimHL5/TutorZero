@@ -1,0 +1,181 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1866 | Topic: problem_solving / ratios_rates
+Q: An object travels at a constant speed of 6 centimeters per second. At this speed, what is the time, in seconds, that it would
+take for the object to travel 24 centimeters?
+A) 4  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1867 | Topic: problem_solving / ratios_rates
+Q: A participant in a bicycle race completes the race with an average speed of 24,816 yards per hour. What is this average
+speed, in miles per hour? (1 mile = 1,760 yards)
+A) 14.1  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1868 | Topic: problem_solving / ratios_rates
+Q: Tilly earns p dollars for every w hours of work. Which expression represents the amount of money, in dollars, Tilly
+earns for 39w hours of work?
+A) 39p  B) a  C) p+39  D) p — 39
+Correct: A
+
+---
+[Question] ID: 1869 | Topic: problem_solving / ratios_rates
+Q: An object travels at a constant speed of 12 centimeters per second. At this speed, what is the time, in seconds,
+that it would take for the object to travel 108 centimeters?
+
+A.9
+
+B. 96
+
+c. 120
+
+D. 972
+Correct: A
+
+---
+[Question] ID: 1870 | Topic: problem_solving / ratios_rates
+Q: A customer spent $27 to purchase oranges at $3 per pound. How many pounds of oranges did the customer
+purchase?
+A) 9  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1871 | Topic: problem_solving / ratios_rates
+Q: The International Space Station orbits Earth at an average speed of 4.76
+miles per second. What is the space station's average speed in miles per
+hour?
+A) 285.6 B, $71.2  B) 856.8  C) 17,136.0
+Correct: D
+
+---
+[Question] ID: 1872 | Topic: problem_solving / ratios_rates
+Q: The population density of Iceland, in people per square kilometer of land
+area, increased from 2.5 in 1990 to 3.3 in 2014. During this time period, the
+land area of Iceland was 100,250 square kilometers. By how many people
+did Iceland's population increase from 1990 to 2014?
+A) 330,825  B) 132,330  C) 125,312  D) 80,200
+Correct: D
+
+---
+[Question] ID: 1873 | Topic: problem_solving / ratios_rates
+Q: Pure beeswax has a density of 0.555 ounce per cubic inch. An online
+company sells pure beeswax at a price of $8.00 per ounce. What is the
+selling price, in dollars per cubic inch, for pure beeswax purchased from
+this company?
+A) 4.44  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1874 | Topic: problem_solving / ratios_rates
+Q: On April 18, 1775, Paul Revere set off on his midnight ride from Charlestown
+to Lexington. If he had ridden straight to Lexington without stopping, he
+would have traveled 11 miles in 26 minutes. In such a ride, what would the
+average speed of his horse have been, to the nearest tenth of a mile
+
+per 
+A) 25.4  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1875 | Topic: problem_solving / ratios_rates
+Q: Rectangle A has length 15 and width w. Rectangle B has length 20 and the
+same length-to-width ratio as rectangle A. What is the width of rectangle B
+in terms of w?
+aw
+A) 3  B) w+5 By Cc. 4  C) w—-5
+Correct: A
+
+---
+[Question] ID: 1876 | Topic: problem_solving / ratios_rates
+Q: Tanya earns $13.50 per hour at her part-time job. When she works z hours,
+she earns 13.507 dollars. Which of the following expressions gives the
+amount, in dollars, Tanya will earn if she works 37 hours?
+A) 313.502)  B) 3+13.50z  C) 3z+13.50z b. 13.50(z +3)
+Correct: A
+
+---
+[Question] ID: 1877 | Topic: problem_solving / ratios_rates
+Q: }-—— k —_+
+
+Volume = Tak* |
+
+48 |
+
+a
+
+The glass pictured above can hold a maximum volume of 473 cubic
+centimeters, which is approximately 16 fluid ounces. Jenny has a pitcher
+that contains 1 gallon of water. How many times could Jenny completely fill
+the glass with 1 gallon of water? (1 gallon = 128
+A) 16  B) 8 c. 4  C) 3
+Correct: B
+
+---
+[Question] ID: 1878 | Topic: problem_solving / ratios_rates
+Q: One of a planet's moons orbits the planet every 252 days. A second moon orbits the planet every 287 days. How
+many more days does it take the second moon to orbit the planet 29 times than it takes the first moon to orbit the
+planet 29 times?
+A) 1015  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1879 | Topic: problem_solving / ratios_rates
+Q: Which of the following speeds is equivalent to 90 kilometers per
+hour? (1 kilometer = 1,000 meters)
+A) 25 meters per second  B) 32 meters per second  C) 250 meters per second  D) 324 meters per second
+Correct: A
+
+---
+[Question] ID: 1880 | Topic: problem_solving / ratios_rates
+Q: A distance of 61 furlongs is equivalent to how many feet? (1 furlong = 220 yards and 1 yard = 3 feet)
+A) 40260  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1881 | Topic: problem_solving / ratios_rates
+Q: The table above shows the amount of protein in two foods and the cost
+of each food. Based on the table, what is the ratio of the cost per gram of
+protein in a large egg to the cost per gram of protein in a cup of milk?
+
+A.1:2
+
+B.2:3
+
+C.3:4
+
+D.2:1
+Correct: D
+
+---
+[Question] ID: 1882 | Topic: problem_solving / ratios_rates
+Q: The population density of Cedar County is 230 people per square mile. The county has a population of 85,100
+people. What is the area, in square miles, of Cedar County?
+A) 370  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1883 | Topic: problem_solving / ratios_rates
+Q: A distance of 112 furlongs is equivalent to how many feet? (1 furlong = 220 yards and 1 yard = 8 feet)
+A) 73920  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1884 | Topic: problem_solving / ratios_rates
+Q: For the values j and k, the ratio of j to k is 11 to 12. If 7 is multiplied by 17, what is & multiplied by in order to
+maintain the same ratio?
+A) 17  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1885 | Topic: problem_solving / ratios_rates
+Q: How many tablespoons are equivalent to 14 teaspoons? (3 teaspoons = 1 tablespoon)
+A) 14/3  B) 0  C) 1  D) -1
+Correct: A

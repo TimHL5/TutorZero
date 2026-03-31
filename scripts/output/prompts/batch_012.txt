@@ -1,0 +1,208 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1620 | Topic: advanced_math / nonlinear_functions
+Q: A machine launches a softball from ground level. The softball reaches a maximum height of 51.84 meters above
+the ground at 1.8 seconds and hits the ground at 3.6 seconds. Which equation represents the height above
+ground h, in meters, of the softball t seconds after it is launched?
+
+Ah=-t? +3.6
+
+B.h
+Correct: D
+
+---
+[Question] ID: 1621 | Topic: advanced_math / nonlinear_functions
+Q: The function f is defined by f(z) = a* + b, where a and bare constants. In the zy-plane, the graph of y = f(z)
+has an x-intercept at (2,0) and a y-intercept at (0, —323). What is the value of b?
+A) -324  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1622 | Topic: advanced_math / nonlinear_functions
+Q: F(x) = —500x* +25,000x
+
+The revenue FO), in dollars, that a company receives from sales of a
+
+product is given by the function f above, where x is the unit price, in dollars,
+
+of the product. The graph of ¥ = F(x) in the xy-plane intersects the x-axis
+
+at O and a. What does a represent?
+A) The revenue, in dollars, when the unit price of the product is $0  B) The unit price, in dollars, of the product that will result in maximum revenue  C) The unit price, in dollars, of the product that will result in a revenue of $0  D) The maximum revenue, in dollars, that the company can make
+Correct: C
+
+---
+[Question] ID: 1623 | Topic: advanced_math / nonlinear_functions
+Q: Growth of a Culture of Bacteria
+Number of bacteria per
+Day svete
+milliliter at end of day
+2.5x10°
+f 2 5.0108
+2 .
+ba 1.0x108
+3 .
+A culture of bacteria is growing at an exponential rate, as shown in the table
+above. At this rate, on which day would the number of bacteria per milliliter
+reach 5.12 10°?
+A) Day 5  B) Day 9  C) Day 11  D) Day 12
+Correct: D
+
+---
+[Question] ID: 1624 | Topic: advanced_math / nonlinear_functions
+Q: f(x) = (x — 14)(x + 19)
+The function f is defined by the given equation. For what value of z does f(a) reach its minimum?
+A) —266  B) —19 c. — 38 b.-3
+Correct: D
+
+---
+[Question] ID: 1625 | Topic: advanced_math / nonlinear_functions
+Q: The population Pof a certain city y years after the last census is modeled by the equation below, where ris
+a constant and p, is the population when , = 9.
+P=Po1 trl
+If during this time the population of the city decreases by a fixed percent
+each year, which of the following must be true?
+Are
+B.-4<r
+Correct: B
+
+---
+[Question] ID: 1626 | Topic: advanced_math / nonlinear_functions
+Q: | o| -3|
+Ki
+The table above gives selected values of a polynomial function p. Based on
+the values in the table, which of the following must be a factor of p ?
+A) (x -3)  B) (x +3) c. (x -1)(x +2) b. (x +1)(x—2)
+Correct: D
+
+---
+[Question] ID: 1627 | Topic: advanced_math / nonlinear_functions
+Q: The function fis defined by f(x) =(x+3)0¢+1) . The graph of fin the xy-
+plane is a parabola. Which of the following intervals contains the x-
+coordinate of the vertex of the graph of f ?
+
+A.-4<x¥<—-3
+
+B.-3<x¥<1
+
+Cc. 1<x<3
+
+D 3<x<4
+Correct: B
+
+---
+[Question] ID: 1628 | Topic: advanced_math / nonlinear_functions
+Q: A landscaper is designing a rectangular garden. The length of the garden is
+to be 5 feet longer than the width. If the area of the garden will be
+104 square feet, what will be the length, in feet, of the garden?
+A) 13  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1629 | Topic: advanced_math / nonlinear_functions
+Q: For the function f, f(0) = 86, and for each increase in x by 1, the value of f(x) decreases by 80%. What is the
+value of f(2)?
+A) 3.44  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1630 | Topic: advanced_math / nonlinear_functions
+Q: = r
+Ad = 1,800(1.02)
+The equation above models the number of members, M, of a gym t years
+after the gym opens. Of the following, which equation models the number
+of members of the gym q quarter years after the gym opens?
+i.
+M=1,800(1.02) 4
+B) Mf =1,800(1.02)49 c. M = 1,800(1.005)*9  C) M4 =1,800(1.082)°
+Correct: A
+
+---
+[Question] ID: 1631 | Topic: advanced_math / nonlinear_functions
+Q: The functions f and g are defined by the given equations, where xz > 0. Which of the following equations
+displays, as a constant or coefficient, the maximum value of the function it defines, where x > 0?
+|. f(a) = 33(0.4)°*?
+il. g(w) = 33(0.16)(0.4)” ?
+A) | only  B) Il only  C) | and Il  D) Neither | nor II
+Correct: B
+
+---
+[Question] ID: 1632 | Topic: advanced_math / nonlinear_functions
+Q: (z)
+The surface area of a cube is 4 , Where ais a positive constant. Which
+of the following gives the perimeter of one face of the cube?
+a
+A) 4  B) g  C) 4a  D) 6a
+Correct: B
+
+---
+[Question] ID: 1633 | Topic: advanced_math / nonlinear_functions
+Q: The function h is defined by h (x) = a® + b, where aand bare positive constants. The graph of y = h (z) in the
+xy-plane passes through the points (0, 10) and (—2, 3). What is the value of ab?
+A) +  B) + Cc. 54  C) 60
+Correct: C
+
+---
+[Question] ID: 1634 | Topic: advanced_math / nonlinear_functions
+Q: pat | 8
+
+23 | 8 |
+
+[25 | -8
+
+The table shows three values of x and their corresponding values of y, where y = f(z) + 4 and fis a quadratic
+function. What is the y-coordinate of the y-intercept of the graph of y = f(z) in the xy-plane?
+A) -2112  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1635 | Topic: advanced_math / nonlinear_functions
+Q: A quadratic function models the height, in feet, of an object above the ground in terms of the time, in seconds,
+after the object is launched off an elevated surface. The model indicates the object has an initial height of 10 feet
+above the ground and reaches its maximum height of 1,034 feet above t
+A) 234  B) 778 c. 970  C) 1,014
+Correct: C
+
+---
+[Question] ID: 1636 | Topic: advanced_math / nonlinear_functions
+Q: The total distance d, in meters, traveled by an object moving in a straight
+line can be modeled by a quadratic function that is defined in terms of t,
+where t is the time in seconds. At a time of 10.0 seconds, the total distance
+traveled by the object is 50.0 meters, and at a time of 20.0 seconds, t
+A) 450  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1637 | Topic: advanced_math / nonlinear_functions
+Q: —y?
+
+h(x) =x"? +axe+bxt+e
+The function h is defined above, where a, b, and c are integer constants. If
+the zeros of the function are —5 6, and 7, what is the value of c ?
+A) 210  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1638 | Topic: advanced_math / nonlinear_functions
+Q: Kao measured the temperature of a cup of hot chocolate placed in a room
+with a constant temperature of 70 degrees Fahrenheit (°F). The
+temperature of the hot chocolate was 185°F at 6:00 p.m. when it started
+cooling. The temperature of the hot chocolate was 156°F at 6:05 p.m. and
+135°F at 6:10 p.m. T
+A) Tim) =185(1.25)”  B) T(m) = 185(0.85)" ati T(m) = (1485-70)(0.75) § G. aii T(m) = 70+115(0.75) °
+Correct: D
+
+---
+[Question] ID: 1639 | Topic: advanced_math / nonlinear_functions
+Q: The population of a town is currently 50,000, and the population is
+estimated to increase each year by 3% from the previous year. Which of the
+following equations can be used to estimate the number of years, t, it will
+take for the population of the town to reach 60,000 ?
+A) 50,000 = 60,000(0.03)'  B) 50,000 = 60,000(3)' c. 60,000 = 50,000(0.03)' p. 60,000 = 50,000(1.03)'
+Correct: D

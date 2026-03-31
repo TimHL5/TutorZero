@@ -1,0 +1,369 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1946 | Topic: problem_solving / two_var_data
+Q: Income and Percent of Total Expenses Spent
+3 on Programs for Ten Charities in 2011
+gg 95
+ad Cs
+3 Ey 90 A
+3 & 85
+S23 80
+§ 75 .
+‘i Me NJ © p p » Sy
+AN)
+Pk Ff ef Ce
+Total income (millions of dollars)
+The scatterplot above shows data for ten charities along with the line of best fit. For the charity wit
+A) 10%  B) 7%  C) 4%  D) 1%
+Correct: B
+
+---
+[Question] ID: 1947 | Topic: problem_solving / two_var_data
+Q: 20
+oo
+git | | fetst 4
+ie
+rs a a a
+fo LER
+7 Satria
+Bel tet TT
+ei [el] | ft ||
+aj, qT tT Tt
+A
+0 1 2 3 4 5 6
+High jump height (feet)
+Each dot in the scatterplot above represents the height x, in feet, in the high
+jump, and the distance y, in feet, in the long jump, made by each student in
+a group of tw
+A) y =0.62x + 3.30  B) y=0.82x — 0.82  C) y=3.30x + 0.82  D) y=3.30x — 3.30
+Correct: C
+
+---
+[Question] ID: 1948 | Topic: problem_solving / two_var_data
+Q: Railroad Museum Visitors
+80,000 |
+= 40,000 ria
+ae
+of __| _[
+0 5 10 15
+Years since 1968
+The scatterplot above shows the number of visitors to a railroad museum in
+Pennsylvania each year from 1968 to 1980, where t is the number of years
+since 1968 and n is the number of visitors. A line of best fit is
+Correct: A
+
+---
+[Question] ID: 1949 | Topic: problem_solving / two_var_data
+Q: In which of the following tables is the relationship between the values of x
+and their corresponding y-values nonlinear?
+
+alee tet)
+Ly [8 [un ]ia [iv |
+pet]? [st 4]
+‘Ty Ta Te fe fis]
+eet tetet 4]
+Ly Le [as [8 [23 |
+D
+"Ly [6 [2 [24 J a8 |
+Correct: D
+
+---
+[Question] ID: 1950 | Topic: problem_solving / two_var_data
+Q: 4
+30
+25
+a i a
+|_| ea
+=| PS ale
+s+ | | | |
+| ee | Ble
+0 2 4 6 8 10
+Which of the following could be the equation for a line of best fit for the
+data shown in the scatterplot above?
+A) y=3x+0.8  B) y=0.8x +3  C) y=—0.8x+3  D) y=—3x+0.8
+Correct: A
+
+---
+[Question] ID: 1951 | Topic: problem_solving / two_var_data
+Q: The scatterplot shows the relationship between two variables, xz and y. A line of best fit for the data is also shown.
+BY
+A
+ioe eee
+T PAE TP
+gt LINE ET TT TT
+T TTT NEP ET TTT TT
+6+ tH NET T T
+fT TT TPE Ny tet et
+gat titi te ing tet tt
+P| Pt tt tT PING TTT
+ot EET TTT Py
+Meee eeeaNaE
+oly tt tit ttt t 
+A) 0.4  B) 1.5  C) 2:4  D) 3.3
+Correct: C
+
+---
+[Question] ID: 1952 | Topic: problem_solving / two_var_data
+Q: In the given scatterplot, a line of best fit for the data is shown.
+Jy
+
+15
+
+nee ee
+
+P| | | [| | dT VY ft
+
+P | | | hv | hv | hv TAT ht CT
+
+PF | | | | dT LV ht ht
+
+10 | | | | | fA ft ft |
+
+| | | | [ow] | | ht
+
+ee
+
+fF | | cd TALE LdT h| hT dt
+
+fT | | Yi | | | ct ht
+
+ie eee ee
+
+| | Yi { | | | [| tf
+
+fF 
+A) 0.2  B) 0.7  C) 1.8  D) 2.6
+Correct: C
+
+---
+[Question] ID: 1953 | Topic: problem_solving / two_var_data
+Q: The scatterplot shows the relationship between two variables, © and y. A line of best fit for the data is also shown.
+Jy
+ee
+ioe eee
+PT PAE TPE
+gt LINE ET TTT
+P| TTT NEP ETT TT TT
+6-H NET TT
+fT TTT TIE Ny tet et
+gat ttt tte ing tet ty
+PF Pt tt tT PING ET YT
+pt FEET TTT Py
+Meee
+obj tt tit ttt t Pi yAt
+A) 6.2  B) 7.3 C: 8.2  C) 9.1
+Correct: C
+
+---
+[Question] ID: 1954 | Topic: problem_solving / two_var_data
+Q: a y Minimum Wage
+88
+al Z
+25
+me ‘
+23
+E2 2
+30 x
+2 0 10 20 30 40 50 60 70 80
+Years since 1940
+The scatterplot above shows the federal-mandated minimum wage every 10
+years between 1940 and 2010. A line of best fit is shown, and its equation is
+y = 0.096x—0.488- What does the line of best fit predict abo
+A) Each year between 1940 and 2010, the average increase in minimum wage was 0.096   B) Each year between 1940 and 2010, the average increase in minimum wage was 0.49 d  C) Every 10 years between 1940 and 2010, the average increase in minimum wage was 0  D) Every 10 years between 1940 and 2010, the average increase in minimum wage was 0
+Correct: A
+
+---
+[Question] ID: 1955 | Topic: problem_solving / two_var_data
+Q: an Ice Cream Sales
+|
+@ wt| | | T | bet
+eel A a
+S ool | [elbtT [ [ [
+8 cool Let | tT TT
+& gol-t | [ tT tT Tt
+zo} | | | tT yt
+10 12 14 16 18 20 22 24 26
+Temperature (°C)
+The scatterplot above shows a company's ice cream sales d, in dollars, and
+the high temperature t, in degrees Celsius (°C), on 12 di
+Correct: D
+
+---
+[Question] ID: 1956 | Topic: problem_solving / two_var_data
+Q: The scatterplot shows the relationship between the length of time y, in hours, a certain bird spent in flight and the
+number of days after January 11, z.
+Jy
+16
+a ee ee
+wut. | [fe t| |
+or es ee ee ee ee
+5 yf [| | | |
+2 a ee ee ee ee
+= yf [-/ | | 1
+B ee ee ee ee ee
+Bs gf [| | [fT
+a ee ee ee ee ee
+= 6+
+A) 4.5  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1957 | Topic: problem_solving / two_var_data
+Q: Number of Beach Visitors
+versus Temperature
+oo ee
+7
+560 rr
+a
+2 gol rrr yet
+§ a 2
+2 ao Pere
+$ a
+8 yo Ptr)
+g a
+¢ wot eet rrr
+EI a
+Z oI 4 Cee
+a
+sZt)
+a
+ep
+2 27° «29313335
+Average temperature (°C)
+Each dot in the scatterplot above represents the temperature and the
+number of people who visited a beach in
+A) 285  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1958 | Topic: problem_solving / two_var_data
+Q: The scatterplot below shows the amount of electric energy generated, in millions of megawatt-hours, by
+nuclear sources over a 10-year period.
+Electric Energy
+Generated by Nuclear Sources
+y y
+820+
+i
+2 ee °
+780-4
+g So 760°
+ae
+740
+z 720 $$
+700 ~——+>—_+—++—+— ++ x
+0 2 4 6 8 0 12
+Time (years)
+Of the foll
+A) Y= 1.674x°+19.76x —745.73  B) ¥ = —1.674x*—19.76x —745.73  C) ¥ = 1.674x* +19.76x +745.73  D) Y= —1.674x°+19.76x +745.73
+Correct: D
+
+---
+[Question] ID: 1959 | Topic: problem_solving / two_var_data
+Q: Size and Sale Price
+Y of Houses in Town H
+S 400
+i
+& 300 YH
+ee et ae
+Pont | Jee | |
+ed ae el
+Bl sig | || | |
+ee
+oe
+0 1 2 3
+Size (thousands of square feet)
+The scatterplot above shows the size x and the sale price y of 25 houses for
+sale in Town H. Which of the following could be an equation for a lin
+A) y = 200x +100  B) y=100x+100  C) y=50x +100  D) y=100x
+Correct: B
+
+---
+[Question] ID: 1960 | Topic: problem_solving / two_var_data
+Q: [__[amountinvested| Balance increase
+Two investments were made as shown in the table above. The interest in
+Account A is compounded once per year. Which of the following is true
+about the investments?
+A) Account A always earns more money per year than Account B.  B) Account A always earns less money per year than Account B.  C) Account A earns more money per year than Account B at first but eventually earns  D) Account A earns less money per year than Account B at first but eventually earns
+Correct: A
+
+---
+[Question] ID: 1961 | Topic: problem_solving / two_var_data
+Q: Total Protein and Total Fat
+for Eight Sandwiches
+80+ '
+
+Ze 70
+
+= 60
+
+5 50
+
+= 40
+
+= 30
+
+S 20
+
+. See
+
+0
+0 1 20 30 40 © 50
+Total protein (grams)
+
+The scatterplot above shows the numbers of grams of both total protein and total fat for eight sandwiches on a
+restaurant menu. The line of best fit for the 
+A) 2.5  B) 2.0 GC. 15  C) 1.0
+Correct: C
+
+---
+[Question] ID: 2500 | Topic: craft_structure / cross_text
+Passage: Text 1
+Public policy researcher Anthony Fowler studied the history of elections in Australia, a country that requires
+citizens to vote. Fowler argues that requiring citizens to vote leads to a significant increase in voters who would
+otherwise not have the time or motivation to vote. Thus, election ...
+Q: Based on the texts, how would Singh and Roy (Text 2) most likely respond to the research discussed in Text 1?
+A) Only countries of a certain population size should implement mandatory voting.  B) People who are forced to vote are likely to become politically engaged in other   C) Requiring people to vote does not necessarily lead to election outcomes that bet  D) Countries that require voting must also make the process of voting easier for th
+Correct: C
+
+---
+[Question] ID: 2501 | Topic: craft_structure / cross_text
+Passage: Text 1
+
+Dance choreographer Alvin Ailey's deep admiration for jazz music can most clearly be felt in the rhythms and
+beats his works were set to. Ailey collaborated with some of the greatest jazz legends, like Charles Mingus,
+Charlie Parker, and perhaps his favorite, Duke Ellington. With his choice ...
+Q: Based on the texts, both authors would most likely agree with which statement?
+A) Dancers who worked with Ailey greatly appreciated his supportive approach as a c  B) Ailey's work was strongly influenced by jazz.  C) Audiences were mostly unfamiliar with the jazz music in Ailey's works.  D) Ailey blended multiple genres of music together when choreographing dance pieces
+Correct: B
+
+---
+[Question] ID: 2502 | Topic: craft_structure / cross_text
+Passage: Text 1
+
+Historians studying pre-Inca Peru have looked to ceramic vessels to understand daily life among the Moche
+
+people. These mold-made sculptures present plants, animals, and human faces in precise ways—vessels
+
+representing human faces are so detailed that scholars have interpreted facial marki...
+Q: Based on the texts, what would Lisa Trever (Text 2) most likely say about the interpretation presented in the
+
+underlined portion of Text 1?
+A) Depictions of human faces are significantly more realistic than depictions of pl  B) It is likely that some depictions of human faces with extensive markings are int  C) Some vessels may have been damaged during their excavation and thus provide litt  D) Markings on depictions of human faces are not necessarily intended to portray pa
+Correct: D
+
+---
+[Question] ID: 2503 | Topic: craft_structure / cross_text
+Passage: Text 1
+
+Italian painters in the 1500s rarely depicted themselves in their work. Even more rare were self-portrait paintings
+that portrayed the artist as a painter. At the time, painting was not yet respected as a profession, so painters
+mostly chose to emphasize other qualities in their self-portrai...
+Q: Based on the texts, how would the author of Text 2 most likely respond to the underlined claim in Text 1?
+A) Carracci and Fontana were among the most well-respected painters in Bologna at t  B) The depiction of Fontana in Se/f-Portrait at the Keyboard was intended to unders  C) Fontana likely inspired the reference to an easel and palette in Carracci's pain  D) Self-Portrait at the Keyboard was painted earlier than Carracci's painting and a
+Correct: D

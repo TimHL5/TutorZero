@@ -1,0 +1,196 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2604 | Topic: craft_structure / text_structure_purpose
+Passage: Vadamalai Elangovan and Ganapathi Marimuthu showed that high moonlight intensity inhibits the activity of the greater
+short-nosed fruit bat (Cynopterus sphinx), a result explicable in terms of benefits and costs: greater lunar intensity may not
+enable the bats to increase foraging success enough to ...
+Q: Which choice best describes the overall structure of the text?
+A) It discusses two different responses to the same natural phenomenon, explains wh  B) It describes and accounts for a finding, characterizes the finding as representa  C) It presents and explains a study result, indicates that the result is similar to  D) It introduces an observation of a behavioral pattern, presents an explanation fo
+Correct: B
+
+---
+[Question] ID: 2605 | Topic: craft_structure / text_structure_purpose
+Passage: Dubautia carrii is a species in a family of plants known collectively as the silversword alliance, all of which grow only on the
+Hawaiian Islands. Members of this alliance exhibit an extraordinary range of phenotypes, with some species maturing into
+vines and others into shrubs and trees. All specie...
+Q: Which choice best states the main purpose of the text?
+A) To indicate the specific tarweed ancestor of all plants that grow on the Hawaiia  B) To describe the specific habitat where Dubautia carrii are found and identify ot  C) To describe the silversword alliance and explain how the plant family became so   D) To advance the claim that all plants on the Hawaiian Islands are part of the sil
+Correct: C
+
+---
+[Question] ID: 2606 | Topic: craft_structure / text_structure_purpose
+Passage: The following text is from George Marion McClellan's 1895 poem “Eternity.”
+My spirit swoons, and all my senses cry
+For Ocean's breast and covering of the sky.
+Rock me to sleep, ye waves, and outward bound,
+Just let me drift far out from toil and care,
+Where lapping of the waves shall be the sound,
+W...
+Q: Which choice best states the main purpose of the text?
+A) To illustrate the increasing intensity of the speaker’s desire to escape ongoing  B) To contrast the demands of the speaker's everyday life with the serenity of bein  C) To convey the speaker's longing for the ocean to impart a sense of inner tranqui  D) To justify the speaker’s qualms about being transported by the ocean to a quiet 
+Correct: C
+
+---
+[Question] ID: 2607 | Topic: craft_structure / words_context
+Passage: The following text is from Bram Stoker's 1897 novel Dracula. The narrator is being driven in a carriage through a
+
+remote region at night.
+The baying of the wolves sounded nearer and nearer, as though they were closing round on us from every
+side. | grew dreadfully afraid, and the horses shared my f...
+Q: As used in the text, what does the word “disturbed” most nearly mean?
+A) Disorganized  B) Alarmed  C) Offended  D) Interrupted
+Correct: B
+
+---
+[Question] ID: 2608 | Topic: craft_structure / words_context
+Passage: Dance choreographer Jawole Willa Jo Zollar aims to give people the opportunity to be her creative
+process. For example, live performances of her dance HairStories, which debuted in 2001, featured videos of
+people across the United States talking about their hair and audience members sharing pictures...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) nervous about  B) completed by  C) delayed by  D) involved in
+Correct: D
+
+---
+[Question] ID: 2609 | Topic: craft_structure / words_context
+Passage: A musician and member of the Quechua of Peru, Renata Flores Rivera was eager to promote the Quechua
+language in her music, but she was speaking it. She met this challenge by asking her grandmother, a
+native speaker of Quechua, to help her pronounce words in her song lyrics and also by taking classes...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) prepared for  B) inexperienced with  C) skilled in  D) excited about
+Correct: B
+
+---
+[Question] ID: 2610 | Topic: craft_structure / words_context
+Passage: The following text is from Yann Martel's 2001 novel Life of Pi. The narrator's family owned a zoo when he was a
+child.
+It was a huge zoo, spread over numberless acres, big enough to require a train to explore it, though it
+seemed to get smaller as | grew older, train included.
+©2001 by Yann Martel...
+Q: As used in the text, what does the word “spread” most nearly mean?
+A) Hidden  B) Discussed  C) Extended  D) Coated
+Correct: C
+
+---
+[Question] ID: 2611 | Topic: craft_structure / words_context
+Passage: Charles “Teenie” Harris was a photographer for the Pittsburgh Courier from 1936 to 1975. During his career he
+took over 70,000 photographs documenting everyday life in Pittsburgh's Black communities. The Carnegie
+Museum of Art maintains thousands of his photographs, carefully them so that audiences ...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) replacing  B) inventing  C) preserving  D) counting
+Correct: C
+
+---
+[Question] ID: 2612 | Topic: craft_structure / words_context
+Passage: In the 1970s, video cameras became increasingly affordable for ordinary consumers and gave Ulysses Jenkins
+and other artists capabilities that were previously unavailable except to television broadcasters. Jenkins
+recognized and took full advantage of this access to powerful technology to create gro...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) newfound  B) delicate  C) inevitable  D) habitual
+Correct: A
+
+---
+[Question] ID: 2613 | Topic: craft_structure / words_context
+Passage: A brief book review cannot fully convey the of Olga Tokarczuk’s novel The Books of Jacob, with its
+enormous cast of characters, its complicated, wandering plot, and its page numbers that count backward
+(beginning at 965 and ending at 1)....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) accuracy  B) inactivity  C) complexity  D) restraint
+Correct: C
+
+---
+[Question] ID: 2614 | Topic: craft_structure / words_context
+Passage: The following text is from Nella Larsen's 1928 novel Quicksand.
+The trees in their spring beauty sent through her restive mind a sharp thrill of pleasure. Seductive, charming,
+and beckoning as cities were, they had not this easy unhuman loveliness....
+Q: As used in the text, what does the word “beckoning” most nearly mean?
+A) Demanding  B) Signaling  C) Inviting  D) Shifting
+Correct: C
+
+---
+[Question] ID: 2615 | Topic: craft_structure / words_context
+Passage: Biologist Jane Edgeloe and colleagues have located what is believed to be the largest individual plant in the world
+in the Shark Bay area of Australia. The plant is a type of seagrass called Posidonia australis, and it
+approximately 200 square kilometers....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) acknowledges  B) produces  C) spans  D) advances
+Correct: C
+
+---
+[Question] ID: 2616 | Topic: craft_structure / words_context
+Passage: Bioluminescent beetles called fireflies may seem to create flashes of light randomly, but each species of firefly
+actually has its own special series of repeated flashes and pauses. These unique allow fireflies of the
+same species to find each other....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) quantities  B) decorations  C) patterns  D) agreements
+Correct: C
+
+---
+[Question] ID: 2617 | Topic: craft_structure / words_context
+Passage: Visual artist Gabriela Aleman states that the bold colors of comics, pop art, and Latinx culture have always
+fascinated her. This passion for the rich history and colors of her Latinx community translates into the
+artworks she produces....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) vivid  B) unknown  C) definite  D) reserved
+Correct: A
+
+---
+[Question] ID: 2618 | Topic: craft_structure / words_context
+Passage: In recommending Bao Phi's collection Sdng / Sing, a librarian noted that pieces by the spoken-word poet don’t
+lose their nature when printed: the language has the same pleasant musical quality on the page as it does
+when performed by Phi....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) scholarly  B) melodic  C) jarring  D) personal
+Correct: B
+
+---
+[Question] ID: 2619 | Topic: craft_structure / words_context
+Passage: The Appalachian Trail is a hiking path in the eastern United States. Much of the 2,000 mile trail passes through
+wilderness areas. In order to those areas, the United States Congress passed the National Trails System
+Act in 1968, ensuring that the trail would not be sold or commercially developed....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) borrow  B) postpone  C) protect  D) decorate
+Correct: C
+
+---
+[Question] ID: 2620 | Topic: craft_structure / words_context
+Passage: The following text is adapted from Sui Sin Far's 1912 short story “Mrs. Spring Fragrance.” Mr. and Mrs. Spring
+
+Fragrance immigrated to the United States from China.
+Mrs. Spring Fragrance was unaware that Mr. Spring Fragrance, tired with the day’s business, had thrown
+himself down on the bamboo sett...
+Q: As used in the text, what does the word “receiving” most nearly mean?
+A) Denying  B) Entering  C) Carrying  D) Hearing
+Correct: D
+
+---
+[Question] ID: 2621 | Topic: craft_structure / words_context
+Passage: In 1877, 85% of California's railways were already controlled by the Southern Pacific Railroad. The company
+further solidified its in rail access to the state's Pacific coast when it completed the Sunset Route in 1883:
+running from Louisiana to Southern California, the route established the first tr...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) dominance  B) creativity  C) insignificance  D) neutrality
+Correct: A
+
+---
+[Question] ID: 2622 | Topic: craft_structure / words_context
+Passage: Cucurbits, a group of plants that includes squash and melons, relied on mastodons to spread their seeds in the
+Ice Age. When these animals died out, cucurbits faced extinction in turn, having lost their means of seed
+dispersal. Around this time, however, the ancestors of Indigenous peoples in North ...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) verifying  B) multiplying  C) comforting  D) ensuring
+Correct: D
+
+---
+[Question] ID: 2623 | Topic: craft_structure / words_context
+Passage: According to statistician Nassim Nicholas Taleb, the best way to predict the amount of time a nonperishable entity
+(such as a building or a technology) will continue to exist is to examine how long it has survived so far. In this
+view, an item's age is the strongest how much longer it will last....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) uncertainty about  B) indicator of  C) motivation for  D) criticism of
+Correct: B

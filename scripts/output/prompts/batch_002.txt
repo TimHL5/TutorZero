@@ -1,0 +1,211 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1420 | Topic: advanced_math / equivalent_expressions
+Q: Which expression is equivalent to 1lx® — 5x3?
+A) 1623  B) 63 Cc. 6x8  C) 162°
+Correct: B
+
+---
+[Question] ID: 1421 | Topic: advanced_math / equivalent_expressions
+Q: Which expression is equivalent to 15w? + 8w?
+A) w(15w + 8)  B) 8w(15w + 1)  C) 15w?(8w + 1)  D) 23(w? + w)
+Correct: A
+
+---
+[Question] ID: 1422 | Topic: advanced_math / equivalent_expressions
+Q: Which expression is equivalent to (x), where x > 0?
+Ada
+B.X/z
+C.14-2
+p. Vxl4
+Correct: B
+
+---
+[Question] ID: 1423 | Topic: advanced_math / equivalent_expressions
+Q: Which expression is equivalent to 1322 — 7x??
+A) —912?  B) 62?  C) 20x?  D) 40x?
+Correct: B
+
+---
+[Question] ID: 1424 | Topic: advanced_math / equivalent_expressions
+Q: Which expression is equivalent to (2? + 6)?
+A) 4a? + 24  B) 4x? + 10  C) 4x? +6  D) 4x? — 2
+Correct: A
+
+---
+[Question] ID: 1425 | Topic: advanced_math / equivalent_expressions
+Q: 4a°+20ab+25b*
+Which of the following is a factor of
+the polynomial above?
+A.a+b
+B.2a+5b
+C.4a+5b
+D.4a+25b
+Correct: B
+
+---
+[Question] ID: 1426 | Topic: advanced_math / equivalent_expressions
+Q: If p =3x +4 and y =x +5, which of the following is
+equivalent to py—2p+v?
+
+A. 3X°+12xX +7
+
+p. 3x*+14x +17
+
+c. 3x2+19x +20
+
+b. 3x°+26x +33
+Correct: B
+
+---
+[Question] ID: 1427 | Topic: advanced_math / equivalent_expressions
+Q: Which of the following is equivalent to the
+expression x*-x?-6 ?
+
+a. (x? + 1)x?-6)
+
+B. (x? +.2)(x?-3)
+
+c. &? +3)(x?—2)
+
+p. (x? +6)(x?-1)
+Correct: B
+
+---
+[Question] ID: 1428 | Topic: advanced_math / equivalent_expressions
+Q: (2x +5)" —(x-—2) 4+ 2(x +3)
+Which of the following is equivalent to
+the expression above?
+
+A. 4x2 +21x +33
+p. 4x7 +21x +29
+c. 4x7 +x +29
+bp. 4x2 +x +33
+Correct: A
+
+---
+[Question] ID: 1429 | Topic: advanced_math / equivalent_expressions
+Q: Which of the following expressions is
+equivalent to x°-5 ?
+
+a, +/5)
+
+c. +5) -/5)
+
+p. (x +5)(x—-1)
+Correct: C
+
+---
+[Question] ID: 1430 | Topic: advanced_math / equivalent_expressions
+Q: Which of the following is an equivalent form of
+(1.5x —2.4)°— (5.2x?-6.4) 2
+
+A, ~2.2x° +1.6
+
+B. —2.2x°+11.2
+
+C, ~2.95x? -7.2x + 12.16
+
+b. —2.95x* —7.2x +0.64
+Correct: C
+
+---
+[Question] ID: 1431 | Topic: advanced_math / equivalent_expressions
+Q: af xy
+Which of the following expressions is equivalent
+to the expression above?
+A.
+B. x7
+ion ye
+pb. xy"
+Correct: B
+
+---
+[Question] ID: 1432 | Topic: advanced_math / equivalent_expressions
+Q: Which expression is equivalent to (d — 6) (8d? — 3)?
+A) 8d? — 14d? — 3d + 18  B) 8d? — 17d? + 48  C) 8d? — 48d? — 3d + 18  D) 8d3 — 51d? + 48
+Correct: C
+
+---
+[Question] ID: 1433 | Topic: advanced_math / equivalent_expressions
+Q: if X* = @+D and ¥7 =4+6, which of the
+following is equal to (x? -yy ?
+
+A. ad —2ac +c?
+
+p.b*-2be+c°
+
+c. 4a°—4abe+c?
+
+b. 4a°—2abe + b?c?
+Correct: B
+
+---
+[Question] ID: 1434 | Topic: advanced_math / equivalent_expressions
+Q: If x #0, which of the following expressions is
+Vj 16x*y8
+
+equivalent to x 2
+
+a. 8x2y4
+
+B. 4xy*
+
+c. 4x #y?
+
+p. 4x7 y4
+Correct: D
+
+---
+[Question] ID: 1435 | Topic: advanced_math / equivalent_expressions
+Q: x*+6x44
+Which of the following is equivalent to
+the expression above?
+A) (x + 3)2 +5  B) (x + 32 -5  C) (x= 3)2 +5  D) (x - 3)2 -5
+Correct: B
+
+---
+[Question] ID: 1436 | Topic: advanced_math / equivalent_expressions
+Q: The sum of —2x*+x+31 and 3x74 7X —8 can be written in the form
+ax? + bx + C where a, b, and c are constants. What is the value of
+atbt+c ?
+A) 32  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1437 | Topic: advanced_math / equivalent_expressions
+Q: ($x+3)(Sx+ 5)
+
+2 2/\2 2
+The expression above is equivalent to ax? + bx + C where a, b, andc
+are constants. What is the value of b?
+A) 2.5  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1438 | Topic: advanced_math / equivalent_expressions
+Q: Which of the following is equivalent to the sum of
+3x4 +2x° and 4x4 + 7x72
+
+a. 16x"4
+
+B. 7x®+9x°
+
+c. 12x4+14x?
+
+bp. 7x*+9x?
+Correct: D
+
+---
+[Question] ID: 1439 | Topic: advanced_math / equivalent_expressions
+Q: ax*+5x-12
+If the given expression is rewritten in the form (2x —3)(¢+K), where k
+is a constant, what is the value of k ?
+A) 4  B) 0  C) 1  D) -1
+Correct: A

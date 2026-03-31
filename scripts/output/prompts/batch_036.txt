@@ -1,0 +1,241 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2098 | Topic: geometry / lines_angles_triangles
+Q: ye
+
+Note: Figure not drawn to scale.
+In the figure, three lines intersect at point P. If ¥ =65 and
+y=75, what is the value of z ? [Figure described in original]
+A) 140  B) 80 Cc. 40  C) 20
+Correct: C
+
+---
+[Question] ID: 2099 | Topic: geometry / lines_angles_triangles
+Q: aaa. Ll
+a. e
+ae k
+Note: Figure not drawn to scale.
+
+In the figure above, lines # and kK are parallel.
+
+What is the value of a ? [Figure described in original]
+A) 26  B) 64 Cc. 116  C) 154
+Correct: C
+
+---
+[Question] ID: 2100 | Topic: geometry / lines_angles_triangles
+Q: B
+A C D
+
+In the given figure, AC extends to point D. If the measure of “BAC is
+equal to the measure of “BCA, what is the value of x ?
+A) 110  B) 70 C, 55  C) 40
+Correct: D
+
+---
+[Question] ID: 2101 | Topic: geometry / lines_angles_triangles
+Q: rr Se) er re
+ay rT a
+Note: Figure not drawn to scale.
+In the figure above, lines m and n are parallel.
+What is the value of b ? [Figure described in original]
+A) 40  B) 50  C) 65  D) 80
+Correct: A
+
+---
+[Question] ID: 2102 | Topic: geometry / lines_angles_triangles
+Q: In a right triangle, the measure of one of the acute angles is 51°. What is the measure, in degrees, of the other
+acute angle?
+
+A.6
+
+B. 39
+
+Cc. 49
+
+D. 51
+Correct: B
+
+---
+[Question] ID: 2103 | Topic: geometry / lines_angles_triangles
+Q: A two sides of a triangle are extended. What is the value of x ?
+A) 110  B) 120 Cc. 130  C) 140
+Correct: B
+
+---
+[Question] ID: 2104 | Topic: geometry / lines_angles_triangles
+Q: Note: Figure not drawn to scale.
+In the right triangle shown, what is the value of a?
+A.13
+B. 77
+c. 90
+D. 103 [Figure described in original]
+Correct: B
+
+---
+[Question] ID: 2105 | Topic: geometry / lines_angles_triangles
+Q: In triangle ABC, the measure of angle B is 52° and the measure of angle C is 17°. What is the measure of angle
+A?
+A) 21°  B) 35° Cc. 69°  C) 111°
+Correct: D
+
+---
+[Question] ID: 2106 | Topic: geometry / lines_angles_triangles
+Q: t
+x 133° J
+k
+Note: Figure not drawn to scale.
+In the figure, line 7 is parallel to line &. What is the value of x? [Figure described in original]
+A) 47  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2107 | Topic: geometry / lines_angles_triangles
+Q: t
+m
+170°
+~ n
+w
+
+Note: Figure not drawn to scale.
+In the figure, line ™ is parallel to line n. What is the value of w?
+A.17
+B. 30
+Cc. 70
+D. 170 [Figure described in original]
+Correct: D
+
+---
+[Question] ID: 2108 | Topic: geometry / lines_angles_triangles
+Q: x Y
+A B
+C
+Z,
+Note: Figures not drawn to scale.
+For the triangles shown, triangle ABC is dilated by a scale factor of 3 to obtain triangle XY Z, where d = 16. What is the
+measure, in degrees, of angle X?
+A) 20  B) 57 Cc. 60  C) 63
+Correct: C
+
+---
+[Question] ID: 2109 | Topic: geometry / lines_angles_triangles
+Q: C
+uw .
+° J
+x
+40°
+k
+y 2
+Note: Figure not drawn to scale.
+In the figure shown, line @ intersects lines 7 and k. Which additional piece of information is sufficient to prove that lines 7 and
+k are parallel? [Figure described in original]
+A) w = 40  B) z = 140 c.y = 40  C) z = 140
+Correct: A
+
+---
+[Question] ID: 2110 | Topic: geometry / lines_angles_triangles
+Q: Cc D
+
+a
+
+A E —
+
+In the figure above, AF, BE, and cD are parallel. Points B and E lie on AC
+and FD, respectively. If AB =9, BC =18.5, and FE =8.5, what is the
+length of ED, to the nearest tenth?
+A) 16.8  B) 17.5  C) 18.4  D) 19.6
+Correct: B
+
+---
+[Question] ID: 2111 | Topic: geometry / lines_angles_triangles
+Q: Two nearby trees are perpendicular to the ground, which is flat. One of these trees is 10 feet tall and has a
+shadow that is 5 feet long. At the same time, the shadow of the other tree is 2 feet long. How tall, in feet, is the
+other tree?
+
+A.3
+
+B.4
+
+c.8
+
+D. 27
+Correct: B
+
+---
+[Question] ID: 2112 | Topic: geometry / lines_angles_triangles
+Q: E
+|
+Triangles ABC and DEF are shown above. Which of the
+BC
+following is equal to the ratio AB ?
+DE
+A) DF DE  B) DE DF  C) EF EF  D) DE
+Correct: B
+
+---
+[Question] ID: 2113 | Topic: geometry / lines_angles_triangles
+Q: m r S
+
+x?
+
+y
+Note: Figure not drawn to scale.
+
+In the figure shown, lines r and s are parallel, and line m intersects both lines. If y < 65, which of the following
+must be true?
+A.x < 115
+B.2 > 115
+C.2+y< 180
+D.z+y > 180 [Figure described in original]
+Correct: B
+
+---
+[Question] ID: 2114 | Topic: geometry / lines_angles_triangles
+Q: Triangle ABC is similar to triangle XY Z, such that A, B, and C correspond to X, Y, and Z respectively. The
+length of each side of triangle XY Z is 2 times the length of its corresponding side in triangle ABC’. The measure
+of side AB is 16. What is the measure of side XY?
+
+A.14
+
+B. 16
+
+c.18
+
+D. 32
+Correct: D
+
+---
+[Question] ID: 2115 | Topic: geometry / lines_angles_triangles
+Q: In triangle JA L, the measures of 7K and ZL are each 48°. What is the measure of ZJ, in degrees? (Disregard
+the degree symbol when entering your answer.)
+A) 84  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2116 | Topic: geometry / lines_angles_triangles
+Q: In triangle ABC, the measure of angle A is 50°. If triangle ABC is isosceles,
+which of the following is NOT a possible measure of angle B ?
+A) 50°  B) 65° c. 80° Db. 100°
+Correct: D
+
+---
+[Question] ID: 2117 | Topic: geometry / lines_angles_triangles
+Q: B
+aa :
+¢
+4 a
+Note: Figures not drawn to scale.
+Triangle ABC and triangle DEF are shown. The relationship between the side
+AB _BC _AC _,
+
+lengths of the two triangles is such that DE EF DF If the
+measure of angle BAC is 20°, what is the measure, in degrees, of angle EDF
+? (Disregard the degree symbol
+A) 20  B) 0  C) 1  D) -1
+Correct: A

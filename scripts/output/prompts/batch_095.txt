@@ -1,0 +1,22 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 3135 | Topic: conventions / form_structure_sense
+Passage: Supported by biochemical analyses of over 2,000 skeletons from the Middle Ages, ___...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) vegetables and grains were, a 2022 study found, the primary components of early   B) early medieval rulers’ diets were found, in a 2022 study, to have primarily cons  C) the primary components of early medieval rulers’ diets were vegetables and grain  D) findings from a 2022 study suggested that vegetables and grains were the primary
+Correct: D
+
+---
+[Question] ID: 3136 | Topic: conventions / form_structure_sense
+Passage: In arecent analysis of lyrical trends in 350,000 songs, researchers cite increases in certain measures, such as the ratio of
+choruses to verses, as evidence music lyrics are becoming more repetitive. For instance, from 1970 to 2020, chorus-
+to-verse ratios trended similarly, with each genre's data i...
+Q: Which choice completes the text so that it conforms to the conventions of Standard English?
+A) rocks and raps  B) rock's and rap’s  C) rocks and rap’s  D) rock and rap’s
+Correct: B

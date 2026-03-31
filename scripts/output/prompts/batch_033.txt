@@ -1,0 +1,232 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2038 | Topic: geometry / area_volume
+Q: A right circular cylinder has a height of 8 meters (m) and a base with a radius of 12 m. What is the volume, in m®, of the
+cylinder?
+A) 87  B) 207  C) 7687  D) 1,1527
+Correct: D
+
+---
+[Question] ID: 2039 | Topic: geometry / area_volume
+Q: Square A has side lengths that are 246 times the side lengths of square B. The area of square A is k times the area of
+square B. What is the value of k?
+A) 60,516  B) 492  C) 246  D) 123
+Correct: A
+
+---
+[Question] ID: 2040 | Topic: geometry / area_volume
+Q: y
+mpi tei ttt tt ttt
+PTT TTT tT tT tT eet yt ty
+pt Ltt itt tt ttt tt tl
+PTT TTT Tot tet yt ty
+i LLL
+PTT tT TTT tT tT tT et ty
+gt titi tt it ttt tt
+PTT tT rete tT tT et yy iy
+6f TTT tt ttt ttt tt
+Pitt tT tT tee tt ty Tt Ty
+gaLt_tT Tt tt Tet ttt tt
+PTT tT TTT tT tT TT Tt yt
+2 ee
+PT TTT eT tT ety et yt
+Correct: B
+
+---
+[Question] ID: 2041 | Topic: geometry / area_volume
+Q: The figure shown is a right circular cylinder with a radius of r and height of h. A second right circular cylinder (not
+shown) has a volume that is 392 times as large as the volume of the cylinder shown. Which of the following could
+represent the radius R, in terms of r, and the height H, in terms o
+A) R = 8r and H = 7h  B) R= 8rand H = 49h c. R=7rand H = 8h  C) R = 49r and H = 8h
+Correct: C
+
+---
+[Question] ID: 2042 | Topic: geometry / area_volume
+Q: A right circular cone has a height of 22 centimeters (cm) and a base with a diameter of 6 cm. The volume of this
+cone is nm cm. What is the value of n?
+A) 66  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2043 | Topic: geometry / area_volume
+Q: A manufacturer determined that right cylindrical containers with a height
+that is 4 inches longer than the radius offer the optimal number of
+containers to be displayed on a shelf. Which of the following expresses the
+volume, V, in cubic inches, of such containers, where r is the radius, in
+inches?
+A) V=4ar = 3  B) V= m2r) c.V=ar+4ar bp. V=mr'+4mr?
+Correct: D
+
+---
+[Question] ID: 2044 | Topic: geometry / area_volume
+Q: A rectangular poster has an area of 360 square inches. A copy of the poster is made in which the length and
+width of the original poster are each increased by 20%. What is the area of the copy, in square inches?
+A) 518.4  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2045 | Topic: geometry / area_volume
+Q: A right rectangular prism has a length of 28 centimeters (cm), a width of 15 cm, and a height of 16 cm. What is
+the surface area, in cm?, of the right rectangular prism?
+A) 2216  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2046 | Topic: geometry / area_volume
+Q: 1
+
+A right circular cone has a volume of 3 iE cubic feet and a height of 9 feet.
+What is the radius, in feet, of the base of the cone?
+
+1
+A) 3 1 ealZ  B) 3
+Correct: A
+
+---
+[Question] ID: 2047 | Topic: geometry / area_volume
+Q: The volume of right circular cylinder A is 22 cubic centimeters. What is the
+volume, in cubic centimeters, of a right circular cylinder with twice the
+radius and half the height of cylinder A?
+A) 11  B) 22 Cc. 44  C) 66
+Correct: C
+
+---
+[Question] ID: 2048 | Topic: geometry / area_volume
+Q: Jy
+i
+Lt i tT tet ThE ct TTT
+Lt i it tt PE TT tT
+Lt i | det PP | TTT
+Lt i {| tet | dT dT dT dt dT
+Ltt | it Et tT tt
+Lt tT | d3t Pd Pd Th Tht
+| ft | it EE | dT TT
+[| | tt ted ET cE ET TT
+PT te ee
+Batatatal Ol] 12 3.4 5 67.
+
+fe
+
+wit} tt tt
+
+igf | | | i tt
+
+What is the area, in square units, of the tria
+A) 24.5  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2049 | Topic: geometry / area_volume
+Q: The dimensions of a right rectangular prism are 4 inches by 5 inches by
+6 inches. What is the surface area, in square inches, of the prism?
+A) 30  B) 74 Cc. 120  C) 148
+Correct: D
+
+---
+[Question] ID: 2050 | Topic: geometry / area_volume
+Q: Triangles ABC and DEF are similar. Each side length of triangle ABC is 4 times the corresponding side length
+of triangle DEF. The area of triangle ABC is 270 square inches. What is the area, in square inches, of triangle
+DEF?
+A) 135/8  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2051 | Topic: geometry / area_volume
+Q: A cube has a surface area of 54 square meters. What is the
+volume, in cubic meters, of the cube?
+A) 18  B) 27  C) 36  D) 81
+Correct: B
+
+---
+[Question] ID: 2052 | Topic: geometry / area_volume
+Q: A right square prism has a height of 14 units. The volume of the prism is 2,016 cubic units. What is the length, in units, of an
+edge of the base?
+A) 12  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2053 | Topic: geometry / area_volume
+Q: J
+FCC
+bf pty P| tt tt tt
+LT tT ttt eet tT TT Tt Yt
+ttt tt ti Pt tT tT tt tT
+[TT TTT Peet et tt eT
+H+ t tt tio Pt tg tt ty
+[TT ttt Pet Per tT
+FF} | 3 Zane
+[TIT tt tT Pt tt tT
+HA 64 Pt tt tt tT
+BRP 2s eee
+Pi wT] 4 P| tt tT tt Yt
+LT TTT tT eet tT tt yy ft
+Li 24 P| tt tt tt
+LT tT TT Tt eet tT tt | Yt Yt
+A) 12  B) 24  C) 3V13  D) 18V13
+Correct: B
+
+---
+[Question] ID: 2054 | Topic: geometry / area_volume
+Q: A hemisphere is half of a sphere. If a hemisphere has a radius of 27 inches, which of the following is closest to the volume,
+in cubic inches, of this hemisphere?
+A) 1,500  B) 6,100  C) 30,900  D) 41,200
+Correct: D
+
+---
+[Question] ID: 2055 | Topic: geometry / area_volume
+Q: Parallelogram ABCD is similar to parallelogram PQ RS. The length of each side of parallelogram PQRS is 2 times the
+length of its corresponding side of parallelogram ABCD. The area of parallelogram ABCD is 5 square centimeters. What
+is the area, in square centimeters, of parallelogram PQ RS?
+
+A.7
+
+B.
+Correct: C
+
+---
+[Question] ID: 2056 | Topic: geometry / area_volume
+Q: y
+TCT
+ott tty TE TT
+
+BERR
+ef ttt TTT Tt Ty
+
+EERE
+st ttt TT tT TT
+
+BERGER
+aft tt ety TT TT
+
+EERE
+st tt tT gy TT TT
+
+ERE ReRREee
+
+PTT tT TT TT TT
+O25 4°68 10°12 °14
+
+The three points shown define a circle. The circumference of this circle is kz, where k is a constant. What is the value of k?
+A) 8  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 2057 | Topic: geometry / area_volume
+Q: Rectangle ABCD is similar to rectangle EFGH. The area of rectangle ABCD is 648 square inches, and the area of
+rectangle EFGH is 72 square inches. The length of the longest side of rectangle ABCD is 36 inches. What is the length,
+in inches, of the longest side of rectangle FG H?
+
+A.4
+
+B.9
+
+C.12
+
+D. 3
+Correct: C

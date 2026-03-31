@@ -1,0 +1,188 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2684 | Topic: craft_structure / words_context
+Passage: Novelist N. K. Jemisin declines to the conventions of the science fiction genre in which she writes, and she
+has suggested that her readers appreciate her work precisely because of this willingness to thwart expectations
+and avoid formulaic plots and themes....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) question  B) react to  C) perceive  D) conform to
+Correct: D
+
+---
+[Question] ID: 2685 | Topic: craft_structure / words_context
+Passage: Interruptions in the supply chain for microchips used in personal electronics have challenged an economist's
+assertion that retailers can expect robust growth in sales of those devices in the coming months. The delays are
+unlikely to her projection entirely but will almost certainly extend its time ...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) dispute  B) withdraw  C) underscore  D) invalidate
+Correct: D
+
+---
+[Question] ID: 2686 | Topic: craft_structure / words_context
+Passage: Domesticated thousands of years ago by Indigenous people in South America, cacao, the plant from which chocolate is
+made, deviates structurally from the wild plant it is descended from. Maize (corn), another crop domesticated by Indigenous
+Americans, shows so little resemblance to any wild plant tha...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) acquire  B) develop  C) attract  D) confirm
+Correct: D
+
+---
+[Question] ID: 2687 | Topic: craft_structure / words_context
+Passage: Austin McCoy has argued that historians have tended to rank-and-file workers in analyses of changes in organized
+labor in the United States in the decades following the Second World War, presenting political, business, and labor leaders as
+the major actors and ordinary workers as nearly devoid of ag...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) epitomize  B) marginalize  C) extol  D) substantiate
+Correct: B
+
+---
+[Question] ID: 2688 | Topic: craft_structure / words_context
+Passage: The discoverers of the minor planet 1227 Geranium named it after the plant genus that includes cranesbills. Most of the
+recently discovered minor planets, however, are given only an identification number, largely due to there being over 500,000
+such bodies known at present, which makes the already c...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) insurmountable  B) feasible  C) substantial  D) unnecessary
+Correct: A
+
+---
+[Question] ID: 2689 | Topic: craft_structure / words_context
+Passage: The Illustrated History of San Mateo County, published in 1878, features several illustrations by Grafton Tyler Brown showing
+the California county's farms, residences, and businesses. It was for a business to be featured, since being included
+suggested that a business was an important part of the c...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) risky  B) misleading  C) advantageous  D) unremarkable
+Correct: C
+
+---
+[Question] ID: 2690 | Topic: craft_structure / words_context
+Passage: The following text is adapted from Upton Sinclair's 1906 novel The Jungle. Marija is helping to manage her sister's wedding.
+It was [Marija’s] task to see that all things went in due form, and after the best home traditions; and, flying wildly hither
+and thither, bowling every one out of the way, an...
+Q: As used in the text, what does the word “consider” most nearly mean?
+A) Take into account and follow  B) Admire steadily and praise  C) Come to a decision about  D) Have an opinion on
+Correct: A
+
+---
+[Question] ID: 2691 | Topic: craft_structure / words_context
+Passage: The fossil remains of the individual known as Oase 1, discovered in Romania in 2002, can help paleoanthropologists not only
+steps in the evolution of hominids but also illuminate the Pleistocene epoch generally, revealing important details
+
+about the time in which Oase 1 lived....
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) exploit  B) discern  C) prioritize  D) yield
+Correct: B
+
+---
+[Question] ID: 2692 | Topic: craft_structure / words_context
+Passage: Drivers who strongly believe that the toll they must pay to use the Lewis and Clark Bridge, which spans the Ohio River to
+connect Indiana and Kentucky, is currently too high are unlikely to be a proposal to increase the toll. Advocates for a
+higher toll are likely to have more success if they instea...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) receptive to  B) apprised of  C) incensed by  D) cited in
+Correct: A
+
+---
+[Question] ID: 2693 | Topic: craft_structure / words_context
+Passage: Rejecting the premise that the literary magazine Ebony and Topaz (1927) should present a unified vision of Black
+American identity, editor Charles S. Johnson fostered his contributors’ diverse perspectives by promoting their
+authorial autonomy. Johnson's self-effacement diverged from the editorial s...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) proficient  B) dogmatic  C) ambiguous  D) unpretentious
+Correct: B
+
+---
+[Question] ID: 2694 | Topic: craft_structure / words_context
+Passage: Economist Marco Castillo and colleagues showed that nuisance costs—the time and effort people must spend to
+make donations—reduce charitable giving. Charities can mitigate this effect by compensating donors for nuisance
+costs, but those costs, though variable, are largely donation size, so charities...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) supplemental to  B) predictive of  C) independent of  D) subsumed in
+Correct: C
+
+---
+[Question] ID: 2695 | Topic: craft_structure / words_context
+Passage: The following text is adapted from George Eliot's 1871-72 novel Middlemarch.
+[Mr. Brooke] had travelled in his younger years, and was held in this part of the country to have contracted a
+too rambling habit of mind. Mr. Brooke's conclusions were as difficult to predict as the weather....
+Q: As used in the text, what does the word “contracted” most nearly mean?
+A) Restricted  B) Described  C) Developed  D) Settled
+Correct: C
+
+---
+[Question] ID: 2696 | Topic: craft_structure / words_context
+Passage: The giiro, a musical instrument traditionally made from a dried and hollowed gourd, is thought to have originated
+with the Taino people of Puerto Rico. Players use a wooden stick to scrape along ridges cut into the side of the
+gourd, creating sounds that are highly : the sounds produced by giiros ca...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) overlooked  B) powerful  C) routine  D) variable
+Correct: D
+
+---
+[Question] ID: 2697 | Topic: craft_structure / words_context
+Passage: While scholars believe many Mesoamerican cities influenced each other, direct evidence of such influence is
+difficult to ascertain. However, recent excavations in a sector of Tikal (Guatemala) unearthed a citadel that shows
+Teotihuacan (Mexico) architecture—including a near replica of a famed Teotih...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) refinements of  B) precursors of  C) commonalities with  D) animosities toward
+Correct: C
+
+---
+[Question] ID: 2698 | Topic: craft_structure / words_context
+Passage: Close analysis of the painting Girl with a Flute, long attributed to the seventeenth-century Dutch painter Johannes
+Vermeer, has revealed subtle deviations from the artist's signature techniques. These variations suggest that the
+work may be that of a student under Vermeer’s tutelage—potentially our...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) negating  B) prefiguring  C) entrenching  D) substantiating
+Correct: A
+
+---
+[Question] ID: 2699 | Topic: craft_structure / words_context
+Passage: While most animals are incapable of passing somatic mutations—genetic alterations that arise in an organism's
+nonreproductive cells—on to their offspring, elkhorn coral (Acropora palmata) presents an intriguing rina
+2022 study, researchers found that elkhorn coral produced offspring that inherited s...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) hypothesis  B) affinity  C) anomaly  D) corroboration
+Correct: C
+
+---
+[Question] ID: 2700 | Topic: craft_structure / words_context
+Passage: Some foraging models predict that the distance bees travel when foraging will decline as floral density increases,
+but biologists Shalene Jha and Claire Kremen showed that bees’ behavior is inconsistent with this prediction if
+flowers in dense patches are : bees will forage beyond patches of low spe...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) depleted  B) homogeneous  C) immature  D) dispersed
+Correct: B
+
+---
+[Question] ID: 2701 | Topic: craft_structure / words_context
+Passage: Investigating whether shared false visual memories—specific but inaccurate and widely held recollections of
+images such as product logos—are caused by people's previous incorrect renditions of the images,
+researchers Deepasri Prasad and Wilma Bainbridge found that, in fact, such memories are often n...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) compliance with  B) exposure to  C) criteria for  D) forfeiture of
+Correct: B
+
+---
+[Question] ID: 2702 | Topic: craft_structure / words_context
+Passage: As an undergraduate researcher in anthropology, Jennifer C. Chen contributed to a groundbreaking study
+challenging the accepted view that among prehistoric peoples, female participation in hunting was . The
+research team's review of data from late Pleistocene and early Holocene burials in the Americ...
+Q: Which choice completes the text with the most logical and precise word or phrase?
+A) inevitable  B) satisfactory  C) negligible  D) commonplace
+Correct: C
+
+---
+[Question] ID: 2703 | Topic: craft_structure / words_context
+Passage: The following text is from the 1989 novel The Ancient Child by Kiowa writer N. Scott Momaday. The main character has
+achieved tremendous commercial success as a painter.
+More and more often he was asked to compromise his art or himself in one way or another, and more often than not he
+did so, for he...
+Q: As used in the text, what does the word “determine” most nearly mean?
+A) Conclude  B) Dictate  C) Evaluate  D) Select
+Correct: B

@@ -1,0 +1,233 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2816 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e Hina Hanta is an online archive curated by the Choctaw Nation of Oklahoma.
+e Hina Hanta means “bright path” in Choctaw.
+¢ It features images of cultural artifacts relevant to the history of the Choctaw people.
+¢ It includes a fann...
+Q: Which choice most effectively uses relevant information
+from the notes to accomplish this goal?
+A) The Hina Hanta archive features cultural artifacts, such as a fanner basket and   B) The cane fanner basket, which is included in the Hina Hanta online archive, is c  C) Hina Hanta, which means “bright path” in Choctaw, includes a fanner basket in it  D) The name of the online archive Hina Hanta means “bright path” in Choctaw.
+Correct: B
+
+---
+[Question] ID: 2817 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+¢ Grimanesa Amoros is a Peruvian American artist well known for her LED light sculptures.
+¢ Her sculpture Uros Island is made of smooth multicolored LED domes.
+e It occupies 335 cubic feet of space.
+¢ Her sculpture Fortuna is made o...
+Q: Which choice most effectively uses relevant
+information from the notes to accomplish this goal?
+A) The smooth LED domes of Grimanesa Amoros's Uros /siand stand in contrast to the   B) At 19,950 cubic feet in size, Grimanesa Amoros’s Fortuna cuts a larger figure th  C) Grimanesa Amoros is the artist behind Uros /sland—a sculpture made of smooth mul  D) Uros Island is an LED light sculpture made by Grimanesa Amoros, as is Fortuna.
+Correct: D
+
+---
+[Question] ID: 2818 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e As engineered structures, many bird nests are uniquely flexible yet cohesive.
+e A research team led by Yashraj Bhosale wanted to better understand the mechanics behind these
+structural properties.
+e Bhosale’s team used laboratory ...
+Q: Which choice most effectively uses relevant
+information from the notes to accomplish this goal?
+A) Bhosale's team wanted to better understand the mechanics behind bird nests’ uniq  B) The researchers used laboratory models that simulated the arrangement of flexibl  C) After analyzing the points where sticks touched, the researchers found that the   D) As analyzed by Bhosale’s team, bird nests are uniquely flexible yet cohesive eng
+Correct: A
+
+---
+[Question] ID: 2819 | Topic: expression / rhetorical_synthesis
+Q: While researching a topic, a student has taken the following notes:
+¢ The Million Song Dataset (MSD) includes main audio features and descriptive tags for popular songs.
+e Audio features include acoustic traits such as loudness and pitch intervals.
+e Many algorithms use these audio features to predi
+A) Many popularity-predicting algorithms are based on a song's audio features, such  B) Algorithms based on audio features may misidentify the main features of a song w  C) Audio features describe acoustic traits such as pitch intervals, which may vary   D) The MSD's descriptive tags are reliable predictors of a song’s popularity, as th
+Correct: B
+
+---
+[Question] ID: 2820 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+¢ Some powerful works of literature have so influenced readers that new legislation has been passed as a
+result.
+© The Interesting Narrative of the Life of Olaudah Equiano (1789) is the autobiography of a man who
+endured slavery on ...
+Q: Which choice most effectively uses
+relevant information from the notes to accomplish this goal?
+A) Although both are powerful works of literature that contributed to new legislati  B) They may have written about different topics, but Equiano and Sinclair both infl  C) The 1807 Slave Trade Act resulted in part from a book by Equiano, while the 1906  D) The Interesting Narrative of the Life of Olaudah Equiano and The Jungle are two 
+Correct: A
+
+---
+[Question] ID: 2821 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e In 1971, experimental musician Pauline Oliveros created Sonic Meditations.
+¢ Sonic Meditations is not music but rather a series of sound-based exercises called meditations.
+e Each meditation consists of instructions for participan...
+Q: Which choice most
+effectively uses relevant information from the notes to accomplish this goal?
+A) Sonic Meditations is not music but rather a series of sound-based meditations th  B) In 1971, Oliveros created Sonic Meditations, a series of meditations that consis  C) “Walk so silently that the bottoms of your feet become ears” is one example of t  D) While both meditations consist of instructions, Meditation XVIII instructs parti
+Correct: A
+
+---
+[Question] ID: 2822 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e Freddie Wong (born 1985) is a director and special effects artist from the United States.
+e He is best known for the action-comedy web series Video Game High School (VGHS).
+© VGHS premiered in 2012 on RocketJump, a YouTube channel...
+Q: Which choice most effectively
+uses relevant information from the notes to accomplish this goal?
+A) In 2012, director and visual effects artist Freddie Wong launched a new action-c  B) Video Game High School was celebrated for its inventive video game-centric world  C) Wong, cocreator of the YouTube channel RocketJump, would go on to see his web se  D) In 2012, Video Game High School! premiered on RocketJump; it would later be nomi
+Correct: A
+
+---
+[Question] ID: 2823 | Topic: expression / rhetorical_synthesis
+Q: While researching a topic, a student has taken the following notes:
+¢ The popular wood-wide web theory posits that trees can communicate and exchange resources with one
+another via common mycorrhizal networks (CMNs) of fungi.
+e Ecologist Dr. Suzanne Simard first suggested this theory in 1997.
+e She 
+A) Describing trees as “super-cooperators,” Simard first suggested that trees can e  B) In “The Decay of the Wood-Wide Web?,” Karst and colleagues note that common myco  C) After evaluating dozens of CMN studies, Karst and colleagues expressed concern t  D) Despite the concerns expressed in the 2022 study “The Decay of the Wood-Wide Web
+Correct: C
+
+---
+[Question] ID: 2824 | Topic: expression / rhetorical_synthesis
+Q: While researching a topic, a student has taken the following notes:
+e A thermal inversion is a phenomenon where a layer of atmosphere is warmer than the layer beneath it.
+e In 2022, a team of researchers studied the presence of thermal inversions in twenty-five gas giants.
+e Gas giants are planets l
+A) Heat-absorbing metals may reside in a planet's upper atmosphere.  B) The team studied thermal inversions in twenty-five gas giants, which are largely  C) Researchers found that gas giants featuring a thermal inversion were likely to c  D) Gas giants were likely to contain heat-absorbing metals when they featured a lay
+Correct: C
+
+---
+[Question] ID: 2825 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e Acommodity chain is the series of links connecting the production and purchase of a commodity on the
+world market.
+¢ Chinese American anthropologist Anna Tsing studies the contemporary commodity chain of matsutake
+mushrooms.
+e Ato...
+Q: Which choice most effectively uses
+relevant information from the notes to accomplish this goal?
+A) The contemporary matsutake commodity chain has its origins in the 1980s when, ac  B) Commodity chains include the linked production and purchase of commodities, such  C) Decades after the Japanese import of matsutake began, a commodity chain now link  D) Wealthy consumers who buy the costly mushrooms in Japan are at one end of the ma
+Correct: C
+
+---
+[Question] ID: 2826 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e Archaeologist Jon Erlandson and colleagues argue that humans first arrived in the Americas by sea.
+® They propose that humans traveled between Pacific Ocean islands and coastlines from northeast Asia to
+the Americas.
+Many of these...
+Q: Which choice most effectively uses relevant
+information from the notes to accomplish this goal?
+A) Pacific Ocean islands and coastlines likely contained “a rich mix of marine, est  B) One argument about how humans first arrived in the Americas is the kelp highway   C) Humans may have first arrived in the Americas by sea, traveling between Pacific   D) As glaciers melted and sea levels rose, many Pacific Ocean islands and coastal z
+Correct: C
+
+---
+[Question] ID: 2827 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e Neuroscientists Krishnan Padmanabhan and Zhen Chen sought to better understand the workings of the
+brain's olfactory system.
+¢ They devised a study using mathematical models.
+¢ They found that certain fibers allow the brain to tog...
+Q: Which choice most effectively uses relevant information
+from the notes to accomplish this goal?
+A) To arrive at these findings, which describe dual methods of processing smells in  B) Padmanabhan and Chen showed that olfactory information is captured by cells in t  C) Using mathematical models, Padmanabhan and Chen devised a study to better unders  D) According to Padmanabhan and Chen, the brain can toggle between capturing olfact
+Correct: D
+
+---
+[Question] ID: 2828 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+¢ Nissologists are scientists who study islands.
+¢ Some nissologists define an island as any piece of land surrounded by water.
+e Using that definition, they determined that Sweden has 221,000 islands.
+* Other nissologists define an...
+Q: Which choice
+most effectively uses relevant information from the notes to accomplish these goals?
+A) The definition of an island as any piece of land surrounded by water is supporte  B) Multiple counts of Sweden's islands have been based on different definitions of   C) Based on a recent count, Sweden has a relatively small number of islands with at  D) Nissologists' different definitions can result in huge disparities in counts of 
+Correct: D
+
+---
+[Question] ID: 2829 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e In 1978, Sami activists staged protests to block the construction of a dam on the Alta River in Norway.
+¢ The dam would disrupt Sami fishing and reindeer herding.
+e The dam was ultimately built, but the Alta conflict had a lasting...
+Q: Which choice most effectively
+uses relevant information from the notes to accomplish this goal?
+A) During the Alta conflict, Sami activists staged protests to block the constructi  B) Although the dam that the Sami activists had protested was ultimately built, the  C) Sami rights to lands, waters, and resources received international attention and  D) The Alta conflict had a lasting impact, resulting in international attention and
+Correct: D
+
+---
+[Question] ID: 2830 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e Stars form in a galaxy when gravity causes a massive cloud of dust and gas to collapse.
+e A galaxy ina phase of rapid star formation is called a starburst galaxy.
+® Quenching is a process in which a galaxy loses star-forming gas.
+...
+Q: Which choice most effectively uses relevant information
+from the notes to accomplish this goal?
+A) Before quenching, a starburst galaxy will form stars at a rapid rate.  B) When it becomes quenched, a starburst galaxy enters the poststarburst phase.  C) Having entered the poststarburst phase, a quenched galaxy is one that no longer   D) A starburst galaxy will lose star-forming gas and eventually become quenched.
+Correct: C
+
+---
+[Question] ID: 2831 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e African American women played prominent roles in the Civil Rights Movement, including at the famous
+1963 March on Washington.
+© Civil rights activist Anna Hedgeman, one of the march’s organizers, was a political adviser who had wo...
+Q: Which choice most
+effectively uses relevant information from the notes to accomplish this goal?
+A) Hedgeman and Bates contributed to the march in different ways; Bates, for exampl  B) Hedgeman worked in politics and helped organize the march, while Bates was a jou  C) Although Hedgeman worked behind the scenes to make sure a woman speaker was incl  D) Many African American women, including Bates and Hedgeman, fought for civil righ
+Correct: C
+
+---
+[Question] ID: 2832 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e Ulaanbaatar is the capital of Mongolia.
+¢ The city's population is 907,802.
+e Ulaanbaatar contains 31.98 percent of Mongolia’s population.
+e Hanoi is the capital of Vietnam.
+¢ The city's population is 7,781,631.
+e Hanoi contains 8...
+Q: Which choice most effectively
+uses information from the given sentences to emphasize the relative sizes of the two capitals’ populations?
+A) Mongolia's capital is Ulaanbaatar, which has 907,802 people, and Vietnam's capit  B) Comparing Vietnam and Mongolia, 7,781,631 is 8.14 percent of Vietnam's populatio  C) Even though Hanoi (population 7,781,631) is larger than Ulaanbaatar (population   D) The populations of the capitals of Mongolia and Vietnam are 907,802 (Ulaanbaatar
+Correct: C
+
+---
+[Question] ID: 2833 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+e The Atlantic Monthly magazine was first published in 1857.
+® The magazine focused on politics, art, and literature.
+e In 2019, historian Cathryn Halverson published the book Faraway Women and the “Atlantic Monthly.”
+e Its subject ...
+Q: Which choice most effectively uses relevant information from the notes to accomplish this goal?
+A) Cathryn Halverson's Faraway Women and the “Atlantic Monthly” discusses female au  B) A magazine called the Atlantic Monthly, referred to in Cathryn Halverson’s book   C) Faraway Women and the “Atlantic Monthly” features contributors to the Atlantic M  D) An author discussed by Cathryn Halverson is Juanita Harrison, whose autobiograph
+Correct: A
+
+---
+[Question] ID: 2834 | Topic: expression / rhetorical_synthesis
+Passage: While researching a topic, a student has taken the following notes:
+¢ One of history's greatest libraries was the House of Wisdom in Baghdad, Iraq.
+e It was founded in the eighth century with the goal of preserving all the world's knowledge.
+¢ Scholars at the House of Wisdom collected ancient and co...
+Q: Which choice most
+effectively uses relevant information from the notes to accomplish this goal?
+A) The House of Wisdom was known for bringing together knowledge from around the wo  B) Founded in Iraq in the eighth century, the House of Wisdom employed many scholar  C) Writings from the Greek philosopher Aristotle and the Indian mathematician Aryab  D) The House of Wisdom collected writings from different countries and created pape
+Correct: D
+
+---
+[Question] ID: 2835 | Topic: expression / rhetorical_synthesis
+Q: While researching a topic, a student has taken the following notes:
+¢ The magnificent frigatebird (fregata magnificens) is a species of seabird that feeds mainly on fish, tuna,
+squid, and other small sea animals.
+e Itis unusual among seabirds in that it doesn't dive into the water for prey.
+¢ One wa
+A) A magnificent frigatebird never dives into the water, instead using its hook-tip  B) Neither of a magnificent frigatebird's two ways of acquiring food requires the b  C) Of the magnificent frigatebird's two ways of acquiring food, only one is known a  D) In addition to snatching prey from the water with its hook-tipped bill, a magnif
+Correct: B

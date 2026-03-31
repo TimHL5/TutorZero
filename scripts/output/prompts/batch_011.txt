@@ -1,0 +1,228 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1600 | Topic: advanced_math / nonlinear_functions
+Q: pol 5 |
+5
+1} 2
+5
+2/4
+5
+3 | 8
+The table above gives the values of the function f for some values of x.
+Which of the following equations could define f ?
+a. F(x) =5(2* * 1)
+B. f(x) =5(2*)
+o, F(x) =5(2-**1)
+p. f(x) =5(2~*)
+Correct: D
+
+---
+[Question] ID: 1601 | Topic: advanced_math / nonlinear_functions
+Q: F(x) = (x + 4)x -1)2x -3)
+
+The function fis defined above. Which of the following is NOT an x-
+intercept of the graph of the function in the xy-plane?
+A) (—4, 0) 2  B) (5 0} c. (1, 0) 3  C) (5. 0}
+Correct: B
+
+---
+[Question] ID: 1602 | Topic: advanced_math / nonlinear_functions
+Q: There were no jackrabbits in Australia before 1788 when 24 jackrabbits
+were introduced. By 1920 the population of jackrabbits had reached 10
+billion. If the population had grown exponentially, this would correspond to
+a 16.2% increase, on average, in the population each year. Which of the
+following 
+Correct: C
+
+---
+[Question] ID: 1603 | Topic: advanced_math / nonlinear_functions
+Q: A sample of a certain isotope takes 29 years to decay to half its original mass. The function s(t) = 184(0.5)* gives the
+approximate mass of this isotope, in grams, that remains t years after a 184-gram sample starts to decay. Which statement
+is the best interpretation of (87) = 23 in this context?
+A) Approximately 23 grams of the sample remains 87 years after the sample starts to  B) The mass of the sample has decreased by approximately 23 grams 87 years after th  C) The mass of the sample has decreased by approximately 87 grams 23 years after th  D) Approximately 87 grams of the sample remains 23 years after the sample starts to
+Correct: A
+
+---
+[Question] ID: 1604 | Topic: advanced_math / nonlinear_functions
+Q: The product of two positive integers is 546. If the first integer is 11 greater than twice the second integer, what is
+the smaller of the two integers?
+
+A.7
+
+B. 14
+
+c. 39
+
+D. 78
+Correct: B
+
+---
+[Question] ID: 1605 | Topic: advanced_math / nonlinear_functions
+Q: The equation E(t) = 5(1.8)° gives the estimated number of employees at a restaurant, where t is the number of
+years since the restaurant opened. Which of the following is the best interpretation of the number 5 in this
+context?
+A) The estimated number of employees when the restaurant opened  B) The increase in the estimated number of employees each year  C) The number of years the restaurant has been open  D) The percent increase in the estimated number of employees each year
+Correct: A
+
+---
+[Question] ID: 1606 | Topic: advanced_math / nonlinear_functions
+Q: g(x) = 27 +55
+What is the minimum value of the given function?
+A.0
+B. 55
+c.110
+D. 3,025
+Correct: B
+
+---
+[Question] ID: 1607 | Topic: advanced_math / nonlinear_functions
+Q: 9(2) = 1(q3)"
+If the given function g is graphed in the xy-plane, where y = g(x), what is the y-intercept of the graph?
+A) (0,11)  B) (0, 132) c. (0,1)  C) (0, 12)
+Correct: A
+
+---
+[Question] ID: 1608 | Topic: advanced_math / nonlinear_functions
+Q: A rectangle has a length of x units and a width of (x — 15) units. If the rectangle has an area of 76 square units,
+what is the value of x?
+
+A.4
+
+B. 19
+
+C. 23
+
+D. 76
+Correct: B
+
+---
+[Question] ID: 1609 | Topic: advanced_math / nonlinear_functions
+Q: An object is kicked from a platform. The equation h = —4.9t? + 7t + 9 represents this situation, where h is the
+height of the object above the ground, in meters, t seconds after it is kicked. Which number represents the
+height, in meters, from which the object was kicked?
+
+A.0
+
+B. 4.9
+
+om d
+
+D.9
+Correct: D
+
+---
+[Question] ID: 1610 | Topic: advanced_math / nonlinear_functions
+Q: y
+100:
+Sere
+PTT SET TT
+PEE ET
+SOSS0R4 SR
+PN TT.
+87 Ped 12 3 AS 678
+Cee
+PLO
+POC co
+PO eA
+Which of the following could be the equation of the graph shown in the xy-plane?
+A.y = — 75 a(x — 4)(a +5)
+B.y = —fa(x—4)(a+ 5)?
+C.y = —7a(x — 5)(4 + 4)
+p.y= —Aa(x—5)?(x+4)
+Correct: B
+
+---
+[Question] ID: 1611 | Topic: advanced_math / nonlinear_functions
+Q: The function p is defined by p(n) = 7n3, What is the value of n when p(n) is equal to 56?
+A.2
+8
+B. 3
+C.7
+D.8
+Correct: A
+
+---
+[Question] ID: 1612 | Topic: advanced_math / nonlinear_functions
+Q: The function f is defined by f(x) = 270(0.1)”. What is the value of f(0)?
+A.0
+
+B.1
+
+C. 27
+
+D. 270
+Correct: D
+
+---
+[Question] ID: 1613 | Topic: advanced_math / nonlinear_functions
+Q: The area of a triangle is 270 square centimeters. The length of the base of the triangle is 12 centimeters greater than the
+height of the triangle. What is the height, in centimeters, of the triangle?
+
+A.15
+
+B.18
+
+Cc. 30
+
+D. 36
+Correct: B
+
+---
+[Question] ID: 1614 | Topic: advanced_math / nonlinear_functions
+Q: On April 1, there were 233 views of an advertisement posted on a website. Every 2 days after April 1, the number of views of
+the advertisement had increased by 70% of the number of views 2 days earlier. The function f gives the predicted number
+of views & days after April 1. Which equation defines f
+A) f(a) = 233(0.70)?  B) f(x) = 233(0.70)”*  C) f(x) = 233(1.70)?  D) f(a) = 233(1.70)””
+Correct: C
+
+---
+[Question] ID: 1615 | Topic: advanced_math / nonlinear_functions
+Q: f(x) =2° +92 +17
+For the given function f, the graph of y = f(z) in the xy-plane passes through the point (0, b), where b is a constant. What
+is the value of b?
+A) 17  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1616 | Topic: advanced_math / nonlinear_functions
+Q: f(z) = 4,000(0.75)”
+
+An entomologist recommended a program to reduce a certain invasive beetle population in an area. The given function
+estimates this beetle species’ population x years after 2012, where x < 7. Which of the following is the best interpretation
+of 4,000 in this context?
+A) The estimated initial beetle population for this species and area in 2012  B) The estimated beetle population for this species and area 7 years after 2012  C) The estimated percent decrease in the beetle population for this species and are  D) The estimated percent decrease in the beetle population for this species and are
+Correct: A
+
+---
+[Question] ID: 1617 | Topic: advanced_math / nonlinear_functions
+Q: h(x) = 20x —4)° - 32
+The quadratic function h is defined as shown. In the xy-plane, the graph of
+y =/(X) intersects the x-axis at the points (0,0)and (t,0), where tis a
+constant. What is the value of t ?
+A.1
+B.2
+C.4
+D.8
+Correct: D
+
+---
+[Question] ID: 1618 | Topic: advanced_math / nonlinear_functions
+Q: f(z) = 9,000(0.66)”
+The given function f models the number of advertisements a company sent to its clients each year, where z
+represents the number of years since 1997, and 0 < x < 5. If y= f(a) is graphed in the xy-plane, which of the
+following is the best interpretation of the y-intercept of the g
+A) The minimum estimated number of advertisements the company sent to its clients d  B) The minimum estimated number of advertisements the company sent to its clients d  C) The estimated number of advertisements the company sent to its clients in 1997 w  D) The estimated number of advertisements the company sent to its clients in 1997 w
+Correct: D
+
+---
+[Question] ID: 1619 | Topic: advanced_math / nonlinear_functions
+Q: Function f is defined by f(z) = —a* + b, where aand bare constants. In the xy-plane, the graph of
+y = f(x) — 12 has ay-intercept at (0, —B), The product of a and bis 320. What is the value of a?
+A) 20  B) 0  C) 1  D) -1
+Correct: A

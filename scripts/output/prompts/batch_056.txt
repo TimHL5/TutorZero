@@ -1,0 +1,196 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 2564 | Topic: craft_structure / text_structure_purpose
+Passage: Archeological excavation of Market Street Chinatown, a nineteenth-century Chinese American community in San
+Jose, California, provided the first evidence that Asian food products were imported to the United States in the
+1800s: bones from a freshwater fish species native to Southeast Asia. Jinshanzh...
+Q: Which choice best describes the function of the underlined sentence in the text as a whole?
+A) It explains why efforts to determine the country of origin of the items mentione  B) It provides information that helps support a claim about a discovery’s significa  C) It traces the steps that were taken to locate and recover the objects that are d  D) It outlines a hypothesis that additional evidence discussed in the following sen
+Correct: B
+
+---
+[Question] ID: 2565 | Topic: craft_structure / text_structure_purpose
+Passage: Using NASA's powerful James Webb Space Telescope (JWST), Mercedes Lopez-Morales and colleagues
+measured the wavelengths of light traveling through the atmosphere of WASP-39b, an exoplanet, or planet
+outside our solar system. Different molecules absorb different wavelengths of light, and the waveleng...
+Q: Which choice best describes the overall structure of the text?
+A) It discusses a method used by some researchers, then states why an alternative m  B) It describes how researchers made a scientific discovery, then explains the impo  C) It outlines the steps taken in a scientific study, then presents a hypothesis ba  D) It examines how a group of scientists reached a conclusion, then shows how other
+Correct: B
+
+---
+[Question] ID: 2566 | Topic: craft_structure / text_structure_purpose
+Passage: Yawn contagion occurs when one individual yawns in response to another's yawn. Studies of this behavior in
+primates have focused on populations in captivity, but biologist Elisabetta Palagi and her colleagues have shown
+that it can occur in wild primate populations as well. In their study, which foc...
+Q: Which choice best describes the function of the first sentence in the text as a whole?
+A) It defines a phenomenon that is discussed in the text.  B) It introduces a problem that is examined in the text.  C) It makes a claim that is challenged in the text.  D) It presents a hypothesis that is evaluated in the text.
+Correct: A
+
+---
+[Question] ID: 2567 | Topic: craft_structure / text_structure_purpose
+Passage: The following text is from Joseph Conrad's 1907 novel The Secret Agent: A Simple Tale. Mr. Verloc is navigating
+the London streets on his way to a meeting.
+
+Before reaching Knightsbridge, Mr. Verloc took a turn to the left out of the busy main thoroughfare, uproarious
+with the traffic of swaying omn...
+Q: Which choice best describes the function of the underlined phrase in the text as a whole?
+A) It qualifies an earlier description of Mr. Verloc.  B) It emphasizes an internal struggle Mr. Verloc experiences.  C) It contrasts Mr. Verloc with his surroundings.  D) It reveals a private opinion Mr. Verloc holds.
+Correct: A
+
+---
+[Question] ID: 2568 | Topic: craft_structure / text_structure_purpose
+Passage: In 1973, poet Miguel Algarin started inviting other writers who, like him, were Nuyorican—a term for New Yorkers
+of Puerto Rican heritage—to gather in his apartment to present their work. The gatherings were so well attended
+that Algarin soon had to rent space in a cafe to accommodate them. Thus, th...
+Q: Which choice best describes the overall purpose of the text?
+A) To explain what motivated Algarin to found the Nuyorican Poets Cafe  B) To situate the Nuyorican Poets Cafe within the cultural life of New York as a wh  C) To discuss why the Nuyorican Poets Cafe expanded its scope to include art and mu  D) To provide an overview of the founding and mission of the Nuyorican Poets Cafe
+Correct: D
+
+---
+[Question] ID: 2569 | Topic: craft_structure / text_structure_purpose
+Passage: The following text is adapted from Charles Dickens's 1854 novel Hard Times. Coketown is a fictional town in
+England.
+
+[Coketown] contained several large streets all very like one another, and many small streets still more like one
+another, inhabited by people equally like one another, who all went i...
+Q: Which choice best states the main purpose of the text?
+A) To emphasize the uniformity of both the town and the people who live there  B) To explain the limited work opportunities available to the town’s residents  C) To reveal how the predictability of the town makes it easy for people lose track  D) To argue that the simplicity of life in the town makes it a pleasant place to li
+Correct: A
+
+---
+[Question] ID: 2570 | Topic: craft_structure / text_structure_purpose
+Passage: The following text is adapted from Paul Laurence Dunbar's 1902 novel The Sport of the Gods. Joe and some of
+his family members have recently moved to New York City.
+[Joe] was wild with enthusiasm and with a desire to be a part of all that the metropolis meant. In the evening
+he saw the young fellows...
+Q: Which choice best states the main purpose of the text?
+A) It illustrates a character's reaction to a new environment.  B) It explains why a character has traveled to a city.  C) It compares a character's thoughts about an event at two different times of day.  D) It presents a character feeling regret over leaving home.
+Correct: A
+
+---
+[Question] ID: 2571 | Topic: craft_structure / text_structure_purpose
+Passage: The following text is from Charlotte Perkins Gilman's 1910 poem "The Earth's Entail.”
+No matter how we cultivate the land,
+Taming the forest and the prairie free;
+No matter how we irrigate the sand,
+Making the desert blossom at command,
+We must always leave the borders of the sea;
+The immeasureable ...
+Q: Which choice best describes the overall structure of the text?
+A) The speaker argues against interfering with nature and then gives evidence suppo  B) The speaker presents an account of efforts to dominate nature and then cautions   C) The speaker provides examples of an admirable way of approaching nature and then  D) The speaker describes attempts to control nature and then offers a reminder that
+Correct: D
+
+---
+[Question] ID: 2572 | Topic: craft_structure / text_structure_purpose
+Passage: The following text is adapted from Etsu Inagaki Sugimoto's 1925 memoir A Daughter of the Samurai. As a young
+woman, Sugimoto moved from feudal Japan to the United States.
+The standards of my own and my adopted country differed so widely in some ways, and my love for both
+lands was so sincere, that s...
+Q: Which choice best describes the main purpose of the text?
+A) To convey the narrator's experience of observing and making sense of differences  B) To establish the narrator's hope of forming connections with new companions by s  C) To reveal the narrator's recognition that she is hesitant to ask questions about  D) To emphasize the narrator's wonder at discovering that the physical distance bet
+Correct: A
+
+---
+[Question] ID: 2573 | Topic: craft_structure / text_structure_purpose
+Passage: In the Here and Now Storybook (1921), educator Lucy Sprague Mitchell advanced the then controversial idea that
+books for very young children should imitate how they use language, since toddlers, who cannot yet grasp
+narrative or abstract ideas, seek reassurance in verbal repetition and naming. The m...
+Q: Which choice best describes the overall structure of the text?
+A) The text outlines a debate between two authors of children’s literature and then  B) The text summarizes an argument about how children’s literature should be evalua  C) The text lists the literary characteristics that are common to many classics of   D) The text presents a philosophy about what material is most suitable for children
+Correct: D
+
+---
+[Question] ID: 2574 | Topic: craft_structure / text_structure_purpose
+Passage: Works of moral philosophy, such as Plato's Republic or Aristotle's Nicomachean Ethics, are partly concerned with
+how to live a morally good life. But philosopher Jonathan Barnes argues that works that present a method of living
+such a life without also supplying a motive are inherently useful only t...
+Q: Which choice best describes the overall structure of the text?
+A) It provides a characterization about a field of thought by noting two works in i  B) It mentions two renowned works and then claims that despite their popularity it   C) It summarizes the history of a field of thought by discussing two works and then  D) It describes two influential works and then explains why one is more widely read
+Correct: A
+
+---
+[Question] ID: 2575 | Topic: craft_structure / text_structure_purpose
+Passage: Industrial activity is often assumed to be a threat to wildlife, but that isn’t always so. Consider the silver-studded
+blue butterfly (Plebejus argus): as forest growth has reduced grasslands in northern Germany, many of these
+butterflies have left meadow habitats and are now thriving in active lime...
+Q: Which choice best describes the function of the underlined portion in the text as a whole?
+A) It challenges a common assumption about the species under investigation in the r  B) It introduces discussion of a specific example that supports the general claim m  C) It suggests that a certain species should be included in additional studies like  D) It provides a definition for an unfamiliar term that is central to the main argu
+Correct: B
+
+---
+[Question] ID: 2576 | Topic: craft_structure / text_structure_purpose
+Passage: The following text is from Herman Melville's 1854 novel The Lightning-rod Man.
+The stranger still stood in the exact middle of the cottage, where he had first planted himself. His singularity
+impelled a closer scrutiny. A lean, gloomy figure. Hair dark and lank, mattedly streaked over his brow. His ...
+Q: Which choice best states the function of the underlined sentence in the overall structure of the text?
+A) It elaborates on the previous sentence's description of the character.  B) It introduces the setting that is described in the sentences that follow.  C) It establishes a contrast with the description in the previous sentence.  D) It sets up the character description presented in the sentences that follow.
+Correct: D
+
+---
+[Question] ID: 2577 | Topic: craft_structure / text_structure_purpose
+Passage: Horizontal gene transfer occurs when an organism of one species acquires genetic material from an organism of
+another species through nonreproductive means. The genetic material can then be transferred “vertically” in the
+second species—that is, through reproductive inheritance. Scientist Atma Ilvan...
+Q: Which choice best describes the function of the underlined portion in the text as a whole?
+A) It explains why parasites are less susceptible to horizontal gene transfer than   B) It clarifies why some genes are more likely to be transferred horizontally than   C) It contrasts how horizontal gene transfer occurs among vertebrates with how it o  D) It describes a means by which horizontal gene transfer might occur among vertebr
+Correct: D
+
+---
+[Question] ID: 2578 | Topic: craft_structure / text_structure_purpose
+Passage: Part of the Atacama Desert in Peru has surprisingly rich plant life despite receiving almost no rainfall. Moisture
+from winter fog sustains plants once they're growing, but the soil’s tough crust makes it hard for seeds to
+germinate in the first place. Local birds that dig nests in the ground seem t...
+Q: Which choice best describes the function of the underlined portion in the text as a whole?
+A) It elaborates on the idea that the top layer of Atacama Desert soil forms a toug  B) It describes the process by which seeds are deposited into Atacama Desert soil.  C) It identifies the reason particular bird species dig nests in Atacama Desert soi  D) It explains how certain birds promote seed germination in Atacama Desert soil.
+Correct: D
+
+---
+[Question] ID: 2579 | Topic: craft_structure / text_structure_purpose
+Passage: Michelene Pesantubbee, a historian and citizen of the Choctaw Nation, has identified a dilemma inherent to
+research on the status of women in her tribe during the 1600s and 1700s: the primary sources from that era,
+travel narratives and other accounts by male European colonizers, underestimate the d...
+Q: Which choice best describes the overall structure of the text?
+A) It details the shortcomings of certain historical sources, then argues that rese  B) It describes a problem that arises in research on a particular topic, then sketc  C) It lists the advantages of a particular research method, then acknowledges a his  D) It characterizes a particular topic as especially challenging to research, then 
+Correct: B
+
+---
+[Question] ID: 2580 | Topic: craft_structure / text_structure_purpose
+Passage: Many archaeologists assume that large-scale engineering projects in ancient societies required an elite class to
+plan and direct the necessary labor. However, recent discoveries, such as the excavation of an ancient canal near
+the Gulf Coast of Alabama, have complicated this picture. Using radiocarb...
+Q: Which choice best describes the overall structure of the text?
+A) It describes a common view among archaeologists, then discusses a recent finding  B) It outlines a method used in some archaeological fieldwork, then explains why an  C) It presents contradictory conclusions drawn by archaeologists, then evaluates a   D) It identifies a gap in scientific research, then presents a strategy used by som
+Correct: A
+
+---
+[Question] ID: 2581 | Topic: craft_structure / text_structure_purpose
+Passage: Today composer Scott Joplin is mainly celebrated for his catchy ragtime pieces “Maple Leaf Rag” and “The Entertainer.”
+However, by overlooking his less famous works, listeners will miss the full range of Joplin’s creativity. For instance, his waltz
+“Pleasant Moments” and his opera Treemonisha skillf...
+Q: Which choice best states the main purpose of the text?
+A) To describe the similarities and differences between ragtime music and opera  B) To argue that more attention should be given to Joplin’s lesser-known works  C) To encourage music lovers to listen to music by many different composers  D) To explain how Joplin learned to compose and perform ragtime music
+Correct: B
+
+---
+[Question] ID: 2582 | Topic: craft_structure / text_structure_purpose
+Passage: The following text is adapted from Louise Erdrich’s 2020 novel The Night Watchman. Louis Pipestone is collecting signatures
+for a petition from fellow members of the Turtle Mountain Band of Chippewa on the tribe’s reservation in North Dakota.
+Louis Pipestone tended the petition like a garden. He kep...
+Q: Which choice best states the main purpose of the text?
+A) To suggest that some tribal members refuse to sign the petition because they dis  B) To show that attitudes toward the petition within the tribal community change ov  C) To demonstrate that most tribal members are enthusiastic about signing the petit  D) To portray Louis Pipestone’s strong commitment to collecting signatures for the 
+Correct: D
+
+---
+[Question] ID: 2583 | Topic: craft_structure / text_structure_purpose
+Passage: Very little is known about the role nocturnal insects, such as moths, play in flower pollination because it is difficult to monitor
+insects at night. To address this problem, _a team of scientists used time-lapse cameras to record pollinator visits to red
+clover all day and night. The recordings sho...
+Q: Which choice best states the function of the underlined sentence?
+A) To describe an approach a team of scientists used to study pollinators  B) To question a claim scientists make about pollinators  C) To explain why moths prefer red clover to other flowers  D) To announce an unexpected research finding about red clover
+Correct: A

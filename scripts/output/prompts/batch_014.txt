@@ -1,0 +1,187 @@
+Generate explanations for these SAT questions. Return valid JSON array.
+For each question, provide: {"id": N, "explainWhy": "...", "explainConcept": "...", "explainNext": "..."}
+
+- explainWhy (2-3 sentences): Why the correct answer is right
+- explainConcept (2-3 sentences): The underlying concept tested
+- explainNext (1-2 sentences): What to practice next
+
+---
+[Question] ID: 1660 | Topic: advanced_math / nonlinear_functions
+Q: A park ranger hung squirrel houses each in the shape of a right rectangular prism for fox squirrels. Each house has a height
+of 11 inches. The length of each house's base is 2 inches, which is 1 inch more than the width of the house's base. Which
+function V gives the volume of each house, in cubic i
+A) V(a) = 112(a — 1)  B) V(x) = 1la(¢ +1) Cc. V(x) = «(a+ 11)(x — 1)  C) V(x) = e(x + 11)(a + 1)
+Correct: A
+
+---
+[Question] ID: 1661 | Topic: advanced_math / nonlinear_functions
+Q: An auditorium has seats for 1,800 people. Tickets to attend a show at the auditorium currently cost $4.00. For each $1.00
+increase to the ticket price, 100 fewer tickets will be sold. This situation can be modeled by the equation
+y= —100x? + 1,400z + 7,200, where z represents the increase in ticket 
+Correct: B
+
+---
+[Question] ID: 1662 | Topic: advanced_math / nonlinear_functions
+Q: The function gis defined by g(x) = ial — 14, where a < 0. What is the product of g(15a) and g(7a)?
+A) 609  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1001 | Topic: algebra / linear_equations_one_var
+Q: What value of p satisfies the equation 5p + 180 = 250?
+A) 14  B) 65  C) 86  D) 250
+Correct: A
+
+---
+[Question] ID: 1002 | Topic: algebra / linear_equations_one_var
+Q: The perimeter of an isosceles triangle is 83 inches. Each of the two congruent sides of the triangle has a length of
+24 inches. What is the length, in inches, of the third side?
+A) 35  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1003 | Topic: algebra / linear_equations_one_var
+Q: Ax
+— =20
+5
+In the equation above, what is
+the value of x ?
+A) 25  B) 24 CG. 16  C) 15
+Correct: A
+
+---
+[Question] ID: 1004 | Topic: algebra / linear_equations_one_var
+Q: Which of the following is
+equivalent to dy +6 =12??
+A.2x+4=6
+
+B.x+3=3
+
+C.3x+2=4
+D.2x+3=6
+Correct: D
+
+---
+[Question] ID: 1005 | Topic: algebra / linear_equations_one_var
+Q: One pound of grapes costs $2. At this rate, how many
+dollars will c pounds of grapes cost?
+A) 9¢  B) 2+c¢ 2 G: £ Cc Dd. >
+Correct: A
+
+---
+[Question] ID: 1006 | Topic: algebra / linear_equations_one_var
+Q: A principal used a total of 25 flags that were either blue or yellow for field day. The principal used 20 blue flags.
+How many yellow flags were used?
+
+A.5
+
+B. 20
+
+C. 25
+
+D. 30
+Correct: A
+
+---
+[Question] ID: 1007 | Topic: algebra / linear_equations_one_var
+Q: 8x = 88
+What value of z is the solution to the given equation?
+A.11
+B. 80
+C. 96
+D. 704
+Correct: A
+
+---
+[Question] ID: 1008 | Topic: algebra / linear_equations_one_var
+Q: 10=2x+4
+How many solutions exist to the
+equation shown above?
+A) None  B) Exactly 1  C) Exactly 3  D) Infinitely many
+Correct: B
+
+---
+[Question] ID: 1009 | Topic: algebra / linear_equations_one_var
+Q: Cathy has n CDs. Gerry has 3 more than twice the number of CDs that
+Cathy has. In terms of n, how many CDs does Gerry have?
+
+A.3n-2
+
+B.3n+2
+
+C.2n-3
+
+D.2n+3
+Correct: D
+
+---
+[Question] ID: 1010 | Topic: algebra / linear_equations_one_var
+Q: A gym charges its members a onetime $36 enrollment fee and a membership fee of $19 per month. If there are no
+charges other than the enrollment fee and the membership fee, after how many months will a member have been
+charged a total of $188 at the gym?
+
+A.4
+
+B.5
+
+c.8
+
+D. 10
+Correct: C
+
+---
+[Question] ID: 1011 | Topic: algebra / linear_equations_one_var
+Q: For what value of w does
+w-10=2(w+5) ?
+A.5
+
+B. 0
+
+C.-15
+
+D. —20
+Correct: D
+
+---
+[Question] ID: 1012 | Topic: algebra / linear_equations_one_var
+Q: If =o = 10 what is the
+value of Pn —-1?
+A) 24  B) 49  C) 50  D) 99
+Correct: B
+
+---
+[Question] ID: 1013 | Topic: algebra / linear_equations_one_var
+Q: 44,
+if 2* 6 ~~", whatis
+the value of x ?
+A) —4 a  B) 3 c.3  C) 6
+Correct: C
+
+---
+[Question] ID: 1014 | Topic: algebra / linear_equations_one_var
+Q: If 2 + 2 = 60, what is the value of 16 + 8x?
+A) 480  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1015 | Topic: algebra / linear_equations_one_var
+Q: If 3x +2 =8, what is the
+value of Gy +6 ?
+A) 24  B) 0  C) 1  D) -1
+Correct: A
+
+---
+[Question] ID: 1016 | Topic: algebra / linear_equations_one_var
+Q: A librarian has 43 books to distribute to a group of children. If he gives each
+child 2 books, he will have 7 books left over. How many children are in the
+group?
+A) 15  B) 18  C) 25  D) 29
+Correct: B
+
+---
+[Question] ID: 1017 | Topic: algebra / linear_equations_one_var
+Q: 6x+k=6x+5
+In the given equation, k is a constant. If the equation has infinitely
+many solutions, what is the value of k ?
+A) 5  B) 0  C) 1  D) -1
+Correct: A

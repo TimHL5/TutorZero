@@ -35,8 +35,20 @@ export interface Question {
   tags: string[];
 }
 
-// Combine all question banks into master array
-export const questions: Question[] = [
+// Filter out questions with blank options or garbled text from OCR extraction
+function isUsableQuestion(q: Question): boolean {
+  // Must have at least 2 non-empty options
+  const nonEmptyOptions = q.options.filter(opt => opt.trim() !== "");
+  if (nonEmptyOptions.length < 2) return false;
+
+  // Must have non-empty question text
+  if (!q.questionText || q.questionText.trim().length < 10) return false;
+
+  return true;
+}
+
+// Combine all question banks into master array (filtered for quality)
+const allQuestions: Question[] = [
   ...bankMathAlgebraQuestions,
   ...bankMathAdvancedQuestions,
   ...bankMathProblemSolvingQuestions,
@@ -54,6 +66,8 @@ export const questions: Question[] = [
   ...practiceTest10Questions,
   ...practiceTest11Questions,
 ];
+
+export const questions: Question[] = allQuestions.filter(isUsableQuestion);
 
 // Helper function to get questions by various filters
 export function getQuestionsBySection(section: "reading_writing" | "math"): Question[] {

@@ -1,6 +1,6 @@
 import type { Question } from "./questions";
 
-export const advancedMathQuestions: Question[] = [
+export const bankMathAdvancedQuestions: Question[] = [
   {
     id: 219,
     section: "math",

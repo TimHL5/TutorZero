@@ -1,6 +1,6 @@
 import type { Question } from "./questions";
 
-export const conventionsQuestions: Question[] = [
+export const bankRwConventionsQuestions: Question[] = [
   {
     id: 1379,
     section: "reading_writing",

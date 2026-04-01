@@ -1,6 +1,6 @@
 import type { Question } from "./questions";
 
-export const craftStructureQuestions: Question[] = [
+export const bankRwCraftQuestions: Question[] = [
   {
     id: 995,
     section: "reading_writing",

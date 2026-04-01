@@ -193,7 +193,7 @@ export default function Pricing() {
               </p>
             </div>
 
-            <div className="border-t border-white/20 pt-6 space-y-3">
+            <div className="border-t border-white/30 pt-6 space-y-3">
               <p className="text-small text-white/90 font-medium mb-3">Everything in Free, plus:</p>
               {PRO_FEATURES.map((feature, i) => (
                 <div key={i} className="flex items-start gap-3">

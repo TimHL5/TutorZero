@@ -1,0 +1,65 @@
+{
+  "input_total": 2842,
+  "output_total": 2302,
+  "rejected_total": 540,
+  "rejection_reasons": {
+    "insufficient_options": 399,
+    "question_text_too_short": 80,
+    "correct_option_empty": 60,
+    "ocr_garbage_option": 1
+  },
+  "rejected_by_source": {
+    "question_bank": 318,
+    "practice_test_10": 42,
+    "practice_test_7": 33,
+    "practice_test_11": 32,
+    "practice_test_4": 25,
+    "practice_test_8": 25,
+    "practice_test_6": 24,
+    "practice_test_9": 24,
+    "practice_test_5": 17
+  },
+  "output_by_section": {
+    "reading_writing": 1340,
+    "math": 962
+  },
+  "output_by_topic": {
+    "information_ideas": 384,
+    "craft_structure": 351,
+    "algebra": 327,
+    "conventions": 324,
+    "expression": 281,
+    "problem_solving": 271,
+    "advanced_math": 202,
+    "geometry": 162
+  },
+  "output_by_difficulty": {
+    "medium": 1349,
+    "hard": 416,
+    "easy": 351,
+    "advanced": 186
+  },
+  "output_by_source": {
+    "question_bank": 1564,
+    "practice_test_5": 103,
+    "practice_test_6": 96,
+    "practice_test_9": 96,
+    "practice_test_4": 95,
+    "practice_test_8": 95,
+    "practice_test_11": 88,
+    "practice_test_7": 87,
+    "practice_test_10": 78
+  },
+  "bank_questions": 1564,
+  "practice_test_questions": {
+    "test_4": 95,
+    "test_5": 103,
+    "test_6": 96,
+    "test_7": 87,
+    "test_8": 95,
+    "test_9": 96,
+    "test_10": 78,
+    "test_11": 88
+  },
+  "files_written": 16
+}

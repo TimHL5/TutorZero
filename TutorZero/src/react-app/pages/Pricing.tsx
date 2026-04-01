@@ -109,7 +109,7 @@ export default function Pricing() {
           <button
             onClick={() => setBillingCycle("monthly")}
             className={cn(
-              "px-4 py-2 rounded-lg text-sm font-medium transition-all",
+              "px-5 py-2.5 rounded-lg text-sm font-medium transition-all min-h-[44px]",
               billingCycle === "monthly"
                 ? "bg-tz-navy text-white"
                 : "bg-tz-gray-100 text-tz-gray-600 hover:bg-tz-gray-200"
@@ -120,7 +120,7 @@ export default function Pricing() {
           <button
             onClick={() => setBillingCycle("yearly")}
             className={cn(
-              "px-4 py-2 rounded-lg text-sm font-medium transition-all relative",
+              "px-5 py-2.5 rounded-lg text-sm font-medium transition-all relative min-h-[44px]",
               billingCycle === "yearly"
                 ? "bg-tz-navy text-white"
                 : "bg-tz-gray-100 text-tz-gray-600 hover:bg-tz-gray-200"

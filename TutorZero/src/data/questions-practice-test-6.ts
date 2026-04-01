@@ -5,12 +5,15 @@ export const practiceTest6Questions: Question[] = [
     id: 6101,
     section: "math",
     module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
+    topic: "geometry",
+    subtopic: "lines_angles_triangles",
     difficulty: "easy",
-    questionText: `- ---------
-- ---------
-- ---------`,
+    questionText: `V =3£wh 
+30
+REFERENCE 
+The number of degrees of arc in a circle is 360. 
+The number of radians of arc in a circle is 2n. 
+The sum of the measures in degrees of the angles of a triangle is 180.`,
     options: [``, ``, ``, ``],
     correctIndex: 0,
     explainWhy: `Choice A is correct. Subtracting 8  from both sides of the given equation yields p 3 2 + = . Subtracting 3  from both sides of this equation yields p 1 =- .`,
@@ -24,20 +27,26 @@ export const practiceTest6Questions: Question[] = [
     id: 6102,
     section: "math",
     module: 1,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
+    topic: "geometry",
+    subtopic: "right_triangles_trig",
     difficulty: "easy",
-    questionText: `The scatterplot shows the relationship between two variables, x and y. 
-Which of the following graphs shows the most appropriate model for 
-the data?`,
-    options: [``, ``, `D)`, ``],
+    questionText: `c2 = a2 + b2 
+Special Right Triangles 
+C=2nr 
+62h E} 
+£ 
+V= Rwh 
+V= nr2h 
+@ 4 
+V = i,.r3`,
+    options: [``, ``, ``, ``],
     correctIndex: 3,
     explainWhy: `Choice D is correct. An appropriate model should follow the trend of the data points and should have data points both above and below the model. The scatterplot shows that the data points have an increasing trend that is curved. Therefore, an appropriate model should be an increasing curve with data points both above and below the model. Of the given choices, only the model in choice D is an increasing curve with data points both above and below the model.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 120,
-    tags: ["has_figure"],
+    tags: [],
   },
   {
     id: 6103,
@@ -46,7 +55,8 @@ the data?`,
     topic: "algebra",
     subtopic: "linear_equations_one_var",
     difficulty: "easy",
-    questionText: `k −53 = 91`,
+    questionText: `V=½nr2h 
+£`,
     options: [``, ``, ``, ``],
     correctIndex: 3,
     explainWhy: `Choice D is correct. Adding 53  to each side of the given equation yields k 144 2= . Taking the square root of each side of this equation yields k 12 ! = . Therefore, the positive solution to the given equation is 12.`,
@@ -125,26 +135,29 @@ entire interval?`,
     section: "math",
     module: 1,
     topic: "algebra",
-    subtopic: "linear_functions",
+    subtopic: "linear_equations_one_var",
     difficulty: "medium",
-    questionText: `f x
-x
-= 14 + 4
-( )
-The function f represents the total cost, in dollars, of 
-attending an arcade when x games are played. How 
-many games can be played for a total cost of $58? 
-8 
-f x
-x
-b
-=
-+
-( )
-For the linear function f, b is a constant. 
-When x = 0, f x = 30
-( )
-. What is the value of b ?`,
+    questionText: `X 
+y 
+y 
+5,000 
+5,000 
+4,000 
+4,000 
+3,000 
+3,000 
+2,000 
+2,000 
+1,000 
+1,000 
+• 
+X 
+X 
+3 
+4 
+5 
+6 
+7`,
     options: [`11`, `0`, `1`, `-1`],
     correctIndex: 0,
     explainWhy: `The correct answer is 11. It’s given that the function f x x 14 4 = + ^ h represents the total cost, in dollars, of attending an arcade when x  games are played. Substituting 58  for f x ^ h  in the given equation yields x 58 14 4 = + . Subtracting 14 from each side of this equation yields x 44 4 = . Dividing each side of this equation by 4  yields x 11= . Therefore, 11 games can be played for a total cost of $58.`,
@@ -161,8 +174,13 @@ When x = 0, f x = 30
     topic: "algebra",
     subtopic: "linear_equations_one_var",
     difficulty: "medium",
-    questionText: `5 + 6. What is 
-the value of h(2) ?`,
+    questionText: `M 
+30 
+~ 
+~ 20 
+1= 
+OJ) 
+"a>`,
     options: [``, ``, ``, ``],
     correctIndex: 3,
     explainWhy: `Choice D is correct. It’s given that when x 0 = , f x 30 = ^ h . Substituting 0  for x  and 30  for f x ^ h  in the given function yields b 30 0 = + , or b 30= . Therefore, the value of b  is 30.`,
@@ -200,16 +218,22 @@ interpretation of P(0) = 1,800 in this context?`,
     id: 6110,
     section: "math",
     module: 1,
-    topic: "problem_solving",
-    subtopic: "ratios_rates",
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
     difficulty: "medium",
-    questionText: `A manager is responsible for ordering supplies for a 
-shaved ice shop. The shop’s inventory starts with 
-4,500 paper cups, and the manager estimates that 70 
-of these paper cups are used each day. Based on this 
-estimate, in how many days will the supply of paper 
-cups reach 1,700?`,
-    options: [`20`, `40`, `60`, `80`],
+    questionText: `::r:: 
+y 
+I 
+I 
+() 
+~ " 
+~ 
+" \\ ' \\ 
+X 
+12345678910 
+Time (seconds) 
+- --------~`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. It’s given that the shop’s inventory starts with , 4 500  paper cups and that the manager estimates that 70  of these paper cups are used each day. Let x  represent the number of days in which the estimated supply of paper cups will reach , 1 700. The equation , , x 4 500 70 1 700 - = represents this situation. Subtracting , 4 500  from both sides of this equation yields , x 70 2 800 - =- . Dividing both sides of this equation by 70 - yields x 40 = . Therefore, based on t...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -231,7 +255,7 @@ x
 For which of the following tables are all the values of 
 x and their corresponding values of y solutions to the 
 given inequality?`,
-    options: [`x y 2 19 4 30 6 41`, `x y 2 8 4 16 6 24`, `x y 2 13 4 18 6 23`, `x y 2 13 4 21`],
+    options: [`x y 2 19 4 30 6 41`, `x y 2 8 4 16 6 24`, `x y 2 13 4 18 6 23`, `x y`],
     correctIndex: 0,
     explainWhy: `Choice A is correct. In each choice, the values of x  are 2, 4, and 6. Substituting the first value of x, 2, for x  in the given inequality yields y 4 2 8 2 + ^ h , or y 16 2 . Therefore, when x 2 = , the corresponding value of y  must be greater than 16. Of the given choices, only choice A is a table where the value of y  corresponding to x 2 = is greater than 16. To confirm that the other values of x  in this table and their corresponding values of y  are also solutions to the given inequal...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -254,15 +278,8 @@ x
 + 11
 +
 −5
-+ 5
-2
-2
-(
-)
-(
-)(
-) ?`,
-    options: [`x x + 23 −14 4 2`, `x x + 23 + 96 4 2`, `x x + 12 + 121 4 2`, `x x + + 146`],
++ 5`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. The expression x 11 2 2 + ^ h  can be written as x x 11 11 2 2 + + ^ ^h h, which is equivalent to 11 x x x 11 11 2 2 2 + + + ^ ^ h h. Distributing x2 and 11 to  x 11 2+ ^ h  yields x x x 11 11 121 4 2 2 + + + , or x x 22 121 4 2 + + . The expression x x 5 5 - + ^ ^h h  is equivalent to 5 x x x 5 5 - + - ^ ^ h h . Distributing x  and 5 to  x 5 - ^ h  yields x x x 5 5 25 2- + - , or x 25 2- . Therefore, the expression x x x 11 5 5 2 2 + + - + ^ ^ ^ h h h  is equivalent to x...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -345,9 +362,72 @@ linear. For every increase in the value of x by 1, the
 value of y increases by 8. When the value of x is 2, 
 the value of y is 18. Which equation represents this 
 relationship?`,
-    options: [`y x = 2 + 18`, `y x = 2 + 8`, `y x = 8 + 2`, `y x = 3 + 26 17 P N C = 19 − ( ) The given equation relates the positive numbers P, N, and C. Which equation correctly expresses C in terms of P and N ?`],
+    options: [`y x = 2 + 18`, `y x = 2 + 8`, `y x = 8 + 2`, `y x = 3 + 26`],
     correctIndex: 2,
     explainWhy: `Choice C is correct. It’s given that the relationship between x  and y  is linear. An equation representing a linear relationship can be written in the form y mx b = + , where m  is the slope and b  is the y-coordinate of the y-intercept of the graph of the relationship in the xy-plane. It’s given that for every increase in the value of x by 1, the value of y  increases by 8. The slope of a line can be expressed as the change in y  over the change in x. Thus, the slope, m, of the line represe...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: [],
+  },
+  {
+    id: 6117,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "hard",
+    questionText: `P
+N
+C
+=
+19 −
+(
+)
+The given equation relates the positive numbers P, 
+N, and C. Which equation correctly expresses C in 
+terms of P and N ?`,
+    options: [`C P N = 19 +`, `C P N = 19 −`, `C P N = 19 +`, `C P N = 19 −`],
+    correctIndex: 3,
+    explainWhy: `Choice D is correct. It’s given that the values of P, N, and C  are positive. Therefore, dividing each side of the given equation by N  yields C 19 N P= - . Subtracting 19  from each side of this equation yields C 19 N P- =- . Dividing each side of this equation by 1 -  yields C 19 N P - = , or C 19 N P = - .`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: [],
+  },
+  {
+    id: 6118,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "hard",
+    questionText: `w
+w
++ 12
+−40 = 0`,
+    options: [``, ``, ``, ``],
+    correctIndex: 3,
+    explainWhy: `Choice D is correct. Adding 40  to both sides of the given equation yields w w 12 40 2+ = . To complete the square, adding 2 2 12 b l , or 62, to both sides of this equation yields w w 12 6 40 6 2 2 2 + + = + , or w 6 76 2 + = ^ h . Taking the square root of both sides of this equation yields w 6 76 ! + = , or w 6 2 19 ! + = . Subtracting 6  from both sides of this equation yields w 6 2 19 ! =- . Therefore, the solutions to the given equation are 6 2 19 - + and 6 2 19 - - . Of these two solut...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: [],
+  },
+  {
+    id: 6119,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "hard",
+    questionText: ``,
+    options: [`−6 + 2 19`, ``, ``, ``],
+    correctIndex: 3,
+    explainWhy: `Choice D is correct. If a data set contains an odd number of data values, the median is represented by the middle data value in the list when the data values are listed in ascending or descending order. Since the numbers of employees are given as ranges of values rather than specific values, it’s only possible to determine the range in which the median falls, rather than the exact median. Since there are 17  restaurants included in the data set and the numbers of employees are listed in ascen...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
@@ -448,8 +528,9 @@ y
 of 
 A
 tan
-?`,
-    options: [`3 54`, `1`, ``, ``],
+? 
+A)`,
+    options: [``, ``, ``, ``],
     correctIndex: 2,
     explainWhy: `Choice C is correct. In the triangle shown, the measure of angle B  is ° 30  and angle C  is a right angle, which means that it has a measure of ° 90 . Since the sum of the angles in a triangle is equal to ° 180 , the measure of angle A  is equal to ° ° 180 30 90 - + ^ h , or ° 60 . In a right triangle whose acute angles have measures ° 30  and ° 60 , the lengths of the legs can be represented by the expressions x, x 3, and x 2 , where x  is the length of the leg opposite the angle with measu...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -477,9 +558,31 @@ best represents this model, where C is the estimated
 number of comments on the article t hours after the 
 article was first featured on the home page 
 and t ≤4 ?`,
-    options: [`C = 40(1.19)t`, `C = 40(1.9)t`, `C = 40(19)t`, `C = 40(2.9)t 26 x g(x) −27 3 −9 0 21 5 0`],
+    options: [`C = 40(1.19)t`, `C = 40(1.9)t`, `C = 40(19)t`, `C = 40(2.9)t`],
     correctIndex: 3,
     explainWhy: `Choice D is correct. It’s given that an exponential model estimates that the number of comments on an article increased by a fixed percentage at the end of each hour. Therefore, the model can be represented by an exponential equation of the form C Kat = , where C  is the estimated number of comments on the article t  hours after the article was first featured on the home page and K  and a  are constants. It’s also given that when the article was first featured on the home page of the news web...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: [],
+  },
+  {
+    id: 6126,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "advanced",
+    questionText: `x 
+g(x) 
+−27
+3
+−9
+0`,
+    options: [``, ``, ``, ``],
+    correctIndex: 0,
+    explainWhy: `Choice A is correct. It’s given that the table shows values of x  and their corresponding values of g x ^ h, where g x x f x 3 = + ^ ^ h h . It’s also given that f  is a linear function. It follows that an equation that defines f  can be written in the form f x mx b = + ^ h , where m  represents the slope and b  represents the y-coordinate of the y-intercept , b 0 ^ h  of the graph of y f x = ^ h  in the xy-plane. The slope of the graph of y f x = ^ h  can be found using two points, , x y 1 1...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
@@ -514,18 +617,11 @@ What is the length of line segment DE ?`,
     id: 6151,
     section: "math",
     module: 2,
-    topic: "advanced_math",
-    subtopic: "nonlinear_functions",
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
     difficulty: "easy",
-    questionText: `The function f is defined by f x
-x
-= 8
-( )
-. For what 
-value of x does f x = 72
-( )
-?`,
-    options: [`8`, `9`, `64`, `80`],
+    questionText: `V =3£wh`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. Substituting 72  for f x ^ h  in the given function yields x 72 8 = . Dividing each side of this equation by 8  yields x 9= . Therefore, f x 72 = ^ h when the value of x  is 9.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -539,32 +635,39 @@ value of x does f x = 72
     section: "math",
     module: 2,
     topic: "geometry",
-    subtopic: "lines_angles_triangles",
+    subtopic: "right_triangles_trig",
     difficulty: "easy",
-    questionText: `Note: Figure not drawn to scale. 
-In the figure, two lines intersect at a point. Angle 1 
-and angle 2 are vertical angles. The measure of 
-angle 1 is 72°. What is the measure of angle 2?`,
-    options: [`72°`, `108°`, `144°`, `288°`],
+    questionText: `c2 = a2 + b2 
+Special Right Triangles 
+C=2nr 
+62h E} 
+£ 
+V= Rwh 
+V= nr2h 
+The number of degrees of arc in a circle is 360. 
+The number of radians of arc in a circle is 2n. 
+The sum of the measures in degrees of the angles of a triangle is 180. 
+@ 4 
+V = i,.r3`,
+    options: [``, ``, ``, ``],
     correctIndex: 0,
     explainWhy: `Choice A is correct. It’s given that angle 1 and angle 2  are vertical angles, and the measure of angle 1 is ° 72 . Vertical angles have equal measures. Therefore, the measure of angle 2  is ° 72 .`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 120,
-    tags: ["has_figure"],
+    tags: [],
   },
   {
     id: 6153,
     section: "math",
     module: 2,
-    topic: "problem_solving",
-    subtopic: "probability",
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
     difficulty: "easy",
-    questionText: `On a street with 7 houses, 2 houses are blue. If a 
-house from this street is selected at random, what is 
-the probability of selecting a house that is blue?`,
-    options: [`1 7`, `2 7`, `5 7`, `7`],
+    questionText: `V=½nr2h 
+£`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. If a house from the street is selected at random, the probability of selecting a house that is blue is equal to the number of houses on the street that are blue divided by the total number of houses on the street. Since there are 2  blue houses on a street with 7  total houses, the probability of selecting a house that is blue from this street is 7 2.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -577,43 +680,14 @@ the probability of selecting a house that is blue?`,
     id: 6154,
     section: "math",
     module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
+    topic: "advanced_math",
+    subtopic: "nonlinear_functions",
     difficulty: "easy",
     questionText: `The graph of function f is shown, where y
 f x
 = ( ). 
-y 
-10 
-8 
-6 
-~ 
-4 
-., 
-,,,. 
-2 
-I.; 
-~ 
-I 
-~ 
-X 
-10 -8 -6 -4 
-I.A'" 
-2- 4- -6-~8- 10 
-... , 2 
-.,. 
-I 
-... 
-I 4 
-... 
-I 
-'6 
-I 
-lg 
-I 
-'16 
-Which of the following describes function f ?`,
-    options: [`Increasing linear`, `Decreasing linear`, `Increasing exponential`, `Decreasing exponential`],
+y`,
+    options: [``, ``, ``, ``],
     correctIndex: 0,
     explainWhy: `Choice A is correct. The graph of function f  shows that as x  increases, f x ^ h  also increases, which means f x ^ h  is an increasing function. The graph of f  is a line, which indicates a constant rate of change. A function that has a constant rate of change is a linear function. Therefore, function f  can be described as increasing linear.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -629,12 +703,9 @@ Which of the following describes function f ?`,
     topic: "algebra",
     subtopic: "linear_equations_one_var",
     difficulty: "easy",
-    questionText: `−6 + 8
-3
-2
-(
-)`,
-    options: [`x x x`, ``, ``, ``],
+    questionText: `−6
++ 8`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. The y-intercept of a graph is the point where the graph intersects the y-axis. The graph of function f  shown intersects the y-axis at the point , 0 4 - ^ h. Therefore, the y-intercept of the graph is , 0 4 - ^ h.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -644,16 +715,30 @@ Which of the following describes function f ?`,
     tags: [],
   },
   {
+    id: 6156,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "medium",
+    questionText: `~`,
+    options: [`6`, `0`, `1`, `-1`],
+    correctIndex: 0,
+    explainWhy: `The correct answer is 6. The first equation in the given system is x 8 = . Substituting 8  for x  in the second equation in the given system yields y 8 3 26 + = . Subtracting 8  from both sides of this equation yields y 3 18 = . Dividing both sides of this equation by 3  yields y 6 = . Therefore, the value of y  is 6.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: ["student_produced_response"],
+  },
+  {
     id: 6157,
     section: "math",
     module: 2,
-    topic: "problem_solving",
-    subtopic: "percentages",
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
     difficulty: "medium",
-    questionText: `The amount of Hanna’s bill for a food order was $50. 
-Hanna gave a tip of 20% of the amount of the bill. 
-What is the amount, in dollars, of the tip Hanna 
-gave?`,
+    questionText: ``,
     options: [`10`, `0`, `1`, `-1`],
     correctIndex: 0,
     explainWhy: `The correct answer is 10. It’s given that the amount of Hanna’s food order was $50  and that Hanna gave a tip of % 20 of the amount of the bill. % 20 of 50  can be calculated as 50 100 20 b \`l j, which yields 100 1000, or 10. Therefore, the amount, in dollars, of the tip Hanna gave is 10.`,
@@ -672,14 +757,8 @@ gave?`,
     difficulty: "medium",
     questionText: `Which expression is equivalent to x
 x
-x
-5
-−6
-+ 8
-5
-4
-3 ?`,
-    options: [`x x 5 −6 4( )`, `x x x`, ``, ``],
+x`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. Since x3  is a common factor of each term in the given expression, the expression can be rewritten as  x x x 5 6 8 3 2- + ^ h.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -743,9 +822,30 @@ t
 estimated length, in inches, of a vine plant t months 
 after Tavon purchased it. Which of the following is 
 the best interpretation of 9 in this context?`,
-    options: [`Tavon will keep the vine plant for 9 months.`, `The vine plant is expected to grow 9 inches each month.`, `The vine plant is expected to grow to a maximum length of 9 inches.`, `The estimated length of the vine plant was 9 inches when Tavon purchased it. 12 x x x ( + 2)( −5)( + 9) = 0 What is a positive solution to the given equation?`],
+    options: [`Tavon will keep the vine plant for 9 months.`, `The vine plant is expected to grow 9 inches each month.`, `The vine plant is expected to grow to a maximum length of 9 inches.`, `The estimated length of the vine plant was 9 inches when Tavon purchased it.`],
     correctIndex: 3,
     explainWhy: `Choice D is correct. It’s given that the function f  defined by f t t 14 9 = + ^ h gives the estimated length, in inches, of a vine plant t  months after Tavon purchased it. For a function defined by an equation of the form f t mt b = + ^ h , where m  and b are constants, b  represents the value of f 0 ^ h, or the value of f t^ h  when the value of t  is 0. Therefore, for the function defined by f t t 14 9 = + ^ h , 9  represents the value of f t^ h  when the value of t  is 0. This means that...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: [],
+  },
+  {
+    id: 6162,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "medium",
+    questionText: `x
+x
+x
+( + 2)( −5)( + 9) = 0
+What is a positive solution to the given equation?`,
+    options: [`3`, `4`, `5`, `18`],
+    correctIndex: 2,
+    explainWhy: `Choice C is correct. Applying the zero product property to the given equation yields three equations: x 2 0 + = , x 5 0 - = , and x 9 0 + = . Subtracting 2  from both sides of the equation x 2 0 + = yields x 2 =- . Adding 5  to both sides of the equation x 5 0 - = yields x 5 = . Subtracting 9  from both sides of the equation x 9 0 + = yields x 9 =- . Therefore, the solutions to the given equation are 2 - , 5, and 9 - . It follows that a positive solution to the given equation is 5.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
@@ -831,6 +931,23 @@ centimeters, of the cylinder?`,
     tags: [],
   },
   {
+    id: 6167,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "hard",
+    questionText: `x = −841`,
+    options: [``, ``, ``, ``],
+    correctIndex: 3,
+    explainWhy: `Choice D is correct. Since the square of a real number is never negative, the given equation isn’t true for any real value of x. Therefore, the given equation has zero distinct real solutions.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: [],
+  },
+  {
     id: 6168,
     section: "math",
     module: 2,
@@ -843,7 +960,7 @@ x
 8 . Line j is 
 perpendicular to line k in the xy-plane. What is 
 the slope of line j ?`,
-    options: [`−8`, `−1 7`, `1 8 D)`, ``],
+    options: [`−8`, `−1`, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. It’s given that line k  is defined by y x 7 8 1 = + . For an equation in slope-intercept form y mx b = + , m  represents the slope of the line defined by this equation in the xy-plane and b  represents the y-coordinate of the y-intercept of this line. Therefore, the slope of line k  is 7. It’s also given that line j  is perpendicular to line k  in the xy-plane. Therefore, the slope of line j  is the opposite reciprocal of the slope of line k. The opposite reciprocal of 7 ...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -861,11 +978,7 @@ the slope of line j ?`,
     difficulty: "hard",
     questionText: `Number of cars 
 Maximum number of 
-passengers and crew 
-3 
-174 
-5 
-284`,
+passengers and crew`,
     options: [``, ``, ``, ``],
     correctIndex: 0,
     explainWhy: `Choice A is correct. It’s given that there is a linear relationship between the number of cars, c, on a commuter train and the maximum number of passengers and crew, p, that the train can carry. It follows that this relationship can be represented by an equation of the form p mc b = + , where m  is the rate of change of p  in this relationship and b  is a constant. The rate of change of p  in this relationship can be calculated by dividing the difference in any two values of p  by the differe...`,
@@ -874,6 +987,61 @@ passengers and crew
     isCalculatorAllowed: true,
     estTimeSec: 150,
     tags: [],
+  },
+  {
+    id: 6170,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "hard",
+    questionText: `If 4
+=`,
+    options: [`.2916; .2917; 7/24`, `0`, `1`, `-1`],
+    correctIndex: 0,
+    explainWhy: `The correct answer is 24 7 . An expression of the form am n , where m  and n  are integers greater than 1 and a 0 $ , is equivalent to a n m. Therefore, the expression on the right-hand side of the given equation, 47 3 , is equivalent to 43 7. Thus, 4 4 c 8 3 7 = . It follows that c 8 3 7 = . Dividing both sides of this equation by 8  yields c 24 7 = . Note that 7/24, .2916, .2917, 0.219, and 0.292 are examples of ways to enter a correct answer.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: ["student_produced_response"],
+  },
+  {
+    id: 6171,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "systems_of_equations",
+    difficulty: "hard",
+    questionText: `x
+y
+−2 −4
++ 7 = 117
+(
+)
+(
+)
+x
+y
+−2 + 4
++ 7 = 442
+(
+)
+(
+)
+The solution to the given system of equations is 
+x y
+( , ). What is the value of 
+x
+6( −2) ?`,
+    options: [`1677`, `0`, `1`, `-1`],
+    correctIndex: 0,
+    explainWhy: `The correct answer is , 1 677. Adding the first equation to the second equation in the given system yields x x y y 2 2 4 7 4 7 117 442 - + - + - + + + = + ^ ^ ^ ^ ^ h h h h h , or x 2 2 559 - = ^ h . Multiplying both sides of this equation by 3  yields , x 6 2 1 677 - = ^ h . Therefore, the value of x 6 2 - ^ h  is , 1 677.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: ["student_produced_response"],
   },
   {
     id: 6172,
@@ -978,8 +1146,8 @@ is a right angle. What is the length of AB ?`,
     id: 6176,
     section: "math",
     module: 2,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
+    topic: "problem_solving",
+    subtopic: "one_var_data",
     difficulty: "advanced",
     questionText: `The scatterplot shows the relationship between 
 two variables, x and y, for data set E. A line of best fit 
@@ -987,7 +1155,7 @@ is shown. Data set F is created by multiplying the
 y-coordinate of each data point from data set E by 
 3.9. Which of the following could be an equation of a 
 line of best fit for data set F?`,
-    options: [`y x = 46.8 + 5.9`, `y x = 46.8 + 1.5`, `y x = 12 + 5.9`, `y x = 12 + 1.5 27 x y y 48 −64 = 48 + 24 ry x = 1 8 −12 In the given system of equations, r is a constant. If the system has no solution, what is the value of r ?`],
+    options: [`y x = 46.8 + 5.9`, `y x = 46.8 + 1.5`, `y x = 12 + 5.9`, `y x = 12 + 1.5`],
     correctIndex: 0,
     explainWhy: `Choice A is correct. An equation of a line of best fit for data set F can be written in the form y a bx = + , where a  is the y-coordinate of the y-intercept of the line of best fit and b  is the slope. The line of best fit shown for data set E has a y-intercept at approximately , 0 12 ^ h. It’s given that data set F is created by multiplying the y-coordinate of each data point from data set E by . 3 9. It follows that a line of best fit for data set F has a y-intercept at approximately , . 0...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -997,16 +1165,77 @@ line of best fit for data set F?`,
     tags: ["has_figure"],
   },
   {
+    id: 6177,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "systems_of_equations",
+    difficulty: "advanced",
+    questionText: `x
+y
+y
+48 −64
+= 48 + 24
+ry
+x
+= 1
+8 −12
+In the given system of equations, r is a constant. If 
+the system has no solution, what is the value of r ?`,
+    options: [`-28`, `0`, `1`, `-1`],
+    correctIndex: 0,
+    explainWhy: `The correct answer is 28 - . A system of two linear equations in two variables, x and y, has no solution if the lines represented by the equations in the xy-plane are distinct and parallel. The graphs of two lines in the xy-plane represented by equations in the form Ax By C + = , where A, B, and C  are constants, are parallel if the coefficients for x  and y  in one equation are proportional to the corresponding coefficients for x  and y  in the other equation. The first equation in the given...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: ["student_produced_response"],
+  },
+  {
     id: 6001,
     section: "reading_writing",
     module: 1,
-    topic: "information_ideas",
-    subtopic: "central_ideas",
+    topic: "craft_structure",
+    subtopic: "words_context",
     difficulty: "easy",
-    questionText: `- ---------`,
-    options: [``, ``, ``, ``],
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `Though not closely related, the hedgehog tenrecs of 
+Madagascar share basic ______
+ true hedgehogs, 
+including protective spines, pointed snouts, and 
+small body size—traits the two groups of mammals 
+independently developed in response to equivalent 
+roles in their respective habitats.`,
+    options: [`examples of`, `concerns about`, `indications of`, `similarities with`],
     correctIndex: 3,
     explainWhy: `Choice D is the best answer because in context, sharing “similarities with” means having some resemblance to. The text establishes a comparison between two groups of mammals, stating that although they aren’t closely related, hedgehog tenrecs and true hedgehogs play similar roles in their habitats, a circumstance that has resulted in the independent development of some of the same physical traits. This context supports the idea that hedgehog tenrecs resemble, or share basic similarities with,...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
+    id: 6002,
+    section: "reading_writing",
+    module: 1,
+    topic: "craft_structure",
+    subtopic: "words_context",
+    difficulty: "easy",
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `In editor Lisa Yaszek’s introduction to her anthology 
+The Future Is Female! More Classic Science Fiction 
+Stories by Women, Yaszek identifies an increasing 
+sense of ______
+ feminist mode of writing in the 
+1970s, in contrast to many woman-authored science 
+fiction stories of the 1920s to 1960s whose politics 
+were less deliberately signaled.`,
+    options: [`a prudently`, `an overtly`, `a cordially`, `an inadvertently`],
+    correctIndex: 1,
+    explainWhy: `Choice B is the best answer because it most logically completes the text’s discussion of Yaszek’s introduction to her science fiction anthology. In this context “overtly” means openly or without concealment. The text draws a contrast between the lack of “deliberately signaled” political themes in women- authored science fiction from the 1920s to the 1960s and what Yaszek notes 3 about women-authored science fiction from the 1970s. This contrast implies that the work from the 1970s did clearly...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: false,
@@ -1353,6 +1582,60 @@ ich artists have depicted and engaged with that experience. End referenced Conte
     isCalculatorAllowed: false,
     estTimeSec: 90,
     tags: [],
+  },
+  {
+    id: 6014,
+    section: "reading_writing",
+    module: 1,
+    topic: "information_ideas",
+    subtopic: "evidence",
+    difficulty: "medium",
+    questionText: `Which choice best describes data from the graph that 
+support the researchers’ conclusion?`,
+    passageText: `600
+540
+480
+420
+360
+300
+240
+180
+120
+60
+0
+Mean test score (higher scores
+indicate greater attentiveness)
+first
+second
+third
+Mean Attentiveness Scores by
+Leave Time Condition
+Test administration
+no leave
+2–4 days leave
+1–5 weeks leave
+To investigate potential cognitive benefits of taking 
+leave from work, psychologist Jan Packer and 
+colleagues conducted a six-month study of 
+Australian university staff members who took no 
+leave from work during the study, took 2–4 days of 
+leave, or took 1–5 weeks of leave. Tests of 
+attentiveness were administered to participants three 
+times during the study: at random for the no-leave 
+staff, and for the rest, one week before their leave, 
+one week following their return to work, and one 
+week after the second test administration. After 
+analyzing the results, the researchers concluded that 
+longer leave times might not confer a greater 
+cognitive benefit than shorter leave times do.`,
+    options: [`In the second test administration, participants who took 2–4 days of leave had higher average attentiveness scores than did those who took no leave, but in the third test administration, those who took no leave had higher average scores than those who took 1–5 weeks of leave.`, `In the first test administration, participants who took 2–4 days of leave had lower average attentiveness scores than did those who took 1–5 weeks of leave and those who took no leave.`, `In both the second and third test administrations, participants who took 2–4 days of leave had higher average attentiveness scores than did participants who took 1–5 weeks of leave.`, `In the second and third test administrations, participants who took 2–4 days of leave had higher average attentiveness scores than did those who took no leave.`],
+    correctIndex: 2,
+    explainWhy: `Choice C is the best answer because it describes data from the graph that support Jan Packer and colleagues’ conclusion about the effect of leave time on the attentiveness of university employees. According to the text, the researchers’ study design included a group of employees who took no leave, a group who took 2–4 days of leave, and a group who took 1–5 weeks of leave. The participants who took leave were tested for attentiveness one week before their leave (the first test administration)...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: ["has_figure"],
   },
   {
     id: 6015,
@@ -1885,14 +2168,49 @@ materials used in dhow replicas.`,
     tags: [],
   },
   {
+    id: 6051,
+    section: "reading_writing",
+    module: 2,
+    topic: "craft_structure",
+    subtopic: "words_context",
+    difficulty: "easy",
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `The works of Chicana artist Ester Hernandez are 
+now ______
+ in museums both in the United States 
+and abroad, but the murals she contributed to as a 
+member of Las Mujeres Muralistas early in her 
+artistic career were displayed in outdoor public 
+spaces across San Francisco.`,
+    options: [`invented`, `adjusted`, `featured`, `recommended`],
+    correctIndex: 2,
+    explainWhy: `Choice C is the best answer because it most logically completes the text’s discussion of Ester Hernandez’s art. In this context, “featured” means shown prominently. The text focuses on where Hernandez’s works have been and continue to be displayed, explaining that her early works, which consisted of murals, could be viewed in outdoor spaces in San Francisco. The central contrast developed in the text is between where her early works could be viewed and where her works can be viewed now, which...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
     id: 6052,
     section: "reading_writing",
     module: 2,
-    topic: "information_ideas",
-    subtopic: "central_ideas",
+    topic: "craft_structure",
+    subtopic: "words_context",
     difficulty: "easy",
-    questionText: `- ---------`,
-    options: [``, ``, ``, ``],
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `Whether Carmen Lomas Garza is creating small 
+paintings and illustrations or large public 
+artworks—such as Baile, a copper cutout of 
+traditional Mexican dance in the San Francisco 
+International Airport—she is ______
+ direct 
+experience, drawing from memories of her childhood 
+in Texas or details of her current surroundings in 
+California.`,
+    options: [`complimented by`, `uncertain about`, `unbothered by`, `inspired by`],
     correctIndex: 3,
     explainWhy: `Choice D is the best answer because it most logically completes the text’s discussion of Carmen Lomas Garza’s artistic process. In this context, “inspired by” means influenced by or motivated by. The text refers to how, regardless of the scale of the work, Garza uses her memories of Texas and details from California to create her art. If Garza is basing her work on her direct experiences, then they play a part in her artistic process. This context thus suggests that Garza’s art is inspired by...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -2296,26 +2614,11 @@ of taking a placebo ______`,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
-    subtopic: "evidence",
+    subtopic: "central_ideas",
     difficulty: "medium",
-    questionText: `Which finding, if true, would most directly support 
-the idea advanced by Gil de Zúñiga and Diehl?`,
-    passageText: `As media consumption has become increasingly 
-multiplatform and socially mediated, active news 
-acquisition has diminished in favor of an attitude 
-known as “news finds me” (NFM), in which people 
-passively rely on their social networks and ambient 
-media environments for information about current 
-events. Homero Gil de Zúñiga and Trevor Diehl 
-examined data on a representative group of adults in 
-the United States to determine participants’ strength 
-of NFM attitude, political knowledge, and political 
-interest. Although no major election took place 
-sufficiently near the study for Gil de Zúñiga and 
-Diehl to identify causality between NFM and voting 
-behavior, they did posit that NFM may reduce voting 
-probability through an indirect effect.`,
-    options: [`NFM attitude tends to increase in strength as major elections approach, and people are significantly more likely to vote in major elections than in minor elections.`, `NFM attitude has a strong negative effect on political knowledge and interest, and there is known to be a strong positive correlation between political knowledge and interest and the likelihood of voting.`, `Political interest is known to have a strong positive effect on likelihood of voting but shows only a weak positive effect on political knowledge, and NFM attitude shows little correlation with either political knowledge or political interest.`, `The likelihood of voting increases as political knowledge increases, and the relationship between NFM attitude and political knowledge tends to strengthen as the size of people’s social networks increases.`],
+    questionText: `--------~ 
+- --------~`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is the best answer because it presents a finding that, if true, would most directly support the idea advanced by Homero Gil de Zúñiga and Trevor Diehl that NFM (“news finds me”) attitude may reduce voting probability through an indirect effect. The text describes NFM as an attitude that has lowered people’s interest in actively acquiring news and introduces Gil de Zúñiga and Diehl’s study on the effects of NFM on people in the United States’ political knowledge and interest. The text...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,

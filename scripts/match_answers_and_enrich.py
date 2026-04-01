@@ -307,9 +307,8 @@ def main():
             practice_skipped += 1
             continue
 
-        if not q.get("question_text") or len(q["question_text"]) < 10:
-            practice_skipped += 1
-            continue
+        # Accept all questions that have an answer, even with short/garbled text
+        # (math questions with figures/formulas often have poorly extracted text)
 
         test_num = q["test_number"]
         q_num = q["question_number"]

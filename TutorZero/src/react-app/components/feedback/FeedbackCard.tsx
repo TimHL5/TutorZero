@@ -3,6 +3,7 @@ import { CheckCircle, XCircle, Lightbulb, BookOpen, ArrowRight, ChevronDown, Spa
 import type { Question } from "@/data/questions";
 import { cn } from "@/react-app/lib/utils";
 import { ExplanationChat } from "./ExplanationChat";
+import { ChatMarkdown } from "@/react-app/components/ui/ChatMarkdown";
 import { useAuth } from "@/react-app/lib/AuthProvider";
 import { Link } from "react-router";
 
@@ -252,9 +253,9 @@ export function FeedbackCard({ question, selectedIndex, isCorrect }: FeedbackCar
                       {EXPLANATION_STYLES.find(s => s.id === alternateExplanation.style)?.label} Explanation
                     </span>
                   </div>
-                  <p className="text-sm text-blue-800 whitespace-pre-wrap">
-                    {alternateExplanation.content}
-                  </p>
+                  <div className="text-sm text-blue-800">
+                    <ChatMarkdown content={alternateExplanation.content} />
+                  </div>
                 </div>
               )}
             </div>

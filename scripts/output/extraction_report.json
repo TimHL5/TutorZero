@@ -1,36 +1,36 @@
 {
-  "total_questions": 2608,
+  "total_questions": 2821,
   "bank_questions": 1882,
-  "practice_questions": 726,
+  "practice_questions": 939,
   "by_section": {
-    "math": 1365,
-    "reading_writing": 1243
+    "math": 1457,
+    "reading_writing": 1364
   },
   "by_topic": {
     "advanced_math": 318,
-    "algebra": 501,
-    "geometry": 227,
-    "problem_solving": 319,
-    "craft_structure": 312,
-    "expression": 258,
-    "information_ideas": 385,
-    "conventions": 288
+    "algebra": 574,
+    "geometry": 251,
+    "problem_solving": 314,
+    "craft_structure": 353,
+    "expression": 276,
+    "information_ideas": 410,
+    "conventions": 325
   },
   "by_difficulty": {
-    "easy": 425,
-    "medium": 1560,
-    "hard": 434,
-    "advanced": 189
+    "easy": 472,
+    "medium": 1628,
+    "hard": 501,
+    "advanced": 220
   },
   "by_source": {
     "question_bank": 1882,
-    "practice_test_4": 106,
-    "practice_test_5": 116,
-    "practice_test_6": 107,
-    "practice_test_7": 73,
-    "practice_test_8": 98,
-    "practice_test_9": 73,
-    "practice_test_10": 76,
-    "practice_test_11": 77
+    "practice_test_4": 117,
+    "practice_test_5": 120,
+    "practice_test_6": 120,
+    "practice_test_7": 118,
+    "practice_test_8": 119,
+    "practice_test_9": 118,
+    "practice_test_10": 120,
+    "practice_test_11": 107
   }
 }

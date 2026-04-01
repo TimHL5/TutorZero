@@ -5,35 +5,39 @@ export const practiceTest5Questions: Question[] = [
     id: 5101,
     section: "math",
     module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
+    topic: "geometry",
+    subtopic: "lines_angles_triangles",
     difficulty: "easy",
-    questionText: `The graph of a system of a linear equation and a 
-nonlinear equation is shown. What is the solution 
-(x, y) to this system?`,
-    options: [`(0, 0)`, `(0, 4)`, `(4, 5)`, `(5, 0)`],
+    questionText: `V =3£wh 
+The sum of the measures in degrees of the angles of a triangle is 180.`,
+    options: [``, ``, ``, ``],
     correctIndex: 2,
     explainWhy: `Choice C is correct. The solution to the system of two equations corresponds to the point where the graphs of the equations intersect. The graphs of the linear equation and the nonlinear equation shown intersect at the point , 4 5 ^ h. Thus, the solution to the system is , 4 5 ^ h.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 120,
-    tags: ["has_figure"],
+    tags: [],
   },
   {
     id: 5102,
     section: "math",
     module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
+    topic: "geometry",
+    subtopic: "right_triangles_trig",
     difficulty: "easy",
-    questionText: `On the first day of a semester, a film club has 
-90 members. Each day after the first day of the 
-semester, 10 new members join the film club. If 
-no members leave the film club, how many total 
-members will the film club have 4 days after the 
-first day of the semester?`,
-    options: [`400`, `130`, `94`, `90`],
+    questionText: `c2 = a2 + b2 
+Special Right Triangles 
+62h E} 
+£ 
+V= Rwh 
+V= nr2h 
+30
+The number of degrees of arc in a circle is 360. 
+The number of radians of arc in a circle is 2n. 
+@ 4 
+V = i,.r3`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. It’s given that the film club has 90  members on the first day of a semester, and 10  new members join the film club each day after the first day of the semester. This means that after 4  days, 4 10 # , or 40, new members will have joined the club. Adding 40  members to the original 90  club members yields 130  members. Thus, the film club will have 130  total members 4  days after the first day of the semester.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -47,18 +51,18 @@ first day of the semester?`,
     section: "math",
     module: 1,
     topic: "algebra",
-    subtopic: "linear_functions",
+    subtopic: "linear_equations_one_var",
     difficulty: "easy",
-    questionText: `The graph of the linear function f is shown, where 
-y = f(x). What is the y-intercept of the graph of f ?`,
-    options: [`(0, 0)`, `0, −16 11        `, `(0, −8)`, `(0, 8)`],
+    questionText: `V=½nr2h 
+£`,
+    options: [``, ``, ``, ``],
     correctIndex: 3,
     explainWhy: `Choice D is correct. The y-intercept of a graph is the point where the graph intersects the y-axis. The graph of function f  shown intersects the y-axis at the point , 0 8 ^ h. Therefore, the y-intercept of the graph of f  is , 0 8 ^ h. 35`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 120,
-    tags: ["has_figure"],
+    tags: [],
   },
   {
     id: 5104,
@@ -84,17 +88,13 @@ equations?`,
     id: 5105,
     section: "math",
     module: 1,
-    topic: "advanced_math",
-    subtopic: "nonlinear_functions",
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
     difficulty: "easy",
-    questionText: `The table shows selected values from function f. 
-x 
-f(x) 
-−1
-16 
-0 
-17 
-1`,
+    questionText: `i-v, 
+,. 
+\\ 
+-`,
     options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. The given values show that as x  increases, f x ^ h  also increases, which means that f  is an increasing function. Furthermore, f x ^ h increases at a constant rate of 1 for each increase of x  by 1. A function with a constant rate of change is linear. Thus, the function f  can be described as an increasing linear function.`,
@@ -109,11 +109,10 @@ f(x)
     section: "math",
     module: 1,
     topic: "algebra",
-    subtopic: "linear_functions",
+    subtopic: "linear_equations_one_var",
     difficulty: "medium",
-    questionText: `The graph of a system of linear equations is shown. 
-The solution to the system is (x, y). What is the value 
-of x ?`,
+    questionText: `'/ 
+-`,
     options: [`4`, `0`, `1`, `-1`],
     correctIndex: 0,
     explainWhy: `The correct answer is 4. A solution to a system of equations must satisfy each equation in the system. It follows that if ,x y ^ h  is a solution to the system, the point ,x y ^ h  lies on the graph in the xy-plane of each equation in the system. According to the graph, the point ,x y ^ h  that lies on the graph of each equation in the system is , 4 1 ^ h. Therefore, the solution to the system is , 4 1 ^ h. It follows that the value of x  is 4.`,
@@ -121,7 +120,7 @@ of x ?`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
+    tags: ["student_produced_response"],
   },
   {
     id: 5107,
@@ -130,8 +129,10 @@ of x ?`,
     topic: "algebra",
     subtopic: "linear_equations_one_var",
     difficulty: "medium",
-    questionText: `23, 27, 27, 32, 35, 36, 52 
-What is the range of the 7 scores shown?`,
+    questionText: `\\ 
+I 
+\\ V 
+-`,
     options: [`29`, `0`, `1`, `-1`],
     correctIndex: 0,
     explainWhy: `The correct answer is 29. The range of a data set is the difference between its maximum value and its minimum value. For the data set shown, the maximum score is 52  and the minimum score is 23. The difference between those scores is 52 23 - , or 29. Therefore, the range of the 7  scores shown is 29. 36`,
@@ -148,17 +149,16 @@ What is the range of the 7 scores shown?`,
     topic: "algebra",
     subtopic: "linear_equations_one_var",
     difficulty: "medium",
-    questionText: `In the figure, line m is parallel to line n, and line k 
-intersects both lines. Which of the following 
-statements is true?`,
-    options: [`The value of x is less than 145.`, `The value of x is greater than 145.`, `The value of x is equal to 145.`, `The value of x cannot be determined.`],
+    questionText: `\\ 
+-`,
+    options: [``, ``, ``, ``],
     correctIndex: 2,
     explainWhy: `Choice C is correct. Vertical angles, or angles that are opposite each other when two lines intersect, are congruent. It’s given that line k  intersects line n. Based on the figure, the angle with measure ° x  and the angle with measure ° 145  are vertical angles. Therefore, the value of x  is equal to 145.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 120,
-    tags: ["has_figure"],
+    tags: [],
   },
   {
     id: 5109,
@@ -312,20 +312,18 @@ the volume, in cubic centimeters, of the cylinder?`,
     id: 5116,
     section: "math",
     module: 1,
-    topic: "advanced_math",
-    subtopic: "nonlinear_functions",
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
     difficulty: "hard",
-    questionText: `The graph of the rational function f is shown, where y = f(x)
-and x ≥0. Which of the following is the graph of y = f(x) + 5, 
-where x ≥0 ?`,
-    options: [``, `Unauthorized copying or reuse of any part of this page is illegal. CONTINUE`, `D)`, ``],
+    questionText: `0`,
+    options: [``, ``, ``, ``],
     correctIndex: 3,
     explainWhy: `Choice D is correct. It’s given that the graph of the rational function f  is shown, where y f x = ^ h  and x 0 $ . The graph shown passes through the point , 3 3 ^ h. It follows that when the value of x  is 3, the value of f x ^ h  is 3. When the value of f x ^ h is 3, the value of f x 5 + ^ h is 3 5 + , or 8. Therefore, the graph of y f x 5 = + ^ h passes through the point , 3 8 ^ h. Of the given choices, choice D is the only graph that passes through the point , 3 8 ^ h  and is therefore t...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 150,
-    tags: ["has_figure"],
+    tags: [],
   },
   {
     id: 5117,
@@ -505,6 +503,23 @@ II. g(x) = −3(6)x`,
     tags: [],
   },
   {
+    id: 5126,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "advanced",
+    questionText: ``,
+    options: [`26x`, `x + 26`, `26 x`, ``],
+    correctIndex: 0,
+    explainWhy: `Choice A is correct. It’s given that the graph of y f x = ^ h  in the xy-plane passes through the points , 7 0 ^ h  and , 3 0 - ^ h. It follows that when the value of x  is either 7  or 3 - , the value of f x ^ h  is 0. It’s also given that the function f  is defined by f x ax bx c 2 = + + ^ h , where a, b, and c  are constants. It follows that the function f is a quadratic function and, therefore, may be written in factored form as f x a x u x v = - - ^ ^ ^ h h h, where the value of f x ^ h ...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: [],
+  },
+  {
     id: 5127,
     section: "math",
     module: 1,
@@ -527,11 +542,11 @@ What is the sum of all possible values of w ?`,
     id: 5151,
     section: "math",
     module: 2,
-    topic: "problem_solving",
-    subtopic: "percentages",
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
     difficulty: "easy",
-    questionText: `What is 20% of 440?`,
-    options: [`44`, `88`, `880`, `1,760`],
+    questionText: `V =3£wh`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. % 20 of 440  can be calculated as 440 100 20 b \`l j, which is equivalent to , 100 8 800, or 88.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -544,34 +559,37 @@ What is the sum of all possible values of w ?`,
     id: 5152,
     section: "math",
     module: 2,
-    topic: "problem_solving",
-    subtopic: "ratios_rates",
+    topic: "geometry",
+    subtopic: "right_triangles_trig",
     difficulty: "easy",
-    questionText: `Argon is placed inside a container with a constant 
-volume. The graph shows the estimated pressure y, 
-in pounds per square inch (psi), of the argon when 
-its temperature is x kelvins. 
-What is the estimated pressure of the argon, in psi, 
-when the temperature is 600 kelvins?`,
-    options: [`6`, `12`, `300`, `600`],
+    questionText: `c2 = a2 + b2 
+Special Right Triangles 
+C=2nr 
+62h E} 
+£ 
+V= Rwh 
+V= nr2h 
+@ 4 
+V = i,.r3`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. For the graph shown, the x-axis represents temperature, in kelvins, and the y-axis represents the estimated pressure, in pounds per square inch psi ^ h. The estimated pressure of the argon when the temperature is 600  kelvins can be found by locating the point on the graph where the value of x is equal to 600. The graph passes through the point , 600 12 ^ h. This means that when the temperature is 600  kelvins, the estimated pressure is psi 12 .`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 120,
-    tags: ["has_figure"],
+    tags: [],
   },
   {
     id: 5153,
     section: "math",
     module: 2,
-    topic: "advanced_math",
-    subtopic: "nonlinear_functions",
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
     difficulty: "easy",
-    questionText: `The function f is defined by f(x) = 4x −3. What is 
-the value of f(10) ?`,
-    options: [`−30`, `37`, `40`, `43`],
+    questionText: `V=½nr2h 
+£`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. It’s given that the function f  is defined by f x x 4 3 = - ^ h . Substituting 10  for x  in the given function yields f 10 4 10 3 = - ^ ^ h h , which is equivalent to f 10 40 3 = - ^ h , or f 10 37 = ^ h . Therefore, the value of f 10 ^ h  is 37.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -755,18 +773,11 @@ of best fit?`,
     id: 5162,
     section: "math",
     module: 2,
-    topic: "problem_solving",
-    subtopic: "probability",
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
     difficulty: "medium",
-    questionText: `At a movie theater, there are a total of 350 customers. 
-Each customer is located in either theater A, 
-theater B, or theater C. If one of these customers is 
-selected at random, the probability of selecting a 
-customer who is located in theater A is 0.48, and the 
-probability of selecting a customer who is located in 
-theater B is 0.24. How many customers are located in 
-theater C?`,
-    options: [`28`, `40`, `84`, `98`],
+    questionText: `-`,
+    options: [``, ``, ``, ``],
     correctIndex: 3,
     explainWhy: `Choice D is correct. It’s given that at a movie theater, there are a total of 350 customers and that each customer is located in either theater A, theater B, or theater C. If the probability of selecting a customer in theater A is . 0 48, then . 0 48 350 ^ ^h h, or 168, customers are located in theater A. If the probability of selecting a customer in theater B is . 0 24, then . 0 24 350 ^ ^h h, or 84, customers are located in theater B. It follows that there are 168 84 + , or 252, customers i...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -1052,7 +1063,7 @@ every n months. What is the value of n ?`,
     questionText: `A circle in the xy-plane has its center at (−1, 1). 
 Line t is tangent to this circle at the point (5, −4). 
 Which of the following points also lies on line t ?`,
-    options: [`0, 6 5      `, `(4, 7)`, `(10, 2)`, `(11, 1)`],
+    options: [`0, 6`, ``, ``, ``],
     correctIndex: 2,
     explainWhy: `Choice C is correct. It’s given that the circle has its center at , 1 1 - ^ h  and that line t  is tangent to this circle at the point , 5 4 - ^ h. Therefore, the points , 1 1 - ^ h  and , 5 4 - ^ h  are the endpoints of the radius of the circle at the point of tangency. The slope of a line or line segment that contains the points ,a b ^ h  and ,c d ^ h  can be calculated as  c a d b - - . Substituting , 1 1 - ^ h  for ,a b ^ h  and , 5 4 - ^ h  for ,c d ^ h  in the expression c a d b - -  yi...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -1094,6 +1105,61 @@ square?`,
     isCalculatorAllowed: true,
     estTimeSec: 150,
     tags: ["student_produced_response"],
+  },
+  {
+    id: 5001,
+    section: "reading_writing",
+    module: 1,
+    topic: "information_ideas",
+    subtopic: "central_ideas",
+    difficulty: "easy",
+    questionText: `As used in the text, what does the word “trace” most 
+nearly mean?`,
+    passageText: `The following text is from the 1913 story “The King’s 
+Coin” by Emily Pauline Johnson, a Kanienkahagen 
+(Mohawk) writer also known as Tekahionwake. 
+Fox-Foot, a young Ojibwe man, is guiding a group of 
+fur traders who are traveling by canoe and suspects 
+that they are being followed. 
+At supper time, Fox-Foot would allow no fire to 
+be built, no landing to be made, no Start referenced Content: trace End referenced Content. of their 
+passing to be left. They ate canned meat and 
+marmalade, drank again of the stream and 
+pushed on, until just at dusk they reached the 
+edge of a long, still lake, with shores of granite 
+and dense fir forest.`,
+    options: [`Evidence`, `Blemish`, `Amount`, `Sketch`],
+    correctIndex: 0,
+    explainWhy: `Choice A is the best answer because the text indicates that Fox-Foot doesn’t let the group build a fire or create a canoe landing when it’s time for supper. This context suggests that he doesn’t want anyone who might be following the group to see any sign of them or their activities. In other words, Fox-Foot doesn’t want there to be any trace, or evidence, of the group’s movements (“their passing”) through the area.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
+    id: 5002,
+    section: "reading_writing",
+    module: 1,
+    topic: "craft_structure",
+    subtopic: "words_context",
+    difficulty: "easy",
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `Many ancient sculptures of people’s heads are 
+missing their noses. This is because the nose is the 
+most ______
+ part of a sculpture of a person’s head. 
+It is delicate and sticks out from the rest of the 
+sculpture, making it especially easy to break.`,
+    options: [`recognizable`, `fragile`, `common`, `sophisticated`],
+    correctIndex: 1,
+    explainWhy: `Choice B is the best answer because it most logically completes the text’s discussion of noses on ancient sculptures. In this context, “fragile” means weak or delicate. This matches the text’s description of noses on ancient sculptures, which are often missing from sculptures’ heads because they are “especially easy to break.” Therefore, this context indicates that noses on ancient sculptures are the most fragile part of the sculptures’ heads. 3`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
   },
   {
     id: 5003,
@@ -1978,14 +2044,50 @@ from the notes to accomplish this goal?`,
     tags: [],
   },
   {
-    id: 5052,
+    id: 5051,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
     subtopic: "central_ideas",
     difficulty: "easy",
-    questionText: `- ---------`,
-    options: [``, ``, ``, ``],
+    questionText: `As used in the text, what does the phrase “reaching 
+across to” most nearly mean?`,
+    passageText: `The following text is adapted from Elizabeth 
+von Arnim’s 1922 novel The Enchanted April. 
+Mrs. Wilkins and her friend Rose are traveling 
+in Italy. 
+“I’m going to have one of these gorgeous 
+oranges,” said Mrs. Wilkins, staying where she 
+was and Start referenced Content: reaching across to End referenced Content. a black bowl piled 
+with them. “Rose, how can you resist them. 
+Look—have this one. Do have this beauty—” 
+And she held out a big one.`,
+    options: [`Joining with`, `Gaining on`, `Stretching toward`, `Arriving at`],
+    correctIndex: 2,
+    explainWhy: `Choice C is the best answer because as used in the text “reaching across to” most nearly means stretching toward. The text begins with Mrs. Wilkins stating that she wants to have one of the oranges that she’s admiring. The text then indicates that Mrs. Wilkins, staying where she is, holds out a big orange to her friend. This context suggests that when the text describes Mrs. Wilkins as reaching across to the bowl of oranges, it means that she is stretching toward the bowl.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
+    id: 5052,
+    section: "reading_writing",
+    module: 2,
+    topic: "craft_structure",
+    subtopic: "words_context",
+    difficulty: "easy",
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `A team of paleontologists has found a rich fossil 
+deposit near Gulgong, Australia. The fossils are so 
+well preserved that the team has been able to 
+______
+ detailed information about the life forms 
+that left them behind, such as color patterns and how 
+they interacted with other species.`,
+    options: [`occupy`, `hoard`, `reserve`, `obtain`],
     correctIndex: 3,
     explainWhy: `Choice D is the best answer because it most logically completes the text’s discussion of the fossil deposit. In this context, “obtain” means gain or acquire. According to the text, a team of paleontologists has found fossils that are very well preserved. For this reason, the text suggests, the paleontologists have been able to gain detailed information from the fossils, such as the color patterns of the life forms that left them behind.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -2379,44 +2481,11 @@ expressing a sense of displeasure, writing ______`,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
-    subtopic: "evidence",
+    subtopic: "central_ideas",
     difficulty: "medium",
-    questionText: `Which choice best describes data from the table that support Persad 
-and her colleagues’ conclusion?`,
-    passageText: `Simulated Change in Annual Aquifer Input and Irrigation Output if 
-Precipitation Concentration Increases as Climate Models Predict 
-Baseline concentration of 
-annual precipitation 
-% change in water 
-entering aquifers 
-% change in surface 
-water used for 
-irrigation 
-% change in 
-groundwater used 
-for irrigation 
-Precipitation is currently 
-somewhat concentrated 
-4.9 
-0.4 
-0.9 
-Precipitation is currently 
-evenly distributed 
-11.0 
-9.0 
-7.9 
-Some climate models for the western United States predict that while 
-total annual precipitation may remain unchanged from the present 
-level, precipitation will become concentrated into fewer but more 
-intense rain and snow events. University of Texas climate scientist 
-Geeta Persad and her colleagues simulated how the amount of water 
-entering aquifers and the amount being used for irrigation purposes 
-would change if this were to occur. Persad and her colleagues 
-concluded that concentration of precipitation into fewer events would 
-result in a higher number of dry days, triggering more irrigation, but 
-that this change in irrigation output is highly sensitive to the baseline 
-concentration of precipitation that currently exists in an area.`,
-    options: [`If baseline precipitation is somewhat concentrated, the amount of water being used for irrigation will increase 0.4% for surface water and 0.9% for groundwater, whereas the amount of water entering aquifers will increase 11.0% if baseline precipitation is evenly distributed.`, `If baseline precipitation is somewhat concentrated, water use for irrigation will increase only slightly, whereas it will increase 9.0% for surface water and 7.9% for groundwater if baseline precipitation is evenly distributed.`, `If baseline precipitation is somewhat concentrated, the amount of water entering aquifers will increase 4.9%, while the amount being used for irrigation will increase 0.4% for surface water and 0.9% for groundwater.`, `If baseline precipitation is somewhat concentrated, water use for irrigation will decline by a small amount, whereas it will increase 11.0% for surface water and 9.0% for groundwater if baseline precipitation is evenly distributed.`],
+    questionText: `--------~ 
+- --------~`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is the best answer because it describes data from the table that support Persad and her colleagues’ conclusion. The text explains that, according to some climate models, precipitation in the western United States will become concentrated into fewer, more intense rain and snow events. According to the text, Persad and her colleagues concluded that more irrigation will consequently be needed but that the change in irrigation output will be highly sensitive to, or greatly affected by, t...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,

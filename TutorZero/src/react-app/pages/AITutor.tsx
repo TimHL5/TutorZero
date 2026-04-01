@@ -3,6 +3,7 @@ import { AppLayout } from "@/react-app/components/layout/AppLayout";
 import { topicDisplayNames } from "@/data/questions";
 import { cn } from "@/react-app/lib/utils";
 import { Send, Bot, User, Sparkles, Lock, BookOpen, Target, TrendingUp, AlertCircle, ChevronDown, X } from "lucide-react";
+import { ChatMarkdown } from "@/react-app/components/ui/ChatMarkdown";
 import { useAuth } from "@/react-app/lib/AuthProvider";
 import { Link } from "react-router";
 
@@ -286,7 +287,13 @@ export default function AITutor() {
                     ? "bg-white border border-tz-gray-200 text-tz-navy" 
                     : "bg-tz-blue text-white"
                 )}>
-                  <p className="text-sm whitespace-pre-wrap leading-relaxed">{message.content}</p>
+                  {message.role === "assistant" ? (
+                    <div className="text-sm leading-relaxed">
+                      <ChatMarkdown content={message.content} />
+                    </div>
+                  ) : (
+                    <p className="text-sm whitespace-pre-wrap leading-relaxed">{message.content}</p>
+                  )}
                 </div>
               </div>
             ))}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { MessageCircle, Send, Loader2, X, Sparkles, Crown, Zap, Target, TrendingUp } from "lucide-react";
+import { ChatMarkdown } from "@/react-app/components/ui/ChatMarkdown";
 import { Button } from "@/react-app/components/ui/button";
 import type { Question } from "@/data/questions";
 import { cn } from "@/react-app/lib/utils";
@@ -240,7 +241,11 @@ export function ExplanationChat({ question, selectedIndex }: ExplanationChatProp
                     : "bg-white border border-slate-200 text-slate-800"
                 )}
               >
-                {msg.content}
+                {msg.role === "assistant" ? (
+                  <ChatMarkdown content={msg.content} />
+                ) : (
+                  msg.content
+                )}
               </div>
             </div>
           ))}

@@ -1,103 +1,79 @@
-[2026-03-31T19:28:05.685Z] [debug] [vite] connecting...
-[2026-03-31T19:28:06.057Z] [debug] [vite] connected.
-[2026-03-31T19:28:06.756Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:28:18.927Z] [debug] [vite] connecting...
-[2026-03-31T19:28:18.936Z] [debug] [vite] connected.
-[2026-03-31T19:28:19.002Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:29:39.868Z] [debug] [vite] connecting...
-[2026-03-31T19:29:39.944Z] [debug] [vite] connected.
-[2026-03-31T19:29:39.991Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:30:24.455Z] [debug] [vite] connecting...
-[2026-03-31T19:30:24.458Z] [debug] [vite] connected.
-[2026-03-31T19:30:24.558Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:30:37.140Z] [debug] [vite] connecting...
-[2026-03-31T19:30:37.145Z] [debug] [vite] connected.
-[2026-03-31T19:30:37.199Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:30:55.817Z] [error] Failed to load resource: the server responded with a status of 500 (Internal Server Error)
-[2026-03-31T19:31:19.312Z] [debug] [vite] connecting...
-[2026-03-31T19:31:19.314Z] [debug] [vite] connected.
-[2026-03-31T19:31:19.508Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:31:20.760Z] [debug] [vite] connecting...
-[2026-03-31T19:31:20.764Z] [debug] [vite] connected.
-[2026-03-31T19:31:20.805Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:31:29.998Z] [debug] [vite] connecting...
-[2026-03-31T19:31:30.005Z] [debug] [vite] connected.
-[2026-03-31T19:31:30.071Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:31:31.362Z] [debug] [vite] connecting...
-[2026-03-31T19:31:31.365Z] [debug] [vite] connected.
-[2026-03-31T19:31:31.423Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:31:40.459Z] [debug] [vite] connecting...
-[2026-03-31T19:31:40.463Z] [debug] [vite] connected.
-[2026-03-31T19:31:40.509Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:38:53.465Z] [debug] [vite] connecting...
-[2026-03-31T19:38:53.532Z] [debug] [vite] connected.
-[2026-03-31T19:38:53.557Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:38:58.114Z] [debug] [vite] connecting...
-[2026-03-31T19:38:58.141Z] [debug] [vite] connected.
-[2026-03-31T19:38:58.181Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:39:43.422Z] [debug] [vite] connecting...
-[2026-03-31T19:39:43.424Z] [debug] [vite] connected.
-[2026-03-31T19:39:43.525Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:39:49.487Z] [debug] [vite] connecting...
-[2026-03-31T19:39:49.497Z] [debug] [vite] connected.
-[2026-03-31T19:39:49.548Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:39:54.814Z] [debug] [vite] connecting...
-[2026-03-31T19:39:54.821Z] [debug] [vite] connected.
-[2026-03-31T19:39:54.877Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:40:06.831Z] [debug] [vite] connecting...
-[2026-03-31T19:40:06.844Z] [debug] [vite] connected.
-[2026-03-31T19:40:06.882Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:40:07.567Z] [debug] [vite] connecting...
-[2026-03-31T19:40:07.574Z] [debug] [vite] connected.
-[2026-03-31T19:40:07.590Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:40:08.218Z] [debug] [vite] connecting...
-[2026-03-31T19:40:08.224Z] [debug] [vite] connected.
-[2026-03-31T19:40:08.278Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:40:25.289Z] [debug] [vite] connecting...
-[2026-03-31T19:40:25.293Z] [debug] [vite] connected.
-[2026-03-31T19:40:25.425Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:40:50.584Z] [log] [vite] server connection lost. Polling for restart...
-[2026-03-31T19:40:50.828Z] [debug] [vite] connecting...
-[2026-03-31T19:40:50.839Z] [debug] [vite] connected.
-[2026-03-31T19:40:51.990Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:40:52.267Z] [log] [vite] server connection lost. Polling for restart...
-[2026-03-31T19:40:53.597Z] [debug] [vite] connecting...
-[2026-03-31T19:40:53.613Z] [debug] [vite] connected.
-[2026-03-31T19:40:53.796Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:43:01.951Z] [log] [vite] server connection lost. Polling for restart...
-[2026-03-31T19:43:15.966Z] [debug] [vite] connecting...
-[2026-03-31T19:43:16.491Z] [debug] [vite] connected.
-[2026-03-31T19:43:16.968Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[2026-03-31T19:44:20.774Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:44:20.774Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:44:28.535Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:44:28.535Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:44:47.892Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:44:47.892Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:44:59.581Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:44:59.581Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:45:04.636Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:45:04.636Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:45:11.195Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:45:11.195Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:45:16.498Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:45:16.498Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:45:20.814Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:45:20.814Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:45:28.336Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:45:28.336Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:45:34.010Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:45:34.010Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:45:38.832Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:45:38.832Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:45:44.240Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:45:44.240Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:46:20.916Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:46:20.916Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:46:26.996Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:46:26.996Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:46:49.132Z] [debug] [vite] hot updated: /src/react-app/pages/Landing.tsx
-[2026-03-31T19:46:49.132Z] [debug] [vite] hot updated: /src/react-app/index.css
-[2026-03-31T19:46:54.612Z] [debug] [vite] connecting...
-[2026-03-31T19:46:54.667Z] [debug] [vite] connected.
-[2026-03-31T19:46:54.734Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-04-01T01:11:20.122Z] [debug] [vite] connecting...
+[2026-04-01T01:11:20.554Z] [debug] [vite] connected.
+[2026-04-01T01:11:21.069Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-04-01T01:11:29.799Z] [error] Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+[2026-04-01T01:11:29.800Z] [error] Checkout error: SyntaxError: Unexpected token '<', "
+        <!DOCTYPE "... is not valid JSON
+[2026-04-01T01:17:42.797Z] [debug] [vite] connecting...
+[2026-04-01T01:17:42.826Z] [debug] [vite] connected.
+[2026-04-01T01:17:42.925Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-04-01T01:17:47.329Z] [debug] [vite] connecting...
+[2026-04-01T01:17:47.335Z] [debug] [vite] connected.
+[2026-04-01T01:17:47.379Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-04-01T01:17:47.455Z] [error] Cannot update a component (`%s`) while rendering a different component (`%s`). To locate the bad setState() call inside `%s`, follow the stack trace as described in https://react.dev/link/setstate-in-render BrowserRouter Settings Settings
+[2026-04-01T01:19:30.443Z] [debug] [vite] hot updated: /src/react-app/pages/Pricing.tsx
+[2026-04-01T01:19:30.443Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:19:32.652Z] [debug] [vite] hot updated: /src/react-app/pages/Pricing.tsx
+[2026-04-01T01:19:32.652Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:19:33.435Z] [debug] [vite] hot updated: /src/react-app/pages/Pricing.tsx
+[2026-04-01T01:19:33.435Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:19:33.669Z] [debug] [vite] hot updated: /src/react-app/pages/Pricing.tsx
+[2026-04-01T01:19:33.669Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:19:34.121Z] [debug] [vite] hot updated: /src/react-app/pages/Pricing.tsx
+[2026-04-01T01:19:34.121Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:19:40.675Z] [debug] [vite] hot updated: /src/react-app/pages/Pricing.tsx
+[2026-04-01T01:19:40.675Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:19:43.192Z] [debug] [vite] hot updated: /src/react-app/pages/Pricing.tsx
+[2026-04-01T01:19:43.192Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:19:43.218Z] [debug] [vite] hot updated: /src/react-app/pages/Settings.tsx
+[2026-04-01T01:19:43.218Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:20:20.063Z] [debug] [vite] hot updated: /src/react-app/pages/Settings.tsx
+[2026-04-01T01:20:20.063Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:20:20.147Z] [debug] [vite] hot updated: /src/react-app/pages/Settings.tsx
+[2026-04-01T01:20:20.147Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:20:25.034Z] [debug] [vite] connecting...
+[2026-04-01T01:20:25.036Z] [debug] [vite] connected.
+[2026-04-01T01:20:25.125Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-04-01T01:29:23.585Z] [debug] [vite] hot updated: /src/react-app/pages/AITutor.tsx
+[2026-04-01T01:29:23.585Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:29:30.701Z] [debug] [vite] hot updated: /src/react-app/pages/AITutor.tsx
+[2026-04-01T01:29:30.701Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:29:31.084Z] [debug] [vite] connecting...
+[2026-04-01T01:29:31.139Z] [debug] [vite] connected.
+[2026-04-01T01:29:31.432Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-04-01T01:29:36.442Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:29:36.442Z] [debug] [vite] hot updated: /src/react-app/components/ui/ChatMarkdown.tsx
+[2026-04-01T01:29:47.532Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:29:47.532Z] [debug] [vite] hot updated: /src/react-app/components/feedback/ExplanationChat.tsx
+[2026-04-01T01:29:51.899Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:29:51.899Z] [debug] [vite] hot updated: /src/react-app/components/feedback/ExplanationChat.tsx
+[2026-04-01T01:30:01.571Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:30:01.571Z] [debug] [vite] hot updated: /src/react-app/components/feedback/FeedbackCard.tsx
+[2026-04-01T01:30:05.848Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:30:05.848Z] [debug] [vite] hot updated: /src/react-app/components/feedback/FeedbackCard.tsx
+[2026-04-01T01:36:20.071Z] [debug] [vite] connecting...
+[2026-04-01T01:36:20.106Z] [debug] [vite] connected.
+[2026-04-01T01:36:20.212Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-04-01T01:37:32.961Z] [debug] [vite] connecting...
+[2026-04-01T01:37:32.963Z] [debug] [vite] connected.
+[2026-04-01T01:37:33.268Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-04-01T01:37:54.676Z] [debug] [vite] connecting...
+[2026-04-01T01:37:54.684Z] [debug] [vite] connected.
+[2026-04-01T01:37:54.730Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-04-01T01:37:54.827Z] [error] Cannot update a component (`%s`) while rendering a different component (`%s`). To locate the bad setState() call inside `%s`, follow the stack trace as described in https://react.dev/link/setstate-in-render BrowserRouter Settings Settings
+[2026-04-01T01:40:24.953Z] [debug] [vite] hot updated: /src/react-app/pages/Login.tsx
+[2026-04-01T01:40:24.954Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:40:32.480Z] [debug] [vite] hot updated: /src/react-app/pages/Login.tsx
+[2026-04-01T01:40:32.481Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:40:39.622Z] [debug] [vite] hot updated: /src/react-app/pages/Pricing.tsx
+[2026-04-01T01:40:39.622Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:41:17.727Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:41:17.727Z] [debug] [vite] hot updated: /src/react-app/components/layout/AppLayout.tsx
+[2026-04-01T01:41:44.480Z] [debug] [vite] hot updated: /src/react-app/pages/Pricing.tsx
+[2026-04-01T01:41:44.480Z] [debug] [vite] hot updated: /src/react-app/index.css
+[2026-04-01T01:41:55.461Z] [debug] [vite] connecting...
+[2026-04-01T01:41:55.504Z] [debug] [vite] connected.
+[2026-04-01T01:41:55.605Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-04-01T01:42:03.407Z] [debug] [vite] connecting...
+[2026-04-01T01:42:03.429Z] [debug] [vite] connected.
+[2026-04-01T01:42:03.450Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

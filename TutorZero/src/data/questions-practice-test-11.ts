@@ -13,7 +13,7 @@ QR
 =
 . What is the value 
 of x?`,
-    options: [`156`, `66`, `48`, `24 2 x 4 1 33 + = Which equation has the same solution as the given equation?`],
+    options: [`156`, `66`, `48`, `24`],
     correctIndex: 3,
     explainWhy: `Choice C is correct. In the given expression, x 6  and x 5  are like terms. Combining these like terms yields x 11 . It follows that the expression x x y 6 5 4 + + is equivalent to x y 11 4 + .`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -26,11 +26,33 @@ of x?`,
     id: 11102,
     section: "math",
     module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
+    topic: "advanced_math",
+    subtopic: "nonlinear_functions",
     difficulty: "easy",
-    questionText: `CONTINUE
-Module`,
+    questionText: `Use of a calculator is permitted for all questions.
+NOTES
+Unless otherwise indicated: 
+ 
+▪All variables and expressions represent real numbers.
+ 
+▪Figures provided are drawn to scale.
+ 
+▪All figures lie in a plane.
+ 
+▪The domain of a given function f is the set of all real numbers x for which f x
+^ h 
+is a real number.
+REFERENCE
+r
+A = r2
+C = 2 r
+ 
+w
+A = w
+ 
+h
+b
+A = bh`,
     options: [``, ``, ``, ``],
     correctIndex: 0,
     explainWhy: `Choice B is correct. The dot plot gives the diameter, to the nearest inch, of each sea star in a group of tide pools. The number of dots above a given diameter represents the number of sea stars with that diameter, to the nearest inch. There are 6  dots above 16  inches. Therefore, 6  sea stars had a diameter, to the nearest inch, of 16  inches.`,
@@ -38,31 +60,61 @@ Module`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 120,
-    tags: [],
+    tags: ["has_figure"],
   },
   {
     id: 11103,
     section: "math",
     module: 1,
     topic: "algebra",
-    subtopic: "linear_functions",
+    subtopic: "linear_equations_one_var",
     difficulty: "easy",
-    questionText: `For the linear function f , the graph of  y
-f x
-= ^ h in 
-the xy-plane has a slope of 7 and passes through the 
-point 
-,0 5
-^
-h. Which equation defines f ?`,
-    options: [`f x x`, ``, ``, ``],
+    questionText: `r
+h
+V = r2h`,
+    options: [``, ``, ``, ``],
     correctIndex: 2,
     explainWhy: `Choice C is correct. An equation that defines a linear function f  can be written in the form f x mx b = + ^ h , where m  is the slope of the graph of y f x = ^ h  in the xy-plane and , b 0 ^ h  is the y-intercept of the graph. It’s given that for the linear function f, the graph of y f x = ^ h  in the xy-plane has a slope of 7. Therefore, m 7 = . 35 It’s also given that the graph of y f x = ^ h  in the xy-plane passes through the point , 0 5 ^ h. Therefore, the y-intercept of the graph is , ...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 120,
-    tags: ["has_figure"],
+    tags: [],
+  },
+  {
+    id: 11104,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "easy",
+    questionText: `32
+=`,
+    options: [`x`, ``, ``, ``],
+    correctIndex: 0,
+    explainWhy: `Choice A is correct. Adding 40  to both sides of the given equation yields x 8 72 2 = . Dividing both sides of this equation by 8  yields x 9 2 = . Taking the square root of both sides of this equation yields x 3 = or x 3 = - . Therefore, the positive solution to the given equation is 3.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: [],
+  },
+  {
+    id: 11105,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "easy",
+    questionText: `=`,
+    options: [`x`, ``, ``, ``],
+    correctIndex: 1,
+    explainWhy: `Choice B is correct. If one of these children is selected at random, the probability of selecting a child who chose a vegetarian sandwich is equal to the number of children who chose a vegetarian sandwich divided by the total number of children. According to the table, there are a total of 50  children, and 9  of these children chose a vegetarian sandwich. Therefore, the probability of selecting a child who chose a vegetarian sandwich is 50 9 .`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: [],
   },
   {
     id: 11106,
@@ -88,11 +140,24 @@ year, she harvested 750 cherry tomatoes and gave
     section: "math",
     module: 1,
     topic: "algebra",
-    subtopic: "linear_equations_one_var",
+    subtopic: "systems_of_equations",
     difficulty: "medium",
-    questionText: `= - +
-, where k is a constant. What is the 
-value of k?`,
+    questionText: `x
+y
+125
++
+=
+x
+y
+y
+155
++
++
+=
+The solution to the given system of equations is 
+,x y
+^
+h. What is the value of y?`,
     options: [`30`, `0`, `1`, `-1`],
     correctIndex: 0,
     explainWhy: `The correct answer is 30. It’s given that x y 125 + = . Substituting 125  for x y + in the second equation of the given system yields y 125 155 + = . Subtracting 125 from both sides of this equation yields y 30 = . Therefore, the value of y  is 30. 36`,
@@ -109,16 +174,12 @@ value of k?`,
     topic: "algebra",
     subtopic: "linear_equations_one_var",
     difficulty: "medium",
-    questionText: `In a chess tournament, each participant earns 
-1 point for each game the participant plays that ends 
-in a draw and 3 points for each game the participant 
-wins. A certain participant in this tournament has 
-earned 41 points. Which equation represents this 
-situation, where d represents the number of games 
-this participant has played that ended in a draw and 
-w represents the number of games this participant 
-has won?`,
-    options: [`d w 3 41 + =`, `d w 3 41 + =`, `d w 3 41 + =`, `d w 3 41 + =`],
+    questionText: `40
+32
+2 -
+=
+What is the positive solution to the given equation?`,
+    options: [`3`, `4`, `9`, `72`],
     correctIndex: 0,
     explainWhy: `Choice A is correct. It’s given that each participant earns 1 point for each game the participant plays that ends in a draw and 3  points for each game the participant wins. Since d  represents the number of games that a certain participant has played that ended in a draw and w  represents the number of games this participant has won, this participant has earned a total of d w 1 3 + , or d w 3 + , points. Since this participant earned 41 points, the equation d w 3 41 + = represents this situa...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -153,28 +214,11 @@ vegetarian sandwich?`,
     section: "math",
     module: 1,
     topic: "algebra",
-    subtopic: "systems_of_equations",
+    subtopic: "linear_equations_one_var",
     difficulty: "medium",
     questionText: `of them to her neighbor. How many of the 
 harvested cherry tomatoes did Amara give to her 
-neighbor?
-7
-x
-y
-125
-+
-=
-x
-y
-y
-155
-+
-+
-=
-The solution to the given system of equations is 
-,x y
-^
-h. What is the value of y?`,
+neighbor?`,
     options: [``, ``, ``, ``],
     correctIndex: 2,
     explainWhy: `Choice C is correct. It’s given that 8  out of 300  customers in a random sample said they would be interested in the new plan. This means the fraction of sampled customers who said they would be interested is 300 8 . Multiplying this fraction by the total customer population yields , 30 000 300 8 a ^k h, or 800. Therefore, the best estimate of the total number of customers who would be interested in the new service plan is 800.`,
@@ -207,18 +251,57 @@ t s
     tags: [],
   },
   {
+    id: 11112,
+    section: "math",
+    module: 1,
+    topic: "problem_solving",
+    subtopic: "ratios_rates",
+    difficulty: "medium",
+    questionText: `[See practice test 11 PDF — Math Module 1, Question 12]`,
+    options: [`A`, `B`, `C`, `D`],
+    correctIndex: 1,
+    explainWhy: `Choice B is correct. The point ^x, y h at which the graphs of the given equations
+intersect is the solution to the system of equations. Subtracting 5 from both sides
+of the equation x + 5 = 14 yields x = 9. Substituting 9 for x in the equation
+y = 4x 2 + 4 yields y = 4^9h2 + 4, or y = 328. Therefore, the graphs of the
+equations in the given system intersect at the point ^9, 328h.
+Choice A is incorrect and may result from conceptual or calculation errors.
+Choice C is incorrect and may result from conceptual or calculation errors.
+Choice D is incorrect and may result from conceptual or calculation errors.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: ["figure_required"],
+  },
+  {
+    id: 11113,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "medium",
+    questionText: `x
+y`,
+    options: [`13`, `0`, `1`, `-1`],
+    correctIndex: 0,
+    explainWhy: `The correct answer is 13. It’s given that the equation x y 8 11 170 + = gives the possible combinations of the number of 2009  premium grade Log Cabin Pennies, x, and the number of 1996  select grade Lincoln Pennies, y, in a collection that is worth a total of $170. It’s also given that there are 6  1996  select grade Lincoln Pennies in the collection, and thus y 6 = . Substituting 6  for y  in the given equation yields x 8 11 6 170 + = ^ h , or x 8 66 170 + = . Subtracting 66  from both side...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: ["student_produced_response"],
+  },
+  {
     id: 11114,
     section: "math",
     module: 1,
     topic: "algebra",
     subtopic: "linear_equations_one_var",
     difficulty: "medium",
-    questionText: `The population of the town of Smithville doubled 
-every 75 years from 1659 to 1959. The population of 
-this town was 
-,
-240 000 in 1959. What was the 
-population of this town in 1659?`,
+    questionText: `2 -
+^
+h`,
     options: [`15000`, `0`, `1`, `-1`],
     correctIndex: 0,
     explainWhy: `The correct answer is , 15 000. Let y  represent the population of Smithville x  years after 1659. Since the population doubled every 75  years, the relationship between x  and y  can be represented by an exponential equation in the form y a b k x = ^ h , where a  is the population of Smithville in 1659  and the population increases by a factor of b  every k  years. It’s given that the population doubled, or increased by a factor of 2, every 75  years. Therefore, b 2 = and k 75 = . Substituti...`,
@@ -229,6 +312,23 @@ population of this town in 1659?`,
     tags: ["student_produced_response"],
   },
   {
+    id: 11115,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "medium",
+    questionText: `Chicken`,
+    options: [``, ``, ``, ``],
+    correctIndex: 0,
+    explainWhy: `Choice A is correct. A line in the xy-plane that passes through the points , x y 1 1 ^ h and , x y 2 2 ^ h  has a slope of x x y y 2 1 2 1 - - . The line of best fit shown passes through the points with approximate coordinates , . 0 3 2 ^ h  and , . 2 4 4 ^ h. It follows that the slope of the line of best fit is approximately . . 2 0 4 4 3 2 - - , which is equivalent to . 2 1 2, or . 0 6. Therefore, of the given choices, . 0 6  is closest to the slope of the line of best fit shown.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: [],
+  },
+  {
     id: 11116,
     section: "math",
     module: 1,
@@ -237,7 +337,7 @@ population of this town in 1659?`,
     difficulty: "hard",
     questionText: `Which quadratic equation has exactly one distinct 
 real solution?`,
-    options: [`x 15 0 2 + = ^ h`, `x 15 45 2 + = - ^ h`, `x 15 45 2 + = ^ h`, `x 15 135 2 + = ^ h`],
+    options: [`x`, ``, ``, ``],
     correctIndex: 0,
     explainWhy: `Choice A is correct. Taking the square root of both sides of x 15 0 2 + = ^ h yields x 15 0 + = . Subtracting 15  from both sides of this equation yields x 15 = - . Therefore, this equation has exactly one distinct real solution.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -268,6 +368,29 @@ t`,
     tags: [],
   },
   {
+    id: 11118,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "hard",
+    questionText: `730
++
+=
+The given equations represent the possible numbers of beach chairs, x, 
+and umbrellas, y, rented at a park last month and the total spent, in 
+dollars, to rent those beach chairs and umbrellas. Which of the 
+following graphs represents this situation?`,
+    options: [``, ``, ``, ``],
+    correctIndex: 1,
+    explainWhy: `Choice B is correct. The intercepts of the graph of each equation can be found by substituting 0  for one variable at a time. For the equation x y 53 + = , substituting 0  for y  yields x 53 = , so the x-intercept of the graph of the equation is , 53 0 ^ h. Substituting 0  for x  in this equation yields y 53 = , so the y-intercept of the graph of the equation is , 0 53 ^ h. Thus, the graph of the equation x y 53 + = has intercepts at , 53 0 ^ h  and , 0 53 ^ h. For the equation x y 11 18 730 ...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: ["has_figure"],
+  },
+  {
     id: 11119,
     section: "math",
     module: 1,
@@ -279,7 +402,7 @@ RS
 <
 . Which expression 
 represents the length of QS ?`,
-    options: [`cosQ 18`, `sinQ`, ``, ``],
+    options: [`cosQ`, ``, ``, ``],
     correctIndex: 3,
     explainWhy: `Choice D is correct. The figure shows that triangle QRS  is a right triangle. Each of the given choices is an expression containing sinQ  or cosQ. For an acute angle in a right triangle, the sine of the angle is the length of the opposite leg divided by the length of the hypotenuse, and the cosine of the angle is the length of the adjacent leg divided by the length of the hypotenuse. It follows that sinQ QS RS = and cosQ QS QR = , where QR RS < . It’s given in the figure that the length of si...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -330,22 +453,28 @@ k
 h
 h
 , where k 
-is a constant. What is the value of k?
-21
-x
-x
-7
-5
-0
-2 +
-+
-=
-One solution to the given equation can be written as 
-x
-k`,
+is a constant. What is the value of k?`,
     options: [`100`, `0`, `1`, `-1`],
     correctIndex: 0,
     explainWhy: `The correct answer is 100. An equation of a circle in the xy-plane can be written as x t y u r 2 2 2 - + - = ^ ^ h h , where the center of the circle is ,t u ^ h, the radius of the circle is r, and where t, u, and r  are constants. It’s given that the equation of circle A is x y 5 5 25 2 2 + + - = ^ ^ h h , which is equivalent to x y 5 5 5 2 2 2 + + - = ^ ^ h h . Therefore, the center of circle A is , 5 5 - ^ h  and the radius of circle A is 5. It’s given that circle B has the same center as ...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: ["student_produced_response"],
+  },
+  {
+    id: 11121,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "hard",
+    questionText: `x
+x`,
+    options: [`29`, `0`, `1`, `-1`],
+    correctIndex: 0,
+    explainWhy: `The correct answer is 29. The solutions to a quadratic equation in the form ax bx c 0 2 + + = , where a, b, and c  are constants, can be calculated using the quadratic formula, which gives two solutions: x a b b ac 2 4 2 = - + - and x a b b ac 2 4 2 = - - - . The given equation is in the form ax bx c 0 2 + + = , where a 1 = , b 7 = , and c 5 = . It follows that one solution to the given quadratic equation is x 2 1 7 7 4 1 5 2 = - + - ] ] ] g g g, or x 2 7 49 20 = - + - , which is equivalent t...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
@@ -377,6 +506,23 @@ measured for this study?`,
     tags: [],
   },
   {
+    id: 11123,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "advanced",
+    questionText: `Ham`,
+    options: [``, ``, ``, ``],
+    correctIndex: 1,
+    explainWhy: `Choice B is correct. The graph of y f x 4 = + ^ h is shown, and the graph passes through the point , 0 8 ^ h. Substituting 0  for x  and 8  for y  in this equation yields f 8 0 4 = + ^ h . Subtracting 4  from both sides of this equation yields f 4 0 = ^ h. Therefore, when x 0 = , the value of f x ^ h  is 4. Each of the given choices is in the form f x k 3 x = - + ^ h , where k  is a constant. Substituting 0  for x  and 4  for f x ^ h  in this equation yields k 4 30 = - + , or k 4 1 = - + . Ad...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: [],
+  },
+  {
     id: 11124,
     section: "math",
     module: 1,
@@ -387,15 +533,8 @@ measured for this study?`,
 acute angles and two obtuse angles. The measure of 
 one of these angles is 
 °
-x
-9
-140
--
-^
-h . Which of the 
-following could NOT be the sum of the measures of 
-any two of these angles?`,
-    options: [`° x 18 280 - + ^ h`, `° x 18 640 - + ^ h`, `° x 18 280 - ^ h`, `° 180 25 x y 2 9`],
+x`,
+    options: [``, ``, ``, ``],
     correctIndex: 0,
     explainWhy: `Choice A is correct. It’s given that two lines intersect at exactly one point, forming two acute angles and two obtuse angles. When two lines intersect, opposite angles are congruent and adjacent angles are supplementary. It’s given that the measure of one of the angles is ° x 9 140 - ^ h , so the measure of the opposite angle is ° x 9 140 - ^ h , and the measure of each adjacent angle is ° x 180 9 140 - - ^ ^ hh , or ° x 9 320 - + ^ h . The possible sums of the measures of any two of the ang...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -403,6 +542,92 @@ any two of these angles?`,
     isCalculatorAllowed: true,
     estTimeSec: 150,
     tags: [],
+  },
+  {
+    id: 11125,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "advanced",
+    questionText: `[See practice test 11 PDF — Math Module 1, Question 25]`,
+    options: [`A`, `B`, `C`, `D`],
+    correctIndex: 2,
+    explainWhy: `Choice C is correct. A system of two linear equations in two variables has at least
+one solution if the equations represent the same line or lines that intersect at
+exactly one point. Statement I gives the equation 3x + 13.5y = 10.5. Multiplying
+
+both sides of the given equation, 2x + 9y = 7, by 3 yields 3x + 13.5y = 10.5, so the
+2
+
+equation in statement I is equivalent to the given equation. Therefore, the system
+formed by these two equations represents the same line and has infinitely many
+solutions. Statement II gives the equation 3x - 13.5y = 10.5. Adding the right- and
+left-hand sides of 3x + 13.5y = 10.5 and 3x - 13.5y = 10.5 yields
+3x + 13.5y + 3x - 13.5y = 10.5 + 10.5, or 6x = 21. Dividing both sides of this
+equation by 6 yields x = 6 . Therefore, the lines represented by these equ`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: ["figure_required"],
+  },
+  {
+    id: 11126,
+    section: "math",
+    module: 1,
+    topic: "advanced_math",
+    subtopic: "nonlinear_equations",
+    difficulty: "advanced",
+    questionText: `[See practice test 11 PDF — Math Module 1, Question 26]`,
+    options: [`A`, `B`, `C`, `D`],
+    correctIndex: 1,
+    explainWhy: `Choice B is correct. It’s given that the base area of the right rectangular prism is
+
+24t cm2 and the length of the base is 3 cm. Dividing the base area by the length
+8
+
+yields the width:
+
+24t
+3
+8 , or ^24tha 8 k, or 9t cm. It’s also given that the height of the
+3
+
+prism is 15 cm. A right rectangular prism has two rectangular bases and four
+rectangular lateral faces. The total area of the two bases is 2^24th, or 48t cm2 . The
+four lateral faces include two with dimensions 3 cm by 15 cm and two with
+8
+
+dimensions 9t cm by 15 cm. The total area of these four lateral faces is
+8
+2a k^15h + 2^9th^15h cm2 , which is equivalent to 80 + 270t cm2 . Adding this to the
+3
+
+total area of the two bases yields 48t + 270t + 80, or 318t + 80 cm2 . Thus, the
+expression, which represents the surface area, in`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: ["figure_required"],
+  },
+  {
+    id: 11127,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "advanced",
+    questionText: `[See practice test 11 PDF — Math Module 1, Question 27]`,
+    options: [`3331`, `0`, `1`, `-1`],
+    correctIndex: 0,
+    explainWhy: `The correct answer is 3,331. For engine speeds between 1,000 rpm and 6,000 rpm, the equation f(x) = (1/7)(x - a) + 433 defines the linear function f that gives the predicted power in brake horsepower at an engine speed of x rpm, where a is a constant. At 2,016 rpm, the predicted power is 577 bph. Setting f(2016) = 577 and solving for a yields a = 3,331.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: ["student_produced_response", "figure_required"],
   },
   {
     id: 11151,
@@ -433,33 +658,72 @@ y
     id: 11152,
     section: "math",
     module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
+    topic: "advanced_math",
+    subtopic: "nonlinear_functions",
     difficulty: "easy",
-    questionText: `CONTINUE
-Module`,
+    questionText: `Use of a calculator is permitted for all questions.
+NOTES
+Unless otherwise indicated: 
+ 
+▪All variables and expressions represent real numbers.
+ 
+▪Figures provided are drawn to scale.
+ 
+▪All figures lie in a plane.
+ 
+▪The domain of a given function f is the set of all real numbers x for which f x
+^ h 
+is a real number.
+REFERENCE
+r
+A = r2
+C = 2 r
+ 
+w
+A = w
+ 
+h
+b
+A = bh`,
     options: [``, ``, ``, ``],
     correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
+    explainWhy: `The correct answer is B. This question requires understanding of nonlinear functions concepts.`,
+    explainConcept: `This question tests your understanding of Nonlinear Functions. Advanced Math is one of the key content domains on the SAT.`,
+    explainNext: `Practice more Nonlinear Functions problems to strengthen your skills in this area.`,
     isCalculatorAllowed: true,
     estTimeSec: 120,
-    tags: [],
+    tags: ["has_figure"],
   },
   {
     id: 11153,
     section: "math",
     module: 2,
     topic: "algebra",
-    subtopic: "systems_of_equations",
+    subtopic: "linear_equations_one_var",
     difficulty: "easy",
-    questionText: `A rectangle has a length of 56 inches and a width of 
-28 inches. What is the area, in square inches, of the 
-rectangle?`,
-    options: [`28`, `84`, `168`, `,1 568 4 x 10 110 = x y 6 63 - = The solution to the given system of equations is ,x y ^ h. What is the value of y?`],
+    questionText: `r
+h
+V = r2h`,
+    options: [``, ``, ``, ``],
     correctIndex: 3,
     explainWhy: `Choice D is correct. The area, A, of a rectangle can be found using the formula A w , = , where ,  represents the length and w  represents the width of the rectangle. It’s given that a rectangle has a length of 56  inches and a width of 28  inches. Substituting 56  for ,  and 28  for w  in the formula A w , = yields A 56 28 = ^ ^h h, or , A 1 568 = . Therefore, the area, in square inches, of the rectangle is , 1 568. 44`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: [],
+  },
+  {
+    id: 11154,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "easy",
+    questionText: `+`,
+    options: [``, ``, ``, ``],
+    correctIndex: 3,
+    explainWhy: `Choice D is correct. Dividing both sides of the equation x 10 110 = by 10  yields x 11 = . Substituting 11 for x  in the equation x y 6 63 - = yields y 6 11 63 - = ^ h , which is equivalent to y 66 63 - = , or y 3 = . Therefore, the value of y  is 3.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
@@ -475,20 +739,8 @@ rectangle?`,
     difficulty: "easy",
     questionText: `The function f is defined by f x
 x
-9 2
-3
-=
-+
-^
-^
-h
-h. For 
-what value of x does f x
-63
-=
-^ h
-?`,
-    options: [`2`, `5`, `7`, `30 6 x`],
+9 2`,
+    options: [``, ``, ``, ``],
     correctIndex: 0,
     explainWhy: `Choice A is correct. Substituting 63  for f x ^ h  in the given function yields x 63 9 2 3 = + ^ h. Dividing both sides of this equation by 9  yields x 7 2 3 = + . Subtracting 3  from both sides of this equation yields x 4 2 = . Dividing both sides of this equation by 2  yields x 2 = . Therefore, f x 63 = ^ h when the value of x  is 2.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -496,6 +748,58 @@ what value of x does f x
     isCalculatorAllowed: true,
     estTimeSec: 120,
     tags: [],
+  },
+  {
+    id: 11156,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "systems_of_equations",
+    difficulty: "medium",
+    questionText: `63
+-
+=
+The solution to the given system of equations is 
+,x y
+^
+h. What is the value of y?`,
+    options: [`8.6; 43/5`, `0`, `1`, `-1`],
+    correctIndex: 0,
+    explainWhy: `The correct answer is . 8 6. Dividing both sides of the given equation by 10  yields . x 8 6 = . Therefore, . 8 6  is the solution to the given equation. Note that 8.6 and 43/5 are examples of ways to enter a correct answer.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: ["student_produced_response"],
+  },
+  {
+    id: 11157,
+    section: "math",
+    module: 2,
+    topic: "advanced_math",
+    subtopic: "nonlinear_functions",
+    difficulty: "medium",
+    questionText: `,
+( )
+y
+a
+3 600
+x
+=
+The given equation, where a is a positive constant, 
+gives the predicted number of bacteria, y, in a 
+growth medium x hours after the number of 
+bacteria was initially measured. According to the 
+equation, what was the predicted number of bacteria 
+initially measured in the growth medium?`,
+    options: [`3600`, `0`, `1`, `-1`],
+    correctIndex: 0,
+    explainWhy: `The correct answer is , 3 600. The predicted number of bacteria initially measured in the growth medium is the value of y  when x 0 = . Substituting 0  for x  in the given equation yields , y a 3 600 0 = ^ h . Since a  is positive, this equation is equivalent to , y 3 600 1 = ^ h. Therefore, when x 0 = , the value of y  is , 3 600. Thus, the predicted number of bacteria initially measured in the growth medium is , 3 600.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: ["student_produced_response"],
   },
   {
     id: 11158,
@@ -549,27 +853,13 @@ function f ?`,
     id: 11160,
     section: "math",
     module: 2,
-    topic: "advanced_math",
-    subtopic: "nonlinear_functions",
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
     difficulty: "medium",
-    questionText: `86
+    questionText: `110
 =
-What value of x is the solution to the given 
-equation?
-7
-,
-( )
-y
-a
-3 600
 x
-=
-The given equation, where a is a positive constant, 
-gives the predicted number of bacteria, y, in a 
-growth medium x hours after the number of 
-bacteria was initially measured. According to the 
-equation, what was the predicted number of bacteria 
-initially measured in the growth medium?`,
+y`,
     options: [``, ``, ``, ``],
     correctIndex: 3,
     explainWhy: `Choice D is correct. The equation for the line representing the boundary of the shaded region can be written in the form y b = , where , b 0 ^ h  is the y-intercept of the line in the xy-plane. For the graph shown in the xy-plane, the boundary line passes through the points , 15 36 - ^ h  and , 0 36 ^ h. Thus, the equation of the boundary line is y 36 = . Since the shaded region represents all the points on and above this boundary line, it follows that the graph represents all the solutions t...`,
@@ -643,62 +933,12 @@ x`,
     id: 11164,
     section: "math",
     module: 2,
-    topic: "problem_solving",
-    subtopic: "ratios_rates",
+    topic: "geometry",
+    subtopic: "circles",
     difficulty: "medium",
     questionText: `What is the radius of the circle in the xy-plane 
 defined by x
-y
-2
-5
-169
-2
-2
-+
-+
-+
-=
-^
-^
-h
-h
-?  
-15
-50
-100
-150
-200
-250
-x
-‒200
-‒150
-‒100
-‒50
-50
-100
-150
-200
-250
-300
-350
-y
-O
-The graph shows the estimated boiling point y, in 
-degrees Celsius, of a normal paraffin with a 
-molecular weight of x grams per mole, where 
-x
-1
-280
-#
-#
-. Which statement is the best 
-interpretation of the point 
-.
-,
-.
-149 02 186 05
-^
-h?`,
+y`,
     options: [`13`, `0`, `1`, `-1`],
     correctIndex: 0,
     explainWhy: `The correct answer is 13. The equation of a circle in the xy-plane can be written in the form x h y k r 2 2 2 - + - = ^ ^ h h , where ,h k ^ h  is the center of the circle and r  is the radius of the circle. It’s given that the circle in the xy-plane is defined by x y 2 5 169 2 2 + + + = ^ ^ h h . Therefore, r 169 2 = . Taking the positive square root of both sides of this equation yields r 13 = . Thus, the radius of the circle is 13.`,
@@ -706,7 +946,25 @@ h?`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
+    tags: ["student_produced_response"],
+  },
+  {
+    id: 11165,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "medium",
+    questionText: `#
++`,
+    options: [`. . c t 1 87 2 40`, ``, ``, ``],
+    correctIndex: 1,
+    explainWhy: `Choice B is correct. It’s given that the graph shows the estimated boiling point y, in degrees Celsius, of a normal paraffin with a molecular weight of x  grams per mole. It follows that for the point . , . 149 02 186 05 ^ h, . 149 02  represents the molecular weight, in grams per mole, of a normal paraffin and . 186 05  represents its estimated boiling point, in degrees Celsius. Therefore, the best interpretation of the point . , . 149 02 186 05 ^ h  is that a normal paraffin with a molecula...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: [],
   },
   {
     id: 11166,
@@ -741,6 +999,44 @@ must be a factor of f x
     tags: ["has_figure"],
   },
   {
+    id: 11167,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "hard",
+    questionText: `x
+g x
+^ h
+1
+32`,
+    options: [``, ``, ``, ``],
+    correctIndex: 3,
+    explainWhy: `Choice D is correct. It’s given that for the linear function g, the table shows four values of x  and their corresponding values of g x ^ h. It’s also given that the function can be written as g x mx b = + ^ h , where m  and b  are constants. The table shows that when the value of x  is 1, the corresponding value of g x ^ h  is 32. Substituting 1 for x  and 32  for g x ^ h  in g x mx b = + ^ h yields m b 32 1 = + ^ h , or m b 32 = + . Subtracting b  from both sides of this equation yields b m...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: [],
+  },
+  {
+    id: 11168,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "hard",
+    questionText: `x`,
+    options: [``, ``, ``, ``],
+    correctIndex: 1,
+    explainWhy: `Choice B is correct. According to the table, f 24 8 = - ^ h , f 30 8 = - ^ h , and f 32 8 = ^ h . Let the quadratic function g  be defined by g x f x 8 = + ^ ^ h h . Therefore, g f 24 24 8 = + ^ ^ h h , g f 30 30 8 = + ^ ^ h h , and g f 32 32 8 = + ^ ^ h h . Substituting 8 -  for f 24 ^ h  in the equation g f 24 24 8 = + ^ ^ h h yields g 24 8 8 = - + ^ h , or g 24 0 = ^ h . Substituting 8 -  for f 30 ^ h  in the equation g f 30 30 8 = + ^ ^ h h yields g 30 8 8 = - + ^ h , or g 30 0 = ^ h . Su...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: [],
+  },
+  {
     id: 11169,
     section: "math",
     module: 2,
@@ -760,7 +1056,7 @@ same estimated mass and all the K-type stars have
 the same estimated mass. Based on the graph, which 
 of the following is closest to the estimated mass, in 
 quettagrams, of each M-type star in this cluster?`,
-    options: [`811`, `938`, `, 51 904`, `, 75 978 20 p2 3 7`],
+    options: [`811`, `938`, `, 51 904`, `, 75 978`],
     correctIndex: 0,
     explainWhy: `Choice A is correct. The x-intercept of the graph shown represents the situation in which the cluster contains only M-type stars. Based on the graph, the x-intercept is approximately , 158 0 ^ h. Therefore, if there are 0  K-type stars in the cluster, then there are approximately 158  M-type stars in the cluster. It’s given that the total mass of the stars in this cluster is , 127 882  quettagrams. Therefore, the estimated mass of each M-type star is approximately , 158 127 882  quettagrams, ...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -770,11 +1066,28 @@ quettagrams, of each M-type star in this cluster?`,
     tags: ["has_figure"],
   },
   {
-    id: 11171,
+    id: 11170,
     section: "math",
     module: 2,
     topic: "advanced_math",
-    subtopic: "nonlinear_functions",
+    subtopic: "nonlinear_equations",
+    difficulty: "hard",
+    questionText: `[See practice test 11 PDF — Math Module 2, Question 20]`,
+    options: [`41/81`, `0`, `1`, `-1`],
+    correctIndex: 0,
+    explainWhy: `The correct answer is 41/81. An expression of the form a^(m/n), where m and n are integers greater than 1 and a >= 0, is equivalent to the nth root of a^m. The expression on the left-hand side of the given equation is equivalent to p^(2/3); thus p^(2/3) = t^(9/7). If t = p^(3n-1), substituting yields the solution.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: ["student_produced_response", "figure_required"],
+  },
+  {
+    id: 11171,
+    section: "math",
+    module: 2,
+    topic: "problem_solving",
+    subtopic: "percentages",
     difficulty: "hard",
     questionText: `The number a is 
 %
@@ -784,23 +1097,7 @@ number b is
 %
 320
  greater than 160. What is the 
-value of a?
-22
-f x
-x
-x
-6
-60
-126
-2
-= -
-+
--
-^ h
-The function f is defined by the given equation. 
-Which of the following equivalent forms of the 
-equation displays the maximum value of the 
-function as a constant or coefficient?`,
+value of a?`,
     options: [`1512/5; 302.4`, `0`, `1`, `-1`],
     correctIndex: 0,
     explainWhy: `The correct answer is . 302 4. It’s given that the number b  is % 320 greater than 160. It follows that b  is equal to 160  plus % 320 of 160, which can be written as . b 160 3 2 160 = + ^ h, or b 672 = . It’s also given that the number a  is % 55 less than the number b. It follows that a  is equal to b  minus % 55 of b, which can be written as . a b b 0 55 = - , or . a b 0 45 = . Substituting 672  for b  in this equation yields . a 0 45 672 = ^ h, or . a 302 4 = . 49`,
@@ -811,6 +1108,25 @@ function as a constant or coefficient?`,
     tags: ["student_produced_response"],
   },
   {
+    id: 11172,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "hard",
+    questionText: `f x
+x
+x`,
+    options: [``, ``, ``, ``],
+    correctIndex: 2,
+    explainWhy: `Choice C is correct. The given equation is quadratic. The maximum value of a function defined by a quadratic equation can be displayed as a constant in the vertex form of the equation, f x a x h k 2 = - + ^ ^ h h , where the maximum value of the function is k, which occurs when x h = , and a  is a constant. The given equation can be rewritten in this form by completing the square. To complete the square, the given equation can be rewritten as f x x x 6 10 126 2 = - - - ^ ^ h h , which is equi...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: [],
+  },
+  {
     id: 11173,
     section: "math",
     module: 2,
@@ -818,21 +1134,8 @@ function as a constant or coefficient?`,
     subtopic: "linear_equations_one_var",
     difficulty: "advanced",
     questionText: `In the figure shown, WZ and XY intersect at 
-point Q, YQ
-21
-=
-, WQ
-70
-=
-, WX
-60
-=
-, and 
-XQ
-120
-=
-. What is the length of YZ ?`,
-    options: [`18`, `36`, `120`, `200 24 x x 52 64 81 0 3 4 + - = ^ ^h h How many distinct real solutions does the given equation have?`],
+point Q, YQ`,
+    options: [``, ``, ``, ``],
     correctIndex: 0,
     explainWhy: `Choice A is correct. It’s given that WZ  and XY  intersect at point Q. It follows that WQX + and YQZ + are vertical angles, which means they are congruent to each other. The figure shows that W + and Y + both have a measure of ° a , so they are congruent to each other. Therefore, QWX 3 and QYZ 3 are similar triangles, where WQ  corresponds to YQ  and WX  corresponds to YZ . Since the lengths of corresponding sides in similar triangles are proportional, it follows that YQ YZ WQ WX = . It’s giv...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -840,6 +1143,26 @@ XQ
     isCalculatorAllowed: true,
     estTimeSec: 150,
     tags: ["has_figure"],
+  },
+  {
+    id: 11174,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "advanced",
+    questionText: `30
+32
+f x
+^ h`,
+    options: [``, ``, ``, ``],
+    correctIndex: 1,
+    explainWhy: `Choice B is correct. The given equation can be rewritten as x x x x x 52 4 4 16 9 9 0 2 2 2 + - + - + = ^ ^ ^ ^ h h h h , which is equivalent to x x x x x x 52 4 4 16 3 3 9 0 2 2 + - + - + + = ^ ^ ^ ^ ^ h h h h h . Applying the zero product property in this equation yields 52 0 = , x 4 0 + = , x x 4 16 0 2 - + = , x 3 0 - = , x 3 0 + = , and x 9 0 2 + = . The equation 52 0 = has no solution. Subtracting 4  from both sides of the equation x 4 0 + = yields x 4 = - . Adding 3  to both sides of t...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: [],
   },
   {
     id: 11175,
@@ -867,6 +1190,118 @@ points per player for data set A.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 150,
+    tags: [],
+  },
+  {
+    id: 11176,
+    section: "math",
+    module: 2,
+    topic: "geometry",
+    subtopic: "lines_angles_triangles",
+    difficulty: "advanced",
+    questionText: `[See practice test 11 PDF — Math Module 2, Question 26]`,
+    options: [`A`, `B`, `C`, `D`],
+    correctIndex: 3,
+    explainWhy: `Choice D is correct. It’s given that in triangle XYZ , the measure of angle X is 90°,
+so triangle XYZ is a right triangle. It’s also given that point W lies on segment YZ ,
+and segment WX is perpendicular to segment YZ . It follows that triangle WYX is a
+right triangle. Triangle WYX and triangle XYZ are right triangles with the same
+interior angle measure at point Y . It follows that triangle WYX and triangle XYZ
+are similar, where angles W , Y , and X in triangle WYX correspond to angles X , Y ,
+and Z , respectively, in triangle XYZ . Since corresponding angles in similar
+triangles are congruent, their tangents have equal value. Thus, the tangent of
+angle Z is equal to the tangent of angle X in triangle WYX . The opposite side of
+angle X in triangle WYX is segment WY , and the adjacent si`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: ["figure_required"],
+  },
+  {
+    id: 11177,
+    section: "math",
+    module: 2,
+    topic: "problem_solving",
+    subtopic: "ratios_rates",
+    difficulty: "advanced",
+    questionText: `[See practice test 11 PDF — Math Module 2, Question 27]`,
+    options: [`157.8`, `0`, `1`, `-1`],
+    correctIndex: 0,
+    explainWhy: `The correct answer is 157.8. An area of 46.00 square nautical miles is equivalent to k square kilometers. Since 1 nautical mile equals 1.852 kilometers, 1 square nautical mile equals (1.852)^2 = 3.429904 square kilometers. Multiplying 46.00 by 3.429904 gives approximately 157.8 square kilometers.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: ["student_produced_response", "figure_required"],
+  },
+  {
+    id: 11001,
+    section: "reading_writing",
+    module: 1,
+    topic: "craft_structure",
+    subtopic: "words_context",
+    difficulty: "easy",
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `Ezra Pound’s poetry can be hard to ______ : it is 
+dense, experimental, and so full of references and 
+allusions that many readers have a difficult time 
+even identifying the poems’ subjects.`,
+    options: [`comprehend`, `dislike`, `interrupt`, `overlook`],
+    correctIndex: 0,
+    explainWhy: `Choice A is the best answer because it most logically completes the text’s discussion of Ezra Pound’s poetry. In this context, “comprehend” would mean to understand or grasp the meaning of something. The text describes Pound’s poetry as “dense” and “experimental,” with many references that readers may not understand. The text also states that many readers may not even be able to identify a poem’s subject. This context clearly suggests that readers struggle to understand Pound’s poetry as a re...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
+    id: 11002,
+    section: "reading_writing",
+    module: 1,
+    topic: "craft_structure",
+    subtopic: "words_context",
+    difficulty: "easy",
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `The unique subak water management system used 
+to irrigate the rice paddy fields of the Indonesian 
+island of Bali has a rich cultural, philosophical, and 
+historical significance dating back to the ninth 
+century. The many elements of subak—terraces, 
+canals, and water temples—are ______ : they are 
+joined together into a single cohesive unit.`,
+    options: [`outmoded`, `informal`, `interconnected`, `optional`],
+    correctIndex: 2,
+    explainWhy: `Choice C is the best answer because it most logically completes the text’s discussion of Bali’s subak water management system. In this context, “interconnected” would mean joined or linked together. The text describes the various components of the subak system—“terraces, canals, and water temples”—and then states that they are “joined together into a single cohesive unit.” This context indicates that these elements are connected with one another in an integrated system. 3`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
+    id: 11003,
+    section: "reading_writing",
+    module: 1,
+    topic: "craft_structure",
+    subtopic: "words_context",
+    difficulty: "easy",
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `Although the government of the Soviet Union 
+attempted to ______ Georgi Vladimov’s novel 
+Faithful Ruslan, copies of the book circulated in 
+secret among readers in several parts of the country.`,
+    options: [`replicate`, `critique`, `import`, `suppress`],
+    correctIndex: 3,
+    explainWhy: `Choice D is the best answer because it most logically completes the text’s discussion of Georgi Vladimov’s novel Faithful Ruslan. In this context, “suppress” means to prevent something, such as a book, from being accessed by the public. The text indicates that the novel was circulated secretly within the Soviet Union, a stratagem that was necessary because of the government’s efforts to suppress the book, or prevent it from being circulated and read.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
     tags: [],
   },
   {
@@ -1204,6 +1639,33 @@ spike-wave breaking.`,
     isCalculatorAllowed: false,
     estTimeSec: 90,
     tags: [],
+  },
+  {
+    id: 11015,
+    section: "reading_writing",
+    module: 1,
+    topic: "craft_structure",
+    subtopic: "words_context",
+    difficulty: "medium",
+    questionText: `[See practice test 11 PDF — Reading Writing Module 1, Question 15]`,
+    options: [`A`, `B`, `C`, `D`],
+    correctIndex: 1,
+    explainWhy: `Choice B is the best answer because it most effectively uses data from the graph
+to complete the sentence about which fuel has the highest energy density. Of the
+four bars in the graph, the highest (indicating the greatest energy density in MJ/L)
+is for POP biofuel. According to the graph, the energy densities of the fuels shown
+are approximately 40 MJ/L for POP biofuel, 36 MJ/L for gasoline, 34 MJ/L for jet
+fuel, and 23 MJ/L for ethanol.
+Choice A is incorrect. The task is to find the fuel in the graph with the highest bar
+(indicating the greatest energy density in MJ/L), and jet fuel has the third-highest
+bar in the graph, not the highest. According to the graph, the energy densities of
+the fuels shown are approximately 40 MJ/L for POP biofuel, 36 MJ/L for gasoline,
+34 MJ/L for jet fuel, `,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: ["figure_required"],
   },
   {
     id: 11016,
@@ -1630,6 +2092,110 @@ of the Shackleton expedition.`,
     tags: [],
   },
   {
+    id: 11032,
+    section: "reading_writing",
+    module: 1,
+    topic: "expression",
+    subtopic: "rhetorical_synthesis",
+    difficulty: "advanced",
+    questionText: `[See practice test 11 PDF — Reading Writing Module 1, Question 32]`,
+    options: [`A`, `B`, `C`, `D`],
+    correctIndex: 3,
+    explainWhy: `Choice D is the best answer. Noting that Meghadūta uses a pattern of long and
+short syllables in its lines (quantitative meter) and Widsith uses a pattern of
+repeated sounds in its lines (alliterative meter), and signaling a contrast with
+“whereas,” the sentence emphasizes a difference between the meters of the two
+poems.
+Choice A is incorrect. The sentence indicates that the two poems were written in
+different languages; it doesn’t emphasize a difference between the meters of the
+two poems. Choice B is incorrect. The sentence mentions the meters of the two
+poems but misrepresents information from the notes; the overall definition of a
+meter (the rhythmic structure or pattern of accents in a poem’s lines) applies to
+both alliterative and quantitative meters, not just quantitative. Choice C`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: ["figure_required"],
+  },
+  {
+    id: 11033,
+    section: "reading_writing",
+    module: 1,
+    topic: "expression",
+    subtopic: "rhetorical_synthesis",
+    difficulty: "advanced",
+    questionText: `[See practice test 11 PDF — Reading Writing Module 1, Question 33]`,
+    options: [`A`, `B`, `C`, `D`],
+    correctIndex: 1,
+    explainWhy: `Choice B is the best answer. The sentence places the Declaration of
+Independence in the context of Valle’s changing political beliefs, noting that Valle
+was long an opponent of Central American independence but changed his mind
+after an 1820 revolt and then wrote the Declaration of Independence in 1821.
+Choice A is incorrect. The sentence states that Valle’s political beliefs changed
+after Riego’s revolt but doesn’t indicate how these changed beliefs provide
+context for the 1821 Declaration of Independence. Choice C is incorrect because
+it misrepresents information from the notes. Valle’s political beliefs changed after
+Riego’s 1820 revolt, not when the Spanish king repealed the 1812 constitution.
+Choice D is incorrect. While the sentence indicates a relationship between
+Colonel Riego’s 18`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: ["figure_required"],
+  },
+  {
+    id: 11051,
+    section: "reading_writing",
+    module: 2,
+    topic: "craft_structure",
+    subtopic: "words_context",
+    difficulty: "easy",
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `Ancient Inca inhabiting the Andes Mountains 
+used terraces, rows of flattened land with built-
+in irrigation systems, to grow crops at different 
+altitudes. This method of farming proved to be 
+highly ______  , as evidenced by the great number 
+and variety of crops grown at that time.`,
+    options: [`chaotic`, `uniform`, `effective`, `burdensome`],
+    correctIndex: 2,
+    explainWhy: `Choice C is the best answer because it most logically completes the text’s discussion of the ancient Inca farming method. In this context, “effective” means successful in producing a desired result. The text describes how the Inca used terraces with built-in irrigation systems to grow crops at different altitudes and then indicates that this farming method produced positive results “as evidenced by the great number and variety of crops grown at that time.” The context clearly suggests that th...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
+    id: 11052,
+    section: "reading_writing",
+    module: 2,
+    topic: "craft_structure",
+    subtopic: "words_context",
+    difficulty: "easy",
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `Since the Hubble Space Telescope was launched into 
+space in 1990, astronauts have needed to complete 
+regular missions to repair the telescope and keep 
+it working smoothly. Researchers hope that robots 
+will soon be able to make these repairs. Employing 
+robots instead of humans to make repairs will be 
+helpful, as ______ astronauts to maintain the 
+telescope can be expensive.`,
+    options: [`straightening`, `forgetting about`, `relying on`, `reducing`],
+    correctIndex: 2,
+    explainWhy: `Choice C is the best answer because it most logically completes the text’s discussion of repairing the Hubble Space Telescope. In this context, “relying on” means depending on. The text states that astronauts have regularly had to go on missions to repair the Hubble Space Telescope but that robots might soon be able to make the repairs, which would be helpful because involving astronauts in 19 the process is expensive. It is most reasonable to assume that it is the need to send astronauts on ...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
     id: 11053,
     section: "reading_writing",
     module: 2,
@@ -1873,7 +2439,7 @@ first four national censuses, which occurred every
 ten years.
 According to the graph, which city had the largest 
 population in 1891?`,
-    options: [`Toronto`, `Montréal`, `Québec City`, `Halifax 12 90 80 70 60 50 40 30`],
+    options: [`Toronto`, `Montréal`, `Québec City`, `Halifax 12 90 80 70 60 50 40`],
     correctIndex: 1,
     explainWhy: `Choice B is the best answer because the graph shows that Montréal had the largest population in 1891 among the four cities represented. According to the data points in the graph for the year 1891, Montréal’s population was approximately 220,000, which is greater than the respective populations of Toronto (approximately 180,000), Québec City (approximately 60,000), and Halifax (approximately 40,000).`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -1881,6 +2447,34 @@ population in 1891?`,
     isCalculatorAllowed: false,
     estTimeSec: 90,
     tags: ["has_figure"],
+  },
+  {
+    id: 11062,
+    section: "reading_writing",
+    module: 2,
+    topic: "information_ideas",
+    subtopic: "central_ideas",
+    difficulty: "medium",
+    questionText: `[See practice test 11 PDF — Reading Writing Module 2, Question 12]`,
+    options: [`A`, `B`, `C`, `D`],
+    correctIndex: 3,
+    explainWhy: `Choice D is the best answer because it accurately describes data from the graph
+that support the researchers’ conclusion that children may be more aware of
+mammals than of other animals. The graph presents the percent of drawings by
+schoolchildren that contained an example of an animal from a certain group
+(mammals, birds, or insects). The graph shows that approximately 80% of the
+drawings contained an example of a mammal, while only approximately 69%
+contained an example of a bird and only about 55% contained an example of an
+insect. The fact that mammals were included in more drawings than either birds or
+insects were supports the idea that children may be particularly aware of
+mammals in their environments.
+Choice A is incorrect because the graph shows that there were not “about as
+many`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: ["figure_required"],
   },
   {
     id: 11063,
@@ -1991,6 +2585,259 @@ practice.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: false,
     estTimeSec: 90,
+    tags: [],
+  },
+  {
+    id: 11067,
+    section: "reading_writing",
+    module: 2,
+    topic: "conventions",
+    subtopic: "form_structure_sense",
+    difficulty: "medium",
+    questionText: `Which choice most logically completes the text?`,
+    passageText: `In Switzerland, the white fuzzy mountain flowers 
+known as edelweiss are widely treated as a symbol 
+of strength and courage. Although edelweiss can 
+thrive in extreme conditions, they aren’t notably 
+tougher or harder to reach than other mountain 
+flowers growing in the Swiss Alps. Historian Tobias 
+Scheidegger has shown that the popular view of the 
+flowers originated in the mid-1800s when mountain 
+climbing became popular in Switzerland. Mountain 
+climbers spread the idea that the flowers grew only 
+in steep, icy terrains that were dangerous to climb 
+to. Scheidegger says that these claims were self-
+interested. He suggests that mountain climbers 
+presented edelweiss in this way in order to ______`,
+    options: [`make themselves appear brave and strong for being able to climb to difficult places where edelweiss supposedly grew.`, `encourage more flower enthusiasts to explore the Swiss Alps.`, `share their observations about the unusual characteristics of edelweiss with scientists.`, `prove that edelweiss were more common in the Swiss Alps than in other mountain regions in Europe.`],
+    correctIndex: 0,
+    explainWhy: `Choice A is the best answer because it most logically completes the text’s discussion of mountain climbers’ motivations for exaggerating the difficulty of reaching edelweiss. The text establishes that edelweiss became symbols of strength and courage in Switzerland in the mid-1800s. The text goes on to state that mountain climbing became popular around the same time and that climbers 27 spread the false idea that the flowers grew only in dangerous, hard-to-reach locations. According to the tex...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
+    id: 11068,
+    section: "reading_writing",
+    module: 2,
+    topic: "conventions",
+    subtopic: "form_structure_sense",
+    difficulty: "medium",
+    questionText: `Which choice most logically completes the text?`,
+    passageText: `The ratio of methane to other atmospheric 
+constituents—represented by a measure called the 
+methane mole fraction—influences a variety of 
+meteorological phenomena, notably precipitation 
+and humidity. For Titan, Saturn’s largest moon, 
+the observational data that exist are too sparse 
+and discrepant to fully constrain the range of the 
+methane mole fraction at various atmospheric levels. 
+Juan Lora and colleagues point out that outputs of 
+the IPSL atmospheric model of Titan, which track 
+closely to observations in some respects, reflect how 
+the model’s developers responded to this challenge: 
+by prescribing a uniform methane mole fraction 
+for the lowest level of the atmosphere. It is therefore 
+important to note that ______`,
+    options: [`some disagreements between the model’s simulations of Titan’s precipitation and humidity and the moon’s actual precipitation and humidity are to be expected.`, `further observations of Titan may clarify the moon’s methane mole fraction sufficiently for the model to employ a single value rather than a range.`, `even though the model’s outputs sometimes agree with observational data, Titan’s real methane mole fraction is likely higher than the methane mole fraction used in the model.`, `inconsistencies across the model’s simulations of Titan’s precipitation and humidity could be attributable to variations in the moon’s methane mole fraction.`],
+    correctIndex: 0,
+    explainWhy: `Choice A is the best answer because it most logically completes the text’s discussion of modeling the atmosphere of Titan. The text establishes that the methane mole fraction (the ratio of methane to other atmospheric components) influences precipitation, humidity, and other meteorological phenomena and that observational data for Titan are too lacking (“too sparse and discrepant”) to fully determine the range of this measure across the moon’s various atmospheric levels. The text indicates th...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
+    id: 11069,
+    section: "reading_writing",
+    module: 2,
+    topic: "expression",
+    subtopic: "rhetorical_synthesis",
+    difficulty: "medium",
+    questionText: `Which choice completes the text so that it conforms 
+to the conventions of Standard English?`,
+    passageText: `Ganga is a folk singing tradition that originated 
+in the Dinaric Alps in southern Europe. Ganga 
+singers sing different melodies at the same time. 
+The clashing notes can echo a long way across the 
+mountains, which is why ______`,
+    options: [`ganga has been used as a communication method?`, `ganga has been used as a communication method.`, `has ganga been used as a communication method.`, `has ganga been used as a communication method?`],
+    correctIndex: 1,
+    explainWhy: `Choice B is the best answer. The convention being tested is end-of-sentence punctuation. This choice correctly uses a period to punctuate a declarative sentence ending with a relative clause that presents an indirect question (“why ganga has been used as a communication method.”)`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
+    id: 11070,
+    section: "reading_writing",
+    module: 2,
+    topic: "conventions",
+    subtopic: "boundaries",
+    difficulty: "medium",
+    questionText: `Which choice completes the text so that it conforms 
+to the conventions of Standard English?`,
+    passageText: `A popular suite of mapping and spatial analysis 
+software, ArcGIS enables cartographers like Karachi 
+Cartography founder Namra Khalid ______ maps 
+by analyzing and arranging raw geospatial data.`,
+    options: [`create`, `to create`, `creating`, `created`],
+    correctIndex: 1,
+    explainWhy: `Choice B is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite to-infinitive verb “to create” is correctly used to form a subordinate clause that expresses how ArcGIS facilitates the creation of maps (by analyzing and arranging certain data).`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: ["has_figure"],
+  },
+  {
+    id: 11071,
+    section: "reading_writing",
+    module: 2,
+    topic: "conventions",
+    subtopic: "boundaries",
+    difficulty: "hard",
+    questionText: `Which choice completes the text so that it conforms 
+to the conventions of Standard English?`,
+    passageText: `The part of a compound that determines the 
+compound’s color is ______ the chromophore. 
+One example of a chromophore is hemoglobin, 
+which gives human blood its red color.`,
+    options: [`called,`, `called`, `called—`, `called;`],
+    correctIndex: 1,
+    explainWhy: `Choice B is the best answer. The convention being tested is punctuation use between a verb and its complement. No punctuation is needed between the verb 29 “is called” and its complement “the chromophore.” The complement helps complete the idea of the verb—in this case, it explains what the part of a compound that determines the compound’s color is called—and any punctuation between the two results in an ungrammatical sentence.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 120,
+    tags: [],
+  },
+  {
+    id: 11072,
+    section: "reading_writing",
+    module: 2,
+    topic: "conventions",
+    subtopic: "boundaries",
+    difficulty: "hard",
+    questionText: `Which choice completes the text so that it conforms 
+to the conventions of Standard English?`,
+    passageText: `In rural Minnesota, ecologist Leroy Walston 
+conducted a study to determine whether seeding 
+solar panel fields with wildflowers could bolster 
+pollinator populations in nearby food crops. 
+Walston’s findings indicate that—assuming solar 
+panel installers’ ______ practice has the potential 
+to increase the number of native bees in crops 
+near solar fields throughout the Midwest by up to 
+20 percent.`,
+    options: [`cooperation, this`, `cooperation—this`, `cooperation: this`, `cooperation this`],
+    correctIndex: 1,
+    explainWhy: `Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. This choice correctly uses a dash after “cooperation” to pair with the dash after “that” to separate the supplementary element “assuming solar panel installers’ cooperation” from the rest of the sentence.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 120,
+    tags: [],
+  },
+  {
+    id: 11073,
+    section: "reading_writing",
+    module: 2,
+    topic: "conventions",
+    subtopic: "boundaries",
+    difficulty: "hard",
+    questionText: `Which choice completes the text so that it conforms 
+to the conventions of Standard English?`,
+    passageText: `Key-value pairs are an important aspect of JavaScript 
+Object Notation (JSON), an electronic file format 
+for storing and transmitting data. Keys function as 
+labels, while values contain the actual information. 
+In a JSON file storing data about fire belly ______ 
+instance, you could encounter a key such as “species” 
+with the associated value of “Cynops orientalis.”`,
+    options: [`newts. For`, `newts, for`, `newts: for`, `newts; for`],
+    correctIndex: 1,
+    explainWhy: `Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. The comma after “newts” pairs with the comma after “instance” to separate the supplementary element “for instance” from the rest of the sentence. The supplementary element appears between the prepositional phrase (“In…newts”) and the main clause of the sentence (“you… orientalis”) and signals that the sentence is presenting an example of how keys and values function in JSON files.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 120,
+    tags: [],
+  },
+  {
+    id: 11074,
+    section: "reading_writing",
+    module: 2,
+    topic: "conventions",
+    subtopic: "boundaries",
+    difficulty: "hard",
+    questionText: `Which choice completes the text so that it conforms 
+to the conventions of Standard English?`,
+    passageText: `Most of the ice found on Earth is ice Ih, 
+distinguished by a crystalline structure in which 
+molecules form a hexagonal pattern. Amorphous ice, 
+on the other hand, constitutes most of the ice in the 
+ultrafrigid environment of outer space. Defined by a 
+disorganized molecular structure, ______`,
+    options: [`ice Ih contains crystals, whereas amorphous ice, which lacks the thermal energy to form them, does not.`, `amorphous ice lacks the thermal energy to form the crystals found in ice Ih.`, `the lack of thermal energy in amorphous ice explains its inability to form the crystals found in ice Ih.`, `ice Ih differs from amorphous ice in that it possesses the thermal energy to form crystals.`],
+    correctIndex: 1,
+    explainWhy: `Choice B is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase “amorphous ice” the subject of the sentence and places it immediately after the modifying phrase “defined… structure.” In doing so, this choice clearly establishes that amorphous ice—and not another noun in the sentence—is being described as having a disorganized molecular structure. 30`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 120,
+    tags: [],
+  },
+  {
+    id: 11075,
+    section: "reading_writing",
+    module: 2,
+    topic: "conventions",
+    subtopic: "boundaries",
+    difficulty: "hard",
+    questionText: `Which choice completes the text so that it conforms 
+to the conventions of Standard English?`,
+    passageText: `Recordings of electrical activity in the brain, 
+______ increased activity in brain areas associated 
+with suppressing motor functions.`,
+    options: [`electrograms show that while responding to hypothetical match scenarios, the most highly skilled soccer players have`, `the most highly skilled soccer players responding to hypothetical match scenarios have electrograms that show`, `responses to hypothetical match scenarios show that the most highly skilled soccer players have electrograms with`, `hypothetical match scenario responses show that the most highly skilled soccer players captured in electrograms have`],
+    correctIndex: 0,
+    explainWhy: `Choice A is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun “electrograms” the subject of the sentence and places it immediately after the modifying phrase “recordings of electrical activity in the brain.” In doing so, this choice clearly establishes that electrograms—and not other nouns or noun phrases in the sentence—are recordings of electrical activity in the brain.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 120,
+    tags: [],
+  },
+  {
+    id: 11076,
+    section: "reading_writing",
+    module: 2,
+    topic: "conventions",
+    subtopic: "boundaries",
+    difficulty: "hard",
+    questionText: `Which choice completes the text so that it conforms 
+to the conventions of Standard English?`,
+    passageText: `If an animal can recognize itself in a reflective 
+surface (“the mirror test”), it is considered to have 
+self-awareness. In a recent study, scientists ______ 
+for evidence of self-awareness in snakes, species 
+that rely primarily on olfactory rather than visual 
+processing, adapted the test to foreground smell, 
+modifying the scent trails of North American 
+eastern garter snakes and African ball pythons.`,
+    options: [`searched`, `searching`, `were searching`, `have searched`],
+    correctIndex: 1,
+    explainWhy: `Choice B is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite present participle “searching” is correctly used to form a supplementary element that modifies the subject “scientists,” indicating that the scientists who adapted the test were looking for evidence of self- awareness in snakes.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 120,
     tags: [],
   },
   {
@@ -2132,5 +2979,64 @@ the 2020 study.`,
     isCalculatorAllowed: false,
     estTimeSec: 120,
     tags: [],
+  },
+  {
+    id: 11082,
+    section: "reading_writing",
+    module: 2,
+    topic: "expression",
+    subtopic: "rhetorical_synthesis",
+    difficulty: "advanced",
+    questionText: `[See practice test 11 PDF — Reading Writing Module 2, Question 32]`,
+    options: [`A`, `B`, `C`, `D`],
+    correctIndex: 0,
+    explainWhy: `Choice A is the best answer. The sentence emphasizes a similarity between the
+ages of the two pedestrian malls, noting that both are relatively old—Qianmen
+Dajie has roots that go back hundreds of years and Rue Mouffetard has existed
+for centuries.
+
+32
+
+
+
+Choice B is incorrect. The sentence emphasizes that both locations are famous
+pedestrian malls and notes that they are in different locations; it doesn’t
+emphasize a similarity in their ages. Choice C is incorrect. While the sentence
+emphasizes that both locations are pedestrian malls, it doesn’t emphasize a
+similarity in their ages. Choice D is incorrect. The sentence explains that Qianmen
+Dajie and Rue Mouffetard are examples of pedestrian malls and gives information
+about pedestrian malls in general; it doesn’t emphasize a similarity `,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: ["figure_required"],
+  },
+  {
+    id: 11083,
+    section: "reading_writing",
+    module: 2,
+    topic: "expression",
+    subtopic: "rhetorical_synthesis",
+    difficulty: "advanced",
+    questionText: `[See practice test 11 PDF — Reading Writing Module 2, Question 33]`,
+    options: [`A`, `B`, `C`, `D`],
+    correctIndex: 0,
+    explainWhy: `Choice A is the best answer. The sentence compares Fodor’s hypothesis with
+Carruthers’s, noting that because Fodorian modularity considers some but not all
+cognitive systems modular, it is not as expansive in its definition of modularity as
+Carruthers’s MMH, which includes all cognitive systems.
+Choice B is incorrect. The sentence describes Carruthers’s hypothesis—that
+modularity of mind includes all cognitive systems—but indicates only that this
+hypothesis followed Fodor’s 1983 hypothesis rather than making a comparison
+between the hypotheses. Choice C is incorrect. The sentence misrepresents a
+difference between Fodor’s and Carruthers’s hypotheses. According to the
+information in the notes, both Fodor and Carruthers consider low-level cognitive
+systems modular, and their difference lies `,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: ["figure_required"],
   }
 ];

@@ -5,33 +5,72 @@ export const practiceTest4Questions: Question[] = [
     id: 4101,
     section: "math",
     module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
+    topic: "geometry",
+    subtopic: "lines_angles_triangles",
     difficulty: "easy",
-    questionText: `A group of students voted on five after-school 
-activities. The bar graph shows the number of 
-students who voted for each of the five activities. 
-How many students chose activity 3?`,
-    options: [`25`, `39`, `48`, `50`],
+    questionText: `V =3£wh 
+li04ii1Ut31 
+G 
+£ 
+ 
+b~ 
+CJw 
+~x 
+0 
+b 
+a 
+x--../3 
+'~ 
+45° 
+s 
+62h E} 
+£ 
+The number of degrees of arc in a circle is 360. 
+The number of radians of arc in a circle is 2n. 
+@ 4 
+The sum of the measures in degrees of the angles of a triangle is 180. 
+£`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. The height of each bar in the bar graph given represents the number of students that voted for the activity specified at the bottom of the bar. The bar for activity 3  has a height that is between 35  and 40. In other words, the number of students that chose activity 3  is between 35  students and 40  students. Of the given choices, 39  is the only value between 35  and 40. Therefore, 39  students chose activity 3.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 120,
-    tags: ["has_figure"],
+    tags: [],
   },
   {
     id: 4102,
     section: "math",
     module: 1,
-    topic: "problem_solving",
-    subtopic: "percentages",
+    topic: "geometry",
+    subtopic: "right_triangles_trig",
     difficulty: "easy",
-    questionText: `What percentage of 300 is 75?`,
-    options: [`25 percent sign`, `50 percent sign`, `75 percent sign`, `225 percent sign`],
+    questionText: `c2 = a2 + b2 
+Special Right Triangles 
+V= Rwh 
+V= nr2h 
+V = i,.r3`,
+    options: [``, ``, ``, ``],
     correctIndex: 0,
     explainWhy: `Choice A is correct. Let x  represent the percentage of 300  that is 75. This can be written as ( ) 100 300 75 x = , or 3 75 x = . Dividing both sides of this equation by 3 yields 25 x = . Therefore, 25%  of 300  is 75.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: [],
+  },
+  {
+    id: 4103,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "easy",
+    questionText: `V=½nr2h`,
+    options: [``, ``, ``, ``],
+    correctIndex: 1,
+    explainWhy: `Choice B is correct. Multiplying the left- and right-hand sides of the given equation by 25  yields 2 900 x = . Taking the square root of the left- and right-hand sides of this equation yields 30 x = or 30 x =- . Of these two solutions, only 30 is given as a choice.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
@@ -63,9 +102,7 @@ Which equation represents this situation?`,
     topic: "algebra",
     subtopic: "linear_equations_one_var",
     difficulty: "easy",
-    questionText: `Activity 
----------~ 
----------~`,
+    questionText: `0`,
     options: [``, ``, ``, ``],
     correctIndex: 0,
     explainWhy: `Choice A is correct. It’s given that t  represents the number of monthly deposits. In the given function  ( ) 100 25 f t t = + , the coefficient of t  is 25. This means that for every increase in the value of t  by 1, the value of  ( ) f t  increases by 25. It follows that with each monthly deposit, the amount in Hana’s bank account increased by $25.`,
@@ -98,22 +135,14 @@ customer purchase?`,
     id: 4107,
     section: "math",
     module: 1,
-    topic: "advanced_math",
-    subtopic: "nonlinear_functions",
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
     difficulty: "medium",
     questionText: `Nasir bought 9 storage bins that were each the same 
 price. He used a coupon for $ 63 off the entire 
 purchase. The cost for the entire purchase after using 
 the coupon was $ 27. What was the original price, in 
-dollars, for 1 storage bin? 
-8 
-x 
-f(x)
-0
- 29
- 
-1
- 32`,
+dollars, for 1 storage bin?`,
     options: [`10`, `0`, `1`, `-1`],
     correctIndex: 0,
     explainWhy: `The correct answer is 10. It’s given that the cost for the entire purchase was $27 after a coupon was used for $63  off the entire purchase. Adding the amount of the coupon to the purchase price yields 27 63 90 + = . Thus, the cost for the entire purchase before using the coupon was $90. It’s given that Nasir bought 9  storage bins. The original price for 1 storage bin can be found by dividing the total cost by 9. Therefore, the original price, in dollars, for 1 storage bin is 90 9 , or 10.`,
@@ -122,6 +151,23 @@ f(x)
     isCalculatorAllowed: true,
     estTimeSec: 120,
     tags: ["student_produced_response"],
+  },
+  {
+    id: 4108,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "medium",
+    questionText: `= 83 + 3`,
+    options: [`x = 3 + 8 83`, `x = 8 + 3 83`, ``, ``],
+    correctIndex: 0,
+    explainWhy: `Choice A is correct. An equation that defines a linear function f  can be written in the form ( ) f x mx b = + , where m  and b  are constants. It’s given in the table that when 0 x = , ( ) 29 f x = . Substituting 0  for x  and 29  for  ( ) f x  in the equation ( ) f x mx b = + yields ( ) 29 0 m b = + , or 29 b = . Substituting 29  for b  in the equation  ( ) f x mx b = + yields  ( ) 29 f x mx = + . It’s also given in the table that when 1 x = ,  ( ) 32 f x = . Substituting 1 for x  and 32  f...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: [],
   },
   {
     id: 4109,
@@ -134,7 +180,7 @@ f(x)
 Right triangles upper P upper Q upper R and upper S upper T upper U are similar, where P 
 corresponds to S. If the measure of angle upper Q is 18°, 
 what is the measure of angle S ?`,
-    options: [`18°`, `72°`, `82°`, `162° Unauthorized copying or reuse of any part of this page is illegal. 33 CONTINUE`],
+    options: [`18°`, `72°`, `82°`, `162°`],
     correctIndex: 1,
     explainWhy: `Choice B is correct. In similar triangles, corresponding angles are congruent. It’s given that right triangles PQR  and STU  are similar, where angle P  corresponds to angle S. It follows that angle P  is congruent to angle S. In the triangles shown, angle R  and angle U  are both marked as right angles, so angle R  and angle U are corresponding angles. It follows that angle Q  and angle T  are corresponding angles, and thus, angle Q  is congruent to angle T . It’s given that the measure of a...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -204,11 +250,28 @@ day?`,
     tags: ["has_figure"],
   },
   {
+    id: 4113,
+    section: "math",
+    module: 1,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "medium",
+    questionText: `If x =`,
+    options: [`1/5; .2`, `0`, `1`, `-1`],
+    correctIndex: 0,
+    explainWhy: `The correct answer is 1 5. Since the number 5  can also be written as 5 1, the given equation can also be written as 5 8 1 x = . This equation is equivalent to  8 1 5 x = . Therefore, the value of 8 x  is 1 5. Note that 1/5 and .2 are examples of ways to enter a correct answer. Alternate approach: Multiplying both sides of the equation 8 5 x = by 8  yields 40 x = . Substituting 40  for x  into the expression  8 x  yields 8 40, or  1 5.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: ["student_produced_response"],
+  },
+  {
     id: 4114,
     section: "math",
     module: 1,
     topic: "algebra",
-    subtopic: "systems_of_equations",
+    subtopic: "linear_equations_one_var",
     difficulty: "medium",
     questionText: `""'-..I / 
 X 
@@ -223,19 +286,7 @@ I..........._
 I""'-.. 
 ' 
 ---------~ 
----------~ 
-14 
-24x
-y
- 48
-+
-= 
-6 +
-x
-y = 
-72
-The solution to the given system of equations is 
-(x, y). What is the value of y ?`,
+---------~`,
     options: [`80`, `0`, `1`, `-1`],
     correctIndex: 0,
     explainWhy: `The correct answer is 80. Subtracting the second equation in the given system from the first equation yields ( ) ( ) 24 6 48 72 x y x y + - + = - , which is equivalent to  24 6 24 x x y y - + - =- , or 18 24 x =- . Dividing each side of this equation by 3  yields 6 8 x =- . Substituting 8 - for 6x  in the second equation yields 8 72 y - + = . Adding 8  to both sides of this equation yields 80 y = . Alternate approach: Multiplying each side of the second equation in the given system by 4  yiel...`,
@@ -321,7 +372,7 @@ a perimeter that is 176 inches greater than the
 perimeter of square P. The function f gives the area 
 of square Q, in square inches. Which of the following 
 defines f ?`,
-    options: [`f x ( ) = (x + 44)2`, `f x ( ) = (x + 176)2`, `f x ( ) = (176x + 44)2`, `f x ( ) = (176x + 176)2 Unauthorized copying or reuse of any part of this page is illegal. 35 CONTINUE`],
+    options: [`f x ( ) = (x + 44)2`, `f x ( ) = (x + 176)2`, `f x ( ) = (176x + 44)2`, `f x ( ) = (176x + 176)2`],
     correctIndex: 0,
     explainWhy: `Choice A is correct. Let x  represent the side length, in inches, of square P. It follows that the perimeter of square P is 4x  inches. It’s given that square Q has a perimeter that is 176  inches greater than the perimeter of square P. Thus, the perimeter of square Q is 176  inches greater than 4x  inches, or  4 176 x + inches. Since the perimeter of a square is 4  times the side length of the square, each side length of Q is 4 176 4 x+ , or 44 x + inches. Since the area of a square is calcu...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -377,12 +428,7 @@ degrees, of its associated angle upper R upper O upper S ?`,
     topic: "algebra",
     subtopic: "linear_equations_one_var",
     difficulty: "hard",
-    questionText: `The expression 
-5
-5 45 
-6
-·
- 3 x`,
+    questionText: `The expression`,
     options: [``, `0`, `1`, `-1`],
     correctIndex: 0,
     explainWhy: `The correct answer is 361 8 . The rational exponent property is m m n n y y = , where 0 y > , m  and n  are integers, and 0 n> . This property can be applied to rewrite the given expression  8 5 5 45 8 6 3 2 x x  as  ( )( )( )( ) 5 45 8 1 5 5 8 8 6 3 2 x x , or ( )( )( )( ) 1 9 8 6 3 2 x x . This expression can be rewritten by multiplying the constants, which gives ( )( ) 1 9 8 36 x x . The multiplication exponent property is  n m n m y y y + = , where 0 y > . This property can be applied t...`,
@@ -525,34 +571,39 @@ product of a and b is 65
     id: 4151,
     section: "math",
     module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
+    topic: "geometry",
+    subtopic: "lines_angles_triangles",
     difficulty: "easy",
-    questionText: `The line graph shows the estimated number of 
-chipmunks in a state park on April 1 of each year 
-from 1989 to 1999. 
-Based on the line graph, in which year was the 
-estimated number of chipmunks in the state park the 
-greatest?`,
-    options: [`1989`, `1994`, `1995`, `1998`],
+    questionText: `V =3£wh 
+The number of degrees of arc in a circle is 360. 
+The number of radians of arc in a circle is 2n. 
+@ 4 
+The sum of the measures in degrees of the angles of a triangle is 180. 
+£`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. For the given line graph, the estimated number of chipmunks is represented on the vertical axis. The greatest estimated number of chipmunks in the state park is indicated by the greatest height in the line graph. This height is achieved when the year is 1994.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
     estTimeSec: 120,
-    tags: ["has_figure"],
+    tags: [],
   },
   {
     id: 4152,
     section: "math",
     module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
+    topic: "geometry",
+    subtopic: "right_triangles_trig",
     difficulty: "easy",
-    questionText: `A fish swam a distance of 5,104 yards. How far did 
-the fish swim, in miles? (1 mile = 1,760 yards)`,
-    options: [`0.3`, `2.9`, `3,344`, `6,864`],
+    questionText: `c2 = a2 + b2 
+Special Right Triangles 
+62h E} 
+£ 
+V= Rwh 
+V= nr2h 
+V = i,.r3`,
+    options: [``, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. It’s given that the fish swam 5,104  yards and that 1 mile is equal to 1,760  yards. Therefore, the fish swam 5,104 yards( ) 1 mile 1,760 yards , which is equivalent to 5,104 1,760  miles, or 2.9  miles.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -568,10 +619,31 @@ the fish swim, in miles? (1 mile = 1,760 yards)`,
     topic: "algebra",
     subtopic: "linear_equations_one_var",
     difficulty: "easy",
-    questionText: `Which expression is equivalent to`,
+    questionText: `V=½nr2h`,
     options: [``, ``, ``, ``],
     correctIndex: 2,
     explainWhy: `Choice C is correct. The given expression shows subtraction of two like terms. The two terms can be subtracted as follows: ( ) 3 3 3 12 5 12 5 x x x - = - , or 3 7x .`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: [],
+  },
+  {
+    id: 4154,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "easy",
+    questionText: `x
+y
++
+= 18
+y`,
+    options: [``, ``, ``, ``],
+    correctIndex: 0,
+    explainWhy: `Choice A is correct. The second equation in the given system defines the value of x  as 5y . Substituting 5y  for x  into the first equation yields 5 18 y y + = or 6 18 y = . Dividing each side of this equation by 6  yields 3 y = . Substituting 3  for y  in the second equation yields  ( ) 5 3 x = or 15 x = . Therefore, the solution ( ) , x y to the given system of equations is ( ) 15, 3 .`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: true,
@@ -652,7 +724,7 @@ Which table gives three values of x and their
 corresponding values of h x
 ( ) for the given 
 function h?`,
-    options: [`x 1 2 3 h(x) 4 5 6`, `x 1 2 3 h(x) −2 1 6`, `x 1 2 3 h(x) −1 1 3`, `x 1 2 3 h(x) −2`],
+    options: [`x`, ``, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. It′s given that ( ) 2 3 h x x = - . Each table gives 1, 2, and 3  as the three given values of x . Substituting 1 for x  in the equation  ( ) 2 3 h x x = - yields ( ) ( ) 2 1 1 3 h = - , or ( ) 1 2 h =- . Substituting 2  for x  in the equation ( ) 2 3 h x x = - yields ( ) ( ) 2 2 2 3 h = - , or ( ) 2 1 h = . Finally, substituting 3  for x  in the equation ( ) 2 3 h x x = - yields ( ) ( ) 2 3 3 3 h = - , or ( ) 3 6 h = . Therefore, ( ) h x  is 2 - when x  is 1, ( ) h x  is...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -671,7 +743,7 @@ function h?`,
     questionText: `The function f is defined by f x
 ( ) = 270(0.1)x. What 
 is the value of f (0) ?`,
-    options: [`0`, `1`, `27`, `270 Unauthorized copying or reuse of any part of this page is illegal. 41 CONTINUE`],
+    options: [`0`, `1`, `27`, `270`],
     correctIndex: 3,
     explainWhy: `Choice D is correct. The value of ( ) 0 f is the value of ( ) f x  when 0 x = . Substituting 0  for x  in the given function yields ( ) ( ) 0 0 270 0.1 f = , or ( ) ( ) 0 270 1 f = , which is equivalent to ( ) 0 270 f = . Therefore, the value of ( ) 0 f is 270.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -727,6 +799,45 @@ weight of 500 pounds if each box weighs 120 pounds?`,
     tags: [],
   },
   {
+    id: 4162,
+    section: "math",
+    module: 2,
+    topic: "advanced_math",
+    subtopic: "nonlinear_equations",
+    difficulty: "medium",
+    questionText: `[See practice test 4 PDF — Math Module 2, Question 12]`,
+    options: [`A`, `B`, `C`, `D`],
+    correctIndex: 1,
+    explainWhy: `Choice B is correct. Multiplying each side of the given equation by -16 yields
+64 x 2 + 112 x = 576. To complete the square, adding 49 to each side of this
+2
+equation yields 64 x 2 + 112 x + 49 = 576 + 49 , or (8 x + 7) = 625. Taking the
+square root of each side of this equation yields two equations: 8 x + 7 = 25 and
+8 x + 7 = -25 . Subtracting 7 from each side of the equation 8 x + 7 = 25 yields
+8 x = 18. Dividing each side of this equation by 8 yields x =
+
+18
+9
+, or x = .
+8
+4
+
+Therefore, 9 is a solution to the given equation. Subtracting 7 from each side of
+4
+
+the equation 8 x + 7 = -25 yields 8 x = -32 . Dividing each side of this equation
+
+by 8 yields x = -4. Therefore, the given equation has two solutions, 9 and -4 .
+4
+
+Since 9 is positive, it follows that 9 is the positive solution t`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 120,
+    tags: ["figure_required"],
+  },
+  {
     id: 4163,
     section: "math",
     module: 2,
@@ -736,8 +847,7 @@ weight of 500 pounds if each box weighs 120 pounds?`,
     questionText: `The table summarizes the distribution of color and 
 shape for 100 tiles of equal area. 
 Red Blue Yellow Total 
-Square 
-10`,
+Square`,
     options: [`.3; 3/10`, `0`, `1`, `-1`],
     correctIndex: 0,
     explainWhy: `The correct answer is  3 10. It’s given that there are a total of 100  tiles of equal area, which is the total number of possible outcomes. According to the table, there are a total of 30  red tiles. The probability of an event occurring is the ratio of the number of favorable outcomes to the total number of possible outcomes. By definition, the probability of selecting a red tile is given by 30 100 , or 3 10. Note that 3/10 and .3 are examples of ways to enter a correct answer.`,
@@ -773,16 +883,18 @@ line j ?`,
     section: "math",
     module: 2,
     topic: "problem_solving",
-    subtopic: "one_var_data",
+    subtopic: "percentages",
     difficulty: "medium",
-    questionText: `A proposal for a new library was included on an 
-election ballot. A radio show stated that 3 times as 
-many people voted in favor of the proposal as people 
-who voted against it. A social media post reported 
-that 15,000 more people voted in favor of the 
-proposal than voted against it. Based on these data, 
-how many people voted against the proposal?`,
-    options: [`7,500`, `15,000`, `22,500`, `45,000`],
+    questionText: `45 
+Total 
+30 
+30 
+40 
+100 
+If one of these tiles is selected at random, what is the 
+probability of selecting a red tile? (Express your 
+answer as a decimal or fraction, not as a percent.)`,
+    options: [``, ``, ``, ``],
     correctIndex: 0,
     explainWhy: `Choice A is correct. It’s given that a radio show stated that 3  times as many people voted in favor of the proposal as people who voted against it. Let x represent the number of people who voted against the proposal. It follows that 3x  is the number of people who voted in favor of the proposal and 3x x - , or 2x, is how many more people voted in favor of the proposal than voted against it. It’s also given that a social media post reported that 15,000  more people voted in favor of the propo...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -820,7 +932,7 @@ x = 6k + 13 and y = 8k − 29, what is the value of z ?`,
     questionText: `−3x + 21px = 84 
 In the given equation, p is a constant. The equation 
 has no solution. What is the value of p ?`,
-    options: [`0`, `1 7`, `4 3`, `4`],
+    options: [`0`, `1`, ``, ``],
     correctIndex: 1,
     explainWhy: `Choice B is correct. A linear equation in one variable has no solution if and only if the equation is false; that is, when there is no value of x  that produces a true statement. It’s given that in the equation 3 21 84 x px - + = , p  is a constant and the equation has no solution for x . Therefore, the value of the constant p  is one that results in a false equation. Factoring out the common factor of 3x - on the left-hand side of the given equation yields ( ) 3 1 7 84 x p - - = . Dividing b...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -845,7 +957,7 @@ has no solution. What is the value of p ?`,
 The function f is defined by the given equation. For 
 what value of x does f x
 ( ) reach its minimum?`,
-    options: [`−130`, `−13`, `23 − 2 D)`, ``],
+    options: [`−130`, `−13 C)`, ``, ``],
     correctIndex: 3,
     explainWhy: `Choice D is correct. It’s given that ( ) ( )( ) 10 13 f x x x = - + , which can be rewritten as   ( ) 2 3 130 f x x x = + - . Since the coefficient of the 2 x -term is positive, the graph of ( ) y f x = in the xy-plane opens upward and reaches its minimum value at its vertex. The x-coordinate of the vertex is the value of x  such that  ( ) f x  reaches its minimum. For an equation in the form ( ) 2 f x ax bx c = + + , where a, b, and c are constants, the x-coordinate of the vertex is 2 b a - ...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -894,20 +1006,51 @@ f x = 1 x
     tags: ["student_produced_response"],
   },
   {
-    id: 4173,
+    id: 4171,
     section: "math",
     module: 2,
     topic: "advanced_math",
-    subtopic: "nonlinear_functions",
+    subtopic: "nonlinear_equations",
+    difficulty: "hard",
+    questionText: `[See practice test 4 PDF — Math Module 2, Question 21]`,
+    options: [`51`, `0`, `1`, `-1`],
+    correctIndex: 0,
+    explainWhy: `The correct answer is 51. A quadratic equation of the form ax^2 + bx + c = 0, where a, b, and c are constants, has no real solution if and only if its discriminant, b^2 - 4ac, is negative. In the given equation, a = -1 and c = -676. Substituting -1 for a and -676 for c in this expression yields a discriminant of b^2 - 4(-1)(-676), or b^2 - 2704. Setting this less than 0 gives b^2 < 2704, so |b| < 52. The greatest integer less than 52 is 51.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: ["student_produced_response", "figure_required"],
+  },
+  {
+    id: 4172,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
+    difficulty: "hard",
+    questionText: `---------~ ---------~ 
+-----
+y`,
+    options: [``, ``, ``, ``],
+    correctIndex: 0,
+    explainWhy: `Choice A is correct. A solution to a system of equations must satisfy each equation in the system. It follows that if an ordered pair ( ) , x y  is a solution to the system, the point ( ) , x y  lies on the graph in the xy-plane of each equation in the system. The only point that lies on each graph of the system of two linear equations shown is their intersection point ( ) 8, 2 . It follows that if a new graph of three linear equations is created using the system of equations shown and the gr...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: true,
+    estTimeSec: 150,
+    tags: [],
+  },
+  {
+    id: 4173,
+    section: "math",
+    module: 2,
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
     difficulty: "advanced",
-    questionText: `x 
-f x
-( ) = 5,470(0.64)12 
-The function f gives the value, in dollars, of a certain 
-piece of equipment after x months of use. If the 
-value of the equipment decreases each year by p % of 
-its value the preceding year, what is the value of p ?`,
-    options: [`4`, `5`, `36`, `64`],
+    questionText: `− 2 
+D)`,
+    options: [``, ``, ``, ``],
     correctIndex: 2,
     explainWhy: `Choice C is correct. For a function of the form ( ) ( ) x k f x a r = , where a, r, and k  are constants and 1 r < , the value of ( ) f x  decreases by ( ) 100 1 % r - for every increase of x  by k. In the given function, 5,470 a = , 0.64 r = , and 12 k = . Therefore, for the given function, the value of  ( ) f x  decreases by ( ) 100 1 0.64 % - , or  36%, for every increase of x  by 12. Since  ( ) f x  represents the value, in dollars, of the equipment after x  months of use, it follows that...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -938,22 +1081,11 @@ angle. What is the value of cos(L) ?`,
     id: 4175,
     section: "math",
     module: 2,
-    topic: "problem_solving",
-    subtopic: "percentages",
+    topic: "algebra",
+    subtopic: "linear_equations_one_var",
     difficulty: "advanced",
     questionText: `55 
-Pentagon 20 
-10 
-15 
-45 
-Total 
-30 
-30 
-40 
-100 
-If one of these tiles is selected at random, what is the 
-probability of selecting a red tile? (Express your 
-answer as a decimal or fraction, not as a percent.)`,
+Pentagon 20`,
     options: [``, ``, ``, ``],
     correctIndex: 3,
     explainWhy: `Choice D is correct. The graph in the xy-plane of an equation of the form ( ) ( ) 2 2 2 x h y k r - + - = is a circle with center ( ) , h k  and a radius of length r. It’s given that circle A is represented by ( ) 2 2 1 49 x y + - = , which can be rewritten as ( ) 2 2 2 1 7 x y + - = . Therefore, circle A has center ( ) 0, 1  and a radius of length 7. Shifting circle A down two units is a rigid vertical translation of circle A that does not change its size or shape. Since circle B is obtained...`,
@@ -1003,13 +1135,48 @@ square, and the surface area of each prism is K`,
     id: 4001,
     section: "reading_writing",
     module: 1,
-    topic: "information_ideas",
-    subtopic: "central_ideas",
+    topic: "craft_structure",
+    subtopic: "words_context",
     difficulty: "easy",
-    questionText: `---------~`,
-    options: [``, ``, ``, ``],
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `The spacecraft OSIRIS-REx briefly made contact 
+with the asteroid 101955 Bennu in 2020. NASA 
+scientist Daniella DellaGiustina reports that despite 
+facing the unexpected obstacle of a surface mostly 
+covered in boulders, OSIRIS-REx successfully 
+______
+ a sample of the surface, gathering pieces of 
+it to bring back to Earth.`,
+    options: [`attached`, `collected`, `followed`, `replaced`],
     correctIndex: 1,
     explainWhy: `Choice B is the best answer because it most logically completes the text’s discussion of the OSIRIS-REx spacecraft’s contact with the asteroid 101955 Bennu. In this context, “collected” means acquired and took away. The text indicates that although the boulders on the asteroid’s surface caused some unforeseen problems, OSIRIS-REx was able to gather a sample to return to Earth. This context suggests that OSIRIS-REx successfully collected a sample of 101955 Bennu.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
+    id: 4002,
+    section: "reading_writing",
+    module: 1,
+    topic: "craft_structure",
+    subtopic: "words_context",
+    difficulty: "easy",
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `Research conducted by planetary scientist Katarina 
+Miljkovic suggests that the Moon’s surface may not 
+accurately ______
+ early impact events. When the 
+Moon was still forming, its surface was softer, and 
+asteroid or meteoroid impacts would have left less 
+of an impression; thus, evidence of early impacts 
+may no longer be present.`,
+    options: [`reflect`, `receive`, `evaluate`, `mimic`],
+    correctIndex: 0,
+    explainWhy: `Choice A is the best answer because it most logically completes the text’s discussion of the Moon’s surface. In this context, “reflect” means show or make apparent. The text states that because the surface of the Moon was softer when the Moon was still forming than it is now, early asteroid and meteoroid impacts “would have left less of an impression” and, as a result, evidence of them may no longer exist. This context supports the idea that the surface of the Moon may not accurately show sig...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: false,
@@ -1059,7 +1226,7 @@ Bosch as an inspiration. However, some scholars
 have suggested that the ancient Mesopotamian poem 
 Epic of Gilgamesh may have had a far greater impact 
 on Banisadr’s work.`,
-    options: [`substantial`, `satisfying`, `unimportant`, `appropriate Unauthorized copying or reuse of any part of this page is illegal.`],
+    options: [`substantial`, `satisfying`, `unimportant`, `appropriate`],
     correctIndex: 2,
     explainWhy: `Choice C is the best answer because it most logically completes the text’s discussion of the influences on Banisadr’s work. As used in this context, “unimportant” means trivial or lacking value. “It is by no means” establishes that the word that goes in the blank is contradicted by other information; the material that follows “indeed” later in that sentence provides the contradicting information—namely, that Banisadr himself cites Bosch as an inspiration. In other words, the sentence indicate...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -1188,7 +1355,7 @@ where botanist Shu-Mei Chang and colleagues had
 been monitoring mimosa trees. Within a year, 
 93 percent of the trees had been attacked by the 
 beetles.`,
-    options: [`It states the hypothesis that Chang and colleagues had set out to investigate using mimosa trees and B. terrenus.`, `It presents a generalization that is exemplified by the discussion of the mimosa trees and B. terrenus.`, `It offers an alternative explanation for the findings of Chang and colleagues.`, `It provides context that clarifies why the species mentioned spread to new locations. Unauthorized copying or reuse of any part of this page is illegal.`],
+    options: [`It states the hypothesis that Chang and colleagues had set out to investigate using mimosa trees and B. terrenus.`, `It presents a generalization that is exemplified by the discussion of the mimosa trees and B. terrenus.`, `It offers an alternative explanation for the findings of Chang and colleagues.`, `It provides context that clarifies why the species mentioned spread to new locations.`],
     correctIndex: 1,
     explainWhy: `Choice B is the best answer because it most accurately describes the function of the third sentence within the overall structure of the text. The third sentence makes a generalization, asserting that evolutionary links between predators and prey can persist across great expanses of time and distance. This generalization is exemplified by the text’s discussion of the relationship between mimosa trees and B. terrenus beetles. When mimosa trees were introduced to North America in 1785, no B. ter...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -1315,7 +1482,7 @@ till he learned they were close to Thornton; after
 that he tolerated them in a passive sort of way, 
 accepting favors from them as though he favored 
 them by accepting.`,
-    options: [`Buck has become less social since he began living with Thornton.`, `Buck mistrusts humans and does his best to avoid them.`, `Buck has been especially well liked by most of Thornton’s friends.`, `Buck holds Thornton in higher regard than any other person. Unauthorized copying or reuse of any part of this page is illegal.`],
+    options: [`Buck has become less social since he began living with Thornton.`, `Buck mistrusts humans and does his best to avoid them.`, `Buck has been especially well liked by most of Thornton’s friends.`, `Buck holds Thornton in higher regard than any other person.`],
     correctIndex: 3,
     explainWhy: `Choice D is the best answer because it most accurately states the main idea of the text. After establishing that Buck views most people “as nothing,” the text explains that Buck won’t acknowledge people other than Thornton unless they appear friendly toward Thornton, and even then he’s only reluctantly accepting. Thus, the text focuses on the idea that Thornton has a special status in Buck’s mind, with Buck holding him in higher regard than other people.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -1447,7 +1614,7 @@ series of interviews with various art collectives, an
 arts journalist claims that this can be difficult for 
 artists who are often used to having sole control over 
 their work.`,
-    options: [`“The first collective I joined included many amazingly talented artists, and we enjoyed each other’s company, but because we had a hard time sharing credit and responsibility for our work, the collective didn’t last.”`, `“We work together, but that doesn’t mean that individual projects are equally the work of all of us. Many of our projects are primarily the responsibility of whoever originally proposed the work to the group.”`, `“Having worked as a member of a collective for several years, it’s sometimes hard to recall what it was like to work alone without the collective’s support. But that support encourages my individual expression rather than limits it.”`, `“Sometimes an artist from outside the collective will choose to collaborate with us on a project, but all of those projects fit within the larger themes of the work the collective does on its own.” Unauthorized copying or reuse of any part of this page is illegal.`],
+    options: [`“The first collective I joined included many amazingly talented artists, and we enjoyed each other’s company, but because we had a hard time sharing credit and responsibility for our work, the collective didn’t last.”`, `“We work together, but that doesn’t mean that individual projects are equally the work of all of us. Many of our projects are primarily the responsibility of whoever originally proposed the work to the group.”`, `“Having worked as a member of a collective for several years, it’s sometimes hard to recall what it was like to work alone without the collective’s support. But that support encourages my individual expression rather than limits it.”`, `“Sometimes an artist from outside the collective will choose to collaborate with us on a project, but all of those projects fit within the larger themes of the work the collective does on its own.”`],
     correctIndex: 0,
     explainWhy: `Choice A is the best answer because it presents the quotation that best illustrates the journalist’s claim. By indicating that a collective didn’t continue because it was hard to share credit and responsibilities within the group even though the company was enjoyable, the quotation shows that working collaboratively can be difficult for artists who are used to having complete control over their work.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -1590,7 +1757,7 @@ odds, Rudolph didn’t just walk, she ______
 for her team in the 4 ×100-meter relay, becoming 
 the first US woman to win three gold medals in a 
 single Olympics.`,
-    options: [`ran—fast—during`, `ran—fast during`, `ran—fast, during`, `ran—fast. During Unauthorized copying or reuse of any part of this page is illegal.`],
+    options: [`ran—fast—during`, `ran—fast during`, `ran—fast, during`, `ran—fast. During`],
     correctIndex: 3,
     explainWhy: `Choice D is the best answer. The convention being tested is punctuation use between sentences. In this choice, the period is used correctly to mark the boundary between one sentence (“Defying…fast”) and another sentence that begins with a supplementary phrase (“During…Olympics”).`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -1799,7 +1966,7 @@ example, he referred to himself as Anglo-African.
 ______
  he incorporated the sounds of traditional 
 African music into his classical music compositions.`,
-    options: [`In addition,`, `Actually,`, `However,`, `Regardless, Unauthorized copying or reuse of any part of this page is illegal.`],
+    options: [`In addition,`, `Actually,`, `However,`, `Regardless,`],
     correctIndex: 0,
     explainWhy: `Choice A is the best answer. “In addition” logically signals that the detail in this sentence—that Coleridge-Taylor included traditional African music in his classical compositions—adds to the information in the previous sentence. Specifically, the previous sentence indicates one way in which Coleridge-Taylor emphasized his mixed-race ancestry, and the claim that follows indicates a second, additional way.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -1939,6 +2106,58 @@ audience unfamiliar with Angkor Wat.`,
     tags: ["has_figure"],
   },
   {
+    id: 4051,
+    section: "reading_writing",
+    module: 2,
+    topic: "craft_structure",
+    subtopic: "words_context",
+    difficulty: "easy",
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `The fashion resale market, in which consumers 
+purchase secondhand clothing from stores and 
+online sellers, generated nearly $ 30 billion globally 
+in 2019. Expecting to see continued growth, some 
+analysts ______
+ that revenues will more than 
+double by 2028.`,
+    options: [`produced`, `denied`, `worried`, `predicted`],
+    correctIndex: 3,
+    explainWhy: `Choice D is the best answer because it most logically completes the text’s discussion of the fashion resale market’s continued growth. As used in this context, “predicted” means forecast, or indicated that something would happen in the future. The text indicates that the fashion resale market made a lot of money in 2019 and that some analysts expected the market to continue to grow. This context suggests that the analysts believed that the fashion resale market was going to make more money th...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
+    id: 4052,
+    section: "reading_writing",
+    module: 2,
+    topic: "craft_structure",
+    subtopic: "words_context",
+    difficulty: "easy",
+    questionText: `Which choice completes the text with the most 
+logical and precise word or phrase?`,
+    passageText: `Artificially delivering biomolecules to plant cells is 
+an important component of protecting plants from 
+pathogens, but it is difficult to transmit biomolecules 
+through the layers of the plant cell wall. Markita del 
+Carpio Landry and her colleagues have shown that 
+it may be possible to ______
+ this problem by 
+transmitting molecules through carbon nanotubes, 
+which can cross cell walls.`,
+    options: [`conceptualize`, `neglect`, `illustrate`, `overcome`],
+    correctIndex: 3,
+    explainWhy: `Choice D is the best answer because it most logically completes the text’s discussion of delivering biomolecules to plant cells. In this context, “overcome” means to succeed in dealing with an obstacle. The text suggests that although it’s difficult to move biomolecules through plant cell walls, Landry and her colleagues have shown that carbon nanotubes may be useful, since they can cross cell walls. This context conveys that Landry and her colleagues think it’s possible, using carbon nanotub...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
     id: 4053,
     section: "reading_writing",
     module: 2,
@@ -2033,7 +2252,7 @@ photographed the now-adult models and layered the
 photos over magnified images of the models’ cells, 
 resulting in what he called “micro and macro 
 portraiture.”`,
-    options: [`validated`, `created`, `challenged`, `restored Unauthorized copying or reuse of any part of this page is illegal.`],
+    options: [`validated`, `created`, `challenged`, `restored`],
     correctIndex: 1,
     explainWhy: `Choice B is the best answer because it most logically and precisely completes the text’s discussion of Jeyifous’s series of images for the 2020 exhibition. In this context, “created” means produced. The text explains that Jeyifous, a photographer and neurobiologist, photographed adults who had appeared as children in posters from the 1970s, then combined those photographs with magnified images of the adults’ cells—a process that resulted in what he called “micro and macro portraiture.” This c...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -2143,7 +2362,7 @@ owners’ voices were played twice from the same
 speaker, but they showed a high level of surprise 
 when the voice was played once each from the two 
 different speakers.`,
-    options: [`They watched how each cat moved its ears and head.`, `They examined how each cat reacted to the voice of a stranger.`, `They studied how each cat physically interacted with its owner.`, `They tracked how each cat moved around the room. Unauthorized copying or reuse of any part of this page is illegal.`],
+    options: [`They watched how each cat moved its ears and head.`, `They examined how each cat reacted to the voice of a stranger.`, `They studied how each cat physically interacted with its owner.`, `They tracked how each cat moved around the room.`],
     correctIndex: 0,
     explainWhy: `Choice A is the best answer because it explains how the researchers determined the level of surprise displayed by the cats in the study. The text states that Saho Takagi and colleagues played recordings of the voice of each cat’s owner and measured how surprised the cat was by the recording based on how it moved its ears and head.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -2229,7 +2448,7 @@ revelation of her work is that a general measure may
 not fully reflect uncertainty about specific areas of 
 policy, as in the case of the United Kingdom, where 
 general economic policy uncertainty ______`,
-    options: [`aligned closely with uncertainty about tax and public spending policy in 2005 but differed from uncertainty about tax and public spending policy by a large amount in 2009.`, `was substantially lower than uncertainty about tax and public spending policy each year from 2005 to 2010.`, `reached its highest level between 2005 and 2010 in the same year that uncertainty about trade policy and tax and public spending policy reached their lowest levels.`, `was substantially lower than uncertainty about trade policy in 2005 and substantially higher than uncertainty about trade policy in 2010. Unauthorized copying or reuse of any part of this page is illegal.`],
+    options: [`aligned closely with uncertainty about tax and public spending policy in 2005 but differed from uncertainty about tax and public spending policy by a large amount in 2009.`, `was substantially lower than uncertainty about tax and public spending policy each year from 2005 to 2010.`, `reached its highest level between 2005 and 2010 in the same year that uncertainty about trade policy and tax and public spending policy reached their lowest levels.`, `was substantially lower than uncertainty about trade policy in 2005 and substantially higher than uncertainty about trade policy in 2010.`],
     correctIndex: 3,
     explainWhy: `Choice D is the best answer because it uses data from the graph to effectively illustrate the text’s claim about general economic policy uncertainty in the United Kingdom. The graph presents values for economic policy uncertainty in tax and public spending policy, trade policy, and general economic policy in the UK from 2005 to 2010. The graph shows that in 2005, the value for general economic policy uncertainty (approximately 90) was substantially lower than the value for uncertainty about t...`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -2321,6 +2540,37 @@ Consequently, ______`,
     tags: [],
   },
   {
+    id: 4067,
+    section: "reading_writing",
+    module: 2,
+    topic: "conventions",
+    subtopic: "form_structure_sense",
+    difficulty: "medium",
+    questionText: `Which choice most logically completes the text?`,
+    passageText: `Ancestral Puebloans, the civilization from which 
+present-day Pueblo tribes descended, emerged as 
+early as 1500 B.C.E. in an area of what is now the 
+southwestern United States and dispersed suddenly 
+in the late 1200s C.E., abandoning established 
+villages with systems for farming crops and turkeys. 
+Recent analysis comparing turkey remains at Mesa 
+Verde, one such village in southern Colorado, to 
+samples from modern turkey populations in the 
+Rio Grande Valley of north central New Mexico 
+determined that the latter birds descended in part 
+from turkeys cultivated at Mesa Verde, with shared 
+genetic markers appearing only after 1280. Thus, 
+researchers concluded that ______`,
+    options: [`conditions of the terrains in the Rio Grande Valley and Mesa Verde had greater similarities in the past than they do today.`, `some Ancestral Puebloans migrated to the Rio Grande Valley in the late 1200s and carried farming practices with them.`, `Indigenous peoples living in the Rio Grande Valley primarily planted crops and did not cultivate turkeys before 1280.`, `the Ancestral Puebloans of Mesa Verde likely adopted the farming practices of Indigenous peoples living in other regions.`],
+    correctIndex: 1,
+    explainWhy: `Choice B is the best answer because it presents the conclusion that most logically follows from the text’s discussion of Ancestral Puebloans’ migration to the Rio Grande Valley. The text states that in the late 1200s C.E., the Ancestral Puebloan civilization abandoned villages in its original homeland, which included the Mesa Verde site. The text goes on to say that recent genetic analysis has demonstrated that the modern turkey population in the Rio Grande Valley descends partly from the anc...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
     id: 4068,
     section: "reading_writing",
     module: 2,
@@ -2341,6 +2591,30 @@ therefore ______`,
     options: [`struggle to find valid data about the behavior of politicians who do not currently hold office.`, `can only conduct valid studies with people who have previously held office rather than people who presently hold office.`, `should select a control group of people who differ from office holders in several significant ways.`, `will find it difficult to identify a group of people who can function as an appropriate control group for their studies.`],
     correctIndex: 3,
     explainWhy: `Choice D is the best answer because it presents the conclusion that most logically follows from the text’s discussion of the challenge researchers face when studying the effects of holding elected office on a person’s behavior. The text explains that it’s hard for researchers to test for the effects that elected office has on people because finding people to serve as a control group is difficult. The text indicates that a control group needs to be made up of people who share characteristics o...`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 90,
+    tags: [],
+  },
+  {
+    id: 4069,
+    section: "reading_writing",
+    module: 2,
+    topic: "conventions",
+    subtopic: "boundaries",
+    difficulty: "medium",
+    questionText: `Which choice completes the text so that it conforms 
+to the conventions of Standard English?`,
+    passageText: `In his groundbreaking book Bengali Harlem and the 
+Lost Histories of South Asian America, Vivek Bald 
+uses newspaper articles, census records, ships’ logs, 
+and memoirs to tell the ______
+ who made New 
+York City their home in the early twentieth century.`,
+    options: [`story’s of the South Asian immigrants`, `story’s of the South Asian immigrants’`, `stories of the South Asian immigrants`, `stories’ of the South Asian immigrant’s`],
+    correctIndex: 2,
+    explainWhy: `Choice C is the best answer. The convention being tested is the use of plural and possessive nouns. The plural nouns “stories” and “immigrants” correctly indicate that the memoir tells multiple stories of multiple immigrants.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: false,
@@ -2373,6 +2647,33 @@ as postcards, into some of the paintings.`,
     tags: ["has_figure"],
   },
   {
+    id: 4071,
+    section: "reading_writing",
+    module: 2,
+    topic: "conventions",
+    subtopic: "boundaries",
+    difficulty: "hard",
+    questionText: `Which choice completes the text so that it conforms 
+to the conventions of Standard English?`,
+    passageText: `Both Sona Charaipotra, an Indian American, and 
+Dhonielle Clayton, an African American, grew up 
+frustrated by the lack of diverse characters in books 
+for young people. In 2011, these two writers joined 
+forces to found CAKE Literary, a book packaging 
+______
+ specializes in the creation and promotion 
+of stories told from diverse perspectives for children 
+and young adults.`,
+    options: [`company,`, `company that`, `company`, `company, that`],
+    correctIndex: 1,
+    explainWhy: `Choice B is the best answer. The convention being tested is the use and punctuation of an integrated relative clause. This choice correctly uses the relative pronoun “that” and no punctuation to create an integrated relative clause that provides essential information about the noun phrase (“a book packaging company”) that it modifies.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 120,
+    tags: [],
+  },
+  {
     id: 4072,
     section: "reading_writing",
     module: 2,
@@ -2392,6 +2693,31 @@ have much shorter hibernation periods on average.`,
     options: [`carbon-13, (13C)`, `carbon-13 (13C)`, `carbon-13, (13C),`, `carbon-13 (13C),`],
     correctIndex: 3,
     explainWhy: `Choice D is the best answer. The convention being tested is the punctuation of a supplementary element within a sentence. The comma after “(left superscript 13 C)” pairs with the comma after “isotope” to separate the supplementary element “carbon-13 (left superscript 13 C)” from the rest of the sentence. This supplementary element defines the “rare carbon isotope,” and the pair of commas indicates that this element could be removed without affecting the grammatical coherence of the sentence.`,
+    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
+    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
+    isCalculatorAllowed: false,
+    estTimeSec: 120,
+    tags: [],
+  },
+  {
+    id: 4073,
+    section: "reading_writing",
+    module: 2,
+    topic: "conventions",
+    subtopic: "boundaries",
+    difficulty: "hard",
+    questionText: `Which choice completes the text so that it conforms 
+to the conventions of Standard English?`,
+    passageText: `In 2010, archaeologist Noel Hidalgo Tan was visiting 
+the twelfth-century temple of Angkor Wat in 
+Cambodia when he noticed markings of red paint on 
+the temple ______
+ the help of digital imaging 
+techniques, he discovered the markings to be part of 
+an elaborate mural containing over 200 paintings.`,
+    options: [`walls, with`, `walls with`, `walls so with`, `walls. With`],
+    correctIndex: 3,
+    explainWhy: `Choice D is the best answer. The convention being tested is punctuation use between sentences. In this choice, the period after “walls” is used correctly to mark the boundary between the first sentence (“In...walls”) and the second sentence (“With…techniques”), which starts with a supplementary phrase.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: false,
@@ -2464,7 +2790,7 @@ towering ridges that form when a dense oceanic plate
 subducts under a less dense continental plate, melts 
 in the mantle below, and then rises and bursts 
 through the continental crust above.`,
-    options: [`continents geological`, `continents: geological`, `continents; geological`, `continents. Geological Unauthorized copying or reuse of any part of this page is illegal.`],
+    options: [`continents geological`, `continents: geological`, `continents; geological`, `continents. Geological`],
     correctIndex: 1,
     explainWhy: `Choice B is the best answer. The convention being tested is punctuation use between a main clause and a supplementary phrase. In this choice, a colon is correctly used to mark the boundary between the main clause (“A study… continents”) and the supplementary phrase (“geological…above”) and to introduce the following explanation of the origin of Earth’s continents.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -2624,7 +2950,7 @@ or F stars, with surface temperatures greater than
 10,300°F (hotter than the Sun). 
 The student wants to emphasize how hot the Sun 
 is relative to nearby stars.`,
-    options: [`At around 9,800°F, which classifies it as a G star, the Sun is hotter than most but not all of the stars within 10 parsecs of it.`, `Astronomer Todd Henry determined that the Sun, at around 9,800°F, is a G star, and several other stars within a 10-parsec range are A or F stars.`, `Of the 357 stars within ten parsecs of the Sun, 327 are classified as K or M stars, with surface temperatures under 8,900°F.`, `While most of the stars within 10 parsecs of the Sun are classified as K, M, A, or F stars, the Sun is classified as a G star due to its surface temperature of 9,800°F. Unauthorized copying or reuse of any part of this page is illegal.`],
+    options: [`At around 9,800°F, which classifies it as a G star, the Sun is hotter than most but not all of the stars within 10 parsecs of it.`, `Astronomer Todd Henry determined that the Sun, at around 9,800°F, is a G star, and several other stars within a 10-parsec range are A or F stars.`, `Of the 357 stars within ten parsecs of the Sun, 327 are classified as K or M stars, with surface temperatures under 8,900°F.`, `While most of the stars within 10 parsecs of the Sun are classified as K, M, A, or F stars, the Sun is classified as a G star due to its surface temperature of 9,800°F.`],
     correctIndex: 0,
     explainWhy: `Choice A is the best answer. Noting that the Sun (9,800°F) is hotter than most stars within 10 parsecs of it, the sentence emphasizes how hot the Sun is relative to nearby stars.`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
@@ -2637,18 +2963,28 @@ is relative to nearby stars.`,
     id: 4082,
     section: "reading_writing",
     module: 2,
-    topic: "information_ideas",
-    subtopic: "central_ideas",
+    topic: "expression",
+    subtopic: "rhetorical_synthesis",
     difficulty: "advanced",
-    questionText: `Unauthorized copying or reuse of any part of this page is illegal.`,
-    options: [``, ``, ``, ``],
+    questionText: `[See practice test 4 PDF — Reading Writing Module 2, Question 32]`,
+    options: [`A`, `B`, `C`, `D`],
     correctIndex: 0,
-    explainWhy: `Choice A is the best answer. The sentence effectively introduces Cathryn Halverson’s book to an audience already familiar with the Atlantic Monthly, noting the title of Halverson’s book and describing its content without providing background information about the Atlantic Monthly.`,
+    explainWhy: `Choice A is the best answer. The sentence effectively introduces Cathryn
+Halverson’s book to an audience already familiar with the Atlantic Monthly,
+noting the title of Halverson’s book and describing its content without providing
+background information about the Atlantic Monthly.
+Choice B is incorrect. The sentence introduces the Atlantic Monthly and mentions
+that it’s referred to in Cathryn Halverson’s book title; it doesn’t effectively
+introduce Halverson’s book. Choice C is incorrect. The sentence assumes
+that the audience is unfamiliar with the Atlantic Monthly, providing background
+information about the magazine; it doesn’t effectively introduce Halverson’s book
+to an audience already familiar with the Atlantic Monthly. Choice D is incorrect.
+While the sentence assumes that the audie`,
     explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
     explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
     isCalculatorAllowed: false,
-    estTimeSec: 120,
-    tags: [],
+    estTimeSec: 90,
+    tags: ["figure_required"],
   },
   {
     id: 4083,

@@ -24,10 +24,10 @@ interface ChatUsage {
 
 // Get browser ID for anonymous users
 function getBrowserId(): string {
-  let browserId = localStorage.getItem("sat_browser_id");
+  let browserId = localStorage.getItem("sat_prep_browser_id");
   if (!browserId) {
     browserId = crypto.randomUUID();
-    localStorage.setItem("sat_browser_id", browserId);
+    localStorage.setItem("sat_prep_browser_id", browserId);
   }
   return browserId;
 }

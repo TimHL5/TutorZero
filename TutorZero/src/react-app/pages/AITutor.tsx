@@ -38,10 +38,10 @@ const SUGGESTED_QUESTIONS = [
 ];
 
 function getBrowserId(): string {
-  let id = localStorage.getItem("tz_browser_id");
+  let id = localStorage.getItem("sat_prep_browser_id");
   if (!id) {
     id = crypto.randomUUID();
-    localStorage.setItem("tz_browser_id", id);
+    localStorage.setItem("sat_prep_browser_id", id);
   }
   return id;
 }

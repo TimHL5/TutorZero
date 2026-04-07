@@ -525,10 +525,10 @@ For example, whereas the average ablation rate
 for iron from AST dust is 28 %, the average rate 
 for ______`,
     options: [
-    `iron from SPC dust is 20 percent sign.`,
-    `sodium from OCC dust is 100 percent sign.`,
-    `iron from HTC dust is 90 percent sign.`,
-    `sodium from AST dust is 75 percent sign.`
+    `iron from SPC dust is 20 %.`,
+    `sodium from OCC dust is 100 %.`,
+    `iron from HTC dust is 90 %.`,
+    `sodium from AST dust is 75 %.`
   ],
     correctIndex: 2,
     explainWhy: `Choice C is the best answer because it most effectively completes the example regarding the ablation rate of iron. The table shows the ablation rates for three elements—iron, potassium, and sodium—found in cosmic dust that comes from one of four sources. The text says that the ablation rate for a given element in slower-moving SPC or AST dust was lower than the ablation rate for that same element in faster-moving HTC or OCC dust. The text then presents the first part of an example of this pat...`,

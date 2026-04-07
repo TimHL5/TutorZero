@@ -102,12 +102,12 @@ The triangle shown has a perimeter of 22 units. If 2 = 9 units and y = 7 units, 
     topic: "geometry",
     subtopic: "area_volume",
     difficulty: "easy",
-    questionText: `What is the area of a rectangle with a length of 4 centimeters (cm) and a width of 2 cm?`,
+    questionText: `What is the area of a rectangle with a length of 4 centimeters (cm) and a width of 2 cm²`,
     options: [
-    `6 cm?`,
-    `8cm?`,
-    `12 cm?`,
-    `36 cm?`
+    `6 cm²`,
+    `8cm²`,
+    `12 cm²`,
+    `36 cm²`
   ],
     correctIndex: 1,
     explainWhy: `The correct answer is B. This question requires understanding of area and volume concepts.`,
@@ -198,12 +198,12 @@ triangle?`,
     topic: "geometry",
     subtopic: "area_volume",
     difficulty: "medium",
-    questionText: `What is the area of a rectangle with a length of 17 centimeters (cm) and a width of 7 cm?`,
+    questionText: `What is the area of a rectangle with a length of 17 centimeters (cm) and a width of 7 cm²`,
     options: [
-    `24cm?`,
-    `48 cm?`,
-    `119 cm?`,
-    `576 cm?`
+    `24cm²`,
+    `48 cm²`,
+    `119 cm²`,
+    `576 cm²`
   ],
     correctIndex: 2,
     explainWhy: `The correct answer is C. This question requires understanding of area and volume concepts.`,
@@ -294,8 +294,8 @@ RST? [Figure described in original]`,
     topic: "geometry",
     subtopic: "area_volume",
     difficulty: "medium",
-    questionText: `Triangle R has an area of 80 square centimeters (cm?). Square S has side lengths of 4 cm. What is the total area of
-triangle R and square S, in cm?2?`,
+    questionText: `Triangle R has an area of 80 square centimeters (cm²). Square S has side lengths of 4 cm. What is the total area of
+triangle R and square S, in cm²?`,
     options: [
     `42`,
     `44`,
@@ -733,7 +733,7 @@ width of the original poster are each increased by 20%. What is the area of the 
     subtopic: "area_volume",
     difficulty: "medium",
     questionText: `A right rectangular prism has a length of 28 centimeters (cm), a width of 15 cm, and a height of 16 cm. What is
-the surface area, in cm?, of the right rectangular prism?`,
+the surface area, in cm², of the right rectangular prism?`,
     options: [
     `2216`,
     `0`,

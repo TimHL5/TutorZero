@@ -5155,7 +5155,7 @@ the data in the scatterplot?`,
     options: [
     `¥ =2x*—11x—-20`,
     `y=2x*—-11x +20 = 9y2_ = Cc. V=2x*-Oox—-3`,
-    `y=2x?-5x +3`,
+    `y=2x²-5x +3`,
     ``
   ],
     correctIndex: 1,

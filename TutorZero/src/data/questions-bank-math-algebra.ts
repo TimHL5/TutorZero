@@ -4868,9 +4868,9 @@ from the sale of those tickets. Which system of equations represents this
 relationship between x and y ?
 x +y=120`,
     options: [
-    `° 90x +250y = 27,600 x +y=120`,
-    `° 90x +250y = 120(27,600) x +y =27,600`,
-    `° 90x +250y = 120(27,600) 90x = 250y`,
+    `90x +250y = 27,600 x +y=120`,
+    `90x +250y = 120(27,600) x +y =27,600`,
+    `90x +250y = 120(27,600) 90x = 250y`,
     `* 420x + 120y = 27,600`
   ],
     correctIndex: 0,

@@ -1,0 +1,11 @@
+# gstack binary and deps (453MB, rebuilt via ./setup)
+.claude/skills/gstack/gstack/
+
+# gstack logs
+.gstack/
+
+# IDE / OS
+.DS_Store
+
+# scripts output
+scripts/output/

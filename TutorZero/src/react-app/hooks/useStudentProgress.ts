@@ -180,6 +180,7 @@ export function useStudentProgress() {
       questionId?: number;
       selectedIndex?: number;
       timeSpentSec?: number;
+      confidence?: string;
     }>,
     timeSpentSeconds: number
   ) => {

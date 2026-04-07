@@ -197,7 +197,8 @@ export default function Practice() {
     if (attemptedQuestions.length > 0) {
       const attempts = attemptedQuestions.map(a => ({
         topic: a.question.topic,
-        isCorrect: a.isCorrect
+        isCorrect: a.isCorrect,
+        confidence: a.confidence
       }));
       recordSession("practice", attempts, Math.floor(totalSessionTime / 1000));
     }

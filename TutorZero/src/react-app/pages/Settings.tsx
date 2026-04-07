@@ -89,6 +89,13 @@ export default function Settings() {
     }
   }
 
+  // Redirect to login if not authenticated
+  useEffect(() => {
+    if (!isPending && !user) {
+      navigate("/login");
+    }
+  }, [isPending, user, navigate]);
+
   // Fetch subscription status
   useEffect(() => {
     if (user) {
@@ -100,9 +107,9 @@ export default function Settings() {
     if (user) {
       const profile = user?.profile;
       setDisplayName(
-        profile?.displayName || 
-        user.google_user_data?.given_name || 
-        user.email?.split('@')[0] || 
+        profile?.displayName ||
+        user.google_user_data?.given_name ||
+        user.email?.split('@')[0] ||
         ""
       );
     }
@@ -195,12 +202,6 @@ export default function Settings() {
       </div>
     );
   }
-
-  useEffect(() => {
-    if (!isPending && !user) {
-      navigate("/login");
-    }
-  }, [isPending, user, navigate]);
 
   if (!user) {
     return null;

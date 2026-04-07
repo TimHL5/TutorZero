@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router";
 import { AuthProvider } from "@/react-app/lib/AuthProvider";
 import LandingPage from "@/react-app/pages/Landing";
 import Login from "@/react-app/pages/Login";
@@ -40,6 +40,7 @@ export default function App() {
           <Route path="/progress" element={<Progress />} />
           <Route path="/study-plan" element={<StudyPlan />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
     </AuthProvider>

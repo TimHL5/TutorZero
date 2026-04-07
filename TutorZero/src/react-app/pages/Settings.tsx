@@ -196,8 +196,13 @@ export default function Settings() {
     );
   }
 
+  useEffect(() => {
+    if (!isPending && !user) {
+      navigate("/login");
+    }
+  }, [isPending, user, navigate]);
+
   if (!user) {
-    navigate("/login");
     return null;
   }
 

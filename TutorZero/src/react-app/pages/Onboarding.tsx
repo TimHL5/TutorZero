@@ -61,6 +61,7 @@ export default function Onboarding() {
       const response = await fetch("/api/user/profile", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({
           targetScore: data.targetScore,
           testDate: data.testDate || getDefaultTestDate(),

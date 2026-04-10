@@ -77,7 +77,7 @@ export default function Settings() {
 
   async function fetchSubscription() {
     try {
-      const response = await fetch('/api/subscription');
+      const response = await fetch('/api/subscription', { credentials: "include" });
       if (response.ok) {
         const data = await response.json();
         setSubscription(data);
@@ -135,6 +135,7 @@ export default function Settings() {
       const response = await fetch("/api/user/profile", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({ displayName: trimmedName }),
       });
 
@@ -158,6 +159,7 @@ export default function Settings() {
       const response = await fetch('/api/subscription/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
         body: JSON.stringify({ billingCycle })
       });
       
@@ -178,7 +180,8 @@ export default function Settings() {
     try {
       const response = await fetch('/api/subscription/portal', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include'
       });
       
       if (response.ok) {

@@ -234,8 +234,8 @@ export function useStudentProgress() {
     };
 
     // Update streak
-    const todayDate = new Date().toDateString();
-    const yesterday = new Date(Date.now() - 86400000).toDateString();
+    const todayDate = new Date().toISOString().split('T')[0];
+    const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
     let newStreak = progress.currentStreak;
     
     if (progress.lastPracticeDate !== todayDate) {

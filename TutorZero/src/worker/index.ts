@@ -74,6 +74,28 @@ async function fetchOpenAI(
 }
 
 // Supabase auth middleware - validates JWT from cookie
+// Soft auth: extracts user if token present, but allows anonymous access
+async function optionalAuthMiddleware(c: Context<AppEnv>, next: Next) {
+  const token = getCookie(c, "sb-access-token");
+  if (token) {
+    try {
+      const response = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          apikey: SUPABASE_ANON_KEY,
+        },
+      });
+      if (response.ok) {
+        const user = (await response.json()) as SupabaseUser;
+        c.set("user", user);
+      }
+    } catch {
+      // Token invalid — continue as anonymous
+    }
+  }
+  await next();
+}
+
 async function authMiddleware(c: Context<AppEnv>, next: Next) {
   const token = getCookie(c, "sb-access-token");
   if (!token) {
@@ -147,6 +169,11 @@ app.get("/api/users/me", authMiddleware, async (c) => {
       .first();
   }
 
+  // Look up active subscription
+  const subscription = await db.prepare(
+    "SELECT tier FROM subscriptions WHERE user_id = ? AND (expires_at IS NULL OR expires_at > CURRENT_TIMESTAMP)"
+  ).bind(user.id).first();
+
   return c.json({
     id: user.id,
     email: user.email,
@@ -166,6 +193,10 @@ app.get("/api/users/me", authMiddleware, async (c) => {
       streakLastDate: profile?.streak_last_date,
       estimatedMathScore: profile?.estimated_math_score || 400,
       estimatedRWScore: profile?.estimated_rw_score || 400,
+      targetScore: profile?.target_score || null,
+      testDate: profile?.test_date || null,
+      studyHoursPerWeek: profile?.study_hours_per_week || null,
+      subscriptionTier: subscription?.tier === "premium" ? "pro" : "free",
     },
   });
 });
@@ -250,6 +281,7 @@ app.get("/api/logout", async (c) => {
   setCookie(c, "sb-access-token", "", {
     path: "/",
     sameSite: "Lax",
+    secure: true,
     maxAge: 0,
   });
 
@@ -302,11 +334,12 @@ async function incrementTutorUsage(db: D1Database, userId: string | null, browse
 }
 
 // Get tutor usage status
-app.get("/api/tutor/usage", async (c) => {
+app.get("/api/tutor/usage", optionalAuthMiddleware, async (c) => {
   const db = c.env.DB;
-  const userId = c.req.query("userId") || null;
-  const browserId = c.req.query("browserId") || null;
-  
+  const user = c.get("user") as SupabaseUser | undefined;
+  const userId = user?.id || null;
+  const browserId = userId ? null : (c.req.query("browserId") || null);
+
   const { count, isPremium } = await getTutorUsage(db, userId, browserId);
   
   return c.json({
@@ -319,18 +352,21 @@ app.get("/api/tutor/usage", async (c) => {
 });
 
 // AI Tutor chat endpoint
-app.post("/api/tutor/chat", async (c) => {
+app.post("/api/tutor/chat", optionalAuthMiddleware, async (c) => {
   try {
     const body = await c.req.json();
-    const { messages, context, userId, browserId } = body;
+    const { messages, context, browserId: clientBrowserId } = body;
     const db = c.env.DB;
+    const user = c.get("user") as SupabaseUser | undefined;
+    const userId = user?.id || null;
+    const browserId = userId ? null : (clientBrowserId || null);
 
     if (!messages || !Array.isArray(messages)) {
       return c.json({ error: "Invalid messages format" }, 400);
     }
 
     // Check daily usage limit
-    const { count, isPremium } = await getTutorUsage(db, userId || null, browserId || null);
+    const { count, isPremium } = await getTutorUsage(db, userId, browserId);
     
     if (!isPremium && count >= FREE_DAILY_TUTOR_LIMIT) {
       return c.json({ 
@@ -396,8 +432,8 @@ Keep responses helpful but concise. Use formatting (numbered lists, line breaks)
     }
 
     // Increment usage after successful response
-    await incrementTutorUsage(db, userId || null, browserId || null);
-    const newUsage = await getTutorUsage(db, userId || null, browserId || null);
+    await incrementTutorUsage(db, userId, browserId);
+    const newUsage = await getTutorUsage(db, userId, browserId);
 
     return c.json({
       success: true,
@@ -419,8 +455,20 @@ Keep responses helpful but concise. Use formatting (numbered lists, line breaks)
 // Explain Differently API (Pro feature)
 // ============================================
 
-app.post("/api/tutor/explain-differently", async (c) => {
+app.post("/api/tutor/explain-differently", authMiddleware, async (c) => {
   try {
+    const user = c.get("user") as SupabaseUser;
+    const db = c.env.DB;
+
+    // Verify premium subscription
+    const sub = await db.prepare(
+      "SELECT tier FROM subscriptions WHERE user_id = ? AND (expires_at IS NULL OR expires_at > CURRENT_TIMESTAMP)"
+    ).bind(user.id).first();
+
+    if (sub?.tier !== "premium") {
+      return c.json({ error: "Pro subscription required" }, 403);
+    }
+
     const body = await c.req.json();
     const { question, style } = body;
 
@@ -554,11 +602,12 @@ async function incrementChatUsage(db: D1Database, userId: string | null, browser
 }
 
 // Get chat usage status
-app.get("/api/chat/usage", async (c) => {
+app.get("/api/chat/usage", optionalAuthMiddleware, async (c) => {
   const db = c.env.DB;
-  const userId = c.req.query("userId") || null;
-  const browserId = c.req.query("browserId") || null;
-  
+  const user = c.get("user") as SupabaseUser | undefined;
+  const userId = user?.id || null;
+  const browserId = userId ? null : (c.req.query("browserId") || null);
+
   const { count, isPremium } = await getChatUsage(db, userId, browserId);
   
   return c.json({
@@ -570,18 +619,21 @@ app.get("/api/chat/usage", async (c) => {
   });
 });
 
-app.post("/api/chat", async (c) => {
+app.post("/api/chat", optionalAuthMiddleware, async (c) => {
   try {
     const body = await c.req.json();
-    const { messages, questionContext, userId, browserId } = body;
+    const { messages, questionContext, browserId: clientBrowserId } = body;
     const db = c.env.DB;
+    const user = c.get("user") as SupabaseUser | undefined;
+    const userId = user?.id || null;
+    const browserId = userId ? null : (clientBrowserId || null);
 
     if (!messages || !Array.isArray(messages)) {
       return c.json({ error: "Invalid messages format" }, 400);
     }
 
     // Check monthly usage limit
-    const { count, isPremium } = await getChatUsage(db, userId || null, browserId || null);
+    const { count, isPremium } = await getChatUsage(db, userId, browserId);
     
     if (!isPremium && count >= FREE_MONTHLY_CHAT_LIMIT) {
       return c.json({ 
@@ -598,25 +650,26 @@ app.post("/api/chat", async (c) => {
     }
 
     // Build system prompt with question context
+    const qc = questionContext as { section?: string; topic?: string; subtopic?: string; difficulty?: string; passage?: string; questionText?: string; choices?: string[]; studentAnswer?: string; correctAnswer?: string; explanation?: string };
     const systemPrompt = `You are a helpful SAT tutor. A student just answered a question and has read the explanation, but wants additional help understanding it.
 
 QUESTION DETAILS:
-Section: ${(questionContext as any).section || "SAT"}
-Topic: ${(questionContext as any).topic || "general"}
-${(questionContext as any).subtopic ? `Subtopic: ${(questionContext as any).subtopic}` : ""}
-Difficulty: ${(questionContext as any).difficulty || "medium"}
+Section: ${qc.section || "SAT"}
+Topic: ${qc.topic || "general"}
+${qc.subtopic ? `Subtopic: ${qc.subtopic}` : ""}
+Difficulty: ${qc.difficulty || "medium"}
 
-${questionContext.passage ? `PASSAGE:\n${questionContext.passage}\n` : ""}
-QUESTION: ${questionContext.questionText || ""}
+${qc.passage ? `PASSAGE:\n${qc.passage}\n` : ""}
+QUESTION: ${qc.questionText || ""}
 
 ANSWER CHOICES:
-${questionContext.choices ? questionContext.choices.map((c: string, i: number) => `${String.fromCharCode(65 + i)}: ${c}`).join('\n') : ""}
+${qc.choices ? qc.choices.map((c: string, i: number) => `${String.fromCharCode(65 + i)}: ${c}`).join('\n') : ""}
 
-Student selected: ${questionContext.studentAnswer || ""}
-Correct answer: ${questionContext.correctAnswer || ""}
+Student selected: ${qc.studentAnswer || ""}
+Correct answer: ${qc.correctAnswer || ""}
 
 EXPLANATION PROVIDED:
-${questionContext.explanation || ""}
+${qc.explanation || ""}
 
 YOUR ROLE AS AN SAT TUTOR:
 1. You have the complete question context, including any passage text, all answer choices, and the full explanation
@@ -656,8 +709,8 @@ Remember: You can see everything about this question, so if a student asks "what
     }
 
     // Increment usage after successful response
-    await incrementChatUsage(db, userId || null, browserId || null);
-    const newUsage = await getChatUsage(db, userId || null, browserId || null);
+    await incrementChatUsage(db, userId, browserId);
+    const newUsage = await getChatUsage(db, userId, browserId);
 
     return c.json({
       success: true,
@@ -825,8 +878,8 @@ app.post("/api/user/sessions", authMiddleware, async (c) => {
 
     // Calculate totals
     const questionsTotal = attempts.length;
-    const questionsCorrect = attempts.filter((a: any) => a.isCorrect).length;
-    const topics = [...new Set(attempts.map((a: any) => a.topic))];
+    const questionsCorrect = attempts.filter((a: { isCorrect: boolean }) => a.isCorrect).length;
+    const topics = [...new Set(attempts.map((a: { topic: string }) => a.topic))];
 
     // Create session record
     const sessionResult = await db.prepare(
@@ -844,24 +897,28 @@ app.post("/api/user/sessions", authMiddleware, async (c) => {
 
     const sessionId = sessionResult.meta.last_row_id;
 
-    // Record attempts
-    for (const attempt of attempts) {
-      await db.prepare(
+    // Record attempts (batched)
+    const attemptStmts = attempts.map((attempt: { questionId?: number; selectedIndex?: number; isCorrect: boolean; timeSpentSec?: number; confidence?: string }) =>
+      db.prepare(
         `INSERT INTO attempts (
-          session_id, question_id, selected_index, is_correct, time_spent_sec, created_at, updated_at
-        ) VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
+          session_id, question_id, selected_index, is_correct, time_spent_sec, confidence, created_at, updated_at
+        ) VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
       ).bind(
         sessionId,
         attempt.questionId || 0,
         attempt.selectedIndex || 0,
         attempt.isCorrect ? 1 : 0,
-        attempt.timeSpentSec || 0
-      ).run();
+        attempt.timeSpentSec || 0,
+        attempt.confidence || null
+      )
+    );
+    if (attemptStmts.length > 0) {
+      await db.batch(attemptStmts);
     }
 
     // Update skill scores per topic
     const topicStats: Record<string, { total: number; correct: number }> = {};
-    attempts.forEach((a: any) => {
+    attempts.forEach((a: { topic: string; isCorrect: boolean }) => {
       if (!topicStats[a.topic]) {
         topicStats[a.topic] = { total: 0, correct: 0 };
       }
@@ -1099,8 +1156,8 @@ app.post("/api/stripe/webhook", async (c) => {
         const userId = session.client_reference_id || session.metadata?.userId;
         
         if (!userId) {
-          console.error("No user ID in checkout session");
-          break;
+          console.error("No user ID in checkout session:", session.id);
+          return c.text("Missing user ID in checkout session", 500);
         }
 
         // Set expiration to 1 month from now (will be updated by subscription.updated webhook)
@@ -1148,7 +1205,7 @@ app.post("/api/stripe/webhook", async (c) => {
         const subscription = event.data.object as Stripe.Subscription;
         const customerId = subscription.customer as string;
 
-        const expiresAt = new Date((subscription as any).current_period_end * 1000).toISOString();
+        const expiresAt = new Date(subscription.current_period_end * 1000).toISOString();
         const cancelAtPeriodEnd = subscription.cancel_at_period_end ? 1 : 0;
         const tier = (subscription.status === "active" || subscription.status === "trialing") ? "premium" : "free";
 
@@ -1183,7 +1240,7 @@ app.post("/api/stripe/webhook", async (c) => {
           const customerId = invoice.customer as string;
 
           // Use the subscription's actual period end from Stripe
-          const periodEnd = (invoice as any).lines?.data?.[0]?.period?.end;
+          const periodEnd = invoice.lines?.data?.[0]?.period?.end;
           const expiresAt = periodEnd
             ? new Date(periodEnd * 1000).toISOString()
             : new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString();
@@ -1368,8 +1425,8 @@ app.post("/api/anonymous/sessions", async (c) => {
 
     // Calculate totals
     const questionsTotal = attempts.length;
-    const questionsCorrect = attempts.filter((a: any) => a.isCorrect).length;
-    const topics = [...new Set(attempts.map((a: any) => a.topic))];
+    const questionsCorrect = attempts.filter((a: { isCorrect: boolean }) => a.isCorrect).length;
+    const topics = [...new Set(attempts.map((a: { topic: string }) => a.topic))];
 
     // Create session record
     const sessionResult = await db.prepare(
@@ -1387,24 +1444,28 @@ app.post("/api/anonymous/sessions", async (c) => {
 
     const sessionId = sessionResult.meta.last_row_id;
 
-    // Record attempts
-    for (const attempt of attempts) {
-      await db.prepare(
+    // Record attempts (batched)
+    const anonAttemptStmts = attempts.map((attempt: { questionId?: number; selectedIndex?: number; isCorrect: boolean; timeSpentSec?: number; confidence?: string }) =>
+      db.prepare(
         `INSERT INTO attempts (
-          session_id, question_id, selected_index, is_correct, time_spent_sec, created_at, updated_at
-        ) VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
+          session_id, question_id, selected_index, is_correct, time_spent_sec, confidence, created_at, updated_at
+        ) VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
       ).bind(
         sessionId,
         attempt.questionId || 0,
         attempt.selectedIndex || 0,
         attempt.isCorrect ? 1 : 0,
-        attempt.timeSpentSec || 0
-      ).run();
+        attempt.timeSpentSec || 0,
+        attempt.confidence || null
+      )
+    );
+    if (anonAttemptStmts.length > 0) {
+      await db.batch(anonAttemptStmts);
     }
 
     // Update skill scores per topic
     const topicStats: Record<string, { total: number; correct: number }> = {};
-    attempts.forEach((a: any) => {
+    attempts.forEach((a: { topic: string; isCorrect: boolean }) => {
       if (!topicStats[a.topic]) {
         topicStats[a.topic] = { total: 0, correct: 0 };
       }

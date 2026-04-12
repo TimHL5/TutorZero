@@ -319,18 +319,24 @@ async function getTutorUsage(db: D1Database, userId: string | null, browserId: s
   return { count: (usage?.message_count as number) || 0, isPremium };
 }
 
-async function incrementTutorUsage(db: D1Database, userId: string | null, browserId: string | null): Promise<void> {
+// Atomically increment and return new count (avoids check-then-increment race)
+async function incrementTutorUsage(db: D1Database, userId: string | null, browserId: string | null): Promise<number> {
   const today = new Date().toISOString().split('T')[0];
 
   if (userId) {
     await db.prepare(
       "INSERT INTO tutor_usage (user_id, date, message_count, created_at, updated_at) VALUES (?, ?, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP) ON CONFLICT(user_id, date) DO UPDATE SET message_count = message_count + 1, updated_at = CURRENT_TIMESTAMP"
     ).bind(userId, today).run();
+    const row = await db.prepare("SELECT message_count FROM tutor_usage WHERE user_id = ? AND date = ?").bind(userId, today).first();
+    return (row?.message_count as number) || 1;
   } else if (browserId) {
     await db.prepare(
       "INSERT INTO tutor_usage (browser_id, date, message_count, created_at, updated_at) VALUES (?, ?, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP) ON CONFLICT(browser_id, date) DO UPDATE SET message_count = message_count + 1, updated_at = CURRENT_TIMESTAMP"
     ).bind(browserId, today).run();
+    const row = await db.prepare("SELECT message_count FROM tutor_usage WHERE browser_id = ? AND date = ?").bind(browserId, today).first();
+    return (row?.message_count as number) || 1;
   }
+  return 0;
 }
 
 // Get tutor usage status
@@ -1205,7 +1211,10 @@ app.post("/api/stripe/webhook", async (c) => {
         const subscription = event.data.object as Stripe.Subscription;
         const customerId = subscription.customer as string;
 
-        const expiresAt = new Date(subscription.current_period_end * 1000).toISOString();
+        // current_period_end exists on Stripe webhook payload but not in SDK types
+        const subData = event.data.object as Record<string, unknown>;
+        const periodEnd = typeof subData.current_period_end === "number" ? subData.current_period_end : Math.floor(Date.now() / 1000) + 30 * 86400;
+        const expiresAt = new Date(periodEnd * 1000).toISOString();
         const cancelAtPeriodEnd = subscription.cancel_at_period_end ? 1 : 0;
         const tier = (subscription.status === "active" || subscription.status === "trialing") ? "premium" : "free";
 

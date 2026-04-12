@@ -32,20 +32,7 @@ function getBrowserId(): string {
   return browserId;
 }
 
-// Get user ID if logged in
-function getUserId(): string | null {
-  // Check if user data is stored (from auth)
-  const userData = localStorage.getItem("sat_user_data");
-  if (userData) {
-    try {
-      const parsed = JSON.parse(userData);
-      return parsed.id || null;
-    } catch {
-      return null;
-    }
-  }
-  return null;
-}
+// userId is now derived server-side from the auth cookie via optionalAuthMiddleware
 
 export function ExplanationChat({ question, selectedIndex }: ExplanationChatProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,13 +50,13 @@ export function ExplanationChat({ question, selectedIndex }: ExplanationChatProp
   useEffect(() => {
     const fetchUsage = async () => {
       try {
-        const userId = getUserId();
         const browserId = getBrowserId();
         const params = new URLSearchParams();
-        if (userId) params.set("userId", userId);
-        else params.set("browserId", browserId);
-        
-        const response = await fetch(`/api/chat/usage?${params}`);
+        params.set("browserId", browserId);
+
+        const response = await fetch(`/api/chat/usage?${params}`, {
+          credentials: "include",
+        });
         if (response.ok) {
           const data = await response.json();
           setUsage(data);
@@ -120,16 +107,15 @@ export function ExplanationChat({ question, selectedIndex }: ExplanationChatProp
         explanation: `Why: ${question.explainWhy}\n\nConcept: ${question.explainConcept}\n\nNext: ${question.explainNext}`
       };
 
-      const userId = getUserId();
       const browserId = getBrowserId();
 
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({
           messages: newMessages,
           questionContext,
-          userId,
           browserId
         })
       });
@@ -386,14 +372,11 @@ export function ExplanationChat({ question, selectedIndex }: ExplanationChatProp
                 <Button
                   className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white py-6 text-lg font-semibold"
                   onClick={() => {
-                    // Redirect to Stripe payment link
-                    const userId = getUserId() || "";
-                    const paymentLink = "https://buy.stripe.com/9B6dRb3XA0yCe5G9WAd3i03";
-                    window.location.href = `${paymentLink}?client_reference_id=${userId}`;
+                    window.location.href = "/pricing";
                   }}
                 >
                   <Sparkles className="w-5 h-5 mr-2" />
-                  Upgrade for $5/month
+                  Upgrade to Pro
                 </Button>
                 
                 <button

@@ -35,14 +35,22 @@ export interface Question {
   tags: string[];
 }
 
-// Filter out questions with blank options or garbled text from OCR extraction
+// Filter out questions with blank options, garbled text, missing figures, or dummy SPR options
 function isUsableQuestion(q: Question): boolean {
-  // Must have at least 2 non-empty options
+  // Must have all 4 non-empty options (blank buttons confuse students)
   const nonEmptyOptions = q.options.filter(opt => opt.trim() !== "");
-  if (nonEmptyOptions.length < 2) return false;
+  if (nonEmptyOptions.length < 4) return false;
 
   // Must have non-empty question text
   if (!q.questionText || q.questionText.trim().length < 10) return false;
+
+  // Exclude questions that need a figure we don't have
+  if (q.tags.includes("has_figure") || q.tags.includes("figure_required")) return false;
+
+  // Exclude student-produced-response questions with dummy options (e.g. [answer, 0, 1, -1])
+  const dummyValues = new Set(["0", "1", "-1"]);
+  const dummyCount = q.options.filter(opt => dummyValues.has(opt.trim())).length;
+  if (dummyCount >= 3) return false;
 
   return true;
 }
@@ -138,9 +146,7 @@ export function getAdaptiveNextQuestion(
 
   // Determine target difficulty based on performance
   let targetDifficulty: Question["difficulty"];
-  if (recentAccuracy < 0.33) {
-    targetDifficulty = "foundation";
-  } else if (recentAccuracy < 0.5) {
+  if (recentAccuracy < 0.5) {
     targetDifficulty = "easy";
   } else if (recentAccuracy < 0.67) {
     targetDifficulty = "medium";

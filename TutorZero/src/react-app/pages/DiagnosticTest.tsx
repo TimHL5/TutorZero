@@ -82,7 +82,12 @@ export default function DiagnosticTest() {
   };
 
   const handleSaveAndExit = () => {
-    // Save current progress and exit
+    if (answers.size > 0) {
+      const shouldExit = window.confirm(
+        `You've answered ${answers.size} of ${questions.length} questions. Your progress will be lost. Are you sure?`
+      );
+      if (!shouldExit) return;
+    }
     navigate("/dashboard");
   };
 

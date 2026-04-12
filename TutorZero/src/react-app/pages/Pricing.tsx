@@ -1,5 +1,5 @@
 import { AppLayout } from "@/react-app/components/layout/AppLayout";
-import { Check, Sparkles, Zap, Brain, BarChart3, Calendar, MessageSquare, FileText } from "lucide-react";
+import { Check, Sparkles, Zap, Brain, BarChart3, Calendar, MessageSquare, FileText, Target } from "lucide-react";
 import { Button } from "@/react-app/components/ui/button";
 import { useAuth } from "@/react-app/lib/AuthProvider";
 import { useState } from "react";
@@ -24,8 +24,6 @@ const PRO_FEATURES = [
   { icon: Target, text: "Full SAT section simulations (timed)" },
   { icon: FileText, text: "Exportable PDF progress reports" },
 ];
-
-import { Target } from "lucide-react";
 
 export default function Pricing() {
   const { user } = useAuth();

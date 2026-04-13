@@ -266,7 +266,7 @@ many solutions, what is the value of k ?`,
     topic: "algebra",
     subtopic: "linear_equations_one_var",
     difficulty: "medium",
-    questionText: `13x" = 112 — x What value of z is the solution to the given equation?`,
+    questionText: `13x² = 112 — x What value of z is the solution to the given equation?`,
     options: [
     `8`,
     `0`,
@@ -476,7 +476,7 @@ context?`,
     subtopic: "linear_equations_one_var",
     difficulty: "medium",
     questionText: `2≤ + 16 = a(x + 8)
-In the given equation, @ is a constant. If the equation has infinitely many solutions, what is the value of a?`,
+In the given equation, a is a constant. If the equation has infinitely many solutions, what is the value of a?`,
     options: [
     `2`,
     `0`,
@@ -1968,7 +1968,7 @@ rectangle with a perimeter of 36 m. Which statement is the best interpretation o
     topic: "algebra",
     subtopic: "linear_equations_two_var",
     difficulty: "medium",
-    questionText: `The graph of the equation @x + ky =6 is a line in the xy-plane, where a and
+    questionText: `The graph of the equation ax + ky =6 is a line in the xy-plane, where a and
 k are constants. If the line contains the points (—2, —GJand (0, —3), what is
 the value of k ?`,
     options: [
@@ -2937,7 +2937,7 @@ $600 in that savings account. How much money, in dollars, will be in the account
     difficulty: "medium",
     questionText: `In the linear function h, h(0) = 41 and h(1) = 40. Which equation defines h?`,
     options: [
-    `h(a) = —a@ +41`,
+    `h(a) = —a +41`,
     `h(x) = —x`,
     `A(x) = —41a`,
     `h(x) = —41`
@@ -2982,7 +2982,7 @@ equation defines f(x)?`,
     topic: "algebra",
     subtopic: "linear_functions",
     difficulty: "medium",
-    questionText: `lf y = 5x@ + 10, what is the value of y when x = 8?`,
+    questionText: `lf y = 5x + 10, what is the value of y when x = 8?`,
     options: [
     `50`,
     `0`,
@@ -5565,7 +5565,7 @@ The solution to the given system of equations is (a, y). What is the value of y?
     topic: "algebra",
     subtopic: "systems_of_equations",
     difficulty: "hard",
-    questionText: `—x" — wy = —337
+    questionText: `—x² — wy = —337
 2x2 — wy = 47
 In the given system of equations, w is a constant. In the xy-plane, the graphs of these equations intersect at the point (q, 19)
 , where q is a constant. What is the value of w?`,

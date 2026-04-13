@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router";
 import { useStudentProgress } from "@/react-app/hooks/useStudentProgress";
 import { getAdaptiveNextQuestion, topicDisplayNames, type Question } from "@/data/questions";
+import { ExplanationChat } from "@/react-app/components/feedback/ExplanationChat";
 import { cn } from "@/react-app/lib/utils";
 import { ChevronRight, Pause, Play, CheckCircle, XCircle, Lightbulb, BookOpen, ArrowRight, ChevronDown, MessageSquare, Lock, Target, Clock, X, Home, AlertTriangle } from "lucide-react";
 
@@ -50,6 +51,9 @@ export default function Practice() {
   // Frustration detection state
   const [showFrustrationIntervention, setShowFrustrationIntervention] = useState(false);
   const [frustrationTopic, setFrustrationTopic] = useState<string | null>(null);
+
+  // ExplanationChat state
+  const [showExplanationChat, setShowExplanationChat] = useState(false);
 
   // Get section topics if filtering by section
   const sectionTopicList = targetSection ? sectionTopics[targetSection] : undefined;
@@ -160,6 +164,7 @@ export default function Practice() {
       setSelectedIndex(null);
       setConfidence(null);
       setShowFeedback(false);
+      setShowExplanationChat(false);
       setQuestionStartTime(Date.now());
       setExpandedSection(null);
     } else {
@@ -176,8 +181,14 @@ export default function Practice() {
       return updated;
     });
 
+    if (!understood) {
+      // Open the AI explanation chat instead of advancing
+      setShowExplanationChat(true);
+      return;
+    }
+
     // Show frustration intervention if detected
-    if (frustrationTopic && !understood) {
+    if (frustrationTopic) {
       setShowFrustrationIntervention(true);
     } else {
       setFrustrationTopic(null);
@@ -542,14 +553,39 @@ export default function Practice() {
                 </div>
               </div>
 
+              {/* ExplanationChat */}
+              {showExplanationChat && currentQuestion && selectedIndex !== null && (
+                <div className="mb-6 sm:mb-8">
+                  <ExplanationChat question={currentQuestion} selectedIndex={selectedIndex} />
+                </div>
+              )}
+
               {/* Got it / Still confused */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <button
-                  onClick={() => handleFeedbackResponse(false)}
-                  className="flex-1 py-2.5 sm:py-3 px-4 sm:px-6 border-2 border-tz-gray-200 text-tz-gray-600 rounded-lg font-medium hover:bg-tz-gray-100 transition-all text-sm sm:text-base order-2 sm:order-1"
-                >
-                  Still confused
-                </button>
+                {!showExplanationChat ? (
+                  <button
+                    onClick={() => handleFeedbackResponse(false)}
+                    className="flex-1 py-2.5 sm:py-3 px-4 sm:px-6 border-2 border-tz-gray-200 text-tz-gray-600 rounded-lg font-medium hover:bg-tz-gray-100 transition-all text-sm sm:text-base order-2 sm:order-1"
+                  >
+                    Still confused
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      setShowExplanationChat(false);
+                      // Check frustration after chat
+                      if (frustrationTopic) {
+                        setShowFrustrationIntervention(true);
+                      } else {
+                        setFrustrationTopic(null);
+                        goToNextQuestion();
+                      }
+                    }}
+                    className="flex-1 py-2.5 sm:py-3 px-4 sm:px-6 border-2 border-tz-gray-200 text-tz-gray-600 rounded-lg font-medium hover:bg-tz-gray-100 transition-all text-sm sm:text-base order-2 sm:order-1"
+                  >
+                    Continue to next question
+                  </button>
+                )}
                 <button
                   onClick={() => handleFeedbackResponse(true)}
                   className="flex-1 py-2.5 sm:py-3 px-4 sm:px-6 bg-tz-green text-white rounded-lg font-medium hover-scale transition-all flex items-center justify-center gap-2 text-sm sm:text-base order-1 sm:order-2"

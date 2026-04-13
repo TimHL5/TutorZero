@@ -1189,7 +1189,7 @@ on this circle. What is the value of c?`,
     topic: "geometry",
     subtopic: "circles",
     difficulty: "medium",
-    questionText: `z?+58≤+y? =0
+    questionText: `z?+58≤+y² =0
 In the xy-plane, the graph of the given equation is a circle. What are the coordinates (2, y) of the center of the circle?`,
     options: [
     `(0, 29)`,
@@ -1212,7 +1212,7 @@ In the xy-plane, the graph of the given equation is a circle. What are the coord
     topic: "geometry",
     subtopic: "circles",
     difficulty: "medium",
-    questionText: `What is the center of the circle in the xy-plane defined by the equation (x — 1) +(y+ 7)? =1?`,
+    questionText: `What is the center of the circle in the xy-plane defined by the equation (x — 1) +(y+ 7)² =1?`,
     options: [
     `( — 1, —7)`,
     `(— 1,7) c. (1, —7)`,
@@ -1312,7 +1312,7 @@ If the length of oc is 18, what is the length of arc AB,`,
     topic: "geometry",
     subtopic: "circles",
     difficulty: "medium",
-    questionText: `The equation (x + 6)? +(y+ 3) = 121 defines a circle in the
+    questionText: `The equation (x + 6)² +(y+ 3) = 121 defines a circle in the
 xy-plane. What is the radius of the circle?`,
     options: [
     `11`,
@@ -1359,7 +1359,7 @@ the slope of line k?`,
     subtopic: "circles",
     difficulty: "medium",
     questionText: `A circle in the xy-plane has its center at (—5, 2) and has a radius of 9. An equation of this circle is
-ge + y? + ax + by + c = 0, where a, b, and care constants. What is the value of c?`,
+ge + y² + ax + by + c = 0, where a, b, and care constants. What is the value of c?`,
     options: [
     `-52`,
     `0`,
@@ -1405,9 +1405,9 @@ What fraction of the circumference of the circle is the length of arc AB ?`,
     topic: "geometry",
     subtopic: "circles",
     difficulty: "medium",
-    questionText: `Circle A in the xy-plane has the equation (x + 5)? +(y- 5) = 4. Circle B has the same center as circle A. The
+    questionText: `Circle A in the xy-plane has the equation (x + 5)² +(y- 5) = 4. Circle B has the same center as circle A. The
 radius of circle B is two times the radius of circle A. The equation defining circle B in the xy-plane is
-(a + 5)" + (y—5)? = k, where kis a constant. What is the value of k?`,
+(a + 5)" + (y—5)² = k, where kis a constant. What is the value of k?`,
     options: [
     `16`,
     `0`,
@@ -1452,7 +1452,7 @@ its associated angle ROS?`,
     topic: "geometry",
     subtopic: "circles",
     difficulty: "medium",
-    questionText: `8a? + 112px + 8y? — 64py = —448p?
+    questionText: `8a² + 112px + 8y² — 64py = —448p²
 In the xy-plane, the graph of the given equation is a circle. The length of the radius of
 the circle is np, where n and p are positive constants. What is the value of n?`,
     options: [
@@ -1509,8 +1509,8 @@ Pe
 =≥_ 1-6-4 3, +2} 4 6 8.
 oa
 
-Circle A shown is defined by the equation 2? + (y— 6)? = 7. Circle B (not shown) has the same radius but is translated 96
-units to the right. If the equation of circle B is (x — h)? +(y- k)? = a, where h, k, and a are constants, what is the value
+Circle A shown is defined by the equation 2? + (y— 6)² = 7. Circle B (not shown) has the same radius but is translated 96
+units to the right. If the equation of circle B is (x — h)² +(y- k)² = a, where h, k, and a are constants, what is the value
 of 4a?`,
     options: [
     `28`,
@@ -1535,10 +1535,10 @@ of 4a?`,
     difficulty: "hard",
     questionText: `A circle in the xy-plane has its center at (16, 17) and has a radius of 7&. Which equation represents this circle?`,
     options: [
-    `(a — 16)" + (y— 17)? = 49k`,
-    `(a — 16)" + (y—17)? = 49k?`,
-    `(x — 16)? + (y—17)? = 7k`,
-    `(w — 16)" + (y—17)? = 7k?`
+    `(a — 16)" + (y— 17)² = 49k`,
+    `(a — 16)" + (y—17)² = 49k²`,
+    `(x — 16)² + (y—17)² = 7k`,
+    `(w — 16)" + (y—17)² = 7k²`
   ],
     correctIndex: 1,
     explainWhy: `The correct answer is B. This question requires understanding of circles concepts.`,
@@ -1713,7 +1713,7 @@ x = 100, what is the value of y ? [Figure described in original]`,
     topic: "geometry",
     subtopic: "lines_angles_triangles",
     difficulty: "easy",
-    questionText: `In the triangle above, @=45. What
+    questionText: `In the triangle above, a=45. What
 is the value of b ?`,
     options: [
     `52`,
@@ -1739,7 +1739,7 @@ is the value of b ?`,
     questionText: `ye
 
 Note: Figure not drawn to scale.
-In the figure, three lines intersect at point P. If ¥ =65 and
+In the figure, three lines intersect at point P. If x =65 and
 y=75, what is the value of z ? [Figure described in original]`,
     options: [
     `140`,
@@ -2709,8 +2709,8 @@ a
 Note: Figure not drawn to scale.
 For the triangle shown, which expression represents the value of a? [Figure described in original]`,
     options: [
-    `21? — 62`,
-    `217 — 6? Cc. /21—6`,
+    `21² — 6²`,
+    `217 — 6² Cc. /21—6`,
     `21-6`,
     ``
   ],

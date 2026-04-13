@@ -50,11 +50,12 @@ const AuthContext = createContext<AuthContextType>({
 });
 
 function setAccessTokenCookie(token: string | null, expiresIn?: number) {
+  const secure = window.location.protocol === "https:" ? "; Secure" : "";
   if (token) {
     const maxAge = expiresIn || 3600;
-    document.cookie = `sb-access-token=${token}; path=/; max-age=${maxAge}; SameSite=Lax`;
+    document.cookie = `sb-access-token=${token}; path=/; max-age=${maxAge}; SameSite=Lax${secure}`;
   } else {
-    document.cookie = "sb-access-token=; path=/; max-age=0; SameSite=Lax";
+    document.cookie = `sb-access-token=; path=/; max-age=0; SameSite=Lax${secure}`;
   }
 }
 

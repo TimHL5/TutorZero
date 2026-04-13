@@ -9,7 +9,7 @@ export const bankMathAdvancedQuestions: Question[] = [
     subtopic: "equivalent_expressions",
     difficulty: "easy",
     questionText: `Which expression is equivalent to
-(2x? -4)-(-3x?+2x-7) 2`,
+(2x² -4)-(-3x²+2x-7) 2`,
     options: [
     `5x*-2x +3`,
     `5x*+2x—-3 °, —x®—-2x—-11`,
@@ -31,12 +31,12 @@ export const bankMathAdvancedQuestions: Question[] = [
     topic: "advanced_math",
     subtopic: "equivalent_expressions",
     difficulty: "easy",
-    questionText: `Which expression is equivalent to 8 + d? + 3?`,
+    questionText: `Which expression is equivalent to 8 + d² + 3?`,
     options: [
-    `d? + 24`,
-    `d?+11`,
-    `d?+5`,
-    `d?—11`
+    `d² + 24`,
+    `d²+11`,
+    `d²+5`,
+    `d²—11`
   ],
     correctIndex: 1,
     explainWhy: `The correct answer is B. This question requires understanding of equivalent expressions concepts.`,
@@ -98,7 +98,7 @@ equivalent to 2(ah —3)+2?`,
     topic: "advanced_math",
     subtopic: "equivalent_expressions",
     difficulty: "medium",
-    questionText: `Which expression is equivalent to 256w? — 676?`,
+    questionText: `Which expression is equivalent to 256w² — 676?`,
     options: [
     `(16w — 26)(16w — 26)`,
     `(8w — 13)(8w + 13)`,
@@ -144,7 +144,7 @@ the given expression?`,
     topic: "advanced_math",
     subtopic: "equivalent_expressions",
     difficulty: "medium",
-    questionText: `Which expression is equivalent to 12x" + 27?`,
+    questionText: `Which expression is equivalent to 12x² + 27?`,
     options: [
     `12(9a + 1)`,
     `27(12≤ + 1)`,
@@ -191,7 +191,7 @@ the given expression?`,
     questionText: `Which expression is equivalent to (8yz) (y) (7z)?`,
     options: [
     `56y22?`,
-    `56y?z`,
+    `56y²z`,
     `56yz`,
     `16yz`
   ],
@@ -254,12 +254,12 @@ the given expression?`,
     topic: "advanced_math",
     subtopic: "equivalent_expressions",
     difficulty: "medium",
-    questionText: `Which expression is equivalent to 9a? + 7x? + 9x?`,
+    questionText: `Which expression is equivalent to 9a² + 7x² + 9x²?`,
     options: [
     `634 + 9x`,
-    `9x? + 16z`,
+    `9x² + 16z`,
     `252°`,
-    `16x? + 92x`
+    `16x² + 92x`
   ],
     correctIndex: 3,
     explainWhy: `The correct answer is D. This question requires understanding of equivalent expressions concepts.`,
@@ -298,12 +298,12 @@ the given expression?`,
     topic: "advanced_math",
     subtopic: "equivalent_expressions",
     difficulty: "medium",
-    questionText: `Which expression is equivalent to 15w? + 8w?`,
+    questionText: `Which expression is equivalent to 15w² + 8w?`,
     options: [
     `w(15w + 8)`,
     `8w(15w + 1)`,
-    `15w?(8w + 1)`,
-    `23(w? + w)`
+    `15w²(8w + 1)`,
+    `23(w² + w)`
   ],
     correctIndex: 0,
     explainWhy: `The correct answer is A. This question requires understanding of equivalent expressions concepts.`,
@@ -324,8 +324,8 @@ the given expression?`,
     options: [
     `—912?`,
     `62?`,
-    `20x?`,
-    `40x?`
+    `20x²`,
+    `40x²`
   ],
     correctIndex: 1,
     explainWhy: `The correct answer is B. This question requires understanding of equivalent expressions concepts.`,
@@ -344,10 +344,10 @@ the given expression?`,
     difficulty: "medium",
     questionText: `Which expression is equivalent to (2? + 6)?`,
     options: [
-    `4a? + 24`,
-    `4x? + 10`,
-    `4x? +6`,
-    `4x? — 2`
+    `4a² + 24`,
+    `4x² + 10`,
+    `4x² +6`,
+    `4x² — 2`
   ],
     correctIndex: 0,
     explainWhy: `The correct answer is A. This question requires understanding of equivalent expressions concepts.`,
@@ -364,12 +364,12 @@ the given expression?`,
     topic: "advanced_math",
     subtopic: "equivalent_expressions",
     difficulty: "medium",
-    questionText: `Which expression is equivalent to (d — 6) (8d? — 3)?`,
+    questionText: `Which expression is equivalent to (d — 6) (8d² — 3)?`,
     options: [
-    `8d? — 14d? — 3d + 18`,
-    `8d? — 17d? + 48`,
-    `8d? — 48d? — 3d + 18`,
-    `8d3 — 51d? + 48`
+    `8d² — 14d² — 3d + 18`,
+    `8d² — 17d² + 48`,
+    `8d² — 48d² — 3d + 18`,
+    `8d3 — 51d² + 48`
   ],
     correctIndex: 2,
     explainWhy: `The correct answer is C. This question requires understanding of equivalent expressions concepts.`,
@@ -411,7 +411,7 @@ the expression above?`,
     subtopic: "equivalent_expressions",
     difficulty: "medium",
     questionText: `The sum of —2x*+x+31 and 3x74 7X —8 can be written in the form
-ax? + bx + C where a, b, and c are constants. What is the value of
+ax² + bx + C where a, b, and c are constants. What is the value of
 atbt+c ?`,
     options: [
     `32`,
@@ -437,7 +437,7 @@ atbt+c ?`,
     questionText: `($x+3)(Sx+ 5)
 
 2 2/\\2 2
-The expression above is equivalent to ax? + bx + C where a, b, andc
+The expression above is equivalent to ax² + bx + C where a, b, andc
 are constants. What is the value of b?`,
     options: [
     `2.5`,
@@ -506,12 +506,12 @@ is a constant, what is the value of k ?`,
     topic: "advanced_math",
     subtopic: "equivalent_expressions",
     difficulty: "medium",
-    questionText: `(4x? —5x*+3)—(6x7 +2x*—x)
+    questionText: `(4x² —5x*+3)—(6x7 +2x*—x)
 Which of the following expressions is equivalent
 to the expression above?`,
     options: [
     `-10x°-3x*+x+3`,
-    `—2x?-7x?+x+3 c, ~2x?-3x2 +x+3 b. 10x°-7x*-x+3`,
+    `—2x²-7x²+x+3 c, ~2x²-3x2 +x+3 b. 10x°-7x*-x+3`,
     ``,
     ``
   ],
@@ -574,7 +574,7 @@ to the expression above?`,
     topic: "advanced_math",
     subtopic: "equivalent_expressions",
     difficulty: "medium",
-    questionText: `(ax +3)\\5x* — bx +4) =20x" -9x*-2x4+12
+    questionText: `(ax +3)\\5x* — bx +4) =20x² -9x*-2x4+12
 The equation above is true for all x, where a and b are
 constants. What is the value of ab ?`,
     options: [
@@ -627,7 +627,7 @@ what is the value of fy ?`,
     difficulty: "medium",
     questionText: `op ty _
 x-2 xt+5 — (x-2)(x +5)
-The equation above is true for all ¥ > ?, where r and t are positive
+The equation above is true for all y > ?, where r and t are positive
 constants. What is the value of rt ?`,
     options: [
     `—20`,
@@ -697,8 +697,8 @@ constants. What is the value of b?`,
     topic: "advanced_math",
     subtopic: "equivalent_expressions",
     difficulty: "medium",
-    questionText: `0.36x? + 0.632 + 1.17
-The given expression can be rewritten as a(4a? +7x#+ 13), where @ is a constant. What is the value of a?`,
+    questionText: `0.36x² + 0.632 + 1.17
+The given expression can be rewritten as a(4a² +7x²+ 13), where a is a constant. What is the value of a?`,
     options: [
     `0.09`,
     `0`,
@@ -720,8 +720,8 @@ The given expression can be rewritten as a(4a? +7x#+ 13), where @ is a constant.
     topic: "advanced_math",
     subtopic: "equivalent_expressions",
     difficulty: "medium",
-    questionText: `In the expression 3(2x? +px +8)—16x(9 +4), p is a constant. This
-expression is equivalent to the expression 6x? —155x +24, what is the
+    questionText: `In the expression 3(2x² +px +8)—16x(9 +4), p is a constant. This
+expression is equivalent to the expression 6x² —155x +24, what is the
 value of p ?`,
     options: [
     `—3`,
@@ -751,7 +751,7 @@ The expression x # yl , where y= 4and y > 1, is
 equivalent to which of the following?
 vy`,
     options: [
-    `x? yy`,
+    `x² yy`,
     `x2 yy`,
     `xx yy`,
     `x* 3/x`
@@ -771,7 +771,7 @@ vy`,
     topic: "advanced_math",
     subtopic: "equivalent_expressions",
     difficulty: "medium",
-    questionText: `x? +6x—-7
+    questionText: `x² +6x—-7
 — > = ard
 The equation x+7 is true for all x # —#, where a and d
 are integers. What is the value of q@+q?`,
@@ -820,7 +820,7 @@ are constants. What is the value of a+b?`,
     topic: "advanced_math",
     subtopic: "equivalent_expressions",
     difficulty: "hard",
-    questionText: `One of the factors of 2a? + 42x? + 208z is x + b, where bis a positive constant. What is the smallest possible
+    questionText: `One of the factors of 2a² + 42x² + 208z is x + b, where bis a positive constant. What is the smallest possible
 value of b?`,
     options: [
     `8`,
@@ -843,7 +843,7 @@ value of b?`,
     topic: "advanced_math",
     subtopic: "equivalent_expressions",
     difficulty: "hard",
-    questionText: `Which of the following expressions is(are) a factor of 3x? + 20a — 63?
+    questionText: `Which of the following expressions is(are) a factor of 3x² + 20a — 63?
 l 2-9
 ll. 32 —7`,
     options: [
@@ -977,7 +977,7 @@ equation above?`,
     topic: "advanced_math",
     subtopic: "nonlinear_equations",
     difficulty: "medium",
-    questionText: `x? = (22)(22) What is the positive solution to the given equation?`,
+    questionText: `x² = (22)(22) What is the positive solution to the given equation?`,
     options: [
     `22`,
     `0`,
@@ -1046,7 +1046,7 @@ What is the positive solution to the given equation?`,
     subtopic: "nonlinear_equations",
     difficulty: "medium",
     questionText: `y=d5r+4
-y= 5a? +4
+y= 5a² +4
 Which ordered pair (a, y) is a solution to the given system of equations?`,
     options: [
     `(0,0)`,
@@ -1276,7 +1276,7 @@ what is one possible value of x ?`,
     topic: "advanced_math",
     subtopic: "nonlinear_equations",
     difficulty: "medium",
-    questionText: `xe +x¥—-12=0
+    questionText: `xe +xy—-12=0
 If ais a solution of the equation above and
 a>, what is the value of a?`,
     options: [
@@ -1402,7 +1402,7 @@ y=atc in the xy-plane?`,
     topic: "advanced_math",
     subtopic: "nonlinear_equations",
     difficulty: "hard",
-    questionText: `7x? — 20a — 32 = 0 Whatis the positive solution to the given equation?`,
+    questionText: `7x² — 20a — 32 = 0 Whatis the positive solution to the given equation?`,
     options: [
     `4`,
     `0`,
@@ -1495,7 +1495,7 @@ What is the positive solution to the given equation?`,
     topic: "advanced_math",
     subtopic: "nonlinear_equations",
     difficulty: "hard",
-    questionText: `x? —5a2 —24=0
+    questionText: `x² —5a2 —24=0
 What is the sum of the solutions to the given equation?`,
     options: [
     `5`,
@@ -1599,7 +1599,7 @@ xa + y, where x and y are constants, what is the value of x ?`,
     topic: "advanced_math",
     subtopic: "nonlinear_equations",
     difficulty: "medium",
-    questionText: `If 3a? — 182 — 15 = 0, what is the value of x? — 6x?`,
+    questionText: `If 3a² — 182 — 15 = 0, what is the value of x² — 6x?`,
     options: [
     `5`,
     `0`,
@@ -1752,7 +1752,7 @@ above, what is the value of Vitye?`,
     topic: "advanced_math",
     subtopic: "nonlinear_equations",
     difficulty: "medium",
-    questionText: `In the xy-plane, the graph of ¥ = x°-9 intersects line p at (1,@) and (5,b),
+    questionText: `In the xy-plane, the graph of y = x°-9 intersects line p at (1,a) and (5,b),
 where a and b are constants. What is the slope of line p ?`,
     options: [
     `6`,
@@ -1775,7 +1775,7 @@ where a and b are constants. What is the slope of line p ?`,
     topic: "advanced_math",
     subtopic: "nonlinear_equations",
     difficulty: "hard",
-    questionText: `In the xy-plane, the graph of ¥ = 3x? 14x intersects the graph of y=x at
+    questionText: `In the xy-plane, the graph of y = 3x² 14x intersects the graph of y=x at
 the points (0, 0) and (a, a). What is the value of a ?`,
     options: [
     `5`,
@@ -1897,8 +1897,8 @@ The solution to the given system of equations is (2, y). What is the value of 2?
     topic: "advanced_math",
     subtopic: "nonlinear_equations",
     difficulty: "hard",
-    questionText: `The solutions to x? + 62 + 7 = Oarerand s, where r < s. The solutions to z? + 8x + 8 = Oaret and u, wheret < uw.
-The solutions to x? + 14a +c = 0, where cis a constant, are r + t and s + wu. What is the value of c?`,
+    questionText: `The solutions to x² + 62 + 7 = Oarerand s, where r < s. The solutions to z² + 8x + 8 = Oaret and u, wheret < uw.
+The solutions to x² + 14a +c = 0, where cis a constant, are r + t and s + wu. What is the value of c?`,
     options: [
     `31`,
     `0`,
@@ -1921,7 +1921,7 @@ The solutions to x? + 14a +c = 0, where cis a constant, are r + t and s + wu. Wh
     subtopic: "nonlinear_equations",
     difficulty: "hard",
     questionText: `In the xy-plane, a line with equation 2y = c for some constant c intersects a parabola at exactly one point. If the
-parabola has equation y = —2x? + 9x, what is the value of c?`,
+parabola has equation y = —2x² + 9x, what is the value of c?`,
     options: [
     `20.25`,
     `0`,
@@ -1968,7 +1968,7 @@ a possible value of x?`,
     topic: "advanced_math",
     subtopic: "nonlinear_equations",
     difficulty: "hard",
-    questionText: `64a? + bx + 25 =0
+    questionText: `64a² + bx + 25 =0
 In the given equation, bis a constant. For which of the following values of 6 will the equation have more than one
 real solution?`,
     options: [
@@ -1992,7 +1992,7 @@ real solution?`,
     topic: "advanced_math",
     subtopic: "nonlinear_equations",
     difficulty: "advanced",
-    questionText: `y = 2a? — 21≤ + 64
+    questionText: `y = 2a² — 21≤ + 64
 y=3zr+a
 
 In the given system of equations, a is a constant. The graphs of the equations in the given system intersect at
@@ -2041,7 +2041,7 @@ What is the positive solution to the given equation?`,
     topic: "advanced_math",
     subtopic: "nonlinear_equations",
     difficulty: "advanced",
-    questionText: `(3a + p) (5x? — 45) (2x? — 16x + 6p) = 0
+    questionText: `(3a + p) (5x² — 45) (2x² — 16x + 6p) = 0
 In the given equation, p is a positive constant. The sum of the solutions to the
 equation is a. What is the value of p?`,
     options: [
@@ -2513,7 +2513,7 @@ The graph of y = f(z) is shown in the xy-plane. The value of f(0) is an integer.
     topic: "advanced_math",
     subtopic: "nonlinear_functions",
     difficulty: "medium",
-    questionText: `y= —fa? + 2x +29
+    questionText: `y= —fa² + 2x +29
 
 The given equation models a company's scheduled deliveries over 8 months, where y is the estimated number of scheduled
 deliveries z months after the end of May 2012, where 0 < a < 8. Which statement is the best interpretation of the y-
@@ -2887,7 +2887,7 @@ feet, between the third and fourth time it hit the ground?`,
     topic: "advanced_math",
     subtopic: "nonlinear_functions",
     difficulty: "medium",
-    questionText: `f(x) = x? — 18a — 360
+    questionText: `f(x) = x² — 18a — 360
 If the given function f is graphed in the xy-plane, where y = f(z), what is an x-intercept of the graph?`,
     options: [
     `(— 12,0)`,
@@ -3261,7 +3261,7 @@ The revenue FO), in dollars, that a company receives from sales of a
 
 product is given by the function f above, where x is the unit price, in dollars,
 
-of the product. The graph of ¥ = F(x) in the xy-plane intersects the x-axis
+of the product. The graph of y = F(x) in the xy-plane intersects the x-axis
 
 at O and a. What does a represent?`,
     options: [
@@ -3577,7 +3577,7 @@ real-life meaning of the positive x-intercept of the graph?`,
     difficulty: "hard",
     questionText: `Eira
 For the exponential function f, the table above shows several values of x and their corresponding values of
-F(x), where a is a constant greater than 1. If k is a constant and f(k) = a? what is the value of k ?`,
+F(x), where a is a constant greater than 1. If k is a constant and f(k) = a² what is the value of k ?`,
     options: [
     `8`,
     `0`,
@@ -3646,7 +3646,7 @@ constant. If p(c)=10, what is the value of p(12) ?`,
     topic: "advanced_math",
     subtopic: "nonlinear_functions",
     difficulty: "advanced",
-    questionText: `The functions f and g are defined by the given equations. f(a) = 3 + | — 2x — a?| g(w) = \\—=| —wt+sd
+    questionText: `The functions f and g are defined by the given equations. f(a) = 3 + | — 2x — a²| g(w) = \\—=| —wt+sd
 If f(—4) = c, where cis a constant, what is the value of g(c)?`,
     options: [
     `-4.9`,
@@ -3669,7 +3669,7 @@ If f(—4) = c, where cis a constant, what is the value of g(c)?`,
     topic: "advanced_math",
     subtopic: "nonlinear_functions",
     difficulty: "advanced",
-    questionText: `f(x) = 4a? — 50x + 126
+    questionText: `f(x) = 4a² — 50x + 126
 The given equation defines the function f. For what value of x does f(z) reach its minimum?`,
     options: [
     `6.25`,
@@ -3716,7 +3716,7 @@ vertex of the graph of y = f(z) in the xy-plane?`,
     topic: "advanced_math",
     subtopic: "nonlinear_functions",
     difficulty: "advanced",
-    questionText: `f(x) = ax? + 4e+c≤
+    questionText: `f(x) = ax² + 4e+c≤
 
 In the given quadratic function, a and c are constants. The graph of y = f(z) in the xy-plane is a parabola that
 opens upward and has a vertex at the point (h, k), where h and kare constants. If k < O and f(—9) = f(3),
@@ -3771,7 +3771,7 @@ Il. h(a) = 18(1.4)***`,
     topic: "advanced_math",
     subtopic: "nonlinear_functions",
     difficulty: "advanced",
-    questionText: `The area of a triangle is equal to x" square centimeters. The length of the base of the triangle is 22 + 22 centimeters, and
+    questionText: `The area of a triangle is equal to x² square centimeters. The length of the base of the triangle is 22 + 22 centimeters, and
 the height of the triangle is — 10 centimeters. What is the value of x?`,
     options: [
     `110`,

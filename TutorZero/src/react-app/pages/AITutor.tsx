@@ -81,10 +81,9 @@ export default function AITutor() {
     const fetchUsageAndContext = async () => {
       try {
         const params = new URLSearchParams();
-        if (userId) params.set("userId", userId);
-        else params.set("browserId", browserId);
-        
-        const usageRes = await fetch(`/api/tutor/usage?${params}`);
+        params.set("browserId", browserId);
+
+        const usageRes = await fetch(`/api/tutor/usage?${params}`, { credentials: "include" });
         if (usageRes.ok) {
           const data = await usageRes.json();
           setUsage(data);
@@ -187,6 +186,7 @@ export default function AITutor() {
       const response = await fetch("/api/tutor/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({
           messages: [...messages, userMessage].filter(m => m.id !== "welcome").map(m => ({
             role: m.role,
@@ -198,8 +198,7 @@ export default function AITutor() {
             recentAccuracy: context.recentAccuracy,
             currentStreak: context.currentStreak,
           },
-          userId,
-          browserId: userId ? null : browserId,
+          browserId,
         }),
       });
 
@@ -209,6 +208,9 @@ export default function AITutor() {
         if (data.error === "daily_limit_reached") {
           setUsage(prev => prev ? { ...prev, remaining: 0 } : null);
           setError("You've reached your daily message limit. Upgrade to Pro for unlimited tutoring!");
+        } else if (response.status === 429) {
+          setUsage(prev => prev ? { ...prev, remaining: 0 } : null);
+          setError(data.message || "You've reached your message limit. Upgrade to Pro for unlimited tutoring!");
         } else {
           setError(data.message || "Failed to get a response. Please try again.");
         }

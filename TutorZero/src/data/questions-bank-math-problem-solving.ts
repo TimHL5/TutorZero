@@ -2943,7 +2943,7 @@ a`,
     options: [
     `7 2`,
     `7 a c. 3 4`,
-    `¥`,
+    `y`,
     ``
   ],
     correctIndex: 0,
@@ -5153,7 +5153,7 @@ in the state who have fewer than two siblings?`,
 Of the following, which is the best model for
 the data in the scatterplot?`,
     options: [
-    `¥ =2x*—11x—-20`,
+    `y =2x*—11x—-20`,
     `y=2x*—-11x +20 = 9y2_ = Cc. V=2x*-Oox—-3`,
     `y=2x²-5x +3`,
     ``
@@ -6284,8 +6284,8 @@ Time (years)
 Of the following equations, which best models the data in the scatterplot?`,
     options: [
     `Y= 1.674x°+19.76x —745.73`,
-    `¥ = —1.674x*—19.76x —745.73`,
-    `¥ = 1.674x* +19.76x +745.73`,
+    `y = —1.674x*—19.76x —745.73`,
+    `y = 1.674x* +19.76x +745.73`,
     `Y= —1.674x°+19.76x +745.73`
   ],
     correctIndex: 3,

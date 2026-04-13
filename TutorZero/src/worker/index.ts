@@ -1212,7 +1212,7 @@ app.post("/api/stripe/webhook", async (c) => {
         const customerId = subscription.customer as string;
 
         // current_period_end exists on Stripe webhook payload but not in SDK types
-        const subData = event.data.object as Record<string, unknown>;
+        const subData = event.data.object as unknown as Record<string, unknown>;
         const periodEnd = typeof subData.current_period_end === "number" ? subData.current_period_end : Math.floor(Date.now() / 1000) + 30 * 86400;
         const expiresAt = new Date(periodEnd * 1000).toISOString();
         const cancelAtPeriodEnd = subscription.cancel_at_period_end ? 1 : 0;
@@ -1233,13 +1233,18 @@ app.post("/api/stripe/webhook", async (c) => {
         const subscription = event.data.object as Stripe.Subscription;
         const customerId = subscription.customer as string;
 
-        await db.prepare(
-          `UPDATE subscriptions SET 
+        const delResult = await db.prepare(
+          `UPDATE subscriptions SET
             tier = 'free',
             cancel_at_period_end = 0,
             updated_at = CURRENT_TIMESTAMP
           WHERE stripe_customer_id = ?`
         ).bind(customerId).run();
+
+        if (delResult.meta.changes === 0) {
+          console.error("subscription.deleted: no matching row for customer", customerId);
+          return c.text("No subscription found for customer", 500);
+        }
         break;
       }
 
@@ -1568,11 +1573,19 @@ app.delete("/api/progress/:browserId", async (c) => {
     ).bind(browserId).first();
 
     if (anonSession) {
+      // Delete attempts linked to sessions (prevents orphaned rows)
+      await db.prepare(
+        "DELETE FROM attempts WHERE session_id IN (SELECT id FROM sessions WHERE anon_session_id = ?)"
+      ).bind(anonSession.id).run();
       await db.prepare("DELETE FROM skill_scores WHERE anon_session_id = ?").bind(anonSession.id).run();
       await db.prepare("DELETE FROM diagnostic_results WHERE anon_session_id = ?").bind(anonSession.id).run();
       await db.prepare("DELETE FROM sessions WHERE anon_session_id = ?").bind(anonSession.id).run();
       await db.prepare("DELETE FROM anon_sessions WHERE id = ?").bind(anonSession.id).run();
     }
+
+    // Clean up usage tracking for this browser
+    await db.prepare("DELETE FROM chat_usage WHERE browser_id = ?").bind(browserId).run();
+    await db.prepare("DELETE FROM tutor_usage WHERE browser_id = ?").bind(browserId).run();
 
     return c.json({ success: true });
   } catch (error) {

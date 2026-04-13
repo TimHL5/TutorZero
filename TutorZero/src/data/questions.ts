@@ -35,6 +35,15 @@ export interface Question {
   tags: string[];
 }
 
+// Detect OCR garbage density in a string
+function garbageDensity(text: string): number {
+  if (!text || text.length === 0) return 1;
+  // Characters that indicate OCR corruption when clustered
+  const garbageChars = /[¥€®™~°@#]/g;
+  const matches = text.match(garbageChars);
+  return matches ? matches.length / text.length : 0;
+}
+
 // Filter out questions with blank options, garbled text, missing figures, or dummy SPR options
 function isUsableQuestion(q: Question): boolean {
   // Must have all 4 non-empty options (blank buttons confuse students)
@@ -51,6 +60,12 @@ function isUsableQuestion(q: Question): boolean {
   const dummyValues = new Set(["0", "1", "-1"]);
   const dummyCount = q.options.filter(opt => dummyValues.has(opt.trim())).length;
   if (dummyCount >= 3) return false;
+
+  // Exclude heavily garbled questions (>5% garbage characters)
+  if (garbageDensity(q.questionText) > 0.05) return false;
+
+  // Exclude questions where any option has >15% garbage
+  if (q.options.some(opt => opt.trim().length > 0 && garbageDensity(opt) > 0.15)) return false;
 
   return true;
 }

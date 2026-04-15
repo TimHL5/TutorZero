@@ -65,19 +65,20 @@ def garbage_density(text: str) -> float:
 def is_clean_question(q: dict) -> tuple[bool, str]:
     """
     Validate a question. Returns (is_clean, rejection_reason).
+    Mirrors the runtime isUsableQuestion() filter in questions.ts.
     """
     qtext = q.get("questionText", "")
     opts = q.get("options", [])
     correct = q.get("correctIndex")
-    explain = q.get("explainWhy", "")
+    section = q.get("section", "")
 
-    # Must have question text >= 15 chars
-    if not qtext or len(qtext.strip()) < 15:
+    # Must have question text >= 25 chars (raised from 15)
+    if not qtext or len(qtext.strip()) < 25:
         return False, "question_text_too_short"
 
-    # Must have at least 2 non-empty options (4 for multiple choice)
+    # Must have 4 non-empty options (matches runtime isUsableQuestion filter)
     non_empty = [o for o in opts if o and o.strip() and len(o.strip()) > 0]
-    if len(non_empty) < 2:
+    if len(non_empty) < 4:
         return False, "insufficient_options"
 
     # Correct index must be valid
@@ -87,6 +88,38 @@ def is_clean_question(q: dict) -> tuple[bool, str]:
     # The correct answer option must not be empty
     if correct < len(opts) and (not opts[correct] or not opts[correct].strip()):
         return False, "correct_option_empty"
+
+    # Reject questions with untagged figure/graph references
+    figure_pattern = re.compile(
+        r'figure\s+(shows|shown|above|below|not drawn)|graph\s+(shows|shown|above|below|of)'
+        r'|diagram\s+(shows|shown)|the\s+graph\s+of|shown\s+(above|below)'
+        r'|\[Figure\s+described|the\s+figure\s+shown|in\s+the\s+xy-plane'
+        r'|the\s+table\s+(shows|summarizes|above|below)|the\s+scatterplot'
+        r'|the\s+bar\s+graph|the\s+line\s+graph|the\s+histogram', re.IGNORECASE
+    )
+    graph_artifact_pattern = re.compile(r'SERRE|NTT\s*ETT|TTT\s*ttt|COCO|Piaf|eds¢ey|dake|Tei\s+Td')
+    if figure_pattern.search(qtext):
+        return False, "untagged_figure_reference"
+    if graph_artifact_pattern.search(qtext):
+        return False, "graph_ocr_artifact"
+
+    # Reject math questions with garbled OCR text
+    garbled_math = re.compile(r'\b=o\b|~~"|whatis\b|\bPn\s*[—–\-]|\bGy\s*[+—–\-]')
+    if section == "math" and garbled_math.search(qtext):
+        return False, "garbled_math_text"
+
+    # Reject math questions with merged answer options (OCR merged B/C/D into one string)
+    merged_pattern = re.compile(r'\s+[B-Hb-h][\.\):\s]\s*\S')
+    if section == "math":
+        for opt in opts:
+            if opt and len(opt) > 15 and merged_pattern.search(opt):
+                return False, "merged_options"
+
+    # Reject questions with duplicate options (sign of OCR corruption)
+    unique_opts = set(o.strip() for o in opts if o and o.strip())
+    non_empty_count = len([o for o in opts if o and o.strip()])
+    if len(unique_opts) < non_empty_count:
+        return False, "duplicate_options"
 
     # Reject if garbage density > 5% in question text
     if garbage_density(qtext) > 0.05:
@@ -146,13 +179,12 @@ def generate_typescript_question(q: dict) -> str:
   }}"""
 
 
-def generate_bank_file(topic: str, section: str, questions: list[dict]) -> str:
+def generate_bank_file(export_name: str, questions: list[dict]) -> str:
     """Generate a TypeScript bank file for a topic."""
-    import_name = f"{topic}Questions"
     items = ",\n".join(generate_typescript_question(q) for q in questions)
     return f"""import type {{ Question }} from "./questions";
 
-export const {import_name}: Question[] = [
+export const {export_name}: Question[] = [
 {items}
 ];
 """
@@ -194,14 +226,14 @@ TOPIC_FILE_MAP = {
 }
 
 TOPIC_EXPORT_NAMES = {
-    "algebra": "algebraQuestions",
-    "advanced_math": "advancedMathQuestions",
-    "problem_solving": "problemSolvingQuestions",
-    "geometry": "geometryQuestions",
-    "information_ideas": "informationIdeasQuestions",
-    "craft_structure": "craftStructureQuestions",
-    "expression": "expressionQuestions",
-    "conventions": "conventionsQuestions",
+    ("math", "algebra"): "bankMathAlgebraQuestions",
+    ("math", "advanced_math"): "bankMathAdvancedQuestions",
+    ("math", "problem_solving"): "bankMathProblemSolvingQuestions",
+    ("math", "geometry"): "bankMathGeometryQuestions",
+    ("reading_writing", "information_ideas"): "bankRwInformationQuestions",
+    ("reading_writing", "craft_structure"): "bankRwCraftQuestions",
+    ("reading_writing", "expression"): "bankRwExpressionQuestions",
+    ("reading_writing", "conventions"): "bankRwConventionsQuestions",
 }
 
 
@@ -267,8 +299,8 @@ def main():
     for (section, topic), qs in sorted(bank_by_topic.items()):
         file_key = TOPIC_FILE_MAP.get((section, topic))
         if file_key:
-            export_name = TOPIC_EXPORT_NAMES.get(topic, f"{topic}Questions")
-            content = generate_bank_file(export_name.replace("Questions", ""), section, qs)
+            export_name = TOPIC_EXPORT_NAMES.get((section, topic), f"{topic}Questions")
+            content = generate_bank_file(export_name, qs)
             filepath = os.path.join(OUTPUT_DIR, f"{file_key}.ts")
             with open(filepath, "w") as f:
                 f.write(content)

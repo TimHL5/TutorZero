@@ -2,7 +2,7 @@ import type { Question } from "./questions";
 
 export const practiceTest9Questions: Question[] = [
   {
-    id: 2041,
+    id: 1686,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -38,7 +38,7 @@ Mr. Watts' latest picture, the Good Samaritan.
     tags: ["has_figure"],
   },
   {
-    id: 2042,
+    id: 1687,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -66,7 +66,7 @@ among scholars.`,
     tags: [],
   },
   {
-    id: 2043,
+    id: 1688,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -96,7 +96,7 @@ echoed elements of his style.`,
     tags: [],
   },
   {
-    id: 2044,
+    id: 1689,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -128,7 +128,7 @@ MacArthur Fellowship.`,
     tags: [],
   },
   {
-    id: 2045,
+    id: 1690,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -158,7 +158,7 @@ tapping his fingers.
     tags: [],
   },
   {
-    id: 2046,
+    id: 1691,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -192,7 +192,7 @@ l their thoughts by speaking them aloud during conversations with each other. En
     tags: [],
   },
   {
-    id: 2047,
+    id: 1692,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -227,7 +227,7 @@ Start referenced content: given the negligible cost of messaging. End referenced
     tags: [],
   },
   {
-    id: 2048,
+    id: 1693,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -270,7 +270,7 @@ result in economic benefits for consumers.`,
     tags: [],
   },
   {
-    id: 2049,
+    id: 1694,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -301,7 +301,7 @@ start thriving again.`,
     tags: [],
   },
   {
-    id: 2050,
+    id: 1695,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -339,7 +339,7 @@ with the ID FB43 recorded with her calf?`,
     tags: [],
   },
   {
-    id: 2051,
+    id: 1696,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -377,7 +377,7 @@ germination.`,
     tags: ["has_figure"],
   },
   {
-    id: 2052,
+    id: 1697,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -416,7 +416,7 @@ that ______`,
     tags: ["has_figure"],
   },
   {
-    id: 2053,
+    id: 1698,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -454,7 +454,7 @@ women to increase their profits per unit sold.`,
     tags: [],
   },
   {
-    id: 2054,
+    id: 1699,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -487,7 +487,7 @@ could therefore ______`,
     tags: [],
   },
   {
-    id: 2055,
+    id: 1700,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -518,7 +518,7 @@ and this familiarity thus ______`,
     tags: [],
   },
   {
-    id: 2056,
+    id: 1701,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -547,7 +547,7 @@ Venus.`,
     tags: [],
   },
   {
-    id: 2057,
+    id: 1702,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -578,7 +578,7 @@ the end goal.`,
     tags: [],
   },
   {
-    id: 2058,
+    id: 1703,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -609,7 +609,7 @@ American Art Museum.`,
     tags: [],
   },
   {
-    id: 2059,
+    id: 1704,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -640,7 +640,7 @@ African American blues music tradition as well as
     tags: [],
   },
   {
-    id: 2060,
+    id: 1705,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -670,7 +670,7 @@ responsible for signaling guard cells to open stomata.`,
     tags: [],
   },
   {
-    id: 2061,
+    id: 1706,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -701,7 +701,7 @@ populations of the northeastern Eurasian steppe.`,
     tags: [],
   },
   {
-    id: 2062,
+    id: 1707,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -733,7 +733,7 @@ maple trees, she has decided to select a ______`,
     tags: [],
   },
   {
-    id: 2063,
+    id: 1708,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -763,7 +763,7 @@ unique.`,
     tags: [],
   },
   {
-    id: 2064,
+    id: 1709,
     section: "reading_writing",
     module: 1,
     topic: "expression",
@@ -794,7 +794,7 @@ he soon returns to Nigeria.`,
     tags: [],
   },
   {
-    id: 2065,
+    id: 1710,
     section: "reading_writing",
     module: 1,
     topic: "expression",
@@ -826,7 +826,7 @@ misinterpreted and mischaracterized.`,
     tags: [],
   },
   {
-    id: 2066,
+    id: 1711,
     section: "reading_writing",
     module: 1,
     topic: "expression",
@@ -857,7 +857,7 @@ an opportunity to explore this hypothesis.`,
     tags: [],
   },
   {
-    id: 2067,
+    id: 1712,
     section: "reading_writing",
     module: 1,
     topic: "expression",
@@ -888,7 +888,7 @@ glow—cease.`,
     tags: [],
   },
   {
-    id: 2068,
+    id: 1713,
     section: "reading_writing",
     module: 1,
     topic: "expression",
@@ -927,7 +927,7 @@ microprobes.`,
     tags: [],
   },
   {
-    id: 2069,
+    id: 1714,
     section: "reading_writing",
     module: 1,
     topic: "expression",
@@ -966,7 +966,7 @@ Ochoa's discovery.`,
     tags: [],
   },
   {
-    id: 2070,
+    id: 1715,
     section: "reading_writing",
     module: 1,
     topic: "expression",
@@ -1004,7 +1004,7 @@ poetry collection.`,
     tags: [],
   },
   {
-    id: 2071,
+    id: 1716,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1034,7 +1034,7 @@ destroying, or ruin`,
     tags: ["figure_required"],
   },
   {
-    id: 2072,
+    id: 1717,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1063,7 +1063,7 @@ animals have various wa`,
     tags: ["figure_required"],
   },
   {
-    id: 2073,
+    id: 1718,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1091,7 +1091,7 @@ from his travels with his poetic prose.`,
     tags: ["has_figure"],
   },
   {
-    id: 2074,
+    id: 1719,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1122,7 +1122,7 @@ can reproduce.`,
     tags: [],
   },
   {
-    id: 2075,
+    id: 1720,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1152,7 +1152,7 @@ Diné bizaad, the Navajo language.`,
     tags: [],
   },
   {
-    id: 2076,
+    id: 1721,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1184,7 +1184,7 @@ art referenced content: By doing so, she gained
     tags: [],
   },
   {
-    id: 2077,
+    id: 1722,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1218,7 +1218,7 @@ But life is calling you!`,
     tags: [],
   },
   {
-    id: 2078,
+    id: 1723,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1255,7 +1255,7 @@ and there the lingering green of an oak-grove.`,
     tags: [],
   },
   {
-    id: 2079,
+    id: 1724,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1295,7 +1295,7 @@ final 1.5 years.`,
     tags: ["has_figure"],
   },
   {
-    id: 2080,
+    id: 1725,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1329,7 +1329,7 @@ movement.`,
     tags: [],
   },
   {
-    id: 2081,
+    id: 1726,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1368,7 +1368,7 @@ to be taught.`,
     tags: [],
   },
   {
-    id: 2082,
+    id: 1727,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1403,7 +1403,7 @@ contemporary approaches to writing about cuisine.`,
     tags: [],
   },
   {
-    id: 2083,
+    id: 1728,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1436,7 +1436,7 @@ and rather exulted in it.`,
     tags: [],
   },
   {
-    id: 2084,
+    id: 1729,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1465,7 +1465,7 @@ her home in Seattle while she is away: ______`,
     tags: [],
   },
   {
-    id: 2085,
+    id: 1730,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1503,7 +1503,7 @@ diversity, which benefits the meadows' health overall.`,
     tags: [],
   },
   {
-    id: 2086,
+    id: 1731,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1541,7 +1541,7 @@ and looked forward to Start referenced content: completing End referenced conten
     tags: [],
   },
   {
-    id: 2087,
+    id: 1732,
     section: "reading_writing",
     module: 2,
     topic: "conventions",
@@ -1574,7 +1574,7 @@ suggesting that ______`,
     tags: [],
   },
   {
-    id: 2088,
+    id: 1733,
     section: "reading_writing",
     module: 2,
     topic: "conventions",
@@ -1612,7 +1612,7 @@ that ______`,
     tags: [],
   },
   {
-    id: 2089,
+    id: 1734,
     section: "reading_writing",
     module: 2,
     topic: "conventions",
@@ -1645,7 +1645,7 @@ Raymond Gosling.`,
     tags: ["has_figure"],
   },
   {
-    id: 2090,
+    id: 1735,
     section: "reading_writing",
     module: 2,
     topic: "conventions",
@@ -1673,7 +1673,7 @@ hero Rosa La Bayamesa.`,
     tags: [],
   },
   {
-    id: 2091,
+    id: 1736,
     section: "reading_writing",
     module: 2,
     topic: "conventions",
@@ -1705,7 +1705,7 @@ biomechanical systems interact.`,
     tags: [],
   },
   {
-    id: 2092,
+    id: 1737,
     section: "reading_writing",
     module: 2,
     topic: "conventions",
@@ -1736,7 +1736,7 @@ Gretel.`,
     tags: [],
   },
   {
-    id: 2093,
+    id: 1738,
     section: "reading_writing",
     module: 2,
     topic: "conventions",
@@ -1768,7 +1768,7 @@ audiences.`,
     tags: [],
   },
   {
-    id: 2094,
+    id: 1739,
     section: "reading_writing",
     module: 2,
     topic: "conventions",
@@ -1798,7 +1798,7 @@ higher strain than silicate glass can before fracturing.`,
     tags: [],
   },
   {
-    id: 2095,
+    id: 1740,
     section: "reading_writing",
     module: 2,
     topic: "conventions",
@@ -1829,7 +1829,7 @@ their ornate detailing and gleaming brass fittings.`,
     tags: [],
   },
   {
-    id: 2096,
+    id: 1741,
     section: "reading_writing",
     module: 2,
     topic: "conventions",
@@ -1861,7 +1861,7 @@ resource consumption ultimately rises.`,
     tags: [],
   },
   {
-    id: 2097,
+    id: 1742,
     section: "reading_writing",
     module: 2,
     topic: "expression",
@@ -1893,7 +1893,7 @@ distributed Votes for Women Tea.`,
     tags: [],
   },
   {
-    id: 2098,
+    id: 1743,
     section: "reading_writing",
     module: 2,
     topic: "expression",
@@ -1924,7 +1924,7 @@ atmosphere, causing the atoms to emit auroral light.`,
     tags: [],
   },
   {
-    id: 2099,
+    id: 1744,
     section: "reading_writing",
     module: 2,
     topic: "expression",
@@ -1960,7 +1960,7 @@ rail tunnels.`,
     tags: [],
   },
   {
-    id: 2100,
+    id: 1745,
     section: "reading_writing",
     module: 2,
     topic: "expression",
@@ -1999,7 +1999,7 @@ significance.`,
     tags: [],
   },
   {
-    id: 2101,
+    id: 1746,
     section: "reading_writing",
     module: 2,
     topic: "expression",
@@ -2038,7 +2038,7 @@ fibers.`,
     tags: [],
   },
   {
-    id: 2102,
+    id: 1747,
     section: "reading_writing",
     module: 2,
     topic: "expression",
@@ -2079,7 +2079,7 @@ The student wants to explain an advantage of the
     tags: [],
   },
   {
-    id: 2103,
+    id: 1748,
     section: "reading_writing",
     module: 2,
     topic: "expression",
@@ -2119,7 +2119,7 @@ methodology.`,
     tags: [],
   },
   {
-    id: 2104,
+    id: 1749,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2149,7 +2149,7 @@ ____,`,
     tags: ["student_produced_response"],
   },
   {
-    id: 2105,
+    id: 1750,
     section: "math",
     module: 1,
     topic: "advanced_math",
@@ -2180,34 +2180,7 @@ how many school posters must they sell?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 2106,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `y
-px
-−57 =
-The given equation relates the positive numbers p, x,
-and y. Which equation correctly expresses y in terms
-of p and x ?`,
-    options: [
-    `y x p = 57 +`,
-    `y px = + 57`,
-    `y px = 57`,
-    `y px = 57`
-  ],
-    correctIndex: 1,
-    explainWhy: `Choice B is correct. Adding 57 to each side of the given equation yields y px 57 = + . Therefore, the equation y px 57 = + correctly expresses y in terms of p and x.`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 2107,
+    id: 1751,
     section: "math",
     module: 1,
     topic: "advanced_math",
@@ -2236,7 +2209,7 @@ equation could define A ?`,
     tags: [],
   },
   {
-    id: 2108,
+    id: 1752,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -2263,7 +2236,7 @@ arc QR ?`,
     tags: [],
   },
   {
-    id: 2109,
+    id: 1753,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -2296,7 +2269,7 @@ x y
     tags: ["student_produced_response"],
   },
   {
-    id: 2110,
+    id: 1754,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2329,7 +2302,7 @@ x y
     tags: ["student_produced_response"],
   },
   {
-    id: 2111,
+    id: 1755,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -2354,7 +2327,7 @@ other leg of the triangle, in millimeters?`,
     tags: [],
   },
   {
-    id: 2112,
+    id: 1756,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -2385,7 +2358,7 @@ the system has no solution, what is the value of h ?`,
     tags: [],
   },
   {
-    id: 2113,
+    id: 1757,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2407,92 +2380,7 @@ the system has no solution, what is the value of h ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 2114,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "hard",
-    questionText: `x
-x
-( −2)
-=
-3 + 34`,
-    options: [
-    `-3`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 3 - . Squaring both sides of the given equation yields x x 2 3 34 2 - = + ^ h , which can be rewritten as x x x 4 4 3 34 2- + = + . Subtracting x 3 and 34 from both sides of this equation yields x x 7 30 0 2- - = . This quadratic equation can be rewritten as x x 10 3 0 - + = ^ ^h h . According to the zero product property, x x 10 3 - + ^ ^h h equals zero when either x 10 0 - = or x 3 0 + = . Solving each of these equations for x yields x 10 = or x 3 =- . Therefore, t...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 2115,
-    section: "math",
-    module: 1,
-    topic: "advanced_math",
-    subtopic: "nonlinear_functions",
-    difficulty: "hard",
-    questionText: `Function f is defined by
-f x
-x
-x
-x
-=
-+ 6
-+ 5
-+ 1
-( )
-(
-)(
-)(
-). Function g is defined
-by g x
-f x
-=
-−1
-( )
-(
-). The graph of y
-g x
-=
-( ) in the
-xy-plane has x-intercepts at a, 0
-(
-), b, 0
-(
-), and c, 0
-(
-),
-where a, b, and c are distinct constants. What is the
-value of a
-b
-c
-+
-+
-?`,
-    options: [
-    `−15`,
-    `−9`,
-    `11`,
-    `15`
-  ],
-    correctIndex: 1,
-    explainWhy: `Choice B is correct. It's given that g x f x 1 = - ^ ^ h h. Since f x x x x 6 5 1 = + + + ^ ^ ^ ^ h h h h, it follows that f x x x x 1 1 6 1 5 1 1 - = - + - + - + ^ ^ ^ ^ h h h h. Combining like terms yields f x x x x 1 5 4 - = + + ^ ^ ^ ^ h h h h. Therefore, g x x x x 5 4 = + + ^ ^ ^ h h h. The x-intercepts of a graph in the xy-plane are the points where y 0 = . The x-coordinates of the x-intercepts of the graph of y g x = ^ h in the xy-plane can be found by solving the equation x x x 0 5 4...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["has_figure"],
-  },
-  {
-    id: 2116,
+    id: 1758,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -2517,64 +2405,7 @@ Which of the following could describe this function?`,
     tags: [],
   },
   {
-    id: 2117,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "area_volume",
-    difficulty: "advanced",
-    questionText: `One gallon of stain will cover 170 square feet of a
-surface. A yard has a total fence area of w square feet.
-Which equation represents the total amount of
-stain S, in gallons, needed to stain the fence in this
-yard twice?`,
-    options: [
-    `S w = 170`,
-    `S w = 170`,
-    `S w = 340`,
-    `S w = 85`
-  ],
-    correctIndex: 3,
-    explainWhy: `Choice D is correct. It's given that w represents the total fence area, in square feet. Since the fence will be stained twice, the amount of stain, in gallons, will need to cover w 2 square feet. It's also given that one gallon of stain will cover 170 square feet. Dividing the total area, in square feet, of the surface to be stained by the number of square feet covered by one gallon of stain gives the number of gallons of stain that will be needed. Dividing w 2 by 170 yields w 170 2 , or w ...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
-  },
-  {
-    id: 2118,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "advanced",
-    questionText: `Poll Results
-Angel Cruz
-483
-Terry Smith 320
-The table shows the results of a poll. A total of
-803 voters selected at random were asked which
-candidate they would vote for in the upcoming
-election. According to the poll, if 6,424 people vote in
-the election, by how many votes would Angel Cruz
-be expected to win?`,
-    options: [
-    `163`,
-    `1,304`,
-    `3,864`,
-    `5,621`
-  ],
-    correctIndex: 1,
-    explainWhy: `Choice B is correct. It's given that 483 out of 803 voters responded that they would vote for Angel Cruz. Therefore, the proportion of voters from the poll who responded they would vote for Angel Cruz is 803 483. It's also given that there are a total of , 6 424 voters in the election. Therefore, the total number of people who would be expected to vote for Angel Cruz is , 6 424 803 483 b l, or , 3 864. Since , 3 864 of the , 6 424 total voters would be expected to vote for Angel Cruz, it...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
-  },
-  {
-    id: 2119,
+    id: 1759,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -2582,11 +2413,11 @@ be expected to win?`,
     difficulty: "advanced",
     questionText: `Right rectangular prism X is similar to right
 rectangular prism Y. The surface area of right
-rectangular prism X is 58 square centimeters cm2
+rectangular prism X is 58 square centimeters cm²
 (
 ),
 and the surface area of right rectangular prism Y
-is 1,450 cm2. The volume of right rectangular
+is 1,450 cm². The volume of right rectangular
 prism Y is 1,250 cubic centimeters cm3
 (
 ). What is the
@@ -2607,110 +2438,7 @@ prism X and right rectangular prism Y?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 2120,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `In the figure shown, line c intersects parallel lines s
-and t. What is the value of x ?`,
-    options: [
-    `70`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 70. Based on the figure, the angle with measure ° 110 and the angle vertical to the angle with measure x° are same side interior angles. Since vertical angles are congruent, the angle vertical to the angle with measure x° also has measure x°. It's given that lines s and t are parallel. Therefore, same side interior angles between lines s and t are supplementary. It follows that x 110 180 + = . Subtracting 110 from both sides of this equation yields x 70 = .`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
-  },
-  {
-    id: 2121,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `f x
-x
-( ) =
-+ 8`,
-    options: [
-    `1`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 1. It's given that the function f is defined by f x x 11 8 = + ^ h . Substituting 11 3 for x in the given function yields f 11 3 11 3 11 8 = + b l , which gives f 11 3 11 11 = b l , or f 1 11 3 = b l . Therefore, when x 11 3 = , the value of f x ^ h is 1.`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 2122,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `The table shows three values of x and their
-corresponding values of y. There is a linear
-relationship between x and y. Which of the
-following equations represents this relationship?`,
-    options: [
-    `y x = 18 + 13`,
-    `y x = 18 + 18`,
-    `y x = −5 + 13`,
-    `y x = −5 + 18 41 C Note: Figure not drawn to scale.`
-  ],
-    correctIndex: 3,
-    explainWhy: `Choice D is correct. A linear relationship can be represented by an equation of the form y mx b = + , where m and b are constants. It's given in the table that when x 0 = , y 18 = . Substituting 0 for x and 18 for y in y mx b = + yields m b 18 0 = + ^ h , or b 18= . Substituting 18 for b in the equation y mx b = + yields y mx 18 = + . It's also given in the table that when x 1 = , y 13 = . Substituting 1 for x and 13 for y in the equation y mx 18 = + yields m 13 1 18 = + ^ h , or m...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 2123,
-    section: "math",
-    module: 2,
-    topic: "advanced_math",
-    subtopic: "nonlinear_functions",
-    difficulty: "medium",
-    questionText: `The function f is defined by f x
-x
-= 7 −84
-( )
-. What is
-the x-intercept of the graph of y
-f x
-= ( ) in the
-xy-plane?`,
-    options: [
-    `(−12, 0)`,
-    `(−7, 0)`,
-    `(7, 0)`,
-    `(12, 0)`
-  ],
-    correctIndex: 3,
-    explainWhy: `Choice D is correct. The given function f is a linear function. Therefore, the graph of y f x = ^ h in the xy-plane has one x-intercept at the point ,k 0 ^ h, where k is a constant. Substituting 0 for f x ^ h and k for x in the given function yields k 0 7 84 = - . Adding 84 to both sides of this equation yields k 84 7 = . Dividing both sides of this equation by 7 yields k 12= . Therefore, the x-intercept of the graph of y f x = ^ h in the xy-plane is , 12 0 ^ h.`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 2124,
+    id: 1760,
     section: "math",
     module: 2,
     topic: "advanced_math",
@@ -2740,7 +2468,7 @@ draining from the container each second?`,
     tags: [],
   },
   {
-    id: 2125,
+    id: 1761,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -2771,31 +2499,7 @@ h 0 = 45
     tags: ["student_produced_response"],
   },
   {
-    id: 2126,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `z
-z
-+ 10 −24 = 0`,
-    options: [
-    `2; -12`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is either 2 or 12 - . The left-hand side of the given equation can be rewritten by factoring. The two values that multiply to 24 - and add to 10 are 12 and 2 - . It follows that the given equation can be rewritten as z z 12 2 0 + - = ^ ^h h . Setting each factor equal to 0 yields two equations: z 12 0 + = and z 2 0 - = . Subtracting 12 from both sides of the equation z 12 0 + = results in z 12 =- . Adding 2 to both sides of the equation z 2 0 - = results in z 2 = . Not...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 2127,
+    id: 1762,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -2824,7 +2528,7 @@ sin( ) ?`,
     tags: [],
   },
   {
-    id: 2128,
+    id: 1763,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -2848,65 +2552,7 @@ the 2015 population, what is the value of k ?`,
     tags: [],
   },
   {
-    id: 2129,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "hard",
-    questionText: `Each of the dot plots shown represents the number of
-glue sticks brought in by each student for two classes,
-class A and class B. Which statement best compares
-the standard deviations of the numbers of glue sticks
-brought in by each student for these two classes?`,
-    options: [
-    `The standard deviation of the number of glue sticks brought in by each student for class A is less than the standard deviation of the number of glue sticks brought in by each student for class B.`,
-    `The standard deviation of the number of glue sticks brought in by each student for class A is equal to the standard deviation of the number of glue sticks brought in by each student for class B.`,
-    `The standard deviation of the number of glue sticks brought in by each student for class A is greater than the standard deviation of the number of glue sticks brought in by each student for class B.`,
-    `There is not enough information to compare these standard deviations. 43 Class A Class B • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • I I I I I I I 1 2 3 4 5 6 7 14 15 16 17 18 19 20`
-  ],
-    correctIndex: 1,
-    explainWhy: `Choice B is correct. Standard deviation is a measure of the spread of a data set from its mean. The dot plot for class A and the dot plot for class B have the same shape. Thus, the frequency distributions for both class A and class B are the same. Since both class A and class B have the same frequency distribution of glue sticks brought in by each student, it follows that both class A and class B have the same spread of the number of glue sticks brought in by each student from their respectiv...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
-  },
-  {
-    id: 2130,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "hard",
-    questionText: `89
-107
-Total
-35
-100
-135
-The table summarizes members of a local
-organization by age and whether they live east or
-west of the river. If a member of the organization is
-selected at random, what is the probability that the
-selected member is at least 40 years old?`,
-    options: [
-    `28 135`,
-    `35 135`,
-    `100 135`,
-    `107 135`
-  ],
-    correctIndex: 1,
-    explainWhy: `Choice B is correct. In the statement "m 330 ^ h is approximately equal to 362," the input of the function, 330, is the value of t, the elapsed time, in days, since the animal was born. The approximate value of the function, 362, is the predicted body mass, in kilograms, of the animal after that time has elapsed. Therefore, the predicted body mass of the animal was approximately 362 kg 330 days after it was born.`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
-  },
-  {
-    id: 2131,
+    id: 1764,
     section: "math",
     module: 2,
     topic: "advanced_math",
@@ -2934,44 +2580,7 @@ double?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 2132,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "hard",
-    questionText: `The function f is defined by f x
-a
-b
-( ) =
-+
-x
-, where a
-and b are constants and a > 0. In the xy-plane, the
-graph of y
-f x
-= ( ) has a y-intercept at (0, −25) and
-passes through the point (2, 23). What is the value of
-a
-b
-+
-?`,
-    options: [
-    `-19`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 19 - . It's given that function f is defined by f x a b x = + ^ h , where a and b are constants and a 0 > . It's also given that the graph of y f x = ^ h in the xy-plane has a y-intercept at , 0 25 - ^ h and passes through the point , 2 23 ^ h. Since the graph has a y-intercept at , 0 25 - ^ h, f 0 25 =- ^ h . Substituting 0 for x in the given equation yields f a b 0 0 = + ^ h , or f b 0 1 = + ^ h , and substituting 25 - for f 0 ^ h in this equation yields b 25 1...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["student_produced_response", "has_figure"],
-  },
-  {
-    id: 2133,
+    id: 1765,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -2998,7 +2607,7 @@ given inequality?`,
     tags: [],
   },
   {
-    id: 2134,
+    id: 1766,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -3022,61 +2631,7 @@ What is the area, in square yards, of this town?
     tags: [],
   },
   {
-    id: 2135,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "advanced",
-    questionText: `The function f is defined by f x
-a
-( ) =
-2.2 + 2.2
-x
-b
-(
-),
-where a and b are integer constants and
-a
-b
-0 <
-<
-.
-The functions g and h are equivalent to function f,
-where k and m are constants. Which of the
-following equations displays the y-coordinate of the
-y-intercept of the graph of y
-f x
-= ( ) in the xy-plane
-as a constant or coefficient?
-I. g x
-a
-k
-( ) =
-(2.2 + )
-x
-II. h x
-a
-m
-( ) =
-(2.2) +
-x`,
-    options: [
-    `I only`,
-    `II only`,
-    `I and II`,
-    `Neither I nor II`
-  ],
-    correctIndex: 3,
-    explainWhy: `Choice D is correct. A y-intercept of a graph in the xy-plane is a point where the graph intersects the y-axis, or a point where x 0 = . Substituting 0 for x in the equation defining function f yields . . f a 0 2 2 2 2b 0 = + ^ ^ h h, or . f a 0 1 2 2b = + ^ ^ h h. So, the y-coordinate of the y-intercept of the graph is . a 1 2 2b + ^ h, or equivalently, . a a 2 2 b + ^ h . It's given that function g is equivalent to function f, where a b 0< < . It follows that . k 2 2b = . Since . a 2 2 ...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["has_figure"],
-  },
-  {
-    id: 2136,
+    id: 1767,
     section: "math",
     module: 2,
     topic: "algebra",

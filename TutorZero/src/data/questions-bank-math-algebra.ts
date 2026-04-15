@@ -49,126 +49,6 @@ export const bankMathAlgebraQuestions: Question[] = [
   {
     id: 3,
     section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "easy",
-    questionText: `Ax
-— =20
-5
-In the equation above, what is
-the value of x ?`,
-    options: [
-    `25`,
-    `24 CG. 16`,
-    `15`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 4,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "easy",
-    questionText: `One pound of grapes costs $2. At this rate, how many
-dollars will c pounds of grapes cost?`,
-    options: [
-    `9≤`,
-    `2+c≤ 2 G: π Cc Dd. >`,
-    ``,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 5,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "easy",
-    questionText: `10=2x+4
-How many solutions exist to the
-equation shown above?`,
-    options: [
-    `None`,
-    `Exactly 1`,
-    `Exactly 3`,
-    `Infinitely many`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 6,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `If =o = 10 what is the
-value of Pn —-1?`,
-    options: [
-    `24`,
-    `49`,
-    `50`,
-    `99`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 7,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `44,
-if 2* 6 ~~", whatis
-the value of x ?`,
-    options: [
-    `—4 a`,
-    `3 c.3`,
-    `6`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 8,
-    section: "math",
     module: 2,
     topic: "algebra",
     subtopic: "linear_equations_one_var",
@@ -189,30 +69,7 @@ the value of x ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 9,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `If 3x +2 =8, what is the
-value of Gy +6 ?`,
-    options: [
-    `24`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 24. This is a student-produced response question testing linear equations in one variable.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 10,
+    id: 4,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -236,7 +93,7 @@ group?`,
     tags: [],
   },
   {
-    id: 11,
+    id: 5,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -260,13 +117,13 @@ many solutions, what is the value of k ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 12,
+    id: 6,
     section: "math",
     module: 2,
     topic: "algebra",
     subtopic: "linear_equations_one_var",
     difficulty: "medium",
-    questionText: `13x² = 112 — x What value of z is the solution to the given equation?`,
+    questionText: `13x" = 112 — x What value of z is the solution to the given equation?`,
     options: [
     `8`,
     `0`,
@@ -282,7 +139,7 @@ many solutions, what is the value of k ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 13,
+    id: 7,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -304,7 +161,7 @@ many solutions, what is the value of k ?`,
     tags: [],
   },
   {
-    id: 14,
+    id: 8,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -327,7 +184,7 @@ What value of z is the solution to the given equation?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 15,
+    id: 9,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -349,7 +206,7 @@ What value of z is the solution to the given equation?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 16,
+    id: 10,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -371,7 +228,7 @@ What value of z is the solution to the given equation?`,
     tags: [],
   },
   {
-    id: 17,
+    id: 11,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -395,7 +252,7 @@ storage bin?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 18,
+    id: 12,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -417,32 +274,7 @@ storage bin?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 19,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `3(2x —6)-11 =4(x -3)+6
-If x is the solution to the equation above,
-what is the value of X — 3?
-23`,
-    options: [
-    `2? '7`,
-    `? 15 c. 2 1S`,
-    `2`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 20,
+    id: 13,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -469,14 +301,14 @@ context?`,
     tags: [],
   },
   {
-    id: 21,
+    id: 14,
     section: "math",
     module: 1,
     topic: "algebra",
     subtopic: "linear_equations_one_var",
     difficulty: "medium",
     questionText: `2≤ + 16 = a(x + 8)
-In the given equation, a is a constant. If the equation has infinitely many solutions, what is the value of a?`,
+In the given equation, @ is a constant. If the equation has infinitely many solutions, what is the value of a?`,
     options: [
     `2`,
     `0`,
@@ -492,7 +324,7 @@ In the given equation, a is a constant. If the equation has infinitely many solu
     tags: ["student_produced_response"],
   },
   {
-    id: 22,
+    id: 15,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -516,7 +348,7 @@ many solutions, what are the values of a and b ?`,
     tags: [],
   },
   {
-    id: 23,
+    id: 16,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -544,7 +376,7 @@ the study?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 24,
+    id: 17,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -568,7 +400,7 @@ the equation above?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 25,
+    id: 18,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -594,77 +426,7 @@ earnings for that day were $137.50. What is Megan's regular hourly wage?`,
     tags: [],
   },
   {
-    id: 26,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `The width of a rectangular dance floor is w feet. The length of the floor is 6
-feet longer than its width. Which of the following expresses the perimeter,
-in feet, of the dance floor in terms of w ?`,
-    options: [
-    `2wt+6`,
-    `4w+12 Cc. w? +6 b. w? +6w`,
-    ``,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 27,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `if 2, — 5) +3(x —5) = 10, what is
-the value of y—5 ?`,
-    options: [
-    `2`,
-    `5 em,`,
-    `12`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 28,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `$(@+5) — $(a@+5) =-7
-What value of z is the solution to the given equation?`,
-    options: [
-    `—12`,
-    `—5 Cc. 79`,
-    `204`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 29,
+    id: 19,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -686,53 +448,7 @@ What value of z is the solution to the given equation?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 30,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `If 5(a@ + 4) = 4(x + 4) + 29, what is the value of 2 + 4?`,
-    options: [
-    `—4`,
-    `25 Cc. 29`,
-    `33`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 31,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `The cost to rent a commercial fishing boat from a certain company is $950 for the first 2 hours and an additional $50 per
-hour for each hour after the first 2 hours. If the total cost to rent the commercial fishing boat from the company for t hours,
-where t > 2, is $1,100, which equation represents this situation?`,
-    options: [
-    `950(t — 2) + 50≤ = 1,100`,
-    `950(2t) + 50≤ = 1,100 Cc. 950 + 50(≤ — 2) = 1,100`,
-    `950 + 50(2t) = 1,100`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 32,
+    id: 20,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -756,7 +472,7 @@ rent on Wednesday? (profit = total revenue — total expenses)`,
     tags: ["student_produced_response"],
   },
   {
-    id: 33,
+    id: 21,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -781,7 +497,7 @@ context?`,
     tags: [],
   },
   {
-    id: 34,
+    id: 22,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -804,35 +520,7 @@ In the given equation, k is a constant. The equation has no solution. What is th
     tags: ["student_produced_response"],
   },
   {
-    id: 35,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `A certain product costs a company $65 to make. The product is sold by a
-salesperson who earns a commission that is equal to 20% of the sales price
-of the product. The profit the company makes for each unit is equal to the
-sales price minus the combined cost of making the product and the
-commission. If the sales price of the product is $100, which of the following
-equations gives the number of units, u, of the product the company sold to
-make a profit of $6,840 ?`,
-    options: [
-    `(100(1 -—0.2)-65)u =6,840`,
-    `(100—-65)(1 -0.8)u =6,840 c. 0.8(100)-65u =6,840 b. (0.2(100) +65)u =6,840`,
-    ``,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 36,
+    id: 23,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -855,55 +543,7 @@ What value of t is the solution to the given equation?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 37,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "medium",
-    questionText: `Townsend Realty Group Investments
-Property Purchase Monthly rental
-address price (dollars) | price (dollars)
-Clearwater
-128,000 950
-Lane
-Driftwood
-. 176,000 1,310
-Drive
-Edgemont
-70,000 515
-Street
-Glenview
-140,000 1,040
-Street
-Hamilton
-. 450,000 3,365
-Circle
-The Townsend Realty Group invested in the five different properties listed in
-the table above. The table shows the amount, in dollars, the company paid
-for each property and the corresponding monthly rental price, in dollars, the
-company charges for the property at each of the five locations. Townsend
-Realty purchased the Glenview Street property and received a 40%
-discount off the original price along with an additional 20% off the
-discounted price for purchasing the property in cash. Which of the following
-best approximates the original price, in dollars, of the Glenview Street
-property?`,
-    options: [
-    `$350,000`,
-    `$291,700`,
-    `$233,300`,
-    `$175,000`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear equations in one variable concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in One Variable. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in One Variable problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 38,
+    id: 24,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -925,7 +565,7 @@ property?`,
     tags: [],
   },
   {
-    id: 39,
+    id: 25,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -952,7 +592,7 @@ WP * 9`,
     tags: [],
   },
   {
-    id: 40,
+    id: 26,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -980,7 +620,7 @@ teaspoons of salt required?`,
     tags: [],
   },
   {
-    id: 41,
+    id: 27,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -1004,7 +644,7 @@ During this day, the factory makes 100 concrete screws total. Which equation rep
     tags: [],
   },
   {
-    id: 42,
+    id: 28,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1026,7 +666,7 @@ During this day, the factory makes 100 concrete screws total. Which equation rep
     tags: [],
   },
   {
-    id: 43,
+    id: 29,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -1048,7 +688,7 @@ During this day, the factory makes 100 concrete screws total. Which equation rep
     tags: [],
   },
   {
-    id: 44,
+    id: 30,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1070,7 +710,7 @@ During this day, the factory makes 100 concrete screws total. Which equation rep
     tags: ["student_produced_response"],
   },
   {
-    id: 45,
+    id: 31,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -1095,7 +735,7 @@ situation?`,
     tags: [],
   },
   {
-    id: 46,
+    id: 32,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1119,7 +759,7 @@ In the given equation, s andr are constants, and s > 0. If the equation has infi
     tags: ["student_produced_response"],
   },
   {
-    id: 47,
+    id: 33,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -1144,7 +784,7 @@ which of the following represents the price, in dollars, of each smaller contain
     tags: [],
   },
   {
-    id: 48,
+    id: 34,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1170,7 +810,7 @@ equation, what does the number 75 represent?`,
     tags: [],
   },
   {
-    id: 49,
+    id: 35,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -1195,7 +835,7 @@ number of rectangles constructed. What is the best interpretation of (a, y) = (2
     tags: [],
   },
   {
-    id: 50,
+    id: 36,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -1220,7 +860,7 @@ the following is the best interpretation of 24 in this context?`,
     tags: [],
   },
   {
-    id: 51,
+    id: 37,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1248,89 +888,7 @@ pounds of Fertilizer B?`,
     tags: [],
   },
   {
-    id: 52,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `In the xy-plane, a line has a slope of 6 and passes through the point (0,8).
-Which of the following is an equation of this line?`,
-    options: [
-    `y=6x+8`,
-    `y=6x +46`,
-    `y=8x+6`,
-    `y=8x +48`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear equations in two variables concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 53,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `Characteristics for Rock Types
-Weight per volume Cost per
-Rock type gmP 3 P
-(Ib/ft~) pound
-
-A city is planning to build a rock retaining wall, a monument, and a garden in
-a park. The table above shows four rock types that will be considered for
-use in the project. Also shown for each rock type is its weight per volume, in
-pounds per cubic foot (lb/ft), and the cost per pound, in dollars. The
-equation 0.03(120w) +0.18(180z) +3,385.80 = 7,576.20 gives the total
-ai in dollars, of the rocks used in the Prpject in terms of the number of
-ft of limestone, w, and the number of ft of basalt, z. All four rock types
-are used in the project. Which of the following is the best interpretation of
-3,385.80 in this context?`,
-    options: [
-    `The cost of the granite and sandstone needed for the project`,
-    `The cost of the basalt and limestone needed for the project`,
-    `The cost of the basalt needed for the project`,
-    `The cost of the sandstone needed for the project`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear equations in two variables concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 54,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `Pe fe
-The table above shows some pairs of x values and y values. Which of the
-following equations could represent the relationship between x and y ?`,
-    options: [
-    `y= 2x+3`,
-    `y=3x-2`,
-    `y=4x-1`,
-    `y = 5x`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear equations in two variables concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 55,
+    id: 38,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1358,7 +916,7 @@ context?`,
     tags: [],
   },
   {
-    id: 56,
+    id: 39,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1381,29 +939,7 @@ a = 9, what is the value of b?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 57,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `The y-intercept of the graph of y = —6zx — 32 in the xy-plane is (0, y). What is the value of y?`,
-    options: [
-    `-32`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is -32. This is a student-produced response question testing linear equations in two variables.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 58,
+    id: 40,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1429,7 +965,7 @@ and b represents the number of intermediate swimmers in the club in 2010?`,
     tags: [],
   },
   {
-    id: 59,
+    id: 41,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -1452,7 +988,7 @@ width of the rug is 8 feet. What is the length, in feet, of the rug?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 60,
+    id: 42,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1475,7 +1011,7 @@ equation represents this situation?`,
     tags: [],
   },
   {
-    id: 61,
+    id: 43,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -1499,33 +1035,7 @@ questions and y represents the number of 3-point questions?`,
     tags: [],
   },
   {
-    id: 62,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `z+y = 350
-
-The given equation relates the total number of maple trees, 7, and the total number of birch trees, y, planted in a 14-acre
-forest preserve. If 245 maple trees were planted in the forest preserve, how many birch trees were planted in the forest
-preserve?`,
-    options: [
-    `14`,
-    `25 c. 105`,
-    `245`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear equations in two variables concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 63,
+    id: 44,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1549,29 +1059,7 @@ weight. Which equation represents this situation?`,
     tags: [],
   },
   {
-    id: 64,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `Line kis defined by y = -tte + 5. Line j is perpendicular to line k in the xy-plane. What is the slope of line 7?`,
-    options: [
-    `3/17`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 3/17. This is a student-produced response question testing linear equations in two variables.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 65,
+    id: 45,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1596,7 +1084,7 @@ value of y ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 66,
+    id: 46,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1624,108 +1112,7 @@ hike to use a total of 1,900 calories from bicycling and hiking?`,
     tags: [],
   },
   {
-    id: 67,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `Characteristics for Rock Types
-Weight per volume Cost per
-Rock type gmP 3 P
-(Ib/ft~) pound
-A city is planning to build a rock retaining wall, a monument, and a garden in
-a park. The table above shows four rock types that will be considered for
-use in the project. Also shown for each rock type is its weight per volume, in
-pounds per cubic foot (lb/ft), and the cost per pound, in dollars. Only
-basalt, granite, and limestone will be used in the garden. The rocks in the
-garden will have a total weight of 1,000 pounds. If 330 pounds of granite is
-used, which of the following equations could show the relationship between
-the amounts, x and y, in ft, for each of the other rock types used?`,
-    options: [
-    `165x + 180y =670`,
-    `165x + 120y = 1,000`,
-    `120x +180y =670`,
-    `120x + 180y = 1,000`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear equations in two variables concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 68,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `Figure A and figure B are both regular polygons. The sum of the perimeter of figure A and the perimeter of figure
-B is 63 inches. The equation 3z + 6y = 63 represents this situation, where x is the number of sides of figure A
-and y is the number of sides of figure B. Which statement is the best interpretation of 6 in this context?`,
-    options: [
-    `Each side of figure B has a length of 6 inches.`,
-    `The number of sides of figure B is 6.`,
-    `Each side of figure A has a length of 6 inches.`,
-    `The number of sides of figure A is 6.`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear equations in two variables concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 69,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `What is the slope of the graph of y = $ (27x + 15) + 72 in the xy-plane?`,
-    options: [
-    `13.75`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 13.75. This is a student-produced response question testing linear equations in two variables.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 70,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `A line passes through the points (4, 6) and (15, 24) in the xy-plane. What is the slope of the line?`,
-    options: [
-    `18/11`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 18/11. This is a student-produced response question testing linear equations in two variables.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 71,
+    id: 47,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1749,29 +1136,7 @@ given equation represents this situation. Which of the following is the best int
     tags: [],
   },
   {
-    id: 72,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `What is the slope of the graph of y = 3e — 23 in the xy-plane?`,
-    options: [
-    `5/13`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 5/13. This is a student-produced response question testing linear equations in two variables.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 73,
+    id: 48,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1795,7 +1160,7 @@ this situation?`,
     tags: [],
   },
   {
-    id: 74,
+    id: 49,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1818,34 +1183,7 @@ this situation?`,
     tags: [],
   },
   {
-    id: 75,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "hard",
-    questionText: `| =6 | 65 |
-
-| 6 | 29 |
-
-The table shows four values of x and their corresponding values of y. There is a linear relationship between x and y. Which
-of the following equations represents this relationship?`,
-    options: [
-    `9x2 + 3y = 141`,
-    `9z + 3y=3`,
-    `3a + 9y = 141`,
-    `3z + 9y = 3`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear equations in two variables concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
-  },
-  {
-    id: 76,
+    id: 50,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1868,7 +1206,7 @@ of the following equations represents this relationship?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 77,
+    id: 51,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -1892,7 +1230,7 @@ interpretation of x in this context?`,
     tags: [],
   },
   {
-    id: 78,
+    id: 52,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -1917,100 +1255,7 @@ How much more, in dollars, did a ton of crushed stone cost Isabel than a cubic y
     tags: ["student_produced_response"],
   },
   {
-    id: 79,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "hard",
-    questionText: `y
-7)
-18 SERRE
-NTT ETT TTT ttt ett tt tt
-otNET ET TTT tT
-PENCE TTT TTT PP e tt tt tt
-4-H NTT
-PTT TNT TTT TTT ett tt et
-12 PTT TENET TTT TPP tt tt
-PTT TTT NET TET Ett Tt tt
-wot HE NT
-PT TT TTT PNET TET Tt tT
-8 PTT TT TTT ENE Tete Tt Tt
-PT TT TTT TTP NET TT TT
-6 PT TT TTT Tete N ET TT TT
-PTT TTT tte tT tte NTT TT TT
-7e eee
-PT TT TTT tT eee ENE TT TT
-2 PTT TTT tte ete tet NUTT TT
-PT TT TTT tee ee ee eT NUTT
-Pf NT x
-O'2°4°6 > 8 10121416 18 20
-The graph in the xy-plane models the possible combinations of length z, in meters (m), and width y, in meters, for a
-rectangle with a perimeter of 36 m. Which statement is the best interpretation of the point (8, 10) in this context?`,
-    options: [
-    `The length is 10 m less than the perimeter, and the width is 8 m less than the perimeter.`,
-    `The length is 10 m, and the width is 8 m.`,
-    `The length is 8 m, and the width is 10 m.`,
-    `The length is 8 m less than the perimeter, and the width is 10 m less than the perimeter.`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear equations in two variables concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
-  },
-  {
-    id: 80,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `The graph of the equation ax + ky =6 is a line in the xy-plane, where a and
-k are constants. If the line contains the points (—2, —GJand (0, —3), what is
-the value of k ?`,
-    options: [
-    `—2`,
-    `—4`,
-    `2`,
-    `3`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear equations in two variables concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 81,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `In the xy-plane, line k intersects the y-axis at the point (0, i 6) and passes
-through the point (2, 2). If the point (20, w) lies on line k, what is the value
-of w?`,
-    options: [
-    `74`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 74. This is a student-produced response question testing linear equations in two variables.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 82,
+    id: 53,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -2057,91 +1302,7 @@ cornflower is the same. What is the price, in dollars, of 1 cornflower?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 83,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `The table above shows the coordinates of three points on a line in the xy-
-plane, where k and n are constants. If the slope of the line is 2, what is the
-value of K+?`,
-    options: [
-    `30`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 30. This is a student-produced response question testing linear equations in two variables.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 84,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `ze 10
-8
-om.)
-23 6
-Zz a.
-oO 5 10 1520
-Number of hours at job A
-To earn money for college, Avery works two part-time jobs: A and B. She
-earns $10 per hour working at job A and $20 per hour working at job B. In
-one week, Avery earned a total of s dollars for working at the two part-time
-jobs. The graph above represents all possible combinations of numbers of
-hours Avery could have worked at the two jobs to earn s dollars. What is the
-value of s ?`,
-    options: [
-    `128`,
-    `160 Cc. 200`,
-    `320`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear equations in two variables concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 85,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `4 1
-
-— + — =
-The line with the equation 5 x 3 y= is graphed in the xy-plane. What
-is the x-coordinate of the x-intercept of the line?`,
-    options: [
-    `1.25`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 1.25. This is a student-produced response question testing linear equations in two variables.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 86,
+    id: 54,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -2164,50 +1325,7 @@ saline solution to obtain a 15% saline solution?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 87,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "medium",
-    questionText: `y
-SSS Seee 6
-Pt} Pt Te Te Ty et
-PTET TT TT ey et eee ee eT
-F-}}-}--}64 PPT TT TT TT
-BERR CR
-F- fff. f44 NET TT TT TT
-BRR lb eee
-F- ff fei f24 PAT TT eT yy
-PT TTT TT Tee Pi TT Te
--—_+_+__+ J a x
-"1078 76 T4 PATA +67 8110
-PT tT Ty Ty PT TY | TTT yy
-Pet] fed bead PT TAL TT TT YT
-PT TT yy Ty Pt TAT TTT TT
-Fi fff ed te} PT TIN TT yy
-PT tty tT PTT TAT TTT YT
-E+} yt te Pt TT A TTT
-PTT TT yy PET TIN TT TT
-BERR RRee7 2 eee eee
-The graph shows a linear relationship between x and y. Which equation represents this relationship, where R is a positive
-constant?`,
-    options: [
-    `Rx + 18y = 36`,
-    `Rx — 18y = —36`,
-    `182 + Ry = 36`,
-    `18a" — Ry = —36`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear equations in two variables concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 88,
+    id: 55,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -2232,160 +1350,7 @@ represents this situation. How many more points is a red token worth than a gree
     tags: ["student_produced_response"],
   },
   {
-    id: 89,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "hard",
-    questionText: `In the xy-plane, line π passes through the point (0, 0) and is parallel to the line represented by the equation
-y = 8x + 2. If line π also passes through the point (3, d), what is the value of d?`,
-    options: [
-    `24`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 24. This is a student-produced response question testing linear equations in two variables.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 90,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "hard",
-    questionText: `y
-COCO
-Tei Td eds≤ey tiie dake
-TTT TTT eer eet et ee eT
-fife pote feof] ft
-BRR eee
-mm pati} dtd |
-en ~S ee Eee
-[TTT] SSL TTT
-COCOA
-}rgrgegesseeaearars, x
-
--10-8 -6 +4 -2-f 0
-|
-
-TTT Tt ty 2 EERE
-Toit fe tafe pth pepe
-PT Tt ty yy ERE
-Let
-PTT ett Tt EERE
-fh -fe-isti fei} ] ff
-PTT TTT ey EERE
-PPT TTT epee eer
-
-The graph of y = f(z) + 14 is shown. Which equation defines function f?`,
-    options: [
-    `f(x) = —Fa—12`,
-    `f(z) = —4a+16`,
-    `f(v) =-Fart+2`,
-    `f(z) =-fa-14`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear equations in two variables concepts.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
-  },
-  {
-    id: 91,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "hard",
-    questionText: `Line pis defined by 4y + 8z = 6. Line r is perpendicular to line p in the xy-plane. What is the slope of line r?`,
-    options: [
-    `0.5`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 0.5. This is a student-produced response question testing linear equations in two variables.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 92,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_two_var",
-    difficulty: "hard",
-    questionText: `J
-PCE NE TTT re.
--10-9 -8 -7 -69 Ol 1
-PTT TT ING Pa
-Pt tT TT tT INE ET
-Pt tT ET ET NG
-Pit tT tT te tT TN
-PT tT tT Tt TT TIN
-Pit} Ee tT ET eT
-Pt tT ETT ET it
-PTT Te ET it
-PEEP ee
-Line kis shown in the xy-plane. Line 7 (not shown) is perpendicular to line k. What is the slope of line 7?`,
-    options: [
-    `1.2`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 1.2. This is a student-produced response question testing linear equations in two variables.`,
-    explainConcept: `This question tests your understanding of Linear Equations in Two Variables. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Equations in Two Variables problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 93,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "easy",
-    questionText: `2x-1
-
-; f(x)=——
-If fis the function defined by 3
-what is the value of (5) ?
-
-as`,
-    options: [
-    `3 i`,
-    `3`,
-    `3`,
-    `9`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 94,
+    id: 56,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -2409,193 +1374,7 @@ object started moving. Which of the following is the best interpretation of 16 i
     tags: [],
   },
   {
-    id: 95,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "easy",
-    questionText: `The line graphed in the xy-plane below models the total cost, in dollars, for a cab ride, y, in a certain city
-during nonpeak hours based on the number of miles traveled, x.
-Total Cost for a Cab Ride
-y
-ds
-Fe
-a
-eee ea
-2 op LOO
-4" COPZT Terre
-22
-EH
-8 sLZVrrrrrrrr
-LAr
-PT
-rc
-0 5 10
-Distance traveled (miles)
-According to the graph, what is the cost for each additional mile traveled, in
-dollars, of a cab ride?`,
-    options: [
-    `$2.00`,
-    `$2.60`,
-    `$3.00`,
-    `$5.00`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 96,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "easy",
-    questionText: `The graph shown models the number of candy bars a certain machine wraps with a label in x seconds.
-Jy
-3 249,
-ay _—— ——— ——
-a 220 [1 f |
-5 a [> f +]
-~ 180≤-——— Tf 1
-4 A
-Ss 1607-—7—7f
-os
-& 140-7 fF
-= 120{—~-f/--—__|—_—__
-8 [tf
-we 1007——7f
-ro) OY
-, 807,
-2 6≤4f≤_/.—_
-| A
-5 40,-/--——__—__—_
-Z 2ff/—_
-A
-0 ee ee x
-2 4 6 8 10
-Time (seconds)
-According to the graph, what is the estimated number of candy bars the machine wraps with a label per second?`,
-    options: [
-    `2`,
-    `40`,
-    `78`,
-    `80`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 97,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "easy",
-    questionText: `pat 3 |
-Some values of the linear function f are shown in the table above.
-Which of the following defines f ?`,
-    options: [
-    `f(x) =2x +3`,
-    `f(x) =3x+2 c. f(x) =4x+1`,
-    `f(x) =5x`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 98,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "easy",
-    questionText: `The function h is defined by h(x) = 3a — 7. What is the value of h(—2)?`,
-    options: [
-    `-13`,
-    `—10 c.10`,
-    `13`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 99,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "easy",
-    questionText: `Marisol drove 3 hours from City A to City B. The equation below estimates the distance d, in miles, Marisol
-traveled after driving for t hours.
-d=45t
-
-Which of the following does 45 represent in the equation?`,
-    options: [
-    `Marisol took 45 trips from City A to City B.`,
-    `The distance between City A and City B is 45 miles.`,
-    `Marisol drove at an average speed of about 45 miles per hour.`,
-    `It took Marisol 45 hours to drive from City A to City B.`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 100,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "easy",
-    questionText: `T=1,000+18h
-In the equation above, 7 represents Brittany's total take-home pay, in
-dollars, for her first week of work, where h represents the number of hours
-she worked that week and 1,000 represents a sign-on bonus. If Brittany's
-total take-home pay was $1,576, for how many hours was Brittany paid for
-her first week of work?`,
-    options: [
-    `16`,
-    `32 CG; 55`,
-    `88`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 101,
+    id: 57,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -2618,32 +1397,7 @@ g(4)=31, what is the value of a?`,
     tags: [],
   },
   {
-    id: 102,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `On January 1, 2015, a city's minimum hourly wage was $9.25. It will increase
-by $0.50 on the first day of the year for the next 5 years. Which of the
-following functions best models the minimum hourly wage, in dollars, x
-years after January 1, 2015, where x =1, 2,3, 4,5?`,
-    options: [
-    `f(x) = 9.25 -0.50x`,
-    `f(x) =9.25x — 0.50 c. f(x) = 9.25 +0.50x`,
-    `f(x) = 9.25x + 0.50`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 103,
+    id: 58,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -2665,45 +1419,7 @@ years after January 1, 2015, where x =1, 2,3, 4,5?`,
     tags: [],
   },
   {
-    id: 104,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `Oxygen gas is placed inside a tank with a constant volume. The graph shows the estimated temperature y, in
-kelvins, of the oxygen gas when its pressure is 2 atmospheres.
-y
-1,000
-OTE yr
-= my
-2 TTT A
-2 TTA
-2 oo EZ
-SL LAL
-5 OTE
-ons 4
-TELE
-Pe TT ET TT
-O 123 4567 8 9 10
-Pressure (atmospheres)
-What is the estimated temperature, in kelvins, of the oxygen gas when its pressure is 6 atmospheres?`,
-    options: [
-    `6`,
-    `60 Cc. 700`,
-    `760`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 105,
+    id: 59,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -2728,7 +1444,7 @@ Robert was charged?`,
     tags: [],
   },
   {
-    id: 106,
+    id: 60,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -2757,64 +1473,7 @@ P(30) =550 2`,
     tags: [],
   },
   {
-    id: 107,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `For the linear function f, f(0) = 17 and f(1) = 17. Which equation defines f?`,
-    options: [
-    `f(x) = 7`,
-    `f(z) =1 Cc. f(z) =17`,
-    `f(x) = 34`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 108,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `y
-10
-FETT TT Pate TT TT TT
-PETIT TT ete TTT
-PETIT TTT tT TT
-PETIT TTT eT TT
-FEET T TT STITT TTL
-PITT TTT att ter
-PELL LTT tt er
-PET Tt | tbe tT
-ae Gee
-BEEP Zane Re
-8-4 2 I 2 [4 |e | 8
-The graph of the linear function f is shown. What is the y-intercept of the graph of y = f(x)?`,
-    options: [
-    `( — 5,0)`,
-    `(2,0) c. (0, 2)`,
-    `(0, —5)`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 109,
+    id: 61,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -2837,7 +1496,7 @@ amount, in dollars, the technician will charge for this job if it takes x hours?
     tags: [],
   },
   {
-    id: 110,
+    id: 62,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -2859,30 +1518,7 @@ amount, in dollars, the technician will charge for this job if it takes x hours?
     tags: [],
   },
   {
-    id: 111,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `For the linear function f, the graph of y = f(a) in the xy-plane has a slope of 2 and has a y-intercept at (0, —5). Which
-equation defines f?`,
-    options: [
-    `f(x) = $a —5`,
-    `f(a) =-fa—5`,
-    `f(z) = —22 —5`,
-    `f(x) = 22 —5`
-  ],
-    correctIndex: 3,
-    explainWhy: `The correct answer is D. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 112,
+    id: 63,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -2906,7 +1542,7 @@ start of the project. Which of the following is the best interpretation of 33 in
     tags: [],
   },
   {
-    id: 113,
+    id: 64,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -2929,7 +1565,7 @@ $600 in that savings account. How much money, in dollars, will be in the account
     tags: [],
   },
   {
-    id: 114,
+    id: 65,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -2937,7 +1573,7 @@ $600 in that savings account. How much money, in dollars, will be in the account
     difficulty: "medium",
     questionText: `In the linear function h, h(0) = 41 and h(1) = 40. Which equation defines h?`,
     options: [
-    `h(a) = —a +41`,
+    `h(a) = —a@ +41`,
     `h(x) = —x`,
     `A(x) = —41a`,
     `h(x) = —41`
@@ -2951,38 +1587,13 @@ $600 in that savings account. How much money, in dollars, will be in the account
     tags: [],
   },
   {
-    id: 115,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `| 0 | 20
-
-For the linear function f, the table shows three values of x and their corresponding values of f(a). Which
-equation defines f(x)?`,
-    options: [
-    `f(z) = 3a + 29`,
-    `f(x) = 29x + 32`,
-    `f(x) = 35x + 29`,
-    `f(x) = 32x + 35`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 116,
+    id: 66,
     section: "math",
     module: 1,
     topic: "algebra",
     subtopic: "linear_functions",
     difficulty: "medium",
-    questionText: `lf y = 5x + 10, what is the value of y when x = 8?`,
+    questionText: `lf y = 5x@ + 10, what is the value of y when x = 8?`,
     options: [
     `50`,
     `0`,
@@ -2998,58 +1609,7 @@ equation defines f(x)?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 117,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `For the linear function f, the graph of y = f(a) in the xy-plane has a slope of + and passes through the point (0,5). Which
-equation defines f?`,
-    options: [
-    `f(z) = Fe+5`,
-    `f(x) = Fa+e c. f(a) = 4e-$`,
-    `f(z) = 4a —5`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 118,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `Area (square feet) | Water (gallons)
-2,520 4,536
-3,780 6,804
-5,040 9,072
-The buildings of a shopping center are designed to allow water to drain from the roof into gutters on the sides of the
-buildings. The table shows the relationship between the area 2, in square feet, of a roof and the amount of water f(z), in
-gallons, drained from the roof into the gutters over a certain period of time. Which equation could define f?`,
-    options: [
-    `f(x) = 0.62`,
-    `f(z) = 1.82`,
-    `f(x) = 2,2682`,
-    `f(z) = 4,536x`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 119,
+    id: 67,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -3073,29 +1633,7 @@ beaker x days after the start of the experiment. Which of the following is the b
     tags: [],
   },
   {
-    id: 120,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `f(x) = a+ 4 The function f is defined by the given equation. What is the value of f(x) whenz = =?`,
-    options: [
-    `1`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 1. This is a student-produced response question testing linear functions.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 121,
+    id: 68,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -3117,7 +1655,7 @@ beaker x days after the start of the experiment. Which of the following is the b
     tags: ["student_produced_response"],
   },
   {
-    id: 122,
+    id: 69,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -3142,101 +1680,7 @@ millimeters, of a worker bumblebee that has a body weight of 0.5 grams?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 123,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `In the xy-plane, the graph of the linear function f contains the points (0, 3) and (7, 31). Which equation defines f
-_ where y = f(x)?`,
-    options: [
-    `f(x) = 28a + 34`,
-    `f(≪) = 30 +38 Cc. f(z) = 4443`,
-    `f(a) = 7a + 3`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 124,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `A team of workers has been moving cargo off of a ship. The equation below models the approximate
-number of tons of cargo, y, that remains to be moved x hours after the team started working.
-y =120—25x
-The graph of this equation in the xy-plane is a line. What is the best
-interpretation of the x-intercept in this context?`,
-    options: [
-    `The team will have moved all the cargo in about 4.8 hours.`,
-    `The team has been moving about 4.8 tons of cargo per hour.`,
-    `The team has been moving about 25 tons of cargo per hour.`,
-    `The team started with 120 tons of cargo to move.`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 125,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `J
-500
-450 ee eee
-Pott
-got} tf rp
-ee
-350+ | | fT
-po | ft
-300 ee eee
-ee eee
-250 eee eee
-a eee
-200+ ae
-P| | pe
-i0+t 7 fT
-a ee eee
-100 a ee eee
-ee eee
-50 ee eee
-eee
-ee eee,
-O14 4567 8 9 10
-The graph of the function f, where y = f(z), gives the total cost y, in dollars, for a certain video game system
-and x games. What is the best interpretation of the slope of the graph in this context?`,
-    options: [
-    `Each game costs $25.`,
-    `The video game system costs $100.`,
-    `The video game system costs $25.`,
-    `Each game costs $100.`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 126,
+    id: 70,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -3262,7 +1706,7 @@ function above, where mis a constant and X > Q. The total cost to produce
     tags: ["student_produced_response"],
   },
   {
-    id: 127,
+    id: 71,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -3286,7 +1730,7 @@ of π?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 128,
+    id: 72,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -3309,7 +1753,7 @@ For the linear function j, m is a constant and j(12) = 18. What is the value of 
     tags: ["student_produced_response"],
   },
   {
-    id: 129,
+    id: 73,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -3331,34 +1775,7 @@ For the linear function j, m is a constant and j(12) = 18. What is the value of 
     tags: [],
   },
   {
-    id: 130,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `y=18—-5x
-The equation above represents the speed y, in feet per second, of Sheila's
-bicycle x seconds after she applied the brakes at the end of a ride. If the
-equation is graphed in the xy-plane, which of the following is the best
-interpretation of the x-coordinate of the line's x-intercept in the context of
-the problem?`,
-    options: [
-    `The speed of Sheila's bicycle, in feet per second, before Sheila applied the brakes`,
-    `The number of feet per second the speed of Sheila's bicycle decreased each second after Sheila applied the brakes`,
-    `The number of seconds it took from the time Sheila began applying the brakes until the bicycle came to a complete stop`,
-    `The number of feet Sheila's bicycle traveled from the time she began applying the brakes until the bicycle came to a complete stop`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 131,
+    id: 74,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -3383,7 +1800,7 @@ worker ants, which of the following is closest to the predicted number of larvae
     tags: [],
   },
   {
-    id: 132,
+    id: 75,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -3406,32 +1823,7 @@ F(O)=18 and π(1) =20, what is the value of m?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 133,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `Population of Greenleaf, Idaho
-The table above shows the population of Greenleaf, Idaho, for the years 2000 and 2010. If the relationship
-between population and year is linear, which of the following functions P models the population of Greenleaf t
-years after 2000?`,
-    options: [
-    `P(t) = 862 -1.6≤`,
-    `P(t) = 862 —16t c. P(t) = 862 + 16(t-2,000) b. P(f) = 862 —1.6(f-2,000)`,
-    ``,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 134,
+    id: 76,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -3455,70 +1847,7 @@ exerted on the scuba diver at 105 feet below sea level?`,
     tags: [],
   },
   {
-    id: 135,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `The graph of y = f(x) — 11 is shown.
-Jy
-6
-| | ft fey tT |
-oe
-Ne
-ed
-1
-| IN | tT | tl |
--4 -3 -2 OF 1 2 3 4
-
-| | INT | tt
-Pot ft AT Tt
-| | | TN | fT
-| | | | eAT |
-| | | tT eiN |
-
-Which equation defines the linear function f?`,
-    options: [
-    `f(x) = —132 —- 11`,
-    `f(x) = -2a+7`,
-    `f(x) = -1324+7`,
-    `f(x) = —2% —-11`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 136,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "hard",
-    questionText: `The function f(a) = 55.20 — 0.162 gives the estimated surface water temperature f(a), in degrees Celsius, of a body of
-water on the zth day of the year, where 220 < x < 360. Based on the model, what is the estimated surface water
-temperature, in degrees Celsius, of this body of water on the 326th day of the year?`,
-    options: [
-    `55.20`,
-    `3.04 c. —0.16`,
-    `—52.16`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
-  },
-  {
-    id: 137,
+    id: 77,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -3544,7 +1873,7 @@ onetime fee plus an hourly rate. What is the best interpretation of the slope of
     tags: [],
   },
   {
-    id: 138,
+    id: 78,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -3566,75 +1895,7 @@ onetime fee plus an hourly rate. What is the best interpretation of the slope of
     tags: [],
   },
   {
-    id: 139,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "hard",
-    questionText: `In the xy-plane, the graph of the linear function f contains the points (0, 2) and (8, 34). Which equation defines f
-_ where y = f(x)?`,
-    options: [
-    `f(x) = 2a + 42`,
-    `f(x) = 32x + 36`,
-    `f(x) =4a+4+2`,
-    `f(a) = 8a +2`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
-  },
-  {
-    id: 140,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "hard",
-    questionText: `The function f is defined by f(z) = —9x + 9. What is the y-coordinate of the y-intercept of the graph of y = f(z) in the
-zry-plane?`,
-    options: [
-    `9`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 9. This is a student-produced response question testing linear functions.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 141,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "hard",
-    questionText: `In the xy-plane, line & has a slope of 5 and a y-intercept of (0, —35). What is the x-coordinate of the x-intercept of line k?`,
-    options: [
-    `7`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 7. This is a student-produced response question testing linear functions.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 142,
+    id: 79,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -3660,7 +1921,7 @@ units, when the selling price is $55 per unit?`,
     tags: [],
   },
   {
-    id: 143,
+    id: 80,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -3684,30 +1945,7 @@ integer and ≪ < 10?`,
     tags: [],
   },
   {
-    id: 144,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `The functions f and g are defined as f(z) = Fa — 9 and g(x) = 3a + 21. If the function h is defined as
-h(x) = f(x) + g(a), what is the x-coordinate of the x-intercept of the graph of y = A(z) in the xy-plane?`,
-    options: [
-    `-12`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is -12. This is a student-produced response question testing linear functions.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 145,
+    id: 81,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -3733,7 +1971,7 @@ The constant 2.74 in this function estimates which of the following?`,
     tags: [],
   },
   {
-    id: 146,
+    id: 82,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -3757,61 +1995,7 @@ temperature increased by 2.10 kelvins, by how much did the temperature increase,
     tags: [],
   },
   {
-    id: 147,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `px [-11|-20] -9| -8|
-a] a fe fs fe
-The table above shows some values of x and their corresponding values
-FOO for the linear function f. What is the x-intercept of the graph of
-y = (x) in the xy-plane?`,
-    options: [
-    `(-3,0)`,
-    `(—4,0) c. (-9,0) p. (-12,0)`,
-    ``,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 148,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `Energy per Gram of Typical Macronutrients
-The table above gives the typical amounts of energy per gram, expressed in
-both food calories and kilojoules, of the three macronutrients in food. If the
-180 food calories in a granola bar come entirely from p grams of protein,
-f grams of fat, and c grams of carbohydrate, which of the following
-expresses f in terms of p andc?
-f=20+ 4. (p+c)`,
-    options: [
-    `9g 4 =20-—(p+ a, f=20-4 (p +e) 4 =20-—(p—c 0 f=20- G00) f=20+2 (p+c)`,
-    `4`,
-    ``,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 149,
+    id: 83,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -3835,57 +2019,7 @@ Which of the following describes the meaning of the 2 in this context?`,
     tags: [],
   },
   {
-    id: 150,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `For the function f, if π(3x) =x —6 for all values of x,
-what is the value of (6)?`,
-    options: [
-    `-6`,
-    `—4 c. 0 D 2`,
-    ``,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 151,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "medium",
-    questionText: `| 2 | o |
-
-| 3 | |
-
-For the linear function f, the table shows three values of x and their corresponding values of f(a). Function f is
-defined by f(x) = ax + b, where a and b are constants. What is the value of a — b?`,
-    options: [
-    `—64`,
-    `62`,
-    `128`,
-    `192`
-  ],
-    correctIndex: 3,
-    explainWhy: `The correct answer is D. This question requires understanding of linear functions concepts.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 152,
+    id: 84,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -3909,7 +2043,7 @@ n > 25?`,
     tags: [],
   },
   {
-    id: 153,
+    id: 85,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -3933,7 +2067,7 @@ temperature increased by 9.10 kelvins, by how much did the temperature increase,
     tags: [],
   },
   {
-    id: 154,
+    id: 86,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -3957,7 +2091,7 @@ corresponding temperature, in kelvins, of this substance?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 155,
+    id: 87,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -3979,31 +2113,7 @@ corresponding temperature, in kelvins, of this substance?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 156,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "hard",
-    questionText: `| 6 | 45
-The table shows two values of x and their corresponding values of y. The graph of the linear equation representing this
-relationship passes through the point (4, a). What is the value of a?`,
-    options: [
-    `16.25`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 16.25. This is a student-produced response question testing linear functions.`,
-    explainConcept: `This question tests your understanding of Linear Functions. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Functions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 157,
+    id: 88,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4029,7 +2139,7 @@ container and y is the total number of beads in the second container?`,
     tags: [],
   },
   {
-    id: 158,
+    id: 89,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -4054,7 +2164,7 @@ and 7 is the number of hours Jessica drove?`,
     tags: [],
   },
   {
-    id: 159,
+    id: 90,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4078,31 +2188,7 @@ cookies on 4 trays of cookies?`,
     tags: [],
   },
   {
-    id: 160,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_inequalities",
-    difficulty: "easy",
-    questionText: `Tom scored 85, 78, and 98 on his first three exams in history class. Solving
-which inequality gives the score, G, on Tom's fourth exam that will result in
-a mean score on all four exams of at least 90 ?`,
-    options: [
-    `90—(85+78+98) <4G`,
-    `4G+865+76+98 > 360 G+85+78+98 (G#85* 78498) 99 (on 4 89+ 78+98 (85+78+98) =90—-4G`,
-    `4`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear inequalities concepts.`,
-    explainConcept: `This question tests your understanding of Linear Inequalities. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Inequalities problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 161,
+    id: 91,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4126,7 +2212,7 @@ to be normal, which of the following could be his body temperature?`,
     tags: [],
   },
   {
-    id: 162,
+    id: 92,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -4152,7 +2238,7 @@ the inequality 5≫ — Sy<4?
     tags: [],
   },
   {
-    id: 163,
+    id: 93,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4177,34 +2263,7 @@ which of the following must be true?`,
     tags: [],
   },
   {
-    id: 164,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_inequalities",
-    difficulty: "easy",
-    questionText: `An elementary school teacher is ordering x workbooks and y sets of flash
-cards for a math class. The teacher must order at least 20 items, but the
-total cost of the order must not be over $80. If the workbooks cost $3 each
-and the flash cards cost $4 per set, which of the following systems of
-inequalities models this situation?
-xty220`,
-    options: [
-    `3x 44y <80 xty220`,
-    `3x +4y > 80 3x +4y < 20 Gs x+y280 xty<20`,
-    `3x +4y > 60`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of linear inequalities concepts.`,
-    explainConcept: `This question tests your understanding of Linear Inequalities. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Inequalities problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 165,
+    id: 94,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4230,7 +2289,7 @@ hours for which Maria can rent the boat?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 166,
+    id: 95,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -4253,7 +2312,7 @@ that should be bought for the party?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 167,
+    id: 96,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4277,7 +2336,7 @@ rectangle is less than or equal to 27. Which statement is the best interpretatio
     tags: [],
   },
   {
-    id: 168,
+    id: 97,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -4308,7 +2367,7 @@ X23`,
     tags: [],
   },
   {
-    id: 169,
+    id: 98,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4335,7 +2394,7 @@ Which of the following describes all the possible values of n ?`,
     tags: [],
   },
   {
-    id: 170,
+    id: 99,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4358,7 +2417,7 @@ Which point (2, y) is a solution to the given inequality in the ry-plane?`,
     tags: [],
   },
   {
-    id: 171,
+    id: 100,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -4383,7 +2442,7 @@ inequalities represents all possible weights w, in pounds, for the elephant
     tags: [],
   },
   {
-    id: 172,
+    id: 101,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4410,7 +2469,7 @@ savings will exceed the installation cost?`,
     tags: [],
   },
   {
-    id: 173,
+    id: 102,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4433,7 +2492,7 @@ represents this situation?`,
     tags: [],
   },
   {
-    id: 174,
+    id: 103,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -4457,7 +2516,7 @@ each box weighs 120 pounds?`,
     tags: [],
   },
   {
-    id: 175,
+    id: 104,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -4481,7 +2540,7 @@ budget?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 176,
+    id: 105,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4507,32 +2566,7 @@ less than purchasing individual tickets for trips?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 177,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_inequalities",
-    difficulty: "medium",
-    questionText: `A salesperson's total earnings consist of a base salary of x dollars per year, plus commission earnings of 11% of
-the total sales the salesperson makes during the year. This year, the salesperson has a goal for the total earnings
-to be at least 3 times and at most 4 times the base salary. Which of the following inequalities represents all
-possible values of total sales s, in dollars, the salesperson can make this year in order to meet that goal?`,
-    options: [
-    `22 <8s< 32 2 3 Bont Ss<Sone`,
-    `3a<s<4r 3 4 Dom' Ss<S one`,
-    ``,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of linear inequalities concepts.`,
-    explainConcept: `This question tests your understanding of Linear Inequalities. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Inequalities problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 178,
+    id: 106,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4555,7 +2589,7 @@ value of x?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 179,
+    id: 107,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -4585,7 +2619,7 @@ p?`,
     tags: [],
   },
   {
-    id: 180,
+    id: 108,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -4616,35 +2650,7 @@ greatest number, n, of six-volt batteries that can be used?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 181,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_inequalities",
-    difficulty: "medium",
-    questionText: `Ken is working this summer as part of a crew on a farm. He earned
-
-$8 per hour for the first 10 hours he worked this week. Because of his
-performance, his crew leader raised his salary to $10 per hour for the rest
-of the week. Ken saves 90% of his earnings from each week. What is the
-least number of hours he must work the rest of the week to save at least
-$270 for the week?`,
-    options: [
-    `38`,
-    `33 G. 22`,
-    `16`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of linear inequalities concepts.`,
-    explainConcept: `This question tests your understanding of Linear Inequalities. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Linear Inequalities problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 182,
+    id: 109,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -4668,169 +2674,7 @@ inequality represents this situation. Which of the following is the best interpr
     tags: [],
   },
   {
-    id: 183,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "easy",
-    questionText: `Jy
-6 y
-Pt ttt det TTY I
-PT Tt Te TAL TT
-PEt TT Et VT
-Pi tT tT] EA ty Yt
-POCO RYE
-Pi TTT Pte
-~6-5-4-3-2-10] fi 2 3 4 5 6
-
-PTT ey
-PT tT TA ET
-Pit tT Taye tt ty ft
-PT Tt Tet tt ey Tt
-Pt TT Avie | yy tT
-
-The graph of a system of linear equations is shown. What is the solution (a2, y) to the system?`,
-    options: [
-    `(0,3)`,
-    `(1,3)`,
-    `(2, 3)`,
-    `(3, 3)`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 184,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "easy",
-    questionText: `VY EAKtG
-x=1
-
-What is the solution oy) to the given
-
-system of equations?`,
-    options: [
-    `(4,2)`,
-    `(1,5) c. (2,3)`,
-    `(2,7)`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 185,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "easy",
-    questionText: `A system of two linear equations is graphed in the xy-plane below.
-y
-Lr}20 POC a
-Eee EEA HH
-HAH EE
-COoSr ey rat
-S05 Se0ee) Se See
-HEE HEHE
-COAT
-HEPC
-COCOA
-He A
-COCEC 77
-S008)
-COCs eee
-C4
-CALA CC
-Ae
-ZC
-aay SSS SSeS See
-Say aneegeaeaeaeucacuea
-CACAO
-Va
-Which of the following points is the solution to
-the system of equations?`,
-    options: [
-    `(3,9)`,
-    `(6,15) c. (8,10) b. (12,18)`,
-    ``,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 186,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "easy",
-    questionText: `y=4r-9
-y= 19
-What is the solution (z, y) to the given system of equations?`,
-    options: [
-    `(4, 19)`,
-    `(7,19) Cc. (19, 4)`,
-    `(19, 7)`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 187,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "easy",
-    questionText: `oo tat ee
-2x +y)+3y =85
-
-If xy) is the solution to the given system of
-
-equations, what is the value of y ?`,
-    options: [
-    `10`,
-    `15 Cc. 60`,
-    `65`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 188,
+    id: 110,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4855,7 +2699,7 @@ equations, what is the value of y ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 189,
+    id: 111,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -4868,9 +2712,9 @@ from the sale of those tickets. Which system of equations represents this
 relationship between x and y ?
 x +y=120`,
     options: [
-    `90x +250y = 27,600 x +y=120`,
-    `90x +250y = 120(27,600) x +y =27,600`,
-    `90x +250y = 120(27,600) 90x = 250y`,
+    `° 90x +250y = 27,600 x +y=120`,
+    `° 90x +250y = 120(27,600) x +y =27,600`,
+    `° 90x +250y = 120(27,600) 90x = 250y`,
     `* 420x + 120y = 27,600`
   ],
     correctIndex: 0,
@@ -4882,70 +2726,7 @@ x +y=120`,
     tags: [],
   },
   {
-    id: 190,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "medium",
-    questionText: `A movie theater charges $11 for each full-price ticket and $8.25 for each
-reduced-price ticket. For one movie showing, the theater sold a total of
-214 full-price and reduced-price tickets for $2,145. Which of the following
-systems of equations could be used to determine the number of full-price
-tickets, f, and the number of reduced-price tickets, r, sold?
-
-f+r=2,145`,
-    options: [
-    `117 +8625r=214 ft+r=214 Be 44 +8.25r=2,145 f+r=214 & g95f4+11r=2,145 f+r=2,145`,
-    `6.297 +11r=214`,
-    ``,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 191,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "medium",
-    questionText: `J
-10
-of | ttt tt | yy
-sf} tt tt | Yo
-NER
-AeNEES7EEee
-st iINIT A | I
-aN
-3 | VANE TTT TT
-13/78 RNEEEee
-Met TINT fT
-Pi TTT IN TT.
-O 12345 67 8 9 10
-The graph of a system of linear equations is shown. What is the solution (z, y) to the system?`,
-    options: [
-    `(2,3)`,
-    `(3, 4) c. (4, 5)`,
-    `(5, 6)`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 192,
+    id: 112,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -4969,31 +2750,7 @@ The solution to the given system of equations is (a, y). What is the value of x?
     tags: [],
   },
   {
-    id: 193,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "medium",
-    questionText: `z+y=18
-sy==x
-What is the solution (a, y) to the given system of equations?`,
-    options: [
-    `(15,3)`,
-    `(16, 2) c. (17,1)`,
-    `(18, 0)`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 194,
+    id: 113,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -5017,58 +2774,7 @@ What is the solution (a, y) to the given system of equations?`,
     tags: [],
   },
   {
-    id: 195,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "medium",
-    questionText: `A group of 202 people went on an overnight camping trip, taking 60 tents
-with them. Some of the tents held 2 people each, and the rest held 4 people
-each. Assuming all the tents were filled to capacity and every person got to
-sleep in a tent, exactly how many of the tents were 2-person tents?`,
-    options: [
-    `30`,
-    `20 Cc. 19`,
-    `18`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 196,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "medium",
-    questionText: `1
-Y=— gt
-1
-y= gt
-The solution to the given system of equations is (a, y). What is the value of 2?`,
-    options: [
-    `—9`,
-    `-7 c.0`,
-    `2`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 197,
+    id: 114,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -5093,7 +2799,7 @@ did the player answer correctly?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 198,
+    id: 115,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -5117,7 +2823,7 @@ The solution to the given system of equations is (a, y). What is the value of 2?
     tags: [],
   },
   {
-    id: 199,
+    id: 116,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -5142,7 +2848,7 @@ above, what is the value of x ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 200,
+    id: 117,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -5166,7 +2872,7 @@ The solution to the given system of equations is (a, y). What is the value of 2?
     tags: ["student_produced_response"],
   },
   {
-    id: 201,
+    id: 118,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -5190,7 +2896,7 @@ The solution to the given system of equations is (, y). What is the value of x?`
     tags: [],
   },
   {
-    id: 202,
+    id: 119,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -5216,55 +2922,7 @@ The solution to the given system of equations is (a, y). What is the value of x?
     tags: [],
   },
   {
-    id: 203,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "medium",
-    questionText: `y = 32
-2e+y=12
-The solution to the given system of equations is (a, y). What is the value of 52?`,
-    options: [
-    `24`,
-    `15 G.12`,
-    `5`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 204,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "medium",
-    questionText: `6x2 + Ty = 28
-22 + 2y = 10
-The solution to the given system of equations is (a, y). What is the value of y?`,
-    options: [
-    `—2`,
-    `7 c.14`,
-    `18`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 205,
+    id: 120,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -5289,55 +2947,7 @@ the proposal?`,
     tags: [],
   },
   {
-    id: 206,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "medium",
-    questionText: `y=6r+4+16
-—Tz —y = 36
-What is the solution (2, y) to the given system of equations?`,
-    options: [
-    `(— 4, —8) 20 _ 80`,
-    `(— 435-73) c. (4, 40)`,
-    `(20, 136)`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 207,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "hard",
-    questionText: `y= 2243
-One of the two equations in a system of linear equations is given. The system has infinitely many solutions. If the second
-equation in the system is y = ma + b, where m and D are constants, what is the value of b?`,
-    options: [
-    `—3 1`,
-    `-F 1`,
-    `3`,
-    `3`
-  ],
-    correctIndex: 3,
-    explainWhy: `The correct answer is D. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
-  },
-  {
-    id: 208,
+    id: 121,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -5361,7 +2971,7 @@ The solution to the given system of equations is (x, y). What is the value of z 
     tags: [],
   },
   {
-    id: 209,
+    id: 122,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -5387,7 +2997,7 @@ above, what is the value of y ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 210,
+    id: 123,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -5412,7 +3022,7 @@ your answer.)`,
     tags: ["student_produced_response"],
   },
   {
-    id: 211,
+    id: 124,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -5436,7 +3046,7 @@ The solution to the given system of equations is (a, y). What is the value of xy
     tags: ["student_produced_response"],
   },
   {
-    id: 212,
+    id: 125,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -5463,7 +3073,7 @@ no solution, what is the value of c ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 213,
+    id: 126,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -5486,7 +3096,7 @@ length of y inches. The value of z is 4 more than 3 times the value of y. What i
     tags: ["student_produced_response"],
   },
   {
-    id: 214,
+    id: 127,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -5511,7 +3121,7 @@ In the given system of equations, p is a constant. If the system has no solution
     tags: ["student_produced_response"],
   },
   {
-    id: 215,
+    id: 128,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -5535,7 +3145,7 @@ In the given system of equations, t is a constant. If the system has no solution
     tags: ["student_produced_response"],
   },
   {
-    id: 216,
+    id: 129,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -5557,54 +3167,5 @@ The solution to the given system of equations is (a, y). What is the value of y?
     isCalculatorAllowed: true,
     estTimeSec: 120,
     tags: ["student_produced_response"],
-  },
-  {
-    id: 217,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "hard",
-    questionText: `—x² — wy = —337
-2x2 — wy = 47
-In the given system of equations, w is a constant. In the xy-plane, the graphs of these equations intersect at the point (q, 19)
-, where q is a constant. What is the value of w?`,
-    options: [
-    `11`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 11. This is a student-produced response question testing systems of linear equations.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 218,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "hard",
-    questionText: `82+ 7y=9
-24x + 2ly = 27
-For each real number 7, which of the following points lies on the graph of each equation in the xy-plane for the given system?`,
-    options: [
-    `(r, - + 2)`,
-    `(- # + 2,r) c.(—- +9, ¥ +27)`,
-    `(3 +9,—-F +27)`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of systems of linear equations concepts.`,
-    explainConcept: `This question tests your understanding of Systems of Linear Equations. Algebra is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Systems of Linear Equations problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
   }
 ];

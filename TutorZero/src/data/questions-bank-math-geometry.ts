@@ -2,13 +2,13 @@ import type { Question } from "./questions";
 
 export const bankMathGeometryQuestions: Question[] = [
   {
-    id: 600,
+    id: 350,
     section: "math",
     module: 1,
     topic: "geometry",
     subtopic: "area_volume",
     difficulty: "easy",
-    questionText: `The side length of a square is 55 centimeters (cm). What is the area, in cm2, of the square?`,
+    questionText: `The side length of a square is 55 centimeters (cm). What is the area, in cm², of the square?`,
     options: [
     `110`,
     `220`,
@@ -24,14 +24,14 @@ export const bankMathGeometryQuestions: Question[] = [
     tags: [],
   },
   {
-    id: 601,
+    id: 351,
     section: "math",
     module: 1,
     topic: "geometry",
     subtopic: "area_volume",
     difficulty: "easy",
     questionText: `Triangle ABC and triangle DEF are similar triangles, where AB and DE are
-corresponding sides. If ME =2AB and the perimeter of triangle ABC is 20,
+corresponding sides. If DE =2AB and the perimeter of triangle ABC is 20,
 what is the perimeter of triangle DEF ?`,
     options: [
     `10`,
@@ -48,7 +48,7 @@ what is the perimeter of triangle DEF ?`,
     tags: [],
   },
   {
-    id: 602,
+    id: 352,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -70,44 +70,18 @@ what is the perimeter of triangle DEF ?`,
     tags: [],
   },
   {
-    id: 603,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "area_volume",
-    difficulty: "easy",
-    questionText: `x
-Jy
-z
-Note: Figure not drawn to scale.
-The triangle shown has a perimeter of 22 units. If 2 = 9 units and y = 7 units, what is the value of z, in units? [Figure described in original]`,
-    options: [
-    `6`,
-    `7 c.9`,
-    `16`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of area and volume concepts.`,
-    explainConcept: `This question tests your understanding of Area and Volume. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Area and Volume problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 604,
+    id: 353,
     section: "math",
     module: 2,
     topic: "geometry",
     subtopic: "area_volume",
     difficulty: "easy",
-    questionText: `What is the area of a rectangle with a length of 4 centimeters (cm) and a width of 2 cm²`,
+    questionText: `What is the area of a rectangle with a length of 4 centimeters (cm) and a width of 2 cm?`,
     options: [
-    `6 cm²`,
-    `8cm²`,
-    `12 cm²`,
-    `36 cm²`
+    `6 cm?`,
+    `8cm?`,
+    `12 cm?`,
+    `36 cm?`
   ],
     correctIndex: 1,
     explainWhy: `The correct answer is B. This question requires understanding of area and volume concepts.`,
@@ -118,7 +92,7 @@ The triangle shown has a perimeter of 22 units. If 2 = 9 units and y = 7 units, 
     tags: [],
   },
   {
-    id: 605,
+    id: 354,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -141,35 +115,7 @@ rectangle?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 606,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "area_volume",
-    difficulty: "easy",
-    questionText: `2cm
-
-6cm
-The figure shows the lengths, in centimeters (cm), of the edges of a right
-rectangular prism. The volume V of a right rectangular prism is π wh,
-where € is the length of the prism, w is the width of the prism, and h is the
-height of the prism. What is the volume, in cubic centimeters, of the prism?`,
-    options: [
-    `36`,
-    `24 G. 12`,
-    `11`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of area and volume concepts.`,
-    explainConcept: `This question tests your understanding of Area and Volume. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Area and Volume problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 607,
+    id: 355,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -192,18 +138,18 @@ triangle?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 608,
+    id: 356,
     section: "math",
     module: 1,
     topic: "geometry",
     subtopic: "area_volume",
     difficulty: "medium",
-    questionText: `What is the area of a rectangle with a length of 17 centimeters (cm) and a width of 7 cm²`,
+    questionText: `What is the area of a rectangle with a length of 17 centimeters (cm) and a width of 7 cm?`,
     options: [
-    `24cm²`,
-    `48 cm²`,
-    `119 cm²`,
-    `576 cm²`
+    `24cm?`,
+    `48 cm?`,
+    `119 cm?`,
+    `576 cm?`
   ],
     correctIndex: 2,
     explainWhy: `The correct answer is C. This question requires understanding of area and volume concepts.`,
@@ -214,7 +160,7 @@ triangle?`,
     tags: [],
   },
   {
-    id: 609,
+    id: 357,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -237,7 +183,7 @@ rectangle?`,
     tags: [],
   },
   {
-    id: 610,
+    id: 358,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -260,42 +206,14 @@ cubic meters, of the prism?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 611,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "area_volume",
-    difficulty: "medium",
-    questionText: `S
-Z.
-Ld, R T
-Note: Figure not drawn to scale.
-In the figure shown, triangle JK L is similar to triangle RST, where J corresponds to Rand Kk corresponds to S. The
-length of JK is 15, and the perimeter of triangle JK L is 36. The length of RS is 135. What is the perimeter of triangle
-RST? [Figure described in original]`,
-    options: [
-    `324`,
-    `540`,
-    `2,916`,
-    `8,100`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of area and volume concepts.`,
-    explainConcept: `This question tests your understanding of Area and Volume. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Area and Volume problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 612,
+    id: 359,
     section: "math",
     module: 2,
     topic: "geometry",
     subtopic: "area_volume",
     difficulty: "medium",
-    questionText: `Triangle R has an area of 80 square centimeters (cm²). Square S has side lengths of 4 cm. What is the total area of
-triangle R and square S, in cm²?`,
+    questionText: `Triangle R has an area of 80 square centimeters (cm?). Square S has side lengths of 4 cm. What is the total area of
+triangle R and square S, in cm?2?`,
     options: [
     `42`,
     `44`,
@@ -311,7 +229,7 @@ triangle R and square S, in cm²?`,
     tags: [],
   },
   {
-    id: 613,
+    id: 360,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -335,7 +253,7 @@ has a length of 4 centimeters, a width of 9 centimeters, and a height of
     tags: ["student_produced_response"],
   },
   {
-    id: 614,
+    id: 361,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -346,10 +264,10 @@ each have a height of 50 centimeters. The radius of container A is 16
 centimeters, and the radius of container B is 25% longer than the radius of
 container A. What is the volume, in cubic centimeters, of container B?`,
     options: [
-    `16,0007`,
-    `20,000 7`,
-    `25,000z`,
-    `31,2507`
+    `16,000π`,
+    `20,000π`,
+    `25,000π`,
+    `31,250π`
   ],
     correctIndex: 1,
     explainWhy: `The correct answer is B. This question requires understanding of area and volume concepts.`,
@@ -360,13 +278,13 @@ container A. What is the volume, in cubic centimeters, of container B?`,
     tags: [],
   },
   {
-    id: 615,
+    id: 362,
     section: "math",
     module: 1,
     topic: "geometry",
     subtopic: "area_volume",
     difficulty: "medium",
-    questionText: `A circle has a circumference of 317 centimeters. What is the diameter, in centimeters, of the circle?`,
+    questionText: `A circle has a circumference of 31π centimeters. What is the diameter, in centimeters, of the circle?`,
     options: [
     `31`,
     `0`,
@@ -382,17 +300,17 @@ container A. What is the volume, in cubic centimeters, of container B?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 616,
+    id: 363,
     section: "math",
     module: 2,
     topic: "geometry",
     subtopic: "area_volume",
     difficulty: "medium",
-    questionText: `A triangular prism has a height of 8 centimeters (cm) and a volume of 216 cm®. What is the area, in cm2, of the
+    questionText: `A triangular prism has a height of 8 centimeters (cm) and a volume of 216 cm³. What is the area, in cm², of the
 base of the prism? (The volume of a triangular prism is equal to Bh, where B is the area of the base and h is the
 height of the prism.)`,
     options: [
-    `27`,
+    `2π`,
     `0`,
     `1`,
     `-1`
@@ -406,7 +324,7 @@ height of the prism.)`,
     tags: ["student_produced_response"],
   },
   {
-    id: 617,
+    id: 364,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -438,36 +356,7 @@ in centimeters?`,
     tags: [],
   },
   {
-    id: 618,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "area_volume",
-    difficulty: "medium",
-    questionText: `y
-SAE
-B D,
-x
-5 5
-A
-In the xy-plane shown, square ABCD has its diagonals on the x- and y-axes.
-What is the area, in square units, of the square?`,
-    options: [
-    `20`,
-    `25 Cc. 50`,
-    `100`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of area and volume concepts.`,
-    explainConcept: `This question tests your understanding of Area and Volume. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Area and Volume problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 619,
+    id: 365,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -490,7 +379,7 @@ centimeters. What is the height, in centimeters, of the cylinder?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 620,
+    id: 366,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -499,10 +388,10 @@ centimeters. What is the height, in centimeters, of the cylinder?`,
     questionText: `A cylinder has a diameter of 8 inches and a height of 12 inches. What is the volume, in cubic inches, of the
 cylinder?`,
     options: [
-    `167`,
-    `967`,
-    `1927`,
-    `7687`
+    `16π`,
+    `96π`,
+    `192π`,
+    `768π`
   ],
     correctIndex: 2,
     explainWhy: `The correct answer is C. This question requires understanding of area and volume concepts.`,
@@ -513,7 +402,7 @@ cylinder?`,
     tags: [],
   },
   {
-    id: 621,
+    id: 367,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -535,7 +424,7 @@ cylinder?`,
     tags: [],
   },
   {
-    id: 622,
+    id: 368,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -558,7 +447,7 @@ the triangle?`,
     tags: [],
   },
   {
-    id: 623,
+    id: 369,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -581,36 +470,7 @@ centimeters, of the triangle?`,
     tags: [],
   },
   {
-    id: 624,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "area_volume",
-    difficulty: "medium",
-    questionText: `B Cc
-R S
-12 in
-5in
-A D Q 10 in T
-Note: Figure not drawn to scale.
-Rectangles ABC'D and QRST shown are similar, where A, B, C, and D correspond to Q, R, S, and T, respectively. What
-is the length, in inches (in), of AD? [Figure described in original]`,
-    options: [
-    `60`,
-    `24`,
-    `17`,
-    `10`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of area and volume concepts.`,
-    explainConcept: `This question tests your understanding of Area and Volume. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Area and Volume problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 625,
+    id: 370,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -619,10 +479,10 @@ is the length, in inches (in), of AD? [Figure described in original]`,
     questionText: `A right circular cylinder has a height of 8 meters (m) and a base with a radius of 12 m. What is the volume, in m®, of the
 cylinder?`,
     options: [
-    `87`,
-    `207`,
-    `7687`,
-    `1,1527`
+    `8π`,
+    `20π`,
+    `768π`,
+    `1,152π`
   ],
     correctIndex: 3,
     explainWhy: `The correct answer is D. This question requires understanding of area and volume concepts.`,
@@ -633,7 +493,7 @@ cylinder?`,
     tags: [],
   },
   {
-    id: 626,
+    id: 371,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -656,31 +516,7 @@ square B. What is the value of k?`,
     tags: [],
   },
   {
-    id: 627,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "area_volume",
-    difficulty: "medium",
-    questionText: `The figure shown is a right circular cylinder with a radius of r and height of h. A second right circular cylinder (not
-shown) has a volume that is 392 times as large as the volume of the cylinder shown. Which of the following could
-represent the radius R, in terms of r, and the height H, in terms of h, of the second cylinder?`,
-    options: [
-    `R = 8r and H = 7h`,
-    `R= 8rand H = 49h c. R=7rand H = 8h`,
-    `R = 49r and H = 8h`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of area and volume concepts.`,
-    explainConcept: `This question tests your understanding of Area and Volume. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Area and Volume problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 628,
+    id: 372,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -703,7 +539,7 @@ cone is nm cm. What is the value of n?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 629,
+    id: 373,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -726,14 +562,14 @@ width of the original poster are each increased by 20%. What is the area of the 
     tags: ["student_produced_response"],
   },
   {
-    id: 630,
+    id: 374,
     section: "math",
     module: 1,
     topic: "geometry",
     subtopic: "area_volume",
     difficulty: "medium",
     questionText: `A right rectangular prism has a length of 28 centimeters (cm), a width of 15 cm, and a height of 16 cm. What is
-the surface area, in cm², of the right rectangular prism?`,
+the surface area, in cm?, of the right rectangular prism?`,
     options: [
     `2216`,
     `0`,
@@ -749,58 +585,7 @@ the surface area, in cm², of the right rectangular prism?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 631,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "area_volume",
-    difficulty: "medium",
-    questionText: `1
-
-A right circular cone has a volume of 3 iE cubic feet and a height of 9 feet.
-What is the radius, in feet, of the base of the cone?
-
-1`,
-    options: [
-    `3 1 ealZ`,
-    `3`,
-    ``,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of area and volume concepts.`,
-    explainConcept: `This question tests your understanding of Area and Volume. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Area and Volume problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 632,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "area_volume",
-    difficulty: "medium",
-    questionText: `The volume of right circular cylinder A is 22 cubic centimeters. What is the
-volume, in cubic centimeters, of a right circular cylinder with twice the
-radius and half the height of cylinder A?`,
-    options: [
-    `11`,
-    `22 Cc. 44`,
-    `66`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of area and volume concepts.`,
-    explainConcept: `This question tests your understanding of Area and Volume. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Area and Volume problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 633,
+    id: 375,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -841,7 +626,7 @@ What is the area, in square units, of the triangle formed by connecting the thre
     tags: ["student_produced_response"],
   },
   {
-    id: 634,
+    id: 376,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -865,7 +650,7 @@ DEF?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 635,
+    id: 377,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -888,7 +673,7 @@ volume, in cubic meters, of the cube?`,
     tags: [],
   },
   {
-    id: 636,
+    id: 378,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -911,55 +696,13 @@ edge of the base?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 637,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "area_volume",
-    difficulty: "medium",
-    questionText: `J
-FCC
-bf pty P| tt tt tt
-LT tT ttt eet tT TT Tt Yt
-ttt tt ti Pt tT tT tt tT
-[TT TTT Peet et tt eT
-H+ t tt tio Pt tg tt ty
-[TT ttt Pet Per tT
-FF} | 3 Zane
-[TIT tt tT Pt tt tT
-HA 64 Pt tt tt tT
-BRP 2s eee
-Pi wT] 4 P| tt tT tt Yt
-LT TTT tT eet tT tt yy ft
-Li 24 P| tt tt tt
-LT tT TT Tt eet tT tt | Yt Yt
-Pee ee.
-
--≥ -6 -4 20 °2°4°6° 8
-The line segment shown in the xy-plane represents one of the legs of a right triangle. The area of this triangle is 36./ 13
-square units. What is the length, in units, of the other leg of this triangle?`,
-    options: [
-    `12`,
-    `24`,
-    `3V13`,
-    `18V13`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of area and volume concepts.`,
-    explainConcept: `This question tests your understanding of Area and Volume. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Area and Volume problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 638,
+    id: 379,
     section: "math",
     module: 2,
     topic: "geometry",
     subtopic: "area_volume",
     difficulty: "medium",
-    questionText: `A hemisphere is half of a sphere. If a hemisphere has a radius of 27 inches, which of the following is closest to the volume,
+    questionText: `A hemisphere is half of a sphere. If a hemisphere has a radius of 2π inches, which of the following is closest to the volume,
 in cubic inches, of this hemisphere?`,
     options: [
     `1,500`,
@@ -976,7 +719,7 @@ in cubic inches, of this hemisphere?`,
     tags: [],
   },
   {
-    id: 639,
+    id: 380,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -1019,19 +762,19 @@ The three points shown define a circle. The circumference of this circle is kz, 
     tags: ["student_produced_response"],
   },
   {
-    id: 640,
+    id: 381,
     section: "math",
     module: 2,
     topic: "geometry",
     subtopic: "area_volume",
     difficulty: "hard",
-    questionText: `The circumference of the base of a right circular cylinder is 207 meters, and the height of the cylinder is 6 meters. What is
+    questionText: `The circumference of the base of a right circular cylinder is 20π meters, and the height of the cylinder is 6 meters. What is
 the volume, in cubic meters, of the cylinder?`,
     options: [
-    `607`,
-    `1207`,
-    `6007`,
-    `2,4007`
+    `60π`,
+    `120π`,
+    `600π`,
+    `2,400π`
   ],
     correctIndex: 2,
     explainWhy: `The correct answer is C. This question requires understanding of area and volume concepts.`,
@@ -1042,7 +785,7 @@ the volume, in cubic meters, of the cylinder?`,
     tags: [],
   },
   {
-    id: 641,
+    id: 382,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -1065,7 +808,7 @@ a is aconstant. What is the value of a?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 642,
+    id: 383,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -1087,36 +830,7 @@ a is aconstant. What is the value of a?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 643,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "circles",
-    difficulty: "medium",
-    questionText: `y
-"K |
-(|) a',
-sca ol
-In the xy-plane above, points P, Q, R, and T lie on the circle with center O.
-The degree measures of angles POQ@ and ROT are each 30°. What is the
-radian measure of angle QOR ?
-2`,
-    options: [
-    `6 Sr`,
-    `4 2 CG. 3 ar`,
-    `3`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of circles concepts.`,
-    explainConcept: `This question tests your understanding of Circles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Circles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 644,
+    id: 384,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -1138,30 +852,7 @@ radian measure of angle QOR ?
     tags: ["student_produced_response"],
   },
   {
-    id: 645,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "circles",
-    difficulty: "medium",
-    questionText: `In the xy-plane, the graph of the equation (a — 3)" + (y — 5)" = Qisa circle. The point (6, c), where cis a constant, lies
-on this circle. What is the value of c?`,
-    options: [
-    `5`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 5. This is a student-produced response question testing circles.`,
-    explainConcept: `This question tests your understanding of Circles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Circles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 646,
+    id: 385,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -1183,52 +874,7 @@ on this circle. What is the value of c?`,
     tags: [],
   },
   {
-    id: 647,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "circles",
-    difficulty: "medium",
-    questionText: `z?+58≤+y² =0
-In the xy-plane, the graph of the given equation is a circle. What are the coordinates (2, y) of the center of the circle?`,
-    options: [
-    `(0, 29)`,
-    `(0, —29)`,
-    `(29, 0)`,
-    `( — 29,0)`
-  ],
-    correctIndex: 3,
-    explainWhy: `The correct answer is D. This question requires understanding of circles concepts.`,
-    explainConcept: `This question tests your understanding of Circles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Circles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 648,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "circles",
-    difficulty: "medium",
-    questionText: `What is the center of the circle in the xy-plane defined by the equation (x — 1) +(y+ 7)² =1?`,
-    options: [
-    `( — 1, —7)`,
-    `(— 1,7) c. (1, —7)`,
-    `(1,7)`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of circles concepts.`,
-    explainConcept: `This question tests your understanding of Circles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Circles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 649,
+    id: 386,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -1256,31 +902,7 @@ x = 100. What is the length of arc ABE ?`,
     tags: [],
   },
   {
-    id: 650,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "circles",
-    difficulty: "medium",
-    questionText: `xX°+20x +y*+ 16y = —20
-The equation above defines a circle in the xy-plane. What are the
-coordinates of the center of the circle?`,
-    options: [
-    `(—20,-16)`,
-    `(-10,-8) c. (10,8) b. (20,16)`,
-    ``,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of circles concepts.`,
-    explainConcept: `This question tests your understanding of Circles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Circles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 651,
+    id: 387,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -1294,8 +916,8 @@ If the length of oc is 18, what is the length of arc AB,`,
     options: [
     `970`,
     `1270`,
-    `157`,
-    `187`
+    `15π`,
+    `18π`
   ],
     correctIndex: 1,
     explainWhy: `The correct answer is B. This question requires understanding of circles concepts.`,
@@ -1306,76 +928,7 @@ If the length of oc is 18, what is the length of arc AB,`,
     tags: [],
   },
   {
-    id: 652,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "circles",
-    difficulty: "medium",
-    questionText: `The equation (x + 6)² +(y+ 3) = 121 defines a circle in the
-xy-plane. What is the radius of the circle?`,
-    options: [
-    `11`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 11. This is a student-produced response question testing circles.`,
-    explainConcept: `This question tests your understanding of Circles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Circles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 653,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "circles",
-    difficulty: "medium",
-    questionText: `A circle in the xy-plane has its center at (—4, —6). Line k is tangent to this circle at the point (—7, —7). What is
-the slope of line k?`,
-    options: [
-    `—3`,
-    `-F`,
-    `4`,
-    `3`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of circles concepts.`,
-    explainConcept: `This question tests your understanding of Circles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Circles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 654,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "circles",
-    difficulty: "medium",
-    questionText: `A circle in the xy-plane has its center at (—5, 2) and has a radius of 9. An equation of this circle is
-ge + y² + ax + by + c = 0, where a, b, and care constants. What is the value of c?`,
-    options: [
-    `-52`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is -52. This is a student-produced response question testing circles.`,
-    explainConcept: `This question tests your understanding of Circles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Circles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 655,
+    id: 388,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -1399,31 +952,7 @@ What fraction of the circumference of the circle is the length of arc AB ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 656,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "circles",
-    difficulty: "medium",
-    questionText: `Circle A in the xy-plane has the equation (x + 5)² +(y- 5) = 4. Circle B has the same center as circle A. The
-radius of circle B is two times the radius of circle A. The equation defining circle B in the xy-plane is
-(a + 5)" + (y—5)² = k, where kis a constant. What is the value of k?`,
-    options: [
-    `16`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 16. This is a student-produced response question testing circles.`,
-    explainConcept: `This question tests your understanding of Circles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Circles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 657,
+    id: 389,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -1446,31 +975,7 @@ its associated angle ROS?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 658,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "circles",
-    difficulty: "medium",
-    questionText: `8a² + 112px + 8y² — 64py = —448p²
-In the xy-plane, the graph of the given equation is a circle. The length of the radius of
-the circle is np, where n and p are positive constants. What is the value of n?`,
-    options: [
-    `3`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 3. This is a student-produced response question testing circles.`,
-    explainConcept: `This question tests your understanding of Circles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Circles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 659,
+    id: 390,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -1509,8 +1014,8 @@ Pe
 =≥_ 1-6-4 3, +2} 4 6 8.
 oa
 
-Circle A shown is defined by the equation 2? + (y— 6)² = 7. Circle B (not shown) has the same radius but is translated 96
-units to the right. If the equation of circle B is (x — h)² +(y- k)² = a, where h, k, and a are constants, what is the value
+Circle A shown is defined by the equation 2? + (y— 6)? = 7. Circle B (not shown) has the same radius but is translated 96
+units to the right. If the equation of circle B is (x — h)? +(y- k)? = a, where h, k, and a are constants, what is the value
 of 4a?`,
     options: [
     `28`,
@@ -1527,29 +1032,7 @@ of 4a?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 660,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "circles",
-    difficulty: "hard",
-    questionText: `A circle in the xy-plane has its center at (16, 17) and has a radius of 7&. Which equation represents this circle?`,
-    options: [
-    `(a — 16)" + (y— 17)² = 49k`,
-    `(a — 16)" + (y—17)² = 49k²`,
-    `(x — 16)² + (y—17)² = 7k`,
-    `(w — 16)" + (y—17)² = 7k²`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of circles concepts.`,
-    explainConcept: `This question tests your understanding of Circles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Circles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
-  },
-  {
-    id: 661,
+    id: 391,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -1573,84 +1056,7 @@ of 67°. What is the value of x ?`,
     tags: [],
   },
   {
-    id: 662,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "easy",
-    questionText: `m
-Note: Figure not drawn to scale.
-
-In the figure above, lines # and m are parallel, y=20, and
-z =60. What is the value of x ? [Figure described in original]`,
-    options: [
-    `120`,
-    `100 Cc. 90`,
-    `80`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 663,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "easy",
-    questionText: `InAXYZ, the measure of ZX is 24° and the measure of ZY is 98°. What is the measure of ZZ?`,
-    options: [
-    `58°`,
-    `74° Cc. 122°`,
-    `212°`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 664,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "easy",
-    questionText: `t
-m
-134°
-~ n
-w
-
-Note: Figure not drawn to scale.
-In the figure, line ™ is parallel to line n. What is the value of w? [Figure described in original]`,
-    options: [
-    `13`,
-    `34`,
-    `66`,
-    `134`
-  ],
-    correctIndex: 3,
-    explainWhy: `The correct answer is D. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 665,
+    id: 392,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -1676,44 +1082,13 @@ in feet, of the cherry tree?`,
     tags: [],
   },
   {
-    id: 666,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "easy",
-    questionText: `B
-\\
-C 4
-a y
-A
-40°
-E
-Note: Figure not drawn to scale.
-In the figure above, AD intersects BE at C. If
-x = 100, what is the value of y ? [Figure described in original]`,
-    options: [
-    `100`,
-    `90 Cc. 80`,
-    `60`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 667,
+    id: 393,
     section: "math",
     module: 1,
     topic: "geometry",
     subtopic: "lines_angles_triangles",
     difficulty: "easy",
-    questionText: `In the triangle above, a=45. What
+    questionText: `In the triangle above, @=45. What
 is the value of b ?`,
     options: [
     `52`,
@@ -1730,252 +1105,7 @@ is the value of b ?`,
     tags: [],
   },
   {
-    id: 668,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "easy",
-    questionText: `ye
-
-Note: Figure not drawn to scale.
-In the figure, three lines intersect at point P. If x =65 and
-y=75, what is the value of z ? [Figure described in original]`,
-    options: [
-    `140`,
-    `80 Cc. 40`,
-    `20`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 669,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "easy",
-    questionText: `aaa. Ll
-a. e
-ae k
-Note: Figure not drawn to scale.
-
-In the figure above, lines # and kK are parallel.
-
-What is the value of a ? [Figure described in original]`,
-    options: [
-    `26`,
-    `64 Cc. 116`,
-    `154`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 670,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `rr Se) er re
-ay rT a
-Note: Figure not drawn to scale.
-In the figure above, lines m and n are parallel.
-What is the value of b ? [Figure described in original]`,
-    options: [
-    `40`,
-    `50`,
-    `65`,
-    `80`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 671,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `A two sides of a triangle are extended. What is the value of x ?`,
-    options: [
-    `110`,
-    `120 Cc. 130`,
-    `140`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 672,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `t
-x 133° J
-k
-Note: Figure not drawn to scale.
-In the figure, line 7 is parallel to line &. What is the value of x? [Figure described in original]`,
-    options: [
-    `47`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 47. This is a student-produced response question testing lines, angles, and triangles.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
-  },
-  {
-    id: 673,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `x Y
-A B
-C
-Z,
-Note: Figures not drawn to scale.
-For the triangles shown, triangle ABC is dilated by a scale factor of 3 to obtain triangle XY Z, where d = 16. What is the
-measure, in degrees, of angle X?`,
-    options: [
-    `20`,
-    `57 Cc. 60`,
-    `63`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 674,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `C
-uw .
-° J
-x
-40°
-k
-y 2
-Note: Figure not drawn to scale.
-In the figure shown, line @ intersects lines 7 and k. Which additional piece of information is sufficient to prove that lines 7 and
-k are parallel? [Figure described in original]`,
-    options: [
-    `w = 40`,
-    `z = 140 c.y = 40`,
-    `z = 140`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 675,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `Cc D
-
-a
-
-A E —
-
-In the figure above, AF, BE, and cD are parallel. Points B and E lie on AC
-and FD, respectively. If AB =9, BC =18.5, and FE =8.5, what is the
-length of ED, to the nearest tenth?`,
-    options: [
-    `16.8`,
-    `17.5`,
-    `18.4`,
-    `19.6`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 676,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `E
-|
-Triangles ABC and DEF are shown above. Which of the
-BC
-following is equal to the ratio AB ?
-DE`,
-    options: [
-    `DF DE`,
-    `DE DF`,
-    `EF EF`,
-    `DE`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 677,
+    id: 394,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -1998,7 +1128,7 @@ the degree symbol when entering your answer.)`,
     tags: ["student_produced_response"],
   },
   {
-    id: 678,
+    id: 395,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -2030,38 +1160,7 @@ measure of angle BAC is 20°, what is the measure, in degrees, of angle EDF
     tags: ["student_produced_response"],
   },
   {
-    id: 679,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `Cc
-
-Zo
-
-A E
-
-Note: Figure not drawn to scale.
-In the figure above, segments AE and BD are parallel. If angle BDC
-measures 58° and angle ACE measures 62°, what is the measure of angle
-CAE ? [Figure described in original]`,
-    options: [
-    `58°`,
-    `60°`,
-    `62°`,
-    `120°`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 680,
+    id: 396,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -2084,36 +1183,7 @@ A is 69°. What is the measure, in degrees, of angle F'?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 681,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `S R Q
-
-oS
-
-Note: Figure not drawn to scale.
-
-In triangle POR, QR is extended to point S. The measure of 7PQR is 132°, and the measure of 7PRS is 163°. What is
-the measure of ZQPR? [Figure described in original]`,
-    options: [
-    `48°`,
-    `31°`,
-    `24°`,
-    `17°`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 682,
+    id: 397,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -2137,228 +1207,7 @@ whether triangle DEF is similar to triangle RST?`,
     tags: [],
   },
   {
-    id: 683,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `C
-Va
-A E
-
-Note: Figure not drawn to scale.
-
-In the figure shown, triangle C_A Fis similar to triangle CBD. The measure of angle CBD is 57°, and AE = 26(BD).
-What is the measure of angle CAE? [Figure described in original]`,
-    options: [
-    `(26 - 57)°`,
-    `(26 + 57)°`,
-    `57°`,
-    `26°`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 684,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `B
-D E A
-Note: Figure not drawn to scale.
-In the figure, AC = C'D. The measure of angle EBC is 45°, and the measure of angle AC'D is 104°. What is
-the value of °? [Figure described in original]`,
-    options: [
-    `83`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 83. This is a student-produced response question testing lines, angles, and triangles.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
-  },
-  {
-    id: 685,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `P Q R S T V
-W
-xX
-U
-Note: Figure not drawn to scale.
-In the figure shown, points Q, R, S, and T lie on line segment PV, and line segment RU intersects line segment
-SX at point W. The measure of ZSQX is 48°, the measure of 7S XQ is 86", the measure of ZSWU is 85°,
-and the measure of ZVTU is 162°. What is the measure, in degrees, of ZTU R? [Figure described in original]`,
-    options: [
-    `123`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 123. This is a student-produced response question testing lines, angles, and triangles.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
-  },
-  {
-    id: 686,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `Intersecting lines r, s, and tare shown below.
-s
-106°
-x
-t
-What is the value of x ?`,
-    options: [
-    `97`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 97. This is a student-produced response question testing lines, angles, and triangles.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 687,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `N Q
-Py, as R
-In the figure above, MQ and NR intersect at point P, WP = QP, and
-Ad = PR. What is the measure, in degrees, of " QNR ? (Disregard the
-degree symbol when gridding your answer.)`,
-    options: [
-    `30`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 30. This is a student-produced response question testing lines, angles, and triangles.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 688,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `aaa
-PAN
-M é P
-
-In the figure above, what is the
-
-length of NQ ?`,
-    options: [
-    `2.2`,
-    `2.3`,
-    `2.4 D: 2.5`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 689,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `* aan ——— —
-
-OA
-R U
-
-In the figure above, RT = TL.
-
-What is the value of x ?`,
-    options: [
-    `72`,
-    `66 Cc. 64`,
-    `58`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of lines, angles, and triangles concepts.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 690,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `B
-rae
-AS
-Note: Figure not drawn to scale.
-The area of triangle ABC above is at least 48 but no more than 60. If y is an
-integer, what is one possible value of x ? [Figure described in original]`,
-    options: [
-    `10/3,`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 10/3,. This is a student-produced response question testing lines, angles, and triangles.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
-  },
-  {
-    id: 691,
+    id: 398,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -2382,120 +1231,7 @@ the length of AT, in units?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 692,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `a S
-a
-v°
-
-q
-t fo}
-
-w
-
-w°
-Note: Figure not drawn to scale.
-
-In the figure, parallel lines g and t are intersected by lines r and s. If a = 43 and b = 122, what is the value of w? [Figure described in original]`,
-    options: [
-    `50.5`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 50.5. This is a student-produced response question testing lines, angles, and triangles.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
-  },
-  {
-    id: 693,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `B
-yAN
-Note: Figure not drawn to scale.
-In the figure above, BN} =6≥ and AN =6.
-What is the length of DC > [Figure described in original]`,
-    options: [
-    `4.5`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 4.5. This is a student-produced response question testing lines, angles, and triangles.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
-  },
-  {
-    id: 694,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `W Y
-° \\
-Z
-x
-Note: Figure not drawn to scale.
-In the figure shown, WZ and XY intersect at point Q. YQ = 63, WQ = 70,WX = 60, and XQ = 120. What is the
-length of YZ? [Figure described in original]`,
-    options: [
-    `54`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 54. This is a student-produced response question testing lines, angles, and triangles.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
-  },
-  {
-    id: 695,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `Ss
-U V R
-Note: Figure not drawn to scale.
-In the figure, RT' = TU, the measure of angle VST is 29°, and the measure of angle RV'S is 41°. What is the value of x? [Figure described in original]`,
-    options: [
-    `156`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 156. This is a student-produced response question testing lines, angles, and triangles.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
-  },
-  {
-    id: 696,
+    id: 399,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -2518,32 +1254,7 @@ additional piece of information is sufficient to prove that triangle LM N is sim
     tags: [],
   },
   {
-    id: 697,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "lines_angles_triangles",
-    difficulty: "medium",
-    questionText: `B
-A D Cc
-Note: Figure not drawn to scale.
-In the figure shown, AD = 424 and AB = Sar, What is the length of DC? [Figure described in original]`,
-    options: [
-    `3`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 3. This is a student-produced response question testing lines, angles, and triangles.`,
-    explainConcept: `This question tests your understanding of Lines, Angles, and Triangles. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Lines, Angles, and Triangles problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
-  },
-  {
-    id: 698,
+    id: 400,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -2567,163 +1278,7 @@ equivalent to k, for all values of x?`,
     tags: [],
   },
   {
-    id: 699,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "easy",
-    questionText: `| DN
-7
-Note: Figure not drawn to scale.
-
-The lengths of the legs of a right triangle are shown. Which of the following is closest to the length of the triangle's
-hypotenuse? [Figure described in original]`,
-    options: [
-    `3.2`,
-    `5`,
-    `7.6`,
-    `20`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of right triangles and trigonometry concepts.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 700,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "easy",
-    questionText: `45°
-24
-45° B
-X
-Note: Figure not drawn to scale.
-In the triangle shown, what is the value of 2? [Figure described in original]`,
-    options: [
-    `24`,
-    `45`,
-    `48`,
-    `69`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of right triangles and trigonometry concepts.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 701,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "easy",
-    questionText: `Triangle ABC is similar to triangle DEF', where angle A corresponds to angle D, and angles C and F are right angles. If
-cos B= x: what is the value of cos π7?`,
-    options: [
-    `oy`,
-    `35 c. bd. 2`,
-    ``,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of right triangles and trigonometry concepts.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 702,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "easy",
-    questionText: `G
-9
-6
-Note: Figure not drawn to scale.
-In the right triangle shown, which of the following is closest to the value of c? [Figure described in original]`,
-    options: [
-    `7.5`,
-    `10.8 c.15`,
-    `58.5`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of right triangles and trigonometry concepts.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 703,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "medium",
-    questionText: `B
-A C
-21
-In the figure above, what is the
-value of tan(Ay?
-20`,
-    options: [
-    `29 21`,
-    `29 20 Cc. 21 21`,
-    `20`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of right triangles and trigonometry concepts.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 704,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "medium",
-    questionText: `21
-6
-a
-Note: Figure not drawn to scale.
-For the triangle shown, which expression represents the value of a? [Figure described in original]`,
-    options: [
-    `21² — 6²`,
-    `217 — 6² Cc. /21—6`,
-    `21-6`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of right triangles and trigonometry concepts.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 705,
+    id: 401,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -2746,7 +1301,7 @@ hypotenuse, in centimeters?`,
     tags: [],
   },
   {
-    id: 706,
+    id: 402,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -2769,58 +1324,7 @@ length of the rectangle's longer side?`,
     tags: [],
   },
   {
-    id: 707,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "medium",
-    questionText: `Q
-
-pu R
-In the right triangle shown above, what
-is the length of PQ ?`,
-    options: [
-    `4`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 4. This is a student-produced response question testing right triangles and trigonometry.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 708,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "medium",
-    questionText: `a
-32
-Note: Figure not drawn to scale.
-In the triangle shown, what is the value of 2? [Figure described in original]`,
-    options: [
-    `45`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 45. This is a student-produced response question testing right triangles and trigonometry.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
-  },
-  {
-    id: 709,
+    id: 403,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -2843,33 +1347,7 @@ AB?`,
     tags: [],
   },
   {
-    id: 710,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "medium",
-    questionText: `x.
-/ DN
-Z 35 Y
-Note: Figure not drawn to scale.
-Triangle XY Z shown is a right triangle. Which of the following has the same value as sin X? [Figure described in original]`,
-    options: [
-    `tan X`,
-    `tan Y`,
-    `cos X`,
-    `cos Y`
-  ],
-    correctIndex: 3,
-    explainWhy: `The correct answer is D. This question requires understanding of right triangles and trigonometry concepts.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["has_figure"],
-  },
-  {
-    id: 711,
+    id: 404,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -2896,56 +1374,7 @@ What is the length of side BC,`,
     tags: ["student_produced_response"],
   },
   {
-    id: 712,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "medium",
-    questionText: `Note: Figure not drawn to scale.
-In the triangle shown, what is the value of sin 2°? [Figure described in original]`,
-    options: [
-    `16/23`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 16/23. This is a student-produced response question testing right triangles and trigonometry.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response", "has_figure"],
-  },
-  {
-    id: 713,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "medium",
-    questionText: `B
-A c
-3
-In the figure above, fan 4.1 BC =15and
-DA =4, what is the length of DE ?`,
-    options: [
-    `6`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 6. This is a student-produced response question testing right triangles and trigonometry.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 714,
+    id: 405,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -2971,7 +1400,7 @@ value of cos("RSW)-sin(ZWST) ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 715,
+    id: 406,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -2994,7 +1423,7 @@ length of the rectangle's longer side?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 716,
+    id: 407,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -3017,7 +1446,7 @@ angles. The length of AB is 2.9 times the length of DE. If tan A = x, what is th
     tags: ["student_produced_response"],
   },
   {
-    id: 717,
+    id: 408,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -3040,32 +1469,7 @@ angle F'. Angles C and F are right angles. If tan(A) = =, what is the value of t
     tags: ["student_produced_response"],
   },
   {
-    id: 718,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "medium",
-    questionText: `Be
-Ca A
-In the figure above, BD is parallel to AE.
-What is the length of ce ?`,
-    options: [
-    `30`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 30. This is a student-produced response question testing right triangles and trigonometry.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 719,
+    id: 409,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -3088,30 +1492,7 @@ What is the length of ce ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 720,
-    section: "math",
-    module: 1,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "medium",
-    questionText: `An isosceles right triangle has a perimeter of 94 + 94/2 inches. What is the length, in inches, of one leg of this
-triangle?`,
-    options: [
-    `47`,
-    `47/2 Cc. 94`,
-    `94/2`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of right triangles and trigonometry concepts.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 721,
+    id: 410,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -3133,7 +1514,7 @@ triangle?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 722,
+    id: 411,
     section: "math",
     module: 2,
     topic: "geometry",
@@ -3153,31 +1534,5 @@ triangle?`,
     isCalculatorAllowed: true,
     estTimeSec: 150,
     tags: [],
-  },
-  {
-    id: 723,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "right_triangles_trig",
-    difficulty: "hard",
-    questionText: `R
-53 )
-T S
-Note: Figure not drawn to scale.
-In the triangle shown, RS' = 105. What is the value of sin R? [Figure described in original]`,
-    options: [
-    `52/53`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 52/53. This is a student-produced response question testing right triangles and trigonometry.`,
-    explainConcept: `This question tests your understanding of Right Triangles and Trigonometry. Geometry and Trigonometry is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Right Triangles and Trigonometry problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["student_produced_response", "has_figure"],
   }
 ];

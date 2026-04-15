@@ -2,6 +2,7 @@ import { useRef, useEffect } from "react";
 import type { Question } from "@/data/questions";
 import { topicDisplayNames } from "@/data/questions";
 import { cn } from "@/react-app/lib/utils";
+import { MathText } from "@/react-app/components/ui/MathText";
 
 interface QuestionCardProps {
   question: Question;
@@ -53,19 +54,19 @@ export function QuestionCard({
       {question.passageText && (
         <div className="px-4 sm:px-6 py-3 sm:py-4 bg-muted/30 border-b border-border">
           <p className="text-foreground leading-relaxed text-sm sm:text-[15px]">
-            {question.passageText}
+            <MathText text={question.passageText} />
           </p>
         </div>
       )}
 
       {/* Question Text */}
       <div className="px-4 sm:px-6 py-4 sm:py-5">
-        <p 
+        <p
           ref={questionTextRef}
           tabIndex={-1}
           className="text-base sm:text-lg text-foreground leading-relaxed font-medium outline-none"
         >
-          {question.questionText}
+          <MathText text={question.questionText} />
         </p>
       </div>
 
@@ -162,7 +163,7 @@ function AnswerChoice({ letter, text, state, isSelected, onClick, disabled }: An
         state === "correct" && "text-[hsl(122,47%,33%)] font-medium",
         state === "incorrect" && "text-[hsl(0,69%,47%)]"
       )}>
-        {text}
+        <MathText text={text} />
       </span>
     </button>
   );

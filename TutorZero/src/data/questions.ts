@@ -39,10 +39,22 @@ export interface Question {
 function garbageDensity(text: string): number {
   if (!text || text.length === 0) return 1;
   // Characters that indicate OCR corruption when clustered
-  const garbageChars = /[¥€®™~°@#]/g;
+  const garbageChars = /[¥€®™~°@#£§©¢«»ﬁﬂ]/g;
   const matches = text.match(garbageChars);
   return matches ? matches.length / text.length : 0;
 }
+
+// Detect merged answer options (OCR failed to separate A/B/C/D)
+const MERGED_OPTION_PATTERN = /\s+[B-Hb-h][\.\):\s]\s*\S/;
+
+// Detect untagged figure/graph/table references in question text
+const FIGURE_PATTERN = /figure\s+(shows|shown|above|below|not drawn)|graph\s+(shows|shown|above|below|of)|diagram\s+(shows|shown)|the\s+graph\s+of|shown\s+(above|below)|\[Figure\s+described|the\s+figure\s+shown|in\s+the\s+xy-plane|the\s+table\s+(shows|summarizes|above|below)|the\s+scatterplot|the\s+bar\s+graph|the\s+line\s+graph|the\s+histogram/i;
+
+// Detect OCR artifacts from graph axis rendering
+const GRAPH_ARTIFACT_PATTERN = /SERRE|NTT\s*ETT|TTT\s*ttt|COCO|Piaf|eds¢ey|dake|Tei\s+Td/;
+
+// Detect garbled math OCR that makes questions unintelligible
+const GARBLED_MATH_PATTERN = /\b=o\b|~~"|whatis\b|\bPn\s*[—–-]|\bGy\s*[+—–-]/;
 
 // Filter out questions with blank options, garbled text, missing figures, or dummy SPR options
 function isUsableQuestion(q: Question): boolean {
@@ -50,11 +62,26 @@ function isUsableQuestion(q: Question): boolean {
   const nonEmptyOptions = q.options.filter(opt => opt.trim() !== "");
   if (nonEmptyOptions.length < 4) return false;
 
-  // Must have non-empty question text
-  if (!q.questionText || q.questionText.trim().length < 10) return false;
+  // Must have meaningful question text (raised from 10 to 25 chars)
+  if (!q.questionText || q.questionText.trim().length < 25) return false;
 
   // Exclude questions that need a figure we don't have
   if (q.tags.includes("has_figure") || q.tags.includes("figure_required")) return false;
+
+  // Exclude questions that reference figures/graphs but weren't tagged
+  if (FIGURE_PATTERN.test(q.questionText)) return false;
+  if (GRAPH_ARTIFACT_PATTERN.test(q.questionText)) return false;
+
+  // Exclude math questions with garbled OCR text patterns
+  if (q.section === "math" && GARBLED_MATH_PATTERN.test(q.questionText)) return false;
+
+  // Exclude math questions with merged answer options (OCR merged B/C/D into one string)
+  // Only apply to math — R&W options often contain species names ("E. coli") that false-positive
+  if (q.section === "math" && q.options.some(opt => opt.length > 15 && MERGED_OPTION_PATTERN.test(opt))) return false;
+
+  // Exclude questions with duplicate options (sign of OCR corruption)
+  const uniqueOptions = new Set(q.options.map(o => o.trim()).filter(o => o.length > 0));
+  if (uniqueOptions.size < q.options.filter(o => o.trim().length > 0).length) return false;
 
   // Exclude student-produced-response questions with dummy options (e.g. [answer, 0, 1, -1])
   const dummyValues = new Set(["0", "1", "-1"]);

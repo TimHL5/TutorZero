@@ -21119,7 +21119,7 @@
     "topic": "geometry",
     "subtopic": "area_volume",
     "difficulty": "easy",
-    "questionText": "The side length of a square is 55 centimeters (cm). What is the area, in cm2, of the square?",
+    "questionText": "The side length of a square is 55 centimeters (cm). What is the area, in cm², of the square?",
     "passageText": null,
     "options": [
       "110",
@@ -21167,7 +21167,7 @@
     "topic": "geometry",
     "subtopic": "area_volume",
     "difficulty": "easy",
-    "questionText": "Triangle ABC and triangle DEF are similar triangles, where AB and DE are\ncorresponding sides. If ME =2AB and the perimeter of triangle ABC is 20,\nwhat is the perimeter of triangle DEF ?",
+    "questionText": "Triangle ABC and triangle DEF are similar triangles, where AB and DE are\ncorresponding sides. If DE =2AB and the perimeter of triangle ABC is 20,\nwhat is the perimeter of triangle DEF ?",
     "passageText": null,
     "options": [
       "10",
@@ -21339,7 +21339,7 @@
     "topic": "geometry",
     "subtopic": "area_volume",
     "difficulty": "easy",
-    "questionText": "2cm\n\n6cm\nThe figure shows the lengths, in centimeters (cm), of the edges of a right\nrectangular prism. The volume V of a right rectangular prism is £ wh,\nwhere € is the length of the prism, w is the width of the prism, and h is the\nheight of the prism. What is the volume, in cubic centimeters, of the prism?",
+    "questionText": "2cm\n\n6cm\nThe figure shows the lengths, in centimeters (cm), of the edges of a right\nrectangular prism. The volume V of a right rectangular prism is £ wh,\nwhere l is the length of the prism, w is the width of the prism, and h is the\nheight of the prism. What is the volume, in cubic centimeters, of the prism?",
     "passageText": null,
     "options": [
       "36",
@@ -21686,10 +21686,10 @@
     "questionText": "A manufacturing company produces two sizes of cylindrical containers that\neach have a height of 50 centimeters. The radius of container A is 16\ncentimeters, and the radius of container B is 25% longer than the radius of\ncontainer A. What is the volume, in cubic centimeters, of container B?",
     "passageText": null,
     "options": [
-      "16,0007",
-      "20,000 7",
-      "25,000z",
-      "31,2507"
+      "16,000π",
+      "20,000π",
+      "25,000π",
+      "31,250π"
     ],
     "correctIndex": 1,
     "explainWhy": "The correct answer is B. This question requires understanding of area and volume concepts.",
@@ -21707,7 +21707,7 @@
     "topic": "geometry",
     "subtopic": "area_volume",
     "difficulty": "medium",
-    "questionText": "A circle has a circumference of 317 centimeters. What is the diameter, in centimeters, of the circle?",
+    "questionText": "A circle has a circumference of 31π centimeters. What is the diameter, in centimeters, of the circle?",
     "passageText": null,
     "options": [
       "31",
@@ -21733,10 +21733,10 @@
     "topic": "geometry",
     "subtopic": "area_volume",
     "difficulty": "medium",
-    "questionText": "A triangular prism has a height of 8 centimeters (cm) and a volume of 216 cm®. What is the area, in cm2, of the\nbase of the prism? (The volume of a triangular prism is equal to Bh, where B is the area of the base and h is the\nheight of the prism.)",
+    "questionText": "A triangular prism has a height of 8 centimeters (cm) and a volume of 216 cm³. What is the area, in cm², of the\nbase of the prism? (The volume of a triangular prism is equal to Bh, where B is the area of the base and h is the\nheight of the prism.)",
     "passageText": null,
     "options": [
-      "27",
+      "2π",
       "0",
       "1",
       "-1"
@@ -21908,10 +21908,10 @@
     "questionText": "A cylinder has a diameter of 8 inches and a height of 12 inches. What is the volume, in cubic inches, of the\ncylinder?",
     "passageText": null,
     "options": [
-      "167",
-      "967",
-      "1927",
-      "7687"
+      "16π",
+      "96π",
+      "192π",
+      "768π"
     ],
     "correctIndex": 2,
     "explainWhy": "The correct answer is C. This question requires understanding of area and volume concepts.",
@@ -22054,10 +22054,10 @@
     "questionText": "A right circular cylinder has a height of 8 meters (m) and a base with a radius of 12 m. What is the volume, in m®, of the\ncylinder?",
     "passageText": null,
     "options": [
-      "87",
-      "207",
-      "7687",
-      "1,1527"
+      "8π",
+      "20π",
+      "768π",
+      "1,152π"
     ],
     "correctIndex": 3,
     "explainWhy": "The correct answer is D. This question requires understanding of area and volume concepts.",
@@ -22447,7 +22447,7 @@
     "topic": "geometry",
     "subtopic": "area_volume",
     "difficulty": "medium",
-    "questionText": "A hemisphere is half of a sphere. If a hemisphere has a radius of 27 inches, which of the following is closest to the volume,\nin cubic inches, of this hemisphere?",
+    "questionText": "A hemisphere is half of a sphere. If a hemisphere has a radius of 2π inches, which of the following is closest to the volume,\nin cubic inches, of this hemisphere?",
     "passageText": null,
     "options": [
       "1,500",
@@ -22545,13 +22545,13 @@
     "topic": "geometry",
     "subtopic": "area_volume",
     "difficulty": "hard",
-    "questionText": "The circumference of the base of a right circular cylinder is 207 meters, and the height of the cylinder is 6 meters. What is\nthe volume, in cubic meters, of the cylinder?",
+    "questionText": "The circumference of the base of a right circular cylinder is 20π meters, and the height of the cylinder is 6 meters. What is\nthe volume, in cubic meters, of the cylinder?",
     "passageText": null,
     "options": [
-      "607",
-      "1207",
-      "6007",
-      "2,4007"
+      "60π",
+      "120π",
+      "600π",
+      "2,400π"
     ],
     "correctIndex": 2,
     "explainWhy": "The correct answer is C. This question requires understanding of area and volume concepts.",
@@ -22966,8 +22966,8 @@
     "options": [
       "970",
       "1270",
-      "157",
-      "187"
+      "15π",
+      "18π"
     ],
     "correctIndex": 1,
     "explainWhy": "The correct answer is B. This question requires understanding of circles concepts.",
@@ -62630,7 +62630,7 @@
     "topic": "geometry",
     "subtopic": "area_volume",
     "difficulty": "advanced",
-    "questionText": "Right rectangular prism X is similar to right\nrectangular prism Y. The surface area of right\nrectangular prism X is 58 square centimeters cm2\n(\n),\nand the surface area of right rectangular prism Y\nis 1,450 cm2. The volume of right rectangular\nprism Y is 1,250 cubic centimeters cm3\n(\n). What is the\nsum of the volumes, in cm3, of right rectangular\nprism X and right rectangular prism Y?",
+    "questionText": "Right rectangular prism X is similar to right\nrectangular prism Y. The surface area of right\nrectangular prism X is 58 square centimeters cm²\n(\n),\nand the surface area of right rectangular prism Y\nis 1,450 cm². The volume of right rectangular\nprism Y is 1,250 cubic centimeters cm3\n(\n). What is the\nsum of the volumes, in cm3, of right rectangular\nprism X and right rectangular prism Y?",
     "passageText": null,
     "options": [
       "1260",

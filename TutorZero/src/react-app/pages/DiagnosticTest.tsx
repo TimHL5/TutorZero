@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { getDiagnosticQuestions, type Question, topicDisplayNames } from "@/data/questions";
 import { cn } from "@/react-app/lib/utils";
+import { MathText } from "@/react-app/components/ui/MathText";
 
 type ConfidenceLevel = "guessing" | "somewhat" | "confident";
 
@@ -152,7 +153,7 @@ export default function DiagnosticTest() {
           {/* Question */}
           <div className="mb-8">
             <p className="text-lg font-medium text-tz-navy leading-relaxed">
-              {currentQuestion.questionText}
+              <MathText text={currentQuestion.questionText} />
             </p>
           </div>
 
@@ -185,7 +186,7 @@ export default function DiagnosticTest() {
                     "text-body",
                     isSelected ? "text-tz-navy" : "text-tz-gray-600"
                   )}>
-                    {option}
+                    <MathText text={option} />
                   </span>
                 </button>
               );

@@ -4,6 +4,7 @@ import { Button } from "@/react-app/components/ui/button";
 import { QuestionCard } from "@/react-app/components/question/QuestionCard";
 import { FeedbackCard } from "@/react-app/components/feedback/FeedbackCard";
 import { topicDisplayNames, type Question } from "@/data/questions";
+import { MathText } from "@/react-app/components/ui/MathText";
 import { 
   Trophy, 
   Target, 
@@ -406,7 +407,7 @@ export default function PracticeSummary() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm text-foreground line-clamp-1 mb-1">
-                        {attempt.question.questionText}
+                        <MathText text={attempt.question.questionText} />
                       </p>
                       <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
                         <span className="bg-muted px-2 py-0.5 rounded">

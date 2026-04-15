@@ -3,6 +3,7 @@ import { CheckCircle, XCircle, Lightbulb, BookOpen, ArrowRight, ChevronDown, Spa
 import type { Question } from "@/data/questions";
 import { cn } from "@/react-app/lib/utils";
 import { ExplanationChat } from "./ExplanationChat";
+import { MathText } from "@/react-app/components/ui/MathText";
 import { ChatMarkdown } from "@/react-app/components/ui/ChatMarkdown";
 import { useAuth } from "@/react-app/lib/AuthProvider";
 import { Link } from "react-router";
@@ -363,7 +364,7 @@ function ExpandableFeedbackLayer({
             />
           </div>
           <p className={cn("text-xs sm:text-sm leading-relaxed", styles.content)}>
-            {summary}
+            <MathText text={summary} />
           </p>
         </div>
       </button>
@@ -379,7 +380,7 @@ function ExpandableFeedbackLayer({
               "border-t pt-3",
               styles.border
             )}>
-              {detailedContent}
+              <MathText text={detailedContent} />
             </div>
           </div>
         </div>

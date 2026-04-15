@@ -2,7 +2,7 @@ import type { Question } from "./questions";
 
 export const practiceTest10Questions: Question[] = [
   {
-    id: 2137,
+    id: 1768,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -32,7 +32,7 @@ their communities.`,
     tags: [],
   },
   {
-    id: 2138,
+    id: 1769,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -62,7 +62,7 @@ Great Migration.`,
     tags: [],
   },
   {
-    id: 2139,
+    id: 1770,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -91,7 +91,7 @@ future research missions to the moon.`,
     tags: [],
   },
   {
-    id: 2140,
+    id: 1771,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -121,7 +121,7 @@ to flower.`,
     tags: [],
   },
   {
-    id: 2141,
+    id: 1772,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -149,7 +149,7 @@ destroyed by her successors.`,
     tags: [],
   },
   {
-    id: 2142,
+    id: 1773,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -183,7 +183,7 @@ from earlier kinds of tap dance.`,
     tags: [],
   },
   {
-    id: 2143,
+    id: 1774,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -219,7 +219,7 @@ to the NCP.`,
     tags: [],
   },
   {
-    id: 2144,
+    id: 1775,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -258,7 +258,7 @@ d and [he] wanted to follow them. End referenced Content`,
     tags: [],
   },
   {
-    id: 2145,
+    id: 1776,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -293,7 +293,7 @@ evolutionary state to be firmly fixed.`,
     tags: [],
   },
   {
-    id: 2146,
+    id: 1777,
     section: "reading_writing",
     module: 1,
     topic: "craft_structure",
@@ -337,7 +337,7 @@ on Earth that contain those minerals.`,
     tags: [],
   },
   {
-    id: 2147,
+    id: 1778,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -368,7 +368,7 @@ did feel scared, but also excited.
     tags: [],
   },
   {
-    id: 2148,
+    id: 1779,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -404,7 +404,7 @@ revelation. He had never felt it before.`,
     tags: [],
   },
   {
-    id: 2149,
+    id: 1780,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -439,7 +439,7 @@ male and female gender roles.`,
     tags: [],
   },
   {
-    id: 2150,
+    id: 1781,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -466,7 +466,7 @@ surroundings:______`,
     tags: [],
   },
   {
-    id: 2151,
+    id: 1782,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -496,7 +496,7 @@ House's published authors.`,
     tags: [],
   },
   {
-    id: 2152,
+    id: 1783,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -531,48 +531,7 @@ and goats were allowed to roam farther away.`,
     tags: [],
   },
   {
-    id: 2153,
-    section: "reading_writing",
-    module: 1,
-    topic: "information_ideas",
-    subtopic: "evidence",
-    difficulty: "medium",
-    questionText: `type A flies
-type AB flies
-type B flies
-In a study of the evolution of DptA and
-DptB—Diptericin genes encoding antimicrobial
-peptides that combat pathogens and foster beneficial
-microbes in fruit flies (Drosophila)—researchers
-assessed Drosophila melanogaster resistance to
-pathogenic infections by Providencia rettgeri and
-Acetobacter sicerae, bacteria common in the flies'
-environments. Subjects included flies identified by
-mutations silencing DptA, DptB, or both DptA and
-DptB (termed types A, B, and AB, respectively). In
-conjunction with the observation that resistance to
-P. rettgeri correlates with DptA activity but is not
-significantly affected by DptB activity, data in the
-graph of survival rates post–A. sicerae infection
-suggest thatblank
-Which completion of the text is best supported by
-data in the graph?`,
-    options: [
-    `DptA confers defense against A. sicerae regardless of the presence of DptB.`,
-    `DptB protects against only one bacteria species, whereas DptA protects against multiple species.`,
-    `DptB may have developed as a specific defense against A. sicerae.`,
-    `defense against A. sicerae is strongest when both DptA and DptB are present.`
-  ],
-    correctIndex: 2,
-    explainWhy: `Choice C is the best answer because it most logically completes the text based on supporting data in the graph. The text indicates that in the fly D. melanogaster, DptA and DptB are genes that encode peptides that both fight pathogens and promote beneficial microbes. Researchers tested D. melanogaster's resistance to P. rettgeri and A. sicerae bacteria based on which variation of the peptide- encoding gene the flies exhibit: DptA silenced (referred to as type A), DptB silenced (type B), or bo...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: false,
-    estTimeSec: 90,
-    tags: ["has_figure"],
-  },
-  {
-    id: 2154,
+    id: 1784,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -603,7 +562,7 @@ consequentlyblank`,
     tags: [],
   },
   {
-    id: 2155,
+    id: 1785,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -638,7 +597,7 @@ altered ones did not, which suggests that ______`,
     tags: [],
   },
   {
-    id: 2156,
+    id: 1786,
     section: "reading_writing",
     module: 1,
     topic: "expression",
@@ -667,7 +626,7 @@ marginalia, can be a gold mine to literary scholars.`,
     tags: [],
   },
   {
-    id: 2157,
+    id: 1787,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -699,7 +658,7 @@ animals in any streams that have not frozen over.`,
     tags: [],
   },
   {
-    id: 2158,
+    id: 1788,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -728,7 +687,7 @@ handle eight bits of data at once.)`,
     tags: ["has_figure"],
   },
   {
-    id: 2159,
+    id: 1789,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -758,7 +717,7 @@ evoke tastes.`,
     tags: [],
   },
   {
-    id: 2160,
+    id: 1790,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -788,7 +747,7 @@ carbon dioxide) are converted into their products
     tags: [],
   },
   {
-    id: 2161,
+    id: 1791,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -818,7 +777,7 @@ mother.`,
     tags: [],
   },
   {
-    id: 2162,
+    id: 1792,
     section: "reading_writing",
     module: 1,
     topic: "conventions",
@@ -851,7 +810,7 @@ and logically autonomous, resulting in a poem with
     tags: [],
   },
   {
-    id: 2163,
+    id: 1793,
     section: "reading_writing",
     module: 1,
     topic: "expression",
@@ -879,7 +838,7 @@ ten years during extended periods of drought.`,
     tags: [],
   },
   {
-    id: 2164,
+    id: 1794,
     section: "reading_writing",
     module: 1,
     topic: "expression",
@@ -910,7 +869,7 @@ the award.`,
     tags: [],
   },
   {
-    id: 2165,
+    id: 1795,
     section: "reading_writing",
     module: 1,
     topic: "expression",
@@ -947,7 +906,7 @@ and its conclusions.`,
     tags: [],
   },
   {
-    id: 2166,
+    id: 1796,
     section: "reading_writing",
     module: 1,
     topic: "expression",
@@ -982,7 +941,7 @@ the two portraits.`,
     tags: [],
   },
   {
-    id: 2167,
+    id: 1797,
     section: "reading_writing",
     module: 1,
     topic: "information_ideas",
@@ -1022,7 +981,7 @@ from the notes to accomplish this goal?`,
     tags: [],
   },
   {
-    id: 2168,
+    id: 1798,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1054,7 +1013,7 @@ write it.`,
     tags: [],
   },
   {
-    id: 2169,
+    id: 1799,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1085,7 +1044,7 @@ breathing.`,
     tags: [],
   },
   {
-    id: 2170,
+    id: 1800,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1116,7 +1075,7 @@ long overland journey.`,
     tags: [],
   },
   {
-    id: 2171,
+    id: 1801,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1148,7 +1107,7 @@ to their nonworking parents.`,
     tags: [],
   },
   {
-    id: 2172,
+    id: 1802,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1180,7 +1139,7 @@ political polarization to problematic levels.`,
     tags: [],
   },
   {
-    id: 2173,
+    id: 1803,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1217,7 +1176,7 @@ He was almost twelve.
     tags: [],
   },
   {
-    id: 2174,
+    id: 1804,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1252,7 +1211,7 @@ you mustn't stay.`,
     tags: [],
   },
   {
-    id: 2175,
+    id: 1805,
     section: "reading_writing",
     module: 2,
     topic: "craft_structure",
@@ -1287,7 +1246,7 @@ Leap joyous as it own bright, singing waves!`,
     tags: [],
   },
   {
-    id: 2176,
+    id: 1806,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1319,7 +1278,7 @@ health benefits.`,
     tags: [],
   },
   {
-    id: 2177,
+    id: 1807,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1361,7 +1320,7 @@ And with such unanimity!"`,
     tags: [],
   },
   {
-    id: 2178,
+    id: 1808,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1390,7 +1349,7 @@ theblank`,
     tags: ["has_figure"],
   },
   {
-    id: 2179,
+    id: 1809,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1428,7 +1387,7 @@ solar cells.`,
     tags: ["has_figure"],
   },
   {
-    id: 2180,
+    id: 1810,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1465,7 +1424,7 @@ and claim the outcome is inconsistent with the LNH.`,
     tags: [],
   },
   {
-    id: 2181,
+    id: 1811,
     section: "reading_writing",
     module: 2,
     topic: "conventions",
@@ -1497,7 +1456,7 @@ straw. The results of the study, therefore, ______`,
     tags: [],
   },
   {
-    id: 2182,
+    id: 1812,
     section: "reading_writing",
     module: 2,
     topic: "information_ideas",
@@ -1529,7 +1488,7 @@ both countries in ______`,
     tags: [],
   },
   {
-    id: 2183,
+    id: 1813,
     section: "reading_writing",
     module: 2,
     topic: "conventions",
@@ -1560,7 +1519,7 @@ find out.`,
     tags: [],
   },
   {
-    id: 2184,
+    id: 1814,
     section: "reading_writing",
     module: 2,
     topic: "conventions",
@@ -1593,7 +1552,7 @@ credit as well.`,
     tags: [],
   },
   {
-    id: 2185,
+    id: 1815,
     section: "reading_writing",
     module: 2,
     topic: "expression",
@@ -1622,7 +1581,7 @@ lose their needles every fall.`,
     tags: [],
   },
   {
-    id: 2186,
+    id: 1816,
     section: "reading_writing",
     module: 2,
     topic: "expression",
@@ -1654,7 +1613,7 @@ faces to record their eye movements during sleep.`,
     tags: [],
   },
   {
-    id: 2187,
+    id: 1817,
     section: "reading_writing",
     module: 2,
     topic: "expression",
@@ -1685,7 +1644,7 @@ honor of its discoverer.`,
     tags: [],
   },
   {
-    id: 2188,
+    id: 1818,
     section: "reading_writing",
     module: 2,
     topic: "expression",
@@ -1716,7 +1675,7 @@ credited to multiple authors.`,
     tags: [],
   },
   {
-    id: 2189,
+    id: 1819,
     section: "reading_writing",
     module: 2,
     topic: "expression",
@@ -1756,7 +1715,7 @@ origins of the two words.`,
     tags: [],
   },
   {
-    id: 2190,
+    id: 1820,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1784,7 +1743,7 @@ What is the speed, in miles per hour, of the car
     tags: [],
   },
   {
-    id: 2191,
+    id: 1821,
     section: "math",
     module: 1,
     topic: "advanced_math",
@@ -1811,7 +1770,7 @@ x
     tags: ["student_produced_response"],
   },
   {
-    id: 2192,
+    id: 1822,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1837,7 +1796,7 @@ attendees possible without exceeding the budget?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 2193,
+    id: 1823,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -1866,7 +1825,7 @@ where m, q, and z are positive?`,
     tags: [],
   },
   {
-    id: 2194,
+    id: 1824,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -1891,77 +1850,7 @@ between the descending airplane's altitude and time?`,
     tags: [],
   },
   {
-    id: 2195,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "systems_of_equations",
-    difficulty: "medium",
-    questionText: `x
-y
-x
-y
-3 + 6 = 4
-3 + 4 = 2
-The solution to the given system of equations is
-x y
-,
-(
-). What is the value of y ?`,
-    options: [
-    `1`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 1. Subtracting the second equation from the first equation in the given system of equations yields x x y y 3 3 6 4 4 2 - + - = - ^ ^ h h , which is equivalent to y 0 2 2 + = , or y 2 2 = . Dividing each side of this equation by 2 yields y 1= .`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 2196,
-    section: "math",
-    module: 1,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "hard",
-    questionText: `The function h is defined by h x
-x
-= 4 + 28
-( )
-. The
-graph of y
-h x
-=
-( ) in the xy-plane has an x-intercept
-at a
-( , 0) and a y-intercept at
-b
-(0, ), where a and b
-are constants. What is the value of a
-b
-+
-?`,
-    options: [
-    `21`,
-    `28`,
-    `32`,
-    `35`
-  ],
-    correctIndex: 0,
-    explainWhy: `Choice A is correct. The x-intercept of a graph in the xy-plane is the point on the graph where y 0 = . It's given that function h is defined by h x x 4 28 = + ^ h . Therefore, the equation representing the graph of y h x = ^ h is y x 4 28 = + . Substituting 0 for y in the equation y x 4 28 = + yields x 0 4 28 = + . Subtracting 28 from both sides of this equation yields x 28 4 - = . Dividing both sides of this equation by 4 yields x 7 - = . Therefore, the x-intercept of the graph of y h...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["has_figure"],
-  },
-  {
-    id: 2197,
+    id: 1825,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -1988,7 +1877,7 @@ given inequality?`,
     tags: [],
   },
   {
-    id: 2198,
+    id: 1826,
     section: "math",
     module: 1,
     topic: "geometry",
@@ -2014,7 +1903,7 @@ d`,
     tags: ["student_produced_response"],
   },
   {
-    id: 2199,
+    id: 1827,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2037,7 +1926,7 @@ d`,
     tags: [],
   },
   {
-    id: 2200,
+    id: 1828,
     section: "math",
     module: 1,
     topic: "algebra",
@@ -2063,7 +1952,7 @@ equation?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 2201,
+    id: 1829,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -2091,7 +1980,7 @@ of n and p ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 2202,
+    id: 1830,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -2114,7 +2003,7 @@ percentage of the paper clips are size large?`,
     tags: [],
   },
   {
-    id: 2203,
+    id: 1831,
     section: "math",
     module: 2,
     topic: "advanced_math",
@@ -2143,7 +2032,7 @@ of 4 in this context?`,
     tags: [],
   },
   {
-    id: 2204,
+    id: 1832,
     section: "math",
     module: 2,
     topic: "advanced_math",
@@ -2169,7 +2058,7 @@ following could be the value of k ?`,
     tags: [],
   },
   {
-    id: 2205,
+    id: 1833,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -2195,7 +2084,7 @@ How many solutions does the given equation have?`,
     tags: [],
   },
   {
-    id: 2206,
+    id: 1834,
     section: "math",
     module: 2,
     topic: "algebra",
@@ -2220,7 +2109,7 @@ many cupcakes did she buy?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 2207,
+    id: 1835,
     section: "math",
     module: 2,
     topic: "advanced_math",
@@ -2254,129 +2143,7 @@ g(3) = 2,375, what is the value of g(4) ?
     tags: ["student_produced_response"],
   },
   {
-    id: 2208,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_equations_one_var",
-    difficulty: "hard",
-    questionText: `The graph shows the relationship between the
-number of shares of stock from Company A, x, and
-the number of shares of stock from Company B, y,
-that Simone can purchase. Which equation could
-represent this relationship?`,
-    options: [
-    `y x = 8 + 12`,
-    `x y 8 + 12 = 480`,
-    `y x = 12 + 8`,
-    `x y 12 + 8 = 480 47 - --------- - - y 50 40 i::Q \\. g 30 0.. s o 20 u 10 u ~ \\ \\ \\ \\ I\\ '~ 10 20 30 40 50 6 ) 70 80 90 100 Company A X`
-  ],
-    correctIndex: 1,
-    explainWhy: `Choice B is correct. The graph shown is a line passing through the points , 0 40 ^ h and , 60 0 ^ h. Since the relationship between x and y is linear, if two points on the graph make a linear equation true, then the equation represents the relationship. Substituting 0 for x and 40 for y in the equation in choice B, 44 x y 8 12 480 + = , yields 8 0 12 40 480 + = ^ ^ h h , or 480 480 = , which is true. Substituting 60 for x and 0 for y in the equation x y 8 12 480 + = yields 8 60 12 0...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["has_figure"],
-  },
-  {
-    id: 2209,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "hard",
-    questionText: `The function f is defined by f x = −8 2
-+ 22
-x
-( )
-(
-)( )
-.
-What is the y-intercept of the graph of y
-f x
-= ( ) in
-the xy-plane?`,
-    options: [
-    `0, 14 ( )`,
-    `0, 2 ( )`,
-    `0, 22 ( )`,
-    `0, −8 ( )`
-  ],
-    correctIndex: 0,
-    explainWhy: `Choice A is correct. The y-intercept of the graph of y f x = ^ h in the xy-plane occurs at the point on the graph where x 0 = . In other words, when x 0 = , the corresponding value of f x ^ h is the y-coordinate of the y-intercept. Substituting 0 for x in the given equation yields f 0 8 2 22 0 = - + ^ ^ ^ h h h , which is equivalent to f 0 8 1 22 = - + ^ ^ ^ h h h , or f 0 14 = ^ h . Thus, when x 0 = , the corresponding value of f x ^ h is 14. Therefore, the y-intercept of the graph of y ...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["has_figure"],
-  },
-  {
-    id: 2210,
-    section: "math",
-    module: 2,
-    topic: "geometry",
-    subtopic: "circles",
-    difficulty: "hard",
-    questionText: `A circle in the xy-plane has a diameter with
-endpoints 2, 4
-(
-) and 2, 14
-(
-). An equation of this
-circle is x
-y
-r
-( −2) + ( −9) =`,
-    options: [
-    `5`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 5. The standard form of an equation of a circle in the xy-plane is x h y k r 2 2 2 - + - = ^ ^ h h , where h, k, and r are constants, the coordinates of the center of the circle are ,h k ^ h, and the length of the radius of the circle is r. It′s given that an equation of the circle is x y r 2 9 2 2 2 - + - = ^ ^ h h . Therefore, the center of this circle is , 2 9 ^ h. It's given that the endpoints of a diameter of the circle are , 2 4 ^ h and , 2 14 ^ h. The length of ...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 2211,
-    section: "math",
-    module: 2,
-    topic: "algebra",
-    subtopic: "linear_functions",
-    difficulty: "hard",
-    questionText: `Line ℓis defined by y
-x
-3 + 12
-= 5. Line n is
-perpendicular to line ℓin the xy-plane. What is the
-slope of line n ?
-48
-- ------~ 
-- ------~ 
-- ------~ 
-- - - - - - - ~ 
-- ------~`,
-    options: [
-    `0.25; 1/4`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 4 1. For an equation in slope-intercept form y mx b = + , m represents the slope of the line in the xy-plane defined by this equation. It's given that line , is defined by y x 3 12 5 + = . Subtracting x 12 from both sides of this equation yields y x 3 12 5 =- + . Dividing both sides of this equation by 3 yields y x 3 12 3 5 =- + , or y x 4 3 5 =- + . Thus, the slope of line , in the xy-plane is 4 - . Since line n is perpendicular to line , in the xy-plane, the slop...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 2212,
+    id: 1836,
     section: "math",
     module: 2,
     topic: "advanced_math",
@@ -2401,36 +2168,7 @@ k as the coefficient or the base?`,
     tags: [],
   },
   {
-    id: 2213,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "advanced",
-    questionText: `Two data sets of 23 integers each are summarized in
-the histograms shown. For each of the histograms,
-the first interval represents the frequency of integers
-greater than or equal to 10, but less than 20. The
-second interval represents the frequency of integers
-greater than or equal to 20, but less than 30, and so
-on. What is the smallest possible difference between
-the mean of data set A and the mean of data set B?`,
-    options: [
-    `0`,
-    `1`,
-    `10`,
-    `23`
-  ],
-    correctIndex: 1,
-    explainWhy: `Choice B is correct. The histograms shown have the same shape, but data set A contains values between 20 and 60 and data set B contains values between 10 and 50. Thus, the mean of data set A is greater than the mean of data set B. Therefore, the smallest possible difference between the mean of data set A and the mean of data set B is the difference between the smallest possible mean of data set A and the greatest possible mean of data set B. In data set A, since there 47 are 3 integers in ...`,
-    explainConcept: `This is a College Board practice test question. Review the official explanation for detailed analysis.`,
-    explainNext: `Work through more practice test questions in this section to build familiarity with the test format.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
-  },
-  {
-    id: 2214,
+    id: 1837,
     section: "math",
     module: 2,
     topic: "geometry",

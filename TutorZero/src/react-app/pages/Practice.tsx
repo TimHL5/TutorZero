@@ -4,6 +4,7 @@ import { useStudentProgress } from "@/react-app/hooks/useStudentProgress";
 import { getAdaptiveNextQuestion, topicDisplayNames, type Question } from "@/data/questions";
 import { ExplanationChat } from "@/react-app/components/feedback/ExplanationChat";
 import { cn } from "@/react-app/lib/utils";
+import { MathText } from "@/react-app/components/ui/MathText";
 import { ChevronRight, Pause, Play, CheckCircle, XCircle, Lightbulb, BookOpen, ArrowRight, ChevronDown, MessageSquare, Lock, Target, Clock, X, Home, AlertTriangle } from "lucide-react";
 
 const WORDMARK_LIGHT = "https://019c2e5b-2f20-7a1a-8266-2d41e0797564.mochausercontent.com/tutorzero-wordmark-dark.png";
@@ -395,7 +396,7 @@ export default function Practice() {
               {/* Question */}
               <div className="mb-6 sm:mb-8">
                 <p className="text-base sm:text-lg font-medium text-tz-navy leading-relaxed">
-                  {currentQuestion.questionText}
+                  <MathText text={currentQuestion.questionText} />
                 </p>
               </div>
 
@@ -423,7 +424,7 @@ export default function Practice() {
                         {letter}
                       </div>
                       <span className={cn("text-sm sm:text-body flex-1", isSelected ? "text-tz-navy" : "text-tz-gray-600")}>
-                        {option}
+                        <MathText text={option} />
                       </span>
                     </button>
                   );

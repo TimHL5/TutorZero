@@ -2,7 +2,7 @@ import type { Question } from "./questions";
 
 export const bankMathProblemSolvingQuestions: Question[] = [
   {
-    id: 375,
+    id: 224,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -30,7 +30,7 @@ the following is true about the city council's survey?`,
     tags: [],
   },
   {
-    id: 376,
+    id: 225,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -56,7 +56,7 @@ following inferences can appropriately be drawn from this survey result?`,
     tags: [],
   },
   {
-    id: 377,
+    id: 226,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -89,7 +89,7 @@ ll. If another random sample of 200 residents were surveyed, 87% would say they 
     tags: [],
   },
   {
-    id: 378,
+    id: 227,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -114,7 +114,7 @@ population to which the results of the survey can be generalized?`,
     tags: [],
   },
   {
-    id: 379,
+    id: 228,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -145,7 +145,7 @@ are satisfied with the quality of air in the city.`,
     tags: [],
   },
   {
-    id: 380,
+    id: 229,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -171,7 +171,7 @@ be applied?`,
     tags: [],
   },
   {
-    id: 381,
+    id: 230,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -202,7 +202,7 @@ Which of the following is the largest population to which the results of the stu
     tags: [],
   },
   {
-    id: 382,
+    id: 231,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -231,7 +231,7 @@ generalized?`,
     tags: [],
   },
   {
-    id: 383,
+    id: 232,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -261,7 +261,7 @@ sentiments of the population of the United States?`,
     tags: [],
   },
   {
-    id: 384,
+    id: 233,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -286,7 +286,7 @@ statements must be true?`,
     tags: [],
   },
   {
-    id: 385,
+    id: 234,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -311,7 +311,7 @@ group to which these results can be applied?`,
     tags: [],
   },
   {
-    id: 386,
+    id: 235,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -335,32 +335,7 @@ data values shown?`,
     tags: [],
   },
   {
-    id: 387,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "easy",
-    questionText: `Data set A: f2, f3, fa, fb, fo
-Data set B: 61, 64, 74,85, x
-Data set A and data set B each contain 5 numbers. If the mean of data set A
-is equal to the mean of data set B, what is the value of x ?`,
-    options: [
-    `77`,
-    `85 Cc. 86`,
-    `95`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 388,
+    id: 236,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -383,7 +358,7 @@ Which of the following can be calculated from this information?`,
     tags: [],
   },
   {
-    id: 389,
+    id: 237,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -406,34 +381,7 @@ What is the mean of the data shown?`,
     tags: [],
   },
   {
-    id: 390,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "easy",
-    questionText: `The table below shows the high and low temperatures in Houston, Texas, during a five-day period.
-'Temperatures in Houston, Texas
-(degrees Fahrenheit)
-[Hightenpertwe] 73 | 56 [| @ | 75 | a |
-What was the mean low temperature, in degrees Fahrenheit, during
-the five-day period?`,
-    options: [
-    `48.8`,
-    `49 Cc. 59`,
-    `59.1`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 391,
+    id: 238,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -460,7 +408,7 @@ means of data set A and data set B?`,
     tags: [],
   },
   {
-    id: 392,
+    id: 239,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -490,39 +438,7 @@ median number of acres?`,
     tags: [],
   },
   {
-    id: 393,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "easy",
-    questionText: `A study was conducted on the production rates for a company that produces tractor wheels. The table below
-shows the number of wheels made during 11 consecutive one-hour production periods.
-Number
-One- of
-hour | wheels
-ve [= |
-po [a |
-ref a |
-cfs |
-What is the range of the number of wheels made for the 11 one-hour
-periods?`,
-    options: [
-    `5.5`,
-    `5.0`,
-    `4.5`,
-    `4.0`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 394,
+    id: 240,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -545,169 +461,7 @@ How many people responded either "never" or "almost never"?`,
     tags: [],
   },
   {
-    id: 395,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "easy",
-    questionText: `Five Smallest Countries in 2016
-Land area
-Country .
-(square kilometers)
-
-The table above shows the land area, in square kilometers, of the five
-smallest countries of the world in 2016. Based on the table, what is the
-mean land area of the 5 smallest countries in 2016, to the nearest square
-kilometer?`,
-    options: [
-    `20`,
-    `22 Cc. 61`,
-    `110`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 396,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `70
-x≫ 60
-8
-6 50
-a
-= 40
-WwW
-g 30
-E 20
-= 10
-
-0
-12 3 4 5 6 7 8 9 10
-Group
-
-The bar graph shows the distribution of 414 books collected by 10 different groups for a book drive. How many
-books were collected by group 1?`,
-    options: [
-    `30`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 30. This is a student-produced response question testing one-variable data.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 397,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `Results of Five Quality Control Trials
-8
-w 7
-SB 6
-SB 4
-—E 2
-0
-A B C D&E
-Trial
-For quality control, a company that manufactures lightbulbs conducted five
-different trials. In each trial, 500 different lightbulbs were tested. The bar
-graph above shows the number of defective lightbulbs found in each trial.
-What is the mean number of defective lightbulbs for the five trials?`,
-    options: [
-    `4.0`,
-    `4.2`,
-    `4.6`,
-    `5.0`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 398,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `The high temperature, in degrees Fahrenheit (°F), in a certain city was recorded for each of 5 days. The data
-are shown below.
-ow [je fsle [sl
-ria enpeawre eri 61 | 60 | et | er | 02 |
-Over this 5-day period, which of the following is NOT equal to 81°F?`,
-    options: [
-    `Median of the high temperatures`,
-    `Mean of the high temperatures`,
-    `Mode of the high temperatures`,
-    `Range of the high temperatures`
-  ],
-    correctIndex: 3,
-    explainWhy: `The correct answer is D. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 399,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `Number of High School Students Who
-Completed Summer Internships
-2008 2009) 2010 2011 2012
-ew] 67 | 80 | 75 | 76 | 70
-The table above shows the number of students from two different high
-schools who completed summer internships in each of five years. No
-student attended both schools. Which of the following statements are true
-about the number of students who completed summer internships for the 5
-years shown?
-1. The mean number from Foothill High School is greater than the mean
-number from Valley High School.
-2. The median number from Foothill High School is greater than the
-median number from Valley High School.`,
-    options: [
-    `| only`,
-    `Il only`,
-    `land Il`,
-    `Neither | nor II`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 400,
+    id: 241,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -731,7 +485,7 @@ What is the mean of these data?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 401,
+    id: 242,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -754,163 +508,7 @@ What is the median of the data shown?`,
     tags: [],
   },
   {
-    id: 402,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `50
-45
-n
-= 40
-3 35
-2 30
-6 25
-tH
-2 20
-= 15
-Zz 10
-5
-0
-1 2 3 4 5
-Activity
-A group of students voted on five after-school activities. The bar graph shows the number of students who voted
-for each of the five activities. How many students chose activity 3?`,
-    options: [
-    `25`,
-    `39 c. 48`,
-    `50`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 403,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `Ages of 20 Students Enrolled in a College Class
-pel 6 |
-
-The table above shows the distribution of ages of the 20 students enrolled
-
-in a college class. Which of the following gives the correct order of the
-
-mean, median, and mode of the ages?`,
-    options: [
-    `mode < median < mean`,
-    `mode < mean < median`,
-    `median < mode < mean`,
-    `mean < mode < median`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 404,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `The results of two independent surveys are shown in the table below.
-Men's Height
-8 | aso fee |
-
-Which statement is true based on the table?`,
-    options: [
-    `The Group A data set was identical to the Group B data set.`,
-    `Group B contained the tallest participant.`,
-    `The heights of the men in Group B had a larger spread than the heights of the men in Group A.`,
-    `The median height of Group B is larger than the median height of Group A.`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 405,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `International Tourist
-Arrivals, in millions
-Counary [2012201]
-France [850| 847
-United
-66.7 | 69.8
-States
-spain [575 [607
-United
-. 26.3 | 32.2
-Kingdom
-sein [247 [5
-The table above shows the number of international tourist arrivals, rounded
-to the nearest tenth of a million, to the top nine tourist destinations in both
-2012 and 2013. Based on the information given in the table, how much
-greater, in millions, was the median number of international tourist arrivals
-to the top nine tourist destinations in 2013 than the median number in 2012,
-to the nearest tenth of a million?`,
-    options: [
-    `1.3`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 1.3. This is a student-produced response question testing one-variable data.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 406,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `In the table above, Melissa recorded the price of one gallon of regular gas
-from five different local gas stations on the same day. What is the median of
-the gas prices Melissa recorded?`,
-    options: [
-    `$3.679`,
-    `$3.689`,
-    `$3.699`,
-    `$3.729`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 407,
+    id: 243,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -933,7 +531,7 @@ greater than the median?`,
     tags: [],
   },
   {
-    id: 408,
+    id: 244,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -959,7 +557,7 @@ four values are reported using the corrected weight?`,
     tags: [],
   },
   {
-    id: 409,
+    id: 245,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -985,57 +583,7 @@ of data set A and data set B is true?`,
     tags: [],
   },
   {
-    id: 410,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `If ais the mean and b is the median of nine consecutive
-integers, what is the value of la a b| ?`,
-    options: [
-    `0`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 0. This is a student-produced response question testing one-variable data.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 411,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `A fish hatchery has three tanks for holding fish before they are introduced
-into the wild. Ten fish weighing less than 5 ounces are placed in tank A.
-Eleven fish weighing at least 5 ounces but no more than 13 ounces are
-placed in tank B. Twelve fish weighing more than 13 ounces are placed in
-tank C. Which of the following could be the median of the weights, in
-ounces, of these 33 fish?`,
-    options: [
-    `4.5`,
-    `8 GC. 13.5`,
-    `15`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 412,
+    id: 246,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1059,81 +607,7 @@ the sum of the five numbers?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 413,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `Company A
-50
-40
-30
-Frequenc
-ene! 30
-10
-0
-15 20 25 30 35 40 45 50
-Number of units sold (in thousands)
-Company B
-50
-40
-30
-Frequenc
-ey 96
-10
-0
-15 20 25 30 35 40 45 50
-Number of units sold (in thousands)
-The histograms summarize the distributions of number of units sold, in thousands, for company A and company B. Which
-statement best compares the standard deviations of number of units sold for these companies?`,
-    options: [
-    `The standard deviation of number of units sold for company A is less than the standard deviation of number of units sold for company B.`,
-    `The standard deviation of number of units sold for company A is greater than the standard deviation of number of units sold for company B.`,
-    `The standard deviation of number of units sold for company A is equal to the standard deviation of number of units sold for company B.`,
-    `There is not enough information to compare the standard deviations.`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 414,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `Data Set A
-e
-ee
-e ee
-e eee
-eo eee e
-a a a
-22 23 24 25 26
-Data set A has 15 values and is represented by the dot plot shown. Data set B is created by adding 46 to each of the values
-in data set A. Which of the following correctly compares the medians and the ranges of data sets A and B?`,
-    options: [
-    `The median of data set B is greater than the median of data set A, and the range of data set B is equal to the range of data set A.`,
-    `The median of data set B is greater than the median of data set A, and the range of data set B is greater than the range of data set A.`,
-    `The median of data set B is equal to the median of data set A, and the range of data set B is greater than the range of data set A.`,
-    `The median of data set B is equal to the median of data set A, and the range of data set B is equal to the range of data set A.`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 415,
+    id: 247,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1160,38 +634,7 @@ sets?`,
     tags: [],
   },
   {
-    id: 416,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `Two different teams consisting of 10 members each ran in a race. Each member's completion time of the
-race was recorded. The mean of the completion times for each team was calculated and is shown below.
-Team A: 3.41 minutes
-Team B: 3.79 minutes
-Which of the following MUST be true?
-1. Every member of team A completed the race in less time than any member of team B.
-2. The median time it took the members of team B to complete the race is greater than the median time it took
-the members of team A to complete the race.
-3. There is at least one member of team B who took more time to complete the race than some member of
-team A.`,
-    options: [
-    `Ill only`,
-    `| and Ill only`,
-    `Il and III only`,
-    `1, Il, and Ill`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 417,
+    id: 248,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -1215,7 +658,7 @@ players becomes 12 points. What was the highest score?`,
     tags: [],
   },
   {
-    id: 418,
+    id: 249,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -1241,7 +684,7 @@ many years did the employee who left the company work for the company?`,
     tags: [],
   },
   {
-    id: 419,
+    id: 250,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1266,108 +709,7 @@ ll. The median`,
     tags: [],
   },
   {
-    id: 420,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `Percent of Residents Who Earned
-a Bachelor's Degree or Higher
-State F 36.4%
-State G 35.5%
-A survey was given to residents of all 50 states asking if they had earned a
-bachelor's degree or higher. The results from 7 of the states are given in the
-table above. The median percent of residents who earned a bachelor's
-degree or higher for all 50 states was 26.95%. What is the difference
-between the median percent of residents who earned a bachelor's degree
-or higher for these 7 states and the median for all 50 states?`,
-    options: [
-    `0.05%`,
-    `0.95%`,
-    `1.22%`,
-    `7.45%`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 421,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `po Masses (kilograms)
-fanarew] 24 [28 [86 | 51 | 28 | 27 |
-wera [x [st [27 [29 [33 | 20 |
-
-Andrew and Maria each collected six rocks, and the masses of the rocks are
-
-shown in the table above. The mean of the masses of the rocks Maria
-
-collected is 0.1 kilogram greater than the mean of the masses of the rocks
-
-Andrew collected. What is the value of x ?`,
-    options: [
-    `2.6`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 2.6. This is a student-produced response question testing one-variable data.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 422,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `For a certain computer game, individuals receive an integer score that ranges from 2 through 10. The table
-below shows the frequency distribution of the scores of the 9 players in group A and the 11 players in group B.
-Score
-Group
-alee
-2 {1 fo
-3 tt fo
-4 {2 [0 |
-sit fa
-ets | 2
-7 {0 | oo
-ei} | 2
-po tats
-too | 2
-Total) 9 | on
-The median of the scores for group B is how much greater than the median
-of the scores for group A?`,
-    options: [
-    `1`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 1. This is a student-produced response question testing one-variable data.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 423,
+    id: 251,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1400,7 +742,7 @@ The median number of bursts The mean number of bursts`,
     tags: [],
   },
   {
-    id: 424,
+    id: 252,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -1424,7 +766,7 @@ and B. What is the mean, in meters, of data set C?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 425,
+    id: 253,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1451,33 +793,7 @@ value of the largest integer from data set A?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 426,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "one_var_data",
-    difficulty: "medium",
-    questionText: `ee
-ee ee ee
-
-Data set A and data set B each consist of 27 values. The table shows the frequencies of the values for each data
-set. Which of the following statements best compares the means of the two data sets?`,
-    options: [
-    `The mean of data set A is greater than the mean of data set B.`,
-    `The mean of data set A is less than the mean of data set B.`,
-    `The mean of data set A is equal to the mean of data set B.`,
-    `There is not enough information to compare the means of the data sets.`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of one-variable data concepts.`,
-    explainConcept: `This question tests your understanding of One-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more One-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 427,
+    id: 254,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1505,37 +821,7 @@ the following statements must be true?`,
     tags: [],
   },
   {
-    id: 428,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "percentages",
-    difficulty: "easy",
-    questionText: `A table of the US minimum wage for 6 different years is shown below.
-US
-minimum
-wage
-Year idole
-per
-hour)
-What was the percent increase of the minimum
-wage from 1960 to 1970?`,
-    options: [
-    `30%`,
-    `60%`,
-    `62.5%`,
-    `120%`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of percentages concepts.`,
-    explainConcept: `This question tests your understanding of Percentages. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Percentages problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 429,
+    id: 255,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -1558,7 +844,7 @@ the total cost, including sales tax, to purchase the shirt?`,
     tags: [],
   },
   {
-    id: 430,
+    id: 256,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1581,29 +867,7 @@ of last year's number. How many students are enrolled in the interior design pro
     tags: [],
   },
   {
-    id: 431,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "percentages",
-    difficulty: "easy",
-    questionText: `What is 23% of 100?`,
-    options: [
-    `23`,
-    `46`,
-    `77`,
-    `123`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of percentages concepts.`,
-    explainConcept: `This question tests your understanding of Percentages. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Percentages problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 432,
+    id: 257,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1626,39 +890,7 @@ represents the length of the base of the parallelogram, where A is the height of
     tags: [],
   },
   {
-    id: 433,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "percentages",
-    difficulty: "easy",
-    questionText: `Where Do People Get Most of
-Their Medical Information?
-souteE Percent of
-those surveyed
-=
-o
-2
-Other/none of the above
-The table above shows a summary of 1,200 responses to a survey question.
-Based on the table, how many of those surveyed get most of their medical
-information from either a doctor or the Internet?`,
-    options: [
-    `865`,
-    `887 Cc. 912`,
-    `926`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of percentages concepts.`,
-    explainConcept: `This question tests your understanding of Percentages. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Percentages problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 434,
+    id: 258,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -1681,36 +913,7 @@ green?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 435,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "percentages",
-    difficulty: "easy",
-    questionText: `Call Ratings
-
-[sess ss] | To
-A supervisor at a call center reviewed 500 calls taken by four employees
-and rated the employees' performance on each call on a scale from 1 star to
-4 stars. The ratings for each employee are shown in the table above.
-According to the table, to the nearest whole percent, what percent of
-Employee A's calls received a rating of 1 star?`,
-    options: [
-    `3%`,
-    `11%`,
-    `16%`,
-    `32%`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of percentages concepts.`,
-    explainConcept: `This question tests your understanding of Percentages. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Percentages problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 436,
+    id: 259,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -1736,7 +939,7 @@ projected for the United States in 2022?`,
     tags: [],
   },
   {
-    id: 437,
+    id: 260,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1760,7 +963,7 @@ waiter can expect when a customer has a bill that is $78.20?`,
     tags: [],
   },
   {
-    id: 438,
+    id: 261,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -1784,29 +987,7 @@ price of $50 ?`,
     tags: [],
   },
   {
-    id: 439,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "percentages",
-    difficulty: "medium",
-    questionText: `What is 10% of 370?`,
-    options: [
-    `27`,
-    `37`,
-    `333`,
-    `360`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of percentages concepts.`,
-    explainConcept: `This question tests your understanding of Percentages. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Percentages problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 440,
+    id: 262,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -1829,30 +1010,7 @@ price of $50 ?`,
     tags: [],
   },
   {
-    id: 441,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "percentages",
-    difficulty: "medium",
-    questionText: `What number is 20%
-greater than 60 ?`,
-    options: [
-    `50`,
-    `72 Cc. 75`,
-    `132`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of percentages concepts.`,
-    explainConcept: `This question tests your understanding of Percentages. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Percentages problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 442,
+    id: 263,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1874,29 +1032,7 @@ greater than 60 ?`,
     tags: [],
   },
   {
-    id: 443,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "percentages",
-    difficulty: "medium",
-    questionText: `What is 10% of 470?`,
-    options: [
-    `37`,
-    `47`,
-    `423`,
-    `460`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of percentages concepts.`,
-    explainConcept: `This question tests your understanding of Percentages. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Percentages problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 444,
+    id: 264,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1918,7 +1054,7 @@ greater than 60 ?`,
     tags: [],
   },
   {
-    id: 445,
+    id: 265,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1950,7 +1086,7 @@ an accurate conclusion?`,
     tags: [],
   },
   {
-    id: 446,
+    id: 266,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -1976,7 +1112,7 @@ company during this 6-month period?`,
     tags: [],
   },
   {
-    id: 447,
+    id: 267,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -1999,7 +1135,7 @@ quantity x by 9%, where X > 0 ?`,
     tags: [],
   },
   {
-    id: 448,
+    id: 268,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -2022,7 +1158,7 @@ quantity x by 9%, where X > 0 ?`,
     tags: [],
   },
   {
-    id: 449,
+    id: 269,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -2045,7 +1181,7 @@ the items in the group are red with stripes?`,
     tags: [],
   },
   {
-    id: 450,
+    id: 270,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2068,7 +1204,7 @@ the items in the group are red with stripes?`,
     tags: [],
   },
   {
-    id: 451,
+    id: 271,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -2092,7 +1228,7 @@ percent did the amount of the customer's water bill increase?`,
     tags: [],
   },
   {
-    id: 452,
+    id: 272,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2114,7 +1250,7 @@ percent did the amount of the customer's water bill increase?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 453,
+    id: 273,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -2136,7 +1272,7 @@ percent did the amount of the customer's water bill increase?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 454,
+    id: 274,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2162,7 +1298,7 @@ installed it?`,
     tags: [],
   },
   {
-    id: 455,
+    id: 275,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2184,38 +1320,7 @@ installed it?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 456,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "percentages",
-    difficulty: "medium",
-    questionText: `The table summarizes the number of objects in each group.
-rou | Humbe fobs
-
-a ee
-
-a a
-
-ee
-
-The number of objects in group C is p% of the number of objects in group A. What is the value of p?`,
-    options: [
-    `184`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 184. This is a student-produced response question testing percentages.`,
-    explainConcept: `This question tests your understanding of Percentages. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Percentages problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 457,
+    id: 276,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2240,37 +1345,7 @@ attended all three information sessions?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 458,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "percentages",
-    difficulty: "medium",
-    questionText: `Jennifer bought a box of Crunchy Grain cereal. The nutrition facts on the
-3
-
-box state that a serving size of the cerealis 4 cup and provides 210
-calories, 50 of which are calories from fat. In addition, each serving of the
-cereal provides 180 milligrams of potassium, which is 5% of the daily
-allowance for adults. If p percent of an adult's daily allowance of potassium
-is provided by x servings of Crunchy Grain cereal per day, which of the
-following expresses p in terms of x ?`,
-    options: [
-    `p=0.5x`,
-    `p=5x c. p =(0.05)* b. p =(4.05)*`,
-    ``,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of percentages concepts.`,
-    explainConcept: `This question tests your understanding of Percentages. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Percentages problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 459,
+    id: 277,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -2297,7 +1372,7 @@ committee than school and district administrators?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 460,
+    id: 278,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2330,42 +1405,7 @@ expect would be sold in 2014?`,
     tags: [],
   },
   {
-    id: 461,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "percentages",
-    difficulty: "medium",
-    questionText: `= 00
-5 50 \\
-= 40
-= of —__} |
-2≫ P\\ er nf | PA
-2 ob... et
-
-SVMS CMM M Mwy"
-
-Year
-
-The line graph shows the total amount of snow, in inches, recorded each
-year in Washington, DC, from 2003 to 2015. If p% is the percent decrease
-in the annual snowfall from 2003 to 2007, what is the value of p ?`,
-    options: [
-    `75`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 75. This is a student-produced response question testing percentages.`,
-    explainConcept: `This question tests your understanding of Percentages. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Percentages problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 462,
+    id: 279,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2388,51 +1428,7 @@ many times b?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 463,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "percentages",
-    difficulty: "medium",
-    questionText: `According to the 2010 Census, the adult population aged 18 years or greater of the United States in 2010 was
-234,564,071. In 2010, a survey was conducted among a randomly chosen sample of adults aged 18 years or
-greater in the United States about their preference to live in a warm climate or a cool climate. The table below
-displays a summary of the survey results.
-Climate Preferences
-No
-Cool Total
-preference
-18-35
-295 | 168 45 508
-years old
-36-50
-246 | 123 41 410
-years old
-51-65
-238 | 117 403
-years old
-Greater
-than 65 137 78 64 279
-years old
-Which of the following is closest to the difference between the percentage
-of adults aged 18-50 years who responded "warm" and the percentage of
-adults aged 51 years or greater who responded "warm"?`,
-    options: [
-    `4%`,
-    `5%`,
-    `10%`,
-    `18%`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of percentages concepts.`,
-    explainConcept: `This question tests your understanding of Percentages. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Percentages problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 464,
+    id: 280,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2455,7 +1451,7 @@ many times b?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 465,
+    id: 281,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -2477,7 +1473,7 @@ many times b?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 466,
+    id: 282,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2501,7 +1497,7 @@ phosphorus the sample can contain to meet these standards?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 467,
+    id: 283,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -2525,7 +1521,7 @@ green metal items?`,
     tags: [],
   },
   {
-    id: 468,
+    id: 284,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2548,53 +1544,7 @@ many times b?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 469,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "percentages",
-    difficulty: "medium",
-    questionText: `The value of a collectible comic book increased by 167% from the end of 2011 to the end of 2012 and then
-decreased by 16% from the end of 2012 to the end of 2013. What was the net percentage increase in the value
-of the collectible comic book from the end of 2011 to the end of 2013?`,
-    options: [
-    `124.28%`,
-    `140.28% Cc. 151.00%`,
-    `209.72%`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of percentages concepts.`,
-    explainConcept: `This question tests your understanding of Percentages. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Percentages problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 470,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "percentages",
-    difficulty: "medium",
-    questionText: `140 is p% greater than 10. What is the value of p?`,
-    options: [
-    `1,400`,
-    `1,300 Cc. 140`,
-    `130`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of percentages concepts.`,
-    explainConcept: `This question tests your understanding of Percentages. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Percentages problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 471,
+    id: 285,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -2617,7 +1567,7 @@ How many marbles were removed from the group?`,
     tags: [],
   },
   {
-    id: 472,
+    id: 286,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2639,7 +1589,7 @@ How many marbles were removed from the group?`,
     tags: [],
   },
   {
-    id: 473,
+    id: 287,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -2661,7 +1611,7 @@ How many marbles were removed from the group?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 474,
+    id: 288,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2685,38 +1635,7 @@ that is 70% off the consumer price. What is the discounted price of each of the 
     tags: ["student_produced_response"],
   },
   {
-    id: 475,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "easy",
-    questionText: `Number of High School Students Who
-Completed Summer Internships
-2008 2009 |2010| 2011 | 2012|
-Foot) 67 | 20 | 75 | 76 | 70
-The table above shows the number of students from two different high
-schools who completed summer internships in each of five years. No
-student attended both schools. Of the students who completed a summer
-internship in 2010, which of the following represents the fraction of
-students who were from Valley High School?
-10`,
-    options: [
-    `140 65`,
-    `140 ae Cc. 140 65`,
-    `75`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 476,
+    id: 289,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -2742,35 +1661,7 @@ is selected at random, what is the probability he is a baritone?`,
     tags: [],
   },
   {
-    id: 477,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "easy",
-    questionText: `A survey taken by 1,000 students at a school asked whether they played school sports. The table below
-summarizes all 1,000 responses from the students surveyed.
-Tes Te
-
-How many of the males surveyed responded that they do not play a school
-
-sport?`,
-    options: [
-    `109`,
-    `252`,
-    `468`,
-    `688`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 478,
+    id: 290,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -2796,63 +1687,7 @@ If one of these rocks is selected at random, what is the probability of selectin
     tags: [],
   },
   {
-    id: 479,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "easy",
-    questionText: `Of the 8 planets in our solar system, 4 are considered rocky. If a student
-randomly selects 1 of those 8 planets as a topic for a report, what is the
-probability that the selected planet will be rocky?
-4`,
-    options: [
-    `8 1`,
-    `4 1 c. 2`,
-    `2`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 480,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "easy",
-    questionText: `Talks on Does not talk
-Texting cell phone | oncell phone
-behavior daily daily Total
-edn [139 | 168 | 03]
-In a study of cell phone use, 799 randomly selected US teens were asked
-how often they talked on a cell phone and about their texting behavior. The
-data are summarized in the table above. If one of the 799 teens surveyed is
-selected at random, what is the probability that the teen talks on a cell
-phone daily?
-1`,
-    options: [
-    `799 415`,
-    `799 384`,
-    `415 384`,
-    `799`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 481,
+    id: 291,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2876,32 +1711,7 @@ the probability that it is defective?`,
     tags: [],
   },
   {
-    id: 482,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "easy",
-    questionText: `There are n nonfiction books and 12 fiction books on a bookshelf. If one of
-these books is selected at random, what is the probability of selecting a
-nonfiction book, in terms of n?
-Ls`,
-    options: [
-    `42 _#f`,
-    `n+12 12 Cc. on i2`,
-    `n+12`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 483,
+    id: 292,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -2925,93 +1735,7 @@ how many marbles in the bag are blue?`,
     tags: [],
   },
   {
-    id: 484,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `Prices of 14 Different Cars
-T f Priced at no more | Priced greater Total
-e of car ota
-uP than $25,000 | than $25,000
-Word | 2 |
-The table above shows information about 14 cars listed for sale on an auto dealership's website. If
-one of the cars listed for sale is selected at random, what is the probability that the car selected will
-be a hybrid car priced at no more than $25,000 ?
-a`,
-    options: [
-    `7 2`,
-    `7 a c. 3 4`,
-    `y`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 485,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `Coat color
-Deep blue} Light brown
-
-The data on the coat color and eye color for 48 Himalayan kittens available
-for adoption were collected and summarized in the table above. What
-fraction of the chocolate-colored kittens has deep blue eyes?
-
-12`,
-    options: [
-    `48 12`,
-    `28 16`,
-    `32 12`,
-    `16`
-  ],
-    correctIndex: 3,
-    explainWhy: `The correct answer is D. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 486,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `The table below shows the number of state parks in a certain state that contain camping facilities and
-bicycle paths.
-Po Has bicycle paths | Does not have bicycle paths
-If one of these state parks is selected at random, what is the probability
-that it has camping facilities but does not have bicycle paths?
-_`,
-    options: [
-    `37 _s`,
-    `25 a`,
-    `28 5 bd. 9`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 487,
+    id: 293,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -3035,7 +1759,7 @@ vertex. If one vertex is selected at random, what is the probability that the le
     tags: ["student_produced_response"],
   },
   {
-    id: 488,
+    id: 294,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -3060,89 +1784,7 @@ attendees are assigned to group C?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 489,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `If 1,200 customers register for new accounts at a social media website
-every day, what fraction of the first 60,000 new accounts are registered in
-the first 5 days?
-a`,
-    options: [
-    `5 as`,
-    `40 as Cp as`,
-    ``,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 490,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `United States
-Presidents
-from 1789 to
-2015
-The table above gives the number of United States presidents from 1789 to
-2015 whose age at the time they first took office is within the interval listed.
-Of those presidents who were at least 50 years old when they first took
-office, what fraction were at least 60 years old?
-10`,
-    options: [
-    `43 40`,
-    `34 10 Cc. 24 25`,
-    `34`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 491,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `enpeor [0] 27 | 25]
-certo [49 | 54 | 08
-The number of penguins in a zoo exhibit, sorted by gender and type of
-penguin, is shown in the table above. ie type of penguin has a female
-population that is the closest to being a of the total female penguin
-population in the exhibit?`,
-    options: [
-    `Chinstrap`,
-    `Emperor`,
-    `Gentoo`,
-    `Macaroni`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 492,
+    id: 295,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -3165,148 +1807,7 @@ of selecting a red pen? (Express your answer as a decimal or fraction, not as a 
     tags: ["student_produced_response"],
   },
   {
-    id: 493,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `The table summarizes the distribution of color and shape for 100 tiles of equal area.
-
-S| et | sue | Yetow | Tool
-
-sue | | | | |
-
-If one of these tiles is selected at random, what is the probability of selecting a red tile? (Express your answer as a
-decimal or fraction, not as a percent.)`,
-    options: [
-    `0.3`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 0.3. This is a student-produced response question testing probability.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 494,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `Number of Contestants by Score and Day
-Day
-2 3 2 3 20
-1
-Da
-Yi 2} 3}]5 ]5 ]41] 1 | 20
-2
-Da
-Yi 3 |] 3 5 | 3 | 2 | 20
-3
-Tull 7 [|e |e) e| 6 |e
-The same 20 contestants, on each of 3 days, answered 5 questions in order to win a prize. Each contestant
-received 1 point for each correct answer. The number of contestants receiving a given score on each day is shown
-in the table above.
-No contestant received the same score on two different days. If a
-contestant is selected at random, what is the probability that the selected
-contestant received a score of 5 on Day 2 or Day 3, given that the
-contestant received a score of 5 on one of the three days?`,
-    options: [
-    `5/7`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 5/7. This is a student-produced response question testing probability.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 495,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `meawtecer] A | 6 [AB] O|
-
-+ |sfefels|
-
-|stats
-Human blood can be classified into four common blood types—A, B, AB,
-and O. It is also characterized by the presence (+) or absence (—) of the
-rhesus factor. The table above shows the distribution of blood type and
-rhesus factor for a group of people. If one of these people who is rhesus
-negative (-) is chosen at random, the probability that the person has blood
-
-as
-
-type Bis Q . What is the value of x ?`,
-    options: [
-    `8`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 8. This is a student-produced response question testing probability.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 496,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `Dinner
-55% | 80%
-dance
-Football
-20% | 10%
-game
-Pinte | 20% | 5 |
-Pool
-5% 5%
-party
-100% |100%4
-An alumni association survey asked each high school graduate to select the one activity he or she
-preferred for the association's next event. Some of the people responded by phone, and the others
-responded by email. The table above shows the distribution of preferred activity, in percent, for each
-response type used. For the survey, the number of email responses was twice the number of phone
-responses. If a person who preferred a picnic is selected at random, what is the probability that the
-person responded by email?`,
-    options: [
-    `1/3`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 1/3. This is a student-produced response question testing probability.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 497,
+    id: 296,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -3335,161 +1836,7 @@ is the value of p ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 498,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `The table summarizes the distribution of age and assigned group for 90 participants in a study.
-| tyes 10-10yeus | 20+ years | Total
-
-coun | 7 |
-
-coms) 8] |
-
-tot | | of |
-
-One of these participants will be selected at random. What is the probability of selecting a participant from group
-A, given that the participant is at least 10 years of age? (Express your answer as a decimal or fraction, not as a
-percent.)`,
-    options: [
-    `23/60`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 23/60. This is a student-produced response question testing probability.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 499,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `The table below shows the distribution of US states according to whether they have a state-level sales tax
-and a state-level income tax.
-2013 State-Level Taxes
-
-Po State sales tax} No state sales tax
-
-To the nearest tenth of a percent, what percent of states with a state-level
-
-sales tax do not have a state-level income tax?`,
-    options: [
-    `6.0%`,
-    `12.0%`,
-    `13.3%`,
-    `14.0%`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 500,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `Employees working for a customer service line at an electric company recorded all the calls last Monday
-and noted whether the caller asked for repairs and whether the caller asked about a bill. The results are
-summarized in the table below.
-Asked for | Did not ask
-. ._ | Total
-repairs | for repairs
-Asked 48 623 | 671
-about a bill
-Did not ask 130 220
-about a bill
-If a caller last Monday who asked about his or her bill is selected at random,
-which of the following is closest to the probability that the customer also
-asked for repairs?`,
-    options: [
-    `0.05`,
-    `0.07`,
-    `0.20`,
-    `0.27`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 501,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `The table summarizes the distribution of age and assigned group for 90 participants in a study.
-CS OC
-cone [6 | 8 | w | wi
-coe | | sf 6 |
-ee
-One of these participants will be selected at random. What is the probability of selecting a participant from group A, given
-that the participant is at least 10 years of age?
-5`,
-    options: [
-    `35 5`,
-    `4 17`,
-    `35 5`,
-    `2`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of probability concepts.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 502,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "probability",
-    difficulty: "medium",
-    questionText: `|_| ste | site | Tort |
-
-rout [oe [30 | 102
-
-The table shows the distribution of two types of flowers at two different sites. If a flower represented in the table is selected
-at random, what is the probability of selecting a flower from site A, given that the flower is a tulip? (Express your answer as a
-decimal or fraction, not as a percent.)`,
-    options: [
-    `0.7`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 0.7. This is a student-produced response question testing probability.`,
-    explainConcept: `This question tests your understanding of Probability. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Probability problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 503,
+    id: 297,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -3515,7 +1862,7 @@ of lightning if the time interval is 25 seconds?`,
     tags: [],
   },
   {
-    id: 504,
+    id: 298,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -3540,7 +1887,7 @@ miles did the butterfly travel per day?`,
     tags: [],
   },
   {
-    id: 505,
+    id: 299,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -3563,7 +1910,7 @@ people. What is the area, in square miles, of Worthington?`,
     tags: [],
   },
   {
-    id: 506,
+    id: 300,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -3586,7 +1933,7 @@ turbine complete?`,
     tags: [],
   },
   {
-    id: 507,
+    id: 301,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -3608,56 +1955,7 @@ turbine complete?`,
     tags: [],
   },
   {
-    id: 508,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "ratios_rates",
-    difficulty: "easy",
-    questionText: `A kangaroo has a mass of 28 kilograms. What is the kangaroo's mass, in grams? (1 kilogram = 1,000 grams)`,
-    options: [
-    `28,000`,
-    `1,028 Cc. 972`,
-    `784`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of ratios, rates, and proportions concepts.`,
-    explainConcept: `This question tests your understanding of Ratios, Rates, and Proportions. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Ratios, Rates, and Proportions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 509,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "ratios_rates",
-    difficulty: "medium",
-    questionText: `9
-The weight of an object on Venus is approximately 40 of its weight on
-23
-Earth. The weight of an object on Jupiter is approximately {0 of its weight
-on Earth. If an object weighs 100 pounds on Earth, approximately how many
-more pounds does it weigh on Jupiter than it weighs on Venus?`,
-    options: [
-    `90`,
-    `111 Cc. 140`,
-    `230`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of ratios, rates, and proportions concepts.`,
-    explainConcept: `This question tests your understanding of Ratios, Rates, and Proportions. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Ratios, Rates, and Proportions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 510,
+    id: 302,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -3679,7 +1977,7 @@ more pounds does it weigh on Jupiter than it weighs on Venus?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 511,
+    id: 303,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -3703,7 +2001,7 @@ make 48 signature chocolate muffins? (1 pound = 16 ounces)`,
     tags: [],
   },
   {
-    id: 512,
+    id: 304,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -3729,31 +2027,7 @@ the currency exchange after the 2% fee is applied?`,
     tags: [],
   },
   {
-    id: 513,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "ratios_rates",
-    difficulty: "medium",
-    questionText: `Makayla is planning an event in a 5,400-square-foot room. If there should
-be at least 8 square feet per person, what is the maximum number of
-people that could attend this event?`,
-    options: [
-    `588`,
-    `675 C, 15,274`,
-    `43,200`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of ratios, rates, and proportions concepts.`,
-    explainConcept: `This question tests your understanding of Ratios, Rates, and Proportions. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Ratios, Rates, and Proportions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 514,
+    id: 305,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -3776,7 +2050,7 @@ equivalent to Pf?`,
     tags: [],
   },
   {
-    id: 515,
+    id: 306,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -3798,7 +2072,7 @@ equivalent to Pf?`,
     tags: [],
   },
   {
-    id: 516,
+    id: 307,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -3820,7 +2094,7 @@ equivalent to Pf?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 517,
+    id: 308,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -3843,7 +2117,7 @@ take for the object to travel 24 centimeters?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 518,
+    id: 309,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -3866,7 +2140,7 @@ speed, in miles per hour? (1 mile = 1,760 yards)`,
     tags: ["student_produced_response"],
   },
   {
-    id: 519,
+    id: 310,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -3889,7 +2163,7 @@ earns for 39w hours of work?`,
     tags: [],
   },
   {
-    id: 520,
+    id: 311,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -3912,7 +2186,7 @@ purchase?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 521,
+    id: 312,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -3937,7 +2211,7 @@ did Iceland's population increase from 1990 to 2014?`,
     tags: [],
   },
   {
-    id: 522,
+    id: 313,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -3962,7 +2236,7 @@ this company?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 523,
+    id: 314,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -3989,89 +2263,7 @@ per hour?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 524,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "ratios_rates",
-    difficulty: "medium",
-    questionText: `Rectangle A has length 15 and width w. Rectangle B has length 20 and the
-same length-to-width ratio as rectangle A. What is the width of rectangle B
-in terms of w?
-aw`,
-    options: [
-    `3`,
-    `w+5 By Cc. 4`,
-    `w—-5`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of ratios, rates, and proportions concepts.`,
-    explainConcept: `This question tests your understanding of Ratios, Rates, and Proportions. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Ratios, Rates, and Proportions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 525,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "ratios_rates",
-    difficulty: "medium",
-    questionText: `Tanya earns $13.50 per hour at her part-time job. When she works z hours,
-she earns 13.507 dollars. Which of the following expressions gives the
-amount, in dollars, Tanya will earn if she works 37 hours?`,
-    options: [
-    `313.502)`,
-    `3+13.50z`,
-    `3z+13.50z b. 13.50(z +3)`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of ratios, rates, and proportions concepts.`,
-    explainConcept: `This question tests your understanding of Ratios, Rates, and Proportions. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Ratios, Rates, and Proportions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 526,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "ratios_rates",
-    difficulty: "medium",
-    questionText: `}-—— k —_+
-
-Volume = Tak* |
-
-48 |
-
-a
-
-The glass pictured above can hold a maximum volume of 473 cubic
-centimeters, which is approximately 16 fluid ounces. Jenny has a pitcher
-that contains 1 gallon of water. How many times could Jenny completely fill
-the glass with 1 gallon of water? (1 gallon = 128 fluid ounces)`,
-    options: [
-    `16`,
-    `8 c. 4`,
-    `3`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of ratios, rates, and proportions concepts.`,
-    explainConcept: `This question tests your understanding of Ratios, Rates, and Proportions. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Ratios, Rates, and Proportions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 527,
+    id: 315,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4095,7 +2287,7 @@ planet 29 times?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 528,
+    id: 316,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4118,7 +2310,7 @@ hour? (1 kilometer = 1,000 meters)`,
     tags: [],
   },
   {
-    id: 529,
+    id: 317,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4140,7 +2332,7 @@ hour? (1 kilometer = 1,000 meters)`,
     tags: ["student_produced_response"],
   },
   {
-    id: 530,
+    id: 318,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4163,7 +2355,7 @@ people. What is the area, in square miles, of Cedar County?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 531,
+    id: 319,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4185,7 +2377,7 @@ people. What is the area, in square miles, of Cedar County?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 532,
+    id: 320,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4208,7 +2400,7 @@ maintain the same ratio?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 533,
+    id: 321,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4230,7 +2422,7 @@ maintain the same ratio?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 534,
+    id: 322,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4254,7 +2446,7 @@ participant during the cycling leg? (1 mile = 1,760 yards)`,
     tags: ["student_produced_response"],
   },
   {
-    id: 535,
+    id: 323,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4279,7 +2471,7 @@ per square mile of land area, of the city at that time?`,
     tags: [],
   },
   {
-    id: 536,
+    id: 324,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4302,7 +2494,7 @@ of 20.300 miles per hour. What was this average speed, in yards per hour? (1 mil
     tags: ["student_produced_response"],
   },
   {
-    id: 537,
+    id: 325,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4324,29 +2516,7 @@ of 20.300 miles per hour. What was this average speed, in yards per hour? (1 mil
     tags: ["student_produced_response"],
   },
   {
-    id: 538,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "ratios_rates",
-    difficulty: "hard",
-    questionText: `An insect moves at a speed of a feet per second. What is this speed, in yards per second? (3 feet = 1 yard)`,
-    options: [
-    `a5 By`,
-    `6`,
-    `20`,
-    ``
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of ratios, rates, and proportions concepts.`,
-    explainConcept: `This question tests your understanding of Ratios, Rates, and Proportions. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Ratios, Rates, and Proportions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 150,
-    tags: [],
-  },
-  {
-    id: 539,
+    id: 326,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4368,7 +2538,7 @@ of 20.300 miles per hour. What was this average speed, in yards per hour? (1 mil
     tags: ["student_produced_response"],
   },
   {
-    id: 540,
+    id: 327,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4391,7 +2561,7 @@ region increases by 7 units, how must the length change to maintain this ratio?`
     tags: [],
   },
   {
-    id: 541,
+    id: 328,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4414,46 +2584,7 @@ these objects?`,
     tags: [],
   },
   {
-    id: 542,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "ratios_rates",
-    difficulty: "medium",
-    questionText: `Species of
-tree
-Cottonwood
-Black walnut
-White birch
-American
-4.0
-elm
-Shagbark
-. 7.5
-hickory
-One method of calculating the approximate age, in years, of a tree of a
-particular species is to multiply the diameter of the tree, in inches, by a
-constant called the growth factor for that species. The table above gives
-the growth factors for eight species of trees. If a white birch tree and a pin
-oak tree each now have a diameter of 1 foot, which of the following will be
-closest to the difference, in inches, of their diameters 10 years from now? (1
-foot = 12 inches)`,
-    options: [
-    `1.0`,
-    `1.2`,
-    `1.3`,
-    `1.4`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of ratios, rates, and proportions concepts.`,
-    explainConcept: `This question tests your understanding of Ratios, Rates, and Proportions. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Ratios, Rates, and Proportions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 543,
+    id: 329,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4478,45 +2609,7 @@ value of x ?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 544,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "ratios_rates",
-    difficulty: "medium",
-    questionText: `Power capacity
-ow [Medium in [Tota
-tees [+] 2 [ele]
-cattomia| 1 fo) 1 |
-oregon | 1 0 [1] |
-rindone [of 2) 0 | 2
-fcoterazo| 1 [| 1) 0 | 2
-we [2] 0 [ole]
-The table shows the distribution, by location and power capacity (maximum
-rate of power generation) of the twenty largest wind projects in the United
-States in 2013. The total power capacity of the nine wind projects located in
-Texas was 4,952 megawatts (MW), and the total power capacity of the
-twenty wind projects was 11,037 MW in 2013. The amount of energy
-produced in one hour at a rate of one megawatt is one megawatt-hour. If
-each of the nine Texas wind projects in 2013 had operated continuously for
-24 hours at the maximum rate of power generation, approximately how
-many megawatt-hours of energy would the nine projects have produced?`,
-    options: [
-    `200`,
-    `5,000`,
-    `11,000`,
-    `120,000`
-  ],
-    correctIndex: 3,
-    explainWhy: `The correct answer is D. This question requires understanding of ratios, rates, and proportions concepts.`,
-    explainConcept: `This question tests your understanding of Ratios, Rates, and Proportions. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Ratios, Rates, and Proportions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 545,
+    id: 330,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4538,31 +2631,7 @@ many megawatt-hours of energy would the nine projects have produced?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 546,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "ratios_rates",
-    difficulty: "medium",
-    questionText: `The density of a certain type of wood is 353 kilograms per cubic meter. A sample of this type of wood is in the
-shape of a cube and has a mass of 345 kilograms. To the nearest hundredth of a meter, what is the length of one
-edge of this sample?`,
-    options: [
-    `0.98`,
-    `0.99 c.1.01`,
-    `1.02`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of ratios, rates, and proportions concepts.`,
-    explainConcept: `This question tests your understanding of Ratios, Rates, and Proportions. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Ratios, Rates, and Proportions problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 547,
+    id: 331,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4587,7 +2656,7 @@ for the second batch, how much yellow paint should Anita use?`,
     tags: [],
   },
   {
-    id: 548,
+    id: 332,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4611,7 +2680,7 @@ What is the mass of this cube, in grams?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 549,
+    id: 333,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4634,7 +2703,7 @@ What is the mass of this cube, in grams?`,
     tags: [],
   },
   {
-    id: 550,
+    id: 334,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4658,7 +2727,7 @@ sample?`,
     tags: [],
   },
   {
-    id: 551,
+    id: 335,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4682,7 +2751,7 @@ grams, what is the density of this cube, in grams per cubic centimeter?`,
     tags: ["student_produced_response"],
   },
   {
-    id: 552,
+    id: 336,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4707,7 +2776,7 @@ people in the town would be expected to name chocolate?`,
     tags: [],
   },
   {
-    id: 553,
+    id: 337,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4734,7 +2803,7 @@ trees in the entire forest?`,
     tags: [],
   },
   {
-    id: 554,
+    id: 338,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4760,7 +2829,7 @@ the following is the best interpretation of the survey results?`,
     tags: [],
   },
   {
-    id: 555,
+    id: 339,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4784,7 +2853,7 @@ appropriate conclusion that can be made about the population mean?`,
     tags: [],
   },
   {
-    id: 556,
+    id: 340,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4810,7 +2879,7 @@ most plausible conclusion?`,
     tags: [],
   },
   {
-    id: 557,
+    id: 341,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4839,7 +2908,7 @@ conclusions is best supported by the sample data?`,
     tags: [],
   },
   {
-    id: 558,
+    id: 342,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -4865,7 +2934,7 @@ following is the best conclusion from these data?`,
     tags: [],
   },
   {
-    id: 559,
+    id: 343,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4890,7 +2959,7 @@ own televisions?`,
     tags: [],
   },
   {
-    id: 560,
+    id: 344,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4918,42 +2987,7 @@ the following is the most appropriate conclusion?`,
     tags: [],
   },
   {
-    id: 561,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "inference",
-    difficulty: "medium",
-    questionText: `Arandom sample of 400 town voters were asked if they plan to vote for Candidate A or Candidate B for mayor.
-The results were sorted by gender and are shown in the table below.
-
-Plan to Plan to
-
-vote for | vote for
-
-Candidate | Candidate
-A B
-
-femal) 202 | 70
-Male | 34 | 144
-The town has a total of 6,000 voters. Based on the table, what is the best estimate of the number of voters who
-plan to vote for Candidate A?`,
-    options: [
-    `3540`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 3540. This is a student-produced response question testing statistical inference and margin of error.`,
-    explainConcept: `This question tests your understanding of Statistical Inference and Margin of Error. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Statistical Inference and Margin of Error problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 562,
+    id: 345,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -4978,7 +3012,7 @@ total number of people in the population who support the proposed legislation?`,
     tags: [],
   },
   {
-    id: 563,
+    id: 346,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -5004,106 +3038,7 @@ characteristic?`,
     tags: [],
   },
   {
-    id: 564,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "inference",
-    difficulty: "medium",
-    questionText: `Talks on Does not talk
-Texting cell phone | oncell phone
-behavior daily daily Total
-Medium | 39 | ee | 03]
-In a study of cell phone use, 799 randomly selected US teens were asked
-how often they talked on a cell phone and about their texting behavior. The
-data are summarized in the table above. Based on the data from the study,
-an estimate of the percent of US teens who are heavy texters is 30% and
-the associated margin of error is 3%. Which of the following is a correct
-statement based on the given margin of error?`,
-    options: [
-    `Approximately 3% of the teens in the study who are classified as heavy texters are not really heavy texters.`,
-    `It is not possible that the percent of all US teens who are heavy texters is less than 27%.`,
-    `The percent of all US teens who are heavy texters is 33%.`,
-    `It is doubtful that the percent of all US teens who are heavy texters is 35%.`
-  ],
-    correctIndex: 3,
-    explainWhy: `The correct answer is D. This question requires understanding of statistical inference and margin of error concepts.`,
-    explainConcept: `This question tests your understanding of Statistical Inference and Margin of Error. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Statistical Inference and Margin of Error problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 565,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "inference",
-    difficulty: "medium",
-    questionText: `Views on Nuclear
-Energy Use
-Strong]
-gly 56
-favor
-Somewhat
-214
-favor
-Somewhat
-104
-oppose
-Strong]
-gly 37
-oppose
-A researcher interviewed 411 randomly selected US residents and asked about their views on the use of nuclear
-energy. The table above summarizes the responses of the interviewees. If the population of the United States was
-300 million when the survey was given, based on the sample data for the 411 US residents, what is the best
-estimate, in millions, of the difference between the number of US residents who somewhat favor or strongly favor
-the use of nuclear energy and the number of those who somewhat oppose or strongly oppose it? (Round your
-answer to the nearest whole number.)`,
-    options: [
-    `94`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 94. This is a student-produced response question testing statistical inference and margin of error.`,
-    explainConcept: `This question tests your understanding of Statistical Inference and Margin of Error. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Statistical Inference and Margin of Error problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 566,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "inference",
-    difficulty: "medium",
-    questionText: `es | we [tee
-The results of two random samples of votes for a proposition are shown
-above. The samples were selected from the same population, and the
-margins of error were calculated using the same method. Which of the
-following is the most appropriate reason that the margin of error for sample
-Ais greater than the margin of error for sample B?`,
-    options: [
-    `Sample A had a smaller number of votes that could not be recorded.`,
-    `Sample A had a higher percent of favorable responses.`,
-    `Sample A had a larger sample size.`,
-    `Sample A had a smaller sample size.`
-  ],
-    correctIndex: 3,
-    explainWhy: `The correct answer is D. This question requires understanding of statistical inference and margin of error concepts.`,
-    explainConcept: `This question tests your understanding of Statistical Inference and Margin of Error. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Statistical Inference and Margin of Error problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 567,
+    id: 347,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -5131,744 +3066,7 @@ in the state who have fewer than two siblings?`,
     tags: [],
   },
   {
-    id: 568,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "easy",
-    questionText: `a ee
-20 e
-18
-16
-° °
-12 .
-10 .
-8 . .
-6 ° °
-: ee
-2
-0 x
-0 1 2 3 4 & 6
-Of the following, which is the best model for
-the data in the scatterplot?`,
-    options: [
-    `y =2x*—11x—-20`,
-    `y=2x*—-11x +20 = 9y2_ = Cc. V=2x*-Oox—-3`,
-    `y=2x²-5x +3`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 569,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "easy",
-    questionText: `'Temperature of a Cup of Coffee
-
-55 during an Experiment
-
-200 Tet yt ty
-~isottt tT TTT r rrr rye
-& yolLtt tt Pree
-° volt ttt try rr
-Spolt Te TT itr ttt
-& ot tie
-5 yoLt ttt tte | aan
-= oltl ITT TT TT? ≤ ≤ ≤ |
-& att tT TTT tt r itt ttt)
-
-gl t TTT TTT TTT ttt
-
-+ + 4
-> "204060 80 100 120 140
-'Time since cup was removed
-from heat source (minutes)
-
-In an experiment, a heated cup of coffee is removed from a heat source,
-and the cup of coffee is then left in a room that is kept at a constant
-temperature. The graph above shows the temperature, in degrees
-Fahrenheit (°F), of the coffee immediately after being removed from the
-heat source and at 10-minute intervals thereafter. During which of the
-following 10-minute intervals does the temperature of the coffee decrease
-at the greatest average rate?`,
-    options: [
-    `Between 0 and 10 minutes`,
-    `Between 30 and 40 minutes`,
-    `Between 50 and 60 minutes`,
-    `Between 90 and 100 minutes`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 570,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "easy",
-    questionText: `Temperature and Elevation
-
-45
-
-watt | JT 7 Tf
-aeylmet> tT tT Tf
-ger
-241 [IS
->) eS
-Bz] | | | TN
-esl | Tt tT tT Re
-
-yt | | [ ff e|
-
-FF KF GF SF
-
-Elevation (feet)
-
-The scatterplot above shows the high temperature on a certain day and the
-elevation of 8 different locations in the Lake Tahoe Basin. A line of best fit
-for the data is also shown. What temperature is predicted by the line of best
-fit for a location in the Lake Tahoe Basin with an elevation of 8,500 feet?`,
-    options: [
-    `37°F`,
-    `39°F CG. ATF`,
-    `43°F`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 571,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "easy",
-    questionText: `≫ 300
-
-gf 250
-
-2 200
-
-= 150
-
-i]
-
-B ≥ 100
-
-5 g 50
-
-$000 2002 2004 2006 2008
-Graduating class year
-
-The line graph shows the number of graduates from the classes of 2001
-through 2007 at a certain school who enrolled in college within 24 months
-of graduation. Of the following, which class had the fewest graduates who
-enrolled in college within 24 months of graduation?`,
-    options: [
-    `2002`,
-    `2004`,
-    `2005`,
-    `2007`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 572,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "easy",
-    questionText: `Theresa's Running Speed and Time
-8
-=e LOH TAT
-2 oL ATPASE TAT
-s 5. T/T TT TAY
-galt ttt
-z tf
-ea
-ott TTT yt Ty
-0 5 10 15 20 25 30
-Time (minutes)
-Theresa ran on a treadmill for thirty minutes, and her time and speed are
-shown on the graph above. According to the graph, which of the following
-statements is NOT true concerning Theresa's run?`,
-    options: [
-    `Theresa ran at a constant speed for five minutes.`,
-    `Theresa's speed was increasing for a longer period of time than it was decreasing.`,
-    `Theresa's speed decreased at a constant rate during the last five minutes.`,
-    `Theresa's speed reached its maximum during the last ten minutes.`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 573,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "easy",
-    questionText: `an Density of Grape Juice
-1,400
-ea
-nt
-Soe tote, | |
-Pe ae
-ee
-perl Oe ol) ee
-ee ae
-ppt
-20% 30% 40% 50% 60% 70% 80%
-Concentration
-The densities of different concentrations of grape juice are shown in the
-scatterplot above. According to the trend shown by the data, which of the
-following is closest to the predicted density, in kilograms per cubic meter
-(kg/m), for grape juice with a concentration of 60%?`,
-    options: [
-    `1,200`,
-    `1,250`,
-    `1,300`,
-    `1,350`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 574,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "easy",
-    questionText: `Number of 3-D Movies Released by Year
-50
-3
-g 40
-6
-gy ° 30
-23
-π Ss 20
-Ze
-2 10
-; 0
-ew s SS s s s s s s
-Year
-According to the line graph above, between which two consecutive years
-was there the greatest change in the number of 3-D movies released?`,
-    options: [
-    `2003-2004`,
-    `2008-2009`,
-    `2009-2010`,
-    `2010-2011`
-  ],
-    correctIndex: 3,
-    explainWhy: `The correct answer is D. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 575,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "easy",
-    questionText: `Braking Distance versus Speed
-
-= 600
-
-2 500
-
-g 400
-
-2 300
-
-ba
-
-& 200
-
-2 100
-
-a
-
-0
-0 20 40 60 80
-Speed (miles per hour)
-The graph above shows the relationship between the speed of a particular
-car, in miles per hour, and its corresponding braking distance, in feet.
-Approximately how many feet greater will the car's braking distance be
-when the car is traveling at 50 miles per hour than when the car is traveling
-at 30 miles per hour?`,
-    options: [
-    `75`,
-    `125`,
-    `175`,
-    `250`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 576,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "easy",
-    questionText: `Number of Beach Visitors
-versus Temperature
-oo ee
-7
-560 rr
-a
-2 gol rrr yet
-≥ a 2
-2 ao Pere
-$ a
-8 yo Ptr)
-g a
-≤ wot eet rrr
-EI A
-Z oI 4 Cee
-a
-sZt)
-a
-ep
-2 27° ≪29313335
-Average temperature (°C)
-Each dot in the scatterplot above represents the temperature and the
-number of people who visited a beach in Lagos, Nigeria, on one of eleven
-different days. The line of best fit for the data is also shown. According to
-the line of best fit, what is the number of people, rounded to the nearest 10,
-predicted to visit this beach on a day with an average temperature of 32°C?`,
-    options: [
-    `480`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 480. This is a student-produced response question testing two-variable data.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 577,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `The scatterplot shows the temperature y, in °F, recorded by a meteorologist at various times 2, in days since
-June 1.
-J
-i
-ott tt
-aed ee
-2 50
-fof | | TL Lt
-Ss
-pT
-a.
-& 30
-re
-wt EE
-PT TET TT Ty
-O x
-12 3 4 5 6 7 8
-Time (days since June 1)
-During which of the following time periods did the greatest increase in recorded temperature take place?`,
-    options: [
-    `From xz =6tor=7`,
-    `From az = 5toz =6`,
-    `Fromaz = 2tor=3`,
-    `Frooma=1ltor=2`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 578,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `A study was done to determine a new car's stopping distance when it was traveling at different speeds. The
-study was done on a dry road with good surface conditions. The results are shown below, along with the
-graph of a quadratic function that models the data.
-Vehicle Stopping Distance
-y
-= 350
-& 300
-3 250
-= 200
-150
-= 100
-= 50
-0 x
-0 2 40 60 80
-Speed (miles per hour)
-According to the model, which of the following is the best estimate for the
-stopping distance, in feet, if the vehicle was traveling 55 miles per hour?`,
-    options: [
-    `25`,
-    `30`,
-    `210`,
-    `250`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 579,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `Temperature and Elevation
-
-45
-
-waft | JT 7 7]
-eypl mw i> T tT Ty]
-x S
-geet
-z 41
-By) | | Sy tf
-Bz] | | | TX |
-sl | [ Tt tT Re
-
-yt | | [ ff e|
-
-FF KCK KF Fw
-
-Elevation (feet)
-
-The scatterplot above shows the high temperature on a certain day and the
-elevation of 8 different locations in the Lake Tahoe Basin. A line of best fit
-for the data is also shown. Which of the following statements best
-describes the association between the elevation and the temperature of
-locations in the Lake Tahoe Basin?`,
-    options: [
-    `As the elevation increases, the temperature tends to increase.`,
-    `As the elevation increases, the temperature tends to decrease.`,
-    `As the elevation decreases, the temperature tends to decrease.`,
-    `There is no association between the elevation and the temperature.`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 580,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `Distance and Density of Planetoids
-in the Inner Solar System
-a
-55 SOE]
-8 ERSS SEERA
-8 ste EE HH
-2 ysf CPPS
-2 PCOOOCCERN Eee
-eS
-≥ *COeCo reese
-A 350- PCP rrr rr Pst rr
-a
-3 OEE EEE Eres]
-0 04 08 12 16 2 24 28 3.2
-Distance from the Sun (AU)
-The scatterplot above shows the densities of 7 planetoids, in grams per
-cubic centimeter, with respect to their average distances from the Sun in
-astronomical units (AU). The line of best fit is also shown. An astronomer
-has discovered a new planetoid about 1.2 AU from the Sun. According to
-the line of best fit, which of the following best approximates the density of
-the planetoid, in grams per cubic centimeter?`,
-    options: [
-    `3.6`,
-    `4.1`,
-    `4.6`,
-    `5.5`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 581,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `y
-20
-ee | | | | fo
-Bree
-oa
-ee TT TA
-ra
-af | | | |
-sf | JA |
-[La] | ft |
-of | | tt
-vt | | lh vdTl lth
-O 600 1,200 1,800
-Twelve data points are shown in the scatterplot. A line of best fit for the data is also shown. At a = 1,200, which of the
-following is closest to the y-value predicted by the line of best fit?`,
-    options: [
-    `16`,
-    `14`,
-    `11`,
-    `6`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 582,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `An orchard owner recorded the weight, in pounds, of all nectarines that grew on a dwarf nectarine tree during each growing
-season after the tree's transplantation. The scatterplot shows this weight, in pounds, for each growing season after the tree's
-transplantation.
-J
-90
-
-Sot tt tl tt tet
-
-2 80
-
-3 70
-
-S ot LEE Ey
-
-$ 60
-
-= oot | | | | TT | I
-
-e oLLE Le TT
-
-3)
-
-co)
-
-eet LL
-
-el
-
-o 30
-
-Soot tte ttt
-
-2p 20
-
-fot tt ET
-
-= TTT
-
-x
-O 123 45 67 8 9 10
-Growing season after transplantation
-
-What was the weight, to the nearest pound, of all nectarines that grew on the tree during the 4th growing season after the
-tree's transplantation?`,
-    options: [
-    `40`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 40. This is a student-produced response question testing two-variable data.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 583,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `The line graph shows the estimated number of chipmunks in a state park on April 1 of each year from 1989 to
-1999.
-22e "TLL
-n
-Ee 150
-= 2 oot | LI ANI LI I
-z a 100 y = '|
-22 ot ZVI WN
-___y
-ee Till iit itt
-- 0 6% 96 ofl
-9X oO oS ob o> DO)
-Roh Ro Rou ou cu CH Ac x "oy? Ro ce
-Year
-Based on the line graph, in which year was the estimated number of chipmunks in the state park the greatest?`,
-    options: [
-    `1989`,
-    `1994 c. 1995`,
-    `1998`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 584,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `Which of the following is true about the values of 2" and
-9x +2? forx >0?`,
-    options: [
-    `For all X > O, it is true that 2% < 2x +2.`,
-    `For all X > O, it is true that 2* = 2x +2.`,
-    `There is a constant c such that if Q < x <≤, then 2* < 2x +2, but if y ≫ ≤, then 2% > 2x +2.`,
-    `There is a constant c such that if 0 <x <≤, then 2* > 2x +2, but if x >, then 2 2 Ox +2.`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 585,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `The scatterplot shows the relationship between two variables, ° and y. A line of best fit is also shown.
-J
-mutt t ttt tt tt tt
-PPT Ty TT TT EP TT TT
-pNP EL tt tt
-PINS TEP ET Et tt
-re
-SERN
-gt tT LIN, ET Tt
-PTE Py PIN EE Et
-6f ETT ET IEE TT TT
-PPT TT TT PAA TE TT
-aL tt ttt tt PNET
-PPP TTT PT PT PT Ph PNT
-gt ttt tt ttt tt PA
-PTT eT TT TT TP PT TTS
-Pee
-O'2' 4° 6° 8 110 12 14
-Which of the following is closest to the slope of the line of best fit shown?`,
-    options: [
-    `—2.4`,
-    `—0.8 Cc. 0.8`,
-    `2.4`,
-    ``
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 586,
+    id: 348,
     section: "math",
     module: 1,
     topic: "problem_solving",
@@ -5894,150 +3092,7 @@ morning?`,
     tags: [],
   },
   {
-    id: 587,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `Income and Percent of Total Expenses Spent
-3 on Programs for Ten Charities in 2011
-gg 95
-ad Cs
-3 Ey 90 A
-3 & 85
-S23 80
-≥ 75 .
-'i Me NJ ° p p ≫ Sy
-AN)
-Pk Ff ef Ce
-Total income (millions of dollars)
-The scatterplot above shows data for ten charities along with the line of best fit. For the charity with the greatest
-percent of total expenses spent on programs, which of the following is closest to the difference of the actual
-percent and the percent predicted by the line of best fit?`,
-    options: [
-    `10%`,
-    `7%`,
-    `4%`,
-    `1%`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 588,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `20
-oo
-git | | fetst 4
-ie
-rs a a a
-fo LER
-7 Satria
-Bel tet TT
-ei [el] | ft ||
-aj, qT tT Tt
-A
-0 1 2 3 4 5 6
-High jump height (feet)
-Each dot in the scatterplot above represents the height x, in feet, in the high
-jump, and the distance y, in feet, in the long jump, made by each student in
-a group of twenty students. The graph of which of the following equations
-is a line that most closely fits the data?`,
-    options: [
-    `y =0.62x + 3.30`,
-    `y=0.82x — 0.82`,
-    `y=3.30x + 0.82`,
-    `y=3.30x — 3.30`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 589,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `4
-30
-25
-a i a
-|_| ea
-=| PS ale
-s+ | | | |
-| ee | Ble
-0 2 4 6 8 10
-Which of the following could be the equation for a line of best fit for the
-data shown in the scatterplot above?`,
-    options: [
-    `y=3x+0.8`,
-    `y=0.8x +3`,
-    `y=—0.8x+3`,
-    `y=—3x+0.8`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 590,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `The scatterplot shows the relationship between two variables, xz and y. A line of best fit for the data is also shown.
-BY
-A
-ioe eee
-T PAE TP
-gt LINE ET TT TT
-T TTT NEP ET TTT TT
-6+ tH NET T T
-fT TT TPE Ny tet et
-gat titi te ing tet tt
-P| Pt tt tT PING TTT
-ot EET TTT Py
-Meee eeeaNaE
-oly tt tit ttt t Pty Tt
-0 24 26 28 30 32 34 36
-At x = 32, which of the following is closest to the y-value predicted by the line of best fit?`,
-    options: [
-    `0.4`,
-    `1.5`,
-    `2:4`,
-    `3.3`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 591,
+    id: 349,
     section: "math",
     module: 2,
     topic: "problem_solving",
@@ -6084,317 +3139,6 @@ Which of the following is closest to the slope of the line of best fit shown?`,
     `0.7`,
     `1.8`,
     `2.6`
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 592,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `The scatterplot shows the relationship between two variables, ° and y. A line of best fit for the data is also shown.
-Jy
-ee
-ioe eee
-PT PAE TPE
-gt LINE ET TTT
-P| TTT NEP ETT TT TT
-6-H NET TT
-fT TTT TIE Ny tet et
-gat ttt tte ing tet ty
-PF Pt tt tT PING ET YT
-pt FEET TTT Py
-Meee
-obj tt tit ttt t Pi yAt Tt
-0 24 26 28 30 32 34 36
-At 2 = 25.5, which of the following is closest to the y-value predicted by the line of best fit?`,
-    options: [
-    `6.2`,
-    `7.3 C: 8.2`,
-    `9.1`,
-    ``
-  ],
-    correctIndex: 2,
-    explainWhy: `The correct answer is C. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 593,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `a y Minimum Wage
-88
-al Z
-25
-me '
-23
-E2 2
-30 x
-2 0 10 20 30 40 50 60 70 80
-Years since 1940
-The scatterplot above shows the federal-mandated minimum wage every 10
-years between 1940 and 2010. A line of best fit is shown, and its equation is
-y = 0.096x—0.488- What does the line of best fit predict about the increase in
-the minimum wage over the 70-year period?`,
-    options: [
-    `Each year between 1940 and 2010, the average increase in minimum wage was 0.096 dollars.`,
-    `Each year between 1940 and 2010, the average increase in minimum wage was 0.49 dollars.`,
-    `Every 10 years between 1940 and 2010, the average increase in minimum wage was 0.096 dollars.`,
-    `Every 10 years between 1940 and 2010, the average increase in minimum wage was 0.488 dollars.`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 594,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `The scatterplot shows the relationship between the length of time y, in hours, a certain bird spent in flight and the
-number of days after January 11, z.
-Jy
-16
-a ee ee
-wut. | [fe t| |
-or es ee ee ee ee
-5 yf [| | | |
-2 a ee ee ee ee
-= yf [-/ | | 1
-B ee ee ee ee ee
-Bs gf [| | [fT
-a ee ee ee ee ee
-= 6+ 4 | [|
-'Bp ee ee ee ee ee
-Gg gf [| [| [ T
-4 ee ee ee ee
-z+ _| [| | ft
-ee ee ee ee
-ee
-O 2 4 6 8 10
-Days after January 11
-What is the average rate of change, in hours per day, of the length of time the bird spent in flight on January 13 to
-the length of time the bird spent in flight on January 15?`,
-    options: [
-    `4.5`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 4.5. This is a student-produced response question testing two-variable data.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 595,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `Number of Beach Visitors
-versus Temperature
-oo ee
-7
-560 rr
-a
-2 gol rrr yet
-≥ a 2
-2 ao Pere
-$ a
-8 yo Ptr)
-g a
-≤ wot eet rrr
-EI a
-Z oI 4 Cee
-a
-sZt)
-a
-ep
-2 27° ≪29313335
-Average temperature (°C)
-Each dot in the scatterplot above represents the temperature and the
-number of people who visited a beach in Lagos, Nigeria, on one of eleven
-different days. The line of best fit for the data is also shown. The line of best
-fit for the data has a slope of approximately 57. According to this estimate,
-how many additional people per day are predicted to visit the beach for
-each 5°C increase in average temperature?`,
-    options: [
-    `285`,
-    `0`,
-    `1`,
-    `-1`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is 285. This is a student-produced response question testing two-variable data.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: ["student_produced_response"],
-  },
-  {
-    id: 596,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `The scatterplot below shows the amount of electric energy generated, in millions of megawatt-hours, by
-nuclear sources over a 10-year period.
-Electric Energy
-Generated by Nuclear Sources
-y y
-820+
-i
-2 ee °
-780-4
-g So 760°
-ae
-740
-z 720 $$
-700 ~——+>—_+—++—+— ++ x
-0 2 4 6 8 0 12
-Time (years)
-Of the following equations, which best models the data in the scatterplot?`,
-    options: [
-    `Y= 1.674x°+19.76x —745.73`,
-    `y = —1.674x*—19.76x —745.73`,
-    `y = 1.674x* +19.76x +745.73`,
-    `Y= —1.674x°+19.76x +745.73`
-  ],
-    correctIndex: 3,
-    explainWhy: `The correct answer is D. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 597,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `Size and Sale Price
-Y of Houses in Town H
-S 400
-i
-& 300 YH
-ee et ae
-Pont | Jee | |
-ed ae el
-Bl sig | || | |
-ee
-oe
-0 1 2 3
-Size (thousands of square feet)
-The scatterplot above shows the size x and the sale price y of 25 houses for
-sale in Town H. Which of the following could be an equation for a line of
-best fit for the data?`,
-    options: [
-    `y = 200x +100`,
-    `y=100x+100`,
-    `y=50x +100`,
-    `y=100x`
-  ],
-    correctIndex: 1,
-    explainWhy: `The correct answer is B. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 598,
-    section: "math",
-    module: 1,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `[__[amountinvested| Balance increase
-Two investments were made as shown in the table above. The interest in
-Account A is compounded once per year. Which of the following is true
-about the investments?`,
-    options: [
-    `Account A always earns more money per year than Account B.`,
-    `Account A always earns less money per year than Account B.`,
-    `Account A earns more money per year than Account B at first but eventually earns less money per year.`,
-    `Account A earns less money per year than Account B at first but eventually earns more money per year.`
-  ],
-    correctIndex: 0,
-    explainWhy: `The correct answer is A. This question requires understanding of two-variable data concepts.`,
-    explainConcept: `This question tests your understanding of Two-Variable Data. Problem-Solving and Data Analysis is one of the key content domains on the SAT.`,
-    explainNext: `Practice more Two-Variable Data problems to strengthen your skills in this area.`,
-    isCalculatorAllowed: true,
-    estTimeSec: 120,
-    tags: [],
-  },
-  {
-    id: 599,
-    section: "math",
-    module: 2,
-    topic: "problem_solving",
-    subtopic: "two_var_data",
-    difficulty: "medium",
-    questionText: `Total Protein and Total Fat
-for Eight Sandwiches
-80+ '
-
-Ze 70
-
-= 60
-
-5 50
-
-= 40
-
-= 30
-
-S 20
-
-. See
-
-0
-0 1 20 30 40 ° 50
-Total protein (grams)
-
-The scatterplot above shows the numbers of grams of both total protein and total fat for eight sandwiches on a
-restaurant menu. The line of best fit for the data is also shown. According to the line of best fit, which of the
-following is closest to the predicted increase in total fat, in grams, for every increase of 1 gram in total protein?`,
-    options: [
-    `2.5`,
-    `2.0 GC. 15`,
-    `1.0`,
-    ``
   ],
     correctIndex: 2,
     explainWhy: `The correct answer is C. This question requires understanding of two-variable data concepts.`,

@@ -1,6 +1,6 @@
 # TutorZero
 
-SAT tutoring web app. React 19 + Hono/Cloudflare Workers + D1 + Supabase Auth + Stripe.
+SAT tutoring web app. React 19 + Hono + Supabase (Auth + PostgreSQL) + Stripe. Deployed on Vercel.
 
 ## Skill routing
 
@@ -19,3 +19,18 @@ Key routing rules:
 - Design system, brand → invoke design-consultation
 - Visual audit, design polish → invoke design-review
 - Architecture review → invoke plan-eng-review
+
+## Deploy Configuration (configured by /setup-deploy)
+- Platform: Vercel
+- Production URL: https://tutorzero.vercel.app
+- Deploy workflow: auto-deploy on push to main (via GitHub integration)
+- Deploy status command: HTTP health check
+- Merge method: squash
+- Project type: web app
+- Post-deploy health check: https://tutorzero.vercel.app
+
+### Custom deploy hooks
+- Pre-merge: `npm run build && npm test`
+- Deploy trigger: automatic on push to main
+- Deploy status: poll production URL
+- Health check: https://tutorzero.vercel.app

@@ -1,4 +1,14 @@
-# gstack binary and deps (453MB, rebuilt via ./setup)
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.vercel/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# gstack binary and deps (rebuilt via ./setup)
 .claude/skills/gstack/gstack/
 
 # gstack logs
@@ -6,7 +16,19 @@
 
 # IDE / OS
 .DS_Store
+**/.DS_Store
+.idea/
+.vscode/
 
-# scripts output
+# Scripts
 scripts/output/
-TutorZero/.dev.vars
+scripts/extracted/
+scripts/__pycache__/
+**/__pycache__/
+*.pyc
+
+# Env / secrets
+.dev.vars
+.env
+.env.local
+.env.*.local

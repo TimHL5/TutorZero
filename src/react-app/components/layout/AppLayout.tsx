@@ -14,8 +14,8 @@ import {
 } from "lucide-react";
 import { cn } from "@/react-app/lib/utils";
 
-const WORDMARK_LIGHT = "https://019c2e5b-2f20-7a1a-8266-2d41e0797564.mochausercontent.com/tutorzero-wordmark-dark.png";
-const ICON_SQUARE = "https://019c2e5b-2f20-7a1a-8266-2d41e0797564.mochausercontent.com/tutorzero-icon-square.png";
+const WORDMARK_LIGHT = "/logos/tutorzero-wordmark-dark.png";
+const ICON_SQUARE = "/logos/tutorzero-icon-square.png";
 
 interface NavItem {
   to: string;

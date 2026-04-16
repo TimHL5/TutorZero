@@ -1,16 +1,11 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
   "entry": [
-    "src/react-app/main.tsx",
-    "src/worker/index.ts"
+    "src/worker/index.ts",
+    "api/[[...route]].ts"
   ],
   "project": ["src/**/*.{ts,tsx}"],
   "ignore": [
-    ".bun/**",
-    "dist/**",
     "src/react-app/vite-env.d.ts"
-  ],
-  "ignoreDependencies": [
-    "@supabase/supabase-js"
   ]
 }

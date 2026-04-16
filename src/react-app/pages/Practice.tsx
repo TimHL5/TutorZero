@@ -7,7 +7,7 @@ import { cn } from "@/react-app/lib/utils";
 import { MathText } from "@/react-app/components/ui/MathText";
 import { ChevronRight, Pause, Play, CheckCircle, XCircle, Lightbulb, BookOpen, ArrowRight, ChevronDown, MessageSquare, Lock, Target, Clock, X, Home, AlertTriangle } from "lucide-react";
 
-const WORDMARK_LIGHT = "https://019c2e5b-2f20-7a1a-8266-2d41e0797564.mochausercontent.com/tutorzero-wordmark-dark.png";
+const WORDMARK_LIGHT = "/logos/tutorzero-wordmark-dark.png";
 
 type ConfidenceLevel = "guessing" | "somewhat" | "confident";
 

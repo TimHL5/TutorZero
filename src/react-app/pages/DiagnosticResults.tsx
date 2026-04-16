@@ -6,7 +6,7 @@ import { useAuth } from "@/react-app/lib/AuthProvider";
 import { ArrowRight, TrendingUp, TrendingDown, AlertTriangle, Home } from "lucide-react";
 // Utility classes used inline
 
-const WORDMARK_LIGHT = "https://019c2e5b-2f20-7a1a-8266-2d41e0797564.mochausercontent.com/tutorzero-wordmark-on-dark.png";
+const WORDMARK_LIGHT = "/logos/tutorzero-wordmark-on-dark.png";
 
 type ConfidenceLevel = "guessing" | "somewhat" | "confident";
 

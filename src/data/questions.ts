@@ -128,10 +128,6 @@ export function getQuestionsByTopic(topic: string): Question[] {
   return questions.filter(q => q.topic === topic);
 }
 
-export function getQuestionsByDifficulty(difficulty: Question["difficulty"]): Question[] {
-  return questions.filter(q => q.difficulty === difficulty);
-}
-
 export function getDiagnosticQuestions(count: number = 20): Question[] {
   // Get a balanced mix of topics and difficulties for diagnostic
   const selected: Question[] = [];
@@ -313,7 +309,3 @@ export const topicDisplayNames: Record<string, string> = {
   boundaries: "Sentence Boundaries",
   form_structure_sense: "Form, Structure, and Sense"
 };
-
-// Get all unique topics
-export const mathTopics = [...new Set(questions.filter(q => q.section === "math").map(q => q.topic))];
-export const readingWritingTopics = [...new Set(questions.filter(q => q.section === "reading_writing").map(q => q.topic))];

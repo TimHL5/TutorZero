@@ -26,7 +26,7 @@ const COLORS = {
   white: [255, 255, 255] as [number, number, number],
 };
 
-export function generateProgressReport(data: ProgressData): jsPDF {
+function generateProgressReport(data: ProgressData): jsPDF {
   const doc = new jsPDF();
   const pageWidth = doc.internal.pageSize.getWidth();
   const margin = 20;

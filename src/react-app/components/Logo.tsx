@@ -24,7 +24,7 @@ export function Logo({ to = "/dashboard", className = "", size = "md", showText 
     <div className={`flex items-center gap-2 group ${className}`}>
       <div className="relative">
         <img 
-          src="https://019c2e5b-2f20-7a1a-8266-2d41e0797564.mochausercontent.com/logo.png" 
+          src="/logos/tutorzero-icon-circle.png" 
           alt="TutorZero" 
           className={`${sizeClasses[size]} transition-transform group-hover:scale-110`}
         />

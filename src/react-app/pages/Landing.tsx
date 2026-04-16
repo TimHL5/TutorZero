@@ -26,7 +26,7 @@ export default function LandingPage() {
           <div className="h-16 flex items-center justify-between">
             <Link to="/" className="flex items-center">
               <img 
-                src="https://019c2e5b-2f20-7a1a-8266-2d41e0797564.mochausercontent.com/tutorzero-wordmark-light.png" 
+                src="/logos/tutorzero-wordmark-light.png" 
                 alt="TutorZero" 
                 className="h-8"
               />
@@ -273,7 +273,7 @@ export default function LandingPage() {
         <div className="max-w-[900px] mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <img 
-              src="https://019c2e5b-2f20-7a1a-8266-2d41e0797564.mochausercontent.com/tutorzero-wordmark-light.png" 
+              src="/logos/tutorzero-wordmark-light.png" 
               alt="TutorZero" 
               className="h-7"
             />

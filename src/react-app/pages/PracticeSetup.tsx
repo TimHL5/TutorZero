@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { Calculator, BookOpen, PenTool, GraduationCap, ChevronRight, Home, Clock, Target } from "lucide-react";
 import { cn } from "@/react-app/lib/utils";
 
-const WORDMARK_LIGHT = "https://019c2e5b-2f20-7a1a-8266-2d41e0797564.mochausercontent.com/tutorzero-wordmark-dark.png";
+const WORDMARK_LIGHT = "/logos/tutorzero-wordmark-dark.png";
 
 interface SectionOption {
   id: "math" | "reading" | "writing" | "full";

@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router";
 import { useAuth } from "@/react-app/lib/AuthProvider";
 import { Loader2, ArrowLeft } from "lucide-react";
 
-const WORDMARK_LIGHT = "https://019c2e5b-2f20-7a1a-8266-2d41e0797564.mochausercontent.com/tutorzero-wordmark-on-dark.png";
+const WORDMARK_LIGHT = "/logos/tutorzero-wordmark-on-dark.png";
 
 export default function Login() {
   const navigate = useNavigate();

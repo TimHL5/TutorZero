@@ -2,7 +2,6 @@ import { Hono } from "hono";
 import { getCookie, setCookie } from "hono/cookie";
 import Stripe from "stripe";
 import type { Context, Next } from "hono";
-import { getSupabaseAdmin } from "./supabase";
 
 const SUPABASE_URL = "https://bkmyfcolrdumyrwktjrr.supabase.co";
 const SUPABASE_ANON_KEY =
@@ -21,6 +20,11 @@ interface SupabaseUser {
 }
 
 type AppEnv = {
+  Bindings: Env & {
+    STRIPE_SECRET_KEY: string;
+    STRIPE_WEBHOOK_SECRET: string;
+    OPENAI_API_KEY: string;
+  };
   Variables: {
     user: SupabaseUser;
   };
@@ -134,14 +138,13 @@ function safeParseTopics(metadata: unknown): string[] {
 // Get current user
 app.get("/api/users/me", authMiddleware, async (c) => {
   const user = c.get("user") as SupabaseUser;
-  const supabase = getSupabaseAdmin();
+  const db = c.env.DB;
 
   // Get or create user profile
-  const { data: profile } = await supabase
-    .from("user_profiles")
-    .select("*")
-    .eq("user_id", user.id)
-    .single();
+  let profile = await db
+    .prepare("SELECT * FROM user_profiles WHERE user_id = ?")
+    .bind(user.id)
+    .first();
 
   if (!profile) {
     const displayName =
@@ -152,63 +155,24 @@ app.get("/api/users/me", authMiddleware, async (c) => {
     const pictureUrl =
       user.user_metadata?.avatar_url || user.user_metadata?.picture || null;
 
-    await supabase
-      .from("user_profiles")
-      .insert({
-        user_id: user.id,
-        email: user.email,
-        display_name: displayName,
-        picture_url: pictureUrl,
-      });
+    await db
+      .prepare(
+        `INSERT INTO user_profiles (user_id, email, display_name, picture_url, created_at, updated_at)
+       VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
+      )
+      .bind(user.id, user.email, displayName, pictureUrl)
+      .run();
 
-    const { data: newProfile } = await supabase
-      .from("user_profiles")
-      .select("*")
-      .eq("user_id", user.id)
-      .single();
-
-    // Look up active subscription
-    const { data: subscription } = await supabase
-      .from("subscriptions")
-      .select("tier")
-      .eq("user_id", user.id)
-      .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
-      .single();
-
-    return c.json({
-      id: user.id,
-      email: user.email,
-      google_user_data: {
-        given_name:
-          user.user_metadata?.full_name ||
-          user.user_metadata?.name ||
-          user.user_metadata?.given_name,
-        picture:
-          user.user_metadata?.avatar_url || user.user_metadata?.picture,
-      },
-      profile: {
-        displayName: newProfile?.display_name,
-        hasCompletedDiagnostic: newProfile?.has_completed_diagnostic === true,
-        hasCompletedOnboarding: newProfile?.has_completed_onboarding === true,
-        streakDays: newProfile?.streak_days || 0,
-        streakLastDate: newProfile?.streak_last_date,
-        estimatedMathScore: newProfile?.estimated_math_score || 400,
-        estimatedRWScore: newProfile?.estimated_rw_score || 400,
-        targetScore: newProfile?.target_score || null,
-        testDate: newProfile?.test_date || null,
-        studyHoursPerWeek: newProfile?.study_hours_per_week || null,
-        subscriptionTier: subscription?.tier === "premium" ? "pro" : "free",
-      },
-    });
+    profile = await db
+      .prepare("SELECT * FROM user_profiles WHERE user_id = ?")
+      .bind(user.id)
+      .first();
   }
 
   // Look up active subscription
-  const { data: subscription } = await supabase
-    .from("subscriptions")
-    .select("tier")
-    .eq("user_id", user.id)
-    .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
-    .single();
+  const subscription = await db.prepare(
+    "SELECT tier FROM subscriptions WHERE user_id = ? AND (expires_at IS NULL OR expires_at > CURRENT_TIMESTAMP)"
+  ).bind(user.id).first();
 
   return c.json({
     id: user.id,
@@ -223,8 +187,8 @@ app.get("/api/users/me", authMiddleware, async (c) => {
     },
     profile: {
       displayName: profile?.display_name,
-      hasCompletedDiagnostic: profile?.has_completed_diagnostic === true,
-      hasCompletedOnboarding: profile?.has_completed_onboarding === true,
+      hasCompletedDiagnostic: profile?.has_completed_diagnostic === 1,
+      hasCompletedOnboarding: profile?.has_completed_onboarding === 1,
       streakDays: profile?.streak_days || 0,
       streakLastDate: profile?.streak_last_date,
       estimatedMathScore: profile?.estimated_math_score || 400,
@@ -240,7 +204,7 @@ app.get("/api/users/me", authMiddleware, async (c) => {
 // Update user profile
 app.patch("/api/user/profile", authMiddleware, async (c) => {
   const user = c.get("user") as SupabaseUser;
-  const supabase = getSupabaseAdmin();
+  const db = c.env.DB;
 
   try {
     const body = await c.req.json();
@@ -254,46 +218,56 @@ app.patch("/api/user/profile", authMiddleware, async (c) => {
       hasCompletedOnboarding,
     } = body;
 
-    const updateFields: Record<string, unknown> = {};
+    const setClauses: string[] = [];
+    const values: unknown[] = [];
 
     if (typeof displayName === "string") {
       const trimmedName = displayName.trim().slice(0, 50);
       if (trimmedName) {
-        updateFields.display_name = trimmedName;
+        setClauses.push("display_name = ?");
+        values.push(trimmedName);
       }
     }
     if (typeof targetScore === "number") {
-      updateFields.target_score = Math.max(400, Math.min(1600, Math.round(targetScore)));
+      setClauses.push("target_score = ?");
+      values.push(Math.max(400, Math.min(1600, Math.round(targetScore))));
     }
     if (typeof testDate === "string") {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(testDate)) {
         return c.json({ error: "Invalid testDate format. Expected YYYY-MM-DD." }, 400);
       }
-      updateFields.test_date = testDate;
+      setClauses.push("test_date = ?");
+      values.push(testDate);
     }
     if (typeof mathConfidence === "number") {
-      updateFields.math_confidence = Math.max(0, Math.min(3, Math.round(mathConfidence)));
+      setClauses.push("math_confidence = ?");
+      values.push(Math.max(0, Math.min(3, Math.round(mathConfidence))));
     }
     if (typeof readingConfidence === "number") {
-      updateFields.reading_confidence = Math.max(0, Math.min(3, Math.round(readingConfidence)));
+      setClauses.push("reading_confidence = ?");
+      values.push(Math.max(0, Math.min(3, Math.round(readingConfidence))));
     }
     if (typeof studyHoursPerWeek === "string") {
-      updateFields.study_hours_per_week = studyHoursPerWeek;
+      setClauses.push("study_hours_per_week = ?");
+      values.push(studyHoursPerWeek);
     }
     if (hasCompletedOnboarding === true) {
-      updateFields.has_completed_onboarding = true;
+      setClauses.push("has_completed_onboarding = 1");
     }
 
-    if (Object.keys(updateFields).length === 0) {
+    if (setClauses.length === 0) {
       return c.json({ error: "No valid fields to update" }, 400);
     }
 
-    updateFields.updated_at = new Date().toISOString();
+    setClauses.push("updated_at = CURRENT_TIMESTAMP");
+    values.push(user.id);
 
-    await supabase
-      .from("user_profiles")
-      .update(updateFields)
-      .eq("user_id", user.id);
+    await db
+      .prepare(
+        `UPDATE user_profiles SET ${setClauses.join(", ")} WHERE user_id = ?`
+      )
+      .bind(...values)
+      .run();
 
     return c.json({ success: true });
   } catch (error) {
@@ -320,102 +294,60 @@ app.get("/api/logout", async (c) => {
 
 const FREE_DAILY_TUTOR_LIMIT = 5;
 
-async function getTutorUsage(userId: string | null, browserId: string | null): Promise<{ count: number; isPremium: boolean }> {
-  const supabase = getSupabaseAdmin();
+async function getTutorUsage(db: D1Database, userId: string | null, browserId: string | null): Promise<{ count: number; isPremium: boolean }> {
   const today = new Date().toISOString().split('T')[0];
-
+  
   let isPremium = false;
   if (userId) {
-    const { data: sub } = await supabase
-      .from("subscriptions")
-      .select("*")
-      .eq("user_id", userId)
-      .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
-      .single();
+    const sub = await db.prepare(
+      "SELECT * FROM subscriptions WHERE user_id = ? AND (expires_at IS NULL OR expires_at > CURRENT_TIMESTAMP)"
+    ).bind(userId).first();
     isPremium = sub?.tier === 'premium';
   }
-
+  
   let usage;
   if (userId) {
-    const { data } = await supabase
-      .from("tutor_usage")
-      .select("message_count")
-      .eq("user_id", userId)
-      .eq("date", today)
-      .single();
-    usage = data;
+    usage = await db.prepare(
+      "SELECT message_count FROM tutor_usage WHERE user_id = ? AND date = ?"
+    ).bind(userId, today).first();
   } else if (browserId) {
-    const { data } = await supabase
-      .from("tutor_usage")
-      .select("message_count")
-      .eq("browser_id", browserId)
-      .eq("date", today)
-      .single();
-    usage = data;
+    usage = await db.prepare(
+      "SELECT message_count FROM tutor_usage WHERE browser_id = ? AND date = ?"
+    ).bind(browserId, today).first();
   }
-
+  
   return { count: (usage?.message_count as number) || 0, isPremium };
 }
 
 // Atomically increment and return new count (avoids check-then-increment race)
-async function incrementTutorUsage(userId: string | null, browserId: string | null): Promise<number> {
-  const supabase = getSupabaseAdmin();
+async function incrementTutorUsage(db: D1Database, userId: string | null, browserId: string | null): Promise<number> {
   const today = new Date().toISOString().split('T')[0];
-  const now = new Date().toISOString();
 
   if (userId) {
-    await supabase
-      .from("tutor_usage")
-      .upsert(
-        { user_id: userId, date: today, message_count: 1, created_at: now, updated_at: now },
-        { onConflict: "user_id,date" }
-      );
-    // Increment: read current, then update with +1
-    const { data: current } = await supabase
-      .from("tutor_usage")
-      .select("message_count")
-      .eq("user_id", userId)
-      .eq("date", today)
-      .single();
-    const newCount = ((current?.message_count as number) || 0) + 1;
-    await supabase
-      .from("tutor_usage")
-      .update({ message_count: newCount, updated_at: now })
-      .eq("user_id", userId)
-      .eq("date", today);
-    return newCount;
+    await db.prepare(
+      "INSERT INTO tutor_usage (user_id, date, message_count, created_at, updated_at) VALUES (?, ?, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP) ON CONFLICT(user_id, date) DO UPDATE SET message_count = message_count + 1, updated_at = CURRENT_TIMESTAMP"
+    ).bind(userId, today).run();
+    const row = await db.prepare("SELECT message_count FROM tutor_usage WHERE user_id = ? AND date = ?").bind(userId, today).first();
+    return (row?.message_count as number) || 1;
   } else if (browserId) {
-    await supabase
-      .from("tutor_usage")
-      .upsert(
-        { browser_id: browserId, date: today, message_count: 1, created_at: now, updated_at: now },
-        { onConflict: "browser_id,date" }
-      );
-    const { data: current } = await supabase
-      .from("tutor_usage")
-      .select("message_count")
-      .eq("browser_id", browserId)
-      .eq("date", today)
-      .single();
-    const newCount = ((current?.message_count as number) || 0) + 1;
-    await supabase
-      .from("tutor_usage")
-      .update({ message_count: newCount, updated_at: now })
-      .eq("browser_id", browserId)
-      .eq("date", today);
-    return newCount;
+    await db.prepare(
+      "INSERT INTO tutor_usage (browser_id, date, message_count, created_at, updated_at) VALUES (?, ?, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP) ON CONFLICT(browser_id, date) DO UPDATE SET message_count = message_count + 1, updated_at = CURRENT_TIMESTAMP"
+    ).bind(browserId, today).run();
+    const row = await db.prepare("SELECT message_count FROM tutor_usage WHERE browser_id = ? AND date = ?").bind(browserId, today).first();
+    return (row?.message_count as number) || 1;
   }
   return 0;
 }
 
 // Get tutor usage status
 app.get("/api/tutor/usage", optionalAuthMiddleware, async (c) => {
+  const db = c.env.DB;
   const user = c.get("user") as SupabaseUser | undefined;
   const userId = user?.id || null;
   const browserId = userId ? null : (c.req.query("browserId") || null);
 
-  const { count, isPremium } = await getTutorUsage(userId, browserId);
-
+  const { count, isPremium } = await getTutorUsage(db, userId, browserId);
+  
   return c.json({
     used: count,
     limit: FREE_DAILY_TUTOR_LIMIT,
@@ -430,6 +362,7 @@ app.post("/api/tutor/chat", optionalAuthMiddleware, async (c) => {
   try {
     const body = await c.req.json();
     const { messages, context, browserId: clientBrowserId } = body;
+    const db = c.env.DB;
     const user = c.get("user") as SupabaseUser | undefined;
     const userId = user?.id || null;
     const browserId = userId ? null : (clientBrowserId || null);
@@ -439,10 +372,10 @@ app.post("/api/tutor/chat", optionalAuthMiddleware, async (c) => {
     }
 
     // Check daily usage limit
-    const { count, isPremium } = await getTutorUsage(userId, browserId);
-
+    const { count, isPremium } = await getTutorUsage(db, userId, browserId);
+    
     if (!isPremium && count >= FREE_DAILY_TUTOR_LIMIT) {
-      return c.json({
+      return c.json({ 
         error: "daily_limit_reached",
         message: "You've reached your free daily tutor limit. Upgrade to Pro for unlimited tutoring.",
         used: count,
@@ -483,11 +416,11 @@ Keep responses helpful but concise. Use formatting (numbered lists, line breaks)
       ...messages.slice(-10) // Keep last 10 messages for context
     ];
 
-    if (!process.env.OPENAI_API_KEY) {
+    if (!c.env.OPENAI_API_KEY) {
       return c.json({ error: "AI service is not configured" }, 503);
     }
 
-    const result = await fetchOpenAI(process.env.OPENAI_API_KEY, {
+    const result = await fetchOpenAI(c.env.OPENAI_API_KEY, {
       model: "gpt-4o-mini",
       messages: apiMessages,
       max_tokens: 500,
@@ -505,8 +438,8 @@ Keep responses helpful but concise. Use formatting (numbered lists, line breaks)
     }
 
     // Increment usage after successful response
-    await incrementTutorUsage(userId, browserId);
-    const newUsage = await getTutorUsage(userId, browserId);
+    await incrementTutorUsage(db, userId, browserId);
+    const newUsage = await getTutorUsage(db, userId, browserId);
 
     return c.json({
       success: true,
@@ -531,15 +464,12 @@ Keep responses helpful but concise. Use formatting (numbered lists, line breaks)
 app.post("/api/tutor/explain-differently", authMiddleware, async (c) => {
   try {
     const user = c.get("user") as SupabaseUser;
-    const supabase = getSupabaseAdmin();
+    const db = c.env.DB;
 
     // Verify premium subscription
-    const { data: sub } = await supabase
-      .from("subscriptions")
-      .select("tier")
-      .eq("user_id", user.id)
-      .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
-      .single();
+    const sub = await db.prepare(
+      "SELECT tier FROM subscriptions WHERE user_id = ? AND (expires_at IS NULL OR expires_at > CURRENT_TIMESTAMP)"
+    ).bind(user.id).first();
 
     if (sub?.tier !== "premium") {
       return c.json({ error: "Pro subscription required" }, 403);
@@ -570,7 +500,7 @@ ${question.passage ? `Passage: ${question.passage}\n` : ""}
 Question: ${question.questionText}
 
 Answer choices:
-${question.choices?.map((ch: string, i: number) => `${String.fromCharCode(65 + i)}: ${ch}`).join('\n') || ""}
+${question.choices?.map((c: string, i: number) => `${String.fromCharCode(65 + i)}: ${c}`).join('\n') || ""}
 
 Student answered: ${question.studentAnswer}
 Correct answer: ${question.correctAnswer}
@@ -579,11 +509,11 @@ Original explanation: ${question.explanation}
 
 Provide a fresh explanation in the requested style. Keep it concise (3-5 sentences max) but clear. Focus on helping the student truly understand, not just memorize.`;
 
-    if (!process.env.OPENAI_API_KEY) {
+    if (!c.env.OPENAI_API_KEY) {
       return c.json({ error: "AI service is not configured" }, 503);
     }
 
-    const result = await fetchOpenAI(process.env.OPENAI_API_KEY, {
+    const result = await fetchOpenAI(c.env.OPENAI_API_KEY, {
       model: "gpt-4o-mini",
       messages: [
         { role: "system", content: systemPrompt },
@@ -616,101 +546,76 @@ Provide a fresh explanation in the requested style. Keep it concise (3-5 sentenc
 
 const FREE_MONTHLY_CHAT_LIMIT = 30;
 
-async function getChatUsage(userId: string | null, browserId: string | null): Promise<{ count: number; isPremium: boolean }> {
-  const supabase = getSupabaseAdmin();
+async function getChatUsage(db: D1Database, userId: string | null, browserId: string | null): Promise<{ count: number; isPremium: boolean }> {
   const monthYear = new Date().toISOString().slice(0, 7); // "2024-01"
-
+  
   // Check premium status if user is logged in
   let isPremium = false;
   if (userId) {
-    const { data: sub } = await supabase
-      .from("subscriptions")
-      .select("*")
-      .eq("user_id", userId)
-      .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
-      .single();
+    const sub = await db.prepare(
+      "SELECT * FROM subscriptions WHERE user_id = ? AND (expires_at IS NULL OR expires_at > CURRENT_TIMESTAMP)"
+    ).bind(userId).first();
     isPremium = sub?.tier === 'premium';
   }
-
+  
   // Get usage count
   let usage;
   if (userId) {
-    const { data } = await supabase
-      .from("chat_usage")
-      .select("message_count")
-      .eq("user_id", userId)
-      .eq("month_year", monthYear)
-      .single();
-    usage = data;
+    usage = await db.prepare(
+      "SELECT message_count FROM chat_usage WHERE user_id = ? AND month_year = ?"
+    ).bind(userId, monthYear).first();
   } else if (browserId) {
-    const { data } = await supabase
-      .from("chat_usage")
-      .select("message_count")
-      .eq("browser_id", browserId)
-      .eq("month_year", monthYear)
-      .single();
-    usage = data;
+    usage = await db.prepare(
+      "SELECT message_count FROM chat_usage WHERE browser_id = ? AND month_year = ?"
+    ).bind(browserId, monthYear).first();
   }
-
+  
   return { count: (usage?.message_count as number) || 0, isPremium };
 }
 
-// Atomically increment chat usage (avoids check-then-increment race condition)
-async function incrementChatUsage(userId: string | null, browserId: string | null): Promise<void> {
-  const supabase = getSupabaseAdmin();
+async function incrementChatUsage(db: D1Database, userId: string | null, browserId: string | null): Promise<void> {
   const monthYear = new Date().toISOString().slice(0, 7);
-  const now = new Date().toISOString();
-
+  
   if (userId) {
-    // Try upsert first, then increment
-    const { data: existing } = await supabase
-      .from("chat_usage")
-      .select("message_count")
-      .eq("user_id", userId)
-      .eq("month_year", monthYear)
-      .single();
-
+    const existing = await db.prepare(
+      "SELECT id FROM chat_usage WHERE user_id = ? AND month_year = ?"
+    ).bind(userId, monthYear).first();
+    
     if (existing) {
-      await supabase
-        .from("chat_usage")
-        .update({ message_count: (existing.message_count as number) + 1, updated_at: now })
-        .eq("user_id", userId)
-        .eq("month_year", monthYear);
+      await db.prepare(
+        "UPDATE chat_usage SET message_count = message_count + 1, updated_at = CURRENT_TIMESTAMP WHERE id = ?"
+      ).bind(existing.id).run();
     } else {
-      await supabase
-        .from("chat_usage")
-        .insert({ user_id: userId, month_year: monthYear, message_count: 1, created_at: now, updated_at: now });
+      await db.prepare(
+        "INSERT INTO chat_usage (user_id, month_year, message_count, created_at, updated_at) VALUES (?, ?, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)"
+      ).bind(userId, monthYear).run();
     }
   } else if (browserId) {
-    const { data: existing } = await supabase
-      .from("chat_usage")
-      .select("message_count")
-      .eq("browser_id", browserId)
-      .eq("month_year", monthYear)
-      .single();
-
+    const existing = await db.prepare(
+      "SELECT id FROM chat_usage WHERE browser_id = ? AND month_year = ?"
+    ).bind(browserId, monthYear).first();
+    
     if (existing) {
-      await supabase
-        .from("chat_usage")
-        .update({ message_count: (existing.message_count as number) + 1, updated_at: now })
-        .eq("browser_id", browserId)
-        .eq("month_year", monthYear);
+      await db.prepare(
+        "UPDATE chat_usage SET message_count = message_count + 1, updated_at = CURRENT_TIMESTAMP WHERE id = ?"
+      ).bind(existing.id).run();
     } else {
-      await supabase
-        .from("chat_usage")
-        .insert({ browser_id: browserId, month_year: monthYear, message_count: 1, created_at: now, updated_at: now });
+      await db.prepare(
+        "INSERT INTO chat_usage (browser_id, month_year, message_count, created_at, updated_at) VALUES (?, ?, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)"
+      ).bind(browserId, monthYear).run();
     }
   }
 }
 
 // Get chat usage status
 app.get("/api/chat/usage", optionalAuthMiddleware, async (c) => {
+  const db = c.env.DB;
   const user = c.get("user") as SupabaseUser | undefined;
   const userId = user?.id || null;
   const browserId = userId ? null : (c.req.query("browserId") || null);
 
-  const { count, isPremium } = await getChatUsage(userId, browserId);
-
+  const { count, isPremium } = await getChatUsage(db, userId, browserId);
+  
   return c.json({
     used: count,
     limit: FREE_MONTHLY_CHAT_LIMIT,
@@ -724,6 +629,7 @@ app.post("/api/chat", optionalAuthMiddleware, async (c) => {
   try {
     const body = await c.req.json();
     const { messages, questionContext, browserId: clientBrowserId } = body;
+    const db = c.env.DB;
     const user = c.get("user") as SupabaseUser | undefined;
     const userId = user?.id || null;
     const browserId = userId ? null : (clientBrowserId || null);
@@ -733,10 +639,10 @@ app.post("/api/chat", optionalAuthMiddleware, async (c) => {
     }
 
     // Check monthly usage limit
-    const { count, isPremium } = await getChatUsage(userId, browserId);
-
+    const { count, isPremium } = await getChatUsage(db, userId, browserId);
+    
     if (!isPremium && count >= FREE_MONTHLY_CHAT_LIMIT) {
-      return c.json({
+      return c.json({ 
         error: "monthly_limit_reached",
         message: "You've reached your free monthly chat limit. Upgrade to Premium for unlimited tutoring.",
         used: count,
@@ -763,7 +669,7 @@ ${qc.passage ? `PASSAGE:\n${qc.passage}\n` : ""}
 QUESTION: ${qc.questionText || ""}
 
 ANSWER CHOICES:
-${qc.choices ? qc.choices.map((ch: string, i: number) => `${String.fromCharCode(65 + i)}: ${ch}`).join('\n') : ""}
+${qc.choices ? qc.choices.map((c: string, i: number) => `${String.fromCharCode(65 + i)}: ${c}`).join('\n') : ""}
 
 Student selected: ${qc.studentAnswer || ""}
 Correct answer: ${qc.correctAnswer || ""}
@@ -787,11 +693,11 @@ Remember: You can see everything about this question, so if a student asks "what
       ...messages
     ];
 
-    if (!process.env.OPENAI_API_KEY) {
+    if (!c.env.OPENAI_API_KEY) {
       return c.json({ error: "AI service is not configured" }, 503);
     }
 
-    const result = await fetchOpenAI(process.env.OPENAI_API_KEY, {
+    const result = await fetchOpenAI(c.env.OPENAI_API_KEY, {
       model: "gpt-4o-mini",
       messages: apiMessages,
       max_tokens: 300,
@@ -809,8 +715,8 @@ Remember: You can see everything about this question, so if a student asks "what
     }
 
     // Increment usage after successful response
-    await incrementChatUsage(userId, browserId);
-    const newUsage = await getChatUsage(userId, browserId);
+    await incrementChatUsage(db, userId, browserId);
+    const newUsage = await getChatUsage(db, userId, browserId);
 
     return c.json({
       success: true,
@@ -835,34 +741,39 @@ Remember: You can see everything about this question, so if a student asks "what
 // Get user's progress
 app.get("/api/user/progress", authMiddleware, async (c) => {
   const user = c.get("user") as SupabaseUser;
-  const supabase = getSupabaseAdmin();
+  const db = c.env.DB;
 
   try {
-    const { data: profile } = await supabase
-      .from("user_profiles")
-      .select("*")
-      .eq("user_id", user.id)
-      .single();
+    const profile = await db.prepare(
+      "SELECT * FROM user_profiles WHERE user_id = ?"
+    ).bind(user.id).first();
 
-    // Get all skill scores for this user (using RPC for aggregate)
-    const { data: skillScores } = await supabase.rpc("get_user_skill_summary", { p_user_id: user.id });
+    // Get all skill scores for this user
+    const skillScores = await db.prepare(
+      `SELECT topic, 
+              SUM(questions_n) as total_attempted,
+              SUM(score * questions_n) / SUM(questions_n) as avg_score
+       FROM user_skill_scores 
+       WHERE user_id = ?
+       GROUP BY topic`
+    ).bind(user.id).all();
 
     // Get recent sessions
-    const { data: sessions } = await supabase
-      .from("user_sessions")
-      .select("id, session_type, started_at, completed_at, questions_total, questions_correct, metadata")
-      .eq("user_id", user.id)
-      .order("started_at", { ascending: false })
-      .limit(50);
+    const sessions = await db.prepare(
+      `SELECT id, session_type, started_at, completed_at, 
+              questions_total, questions_correct, metadata
+       FROM user_sessions 
+       WHERE user_id = ?
+       ORDER BY started_at DESC
+       LIMIT 50`
+    ).bind(user.id).all();
 
     // Get latest diagnostic result
-    const { data: diagnosticResult } = await supabase
-      .from("user_diagnostic_results")
-      .select("*")
-      .eq("user_id", user.id)
-      .order("created_at", { ascending: false })
-      .limit(1)
-      .single();
+    const diagnosticResult = await db.prepare(
+      `SELECT * FROM user_diagnostic_results 
+       WHERE user_id = ?
+       ORDER BY created_at DESC LIMIT 1`
+    ).bind(user.id).first();
 
     // Build topic progress from skill scores
     const topicProgress: Record<string, any> = {};
@@ -881,16 +792,16 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
       };
     });
 
-    if (skillScores) {
-      (skillScores as any[]).forEach((row: any) => {
+    if (skillScores.results) {
+      skillScores.results.forEach((row: any) => {
         const accuracy = row.avg_score || 0;
         topicProgress[row.topic] = {
           topic: row.topic,
           questionsAttempted: row.total_attempted || 0,
           questionsCorrect: Math.round((row.total_attempted || 0) * accuracy),
           lastPracticed: null,
-          currentLevel: accuracy >= 0.85 ? "advanced" :
-                       accuracy >= 0.7 ? "proficient" :
+          currentLevel: accuracy >= 0.85 ? "advanced" : 
+                       accuracy >= 0.7 ? "proficient" : 
                        accuracy >= 0.5 ? "developing" : "foundation"
         };
       });
@@ -923,7 +834,7 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
         lastPracticeDate: profile?.streak_last_date || null,
         estimatedMathScore: calcScore(mathTopics),
         estimatedRWScore: calcScore(rwTopics),
-        sessions: (sessions || []).map((s: any) => ({
+        sessions: (sessions.results || []).map((s: any) => ({
           id: `session_${s.id}`,
           date: s.started_at,
           type: s.session_type,
@@ -932,7 +843,7 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
           topics: safeParseTopics(s.metadata),
           timeSpentSeconds: 0
         })),
-        diagnosticCompleted: profile?.has_completed_diagnostic === true,
+        diagnosticCompleted: profile?.has_completed_diagnostic === 1,
         diagnosticDate: diagnosticResult?.created_at || null
       }
     });
@@ -945,8 +856,8 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
 // Record a practice session (authenticated)
 app.post("/api/user/sessions", authMiddleware, async (c) => {
   const user = c.get("user") as SupabaseUser;
-  const supabase = getSupabaseAdmin();
-
+  const db = c.env.DB;
+  
   try {
     const body = await c.req.json();
     const { sessionType, attempts, timeSpentSeconds } = body;
@@ -956,62 +867,59 @@ app.post("/api/user/sessions", authMiddleware, async (c) => {
     }
 
     // Get or create profile
-    const { data: profile } = await supabase
-      .from("user_profiles")
-      .select("*")
-      .eq("user_id", user.id)
-      .single();
+    let profile = await db.prepare(
+      "SELECT * FROM user_profiles WHERE user_id = ?"
+    ).bind(user.id).first();
 
     if (!profile) {
-      await supabase
-        .from("user_profiles")
-        .insert({
-          user_id: user.id,
-          email: user.email,
-          display_name: user.email.split('@')[0],
-        });
+      await db.prepare(
+        `INSERT INTO user_profiles (user_id, email, display_name, created_at, updated_at) 
+         VALUES (?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
+      ).bind(user.id, user.email, user.email.split('@')[0]).run();
+      
+      profile = await db.prepare(
+        "SELECT * FROM user_profiles WHERE user_id = ?"
+      ).bind(user.id).first();
     }
-
-    // Refetch profile for streak calculation
-    const { data: currentProfile } = await supabase
-      .from("user_profiles")
-      .select("*")
-      .eq("user_id", user.id)
-      .single();
 
     // Calculate totals
     const questionsTotal = attempts.length;
     const questionsCorrect = attempts.filter((a: { isCorrect: boolean }) => a.isCorrect).length;
     const topics = [...new Set(attempts.map((a: { topic: string }) => a.topic))];
 
-    // Create session record and get the ID back
-    const { data: sessionRow } = await supabase
-      .from("user_sessions")
-      .insert({
-        user_id: user.id,
-        session_type: sessionType,
-        started_at: new Date().toISOString(),
-        completed_at: new Date().toISOString(),
-        questions_total: questionsTotal,
-        questions_correct: questionsCorrect,
-        metadata: JSON.stringify({ topics, timeSpentSeconds }),
-      })
-      .select("id")
-      .single();
+    // Create session record
+    const sessionResult = await db.prepare(
+      `INSERT INTO user_sessions (
+        user_id, session_type, started_at, completed_at,
+        questions_total, questions_correct, metadata, created_at, updated_at
+      ) VALUES (?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
+    ).bind(
+      user.id,
+      sessionType,
+      questionsTotal,
+      questionsCorrect,
+      JSON.stringify({ topics, timeSpentSeconds })
+    ).run();
 
-    const sessionId = sessionRow?.id;
+    const sessionId = sessionResult.meta.last_row_id;
 
-    // Record attempts (batched insert)
-    if (attempts.length > 0 && sessionId) {
-      const attemptRows = attempts.map((attempt: { questionId?: number; selectedIndex?: number; isCorrect: boolean; timeSpentSec?: number; confidence?: string }) => ({
-        session_id: sessionId,
-        question_id: attempt.questionId || 0,
-        selected_index: attempt.selectedIndex || 0,
-        is_correct: attempt.isCorrect,
-        time_spent_sec: attempt.timeSpentSec || 0,
-        confidence: attempt.confidence || null,
-      }));
-      await supabase.from("attempts").insert(attemptRows);
+    // Record attempts (batched)
+    const attemptStmts = attempts.map((attempt: { questionId?: number; selectedIndex?: number; isCorrect: boolean; timeSpentSec?: number; confidence?: string }) =>
+      db.prepare(
+        `INSERT INTO attempts (
+          session_id, question_id, selected_index, is_correct, time_spent_sec, confidence, created_at, updated_at
+        ) VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
+      ).bind(
+        sessionId,
+        attempt.questionId || 0,
+        attempt.selectedIndex || 0,
+        attempt.isCorrect ? 1 : 0,
+        attempt.timeSpentSec || 0,
+        attempt.confidence || null
+      )
+    );
+    if (attemptStmts.length > 0) {
+      await db.batch(attemptStmts);
     }
 
     // Update skill scores per topic
@@ -1026,15 +934,11 @@ app.post("/api/user/sessions", authMiddleware, async (c) => {
 
     for (const [topic, stats] of Object.entries(topicStats)) {
       const score = stats.total > 0 ? stats.correct / stats.total : 0;
-      await supabase
-        .from("user_skill_scores")
-        .insert({
-          user_id: user.id,
-          session_id: sessionId,
-          topic,
-          score,
-          questions_n: stats.total,
-        });
+      await db.prepare(
+        `INSERT INTO user_skill_scores (
+          user_id, session_id, topic, score, questions_n, created_at, updated_at
+        ) VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
+      ).bind(user.id, sessionId, topic, score, stats.total).run();
     }
 
     // Update streak
@@ -1048,16 +952,15 @@ app.post("/api/user/sessions", authMiddleware, async (c) => {
     };
 
     const { streak, shouldUpdate } = calculateStreak(
-      currentProfile?.streak_last_date as string | null,
-      (currentProfile?.streak_days as number) || 0
+      profile?.streak_last_date as string | null,
+      (profile?.streak_days as number) || 0
     );
 
     if (shouldUpdate) {
       const today = new Date().toISOString().split('T')[0];
-      await supabase
-        .from("user_profiles")
-        .update({ streak_days: streak, streak_last_date: today, updated_at: new Date().toISOString() })
-        .eq("user_id", user.id);
+      await db.prepare(
+        `UPDATE user_profiles SET streak_days = ?, streak_last_date = ?, updated_at = CURRENT_TIMESTAMP WHERE user_id = ?`
+      ).bind(streak, today, user.id).run();
     }
 
     return c.json({
@@ -1078,28 +981,29 @@ app.post("/api/user/sessions", authMiddleware, async (c) => {
 // Save diagnostic results (authenticated)
 app.post("/api/user/diagnostic", authMiddleware, async (c) => {
   const user = c.get("user") as SupabaseUser;
-  const supabase = getSupabaseAdmin();
-
+  const db = c.env.DB;
+  
   try {
     const body = await c.req.json();
     const { sessionId, skills, gaps, recommendedPlan, estimatedScore } = body;
 
     // Update user profile to mark diagnostic complete
-    await supabase
-      .from("user_profiles")
-      .update({ has_completed_diagnostic: true, updated_at: new Date().toISOString() })
-      .eq("user_id", user.id);
+    await db.prepare(
+      `UPDATE user_profiles SET has_completed_diagnostic = 1, updated_at = CURRENT_TIMESTAMP WHERE user_id = ?`
+    ).bind(user.id).run();
 
-    await supabase
-      .from("user_diagnostic_results")
-      .insert({
-        user_id: user.id,
-        session_id: sessionId || null,
-        skills: JSON.stringify(skills || {}),
-        gaps: JSON.stringify(gaps || []),
-        recommended_plan: recommendedPlan || null,
-        estimated_score: estimatedScore || null,
-      });
+    await db.prepare(
+      `INSERT INTO user_diagnostic_results (
+        user_id, session_id, skills, gaps, recommended_plan, estimated_score, created_at, updated_at
+      ) VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
+    ).bind(
+      user.id,
+      sessionId || null,
+      JSON.stringify(skills || {}),
+      JSON.stringify(gaps || []),
+      recommendedPlan || null,
+      estimatedScore || null
+    ).run();
 
     return c.json({ success: true });
   } catch (error) {
@@ -1115,14 +1019,12 @@ app.post("/api/user/diagnostic", authMiddleware, async (c) => {
 // Get subscription status (authenticated)
 app.get("/api/subscription", authMiddleware, async (c) => {
   const user = c.get("user") as SupabaseUser;
-  const supabase = getSupabaseAdmin();
+  const db = c.env.DB;
 
   try {
-    const { data: sub } = await supabase
-      .from("subscriptions")
-      .select("*")
-      .eq("user_id", user.id)
-      .single();
+    const sub = await db.prepare(
+      "SELECT * FROM subscriptions WHERE user_id = ?"
+    ).bind(user.id).first();
 
     if (!sub) {
       return c.json({
@@ -1135,7 +1037,7 @@ app.get("/api/subscription", authMiddleware, async (c) => {
       });
     }
 
-    const isPremium = sub.tier === 'premium' &&
+    const isPremium = sub.tier === 'premium' && 
       (!sub.expires_at || new Date(sub.expires_at as string) > new Date());
 
     return c.json({
@@ -1143,7 +1045,7 @@ app.get("/api/subscription", authMiddleware, async (c) => {
       isPremium,
       stripeCustomerId: sub.stripe_customer_id,
       stripeSubscriptionId: sub.stripe_subscription_id,
-      cancelAtPeriodEnd: sub.cancel_at_period_end === true,
+      cancelAtPeriodEnd: sub.cancel_at_period_end === 1,
       expiresAt: sub.expires_at,
       startedAt: sub.started_at
     });
@@ -1156,9 +1058,9 @@ app.get("/api/subscription", authMiddleware, async (c) => {
 // Create Stripe checkout session (authenticated)
 app.post("/api/subscription/checkout", authMiddleware, async (c) => {
   const user = c.get("user") as SupabaseUser;
-
+  
   try {
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+    const stripe = new Stripe(c.env.STRIPE_SECRET_KEY);
     const body = await c.req.json();
     const { billingCycle, successUrl, cancelUrl } = body;
 
@@ -1199,17 +1101,15 @@ app.post("/api/subscription/checkout", authMiddleware, async (c) => {
 // Create Stripe customer portal session (authenticated)
 app.post("/api/subscription/portal", authMiddleware, async (c) => {
   const user = c.get("user") as SupabaseUser;
-  const supabase = getSupabaseAdmin();
-
+  const db = c.env.DB;
+  
   try {
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-
+    const stripe = new Stripe(c.env.STRIPE_SECRET_KEY);
+    
     // Get user's subscription with Stripe customer ID
-    const { data: sub } = await supabase
-      .from("subscriptions")
-      .select("stripe_customer_id")
-      .eq("user_id", user.id)
-      .single();
+    const sub = await db.prepare(
+      "SELECT stripe_customer_id FROM subscriptions WHERE user_id = ?"
+    ).bind(user.id).first();
 
     if (!sub?.stripe_customer_id) {
       return c.json({ error: "No subscription found" }, 404);
@@ -1238,17 +1138,17 @@ app.post("/api/subscription/portal", authMiddleware, async (c) => {
 
 // Stripe webhook handler
 app.post("/api/stripe/webhook", async (c) => {
-  const supabase = getSupabaseAdmin();
+  const db = c.env.DB;
   const body = await c.req.text();
   const sig = c.req.header("stripe-signature") || "";
 
   let event: Stripe.Event;
   try {
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+    const stripe = new Stripe(c.env.STRIPE_SECRET_KEY);
     event = stripe.webhooks.constructEvent(
       body,
       sig,
-      process.env.STRIPE_WEBHOOK_SECRET!
+      c.env.STRIPE_WEBHOOK_SECRET
     );
   } catch (err) {
     console.error("Webhook signature verification failed:", err);
@@ -1260,7 +1160,7 @@ app.post("/api/stripe/webhook", async (c) => {
       case "checkout.session.completed": {
         const session = event.data.object as Stripe.Checkout.Session;
         const userId = session.client_reference_id || session.metadata?.userId;
-
+        
         if (!userId) {
           console.error("No user ID in checkout session:", session.id);
           return c.text("Missing user ID in checkout session", 500);
@@ -1270,36 +1170,39 @@ app.post("/api/stripe/webhook", async (c) => {
         const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString();
 
         // Upsert subscription record
-        const { data: existing } = await supabase
-          .from("subscriptions")
-          .select("id")
-          .eq("user_id", userId)
-          .single();
+        const existing = await db.prepare(
+          "SELECT id FROM subscriptions WHERE user_id = ?"
+        ).bind(userId).first();
 
         if (existing) {
-          await supabase
-            .from("subscriptions")
-            .update({
-              tier: 'premium',
-              stripe_customer_id: session.customer as string,
-              stripe_subscription_id: session.subscription as string,
-              started_at: new Date().toISOString(),
-              expires_at: expiresAt,
-              cancel_at_period_end: false,
-              updated_at: new Date().toISOString(),
-            })
-            .eq("user_id", userId);
+          await db.prepare(
+            `UPDATE subscriptions SET 
+              tier = 'premium',
+              stripe_customer_id = ?,
+              stripe_subscription_id = ?,
+              started_at = CURRENT_TIMESTAMP,
+              expires_at = ?,
+              cancel_at_period_end = 0,
+              updated_at = CURRENT_TIMESTAMP
+            WHERE user_id = ?`
+          ).bind(
+            session.customer as string,
+            session.subscription as string,
+            expiresAt,
+            userId
+          ).run();
         } else {
-          await supabase
-            .from("subscriptions")
-            .insert({
-              user_id: userId,
-              tier: 'premium',
-              stripe_customer_id: session.customer as string,
-              stripe_subscription_id: session.subscription as string,
-              started_at: new Date().toISOString(),
-              expires_at: expiresAt,
-            });
+          await db.prepare(
+            `INSERT INTO subscriptions (
+              user_id, tier, stripe_customer_id, stripe_subscription_id,
+              started_at, expires_at, created_at, updated_at
+            ) VALUES (?, 'premium', ?, ?, CURRENT_TIMESTAMP, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
+          ).bind(
+            userId,
+            session.customer as string,
+            session.subscription as string,
+            expiresAt
+          ).run();
         }
         break;
       }
@@ -1312,18 +1215,17 @@ app.post("/api/stripe/webhook", async (c) => {
         const subData = event.data.object as unknown as Record<string, unknown>;
         const periodEnd = typeof subData.current_period_end === "number" ? subData.current_period_end : Math.floor(Date.now() / 1000) + 30 * 86400;
         const expiresAt = new Date(periodEnd * 1000).toISOString();
-        const cancelAtPeriodEnd = subscription.cancel_at_period_end;
+        const cancelAtPeriodEnd = subscription.cancel_at_period_end ? 1 : 0;
         const tier = (subscription.status === "active" || subscription.status === "trialing") ? "premium" : "free";
 
-        await supabase
-          .from("subscriptions")
-          .update({
-            tier,
-            expires_at: expiresAt,
-            cancel_at_period_end: cancelAtPeriodEnd,
-            updated_at: new Date().toISOString(),
-          })
-          .eq("stripe_customer_id", customerId);
+        await db.prepare(
+          `UPDATE subscriptions SET 
+            tier = ?,
+            expires_at = ?,
+            cancel_at_period_end = ?,
+            updated_at = CURRENT_TIMESTAMP
+          WHERE stripe_customer_id = ?`
+        ).bind(tier, expiresAt, cancelAtPeriodEnd, customerId).run();
         break;
       }
 
@@ -1331,17 +1233,15 @@ app.post("/api/stripe/webhook", async (c) => {
         const subscription = event.data.object as Stripe.Subscription;
         const customerId = subscription.customer as string;
 
-        const { data: delResult } = await supabase
-          .from("subscriptions")
-          .update({
-            tier: 'free',
-            cancel_at_period_end: false,
-            updated_at: new Date().toISOString(),
-          })
-          .eq("stripe_customer_id", customerId)
-          .select("id");
+        const delResult = await db.prepare(
+          `UPDATE subscriptions SET
+            tier = 'free',
+            cancel_at_period_end = 0,
+            updated_at = CURRENT_TIMESTAMP
+          WHERE stripe_customer_id = ?`
+        ).bind(customerId).run();
 
-        if (!delResult || delResult.length === 0) {
+        if (delResult.meta.changes === 0) {
           console.error("subscription.deleted: no matching row for customer", customerId);
           return c.text("No subscription found for customer", 500);
         }
@@ -1359,10 +1259,12 @@ app.post("/api/stripe/webhook", async (c) => {
             ? new Date(periodEnd * 1000).toISOString()
             : new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString();
 
-          await supabase
-            .from("subscriptions")
-            .update({ expires_at: expiresAt, updated_at: new Date().toISOString() })
-            .eq("stripe_customer_id", customerId);
+          await db.prepare(
+            `UPDATE subscriptions SET
+              expires_at = ?,
+              updated_at = CURRENT_TIMESTAMP
+            WHERE stripe_customer_id = ?`
+          ).bind(expiresAt, customerId).run();
         }
         break;
       }
@@ -1370,7 +1272,7 @@ app.post("/api/stripe/webhook", async (c) => {
       case "invoice.payment_failed": {
         const invoice = event.data.object as Stripe.Invoice;
         const customerId = invoice.customer as string;
-
+        
         // Mark subscription as potentially lapsing
         console.log(`Payment failed for customer ${customerId}`);
         break;
@@ -1389,58 +1291,58 @@ app.post("/api/stripe/webhook", async (c) => {
 // ============================================
 
 // Helper to get or create browser session
-async function getOrCreateBrowserSession(browserId: string) {
-  const supabase = getSupabaseAdmin();
+async function getOrCreateBrowserSession(db: D1Database, browserId: string) {
+  let session = await db.prepare(
+    "SELECT * FROM anon_sessions WHERE browser_id = ?"
+  ).bind(browserId).first();
 
-  const { data: session } = await supabase
-    .from("anon_sessions")
-    .select("*")
-    .eq("browser_id", browserId)
-    .single();
+  if (!session) {
+    await db.prepare(
+      "INSERT INTO anon_sessions (browser_id, streak_days, created_at, updated_at) VALUES (?, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)"
+    ).bind(browserId).run();
+    
+    session = await db.prepare(
+      "SELECT * FROM anon_sessions WHERE browser_id = ?"
+    ).bind(browserId).first();
+  }
 
-  if (session) return session;
-
-  await supabase
-    .from("anon_sessions")
-    .insert({ browser_id: browserId, streak_days: 0 });
-
-  const { data: newSession } = await supabase
-    .from("anon_sessions")
-    .select("*")
-    .eq("browser_id", browserId)
-    .single();
-
-  return newSession;
+  return session;
 }
 
 // Get student progress (anonymous)
 app.get("/api/progress/:browserId", async (c) => {
   const browserId = c.req.param("browserId");
-  const supabase = getSupabaseAdmin();
+  const db = c.env.DB;
 
   try {
-    const anonSession = await getOrCreateBrowserSession(browserId);
+    const anonSession = await getOrCreateBrowserSession(db, browserId);
     if (!anonSession) {
       return c.json({ error: "Failed to get session" }, 500);
     }
 
-    // Get all skill scores using RPC for aggregate
-    const { data: skillScores } = await supabase.rpc("get_anon_skill_summary", { p_anon_session_id: anonSession.id });
+    const skillScores = await db.prepare(
+      `SELECT topic, 
+              SUM(questions_n) as total_attempted,
+              SUM(score * questions_n) / SUM(questions_n) as avg_score
+       FROM skill_scores 
+       WHERE anon_session_id = ?
+       GROUP BY topic`
+    ).bind(anonSession.id).all();
 
-    const { data: sessions } = await supabase
-      .from("sessions")
-      .select("id, session_type, started_at, completed_at, questions_total, questions_correct, score_math, score_reading, metadata")
-      .eq("anon_session_id", anonSession.id)
-      .order("started_at", { ascending: false })
-      .limit(50);
+    const sessions = await db.prepare(
+      `SELECT id, session_type, started_at, completed_at, 
+              questions_total, questions_correct, score_math, score_reading, metadata
+       FROM sessions 
+       WHERE anon_session_id = ?
+       ORDER BY started_at DESC
+       LIMIT 50`
+    ).bind(anonSession.id).all();
 
-    const { data: diagnosticResult } = await supabase
-      .from("diagnostic_results")
-      .select("*")
-      .eq("anon_session_id", anonSession.id)
-      .order("created_at", { ascending: false })
-      .limit(1)
-      .single();
+    const diagnosticResult = await db.prepare(
+      `SELECT * FROM diagnostic_results 
+       WHERE anon_session_id = ?
+       ORDER BY created_at DESC LIMIT 1`
+    ).bind(anonSession.id).first();
 
     const topicProgress: Record<string, any> = {};
     const defaultTopics = [
@@ -1458,16 +1360,16 @@ app.get("/api/progress/:browserId", async (c) => {
       };
     });
 
-    if (skillScores) {
-      (skillScores as any[]).forEach((row: any) => {
+    if (skillScores.results) {
+      skillScores.results.forEach((row: any) => {
         const accuracy = row.avg_score || 0;
         topicProgress[row.topic] = {
           topic: row.topic,
           questionsAttempted: row.total_attempted || 0,
           questionsCorrect: Math.round((row.total_attempted || 0) * accuracy),
           lastPracticed: null,
-          currentLevel: accuracy >= 0.85 ? "advanced" :
-                       accuracy >= 0.7 ? "proficient" :
+          currentLevel: accuracy >= 0.85 ? "advanced" : 
+                       accuracy >= 0.7 ? "proficient" : 
                        accuracy >= 0.5 ? "developing" : "foundation"
         };
       });
@@ -1499,7 +1401,7 @@ app.get("/api/progress/:browserId", async (c) => {
         lastPracticeDate: anonSession.streak_last_date || null,
         estimatedMathScore: calcScore(mathTopics),
         estimatedRWScore: calcScore(rwTopics),
-        sessions: (sessions || []).map((s: any) => ({
+        sessions: (sessions.results || []).map((s: any) => ({
           id: `session_${s.id}`,
           date: s.started_at,
           type: s.session_type,
@@ -1520,8 +1422,8 @@ app.get("/api/progress/:browserId", async (c) => {
 
 // Record a practice session (anonymous)
 app.post("/api/anonymous/sessions", async (c) => {
-  const supabase = getSupabaseAdmin();
-
+  const db = c.env.DB;
+  
   try {
     const body = await c.req.json();
     const { browserId, sessionType, attempts, timeSpentSeconds } = body;
@@ -1530,7 +1432,7 @@ app.post("/api/anonymous/sessions", async (c) => {
       return c.json({ error: "Missing required fields" }, 400);
     }
 
-    const anonSession = await getOrCreateBrowserSession(browserId);
+    const anonSession = await getOrCreateBrowserSession(db, browserId);
     if (!anonSession) {
       return c.json({ error: "Failed to get session" }, 500);
     }
@@ -1540,34 +1442,39 @@ app.post("/api/anonymous/sessions", async (c) => {
     const questionsCorrect = attempts.filter((a: { isCorrect: boolean }) => a.isCorrect).length;
     const topics = [...new Set(attempts.map((a: { topic: string }) => a.topic))];
 
-    // Create session record and get the ID back
-    const { data: sessionRow } = await supabase
-      .from("sessions")
-      .insert({
-        anon_session_id: anonSession.id,
-        session_type: sessionType,
-        started_at: new Date().toISOString(),
-        completed_at: new Date().toISOString(),
-        questions_total: questionsTotal,
-        questions_correct: questionsCorrect,
-        metadata: JSON.stringify({ topics, timeSpentSeconds }),
-      })
-      .select("id")
-      .single();
+    // Create session record
+    const sessionResult = await db.prepare(
+      `INSERT INTO sessions (
+        anon_session_id, session_type, started_at, completed_at,
+        questions_total, questions_correct, metadata, created_at, updated_at
+      ) VALUES (?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
+    ).bind(
+      anonSession.id,
+      sessionType,
+      questionsTotal,
+      questionsCorrect,
+      JSON.stringify({ topics, timeSpentSeconds })
+    ).run();
 
-    const sessionId = sessionRow?.id;
+    const sessionId = sessionResult.meta.last_row_id;
 
-    // Record attempts (batched insert)
-    if (attempts.length > 0 && sessionId) {
-      const attemptRows = attempts.map((attempt: { questionId?: number; selectedIndex?: number; isCorrect: boolean; timeSpentSec?: number; confidence?: string }) => ({
-        session_id: sessionId,
-        question_id: attempt.questionId || 0,
-        selected_index: attempt.selectedIndex || 0,
-        is_correct: attempt.isCorrect,
-        time_spent_sec: attempt.timeSpentSec || 0,
-        confidence: attempt.confidence || null,
-      }));
-      await supabase.from("attempts").insert(attemptRows);
+    // Record attempts (batched)
+    const anonAttemptStmts = attempts.map((attempt: { questionId?: number; selectedIndex?: number; isCorrect: boolean; timeSpentSec?: number; confidence?: string }) =>
+      db.prepare(
+        `INSERT INTO attempts (
+          session_id, question_id, selected_index, is_correct, time_spent_sec, confidence, created_at, updated_at
+        ) VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
+      ).bind(
+        sessionId,
+        attempt.questionId || 0,
+        attempt.selectedIndex || 0,
+        attempt.isCorrect ? 1 : 0,
+        attempt.timeSpentSec || 0,
+        attempt.confidence || null
+      )
+    );
+    if (anonAttemptStmts.length > 0) {
+      await db.batch(anonAttemptStmts);
     }
 
     // Update skill scores per topic
@@ -1582,22 +1489,18 @@ app.post("/api/anonymous/sessions", async (c) => {
 
     for (const [topic, stats] of Object.entries(topicStats)) {
       const score = stats.total > 0 ? stats.correct / stats.total : 0;
-      await supabase
-        .from("skill_scores")
-        .insert({
-          anon_session_id: anonSession.id,
-          session_id: sessionId,
-          topic,
-          score,
-          questions_n: stats.total,
-        });
+      await db.prepare(
+        `INSERT INTO skill_scores (
+          anon_session_id, session_id, topic, score, questions_n, created_at, updated_at
+        ) VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
+      ).bind(anonSession.id, sessionId, topic, score, stats.total).run();
     }
 
     // Update streak
     const today = new Date().toISOString().split('T')[0];
     const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
     let streak = 1;
-
+    
     if (anonSession.streak_last_date) {
       if (anonSession.streak_last_date === today) {
         streak = anonSession.streak_days as number;
@@ -1606,10 +1509,9 @@ app.post("/api/anonymous/sessions", async (c) => {
       }
     }
 
-    await supabase
-      .from("anon_sessions")
-      .update({ streak_days: streak, streak_last_date: today, updated_at: new Date().toISOString() })
-      .eq("id", anonSession.id);
+    await db.prepare(
+      `UPDATE anon_sessions SET streak_days = ?, streak_last_date = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?`
+    ).bind(streak, today, anonSession.id).run();
 
     return c.json({
       success: true,
@@ -1628,8 +1530,8 @@ app.post("/api/anonymous/sessions", async (c) => {
 
 // Save diagnostic results (anonymous)
 app.post("/api/anonymous/diagnostic", async (c) => {
-  const supabase = getSupabaseAdmin();
-
+  const db = c.env.DB;
+  
   try {
     const body = await c.req.json();
     const { browserId, skills, estimatedScore } = body;
@@ -1638,18 +1540,20 @@ app.post("/api/anonymous/diagnostic", async (c) => {
       return c.json({ error: "Missing browser ID" }, 400);
     }
 
-    const anonSession = await getOrCreateBrowserSession(browserId);
+    const anonSession = await getOrCreateBrowserSession(db, browserId);
     if (!anonSession) {
       return c.json({ error: "Failed to get session" }, 500);
     }
 
-    await supabase
-      .from("diagnostic_results")
-      .insert({
-        anon_session_id: anonSession.id,
-        skills: JSON.stringify(skills || {}),
-        estimated_score: estimatedScore || null,
-      });
+    await db.prepare(
+      `INSERT INTO diagnostic_results (
+        anon_session_id, skills, estimated_score, created_at, updated_at
+      ) VALUES (?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`
+    ).bind(
+      anonSession.id,
+      JSON.stringify(skills || {}),
+      estimatedScore || null
+    ).run();
 
     return c.json({ success: true });
   } catch (error) {
@@ -1661,37 +1565,27 @@ app.post("/api/anonymous/diagnostic", async (c) => {
 // Delete progress (anonymous)
 app.delete("/api/progress/:browserId", async (c) => {
   const browserId = c.req.param("browserId");
-  const supabase = getSupabaseAdmin();
+  const db = c.env.DB;
 
   try {
-    const { data: anonSession } = await supabase
-      .from("anon_sessions")
-      .select("id")
-      .eq("browser_id", browserId)
-      .single();
+    const anonSession = await db.prepare(
+      "SELECT id FROM anon_sessions WHERE browser_id = ?"
+    ).bind(browserId).first();
 
     if (anonSession) {
       // Delete attempts linked to sessions (prevents orphaned rows)
-      // First get session IDs, then delete attempts
-      const { data: sessionRows } = await supabase
-        .from("sessions")
-        .select("id")
-        .eq("anon_session_id", anonSession.id);
-
-      const sessionIds = sessionRows?.map(s => s.id) || [];
-      if (sessionIds.length > 0) {
-        await supabase.from("attempts").delete().in("session_id", sessionIds);
-      }
-
-      await supabase.from("skill_scores").delete().eq("anon_session_id", anonSession.id);
-      await supabase.from("diagnostic_results").delete().eq("anon_session_id", anonSession.id);
-      await supabase.from("sessions").delete().eq("anon_session_id", anonSession.id);
-      await supabase.from("anon_sessions").delete().eq("id", anonSession.id);
+      await db.prepare(
+        "DELETE FROM attempts WHERE session_id IN (SELECT id FROM sessions WHERE anon_session_id = ?)"
+      ).bind(anonSession.id).run();
+      await db.prepare("DELETE FROM skill_scores WHERE anon_session_id = ?").bind(anonSession.id).run();
+      await db.prepare("DELETE FROM diagnostic_results WHERE anon_session_id = ?").bind(anonSession.id).run();
+      await db.prepare("DELETE FROM sessions WHERE anon_session_id = ?").bind(anonSession.id).run();
+      await db.prepare("DELETE FROM anon_sessions WHERE id = ?").bind(anonSession.id).run();
     }
 
     // Clean up usage tracking for this browser
-    await supabase.from("chat_usage").delete().eq("browser_id", browserId);
-    await supabase.from("tutor_usage").delete().eq("browser_id", browserId);
+    await db.prepare("DELETE FROM chat_usage WHERE browser_id = ?").bind(browserId).run();
+    await db.prepare("DELETE FROM tutor_usage WHERE browser_id = ?").bind(browserId).run();
 
     return c.json({ success: true });
   } catch (error) {

@@ -5,12 +5,7 @@ node_modules/
 dist/
 *.tsbuildinfo
 
-# Cloudflare
-.wrangler/
-worker-configuration.d.ts
-
 # Environment / secrets
-.dev.vars
 .env
 .env.local
 .env.*.local

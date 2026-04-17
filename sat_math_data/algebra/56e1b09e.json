@@ -1,0 +1,70 @@
+{
+  "questionId": "56e1b09e",
+  "external_id": "8a9230ef-2284-4f11-9f4e-abff1fd55a4e",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "a9fec79b-9558-4dd6-beab-86d7a236197d",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.A.",
+  "skill_desc": "Linear equations in one variable",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"2.6 plus x equals 2.8\"><mn>2.6</mn><mo>+</mo><mi>x</mi><mo>=</mo><mn>2.8</mn></math></p>\n<p style=\"text-align: left;\">What value of <math alttext=\"x\"><mi>x</mi>\n</math> is the solution to the given equation?</p>",
+  "answerOptions": [],
+  "keys": [
+    "0.2",
+    "1/5"
+  ],
+  "correct_answer": [
+    "0.2",
+    "1/5"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\".2\"><mo>.2</mo></math>. Subtracting <math alttext=\"2.6\"><mn>2.6</mn></math> from each side of the given equation yields <math alttext=\"x equals 0.2\"><mi>x</mi><mo>=</mo><mn>0.2</mn></math>. Therefore, the value of <math alttext=\"x\"><mi>x</mi>\n</math> that's the solution to the given equation is <math alttext=\"0.2\"><mn>0.2</mn></math>. Note that .2 and 1/5 are examples of ways to enter a correct answer.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554984,
+    "pPcc": "SAT#H",
+    "questionId": "56e1b09e",
+    "skill_cd": "H.A.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Linear equations in one variable",
+    "createDate": 1743430554984,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "8a9230ef-2284-4f11-9f4e-abff1fd55a4e",
+    "primary_class_cd": "H",
+    "uId": "a9fec79b-9558-4dd6-beab-86d7a236197d",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"2.6 plus x equals 2.8\"><mn>2.6</mn><mo>+</mo><mi>x</mi><mo>=</mo><mn>2.8</mn></math></p>\n<p style=\"text-align: left;\">What value of <math alttext=\"x\"><mi>x</mi>\n</math> is the solution to the given equation?</p>",
+    "keys": [
+      "0.2",
+      "1/5"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\".2\"><mo>.2</mo></math>. Subtracting <math alttext=\"2.6\"><mn>2.6</mn></math> from each side of the given equation yields <math alttext=\"x equals 0.2\"><mi>x</mi><mo>=</mo><mn>0.2</mn></math>. Therefore, the value of <math alttext=\"x\"><mi>x</mi>\n</math> that's the solution to the given equation is <math alttext=\"0.2\"><mn>0.2</mn></math>. Note that .2 and 1/5 are examples of ways to enter a correct answer.</p>",
+    "externalid": "8a9230ef-2284-4f11-9f4e-abff1fd55a4e",
+    "answerOptions": [],
+    "correct_answer": [
+      "0.2",
+      "1/5"
+    ]
+  },
+  "createDate": 1743430554984,
+  "updateDate": 1743430554984
+}

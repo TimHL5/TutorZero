@@ -1,0 +1,66 @@
+{
+  "questionId": "83fb222d",
+  "external_id": "9055c207-d1fc-4110-be3c-1ea08fcd52ab",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "a71fc87c-37eb-44e9-b125-9e40ad62c754",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.A.",
+  "skill_desc": "Linear equations in one variable",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If <math alttext=\"6 n equals 12\"><mrow>\n\t<mrow>\n\t\t<mn>6</mn>\n\t\t<mi>n</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>12</mn>\n</mrow>\n</math>, what is the value of <math alttext=\"n plus 4\"><mrow>\n\t<mi>n</mi>\n\t<mo>+</mo>\n\t<mn>4</mn>\n</mrow>\n</math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "6"
+  ],
+  "correct_answer": [
+    "6"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"6\"><mn>6</mn>\n</math>. Dividing both sides of the equation <math alttext=\"6 n equals 12\"><mrow>\n\t<mrow>\n\t\t<mn>6</mn>\n\t\t<mi>n</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>12</mn>\n</mrow>\n</math> by <math alttext=\"6\"><mn>6</mn>\n</math> yields <math alttext=\"n equals 2\"><mrow>\n\t<mi>n</mi>\n\t<mo>=</mo>\n\t<mn>2</mn>\n</mrow>\n</math>. Substituting <math alttext=\"2\"><mn>2</mn>\n</math> for <math alttext=\"n\"><mi>n</mi>\n</math> in the expression <math alttext=\"n plus 4\"><mrow>\n\t<mi>n</mi>\n\t<mo>+</mo>\n\t<mn>4</mn>\n</mrow>\n</math> yields <math alttext=\"2 plus 4\"><mn>2</mn><mo>+</mo><mn>4</mn></math>, or <math alttext=\"6\"><mn>6</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357387,
+    "pPcc": "SAT#H",
+    "questionId": "83fb222d",
+    "skill_cd": "H.A.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Linear equations in one variable",
+    "createDate": 1730147357387,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "9055c207-d1fc-4110-be3c-1ea08fcd52ab",
+    "primary_class_cd": "H",
+    "uId": "a71fc87c-37eb-44e9-b125-9e40ad62c754",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "9055c207-d1fc-4110-be3c-1ea08fcd52ab",
+    "keys": [
+      "6"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"6\"><mn>6</mn>\n</math>. Dividing both sides of the equation <math alttext=\"6 n equals 12\"><mrow>\n\t<mrow>\n\t\t<mn>6</mn>\n\t\t<mi>n</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>12</mn>\n</mrow>\n</math> by <math alttext=\"6\"><mn>6</mn>\n</math> yields <math alttext=\"n equals 2\"><mrow>\n\t<mi>n</mi>\n\t<mo>=</mo>\n\t<mn>2</mn>\n</mrow>\n</math>. Substituting <math alttext=\"2\"><mn>2</mn>\n</math> for <math alttext=\"n\"><mi>n</mi>\n</math> in the expression <math alttext=\"n plus 4\"><mrow>\n\t<mi>n</mi>\n\t<mo>+</mo>\n\t<mn>4</mn>\n</mrow>\n</math> yields <math alttext=\"2 plus 4\"><mn>2</mn><mo>+</mo><mn>4</mn></math>, or <math alttext=\"6\"><mn>6</mn>\n</math>.</p>",
+    "stem": "<p>If <math alttext=\"6 n equals 12\"><mrow>\n\t<mrow>\n\t\t<mn>6</mn>\n\t\t<mi>n</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>12</mn>\n</mrow>\n</math>, what is the value of <math alttext=\"n plus 4\"><mrow>\n\t<mi>n</mi>\n\t<mo>+</mo>\n\t<mn>4</mn>\n</mrow>\n</math>?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "6"
+    ]
+  },
+  "createDate": 1730147357387,
+  "updateDate": 1730147357387
+}

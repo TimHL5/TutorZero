@@ -1,0 +1,51 @@
+{
+  "questionId": "25361ec6",
+  "external_id": "277fb947-e7d2-4316-bcef-a79554eb9a08",
+  "vaultid": null,
+  "uId": "3880cf04-ca34-4417-9eea-1097b09037a7",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "EOI",
+  "domain": "Expression of Ideas",
+  "skill_cd": "TRA",
+  "skill_desc": "Transitions",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "mcq",
+  "stimulus": "<p>Scientists long debated the origins of chondrules, tiny glass beads that formed in meteors billions of years ago. For decades, different theories were proposed, from lightning strikes to powerful rock collisions, but none had sufficient evidentiary support. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> scientists found strong evidence that chondrules were formed by shock waves in nearby nebulae.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "9c1df694-6163-412b-a9df-51127796e5ef",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "e1c9678b-812e-4035-a965-0d39735da691",
+      "content": "<p>Therefore,</p>"
+    },
+    {
+      "id": "1c4768d9-9837-4462-a4fe-b697bb501830",
+      "content": "<p>Similarly,</p>"
+    },
+    {
+      "id": "201e3cd1-0f7d-4c8d-843b-bbc242c2a966",
+      "content": "<p>Finally,</p>"
+    }
+  ],
+  "keys": [
+    "201e3cd1-0f7d-4c8d-843b-bbc242c2a966"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Finally\" logically signals that the information in this sentence&mdash;that scientists found evidence that chondrules were formed by shock waves in nearby nebulae&mdash;indicates a conclusion to the scientific debate mentioned in the previous sentences.</p><p>Choice A is incorrect because \"for example\" illogically signals that the information about the evidence for chondrule formation in this sentence exemplifies the information about the scientific debate regarding chondrule formation in the previous sentences. Instead, it indicates a conclusion to the debate. Choice B is incorrect because \"therefore\" illogically signals that the information in this sentence is a result of the previous information about the scientific debate regarding chondrule formation. Instead, it indicates a conclusion to the debate. Choice C is incorrect because \"similarly\" illogically signals that the information that follows is similar to the information about the scientific debate regarding chondrule formation in the previous sentences. Instead, it indicates a conclusion to the debate.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323042,
+  "updateDate": 1730147323042
+}

@@ -1,0 +1,51 @@
+{
+  "questionId": "42cc9236",
+  "external_id": "ba43ba37-2bb4-4501-96e8-9cc10f4f776b",
+  "vaultid": "3aeb980d-bc12-41b4-bbf4-8204b3720896",
+  "uId": "cc9ef3d6-878e-40b8-bd0d-7fd3d7190cbd",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "E",
+  "score_band_range_cd": 1,
+  "type": "mcq",
+  "stimulus": "<p>If you try on one of artist Nick Cave&rsquo;s signature Soundsuits, you can expect to swish, rustle, or clang every time you move. Cave makes his suits out of found objects, everything from ceramic birds to broken record players. He carefully considers the sound an object makes before using <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in a suit.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "2fcdd5bc-2c2c-40b0-94f3-33c52e06f683",
+      "content": "<p>this</p>"
+    },
+    {
+      "id": "824d2a9a-cca8-451e-93e6-9520934a722f",
+      "content": "<p>that</p>"
+    },
+    {
+      "id": "c9fa75bf-5fff-4d07-aff2-d7d31510ebf4",
+      "content": "<p>these</p>"
+    },
+    {
+      "id": "50175419-76ba-4786-b35d-09c1938f2c0f",
+      "content": "<p>it</p>"
+    }
+  ],
+  "keys": [
+    "50175419-76ba-4786-b35d-09c1938f2c0f"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested here is pronoun-antecedent agreement. The singular pronoun \"it\" agrees in number with the singular antecedent \"object.\"</p><p>Choice A is incorrect. The singular pronoun \"this\" is used to refer to a specific thing, but here there is no specific object being referred to. Instead, the sentence is referring back to a hypothetical object that Cave might use in a Soundsuit. Choice B is incorrect. The singular pronoun \"that\" is used to refer to a specific thing, but here there is no specific object being referred to. Instead, the sentence is referring back to a hypothetical object that Cave might use in a Soundsuit. Choice C is incorrect because the plural pronoun \"these\" doesn&rsquo;t agree in number with the singular antecedent \"object.\"</p>",
+  "parenttemplatename": "OSP-722-SEC",
+  "parenttemplateid": "",
+  "templateclusterid": "fdc10fc4-4538-4018-b962-9170bc7bad8f",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959348,
+  "updateDate": 1691007959348
+}

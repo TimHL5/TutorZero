@@ -1,0 +1,51 @@
+{
+  "questionId": "a7991da1",
+  "external_id": "f8b434fb-6251-45d0-bce9-7473565978b3",
+  "vaultid": null,
+  "uId": "b4fa7f9c-6ea9-454f-b8b2-0c9ed6cea6f9",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "CAS",
+  "domain": "Craft and Structure",
+  "skill_cd": "WIC",
+  "skill_desc": "Words in Context",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "mcq",
+  "stimulus": "<p>A unique dialect, or regional variety, of Spanish is spoken in Puerto Rico. It contains many words borrowed from the language of the Ta&iacute;nos, the Indigenous people of Puerto Rico. African languages also made important contributions to the Puerto Rican dialect. For example, the way certain vowel sounds are pronounced in it can be <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to how they are pronounced in Yoruba, a West African language.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "41ec7c50-8310-4b4d-8030-b85b415a9dbd",
+      "content": "<p>traced</p>"
+    },
+    {
+      "id": "b3e08dfa-50ac-440d-8e3f-327450ed5a71",
+      "content": "<p>surrendered</p>"
+    },
+    {
+      "id": "93f48f59-1705-4de0-b98a-ce8812fa6e76",
+      "content": "<p>announced</p>"
+    },
+    {
+      "id": "ee07602a-aedd-45d4-ac2f-57115f95ec1e",
+      "content": "<p>offered</p>"
+    }
+  ],
+  "keys": [
+    "41ec7c50-8310-4b4d-8030-b85b415a9dbd"
+  ],
+  "correct_answer": [
+    "A"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most logically completes the text&rsquo;s discussion of the origins of the unique dialect of Spanish spoken in Puerto Rico. In this context, \"traced\" means tracked back to. The text notes that the regional variety of Spanish spoken in Puerto Rico has its roots in the language of the Ta&iacute;nos and in the West African language of Yoruba. This context supports the idea that the way certain vowel sounds are pronounced in the Puerto Rican dialect can be traced back to Yoruba.</p><p>Choice B is incorrect because the text presents the statement about the relationship between vowel pronunciation in the Puerto Rican dialect of Spanish and in Yoruba as an example to support the claim that African languages have contributed to the Puerto Rican dialect. It therefore wouldn&rsquo;t make sense to say that the pronunciation of certain vowel sounds in the Puerto Rican dialect can be \"surrendered,\" or handed over on demand, to the pronunciation in Yoruba. Choice C is incorrect because the text gives no indication that the way certain vowel sounds are pronounced in the Puerto Rican dialect of Spanish has been \"announced,\" or officially declared or proclaimed. According to the text, elements of the dialect have been inherited or borrowed from African languages, and the relationship between the pronunciation of certain vowels in the Puerto Rican dialect and in Yoruba is an example of this inheritance, suggesting that the pronunciation in the Puerto Rican dialect can be traced to Yoruba. Choice D is incorrect because the text presents the statement about the relationship between vowel pronunciation in the Puerto Rican dialect of Spanish and in Yoruba as an example to support the claim that African languages have contributed to the Puerto Rican dialect. It therefore wouldn&rsquo;t make sense to say that the pronunciation of certain vowel sounds in the Puerto Rican dialect can be \"offered,\" or presented as a gift, to the pronunciation in Yoruba.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323041,
+  "updateDate": 1730147323041
+}

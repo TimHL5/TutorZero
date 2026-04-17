@@ -1,0 +1,69 @@
+{
+  "questionId": "e9f4521a",
+  "external_id": "2ac7bdf3-7d6c-4145-a9a6-af9bf15e1765",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "a77a136a-83bc-40ab-befd-6c5d6d64bfb4",
+  "uId": "cfdde65f-29b0-4816-9495-317d9c390c25",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.B.",
+  "skill_desc": "Percentages",
+  "difficulty": "M",
+  "score_band_range_cd": 5,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\"><math alttext=\"13\"><mn>13</mn>\n</math> is&nbsp;<math alttext=\"p percent sign\"><mi>p</mi><mo>%</mo></math> of <math alttext=\"25\"><mn>25</mn>\n</math>. What is the value of <math alttext=\"p\"><mi>p</mi>\n</math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "52"
+  ],
+  "correct_answer": [
+    "52"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"52\"><mn>52</mn>\n</math>. It's given that <math alttext=\"13\"><mn>13</mn>\n</math> is <math alttext=\"p percent sign\"><mi>p</mi><mo>%</mo></math> of <math alttext=\"25\"><mn>25</mn>\n</math>. It follows that <math alttext=\"StartFraction 13 Over 25 EndFraction equals StartFraction p Over 100 EndFraction\"><mrow>\n\t<mfrac>\n\t\t<mn>13</mn>\n\t\t<mn>25</mn>\n\t</mfrac>\n\t<mo>=</mo>\n\t<mfrac>\n\t\t\t<mi>p</mi>\n\t\t\t<mn>100</mn>\n\t\t</mfrac>\n</mrow>\n</math>. Multiplying both sides of this equation by <math alttext=\"100\"><mn>100</mn>\n</math> gives <math alttext=\"52 equals p\"><mrow>\n\t<mn>52</mn>\n\t<mo>=</mo>\n\t<mi>p</mi>\n</mrow>\n</math>. Therefore, the value of <math alttext=\"p\"><mi>p</mi>\n</math> is <math alttext=\"52\"><mn>52</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959831,
+    "pPcc": "SAT#Q",
+    "questionId": "e9f4521a",
+    "skill_cd": "Q.B.",
+    "score_band_range_cd": 5,
+    "skill_desc": "Percentages",
+    "createDate": 1691007959831,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": null,
+    "external_id": "2ac7bdf3-7d6c-4145-a9a6-af9bf15e1765",
+    "primary_class_cd": "Q",
+    "uId": "cfdde65f-29b0-4816-9495-317d9c390c25",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "keys": [
+      "52"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"52\"><mn>52</mn>\n</math>. It's given that <math alttext=\"13\"><mn>13</mn>\n</math> is <math alttext=\"p percent sign\"><mi>p</mi><mo>%</mo></math> of <math alttext=\"25\"><mn>25</mn>\n</math>. It follows that <math alttext=\"StartFraction 13 Over 25 EndFraction equals StartFraction p Over 100 EndFraction\"><mrow>\n\t<mfrac>\n\t\t<mn>13</mn>\n\t\t<mn>25</mn>\n\t</mfrac>\n\t<mo>=</mo>\n\t<mfrac>\n\t\t\t<mi>p</mi>\n\t\t\t<mn>100</mn>\n\t\t</mfrac>\n</mrow>\n</math>. Multiplying both sides of this equation by <math alttext=\"100\"><mn>100</mn>\n</math> gives <math alttext=\"52 equals p\"><mrow>\n\t<mn>52</mn>\n\t<mo>=</mo>\n\t<mi>p</mi>\n</mrow>\n</math>. Therefore, the value of <math alttext=\"p\"><mi>p</mi>\n</math> is <math alttext=\"52\"><mn>52</mn>\n</math>.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\"><math alttext=\"13\"><mn>13</mn>\n</math> is&nbsp;<math alttext=\"p percent sign\"><mi>p</mi><mo>%</mo></math> of <math alttext=\"25\"><mn>25</mn>\n</math>. What is the value of <math alttext=\"p\"><mi>p</mi>\n</math>?</p>",
+    "externalid": "2ac7bdf3-7d6c-4145-a9a6-af9bf15e1765",
+    "templateid": "1591144a-7c25-4a9f-894e-f45aa8f3a707",
+    "vaultid": "a77a136a-83bc-40ab-befd-6c5d6d64bfb4",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "52"
+    ]
+  },
+  "createDate": 1691007959831,
+  "updateDate": 1691007959831
+}

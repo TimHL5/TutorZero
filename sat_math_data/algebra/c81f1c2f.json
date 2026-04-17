@@ -1,0 +1,66 @@
+{
+  "questionId": "c81f1c2f",
+  "external_id": "9a75850f-42ca-4792-94aa-fe7d5258a84c",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "4f83b2d3-ff59-4111-81df-2810f2db2edd",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.B.",
+  "skill_desc": "Linear functions",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"f left parenthesis x right parenthesis equals 45 x plus 600\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>45</mn><mi>x</mi><mo>+</mo><mn>600</mn></math></p>\n<p style=\"text-align: left;\">The function <math alttext=\"f\"><mi>f</mi>\n</math> gives the monthly fee&nbsp;<math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math>, in dollars, a facility charges to keep <math alttext=\"x\"><mi>x</mi>\n</math> crates in storage. What is the monthly fee, in dollars, the facility charges to keep <math alttext=\"50\"><mn>50</mn>\n</math> crates in storage?</p>",
+  "answerOptions": [],
+  "keys": [
+    "2850"
+  ],
+  "correct_answer": [
+    "2850"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"2,850\"><mn>2,850</mn></math>. It&rsquo;s given that the function <math alttext=\"f left parenthesis x right parenthesis equals 45 x plus 600\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>45</mn><mi>x</mi><mo>+</mo><mn>600</mn></math> gives the monthly fee, in dollars, a facility charges to keep <math alttext=\"x\"><mi>x</mi>\n</math> crates in storage. Substituting <math alttext=\"50\"><mn>50</mn>\n</math> for <math alttext=\"x\"><mi>x</mi>\n</math> in this function&nbsp;yields <math alttext=\"f left parenthesis 50 right parenthesis equals 45 left parenthesis 50 right parenthesis plus 600\"><mi>f</mi><mfenced><mn>50</mn></mfenced><mo>=</mo><mn>45</mn><mfenced><mn>50</mn></mfenced><mo>+</mo><mn>600</mn></math>, or <math alttext=\"f left parenthesis 50 right parenthesis equals 2,850\"><mi>f</mi><mfenced><mn>50</mn></mfenced><mo>=</mo><mn>2,850</mn></math>. Therefore, the monthly fee, in dollars, the facility charges to keep <math alttext=\"50\"><mn>50</mn>\n</math> crates in storage is <math alttext=\"2,850\"><mn>2,850</mn></math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554984,
+    "pPcc": "SAT#H",
+    "questionId": "c81f1c2f",
+    "skill_cd": "H.B.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Linear functions",
+    "createDate": 1743430554984,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "9a75850f-42ca-4792-94aa-fe7d5258a84c",
+    "primary_class_cd": "H",
+    "uId": "4f83b2d3-ff59-4111-81df-2810f2db2edd",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"f left parenthesis x right parenthesis equals 45 x plus 600\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>45</mn><mi>x</mi><mo>+</mo><mn>600</mn></math></p>\n<p style=\"text-align: left;\">The function <math alttext=\"f\"><mi>f</mi>\n</math> gives the monthly fee&nbsp;<math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math>, in dollars, a facility charges to keep <math alttext=\"x\"><mi>x</mi>\n</math> crates in storage. What is the monthly fee, in dollars, the facility charges to keep <math alttext=\"50\"><mn>50</mn>\n</math> crates in storage?</p>",
+    "keys": [
+      "2850"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"2,850\"><mn>2,850</mn></math>. It&rsquo;s given that the function <math alttext=\"f left parenthesis x right parenthesis equals 45 x plus 600\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>45</mn><mi>x</mi><mo>+</mo><mn>600</mn></math> gives the monthly fee, in dollars, a facility charges to keep <math alttext=\"x\"><mi>x</mi>\n</math> crates in storage. Substituting <math alttext=\"50\"><mn>50</mn>\n</math> for <math alttext=\"x\"><mi>x</mi>\n</math> in this function&nbsp;yields <math alttext=\"f left parenthesis 50 right parenthesis equals 45 left parenthesis 50 right parenthesis plus 600\"><mi>f</mi><mfenced><mn>50</mn></mfenced><mo>=</mo><mn>45</mn><mfenced><mn>50</mn></mfenced><mo>+</mo><mn>600</mn></math>, or <math alttext=\"f left parenthesis 50 right parenthesis equals 2,850\"><mi>f</mi><mfenced><mn>50</mn></mfenced><mo>=</mo><mn>2,850</mn></math>. Therefore, the monthly fee, in dollars, the facility charges to keep <math alttext=\"50\"><mn>50</mn>\n</math> crates in storage is <math alttext=\"2,850\"><mn>2,850</mn></math>.</p>",
+    "externalid": "9a75850f-42ca-4792-94aa-fe7d5258a84c",
+    "answerOptions": [],
+    "correct_answer": [
+      "2850"
+    ]
+  },
+  "createDate": 1743430554984,
+  "updateDate": 1743430554984
+}

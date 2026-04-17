@@ -1,0 +1,66 @@
+{
+  "questionId": "a29e89fc",
+  "external_id": "2466799c-cc68-42e1-b0cb-461b4ca5597c",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "52e58ca3-e243-4111-9f1d-a84e19ca1ae2",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.C.",
+  "skill_desc": "One-variable data: Distributions and measures of center and spread",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The list gives the mass, in grams, of <math alttext=\"5\"><mn>5</mn>\n</math> alpine marmots.&nbsp;</p>\n<p style=\"text-align: center;\">&nbsp;<math alttext=\"4,010\"><mn>4,010</mn>\n</math>; <math alttext=\"4,010\"><mn>4,010</mn>\n</math>; <math alttext=\"3,030\"><mn>3,030</mn>\n</math>; <math alttext=\"4,050\"><mn>4,050</mn>\n</math>; <math alttext=\"3,050\"><mn>3,050</mn>\n</math></p>\n<p style=\"text-align: left;\">What is the mean mass, in grams, of these <math alttext=\"5\"><mn>5</mn>\n</math> alpine marmots?&nbsp;</p>",
+  "answerOptions": [],
+  "keys": [
+    "3630"
+  ],
+  "correct_answer": [
+    "3630"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"3,630\"><mn>3,630</mn>\n</math>. The mean of a data set is the sum of the values in the data set divided by the number of values in the data set. The sum of the masses, in grams, of these alpine marmots is <math alttext=\"4,010 plus 4,010 plus 3,030 plus 4,050 plus 3,050\"><mn>4,010</mn><mo>+</mo><mn>4,010</mn><mo>+</mo><mn>3,030</mn><mo>+</mo><mn>4,050</mn><mo>+</mo><mn>3,050</mn></math>, or <math alttext=\"18,150\"><mn>18,150</mn>\n</math> grams. The number of alpine marmots in the data set is <math alttext=\"5\"><mn>5</mn>\n</math>. Therefore, the mean mass, in grams, of these <math alttext=\"5\"><mn>5</mn>\n</math> alpine marmots is <math alttext=\"StartFraction 18,150 Over 5 EndFraction\"><mfrac><mn>18,150</mn><mn>5</mn></mfrac></math>, or <math alttext=\"3,630\"><mn>3,630</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357404,
+    "pPcc": "SAT#Q",
+    "questionId": "a29e89fc",
+    "skill_cd": "Q.C.",
+    "score_band_range_cd": 4,
+    "skill_desc": "One-variable data: Distributions and measures of center and spread",
+    "createDate": 1730147357404,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "2466799c-cc68-42e1-b0cb-461b4ca5597c",
+    "primary_class_cd": "Q",
+    "uId": "52e58ca3-e243-4111-9f1d-a84e19ca1ae2",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "2466799c-cc68-42e1-b0cb-461b4ca5597c",
+    "keys": [
+      "3630"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"3,630\"><mn>3,630</mn>\n</math>. The mean of a data set is the sum of the values in the data set divided by the number of values in the data set. The sum of the masses, in grams, of these alpine marmots is <math alttext=\"4,010 plus 4,010 plus 3,030 plus 4,050 plus 3,050\"><mn>4,010</mn><mo>+</mo><mn>4,010</mn><mo>+</mo><mn>3,030</mn><mo>+</mo><mn>4,050</mn><mo>+</mo><mn>3,050</mn></math>, or <math alttext=\"18,150\"><mn>18,150</mn>\n</math> grams. The number of alpine marmots in the data set is <math alttext=\"5\"><mn>5</mn>\n</math>. Therefore, the mean mass, in grams, of these <math alttext=\"5\"><mn>5</mn>\n</math> alpine marmots is <math alttext=\"StartFraction 18,150 Over 5 EndFraction\"><mfrac><mn>18,150</mn><mn>5</mn></mfrac></math>, or <math alttext=\"3,630\"><mn>3,630</mn>\n</math>.</p>",
+    "stem": "<p style=\"text-align: left;\">The list gives the mass, in grams, of <math alttext=\"5\"><mn>5</mn>\n</math> alpine marmots.&nbsp;</p>\n<p style=\"text-align: center;\">&nbsp;<math alttext=\"4,010\"><mn>4,010</mn>\n</math>; <math alttext=\"4,010\"><mn>4,010</mn>\n</math>; <math alttext=\"3,030\"><mn>3,030</mn>\n</math>; <math alttext=\"4,050\"><mn>4,050</mn>\n</math>; <math alttext=\"3,050\"><mn>3,050</mn>\n</math></p>\n<p style=\"text-align: left;\">What is the mean mass, in grams, of these <math alttext=\"5\"><mn>5</mn>\n</math> alpine marmots?&nbsp;</p>",
+    "type": "spr",
+    "correct_answer": [
+      "3630"
+    ]
+  },
+  "createDate": 1730147357404,
+  "updateDate": 1730147357404
+}

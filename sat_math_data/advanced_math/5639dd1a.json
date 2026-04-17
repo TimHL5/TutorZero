@@ -1,0 +1,66 @@
+{
+  "questionId": "5639dd1a",
+  "external_id": "aeb387c2-21cb-4d5a-ab7d-88f31fa270af",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "6166b5bf-135e-4790-9627-363bd905aa5c",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "P",
+  "domain": "Advanced Math",
+  "skill_cd": "P.B.",
+  "skill_desc": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"x squared equals left parenthesis 22 right parenthesis left parenthesis 22 right parenthesis\"><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mfenced><mn>22</mn></mfenced><mfenced><mn>22</mn></mfenced></math></p>\n<p style=\"text-align: left;\">What is the positive solution to the given equation?</p>",
+  "answerOptions": [],
+  "keys": [
+    "22"
+  ],
+  "correct_answer": [
+    "22"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"22\"><mn>22</mn>\n</math>. The given equation, <math alttext=\"x squared equals left parenthesis 22 right parenthesis left parenthesis 22 right parenthesis\"><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mfenced><mn>22</mn></mfenced><mfenced><mn>22</mn></mfenced></math>, is equivalent to <math alttext=\"x squared equals left parenthesis 22 right parenthesis squared\"><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><msup><mfenced><mn>22</mn></mfenced><mn>2</mn></msup></math>. Taking the square root of each side of this equation yields <math alttext=\"x equals plus or minus 22\"><mi>x</mi><mo>=</mo><mo>&#177;</mo><mn>22</mn></math>. Thus, the positive solution to the given equation is <math alttext=\"22\"><mn>22</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357395,
+    "pPcc": "SAT#P",
+    "questionId": "5639dd1a",
+    "skill_cd": "P.B.",
+    "score_band_range_cd": 3,
+    "skill_desc": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "createDate": 1730147357395,
+    "program": "SAT",
+    "primary_class_cd_desc": "Advanced Math",
+    "ibn": "",
+    "external_id": "aeb387c2-21cb-4d5a-ab7d-88f31fa270af",
+    "primary_class_cd": "P",
+    "uId": "6166b5bf-135e-4790-9627-363bd905aa5c",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "aeb387c2-21cb-4d5a-ab7d-88f31fa270af",
+    "keys": [
+      "22"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"22\"><mn>22</mn>\n</math>. The given equation, <math alttext=\"x squared equals left parenthesis 22 right parenthesis left parenthesis 22 right parenthesis\"><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mfenced><mn>22</mn></mfenced><mfenced><mn>22</mn></mfenced></math>, is equivalent to <math alttext=\"x squared equals left parenthesis 22 right parenthesis squared\"><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><msup><mfenced><mn>22</mn></mfenced><mn>2</mn></msup></math>. Taking the square root of each side of this equation yields <math alttext=\"x equals plus or minus 22\"><mi>x</mi><mo>=</mo><mo>&#177;</mo><mn>22</mn></math>. Thus, the positive solution to the given equation is <math alttext=\"22\"><mn>22</mn>\n</math>.</p>",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"x squared equals left parenthesis 22 right parenthesis left parenthesis 22 right parenthesis\"><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mfenced><mn>22</mn></mfenced><mfenced><mn>22</mn></mfenced></math></p>\n<p style=\"text-align: left;\">What is the positive solution to the given equation?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "22"
+    ]
+  },
+  "createDate": 1730147357395,
+  "updateDate": 1730147357395
+}

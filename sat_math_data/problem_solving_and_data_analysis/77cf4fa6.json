@@ -1,0 +1,69 @@
+{
+  "questionId": "77cf4fa6",
+  "external_id": "baded933-3db8-4cfd-9e63-74113b894ad5",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "a563cb5b-c90b-4e82-a75a-34c28cb5cf0c",
+  "uId": "bcb927e5-c241-4bcb-9f2a-b6e26af790bb",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.B.",
+  "skill_desc": "Percentages",
+  "difficulty": "E",
+  "score_band_range_cd": 1,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">There are <math alttext=\"170\"><mn>170</mn>\n</math> blocks in a container. Of these blocks,&nbsp;<math alttext=\"10 percent sign\"><mn>10</mn><mo>%</mo></math> are green. How many blocks in the container are green?</p>",
+  "answerOptions": [],
+  "keys": [
+    "17"
+  ],
+  "correct_answer": [
+    "17"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"17\"><mn>17</mn>\n</math>. It's given that there are <math alttext=\"170\"><mn>170</mn>\n</math> blocks in a container, and of these blocks, <math alttext=\"10 percent sign\"><mn>10</mn><mo>%</mo></math>&nbsp;are green. Since <math alttext=\"10 percent sign\"><mn>10</mn><mo>%</mo></math> can be rewritten as <math alttext=\"StartFraction 10 Over 100 EndFraction\"><mfrac><mn>10</mn><mn>100</mn></mfrac></math>, or <math alttext=\"0.1\"><mn>0.1</mn></math>, the number of green blocks in the container is <math alttext=\"0.1 left parenthesis 170 right parenthesis\"><mn>0.1</mn><mfenced><mn>170</mn></mfenced></math>, or <math alttext=\"17\"><mn>17</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959831,
+    "pPcc": "SAT#Q",
+    "questionId": "77cf4fa6",
+    "skill_cd": "Q.B.",
+    "score_band_range_cd": 1,
+    "skill_desc": "Percentages",
+    "createDate": 1691007959831,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": null,
+    "external_id": "baded933-3db8-4cfd-9e63-74113b894ad5",
+    "primary_class_cd": "Q",
+    "uId": "bcb927e5-c241-4bcb-9f2a-b6e26af790bb",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "keys": [
+      "17"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"17\"><mn>17</mn>\n</math>. It's given that there are <math alttext=\"170\"><mn>170</mn>\n</math> blocks in a container, and of these blocks, <math alttext=\"10 percent sign\"><mn>10</mn><mo>%</mo></math>&nbsp;are green. Since <math alttext=\"10 percent sign\"><mn>10</mn><mo>%</mo></math> can be rewritten as <math alttext=\"StartFraction 10 Over 100 EndFraction\"><mfrac><mn>10</mn><mn>100</mn></mfrac></math>, or <math alttext=\"0.1\"><mn>0.1</mn></math>, the number of green blocks in the container is <math alttext=\"0.1 left parenthesis 170 right parenthesis\"><mn>0.1</mn><mfenced><mn>170</mn></mfenced></math>, or <math alttext=\"17\"><mn>17</mn>\n</math>.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">There are <math alttext=\"170\"><mn>170</mn>\n</math> blocks in a container. Of these blocks,&nbsp;<math alttext=\"10 percent sign\"><mn>10</mn><mo>%</mo></math> are green. How many blocks in the container are green?</p>",
+    "externalid": "baded933-3db8-4cfd-9e63-74113b894ad5",
+    "templateid": "42bed0ec-4103-416e-a46c-cc6a92762397",
+    "vaultid": "a563cb5b-c90b-4e82-a75a-34c28cb5cf0c",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "17"
+    ]
+  },
+  "createDate": 1691007959831,
+  "updateDate": 1691007959831
+}

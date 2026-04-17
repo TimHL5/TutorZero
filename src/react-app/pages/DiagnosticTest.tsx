@@ -150,11 +150,20 @@ export default function DiagnosticTest() {
             </span>
           </div>
 
+          {/* Passage / Stimulus (R&W + some Math with tables/figures) */}
+          {currentQuestion.passageText && (
+            <div className="mb-6 p-5 bg-tz-off-white border border-tz-gray-200 rounded-lg max-h-[40vh] overflow-y-auto">
+              <div className="text-body text-tz-gray-700 leading-relaxed sat-content">
+                <MathText text={currentQuestion.passageText} />
+              </div>
+            </div>
+          )}
+
           {/* Question */}
           <div className="mb-8">
-            <p className="text-lg font-medium text-tz-navy leading-relaxed">
+            <div className="text-lg font-medium text-tz-navy leading-relaxed sat-content">
               <MathText text={currentQuestion.questionText} />
-            </p>
+            </div>
           </div>
 
           {/* Answer Choices */}
@@ -183,7 +192,7 @@ export default function DiagnosticTest() {
                     {letter}
                   </div>
                   <span className={cn(
-                    "text-body",
+                    "text-body sat-content",
                     isSelected ? "text-tz-navy" : "text-tz-gray-600"
                   )}>
                     <MathText text={option} />

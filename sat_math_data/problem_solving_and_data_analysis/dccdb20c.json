@@ -1,0 +1,66 @@
+{
+  "questionId": "dccdb20c",
+  "external_id": "c709983b-f5d2-4f76-8755-5eb306b94baa",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "d2052bb6-6a47-4153-ba85-c0a5d3b5e385",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.B.",
+  "skill_desc": "Percentages",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">There are <math alttext=\"450\"><mn>450</mn>\n</math> tiles in a box. Of these tiles, <math alttext=\"6 percent sign\"><mn>6</mn><mo>%</mo></math> are black. How many black tiles are in the box?</p>",
+  "answerOptions": [],
+  "keys": [
+    "27"
+  ],
+  "correct_answer": [
+    "27"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"27\"><mn>27</mn>\n</math>. It&rsquo;s given that <math alttext=\"6 percent sign\"><mn>6</mn><mo>%</mo></math> of the <math alttext=\"450\"><mn>450</mn>\n</math> tiles in a box are black. Therefore, the number of black tiles in the box can be calculated by multiplying the number of tiles in the box by <math alttext=\"StartFraction 6 Over 100 EndFraction\"><mfrac><mn>6</mn><mn>100</mn></mfrac></math>, which is equivalent to <math alttext=\"450 left parenthesis StartFraction 6 Over 100 EndFraction right parenthesis\"><mn>450</mn><mfenced><mfrac><mn>6</mn><mn>100</mn></mfrac></mfenced></math>, or <math alttext=\"27\"><mn>27</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554986,
+    "pPcc": "SAT#Q",
+    "questionId": "dccdb20c",
+    "skill_cd": "Q.B.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Percentages",
+    "createDate": 1743430554986,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "c709983b-f5d2-4f76-8755-5eb306b94baa",
+    "primary_class_cd": "Q",
+    "uId": "d2052bb6-6a47-4153-ba85-c0a5d3b5e385",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: left;\">There are <math alttext=\"450\"><mn>450</mn>\n</math> tiles in a box. Of these tiles, <math alttext=\"6 percent sign\"><mn>6</mn><mo>%</mo></math> are black. How many black tiles are in the box?</p>",
+    "keys": [
+      "27"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"27\"><mn>27</mn>\n</math>. It&rsquo;s given that <math alttext=\"6 percent sign\"><mn>6</mn><mo>%</mo></math> of the <math alttext=\"450\"><mn>450</mn>\n</math> tiles in a box are black. Therefore, the number of black tiles in the box can be calculated by multiplying the number of tiles in the box by <math alttext=\"StartFraction 6 Over 100 EndFraction\"><mfrac><mn>6</mn><mn>100</mn></mfrac></math>, which is equivalent to <math alttext=\"450 left parenthesis StartFraction 6 Over 100 EndFraction right parenthesis\"><mn>450</mn><mfenced><mfrac><mn>6</mn><mn>100</mn></mfrac></mfenced></math>, or <math alttext=\"27\"><mn>27</mn>\n</math>.</p>",
+    "externalid": "c709983b-f5d2-4f76-8755-5eb306b94baa",
+    "answerOptions": [],
+    "correct_answer": [
+      "27"
+    ]
+  },
+  "createDate": 1743430554986,
+  "updateDate": 1743430554986
+}

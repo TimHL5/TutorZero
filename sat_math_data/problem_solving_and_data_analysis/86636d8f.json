@@ -1,0 +1,69 @@
+{
+  "questionId": "86636d8f",
+  "external_id": "5979deaa-edcc-42e7-8d12-24a01cec2c7a",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "2907a8a0-8edb-4641-8b84-47e3cbff0de1",
+  "uId": "0b55e8e9-d21c-4061-a4cd-a54c78ca65ba",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.A.",
+  "skill_desc": "Ratios, rates, proportional relationships, and units",
+  "difficulty": "E",
+  "score_band_range_cd": 1,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A customer spent&nbsp;<math alttext=\"dollar sign 27\"><mo>$</mo><mrow><mn>27</mn></mrow></math> to purchase oranges at <math alttext=\"dollar sign 3\"><mo>$</mo><mrow><mn>3</mn></mrow></math> per pound. How many pounds of oranges did the customer purchase?</p>",
+  "answerOptions": [],
+  "keys": [
+    "9"
+  ],
+  "correct_answer": [
+    "9"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"9\"><mn>9</mn>\n</math>. It&rsquo;s given that the customer spent&nbsp;<math alttext=\"dollar sign 27\"><mo>$</mo><mn>27</mn></math> to purchase oranges at <math alttext=\"dollar sign 3\"><mo>$</mo><mn>3</mn></math> per pound. Therefore, the number of pounds of oranges the customer purchased is <math alttext=\"dollar sign 27 left parenthesis StartFraction 1 pound Over dollar sign 3 EndFraction right parenthesis\"><mo>$</mo><mn>27</mn><mfenced><mfrac><mrow><mn>1</mn><mo>&nbsp;</mo><mtext>pound</mtext></mrow><mrow><mo>$</mo><mn>3</mn></mrow></mfrac></mfenced></math>, or <math alttext=\"9\"><mn>9</mn>\n</math> pounds.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959829,
+    "pPcc": "SAT#Q",
+    "questionId": "86636d8f",
+    "skill_cd": "Q.A.",
+    "score_band_range_cd": 1,
+    "skill_desc": "Ratios, rates, proportional relationships, and units",
+    "createDate": 1691007959829,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": null,
+    "external_id": "5979deaa-edcc-42e7-8d12-24a01cec2c7a",
+    "primary_class_cd": "Q",
+    "uId": "0b55e8e9-d21c-4061-a4cd-a54c78ca65ba",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "keys": [
+      "9"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"9\"><mn>9</mn>\n</math>. It&rsquo;s given that the customer spent&nbsp;<math alttext=\"dollar sign 27\"><mo>$</mo><mn>27</mn></math> to purchase oranges at <math alttext=\"dollar sign 3\"><mo>$</mo><mn>3</mn></math> per pound. Therefore, the number of pounds of oranges the customer purchased is <math alttext=\"dollar sign 27 left parenthesis StartFraction 1 pound Over dollar sign 3 EndFraction right parenthesis\"><mo>$</mo><mn>27</mn><mfenced><mfrac><mrow><mn>1</mn><mo>&nbsp;</mo><mtext>pound</mtext></mrow><mrow><mo>$</mo><mn>3</mn></mrow></mfrac></mfenced></math>, or <math alttext=\"9\"><mn>9</mn>\n</math> pounds.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">A customer spent&nbsp;<math alttext=\"dollar sign 27\"><mo>$</mo><mrow><mn>27</mn></mrow></math> to purchase oranges at <math alttext=\"dollar sign 3\"><mo>$</mo><mrow><mn>3</mn></mrow></math> per pound. How many pounds of oranges did the customer purchase?</p>",
+    "externalid": "5979deaa-edcc-42e7-8d12-24a01cec2c7a",
+    "templateid": "1eacb93e-f709-4465-bd9b-12918174a63a",
+    "vaultid": "2907a8a0-8edb-4641-8b84-47e3cbff0de1",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "9"
+    ]
+  },
+  "createDate": 1691007959829,
+  "updateDate": 1691007959829
+}

@@ -1,0 +1,51 @@
+{
+  "questionId": "acf454af",
+  "external_id": "dbd12d8c-8c80-4050-90a8-fe2e239abf44",
+  "vaultid": null,
+  "uId": "52549bd2-88c7-438a-8f5f-573024d6eacf",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "mcq",
+  "stimulus": "<p>An online content creator who uses copyrighted songs without permission risks being demonetized (prohibited from including paid advertisements in content). The best way to avoid demonetization is to choose music from the public domain. Using one of these noncopyrighted songs <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a creator won&rsquo;t lose advertising revenue.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "dd719403-66a5-47ce-8e48-1a3bc8db715c",
+      "content": "<p>are ensuring</p>"
+    },
+    {
+      "id": "b5c571c4-d118-4ac0-b008-92bba7ab5abf",
+      "content": "<p>have ensured</p>"
+    },
+    {
+      "id": "90e39724-1b35-455f-9119-12459b868228",
+      "content": "<p>ensure</p>"
+    },
+    {
+      "id": "42bd7260-5adc-4a6c-8ea5-6230554ea2d7",
+      "content": "<p>ensures</p>"
+    }
+  ],
+  "keys": [
+    "42bd7260-5adc-4a6c-8ea5-6230554ea2d7"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-verb agreement. The singular verb \"ensures\" agrees in number with the singular subject \"using.\"</p><p>Choice A is incorrect because the plural verb \"are ensuring\" doesn&rsquo;t agree in number with the singular subject \"using.\" Choice B is incorrect because the plural verb \"have ensured\" doesn&rsquo;t agree in number with the singular subject \"using.\" Choice C is incorrect because the plural verb \"ensure\" doesn&rsquo;t agree in number with the singular subject \"using.\"</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323049,
+  "updateDate": 1730147323049
+}

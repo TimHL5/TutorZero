@@ -1,0 +1,69 @@
+{
+  "questionId": "2d16d62c",
+  "external_id": "ae2818a7-d027-48ec-a6f6-d9167cb25167",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "61fdacf3-048b-433e-a940-53553a92a20f",
+  "uId": "34542f0e-91d1-45a5-b151-5d0102774456",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.A.",
+  "skill_desc": "Ratios, rates, proportional relationships, and units",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A special camera is used for underwater ocean research. When the camera is at a depth of <math alttext=\"58\"><mn>58</mn>\n</math> fathoms, what is the camera's depth in <span style=\"text-decoration: underline;\">feet</span>? <math alttext=\"left parenthesis 1 fathom  equals 6 feet right parenthesis\"><mfenced><mrow><mn>1</mn><mo>&#160;</mo><mtext>fathom</mtext><mo>=</mo><mn>6</mn><mo>&#160;</mo><mtext>feet</mtext></mrow></mfenced></math></p>",
+  "answerOptions": [],
+  "keys": [
+    "348"
+  ],
+  "correct_answer": [
+    "348"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"348\"><mn>348</mn>\n</math>. It's given that <math alttext=\"1\"><mn>1</mn>\n</math> fathom is equivalent to <math alttext=\"6\"><mn>6</mn>\n</math> feet. Therefore, <math alttext=\"58\"><mn>58</mn>\n</math> fathoms is equivalent to&nbsp;<math alttext=\"left parenthesis 58 fathoms right parenthesis left parenthesis StartFraction 6 feet Over 1 fathom EndFraction right parenthesis\"><mfenced><mrow><mn>58</mn><mo>&#160;</mo><mtext>fathoms</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>6</mn><mo>&#160;</mo><mtext>feet</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>fathom</mtext></mrow></mfrac></mfenced></math>, or <math alttext=\"348\"><mn>348</mn>\n</math> feet. Thus, when the camera is at a depth of <math alttext=\"58\"><mn>58</mn>\n</math> fathoms, the camera's depth, in feet, is <math alttext=\"348\"><mn>348</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959830,
+    "pPcc": "SAT#Q",
+    "questionId": "2d16d62c",
+    "skill_cd": "Q.A.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Ratios, rates, proportional relationships, and units",
+    "createDate": 1691007959830,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": null,
+    "external_id": "ae2818a7-d027-48ec-a6f6-d9167cb25167",
+    "primary_class_cd": "Q",
+    "uId": "34542f0e-91d1-45a5-b151-5d0102774456",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "keys": [
+      "348"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"348\"><mn>348</mn>\n</math>. It's given that <math alttext=\"1\"><mn>1</mn>\n</math> fathom is equivalent to <math alttext=\"6\"><mn>6</mn>\n</math> feet. Therefore, <math alttext=\"58\"><mn>58</mn>\n</math> fathoms is equivalent to&nbsp;<math alttext=\"left parenthesis 58 fathoms right parenthesis left parenthesis StartFraction 6 feet Over 1 fathom EndFraction right parenthesis\"><mfenced><mrow><mn>58</mn><mo>&#160;</mo><mtext>fathoms</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>6</mn><mo>&#160;</mo><mtext>feet</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>fathom</mtext></mrow></mfrac></mfenced></math>, or <math alttext=\"348\"><mn>348</mn>\n</math> feet. Thus, when the camera is at a depth of <math alttext=\"58\"><mn>58</mn>\n</math> fathoms, the camera's depth, in feet, is <math alttext=\"348\"><mn>348</mn>\n</math>.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">A special camera is used for underwater ocean research. When the camera is at a depth of <math alttext=\"58\"><mn>58</mn>\n</math> fathoms, what is the camera's depth in <span style=\"text-decoration: underline;\">feet</span>? <math alttext=\"left parenthesis 1 fathom  equals 6 feet right parenthesis\"><mfenced><mrow><mn>1</mn><mo>&#160;</mo><mtext>fathom</mtext><mo>=</mo><mn>6</mn><mo>&#160;</mo><mtext>feet</mtext></mrow></mfenced></math></p>",
+    "externalid": "ae2818a7-d027-48ec-a6f6-d9167cb25167",
+    "templateid": "a8dcb352-19a5-4e87-9d09-efb185209511",
+    "vaultid": "61fdacf3-048b-433e-a940-53553a92a20f",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "348"
+    ]
+  },
+  "createDate": 1691007959830,
+  "updateDate": 1691007959830
+}

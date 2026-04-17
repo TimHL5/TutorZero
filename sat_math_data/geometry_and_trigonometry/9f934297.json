@@ -1,0 +1,69 @@
+{
+  "questionId": "9f934297",
+  "external_id": "395e8a55-7af9-456e-a433-3d4a89ade971",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "9bc095b7-8ea2-4e29-951c-ded421da5c20",
+  "uId": "84a336da-0788-4ead-a92a-282eaaed544a",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "S",
+  "domain": "Geometry and Trigonometry",
+  "skill_cd": "S.A.",
+  "skill_desc": "Area and volume",
+  "difficulty": "H",
+  "score_band_range_cd": 6,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A right rectangular prism has a length of <math alttext=\"28 centimeters left parenthesis cm right parenthesis\"><mrow><mn>28</mn></mrow><mo>&#160;</mo><mtext>centimeters</mtext><mo>&#160;</mo><mfenced><mtext>cm</mtext></mfenced></math>, a width of <math alttext=\"15 cm\"><mrow><mn>15</mn></mrow><mo>&#160;</mo><mtext>cm</mtext></math>, and a height of <math alttext=\"16 cm\"><mrow><mn>16</mn></mrow><mo>&#160;</mo><mtext>cm</mtext></math>. What is the surface area, <math alttext=\"in cm squared\"><mtext>in</mtext><mo>&#160;</mo><msup><mtext>cm</mtext><mn>2</mn></msup></math>, of the right rectangular prism?</p>",
+  "answerOptions": [],
+  "keys": [
+    "2216"
+  ],
+  "correct_answer": [
+    "2216"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"2,216\"><mn>2,216</mn>\n</math>. The surface area of a prism is the sum of the areas of all its faces. A right rectangular prism consists of six rectangular faces, where opposite faces are congruent. It's given that this prism has a length of <math alttext=\"28 cm\"><mn>28</mn><mo>&#160;</mo><mtext>cm</mtext></math>, a width of <math alttext=\"15 cm\"><mn>15</mn><mo>&#160;</mo><mtext>cm</mtext></math>, and a height of <math alttext=\"16 cm\"><mn>16</mn><mo>&#160;</mo><mtext>cm</mtext></math>. Thus, for this prism, there are two faces with area <math alttext=\"left parenthesis 28 right parenthesis left parenthesis 15 right parenthesis cm squared\"><mfenced><mn>28</mn></mfenced><mfenced><mn>15</mn></mfenced><mo>&#160;</mo><msup><mtext>cm</mtext><mn>2</mn></msup></math>, two faces with area <math alttext=\"left parenthesis 28 right parenthesis left parenthesis 16 right parenthesis cm squared\"><mfenced><mn>28</mn></mfenced><mfenced><mn>16</mn></mfenced><mo>&#160;</mo><msup><mtext>cm</mtext><mn>2</mn></msup></math>, and two faces with area <math alttext=\"left parenthesis 15 right parenthesis left parenthesis 16 right parenthesis cm squared\"><mfenced><mn>15</mn></mfenced><mfenced><mn>16</mn></mfenced><mo>&#160;</mo><msup><mtext>cm</mtext><mn>2</mn></msup></math>. Therefore, the surface area, <math alttext=\"in cm squared\"><mtext>in</mtext><mo>&#160;</mo><msup><mtext>cm</mtext><mn>2</mn></msup></math>, of the right rectangular prism is <math alttext=\"2 left parenthesis 28 right parenthesis left parenthesis 15 right parenthesis plus 2 left parenthesis 28 right parenthesis left parenthesis 16 right parenthesis plus 2 left parenthesis 15 right parenthesis left parenthesis 16 right parenthesis\"><mn>2</mn><mfenced><mn>28</mn></mfenced><mfenced><mn>15</mn></mfenced><mo>+</mo><mn>2</mn><mfenced><mn>28</mn></mfenced><mfenced><mn>16</mn></mfenced><mo>+</mo><mn>2</mn><mfenced><mn>15</mn></mfenced><mfenced><mn>16</mn></mfenced></math>, or <math alttext=\"2,216\"><mn>2,216</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959836,
+    "pPcc": "SAT#S",
+    "questionId": "9f934297",
+    "skill_cd": "S.A.",
+    "score_band_range_cd": 6,
+    "skill_desc": "Area and volume",
+    "createDate": 1691007959836,
+    "program": "SAT",
+    "primary_class_cd_desc": "Geometry and Trigonometry",
+    "ibn": null,
+    "external_id": "395e8a55-7af9-456e-a433-3d4a89ade971",
+    "primary_class_cd": "S",
+    "uId": "84a336da-0788-4ead-a92a-282eaaed544a",
+    "difficulty": "H"
+  },
+  "raw_detail": {
+    "keys": [
+      "2216"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"2,216\"><mn>2,216</mn>\n</math>. The surface area of a prism is the sum of the areas of all its faces. A right rectangular prism consists of six rectangular faces, where opposite faces are congruent. It's given that this prism has a length of <math alttext=\"28 cm\"><mn>28</mn><mo>&#160;</mo><mtext>cm</mtext></math>, a width of <math alttext=\"15 cm\"><mn>15</mn><mo>&#160;</mo><mtext>cm</mtext></math>, and a height of <math alttext=\"16 cm\"><mn>16</mn><mo>&#160;</mo><mtext>cm</mtext></math>. Thus, for this prism, there are two faces with area <math alttext=\"left parenthesis 28 right parenthesis left parenthesis 15 right parenthesis cm squared\"><mfenced><mn>28</mn></mfenced><mfenced><mn>15</mn></mfenced><mo>&#160;</mo><msup><mtext>cm</mtext><mn>2</mn></msup></math>, two faces with area <math alttext=\"left parenthesis 28 right parenthesis left parenthesis 16 right parenthesis cm squared\"><mfenced><mn>28</mn></mfenced><mfenced><mn>16</mn></mfenced><mo>&#160;</mo><msup><mtext>cm</mtext><mn>2</mn></msup></math>, and two faces with area <math alttext=\"left parenthesis 15 right parenthesis left parenthesis 16 right parenthesis cm squared\"><mfenced><mn>15</mn></mfenced><mfenced><mn>16</mn></mfenced><mo>&#160;</mo><msup><mtext>cm</mtext><mn>2</mn></msup></math>. Therefore, the surface area, <math alttext=\"in cm squared\"><mtext>in</mtext><mo>&#160;</mo><msup><mtext>cm</mtext><mn>2</mn></msup></math>, of the right rectangular prism is <math alttext=\"2 left parenthesis 28 right parenthesis left parenthesis 15 right parenthesis plus 2 left parenthesis 28 right parenthesis left parenthesis 16 right parenthesis plus 2 left parenthesis 15 right parenthesis left parenthesis 16 right parenthesis\"><mn>2</mn><mfenced><mn>28</mn></mfenced><mfenced><mn>15</mn></mfenced><mo>+</mo><mn>2</mn><mfenced><mn>28</mn></mfenced><mfenced><mn>16</mn></mfenced><mo>+</mo><mn>2</mn><mfenced><mn>15</mn></mfenced><mfenced><mn>16</mn></mfenced></math>, or <math alttext=\"2,216\"><mn>2,216</mn>\n</math>.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">A right rectangular prism has a length of <math alttext=\"28 centimeters left parenthesis cm right parenthesis\"><mrow><mn>28</mn></mrow><mo>&#160;</mo><mtext>centimeters</mtext><mo>&#160;</mo><mfenced><mtext>cm</mtext></mfenced></math>, a width of <math alttext=\"15 cm\"><mrow><mn>15</mn></mrow><mo>&#160;</mo><mtext>cm</mtext></math>, and a height of <math alttext=\"16 cm\"><mrow><mn>16</mn></mrow><mo>&#160;</mo><mtext>cm</mtext></math>. What is the surface area, <math alttext=\"in cm squared\"><mtext>in</mtext><mo>&#160;</mo><msup><mtext>cm</mtext><mn>2</mn></msup></math>, of the right rectangular prism?</p>",
+    "externalid": "395e8a55-7af9-456e-a433-3d4a89ade971",
+    "templateid": "ec70c438-e786-4bc0-ac23-f3dbc6bed3d0",
+    "vaultid": "9bc095b7-8ea2-4e29-951c-ded421da5c20",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "2216"
+    ]
+  },
+  "createDate": 1691007959836,
+  "updateDate": 1691007959836
+}

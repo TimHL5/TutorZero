@@ -1,0 +1,66 @@
+{
+  "questionId": "c9417793",
+  "external_id": "b40bb858-a515-41ac-963c-90f9040a57b8",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "87b4c941-4a7d-4a56-8ee1-83e76a71b41c",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "P",
+  "domain": "Advanced Math",
+  "skill_cd": "P.B.",
+  "skill_desc": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "difficulty": "H",
+  "score_band_range_cd": 6,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"StartAbsoluteValue x minus 9 EndAbsoluteValue plus 45 equals 63\"><mrow>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mfenced close=\"|\" open=\"|\">\n\t\t\t\t<mrow>\n\t\t\t\t\t<mi>x</mi>\n\t\t\t\t\t<mo>-</mo>\n\t\t\t\t\t<mn>9</mn>\n\t\t\t\t</mrow>\n\t\t\t</mfenced>\n\t\t</mrow>\n\t\t<mo>+</mo>\n\t\t<mn>45</mn>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>63</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">What is the sum of the solutions to the given equation?</p>",
+  "answerOptions": [],
+  "keys": [
+    "18"
+  ],
+  "correct_answer": [
+    "18"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"18\"><mn>18</mn>\n</math>. Subtracting <math alttext=\"45\"><mn>45</mn>\n</math> from each side of the given equation yields <math alttext=\"StartAbsoluteValue x minus 9 EndAbsoluteValue equals 18\"><mfenced open=\"|\" close=\"|\"><mrow><mi>x</mi><mo>-</mo><mn>9</mn></mrow></mfenced><mo>=</mo><mn>18</mn></math>. By the definition of absolute value, if <math alttext=\"StartAbsoluteValue x minus 9 EndAbsoluteValue equals 18\"><mfenced open=\"|\" close=\"|\"><mrow><mi>x</mi><mo>-</mo><mn>9</mn></mrow></mfenced><mo>=</mo><mn>18</mn></math>, then <math alttext=\"x minus 9 equals 18\"><mrow>\n\t<mrow>\n\t\t<mi>x</mi>\n\t\t<mo>-</mo>\n\t\t<mn>9</mn>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>18</mn>\n</mrow>\n</math> or <math alttext=\"x minus 9 equals negative 18\"><mrow>\n\t<mrow>\n\t\t<mi>x</mi>\n\t\t<mo>-</mo>\n\t\t<mn>9</mn>\n\t</mrow>\n\t<mo>=</mo>\n\t<mo>-</mo><mn>18</mn>\n</mrow>\n</math>. Adding <math alttext=\"9\"><mn>9</mn>\n</math> to each side of the equation <math alttext=\"x minus 9 equals 18\"><mrow>\n\t<mrow>\n\t\t<mi>x</mi>\n\t\t<mo>-</mo>\n\t\t<mn>9</mn>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>18</mn>\n</mrow>\n</math> yields <math alttext=\"x equals 27\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>27</mn>\n</mrow>\n</math>. Adding <math alttext=\"9\"><mn>9</mn>\n</math> to each side of the equation <math alttext=\"x minus 9 equals negative 18\"><mrow>\n\t<mrow>\n\t\t<mi>x</mi>\n\t\t<mo>-</mo>\n\t\t<mn>9</mn>\n\t</mrow>\n\t<mo>=</mo>\n\t<mo>-</mo><mn>18</mn>\n</mrow>\n</math> yields <math alttext=\"x equals negative 9\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mo>-</mo><mn>9</mn>\n</mrow>\n</math>. Therefore, the solutions to the given equation are <math alttext=\"27\"><mn>27</mn>\n</math> and <math alttext=\"negative 9\"><mo>-</mo><mn>9</mn>\n</math>, and it follows that the sum of the solutions to the given equation is <math alttext=\"27 plus left parenthesis negative 9 right parenthesis\"><mn>27</mn><mo>+</mo><mfenced><mrow><mo>-</mo><mn>9</mn></mrow></mfenced></math>, or <math alttext=\"18\"><mn>18</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357396,
+    "pPcc": "SAT#P",
+    "questionId": "c9417793",
+    "skill_cd": "P.B.",
+    "score_band_range_cd": 6,
+    "skill_desc": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "createDate": 1730147357396,
+    "program": "SAT",
+    "primary_class_cd_desc": "Advanced Math",
+    "ibn": "",
+    "external_id": "b40bb858-a515-41ac-963c-90f9040a57b8",
+    "primary_class_cd": "P",
+    "uId": "87b4c941-4a7d-4a56-8ee1-83e76a71b41c",
+    "difficulty": "H"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "b40bb858-a515-41ac-963c-90f9040a57b8",
+    "keys": [
+      "18"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"18\"><mn>18</mn>\n</math>. Subtracting <math alttext=\"45\"><mn>45</mn>\n</math> from each side of the given equation yields <math alttext=\"StartAbsoluteValue x minus 9 EndAbsoluteValue equals 18\"><mfenced open=\"|\" close=\"|\"><mrow><mi>x</mi><mo>-</mo><mn>9</mn></mrow></mfenced><mo>=</mo><mn>18</mn></math>. By the definition of absolute value, if <math alttext=\"StartAbsoluteValue x minus 9 EndAbsoluteValue equals 18\"><mfenced open=\"|\" close=\"|\"><mrow><mi>x</mi><mo>-</mo><mn>9</mn></mrow></mfenced><mo>=</mo><mn>18</mn></math>, then <math alttext=\"x minus 9 equals 18\"><mrow>\n\t<mrow>\n\t\t<mi>x</mi>\n\t\t<mo>-</mo>\n\t\t<mn>9</mn>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>18</mn>\n</mrow>\n</math> or <math alttext=\"x minus 9 equals negative 18\"><mrow>\n\t<mrow>\n\t\t<mi>x</mi>\n\t\t<mo>-</mo>\n\t\t<mn>9</mn>\n\t</mrow>\n\t<mo>=</mo>\n\t<mo>-</mo><mn>18</mn>\n</mrow>\n</math>. Adding <math alttext=\"9\"><mn>9</mn>\n</math> to each side of the equation <math alttext=\"x minus 9 equals 18\"><mrow>\n\t<mrow>\n\t\t<mi>x</mi>\n\t\t<mo>-</mo>\n\t\t<mn>9</mn>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>18</mn>\n</mrow>\n</math> yields <math alttext=\"x equals 27\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>27</mn>\n</mrow>\n</math>. Adding <math alttext=\"9\"><mn>9</mn>\n</math> to each side of the equation <math alttext=\"x minus 9 equals negative 18\"><mrow>\n\t<mrow>\n\t\t<mi>x</mi>\n\t\t<mo>-</mo>\n\t\t<mn>9</mn>\n\t</mrow>\n\t<mo>=</mo>\n\t<mo>-</mo><mn>18</mn>\n</mrow>\n</math> yields <math alttext=\"x equals negative 9\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mo>-</mo><mn>9</mn>\n</mrow>\n</math>. Therefore, the solutions to the given equation are <math alttext=\"27\"><mn>27</mn>\n</math> and <math alttext=\"negative 9\"><mo>-</mo><mn>9</mn>\n</math>, and it follows that the sum of the solutions to the given equation is <math alttext=\"27 plus left parenthesis negative 9 right parenthesis\"><mn>27</mn><mo>+</mo><mfenced><mrow><mo>-</mo><mn>9</mn></mrow></mfenced></math>, or <math alttext=\"18\"><mn>18</mn>\n</math>.</p>",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"StartAbsoluteValue x minus 9 EndAbsoluteValue plus 45 equals 63\"><mrow>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mfenced close=\"|\" open=\"|\">\n\t\t\t\t<mrow>\n\t\t\t\t\t<mi>x</mi>\n\t\t\t\t\t<mo>-</mo>\n\t\t\t\t\t<mn>9</mn>\n\t\t\t\t</mrow>\n\t\t\t</mfenced>\n\t\t</mrow>\n\t\t<mo>+</mo>\n\t\t<mn>45</mn>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>63</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">What is the sum of the solutions to the given equation?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "18"
+    ]
+  },
+  "createDate": 1730147357396,
+  "updateDate": 1730147357396
+}

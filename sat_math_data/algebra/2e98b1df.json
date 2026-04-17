@@ -1,0 +1,100 @@
+{
+  "questionId": "2e98b1df",
+  "external_id": "96677815-bb45-424b-a4e5-ec40dbe43bb8",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "9011420c-7409-4212-904d-87b41928755f",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.A.",
+  "skill_desc": "Linear equations in one variable",
+  "difficulty": "E",
+  "score_band_range_cd": 1,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">On the first day of a semester, a film club has <math alttext=\"90\"><mn>90</mn>\n</math> members. Each day after the first day of the semester, <math alttext=\"10\"><mn>10</mn>\n</math> new members join the film club. If no members leave the film club, how many total members will the film club have <math alttext=\"4\"><mn>4</mn>\n</math> days after the first day of the semester?</p>",
+  "answerOptions": [
+    {
+      "id": "96043a84-d961-4ae6-93d6-fcb3373c2cdc",
+      "content": "<p><math alttext=\"400\"><mn>400</mn>\n</math></p>"
+    },
+    {
+      "id": "006e69ba-7a3c-4f1f-8e91-bf2836fde2d2",
+      "content": "<p><math alttext=\"130\"><mn>130</mn>\n</math></p>"
+    },
+    {
+      "id": "c708641f-5c32-4590-8f9c-b21bed0231f5",
+      "content": "<p><math alttext=\"94\"><mn>94</mn>\n</math></p>"
+    },
+    {
+      "id": "5e6a7a6c-65d5-4eb1-9fa2-38987b3c51fb",
+      "content": "<p><math alttext=\"90\"><mn>90</mn>\n</math></p>"
+    }
+  ],
+  "keys": [
+    "006e69ba-7a3c-4f1f-8e91-bf2836fde2d2"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p>Choice B is correct. It&rsquo;s given that the film club has <math alttext=\"90\"><mn>90</mn>\n</math> members on the first day of a semester, and <math alttext=\"10\"><mn>10</mn>\n</math> new members join the film club each day after the first day of the semester. This means that after <math alttext=\"4\"><mn>4</mn>\n</math> days, <math alttext=\"4 times 10\"><mn>4</mn><mo>&#215;</mo><mn>10</mn></math>, or <math alttext=\"40\"><mn>40</mn>\n</math>, new members will have joined the club. Adding <math alttext=\"40\"><mn>40</mn>\n</math> members to the original <math alttext=\"90\"><mn>90</mn>\n</math> club members yields <math alttext=\"130\"><mn>130</mn>\n</math> members. Thus, the film club will have <math alttext=\"130\"><mn>130</mn>\n</math> total members <math alttext=\"4\"><mn>4</mn>\n</math> days after the first day of the semester.</p>\n<p>Choice A is incorrect. This is the number of members that will have joined the film club <math alttext=\"4\"><mn>4</mn>\n</math> days after the first day of the semester if <math alttext=\"100\"><mn>100</mn>\n</math> new members, not <math alttext=\"10\"><mn>10</mn>\n</math>, join the film club each day.</p>\n<p>Choice C is incorrect. This is the number of members the film club will have <math alttext=\"4\"><mn>4</mn>\n</math> days after the first day of the semester if <math alttext=\"1\"><mn>1</mn>\n</math> new member, not <math alttext=\"10\"><mn>10</mn>\n</math>, joins the film club each day.</p>\n<p>Choice D is incorrect. This is the number of members the film club has on the first day of the semester.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357386,
+    "pPcc": "SAT#H",
+    "questionId": "2e98b1df",
+    "skill_cd": "H.A.",
+    "score_band_range_cd": 1,
+    "skill_desc": "Linear equations in one variable",
+    "createDate": 1730147357386,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "96677815-bb45-424b-a4e5-ec40dbe43bb8",
+    "primary_class_cd": "H",
+    "uId": "9011420c-7409-4212-904d-87b41928755f",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "answerOptions": [
+      {
+        "content": "<p><math alttext=\"400\"><mn>400</mn>\n</math></p>",
+        "id": "96043a84-d961-4ae6-93d6-fcb3373c2cdc"
+      },
+      {
+        "content": "<p><math alttext=\"130\"><mn>130</mn>\n</math></p>",
+        "id": "006e69ba-7a3c-4f1f-8e91-bf2836fde2d2"
+      },
+      {
+        "content": "<p><math alttext=\"94\"><mn>94</mn>\n</math></p>",
+        "id": "c708641f-5c32-4590-8f9c-b21bed0231f5"
+      },
+      {
+        "content": "<p><math alttext=\"90\"><mn>90</mn>\n</math></p>",
+        "id": "5e6a7a6c-65d5-4eb1-9fa2-38987b3c51fb"
+      }
+    ],
+    "externalid": "96677815-bb45-424b-a4e5-ec40dbe43bb8",
+    "keys": [
+      "006e69ba-7a3c-4f1f-8e91-bf2836fde2d2"
+    ],
+    "rationale": "<p>Choice B is correct. It&rsquo;s given that the film club has <math alttext=\"90\"><mn>90</mn>\n</math> members on the first day of a semester, and <math alttext=\"10\"><mn>10</mn>\n</math> new members join the film club each day after the first day of the semester. This means that after <math alttext=\"4\"><mn>4</mn>\n</math> days, <math alttext=\"4 times 10\"><mn>4</mn><mo>&#215;</mo><mn>10</mn></math>, or <math alttext=\"40\"><mn>40</mn>\n</math>, new members will have joined the club. Adding <math alttext=\"40\"><mn>40</mn>\n</math> members to the original <math alttext=\"90\"><mn>90</mn>\n</math> club members yields <math alttext=\"130\"><mn>130</mn>\n</math> members. Thus, the film club will have <math alttext=\"130\"><mn>130</mn>\n</math> total members <math alttext=\"4\"><mn>4</mn>\n</math> days after the first day of the semester.</p>\n<p>Choice A is incorrect. This is the number of members that will have joined the film club <math alttext=\"4\"><mn>4</mn>\n</math> days after the first day of the semester if <math alttext=\"100\"><mn>100</mn>\n</math> new members, not <math alttext=\"10\"><mn>10</mn>\n</math>, join the film club each day.</p>\n<p>Choice C is incorrect. This is the number of members the film club will have <math alttext=\"4\"><mn>4</mn>\n</math> days after the first day of the semester if <math alttext=\"1\"><mn>1</mn>\n</math> new member, not <math alttext=\"10\"><mn>10</mn>\n</math>, joins the film club each day.</p>\n<p>Choice D is incorrect. This is the number of members the film club has on the first day of the semester.</p>",
+    "stem": "<p style=\"text-align: left;\">On the first day of a semester, a film club has <math alttext=\"90\"><mn>90</mn>\n</math> members. Each day after the first day of the semester, <math alttext=\"10\"><mn>10</mn>\n</math> new members join the film club. If no members leave the film club, how many total members will the film club have <math alttext=\"4\"><mn>4</mn>\n</math> days after the first day of the semester?</p>",
+    "type": "mcq",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "createDate": 1730147357386,
+  "updateDate": 1730147357386
+}

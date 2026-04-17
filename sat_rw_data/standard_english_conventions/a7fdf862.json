@@ -1,0 +1,51 @@
+{
+  "questionId": "a7fdf862",
+  "external_id": "2dc8fd9e-7505-4375-8f4b-a585bd6bd9a9",
+  "vaultid": null,
+  "uId": "83a81689-971c-4f8b-93f2-8032f59f4316",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "BOU",
+  "skill_desc": "Boundaries",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": "<p>Azulejos, mosaics made of glazed ceramic tiles, can be found throughout Portugal. These mosaics beautify places such as <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> stations, and public squares. &nbsp;</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "969ebc61-ad68-4f2b-bdbb-976a4296130a",
+      "content": "<p>libraries train</p>"
+    },
+    {
+      "id": "e855b3cc-4b40-4754-84be-852f726fac00",
+      "content": "<p>libraries: train</p>"
+    },
+    {
+      "id": "f99e57d5-a251-49e5-b9f8-e4aea781d311",
+      "content": "<p>libraries&mdash;train &nbsp;</p>"
+    },
+    {
+      "id": "2ea7e075-1b61-4ad6-83aa-7f893804e690",
+      "content": "<p>libraries, train</p>"
+    }
+  ],
+  "keys": [
+    "2ea7e075-1b61-4ad6-83aa-7f893804e690"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the punctuation of items in a simple series. The comma after \"libraries\" is used conventionally to separate the first and second items (\"libraries\" and \"train stations\") in the series.</p><p>Choice A is incorrect because it fails to separate the first two items (\"libraries\" and \"train stations\") in the series. Choice B is incorrect because a colon can&rsquo;t be used in this way to separate items in a simple series. Choice C is incorrect because a dash can&rsquo;t be used in this way to separate items in a simple series.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323050,
+  "updateDate": 1730147323050
+}

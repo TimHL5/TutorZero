@@ -1,0 +1,51 @@
+{
+  "questionId": "d47bb0a4",
+  "external_id": "44cd4ccd-606d-42bd-9fef-e5ba8bbc4ecb",
+  "vaultid": "5a76c323-02e3-4208-8fd3-4c78d2616398",
+  "uId": "3d9c26fc-5238-4724-b984-398eb0cac9d5",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "mcq",
+  "stimulus": "<p>Objects ranging from the Kikkoman soy sauce bottle to the Yamaha VMAX motorcycle to the Komachi bullet train <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> designed by twentieth-century industrial designer Kenji Ekuan.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "b01837ae-6def-42ef-9124-c621dfbc40ef",
+      "content": "<p>was</p>"
+    },
+    {
+      "id": "bd4043e2-54c3-4323-befb-9f8224b9733f",
+      "content": "<p>is</p>"
+    },
+    {
+      "id": "4658e4f1-e7bd-4857-8a28-87de1cfe69de",
+      "content": "<p>has been</p>"
+    },
+    {
+      "id": "c2c39eba-250a-4101-bef7-1b3bd635eee3",
+      "content": "<p>were</p>"
+    }
+  ],
+  "keys": [
+    "c2c39eba-250a-4101-bef7-1b3bd635eee3"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-verb agreement. The plural verb \"were\" agrees in number with the plural subject \"objects.\"</p><p>Choice A is incorrect because the singular verb \"was\" doesn&rsquo;t agree in number with the plural subject \"objects.\" Choice B is incorrect because the singular verb \"is\" doesn&rsquo;t agree in number with the plural subject \"objects.\" Choice C is incorrect because the singular verb \"has been\" doesn&rsquo;t agree in number with the plural subject \"objects.\"</p>",
+  "parenttemplatename": "OSP-726-SEC",
+  "parenttemplateid": "",
+  "templateclusterid": "8472deb6-161b-4ca1-ab28-72edc20e2d23",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959349,
+  "updateDate": 1691007959349
+}

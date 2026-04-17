@@ -1,0 +1,65 @@
+{
+  "questionId": "3409707e",
+  "external_id": "67838907-7e84-4f9a-bb16-0c54fe5e5232",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "03d1e3f7-3508-4ff7-804a-b87559418909",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.D.",
+  "skill_desc": "Systems of two linear equations in two variables",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"x plus y equals 125\"><mi>x</mi><mo>+</mo><mi>y</mi><mo>=</mo><mrow><mn>125</mn></mrow></math></p>\n<p style=\"text-align: center;\"><math alttext=\"x plus y plus y equals 155\"><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>y</mi><mo>=</mo><mrow><mn>155</mn></mrow></math></p>\n<p style=\"text-align: left;\">The solution to the given system of equations is&nbsp;<math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math alttext=\"y\"><mi>y</mi>\n</math>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "30"
+  ],
+  "correct_answer": [
+    "30"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"30\"><mn>30</mn></math>. It’s given that <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"x plus y equals 125\"><mi>x</mi><mo>+</mo><mi>y</mi><mo>=</mo><mn>125</mn></math>. Substituting <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"125\"><mn>125</mn></math> for <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"x plus y\"><mi>x</mi><mo>+</mo><mi>y</mi></math> in the second equation of the given system yields <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"125 plus y equals 155\"><mn>125</mn><mo>+</mo><mi>y</mi><mo>=</mo><mn>155</mn></math>. Subtracting <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"125\"><mn>125</mn></math> from both sides of this equation yields <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"y equals 30\"><mi>y</mi><mo>=</mo><mn>30</mn></math>. Therefore, the value of <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"y\"><mi>y</mi></math> is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"30\"><mn>30</mn></math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1776362727992,
+    "pPcc": "SAT#H",
+    "questionId": "3409707e",
+    "skill_cd": "H.D.",
+    "score_band_range_cd": 3,
+    "skill_desc": "Systems of two linear equations in two variables",
+    "createDate": 1776362727992,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "67838907-7e84-4f9a-bb16-0c54fe5e5232",
+    "primary_class_cd": "H",
+    "uId": "03d1e3f7-3508-4ff7-804a-b87559418909",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"x plus y equals 125\"><mi>x</mi><mo>+</mo><mi>y</mi><mo>=</mo><mrow><mn>125</mn></mrow></math></p>\n<p style=\"text-align: center;\"><math alttext=\"x plus y plus y equals 155\"><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>y</mi><mo>=</mo><mrow><mn>155</mn></mrow></math></p>\n<p style=\"text-align: left;\">The solution to the given system of equations is&nbsp;<math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math alttext=\"y\"><mi>y</mi>\n</math>?</p>",
+    "keys": [
+      "30"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"30\"><mn>30</mn></math>. It’s given that <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"x plus y equals 125\"><mi>x</mi><mo>+</mo><mi>y</mi><mo>=</mo><mn>125</mn></math>. Substituting <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"125\"><mn>125</mn></math> for <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"x plus y\"><mi>x</mi><mo>+</mo><mi>y</mi></math> in the second equation of the given system yields <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"125 plus y equals 155\"><mn>125</mn><mo>+</mo><mi>y</mi><mo>=</mo><mn>155</mn></math>. Subtracting <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"125\"><mn>125</mn></math> from both sides of this equation yields <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"y equals 30\"><mi>y</mi><mo>=</mo><mn>30</mn></math>. Therefore, the value of <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"y\"><mi>y</mi></math> is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"30\"><mn>30</mn></math>.</p>",
+    "externalid": "67838907-7e84-4f9a-bb16-0c54fe5e5232",
+    "correct_answer": [
+      "30"
+    ]
+  },
+  "createDate": 1776362727992,
+  "updateDate": 1776362727992
+}

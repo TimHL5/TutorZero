@@ -1,7 +1,24 @@
-import { useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router";
-import { Calculator, BookOpen, PenTool, GraduationCap, ChevronRight, Home, Clock, Target } from "lucide-react";
+import {
+  Calculator,
+  BookOpen,
+  PenTool,
+  GraduationCap,
+  ChevronRight,
+  ChevronDown,
+  Check,
+  Minus,
+  Home,
+  Clock,
+  Target,
+} from "lucide-react";
 import { cn } from "@/react-app/lib/utils";
+import { getSkillCounts, type SkillCounts } from "@/data/questions";
+import {
+  DOMAINS_IN_ORDER,
+  SKILLS_BY_DOMAIN,
+} from "@/react-app/lib/sat-taxonomy";
 
 const WORDMARK_LIGHT = "/logos/tutorzero-wordmark-dark.png";
 
@@ -72,18 +89,63 @@ const sectionOptions: SectionOption[] = [
 export default function PracticeSetup() {
   const navigate = useNavigate();
   const [selectedSection, setSelectedSection] = useState<SectionOption | null>(null);
+  const [counts, setCounts] = useState<SkillCounts | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    getSkillCounts().then((c) => {
+      if (!cancelled) setCounts(c);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const handleStartPractice = () => {
     if (!selectedSection) return;
-    
+
     if (selectedSection.id === "full") {
-      // Full practice - no topic filter
       navigate("/practice/session");
     } else {
-      // Section-specific practice
       navigate(`/practice/session?section=${selectedSection.id}`);
     }
   };
+
+  // Skill multi-select → build the deep-link. If every selected skill falls in
+  // exactly one domain AND that covers the whole domain, collapse to
+  // `?topic=<domain>` for a cleaner shareable URL. Otherwise `?skills=a,b,c`.
+  const handleStartSkillPractice = useCallback(
+    (selectedSkills: string[]) => {
+      if (selectedSkills.length === 0) return;
+
+      const selectedSet = new Set(selectedSkills);
+      const coveredDomains = new Set<string>();
+      for (const slug of selectedSkills) {
+        for (const [domain, skills] of Object.entries(SKILLS_BY_DOMAIN)) {
+          if (skills.some((s) => s.slug === slug)) {
+            coveredDomains.add(domain);
+            break;
+          }
+        }
+      }
+
+      if (coveredDomains.size === 1) {
+        const [onlyDomain] = Array.from(coveredDomains);
+        const domainSkills = SKILLS_BY_DOMAIN[onlyDomain] ?? [];
+        const isWholeDomain =
+          domainSkills.length === selectedSet.size &&
+          domainSkills.every((s) => selectedSet.has(s.slug));
+        if (isWholeDomain) {
+          navigate(`/practice/session?topic=${encodeURIComponent(onlyDomain)}`);
+          return;
+        }
+      }
+
+      const ordered = selectedSkills.slice().sort();
+      navigate(`/practice/session?skills=${encodeURIComponent(ordered.join(","))}`);
+    },
+    [navigate]
+  );
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -118,7 +180,7 @@ export default function PracticeSetup() {
           <div className="space-y-3 mb-8">
             {sectionOptions.map((option) => {
               const isSelected = selectedSection?.id === option.id;
-              
+
               return (
                 <button
                   key={option.id}
@@ -139,7 +201,7 @@ export default function PracticeSetup() {
                     )}>
                       {option.icon}
                     </div>
-                    
+
                     {/* Content */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between mb-1">
@@ -195,30 +257,290 @@ export default function PracticeSetup() {
             <ChevronRight className="w-5 h-5" />
           </button>
 
-          {/* Quick Practice Links */}
+          {/* Multi-select skill picker — floating-overlay dropdown. Replaces the
+              prior legacy "Or practice a specific topic" quick-pick pills. */}
           <div className="mt-8 pt-6 border-t border-tz-gray-200">
-            <p className="text-sm text-tz-gray-500 text-center mb-4">
-              Or practice a specific topic
+            <p className="text-sm text-tz-gray-500 mb-3">
+              Or target specific skills
             </p>
-            <div className="flex flex-wrap justify-center gap-2">
-              {[
-                { label: "Algebra", topic: "algebra" },
-                { label: "Geometry", topic: "geometry" },
-                { label: "Vocabulary", topic: "craft_structure" },
-                { label: "Grammar", topic: "conventions" },
-              ].map((item) => (
-                <button
-                  key={item.topic}
-                  onClick={() => navigate(`/practice/session?topic=${item.topic}`)}
-                  className="px-4 py-2 text-sm text-tz-gray-600 bg-tz-gray-100 rounded-full hover:bg-tz-gray-200 transition-colors"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
+            <SkillPickerDropdown counts={counts} onStart={handleStartSkillPractice} />
           </div>
         </div>
       </main>
     </div>
+  );
+}
+
+// ─── Skill picker dropdown ──────────────────────────────────────────────
+
+interface SkillPickerDropdownProps {
+  counts: SkillCounts | null;
+  onStart: (selectedSkills: string[]) => void;
+}
+
+type DomainState = "all" | "some" | "none";
+
+function SkillPickerDropdown({ counts, onStart }: SkillPickerDropdownProps) {
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState<Set<string>>(() => new Set());
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
+
+  // Close on outside click or Escape.
+  useEffect(() => {
+    if (!open) return;
+
+    const onMouseDown = (e: MouseEvent) => {
+      const target = e.target as Node | null;
+      if (!target) return;
+      if (panelRef.current?.contains(target)) return;
+      if (triggerRef.current?.contains(target)) return;
+      setOpen(false);
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        triggerRef.current?.focus();
+      }
+    };
+
+    document.addEventListener("mousedown", onMouseDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onMouseDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
+  const domainState = useCallback(
+    (domainSlug: string): DomainState => {
+      const skills = SKILLS_BY_DOMAIN[domainSlug] ?? [];
+      if (skills.length === 0) return "none";
+      let checked = 0;
+      for (const s of skills) if (selected.has(s.slug)) checked += 1;
+      if (checked === 0) return "none";
+      if (checked === skills.length) return "all";
+      return "some";
+    },
+    [selected]
+  );
+
+  const toggleSkill = (slug: string) => {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(slug)) next.delete(slug);
+      else next.add(slug);
+      return next;
+    });
+  };
+
+  const toggleDomain = (domainSlug: string) => {
+    const skills = SKILLS_BY_DOMAIN[domainSlug] ?? [];
+    setSelected((prev) => {
+      const next = new Set(prev);
+      const allChecked = skills.every((s) => next.has(s.slug));
+      if (allChecked) {
+        for (const s of skills) next.delete(s.slug);
+      } else {
+        // "some" or "none" → check all. Mirrors the standard tri-state
+        // file-tree UX (indeterminate → all checked on click).
+        for (const s of skills) next.add(s.slug);
+      }
+      return next;
+    });
+  };
+
+  const clearAll = () => setSelected(new Set());
+
+  const selectedSlugs = useMemo(() => Array.from(selected), [selected]);
+  const selectedCount = selectedSlugs.length;
+  const selectedQuestionCount = useMemo(() => {
+    if (!counts) return null;
+    let n = 0;
+    for (const slug of selectedSlugs) n += counts.bySkill[slug] ?? 0;
+    return n;
+  }, [counts, selectedSlugs]);
+
+  const triggerLabel =
+    selectedCount === 0
+      ? "Choose skills to practice"
+      : selectedCount === 1
+      ? `1 skill selected`
+      : `${selectedCount} skills selected`;
+
+  const handleStart = () => {
+    if (selectedCount === 0) return;
+    setOpen(false);
+    onStart(selectedSlugs);
+  };
+
+  return (
+    <div className="relative">
+      <button
+        ref={triggerRef}
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        className={cn(
+          "w-full flex items-center justify-between gap-3 px-4 py-3 rounded-xl border-2 bg-white text-left transition-colors",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tz-blue",
+          open
+            ? "border-tz-blue"
+            : "border-tz-gray-200 hover:border-tz-gray-400"
+        )}
+      >
+        <span
+          className={cn(
+            "text-sm sm:text-base font-medium",
+            selectedCount === 0 ? "text-tz-gray-600" : "text-tz-navy"
+          )}
+        >
+          {triggerLabel}
+          {selectedCount > 0 && selectedQuestionCount != null && (
+            <span className="ml-2 text-tz-gray-400 font-normal">
+              · {selectedQuestionCount} questions
+            </span>
+          )}
+        </span>
+        <ChevronDown
+          className={cn(
+            "w-5 h-5 text-tz-gray-600 transition-transform flex-shrink-0",
+            open && "rotate-180"
+          )}
+        />
+      </button>
+
+      {open && (
+        <div
+          ref={panelRef}
+          role="group"
+          aria-label="Select skills to practice"
+          className="absolute z-20 left-0 right-0 mt-2 bg-white border border-tz-gray-200 rounded-xl shadow-lg animate-in fade-in slide-in-from-top-1 duration-150 overflow-hidden flex flex-col max-h-[70vh]"
+        >
+          <div className="flex-1 overflow-y-auto py-1">
+            {DOMAINS_IN_ORDER.map((domain) => {
+              const state = domainState(domain.slug);
+              const skills = SKILLS_BY_DOMAIN[domain.slug] ?? [];
+              const domainCount = counts?.byDomain[domain.slug];
+              return (
+                <div key={domain.slug} className="py-1">
+                  <CheckboxRow
+                    label={domain.displayName}
+                    count={domainCount}
+                    state={state}
+                    onToggle={() => toggleDomain(domain.slug)}
+                    bold
+                  />
+                  {skills.map((skill) => {
+                    const skillChecked = selected.has(skill.slug);
+                    const skillCount = counts?.bySkill[skill.slug];
+                    return (
+                      <CheckboxRow
+                        key={skill.slug}
+                        label={skill.displayName}
+                        count={skillCount}
+                        state={skillChecked ? "all" : "none"}
+                        onToggle={() => toggleSkill(skill.slug)}
+                        indent
+                      />
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="flex items-center gap-3 px-3 py-3 border-t border-tz-gray-200 bg-tz-off-white">
+            <button
+              type="button"
+              onClick={clearAll}
+              disabled={selectedCount === 0}
+              className={cn(
+                "px-3 py-2 text-sm rounded-lg transition-colors",
+                selectedCount === 0
+                  ? "text-tz-gray-400 cursor-not-allowed"
+                  : "text-tz-gray-600 hover:bg-tz-gray-100"
+              )}
+            >
+              Clear
+            </button>
+            <button
+              type="button"
+              onClick={handleStart}
+              disabled={selectedCount === 0}
+              className={cn(
+                "ml-auto flex-1 sm:flex-none px-5 py-2.5 rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2",
+                selectedCount > 0
+                  ? "bg-tz-blue text-white hover:bg-[#005a9e] hover-scale"
+                  : "bg-tz-gray-200 text-tz-gray-400 cursor-not-allowed"
+              )}
+            >
+              Start ({selectedCount})
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+interface CheckboxRowProps {
+  label: string;
+  count?: number;
+  state: DomainState;
+  onToggle: () => void;
+  indent?: boolean;
+  bold?: boolean;
+}
+
+function CheckboxRow({
+  label,
+  count,
+  state,
+  onToggle,
+  indent = false,
+  bold = false,
+}: CheckboxRowProps) {
+  return (
+    <button
+      type="button"
+      role="checkbox"
+      aria-checked={state === "all" ? true : state === "some" ? "mixed" : false}
+      onClick={onToggle}
+      className={cn(
+        "w-full flex items-center gap-3 text-left transition-colors",
+        "focus-visible:outline-none focus-visible:bg-tz-gray-100",
+        "hover:bg-tz-gray-100",
+        indent ? "pl-10 pr-4 py-2" : "pl-4 pr-4 py-2.5"
+      )}
+    >
+      <span
+        aria-hidden
+        className={cn(
+          "w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 transition-colors",
+          state === "all"
+            ? "bg-tz-blue border-tz-blue text-white"
+            : state === "some"
+            ? "bg-tz-blue border-tz-blue text-white"
+            : "bg-white border-tz-gray-300"
+        )}
+      >
+        {state === "all" && <Check className="w-3.5 h-3.5" strokeWidth={3} />}
+        {state === "some" && <Minus className="w-3.5 h-3.5" strokeWidth={3} />}
+      </span>
+      <span
+        className={cn(
+          "flex-1 text-sm leading-tight",
+          bold ? "font-semibold text-tz-navy" : "text-tz-gray-700"
+        )}
+      >
+        {label}
+      </span>
+      {count != null && (
+        <span className="text-xs text-tz-gray-400 flex-shrink-0">{count}</span>
+      )}
+    </button>
   );
 }

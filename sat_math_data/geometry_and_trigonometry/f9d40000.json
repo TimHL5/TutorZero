@@ -1,0 +1,103 @@
+{
+  "questionId": "f9d40000",
+  "external_id": "b3738b72-9c5a-45b5-986b-00bb9643ab90",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "c1a4a3cb-8de7-4e9c-b91c-2a7fc6e7da44",
+  "uId": "59f64eab-838e-4d87-b604-cf718b6a3e9a",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "S",
+  "domain": "Geometry and Trigonometry",
+  "skill_cd": "S.B.",
+  "skill_desc": "Lines, angles, and triangles",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In <math alttext=\"triangle upper X upper Y upper Z\"><mo>&#9651;</mo><mi>X</mi><mi>Y</mi><mi>Z</mi></math>, the measure of <math alttext=\"angle upper X\"><mo>&#8736;</mo><mi>X</mi></math><em> </em>is <math alttext=\"23 degree\"><mn>23</mn>\n<mo>&#176;</mo></math> and the measure of <math alttext=\"angle upper Y\"><mo>&#8736;</mo><mi>Y</mi></math><em> </em>is <math alttext=\"66 degree\"><mn>66</mn>\n<mo>&#176;</mo></math>. What is the measure of <math alttext=\"angle upper Z\"><mo>&#8736;</mo><mi>Z</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "f3cf13e9-c85a-47e9-b2bb-8b2c254b8d21",
+      "content": "<p><math alttext=\"43 degree\"><mn>43</mn>\n<mo>&#176;</mo></math></p>"
+    },
+    {
+      "id": "e12dd02f-b083-4f28-91f4-1bfeea771715",
+      "content": "<p><math alttext=\"89 degree\"><mn>89</mn>\n<mo>&#176;</mo></math></p>"
+    },
+    {
+      "id": "37042dcd-e484-4f08-bf1f-d91b288f12cb",
+      "content": "<p><math alttext=\"91 degree\"><mn>91</mn>\n<mo>&#176;</mo></math></p>"
+    },
+    {
+      "id": "e34b1adc-822d-4b09-95e7-a2b24fc1be03",
+      "content": "<p><math alttext=\"179 degree\"><mn>179</mn>\n<mo>&#176;</mo></math></p>"
+    }
+  ],
+  "keys": [
+    "37042dcd-e484-4f08-bf1f-d91b288f12cb"
+  ],
+  "correct_answer": [
+    "C"
+  ],
+  "rationale": "<p style=\"text-align: left;\">Choice C is correct. The triangle angle sum theorem states that the sum of the measures of the interior angles of a triangle is&nbsp;<math alttext=\"180 degree\"><mn>180</mn><mo>&#176;</mo></math>. It's given that in&nbsp;<math alttext=\"triangle upper X upper Y upper Z\"><mo>&#9651;</mo><mi>X</mi><mi>Y</mi><mi>Z</mi></math>, the measure of <math alttext=\"angle upper X\"><mo>&#8736;</mo><mi>X</mi></math> is <math alttext=\"23 degree\"><mn>23</mn><mo>&#176;</mo></math> and the measure of <math alttext=\"angle upper Y\"><mo>&#8736;</mo><mi>Y</mi></math> is <math alttext=\"66 degree\"><mn>66</mn><mo>&#176;</mo></math>. It follows that the measure of&nbsp;<math alttext=\"angle upper Z\"><mo>&#8736;</mo><mi>Z</mi></math> is&nbsp;<math alttext=\"left parenthesis 180 minus 23 minus 66 right parenthesis degree\"><mfenced><mrow><mn>180</mn><mo>-</mo><mn>23</mn><mo>-</mo><mn>66</mn></mrow></mfenced><mo>&#176;</mo></math>, or&nbsp;<math alttext=\"91 degree\"><mn>91</mn><mo>&#176;</mo></math>.</p>\n<p>Choice A is incorrect and may result from conceptual or calculation errors.</p>\n<p>Choice B is incorrect. This is the sum of the measures of <math alttext=\"angle upper X\"><mo>&#8736;</mo><mi>X</mi></math> and <math alttext=\"angle upper Y\"><mo>&#8736;</mo><mi>Y</mi></math>, not the measure of <math alttext=\"angle upper Z\"><mo>&#8736;</mo><mi>Z</mi></math>.</p>\n<p>Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959838,
+    "pPcc": "SAT#S",
+    "questionId": "f9d40000",
+    "skill_cd": "S.B.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Lines, angles, and triangles",
+    "createDate": 1691007959838,
+    "program": "SAT",
+    "primary_class_cd_desc": "Geometry and Trigonometry",
+    "ibn": null,
+    "external_id": "b3738b72-9c5a-45b5-986b-00bb9643ab90",
+    "primary_class_cd": "S",
+    "uId": "59f64eab-838e-4d87-b604-cf718b6a3e9a",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "keys": [
+      "37042dcd-e484-4f08-bf1f-d91b288f12cb"
+    ],
+    "rationale": "<p style=\"text-align: left;\">Choice C is correct. The triangle angle sum theorem states that the sum of the measures of the interior angles of a triangle is&nbsp;<math alttext=\"180 degree\"><mn>180</mn><mo>&#176;</mo></math>. It's given that in&nbsp;<math alttext=\"triangle upper X upper Y upper Z\"><mo>&#9651;</mo><mi>X</mi><mi>Y</mi><mi>Z</mi></math>, the measure of <math alttext=\"angle upper X\"><mo>&#8736;</mo><mi>X</mi></math> is <math alttext=\"23 degree\"><mn>23</mn><mo>&#176;</mo></math> and the measure of <math alttext=\"angle upper Y\"><mo>&#8736;</mo><mi>Y</mi></math> is <math alttext=\"66 degree\"><mn>66</mn><mo>&#176;</mo></math>. It follows that the measure of&nbsp;<math alttext=\"angle upper Z\"><mo>&#8736;</mo><mi>Z</mi></math> is&nbsp;<math alttext=\"left parenthesis 180 minus 23 minus 66 right parenthesis degree\"><mfenced><mrow><mn>180</mn><mo>-</mo><mn>23</mn><mo>-</mo><mn>66</mn></mrow></mfenced><mo>&#176;</mo></math>, or&nbsp;<math alttext=\"91 degree\"><mn>91</mn><mo>&#176;</mo></math>.</p>\n<p>Choice A is incorrect and may result from conceptual or calculation errors.</p>\n<p>Choice B is incorrect. This is the sum of the measures of <math alttext=\"angle upper X\"><mo>&#8736;</mo><mi>X</mi></math> and <math alttext=\"angle upper Y\"><mo>&#8736;</mo><mi>Y</mi></math>, not the measure of <math alttext=\"angle upper Z\"><mo>&#8736;</mo><mi>Z</mi></math>.</p>\n<p>Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+    "origin": "manifold",
+    "stem": "<p>In <math alttext=\"triangle upper X upper Y upper Z\"><mo>&#9651;</mo><mi>X</mi><mi>Y</mi><mi>Z</mi></math>, the measure of <math alttext=\"angle upper X\"><mo>&#8736;</mo><mi>X</mi></math><em> </em>is <math alttext=\"23 degree\"><mn>23</mn>\n<mo>&#176;</mo></math> and the measure of <math alttext=\"angle upper Y\"><mo>&#8736;</mo><mi>Y</mi></math><em> </em>is <math alttext=\"66 degree\"><mn>66</mn>\n<mo>&#176;</mo></math>. What is the measure of <math alttext=\"angle upper Z\"><mo>&#8736;</mo><mi>Z</mi></math>?</p>",
+    "externalid": "b3738b72-9c5a-45b5-986b-00bb9643ab90",
+    "templateid": "695b1890-55d5-485f-a84b-4e8877a36d83",
+    "vaultid": "c1a4a3cb-8de7-4e9c-b91c-2a7fc6e7da44",
+    "type": "mcq",
+    "answerOptions": [
+      {
+        "id": "f3cf13e9-c85a-47e9-b2bb-8b2c254b8d21",
+        "content": "<p><math alttext=\"43 degree\"><mn>43</mn>\n<mo>&#176;</mo></math></p>"
+      },
+      {
+        "id": "e12dd02f-b083-4f28-91f4-1bfeea771715",
+        "content": "<p><math alttext=\"89 degree\"><mn>89</mn>\n<mo>&#176;</mo></math></p>"
+      },
+      {
+        "id": "37042dcd-e484-4f08-bf1f-d91b288f12cb",
+        "content": "<p><math alttext=\"91 degree\"><mn>91</mn>\n<mo>&#176;</mo></math></p>"
+      },
+      {
+        "id": "e34b1adc-822d-4b09-95e7-a2b24fc1be03",
+        "content": "<p><math alttext=\"179 degree\"><mn>179</mn>\n<mo>&#176;</mo></math></p>"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "createDate": 1691007959838,
+  "updateDate": 1691007959838
+}

@@ -1,0 +1,69 @@
+{
+  "questionId": "3c8fdc40",
+  "external_id": "d6f9ca5e-947e-4a5c-a0d0-de08d17d11f5",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "6a6cb3c0-6f43-4ca4-ac05-bbac3fb41a2d",
+  "uId": "0136d17d-58ae-4a82-8a94-ea259b1e8fa7",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.A.",
+  "skill_desc": "Ratios, rates, proportional relationships, and units",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A printer produces posters at a constant rate of <math alttext=\"42\"><mn>42</mn>\n</math> posters per minute. At what rate, in posters per <span style=\"text-decoration: underline;\">hour</span>, does the printer produce the posters?</p>",
+  "answerOptions": [],
+  "keys": [
+    "2520"
+  ],
+  "correct_answer": [
+    "2520"
+  ],
+  "rationale": "<p>The correct answer is <math alttext=\"2,520\"><mn>2,520</mn>\n</math>. There are <math alttext=\"60\"><mn>60</mn>\n</math> minutes in one hour. At a rate of <math alttext=\"42\"><mn>42</mn>\n</math> posters per minute, the number of posters produced in one hour can be determined by <math alttext=\"left parenthesis StartFraction 42 posters Over 1 minute EndFraction right parenthesis left parenthesis StartFraction 60 minutes Over 1 hour EndFraction right parenthesis\"><mfenced><mfrac><mrow><mn>42</mn><mo>&#160;</mo><mtext>posters</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mo>&#160;</mo><mtext>minute</mtext></mrow></mfrac></mfenced><mfenced><mfrac><mrow><mn>60</mn><mo>&#160;</mo><mtext>minutes</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>hour</mtext></mrow></mfrac></mfenced></math>, which is <math alttext=\"2,520\"><mn>2,520</mn>\n</math> posters per hour.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959830,
+    "pPcc": "SAT#Q",
+    "questionId": "3c8fdc40",
+    "skill_cd": "Q.A.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Ratios, rates, proportional relationships, and units",
+    "createDate": 1691007959830,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": null,
+    "external_id": "d6f9ca5e-947e-4a5c-a0d0-de08d17d11f5",
+    "primary_class_cd": "Q",
+    "uId": "0136d17d-58ae-4a82-8a94-ea259b1e8fa7",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "keys": [
+      "2520"
+    ],
+    "rationale": "<p>The correct answer is <math alttext=\"2,520\"><mn>2,520</mn>\n</math>. There are <math alttext=\"60\"><mn>60</mn>\n</math> minutes in one hour. At a rate of <math alttext=\"42\"><mn>42</mn>\n</math> posters per minute, the number of posters produced in one hour can be determined by <math alttext=\"left parenthesis StartFraction 42 posters Over 1 minute EndFraction right parenthesis left parenthesis StartFraction 60 minutes Over 1 hour EndFraction right parenthesis\"><mfenced><mfrac><mrow><mn>42</mn><mo>&#160;</mo><mtext>posters</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mo>&#160;</mo><mtext>minute</mtext></mrow></mfrac></mfenced><mfenced><mfrac><mrow><mn>60</mn><mo>&#160;</mo><mtext>minutes</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>hour</mtext></mrow></mfrac></mfenced></math>, which is <math alttext=\"2,520\"><mn>2,520</mn>\n</math> posters per hour.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">A printer produces posters at a constant rate of <math alttext=\"42\"><mn>42</mn>\n</math> posters per minute. At what rate, in posters per <span style=\"text-decoration: underline;\">hour</span>, does the printer produce the posters?</p>",
+    "externalid": "d6f9ca5e-947e-4a5c-a0d0-de08d17d11f5",
+    "templateid": "1fe4944d-4a59-47f2-bef8-2f089cff5270",
+    "vaultid": "6a6cb3c0-6f43-4ca4-ac05-bbac3fb41a2d",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "2520"
+    ]
+  },
+  "createDate": 1691007959830,
+  "updateDate": 1691007959830
+}

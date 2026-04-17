@@ -1,0 +1,70 @@
+{
+  "questionId": "cbc4c163",
+  "external_id": "59addf61-9f46-4c0d-9dce-ebce1fa135b7",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "c303d7f2-378e-4d44-a43b-fdc54bab08bf",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "P",
+  "domain": "Advanced Math",
+  "skill_cd": "P.C.",
+  "skill_desc": "Nonlinear functions",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The function&nbsp;<em>f&nbsp;</em>is defined by <math alttext=\"f left parenthesis x right parenthesis equals 5 left parenthesis one fourth minus x right parenthesis squared plus StartFraction 11 Over 4 EndFraction\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mrow><mn>5</mn></mrow><msup><mfenced><mrow><mfrac><mn>1</mn><mrow><mn>4</mn></mrow></mfrac><mo>-</mo><mi>x</mi></mrow></mfenced><mn>2</mn></msup><mo>+</mo><mfrac><mrow><mn>11</mn></mrow><mrow><mn>4</mn></mrow></mfrac></math>. What is the value of <math alttext=\"f left parenthesis one fourth right parenthesis\"><mi>f</mi><mfenced><mfrac><mn>1</mn><mrow><mn>4</mn></mrow></mfrac></mfenced></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "11/4",
+    "2.75"
+  ],
+  "correct_answer": [
+    "11/4",
+    "2.75"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"StartFraction 11 Over 4 EndFraction\"><mfrac><mn>11</mn><mn>4</mn></mfrac></math>. It&rsquo;s given that the function <math alttext=\"f\"><mi>f</mi>\n</math> is defined by <math alttext=\"f left parenthesis x right parenthesis equals 5 left parenthesis one fourth minus x right parenthesis squared plus StartFraction 11 Over 4 EndFraction\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>5</mn><msup><mfenced><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>-</mo><mi>x</mi></mrow></mfenced><mn>2</mn></msup><mo>+</mo><mfrac><mn>11</mn><mn>4</mn></mfrac></math>. Substituting <math alttext=\"one fourth\"><mfrac><mn>1</mn><mn>4</mn></mfrac></math> for <math alttext=\"x\"><mi>x</mi>\n</math> in this equation yields <math alttext=\"f left parenthesis one fourth right parenthesis equals 5 left parenthesis one fourth minus one fourth right parenthesis squared plus StartFraction 11 Over 4 EndFraction\"><mi>f</mi><mfenced><mfrac><mn>1</mn><mn>4</mn></mfrac></mfenced><mo>=</mo><mn>5</mn><msup><mfenced><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>-</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow></mfenced><mn>2</mn></msup><mo>+</mo><mfrac><mn>11</mn><mn>4</mn></mfrac></math>, which is equivalent <math alttext=\"f left parenthesis one fourth right parenthesis equals 5 left parenthesis 0 right parenthesis squared plus StartFraction 11 Over 4 EndFraction\"><mi>f</mi><mfenced><mfrac><mn>1</mn><mn>4</mn></mfrac></mfenced><mo>=</mo><mn>5</mn><msup><mfenced><mn>0</mn></mfenced><mn>2</mn></msup><mo>+</mo><mfrac><mn>11</mn><mn>4</mn></mfrac></math>, or <math alttext=\"f left parenthesis one fourth right parenthesis equals StartFraction 11 Over 4 EndFraction\"><mi>f</mi><mfenced><mfrac><mn>1</mn><mn>4</mn></mfrac></mfenced><mo>=</mo><mfrac><mn>11</mn><mn>4</mn></mfrac></math>. Therefore, the value of <math alttext=\"f left parenthesis one fourth right parenthesis\"><mi>f</mi><mfenced><mfrac><mn>1</mn><mn>4</mn></mfrac></mfenced></math> is <math alttext=\"StartFraction 11 Over 4 EndFraction\"><mfrac><mn>11</mn><mn>4</mn></mfrac></math>. Note that 11/4 or 2.75 are examples of ways to enter a correct answer.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554982,
+    "pPcc": "SAT#P",
+    "questionId": "cbc4c163",
+    "skill_cd": "P.C.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Nonlinear functions",
+    "createDate": 1743430554982,
+    "program": "SAT",
+    "primary_class_cd_desc": "Advanced Math",
+    "ibn": "",
+    "external_id": "59addf61-9f46-4c0d-9dce-ebce1fa135b7",
+    "primary_class_cd": "P",
+    "uId": "c303d7f2-378e-4d44-a43b-fdc54bab08bf",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: left;\">The function&nbsp;<em>f&nbsp;</em>is defined by <math alttext=\"f left parenthesis x right parenthesis equals 5 left parenthesis one fourth minus x right parenthesis squared plus StartFraction 11 Over 4 EndFraction\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mrow><mn>5</mn></mrow><msup><mfenced><mrow><mfrac><mn>1</mn><mrow><mn>4</mn></mrow></mfrac><mo>-</mo><mi>x</mi></mrow></mfenced><mn>2</mn></msup><mo>+</mo><mfrac><mrow><mn>11</mn></mrow><mrow><mn>4</mn></mrow></mfrac></math>. What is the value of <math alttext=\"f left parenthesis one fourth right parenthesis\"><mi>f</mi><mfenced><mfrac><mn>1</mn><mrow><mn>4</mn></mrow></mfrac></mfenced></math>?</p>",
+    "keys": [
+      "11/4",
+      "2.75"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"StartFraction 11 Over 4 EndFraction\"><mfrac><mn>11</mn><mn>4</mn></mfrac></math>. It&rsquo;s given that the function <math alttext=\"f\"><mi>f</mi>\n</math> is defined by <math alttext=\"f left parenthesis x right parenthesis equals 5 left parenthesis one fourth minus x right parenthesis squared plus StartFraction 11 Over 4 EndFraction\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>5</mn><msup><mfenced><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>-</mo><mi>x</mi></mrow></mfenced><mn>2</mn></msup><mo>+</mo><mfrac><mn>11</mn><mn>4</mn></mfrac></math>. Substituting <math alttext=\"one fourth\"><mfrac><mn>1</mn><mn>4</mn></mfrac></math> for <math alttext=\"x\"><mi>x</mi>\n</math> in this equation yields <math alttext=\"f left parenthesis one fourth right parenthesis equals 5 left parenthesis one fourth minus one fourth right parenthesis squared plus StartFraction 11 Over 4 EndFraction\"><mi>f</mi><mfenced><mfrac><mn>1</mn><mn>4</mn></mfrac></mfenced><mo>=</mo><mn>5</mn><msup><mfenced><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>-</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow></mfenced><mn>2</mn></msup><mo>+</mo><mfrac><mn>11</mn><mn>4</mn></mfrac></math>, which is equivalent <math alttext=\"f left parenthesis one fourth right parenthesis equals 5 left parenthesis 0 right parenthesis squared plus StartFraction 11 Over 4 EndFraction\"><mi>f</mi><mfenced><mfrac><mn>1</mn><mn>4</mn></mfrac></mfenced><mo>=</mo><mn>5</mn><msup><mfenced><mn>0</mn></mfenced><mn>2</mn></msup><mo>+</mo><mfrac><mn>11</mn><mn>4</mn></mfrac></math>, or <math alttext=\"f left parenthesis one fourth right parenthesis equals StartFraction 11 Over 4 EndFraction\"><mi>f</mi><mfenced><mfrac><mn>1</mn><mn>4</mn></mfrac></mfenced><mo>=</mo><mfrac><mn>11</mn><mn>4</mn></mfrac></math>. Therefore, the value of <math alttext=\"f left parenthesis one fourth right parenthesis\"><mi>f</mi><mfenced><mfrac><mn>1</mn><mn>4</mn></mfrac></mfenced></math> is <math alttext=\"StartFraction 11 Over 4 EndFraction\"><mfrac><mn>11</mn><mn>4</mn></mfrac></math>. Note that 11/4 or 2.75 are examples of ways to enter a correct answer.</p>",
+    "externalid": "59addf61-9f46-4c0d-9dce-ebce1fa135b7",
+    "answerOptions": [],
+    "correct_answer": [
+      "11/4",
+      "2.75"
+    ]
+  },
+  "createDate": 1743430554982,
+  "updateDate": 1743430554982
+}

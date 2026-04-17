@@ -1,0 +1,51 @@
+{
+  "questionId": "be44fea0",
+  "external_id": "38da0806-db4c-4d38-a6fd-65fd8d2824fc",
+  "vaultid": null,
+  "uId": "0923fdc2-fd62-4cf3-a152-322dd690580a",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "EOI",
+  "domain": "Expression of Ideas",
+  "skill_cd": "TRA",
+  "skill_desc": "Transitions",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "mcq",
+  "stimulus": "<p>While studying jorō spiders, a large species originally from East Asia, University of Georgia researchers wondered if the spiders&rsquo; rapid spread throughout the southeastern US was a result of aggressive behavior. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> they discovered that jorō spiders are gentle giants who react to even minor disturbances by &ldquo;freezing&rdquo; in place for an hour or more.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "d6448bf1-8355-4f38-9d61-3ba38a85e99b",
+      "content": "<p>Therefore,</p>"
+    },
+    {
+      "id": "a7250a5d-9c63-4b67-930e-7befd5065b6c",
+      "content": "<p>Instead,</p>"
+    },
+    {
+      "id": "22556136-0c16-46fe-9943-d70038413ba1",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "b57c5656-8537-4a61-a4f9-14209b5faceb",
+      "content": "<p>In other words,</p>"
+    }
+  ],
+  "keys": [
+    "a7250a5d-9c63-4b67-930e-7befd5065b6c"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p>Choice B is the best answer. &ldquo;Instead&rdquo; logically signals that the information about the researchers&rsquo; discovery in this sentence&mdash;that jorō spiders are gentle giants who &ldquo;freeze&rdquo; in place when disturbed&mdash;contradicts their initial hypothesis about the spiders&rsquo; aggressiveness described in the previous sentence.</p><p>Choice A is incorrect because &ldquo;therefore&rdquo; illogically signals that the discovery about jorō spiders&rsquo; gentleness is a result of the initial hypothesis about their aggressive behavior. Instead, the sentence presents information that contradicts the initial hypothesis. Choice C is incorrect because &ldquo;for example&rdquo; illogically signals that the discovery about jorō spiders&rsquo; gentleness exemplifies the initial hypothesis about their aggressive behavior. Instead, the sentence presents information that contradicts the initial hypothesis. Choice D is incorrect because &ldquo;in other words&rdquo; illogically signals that the discovery about jorō spiders&rsquo; gentleness is merely restating or rephrasing the initial hypothesis about their aggressive behavior. Instead, the sentence presents information that contradicts the initial hypothesis.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1776362771168,
+  "updateDate": 1776362771168
+}

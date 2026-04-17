@@ -1,0 +1,51 @@
+{
+  "questionId": "eee7536f",
+  "external_id": "97234b6e-84b2-4fa6-8f23-d52ad8303c8e",
+  "vaultid": null,
+  "uId": "8838afe7-753d-4bcb-a5d9-f7c9ce5065f7",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "E",
+  "score_band_range_cd": 1,
+  "type": "mcq",
+  "stimulus": "<p>On March 27, 2004, after nine years as a professional boxer, Isra Girgrah retired. The Yemeni American athlete <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> her career with a record of twenty-eight wins, three losses, and two ties.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "c928bb88-0f07-4861-8265-587302092327",
+      "content": "<p>finish</p>"
+    },
+    {
+      "id": "6c69fc61-d4bf-4e5f-9475-0e4fdd9aa27a",
+      "content": "<p>has been finishing</p>"
+    },
+    {
+      "id": "ea40e679-45af-4e2b-ab7b-edd4f35e706d",
+      "content": "<p>finished</p>"
+    },
+    {
+      "id": "511a4a34-6196-4a8b-97c0-01b85136c313",
+      "content": "<p>will be finishing</p>"
+    }
+  ],
+  "keys": [
+    "ea40e679-45af-4e2b-ab7b-edd4f35e706d"
+  ],
+  "correct_answer": [
+    "C"
+  ],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of a verb to express tense in a sentence. In this choice, the past tense verb &ldquo;finished&rdquo; is consistent with the other past tense verb (&ldquo;retired&rdquo;) used to refer to Girgrah&rsquo;s retirement in 2004.</p><p>Choice A is incorrect because the present tense verb &ldquo;finish&rdquo; isn&rsquo;t consistent with the other past tense verb (&ldquo;retired&rdquo;) used to refer to Girgrah&rsquo;s retirement in 2004. Furthermore, the plural verb &ldquo;finish&rdquo; doesn&rsquo;t agree in number with the sentence&rsquo;s singular subject &ldquo;The Yemeni American athlete.&rdquo; Choice B is incorrect because the present perfect progressive tense verb &ldquo;has been finishing&rdquo; isn&rsquo;t consistent with the other past tense verb (&ldquo;retired&rdquo;) used to refer to Girgrah&rsquo;s retirement in 2004. Choice D is incorrect because the future progressive tense verb &ldquo;will be finishing&rdquo; isn&rsquo;t consistent with the other past tense verb (&ldquo;retired&rdquo;) used to refer to Girgrah&rsquo;s retirement in 2004.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1776362771169,
+  "updateDate": 1776362771169
+}

@@ -1,0 +1,51 @@
+{
+  "questionId": "37219ba2",
+  "external_id": "4afa64a5-d8ae-4ef9-bdbd-2966534f1180",
+  "vaultid": null,
+  "uId": "38632d66-6710-46de-babe-f12db65f2d4c",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "CAS",
+  "domain": "Craft and Structure",
+  "skill_cd": "WIC",
+  "skill_desc": "Words in Context",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": "<p>The following text is from John Muir&rsquo;s 1913 autobiography <em>The Story of My Boyhood and Youth</em>. Muir describes being on a boat.</p>\n<blockquote>\n<p>The water was so <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">clear</span> that it was almost invisible, and when we floated slowly out over the plants and fishes, we seemed to be miraculously sustained in the air while exploring a veritable fairyland.</p>\n</blockquote>",
+  "stem": "<p>As used in the text, what does the word &ldquo;clear&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "7bee3235-8ebf-41f3-9c33-281f84dd719b",
+      "content": "<p>Simple</p>"
+    },
+    {
+      "id": "b000260e-a00e-4dd6-a89b-60e2cf90760e",
+      "content": "<p>Understandable</p>"
+    },
+    {
+      "id": "55c7b02c-15b1-40bd-98ac-e4f4afd7ec22",
+      "content": "<p>Obvious</p>"
+    },
+    {
+      "id": "e1ed6ed0-729c-4b3e-83d0-2f8b36476f3e",
+      "content": "<p>Transparent</p>"
+    }
+  ],
+  "keys": [
+    "e1ed6ed0-729c-4b3e-83d0-2f8b36476f3e"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer because as used in the text, \"clear\" most nearly means transparent, or see-through. Muir states that the water beneath the boat \"was so clear that it was almost invisible,\" suggesting that those on the boat were able to see through the water and easily observe plants and fish below the surface.</p><p>Choice A is incorrect. In some contexts \"clear\" can mean \"simple,\" or uncomplicated, but Muir is describing the water, and water isn&rsquo;t typically described as either simple or complicated. Muir emphasizes the water&rsquo;s transparency, not its simplicity. Choice B is incorrect. In some contexts \"clear\" can mean \"understandable,\" or reasonable or easily comprehended, but Muir is describing the water, and it doesn&rsquo;t make much sense to describe water as understandable. Muir emphasizes the water&rsquo;s transparency, not how easily the water can be understood. Choice C is incorrect. Although \"clear\" can mean \"obvious,\" or easily seen or understood, in some contexts, Muir&rsquo;s description emphasizes that the water \"was almost invisible\" and that the boat seemed to be \"sustained in the air,\" suggesting that the water was almost impossible to see, not that it was obvious.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1743430669206,
+  "updateDate": 1743430669206
+}

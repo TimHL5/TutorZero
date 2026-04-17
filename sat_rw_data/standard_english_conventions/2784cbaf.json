@@ -1,0 +1,51 @@
+{
+  "questionId": "2784cbaf",
+  "external_id": "c262c2cf-76aa-4333-8ded-17badecce917",
+  "vaultid": null,
+  "uId": "607aafeb-dc36-4bff-ba14-706933074d63",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "H",
+  "score_band_range_cd": 7,
+  "type": "mcq",
+  "stimulus": "<p>To fully describe the motion of an object requires knowing each of five <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> movement: displacement, time, initial velocity, final velocity, and acceleration. These are called kinematic variables. &nbsp;&nbsp;</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "9b366a36-75a4-4bde-a31d-d16f4d8d9653",
+      "content": "<p>variable&rsquo;s that characterize objects&rsquo;</p>"
+    },
+    {
+      "id": "9d9a74f6-a52b-413f-900e-587c8cfd85c9",
+      "content": "<p>variables that characterize objects&rsquo;</p>"
+    },
+    {
+      "id": "2819c938-4e31-4398-9ccd-57be0d402824",
+      "content": "<p>variables that characterize object&rsquo;s</p>"
+    },
+    {
+      "id": "81198ba3-8aa9-45aa-9fd3-daa0721cdf9d",
+      "content": "<p>variables that characterize objects</p>"
+    }
+  ],
+  "keys": [
+    "9d9a74f6-a52b-413f-900e-587c8cfd85c9"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p>Choice B is the best answer. The conventions being tested are the use of plural and possessive nouns. The plural noun \"variables\" correctly indicates that there are multiple variables, and the plural possessive noun \"objects&rsquo;\" correctly indicates that the movement of objects in general is being discussed.</p><p>Choice A is incorrect because the context requires the plural noun \"variables,\" not the singular possessive noun \"variable&rsquo;s.\" Choice C is incorrect because the context requires the plural possessive noun \"objects&rsquo;,\" not the singular possessive noun \"object&rsquo;s.\" Choice D is incorrect because the context requires the plural possessive noun \"objects&rsquo;,\" not the plural noun \"objects.\"</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1755117061191,
+  "updateDate": 1755117061191
+}

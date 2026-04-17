@@ -1,0 +1,100 @@
+{
+  "questionId": "4e18fc5d",
+  "external_id": "3972a3e1-4431-4102-8724-89e23f92d34f",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "020ea51e-0e0a-4966-9817-bd4b584ccbfb",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "P",
+  "domain": "Advanced Math",
+  "skill_cd": "P.B.",
+  "skill_desc": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"v equals minus StartFraction w Over 150 x EndFraction\"><mi>v</mi><mo>=</mo><mo>-</mo><mfrac><mi>w</mi><mrow><mrow><mn>150</mn></mrow><mi>x</mi></mrow></mfrac></math></p>\n<p style=\"text-align: left;\">The given equation relates the distinct positive numbers <math alttext=\"v\"><mi>v</mi>\n</math>, <math alttext=\"w\"><mi>w</mi>\n</math>, and <math alttext=\"x\"><mi>x</mi>\n</math>. Which equation correctly expresses <math alttext=\"w\"><mi>w</mi>\n</math> in terms of <math alttext=\"v\"><mi>v</mi>\n</math> and <math alttext=\"x\"><mi>x</mi>\n</math>?</p>",
+  "answerOptions": [
+    {
+      "id": "dee0da3c-e0fe-4054-bff9-77006e7daca3",
+      "content": "<p><math alttext=\"w equals minus 150 v x\"><mrow>\n\t<mi>w</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mn>150</mn>\n\t\t<mi>v</mi>\n\t\t<mi>x</mi>\n\t</mrow>\n</mrow>\n</math></p>"
+    },
+    {
+      "id": "aff45aa1-7d84-4da5-a988-ae3f7623657f",
+      "content": "<p><math alttext=\"w equals minus StartFraction 150 v Over x EndFraction\"><mi>w</mi><mo>=</mo><mo>-</mo><mfrac><mrow><mrow><mn>150</mn></mrow><mi>v</mi></mrow><mi>x</mi></mfrac></math></p>"
+    },
+    {
+      "id": "ed559f1c-520c-4d5f-88c0-20c3bf53a866",
+      "content": "<p><math alttext=\"w equals minus StartFraction x Over 150 v EndFraction\"><mi>w</mi><mo>=</mo><mo>-</mo><mfrac><mi>x</mi><mrow><mrow><mn>150</mn></mrow><mi>v</mi></mrow></mfrac></math></p>"
+    },
+    {
+      "id": "f44b6e98-ce75-4736-9404-d8d086912a11",
+      "content": "<p><math alttext=\"w equals v plus 150 x\"><mrow>\n\t<mi>w</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mi>v</mi>\n\t\t<mo>+</mo>\n\t\t<mrow>\n\t\t\t<mn>150</mn>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t</mrow>\n</mrow>\n</math></p>"
+    }
+  ],
+  "keys": [
+    "dee0da3c-e0fe-4054-bff9-77006e7daca3"
+  ],
+  "correct_answer": [
+    "A"
+  ],
+  "rationale": "<p>Choice A is correct. It&rsquo;s given that <math alttext=\"x\"><mi>x</mi>\n</math> is positive. Therefore, multiplying each side of the given equation by <math alttext=\"minus 150 x\"><mrow>\n\t<mo>-</mo>\n\t<mn>150</mn>\n\t<mi>x</mi>\n</mrow>\n</math> yields <math alttext=\"minus 150 x v equals w\"><mo>-</mo><mn>150</mn><mi>x</mi><mi>v</mi><mo>=</mo><mi>w</mi></math>, which is equivalent to <math alttext=\"w equals minus 150 v x\"><mrow>\n\t<mi>w</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mn>150</mn>\n\t\t<mi>v</mi>\n\t\t<mi>x</mi>\n\t</mrow>\n</mrow>\n</math>. Thus, the equation <math alttext=\"w equals minus 150 v x\"><mrow>\n\t<mi>w</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mn>150</mn>\n\t\t<mi>v</mi>\n\t\t<mi>x</mi>\n\t</mrow>\n</mrow>\n</math> correctly expresses <math alttext=\"w\"><mi>w</mi>\n</math> in terms of <math alttext=\"v\"><mi>v</mi>\n</math> and <math alttext=\"x\"><mi>x</mi>\n</math>.</p>\n<p>Choice B is incorrect. This equation is equivalent to <math alttext=\"v equals minus StartFraction w x Over 150 EndFraction\"><mrow>\n\t<mi>v</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mfrac>\n\t\t\t<mrow>\n\t\t\t\t<mi>w</mi>\n\t\t\t\t<mi>x</mi>\n\t\t\t</mrow>\n\t\t\t<mn>150</mn>\n\t\t</mfrac>\n\t</mrow>\n</mrow>\n</math>.</p>\n<p>Choice C is incorrect. This equation is equivalent to <math alttext=\"v equals minus StartFraction x Over 150 w EndFraction\"><mrow>\n\t<mi>v</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mfrac>\n\t\t\t<mi>x</mi>\n\t\t\t<mrow>\n\t\t\t\t<mn>150</mn>\n\t\t\t\t<mi>w</mi>\n\t\t\t</mrow>\n\t\t</mfrac>\n\t</mrow>\n</mrow>\n</math>.</p>\n<p>Choice D is incorrect. This equation is equivalent to <math alttext=\"v equals w minus 150 x\"><mrow>\n\t<mi>v</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mi>w</mi>\n\t\t<mo>-</mo>\n\t\t<mrow>\n\t\t\t<mn>150</mn>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t</mrow>\n</mrow>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357397,
+    "pPcc": "SAT#P",
+    "questionId": "4e18fc5d",
+    "skill_cd": "P.B.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "createDate": 1730147357397,
+    "program": "SAT",
+    "primary_class_cd_desc": "Advanced Math",
+    "ibn": "",
+    "external_id": "3972a3e1-4431-4102-8724-89e23f92d34f",
+    "primary_class_cd": "P",
+    "uId": "020ea51e-0e0a-4966-9817-bd4b584ccbfb",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "answerOptions": [
+      {
+        "content": "<p><math alttext=\"w equals minus 150 v x\"><mrow>\n\t<mi>w</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mn>150</mn>\n\t\t<mi>v</mi>\n\t\t<mi>x</mi>\n\t</mrow>\n</mrow>\n</math></p>",
+        "id": "dee0da3c-e0fe-4054-bff9-77006e7daca3"
+      },
+      {
+        "content": "<p><math alttext=\"w equals minus StartFraction 150 v Over x EndFraction\"><mi>w</mi><mo>=</mo><mo>-</mo><mfrac><mrow><mrow><mn>150</mn></mrow><mi>v</mi></mrow><mi>x</mi></mfrac></math></p>",
+        "id": "aff45aa1-7d84-4da5-a988-ae3f7623657f"
+      },
+      {
+        "content": "<p><math alttext=\"w equals minus StartFraction x Over 150 v EndFraction\"><mi>w</mi><mo>=</mo><mo>-</mo><mfrac><mi>x</mi><mrow><mrow><mn>150</mn></mrow><mi>v</mi></mrow></mfrac></math></p>",
+        "id": "ed559f1c-520c-4d5f-88c0-20c3bf53a866"
+      },
+      {
+        "content": "<p><math alttext=\"w equals v plus 150 x\"><mrow>\n\t<mi>w</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mi>v</mi>\n\t\t<mo>+</mo>\n\t\t<mrow>\n\t\t\t<mn>150</mn>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t</mrow>\n</mrow>\n</math></p>",
+        "id": "f44b6e98-ce75-4736-9404-d8d086912a11"
+      }
+    ],
+    "externalid": "3972a3e1-4431-4102-8724-89e23f92d34f",
+    "keys": [
+      "dee0da3c-e0fe-4054-bff9-77006e7daca3"
+    ],
+    "rationale": "<p>Choice A is correct. It&rsquo;s given that <math alttext=\"x\"><mi>x</mi>\n</math> is positive. Therefore, multiplying each side of the given equation by <math alttext=\"minus 150 x\"><mrow>\n\t<mo>-</mo>\n\t<mn>150</mn>\n\t<mi>x</mi>\n</mrow>\n</math> yields <math alttext=\"minus 150 x v equals w\"><mo>-</mo><mn>150</mn><mi>x</mi><mi>v</mi><mo>=</mo><mi>w</mi></math>, which is equivalent to <math alttext=\"w equals minus 150 v x\"><mrow>\n\t<mi>w</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mn>150</mn>\n\t\t<mi>v</mi>\n\t\t<mi>x</mi>\n\t</mrow>\n</mrow>\n</math>. Thus, the equation <math alttext=\"w equals minus 150 v x\"><mrow>\n\t<mi>w</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mn>150</mn>\n\t\t<mi>v</mi>\n\t\t<mi>x</mi>\n\t</mrow>\n</mrow>\n</math> correctly expresses <math alttext=\"w\"><mi>w</mi>\n</math> in terms of <math alttext=\"v\"><mi>v</mi>\n</math> and <math alttext=\"x\"><mi>x</mi>\n</math>.</p>\n<p>Choice B is incorrect. This equation is equivalent to <math alttext=\"v equals minus StartFraction w x Over 150 EndFraction\"><mrow>\n\t<mi>v</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mfrac>\n\t\t\t<mrow>\n\t\t\t\t<mi>w</mi>\n\t\t\t\t<mi>x</mi>\n\t\t\t</mrow>\n\t\t\t<mn>150</mn>\n\t\t</mfrac>\n\t</mrow>\n</mrow>\n</math>.</p>\n<p>Choice C is incorrect. This equation is equivalent to <math alttext=\"v equals minus StartFraction x Over 150 w EndFraction\"><mrow>\n\t<mi>v</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mfrac>\n\t\t\t<mi>x</mi>\n\t\t\t<mrow>\n\t\t\t\t<mn>150</mn>\n\t\t\t\t<mi>w</mi>\n\t\t\t</mrow>\n\t\t</mfrac>\n\t</mrow>\n</mrow>\n</math>.</p>\n<p>Choice D is incorrect. This equation is equivalent to <math alttext=\"v equals w minus 150 x\"><mrow>\n\t<mi>v</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mi>w</mi>\n\t\t<mo>-</mo>\n\t\t<mrow>\n\t\t\t<mn>150</mn>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t</mrow>\n</mrow>\n</math>.</p>",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"v equals minus StartFraction w Over 150 x EndFraction\"><mi>v</mi><mo>=</mo><mo>-</mo><mfrac><mi>w</mi><mrow><mrow><mn>150</mn></mrow><mi>x</mi></mrow></mfrac></math></p>\n<p style=\"text-align: left;\">The given equation relates the distinct positive numbers <math alttext=\"v\"><mi>v</mi>\n</math>, <math alttext=\"w\"><mi>w</mi>\n</math>, and <math alttext=\"x\"><mi>x</mi>\n</math>. Which equation correctly expresses <math alttext=\"w\"><mi>w</mi>\n</math> in terms of <math alttext=\"v\"><mi>v</mi>\n</math> and <math alttext=\"x\"><mi>x</mi>\n</math>?</p>",
+    "type": "mcq",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "createDate": 1730147357397,
+  "updateDate": 1730147357397
+}

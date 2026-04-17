@@ -1,0 +1,66 @@
+{
+  "questionId": "5154615f",
+  "external_id": "86610db9-1732-40a7-a795-6d71991b27f8",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "9abe7798-0dd3-4f8e-8117-9978a9da2d30",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.A.",
+  "skill_desc": "Ratios, rates, proportional relationships, and units",
+  "difficulty": "H",
+  "score_band_range_cd": 6,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">To study fluctuations in composition, samples of pumice were taken from <math alttext=\"29\"><mn>29</mn>\n</math> locations and cut in the shape of a cube. The length of the edge of one of these cubes is <math alttext=\"3.000\"><mn>3.000</mn></math> centimeters. This cube has a density of&nbsp;<math alttext=\"0.230\"><mn>0.230</mn></math> grams per cubic centimeter. What is the mass of this cube, in grams?</p>",
+  "answerOptions": [],
+  "keys": [
+    "6.21"
+  ],
+  "correct_answer": [
+    "6.21"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"6.21\"><mn>6.21</mn>\n</math>. It&rsquo;s given that the samples of pumice were cut in the shape of a cube. It's also given that the length of the edge of one of these cubes is <math alttext=\"3.000\"><mn>3.000</mn></math> centimeters. Therefore, the volume of this cube is&nbsp;<math alttext=\"left parenthesis 3.000 centimeters right parenthesis cubed\"><msup><mfenced><mrow><mn>3.000</mn><mo>&#160;</mo><mtext>centimeters</mtext></mrow></mfenced><mn>3</mn></msup></math>, or <math alttext=\"27\"><mn>27</mn>\n</math> cubic centimeters. Since the density of this cube is&nbsp;<math alttext=\"0.230\"><mn>0.230</mn></math> grams per cubic centimeter, it follows that the mass of this cube is&nbsp;<math alttext=\"left parenthesis StartFraction 0.230 grams Over 1 cubic centimeter EndFraction right parenthesis left parenthesis 27 cubic centimeters right parenthesis\"><mfenced><mfrac><mrow><mn>0.230</mn><mo>&#160;</mo><mtext>grams</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>cubic&#160;centimeter</mtext></mrow></mfrac></mfenced><mfenced><mrow><mn>27</mn><mo>&#160;</mo><mtext>cubic&#160;centimeters</mtext></mrow></mfenced></math>, or <math alttext=\"6.21\"><mn>6.21</mn>\n</math> grams.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357401,
+    "pPcc": "SAT#Q",
+    "questionId": "5154615f",
+    "skill_cd": "Q.A.",
+    "score_band_range_cd": 6,
+    "skill_desc": "Ratios, rates, proportional relationships, and units",
+    "createDate": 1730147357401,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "86610db9-1732-40a7-a795-6d71991b27f8",
+    "primary_class_cd": "Q",
+    "uId": "9abe7798-0dd3-4f8e-8117-9978a9da2d30",
+    "difficulty": "H"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "86610db9-1732-40a7-a795-6d71991b27f8",
+    "keys": [
+      "6.21"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"6.21\"><mn>6.21</mn>\n</math>. It&rsquo;s given that the samples of pumice were cut in the shape of a cube. It's also given that the length of the edge of one of these cubes is <math alttext=\"3.000\"><mn>3.000</mn></math> centimeters. Therefore, the volume of this cube is&nbsp;<math alttext=\"left parenthesis 3.000 centimeters right parenthesis cubed\"><msup><mfenced><mrow><mn>3.000</mn><mo>&#160;</mo><mtext>centimeters</mtext></mrow></mfenced><mn>3</mn></msup></math>, or <math alttext=\"27\"><mn>27</mn>\n</math> cubic centimeters. Since the density of this cube is&nbsp;<math alttext=\"0.230\"><mn>0.230</mn></math> grams per cubic centimeter, it follows that the mass of this cube is&nbsp;<math alttext=\"left parenthesis StartFraction 0.230 grams Over 1 cubic centimeter EndFraction right parenthesis left parenthesis 27 cubic centimeters right parenthesis\"><mfenced><mfrac><mrow><mn>0.230</mn><mo>&#160;</mo><mtext>grams</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>cubic&#160;centimeter</mtext></mrow></mfrac></mfenced><mfenced><mrow><mn>27</mn><mo>&#160;</mo><mtext>cubic&#160;centimeters</mtext></mrow></mfenced></math>, or <math alttext=\"6.21\"><mn>6.21</mn>\n</math> grams.</p>",
+    "stem": "<p style=\"text-align: left;\">To study fluctuations in composition, samples of pumice were taken from <math alttext=\"29\"><mn>29</mn>\n</math> locations and cut in the shape of a cube. The length of the edge of one of these cubes is <math alttext=\"3.000\"><mn>3.000</mn></math> centimeters. This cube has a density of&nbsp;<math alttext=\"0.230\"><mn>0.230</mn></math> grams per cubic centimeter. What is the mass of this cube, in grams?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "6.21"
+    ]
+  },
+  "createDate": 1730147357401,
+  "updateDate": 1730147357401
+}

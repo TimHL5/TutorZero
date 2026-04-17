@@ -1,0 +1,66 @@
+{
+  "questionId": "79cf8505",
+  "external_id": "c754edce-0af7-420c-8fc5-0e5f0cd80b73",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "7a37fb63-c2c1-4c46-b601-5d4c024701b9",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.A.",
+  "skill_desc": "Linear equations in one variable",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A line segment that has a length of <math alttext=\"115 centimeters left parenthesis cm right parenthesis\"><mrow><mn>115</mn></mrow><mo>&#160;</mo><mtext>centimeters</mtext><mo>&#160;</mo><mo>(</mo><mtext>cm</mtext><mo>)</mo></math> is divided into three parts. One part is <math alttext=\"47 cm\"><mrow><mn>47</mn></mrow><mo>&#160;</mo><mtext>cm</mtext></math> long. The other two parts have lengths that are equal to each other. What is the length, in <math alttext=\"cm\"><mtext>cm</mtext></math>, of one of the other two parts of equal length?</p>",
+  "answerOptions": [],
+  "keys": [
+    "34"
+  ],
+  "correct_answer": [
+    "34"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"34\"><mn>34</mn>\n</math>. It&rsquo;s given that a line segment has a length of&nbsp;<math alttext=\"115 cm\"><mn>115</mn><mo>&#160;</mo><mtext>cm</mtext></math> and is divided into three parts, where one part is <math alttext=\"47 cm\"><mn>47</mn><mo>&#160;</mo><mtext>cm</mtext></math> long and the other two parts have lengths that are equal. If <math alttext=\"x\"><mi>x</mi>\n</math> represents the length, in cm, of each of the two parts of equal length, then the equation <math alttext=\"47 plus x plus x equals 115\"><mn>47</mn><mo>+</mo><mi>x</mi><mo>+</mo><mi>x</mi><mo>=</mo><mn>115</mn></math>, or <math alttext=\"47 plus 2 x equals 115\"><mn>47</mn><mo>+</mo><mn>2</mn><mi>x</mi><mo>=</mo><mn>115</mn></math>, represents this situation. Subtracting <math alttext=\"47\"><mn>47</mn>\n</math> from each side of this equation yields <math alttext=\"2 x equals 68\"><mn>2</mn><mi>x</mi><mo>=</mo><mn>68</mn></math>. Dividing each side of this equation by <math alttext=\"2\"><mn>2</mn>\n</math> yields <math alttext=\"x equals 34\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>34</mn>\n</mrow>\n</math>. Therefore, the length, in cm, of one of the two parts of equal length is <math alttext=\"34\"><mn>34</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357386,
+    "pPcc": "SAT#H",
+    "questionId": "79cf8505",
+    "skill_cd": "H.A.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Linear equations in one variable",
+    "createDate": 1730147357386,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "c754edce-0af7-420c-8fc5-0e5f0cd80b73",
+    "primary_class_cd": "H",
+    "uId": "7a37fb63-c2c1-4c46-b601-5d4c024701b9",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "c754edce-0af7-420c-8fc5-0e5f0cd80b73",
+    "keys": [
+      "34"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"34\"><mn>34</mn>\n</math>. It&rsquo;s given that a line segment has a length of&nbsp;<math alttext=\"115 cm\"><mn>115</mn><mo>&#160;</mo><mtext>cm</mtext></math> and is divided into three parts, where one part is <math alttext=\"47 cm\"><mn>47</mn><mo>&#160;</mo><mtext>cm</mtext></math> long and the other two parts have lengths that are equal. If <math alttext=\"x\"><mi>x</mi>\n</math> represents the length, in cm, of each of the two parts of equal length, then the equation <math alttext=\"47 plus x plus x equals 115\"><mn>47</mn><mo>+</mo><mi>x</mi><mo>+</mo><mi>x</mi><mo>=</mo><mn>115</mn></math>, or <math alttext=\"47 plus 2 x equals 115\"><mn>47</mn><mo>+</mo><mn>2</mn><mi>x</mi><mo>=</mo><mn>115</mn></math>, represents this situation. Subtracting <math alttext=\"47\"><mn>47</mn>\n</math> from each side of this equation yields <math alttext=\"2 x equals 68\"><mn>2</mn><mi>x</mi><mo>=</mo><mn>68</mn></math>. Dividing each side of this equation by <math alttext=\"2\"><mn>2</mn>\n</math> yields <math alttext=\"x equals 34\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>34</mn>\n</mrow>\n</math>. Therefore, the length, in cm, of one of the two parts of equal length is <math alttext=\"34\"><mn>34</mn>\n</math>.</p>",
+    "stem": "<p style=\"text-align: left;\">A line segment that has a length of <math alttext=\"115 centimeters left parenthesis cm right parenthesis\"><mrow><mn>115</mn></mrow><mo>&#160;</mo><mtext>centimeters</mtext><mo>&#160;</mo><mo>(</mo><mtext>cm</mtext><mo>)</mo></math> is divided into three parts. One part is <math alttext=\"47 cm\"><mrow><mn>47</mn></mrow><mo>&#160;</mo><mtext>cm</mtext></math> long. The other two parts have lengths that are equal to each other. What is the length, in <math alttext=\"cm\"><mtext>cm</mtext></math>, of one of the other two parts of equal length?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "34"
+    ]
+  },
+  "createDate": 1730147357386,
+  "updateDate": 1730147357386
+}

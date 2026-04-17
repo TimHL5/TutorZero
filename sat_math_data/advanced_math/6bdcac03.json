@@ -1,0 +1,100 @@
+{
+  "questionId": "6bdcac03",
+  "external_id": "cbd984f8-3214-4590-b53a-6195d99f9659",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "2aed087d-a6b1-4d4f-80d8-a1d03d1a6b03",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "P",
+  "domain": "Advanced Math",
+  "skill_cd": "P.B.",
+  "skill_desc": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"x squared equals negative 841\"><mrow>\n\t<msup>\n\t\t<mi>x</mi>\n\t\t<mn>2</mn>\n\t</msup>\n\t<mo>=</mo>\n\t<mo>-</mo><mn>841</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">How many distinct real solutions does the given equation have?</p>",
+  "answerOptions": [
+    {
+      "id": "070ff4a7-47a8-493f-875d-a6c81ef1b97c",
+      "content": "<p>Exactly one</p>"
+    },
+    {
+      "id": "d6b47268-c76e-4247-81cc-94819e483e3e",
+      "content": "<p>Exactly two</p>"
+    },
+    {
+      "id": "f75890fb-c101-429c-8e40-1784bdd0b827",
+      "content": "<p>Infinitely many</p>"
+    },
+    {
+      "id": "1f64845e-696d-464a-ae10-7037d903b6c6",
+      "content": "<p>Zero</p>"
+    }
+  ],
+  "keys": [
+    "1f64845e-696d-464a-ae10-7037d903b6c6"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p style=\"text-align: left;\">Choice D is correct. Since the square of a real number is never negative, the given equation isn't true for any real value of <math alttext=\"x\"><mi>x</mi>\n</math>. Therefore, the given equation has zero distinct real solutions.</p>\n<p style=\"text-align: left;\">Choice A is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice B is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice C is incorrect and may result from conceptual or calculation errors.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357396,
+    "pPcc": "SAT#P",
+    "questionId": "6bdcac03",
+    "skill_cd": "P.B.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "createDate": 1730147357396,
+    "program": "SAT",
+    "primary_class_cd_desc": "Advanced Math",
+    "ibn": "",
+    "external_id": "cbd984f8-3214-4590-b53a-6195d99f9659",
+    "primary_class_cd": "P",
+    "uId": "2aed087d-a6b1-4d4f-80d8-a1d03d1a6b03",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "answerOptions": [
+      {
+        "content": "<p>Exactly one</p>",
+        "id": "070ff4a7-47a8-493f-875d-a6c81ef1b97c"
+      },
+      {
+        "content": "<p>Exactly two</p>",
+        "id": "d6b47268-c76e-4247-81cc-94819e483e3e"
+      },
+      {
+        "content": "<p>Infinitely many</p>",
+        "id": "f75890fb-c101-429c-8e40-1784bdd0b827"
+      },
+      {
+        "content": "<p>Zero</p>",
+        "id": "1f64845e-696d-464a-ae10-7037d903b6c6"
+      }
+    ],
+    "externalid": "cbd984f8-3214-4590-b53a-6195d99f9659",
+    "keys": [
+      "1f64845e-696d-464a-ae10-7037d903b6c6"
+    ],
+    "rationale": "<p style=\"text-align: left;\">Choice D is correct. Since the square of a real number is never negative, the given equation isn't true for any real value of <math alttext=\"x\"><mi>x</mi>\n</math>. Therefore, the given equation has zero distinct real solutions.</p>\n<p style=\"text-align: left;\">Choice A is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice B is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice C is incorrect and may result from conceptual or calculation errors.</p>",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"x squared equals negative 841\"><mrow>\n\t<msup>\n\t\t<mi>x</mi>\n\t\t<mn>2</mn>\n\t</msup>\n\t<mo>=</mo>\n\t<mo>-</mo><mn>841</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">How many distinct real solutions does the given equation have?</p>",
+    "type": "mcq",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "createDate": 1730147357396,
+  "updateDate": 1730147357396
+}

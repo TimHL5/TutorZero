@@ -1,0 +1,66 @@
+{
+  "questionId": "6ba39da5",
+  "external_id": "a94ddb79-a5ea-48b4-ac01-838bf92d16fb",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "5755c0cc-5202-4e0f-9d34-23d1dde4c753",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.D.",
+  "skill_desc": "Systems of two linear equations in two variables",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"2 a plus 8 b equals 198\"><mrow>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mn>2</mn>\n\t\t\t<mi>a</mi>\n\t\t</mrow>\n\t\t<mo>+</mo>\n\t\t<mrow>\n\t\t\t<mn>8</mn>\n\t\t\t<mi>b</mi>\n\t\t</mrow>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>198</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: center;\"><math alttext=\"2 a plus 4 b equals 98\"><mrow>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mn>2</mn>\n\t\t\t<mi>a</mi>\n\t\t</mrow>\n\t\t<mo>+</mo>\n\t\t<mrow>\n\t\t\t<mn>4</mn>\n\t\t\t<mi>b</mi>\n\t\t</mrow>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>98</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">The solution to the given system of equations is <math alttext=\"left parenthesis a comma b right parenthesis\"><mfenced><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow></mfenced></math>. What is the value of <math alttext=\"b\"><mi>b</mi>\n</math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "25"
+  ],
+  "correct_answer": [
+    "25"
+  ],
+  "rationale": "<p>The correct answer is <math alttext=\"25\"><mn>25</mn>\n</math>. Subtracting the second equation from the first equation in the given system of equations yields <math alttext=\"left parenthesis 2 a minus 2 a right parenthesis plus left parenthesis 8 b minus 4 b right parenthesis equals 198 minus 98\"><mfenced><mrow><mn>2</mn><mi>a</mi><mo>-</mo><mn>2</mn><mi>a</mi></mrow></mfenced><mo>+</mo><mfenced><mrow><mn>8</mn><mi>b</mi><mo>-</mo><mn>4</mn><mi>b</mi></mrow></mfenced><mo>=</mo><mn>198</mn><mo>-</mo><mn>98</mn></math>, which is equivalent to<math alttext=\"0 plus 4 b equals 100\"><mo>&nbsp;</mo><mn>0</mn><mo>+</mo><mn>4</mn><mi>b</mi><mo>=</mo><mn>100</mn></math>, or <math alttext=\"4 b equals 100\"><mn>4</mn><mi>b</mi><mo>=</mo><mn>100</mn></math>. Dividing each side of this equation by <math alttext=\"4\"><mn>4</mn>\n</math> yields <math alttext=\"b equals 25\"><mrow>\n<mi>b</mi>\n<mo>=</mo>\n<mn>25</mn>\n</mrow>\n</math>.&nbsp;</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554985,
+    "pPcc": "SAT#H",
+    "questionId": "6ba39da5",
+    "skill_cd": "H.D.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Systems of two linear equations in two variables",
+    "createDate": 1743430554985,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "a94ddb79-a5ea-48b4-ac01-838bf92d16fb",
+    "primary_class_cd": "H",
+    "uId": "5755c0cc-5202-4e0f-9d34-23d1dde4c753",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"2 a plus 8 b equals 198\"><mrow>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mn>2</mn>\n\t\t\t<mi>a</mi>\n\t\t</mrow>\n\t\t<mo>+</mo>\n\t\t<mrow>\n\t\t\t<mn>8</mn>\n\t\t\t<mi>b</mi>\n\t\t</mrow>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>198</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: center;\"><math alttext=\"2 a plus 4 b equals 98\"><mrow>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mn>2</mn>\n\t\t\t<mi>a</mi>\n\t\t</mrow>\n\t\t<mo>+</mo>\n\t\t<mrow>\n\t\t\t<mn>4</mn>\n\t\t\t<mi>b</mi>\n\t\t</mrow>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>98</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">The solution to the given system of equations is <math alttext=\"left parenthesis a comma b right parenthesis\"><mfenced><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow></mfenced></math>. What is the value of <math alttext=\"b\"><mi>b</mi>\n</math>?</p>",
+    "keys": [
+      "25"
+    ],
+    "rationale": "<p>The correct answer is <math alttext=\"25\"><mn>25</mn>\n</math>. Subtracting the second equation from the first equation in the given system of equations yields <math alttext=\"left parenthesis 2 a minus 2 a right parenthesis plus left parenthesis 8 b minus 4 b right parenthesis equals 198 minus 98\"><mfenced><mrow><mn>2</mn><mi>a</mi><mo>-</mo><mn>2</mn><mi>a</mi></mrow></mfenced><mo>+</mo><mfenced><mrow><mn>8</mn><mi>b</mi><mo>-</mo><mn>4</mn><mi>b</mi></mrow></mfenced><mo>=</mo><mn>198</mn><mo>-</mo><mn>98</mn></math>, which is equivalent to<math alttext=\"0 plus 4 b equals 100\"><mo>&nbsp;</mo><mn>0</mn><mo>+</mo><mn>4</mn><mi>b</mi><mo>=</mo><mn>100</mn></math>, or <math alttext=\"4 b equals 100\"><mn>4</mn><mi>b</mi><mo>=</mo><mn>100</mn></math>. Dividing each side of this equation by <math alttext=\"4\"><mn>4</mn>\n</math> yields <math alttext=\"b equals 25\"><mrow>\n<mi>b</mi>\n<mo>=</mo>\n<mn>25</mn>\n</mrow>\n</math>.&nbsp;</p>",
+    "externalid": "a94ddb79-a5ea-48b4-ac01-838bf92d16fb",
+    "answerOptions": [],
+    "correct_answer": [
+      "25"
+    ]
+  },
+  "createDate": 1743430554985,
+  "updateDate": 1743430554985
+}

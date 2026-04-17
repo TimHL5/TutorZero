@@ -1,0 +1,66 @@
+{
+  "questionId": "c13016f9",
+  "external_id": "f7def592-aac8-4d10-bb76-680518e870b2",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "5b815390-8d68-4f4f-946f-237d5e0e0022",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "P",
+  "domain": "Advanced Math",
+  "skill_cd": "P.C.",
+  "skill_desc": "Nonlinear functions",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The function <math alttext=\"f\"><mi>f</mi>\n</math> is defined by&nbsp;<math alttext=\"f left parenthesis x right parenthesis equals x squared plus x plus 71\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mrow><mn>71</mn></mrow></math>. What is the value of&nbsp;<math alttext=\"f left parenthesis 2 right parenthesis\"><mi>f</mi><mfenced><mn>2</mn></mfenced></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "77"
+  ],
+  "correct_answer": [
+    "77"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"77\"><mn>77</mn>\n</math>. It&rsquo;s given that the function <math alttext=\"f\"><mi>f</mi>\n</math> is defined by&nbsp;<math alttext=\"f left parenthesis x right parenthesis equals x squared plus x plus 71\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>71</mn></math>. Substituting <math alttext=\"2\"><mn>2</mn>\n</math> for <math alttext=\"x\"><mi>x</mi>\n</math> in function <math alttext=\"f\"><mi>f</mi>\n</math> yields <math alttext=\"f left parenthesis 2 right parenthesis equals left parenthesis 2 right parenthesis squared plus 2 plus 71\"><mi>f</mi><mfenced><mn>2</mn></mfenced><mo>=</mo><msup><mfenced><mn>2</mn></mfenced><mn>2</mn></msup><mo>+</mo><mn>2</mn><mo>+</mo><mn>71</mn></math>, which is equivalent to <math alttext=\"f left parenthesis 2 right parenthesis equals 4 plus 2 plus 71\"><mi>f</mi><mfenced><mn>2</mn></mfenced><mo>=</mo><mn>4</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>71</mn></math>, or <math alttext=\"f left parenthesis 2 right parenthesis equals 77\"><mi>f</mi><mfenced><mn>2</mn></mfenced><mo>=</mo><mn>77</mn></math>. Therefore, the value of <math alttext=\"f left parenthesis 2 right parenthesis\"><mi>f</mi><mfenced><mn>2</mn></mfenced></math> is <math alttext=\"77\"><mn>77</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554988,
+    "pPcc": "SAT#P",
+    "questionId": "c13016f9",
+    "skill_cd": "P.C.",
+    "score_band_range_cd": 3,
+    "skill_desc": "Nonlinear functions",
+    "createDate": 1743430554988,
+    "program": "SAT",
+    "primary_class_cd_desc": "Advanced Math",
+    "ibn": "",
+    "external_id": "f7def592-aac8-4d10-bb76-680518e870b2",
+    "primary_class_cd": "P",
+    "uId": "5b815390-8d68-4f4f-946f-237d5e0e0022",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: left;\">The function <math alttext=\"f\"><mi>f</mi>\n</math> is defined by&nbsp;<math alttext=\"f left parenthesis x right parenthesis equals x squared plus x plus 71\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mrow><mn>71</mn></mrow></math>. What is the value of&nbsp;<math alttext=\"f left parenthesis 2 right parenthesis\"><mi>f</mi><mfenced><mn>2</mn></mfenced></math>?</p>",
+    "keys": [
+      "77"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"77\"><mn>77</mn>\n</math>. It&rsquo;s given that the function <math alttext=\"f\"><mi>f</mi>\n</math> is defined by&nbsp;<math alttext=\"f left parenthesis x right parenthesis equals x squared plus x plus 71\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>71</mn></math>. Substituting <math alttext=\"2\"><mn>2</mn>\n</math> for <math alttext=\"x\"><mi>x</mi>\n</math> in function <math alttext=\"f\"><mi>f</mi>\n</math> yields <math alttext=\"f left parenthesis 2 right parenthesis equals left parenthesis 2 right parenthesis squared plus 2 plus 71\"><mi>f</mi><mfenced><mn>2</mn></mfenced><mo>=</mo><msup><mfenced><mn>2</mn></mfenced><mn>2</mn></msup><mo>+</mo><mn>2</mn><mo>+</mo><mn>71</mn></math>, which is equivalent to <math alttext=\"f left parenthesis 2 right parenthesis equals 4 plus 2 plus 71\"><mi>f</mi><mfenced><mn>2</mn></mfenced><mo>=</mo><mn>4</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>71</mn></math>, or <math alttext=\"f left parenthesis 2 right parenthesis equals 77\"><mi>f</mi><mfenced><mn>2</mn></mfenced><mo>=</mo><mn>77</mn></math>. Therefore, the value of <math alttext=\"f left parenthesis 2 right parenthesis\"><mi>f</mi><mfenced><mn>2</mn></mfenced></math> is <math alttext=\"77\"><mn>77</mn>\n</math>.</p>",
+    "externalid": "f7def592-aac8-4d10-bb76-680518e870b2",
+    "answerOptions": [],
+    "correct_answer": [
+      "77"
+    ]
+  },
+  "createDate": 1743430554988,
+  "updateDate": 1743430554988
+}

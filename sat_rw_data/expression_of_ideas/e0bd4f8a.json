@@ -1,0 +1,51 @@
+{
+  "questionId": "e0bd4f8a",
+  "external_id": "96bc2934-6a07-464c-942c-88da8921cec0",
+  "vaultid": null,
+  "uId": "02b6598d-9f36-4673-bcdc-29dde6456452",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "EOI",
+  "domain": "Expression of Ideas",
+  "skill_cd": "TRA",
+  "skill_desc": "Transitions",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "mcq",
+  "stimulus": "<p>In 1942, the 1,500-mile Alaska Highway was constructed in under nine months, largely due to the skilled work of nearly 4,000 African American soldiers from US Army engineering regiments. The soldiers&rsquo; contribution was overlooked for decades. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in 2017, lawmakers declared October 25 a day of recognition&mdash;&ldquo;Alaska Highway Day&rdquo;&mdash;for the troops who helped build this critical roadway.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "0a8818ca-213a-45bf-870f-a885dd0b9bcc",
+      "content": "<p>Lastly,</p>"
+    },
+    {
+      "id": "26636e16-9801-4a9f-a017-ffe5df006990",
+      "content": "<p>Then,</p>"
+    },
+    {
+      "id": "50a7db8a-4653-49ec-ada7-12df22c771f3",
+      "content": "<p>Similarly,</p>"
+    },
+    {
+      "id": "9b0ca8f6-35bb-4065-b46b-d1a0eb2a2deb",
+      "content": "<p>For example,</p>"
+    }
+  ],
+  "keys": [
+    "26636e16-9801-4a9f-a017-ffe5df006990"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Then\" logically signals that the event described in this sentence&mdash;lawmakers&rsquo; 2017 declaration of Alaska Highway Day&mdash;is part of a chronological sequence of events, occurring after the decades-long period in which the soldiers&rsquo; contribution was overlooked.</p><p>Choice A is incorrect because \"lastly\" illogically signals that this sentence presents the last of a series of points or reasons. Instead, it describes a later event occurring in a chronological sequence of events. Choice C is incorrect because \"similarly\" illogically signals that the information in this sentence is similar to the previous information about the soldiers&rsquo; contribution being overlooked for decades. Instead, it describes an event occurring after that decades-long period. Choice D is incorrect because \"for example\" illogically signals that this sentence provides an example illustrating the previous information about the soldiers&rsquo; contribution being overlooked for decades. Instead, it describes an event occurring after that decades-long period.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323044,
+  "updateDate": 1730147323044
+}

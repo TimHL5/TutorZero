@@ -1,0 +1,69 @@
+{
+  "questionId": "c1bd5301",
+  "external_id": "ef6e2e6b-9410-44c5-86c6-4cce2bdace80",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "c21c9a10-31e7-49d3-b694-334f027d25cf",
+  "uId": "2bac1200-915b-4edb-9aa9-c07cb8d30450",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.B.",
+  "skill_desc": "Linear functions",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A model predicts that a certain animal weighed <math alttext=\"241\"><mn>241</mn>\n</math> pounds when it was born and that the animal gained <math alttext=\"3\"><mn>3</mn>\n</math> pounds per day in its first year of life. This model is defined by an equation in the form <math alttext=\"f left parenthesis x right parenthesis equals a plus b x\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mi>a</mi><mo>+</mo><mi>b</mi><mi>x</mi></math>, where <math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math> is the predicted weight, in pounds, of the animal <math alttext=\"x\"><mi>x</mi>\n</math> days after it was born, and <math alttext=\"a\"><mi>a</mi>\n</math> and <math alttext=\"b\"><mi>b</mi>\n</math> are constants. What is the value of <math alttext=\"a\"><mi>a</mi>\n</math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "241"
+  ],
+  "correct_answer": [
+    "241"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"241\"><mn>241</mn>\n</math>. For a certain animal, it's given that a model predicts the animal weighed <math alttext=\"241\"><mn>241</mn>\n</math> pounds when it was born and gained <math alttext=\"3\"><mn>3</mn>\n</math> pounds per day in its first year of life. It's also given that this model is defined by an equation in the form <math alttext=\"f left parenthesis x right parenthesis equals a plus b x\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mi>a</mi><mo>+</mo><mi>b</mi><mi>x</mi></math>, where <math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math> is the predicted weight, in pounds, of the animal <math alttext=\"x\"><mi>x</mi>\n</math> days after it was born, and <math alttext=\"a\"><mi>a</mi>\n</math> and <math alttext=\"b\"><mi>b</mi>\n</math> are constants. It follows that <math alttext=\"a\"><mi>a</mi>\n</math> represents the predicted weight, in pounds, of the animal when it was born and <math alttext=\"b\"><mi>b</mi>\n</math> represents the predicted rate of weight gain, in pounds per day, in its first year of life. Thus, the value of <math alttext=\"a\"><mi>a</mi>\n</math> is <math alttext=\"241\"><mn>241</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959810,
+    "pPcc": "SAT#H",
+    "questionId": "c1bd5301",
+    "skill_cd": "H.B.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Linear functions",
+    "createDate": 1691007959810,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": null,
+    "external_id": "ef6e2e6b-9410-44c5-86c6-4cce2bdace80",
+    "primary_class_cd": "H",
+    "uId": "2bac1200-915b-4edb-9aa9-c07cb8d30450",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "keys": [
+      "241"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"241\"><mn>241</mn>\n</math>. For a certain animal, it's given that a model predicts the animal weighed <math alttext=\"241\"><mn>241</mn>\n</math> pounds when it was born and gained <math alttext=\"3\"><mn>3</mn>\n</math> pounds per day in its first year of life. It's also given that this model is defined by an equation in the form <math alttext=\"f left parenthesis x right parenthesis equals a plus b x\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mi>a</mi><mo>+</mo><mi>b</mi><mi>x</mi></math>, where <math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math> is the predicted weight, in pounds, of the animal <math alttext=\"x\"><mi>x</mi>\n</math> days after it was born, and <math alttext=\"a\"><mi>a</mi>\n</math> and <math alttext=\"b\"><mi>b</mi>\n</math> are constants. It follows that <math alttext=\"a\"><mi>a</mi>\n</math> represents the predicted weight, in pounds, of the animal when it was born and <math alttext=\"b\"><mi>b</mi>\n</math> represents the predicted rate of weight gain, in pounds per day, in its first year of life. Thus, the value of <math alttext=\"a\"><mi>a</mi>\n</math> is <math alttext=\"241\"><mn>241</mn>\n</math>.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">A model predicts that a certain animal weighed <math alttext=\"241\"><mn>241</mn>\n</math> pounds when it was born and that the animal gained <math alttext=\"3\"><mn>3</mn>\n</math> pounds per day in its first year of life. This model is defined by an equation in the form <math alttext=\"f left parenthesis x right parenthesis equals a plus b x\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mi>a</mi><mo>+</mo><mi>b</mi><mi>x</mi></math>, where <math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math> is the predicted weight, in pounds, of the animal <math alttext=\"x\"><mi>x</mi>\n</math> days after it was born, and <math alttext=\"a\"><mi>a</mi>\n</math> and <math alttext=\"b\"><mi>b</mi>\n</math> are constants. What is the value of <math alttext=\"a\"><mi>a</mi>\n</math>?</p>",
+    "externalid": "ef6e2e6b-9410-44c5-86c6-4cce2bdace80",
+    "templateid": "00cb13b6-12ad-4af1-ab73-a0706244ceab",
+    "vaultid": "c21c9a10-31e7-49d3-b694-334f027d25cf",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "241"
+    ]
+  },
+  "createDate": 1691007959810,
+  "updateDate": 1691007959810
+}

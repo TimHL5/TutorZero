@@ -1,0 +1,51 @@
+{
+  "questionId": "60a4c088",
+  "external_id": "2146536a-805d-44d0-907d-c92abeb46074",
+  "vaultid": null,
+  "uId": "753ca994-2e3b-440d-9956-2ec6d3ee50b2",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "mcq",
+  "stimulus": "<p>What makes the theremin a unique musical instrument? You play it without touching it. When you place your <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the pitch will shift as your hands move through the air.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "dc3060af-d2ce-45b3-b70f-042f411743d4",
+      "content": "<p>hand&rsquo;s between the two antenna&rsquo;s,</p>"
+    },
+    {
+      "id": "6ba6a568-c218-4824-8a87-769a4874beda",
+      "content": "<p>hands between the two antennas,</p>"
+    },
+    {
+      "id": "1a7c3bf3-1582-46be-a3ba-9c7639d2f342",
+      "content": "<p>hands&rsquo; between the two antennas&rsquo;,</p>"
+    },
+    {
+      "id": "5cc06b5c-999a-4ffa-a852-10c9ed905330",
+      "content": "<p>hands&rsquo; between the two antennas,</p>"
+    }
+  ],
+  "keys": [
+    "6ba6a568-c218-4824-8a87-769a4874beda"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of plural nouns in a sentence. The plural noun \"hands\" and the plural noun \"antennas\" correctly indicate that two hands are placed between two antennas when playing the theremin.</p><p>Choice A is incorrect because the context requires the plural nouns \"hands\" and \"antennas,\" not the singular possessive nouns \"hand&rsquo;s\" and \"antenna&rsquo;s.\" Choice C is incorrect because the context requires the plural nouns \"hands\" and \"antennas,\" not the plural possessive nouns \"hands&rsquo;\" and \"antennas&rsquo;.\" Choice D is incorrect because the context requires the plural noun \"hands,\" not the plural possessive noun \"hands&rsquo;.\"</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323048,
+  "updateDate": 1730147323048
+}

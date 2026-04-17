@@ -5,8 +5,6 @@ import { cn } from "@/react-app/lib/utils";
 import { ExplanationChat } from "./ExplanationChat";
 import { MathText } from "@/react-app/components/ui/MathText";
 import { ChatMarkdown } from "@/react-app/components/ui/ChatMarkdown";
-import { useAuth } from "@/react-app/lib/AuthProvider";
-import { Link } from "react-router";
 
 interface FeedbackCardProps {
   question: Question;
@@ -22,10 +20,6 @@ const EXPLANATION_STYLES = [
 ];
 
 export function FeedbackCard({ question, selectedIndex, isCorrect }: FeedbackCardProps) {
-  const { user } = useAuth();
-  const profile = user?.profile;
-  const isPro = profile?.subscriptionTier === "pro";
-
   const selectedLetter = String.fromCharCode(65 + selectedIndex);
   const correctLetter = String.fromCharCode(65 + question.correctIndex);
 
@@ -47,7 +41,6 @@ export function FeedbackCard({ question, selectedIndex, isCorrect }: FeedbackCar
   };
 
   const fetchAlternateExplanation = async (style: string) => {
-    if (!isPro) return;
     if (activeStyle === style && alternateExplanation) {
       // Toggle off if same style clicked
       setAlternateExplanation(null);
@@ -204,76 +197,54 @@ export function FeedbackCard({ question, selectedIndex, isCorrect }: FeedbackCar
         />
       </div>
 
-      {/* Explain Differently - Pro Feature */}
+      {/* Explain Differently — available to everyone. */}
       {!isCorrect && (
         <div className="border border-tz-gray-200 rounded-lg bg-white overflow-hidden">
-          <div className="px-4 py-3 bg-tz-off-white border-b border-tz-gray-200 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-tz-orange" />
-              <span className="text-sm font-medium text-tz-navy">Explain Differently</span>
-            </div>
-            {!isPro && (
-              <span className="text-xs bg-orange-100 text-tz-orange px-2 py-0.5 rounded-full font-medium">
-                Pro
-              </span>
-            )}
+          <div className="px-4 py-3 bg-tz-off-white border-b border-tz-gray-200 flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-tz-orange" />
+            <span className="text-sm font-medium text-tz-navy">Explain Differently</span>
           </div>
 
-          {isPro ? (
-            <div className="p-4">
-              <p className="text-xs text-tz-gray-400 mb-3">
-                Still confused? Try a different explanation style:
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {EXPLANATION_STYLES.map((style) => (
-                  <button
-                    key={style.id}
-                    onClick={() => fetchAlternateExplanation(style.id)}
-                    disabled={isLoadingAlternate && activeStyle !== style.id}
-                    className={cn(
-                      "px-3 py-2 rounded-lg text-sm font-medium transition-all",
-                      activeStyle === style.id
-                        ? "bg-tz-blue text-white"
-                        : "bg-tz-gray-100 text-tz-gray-600 hover:bg-tz-gray-200"
-                    )}
-                  >
-                    {isLoadingAlternate && activeStyle === style.id ? (
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                    ) : (
-                      style.label
-                    )}
-                  </button>
-                ))}
-              </div>
+          <div className="p-4">
+            <p className="text-xs text-tz-gray-400 mb-3">
+              Still confused? Try a different explanation style:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {EXPLANATION_STYLES.map((style) => (
+                <button
+                  key={style.id}
+                  onClick={() => fetchAlternateExplanation(style.id)}
+                  disabled={isLoadingAlternate && activeStyle !== style.id}
+                  className={cn(
+                    "px-3 py-2 rounded-lg text-sm font-medium transition-all",
+                    activeStyle === style.id
+                      ? "bg-tz-blue text-white"
+                      : "bg-tz-gray-100 text-tz-gray-600 hover:bg-tz-gray-200"
+                  )}
+                >
+                  {isLoadingAlternate && activeStyle === style.id ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    style.label
+                  )}
+                </button>
+              ))}
+            </div>
 
-              {alternateExplanation && (
-                <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg animate-in fade-in duration-300">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Sparkles className="w-4 h-4 text-tz-blue" />
-                    <span className="text-sm font-medium text-tz-navy">
-                      {EXPLANATION_STYLES.find(s => s.id === alternateExplanation.style)?.label} Explanation
-                    </span>
-                  </div>
-                  <div className="text-sm text-blue-800">
-                    <ChatMarkdown content={alternateExplanation.content} />
-                  </div>
+            {alternateExplanation && (
+              <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg animate-in fade-in duration-300">
+                <div className="flex items-center gap-2 mb-2">
+                  <Sparkles className="w-4 h-4 text-tz-blue" />
+                  <span className="text-sm font-medium text-tz-navy">
+                    {EXPLANATION_STYLES.find(s => s.id === alternateExplanation.style)?.label} Explanation
+                  </span>
                 </div>
-              )}
-            </div>
-          ) : (
-            <div className="p-4 text-center">
-              <p className="text-sm text-tz-gray-600 mb-3">
-                Get explanations tailored to how you learn best—visual, simple, technical, or through analogies.
-              </p>
-              <Link
-                to="/pricing"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-tz-orange text-white text-sm font-medium rounded-lg hover:bg-orange-600 transition-colors"
-              >
-                <Sparkles className="w-4 h-4" />
-                Upgrade to Pro
-              </Link>
-            </div>
-          )}
+                <div className="text-sm text-blue-800">
+                  <ChatMarkdown content={alternateExplanation.content} />
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       )}
 

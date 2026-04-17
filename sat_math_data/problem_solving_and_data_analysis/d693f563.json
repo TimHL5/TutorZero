@@ -1,0 +1,69 @@
+{
+  "questionId": "d693f563",
+  "external_id": "47d32f6a-d945-4d6e-9f0f-18a983b72be4",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "ba9043d2-69bd-437a-9c81-febd61cc891a",
+  "uId": "3cc34195-16f7-4655-82eb-30834118dfb7",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.B.",
+  "skill_desc": "Percentages",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Last year, Cedric had <math alttext=\"35\"><mn>35</mn>\n</math> plants in his garden. This year, the number of plants in Cedric&rsquo;s garden is <math alttext=\"60 percent sign\"><mn>60</mn>\n<mo>%</mo></math> greater than the number of plants in his garden last year. How many plants does Cedric have in his garden this year?</p>",
+  "answerOptions": [],
+  "keys": [
+    "56"
+  ],
+  "correct_answer": [
+    "56"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"56\"><mn>56</mn>\n</math>. It&rsquo;s given that Cedric had <math alttext=\"35\"><mn>35</mn>\n</math> plants in his garden last year and that the number of plants in Cedric's garden this year is <math alttext=\"60 percent sign\"><mn>60</mn><mo>%</mo></math> greater than the number of plants in his garden last year. It follows that the number of plants in Cedric&rsquo;s garden this year is <math alttext=\"35\"><mn>35</mn>\n</math> plus <math alttext=\"60 percent sign\"><mn>60</mn><mo>%</mo></math> of <math alttext=\"35\"><mn>35</mn>\n</math>, which is equal to <math alttext=\"35 plus 35 left parenthesis StartFraction 60 Over 100 EndFraction right parenthesis\"><mn>35</mn><mo>+</mo><mn>35</mn><mfenced><mfrac><mn>60</mn><mn>100</mn></mfrac></mfenced></math>, or <math alttext=\"35 plus 35 left parenthesis 0.6 right parenthesis\"><mn>35</mn><mo>+</mo><mn>35</mn><mfenced><mn>0.6</mn></mfenced></math>. This expression is equivalent to <math alttext=\"35 plus 21\"><mn>35</mn><mo>+</mo><mn>21</mn></math>, or <math alttext=\"56\"><mn>56</mn>\n</math>. Therefore, Cedric has <math alttext=\"56\"><mn>56</mn>\n</math> plants in his garden this year.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959831,
+    "pPcc": "SAT#Q",
+    "questionId": "d693f563",
+    "skill_cd": "Q.B.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Percentages",
+    "createDate": 1691007959831,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": null,
+    "external_id": "47d32f6a-d945-4d6e-9f0f-18a983b72be4",
+    "primary_class_cd": "Q",
+    "uId": "3cc34195-16f7-4655-82eb-30834118dfb7",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "keys": [
+      "56"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"56\"><mn>56</mn>\n</math>. It&rsquo;s given that Cedric had <math alttext=\"35\"><mn>35</mn>\n</math> plants in his garden last year and that the number of plants in Cedric's garden this year is <math alttext=\"60 percent sign\"><mn>60</mn><mo>%</mo></math> greater than the number of plants in his garden last year. It follows that the number of plants in Cedric&rsquo;s garden this year is <math alttext=\"35\"><mn>35</mn>\n</math> plus <math alttext=\"60 percent sign\"><mn>60</mn><mo>%</mo></math> of <math alttext=\"35\"><mn>35</mn>\n</math>, which is equal to <math alttext=\"35 plus 35 left parenthesis StartFraction 60 Over 100 EndFraction right parenthesis\"><mn>35</mn><mo>+</mo><mn>35</mn><mfenced><mfrac><mn>60</mn><mn>100</mn></mfrac></mfenced></math>, or <math alttext=\"35 plus 35 left parenthesis 0.6 right parenthesis\"><mn>35</mn><mo>+</mo><mn>35</mn><mfenced><mn>0.6</mn></mfenced></math>. This expression is equivalent to <math alttext=\"35 plus 21\"><mn>35</mn><mo>+</mo><mn>21</mn></math>, or <math alttext=\"56\"><mn>56</mn>\n</math>. Therefore, Cedric has <math alttext=\"56\"><mn>56</mn>\n</math> plants in his garden this year.</p>",
+    "origin": "manifold",
+    "stem": "<p>Last year, Cedric had <math alttext=\"35\"><mn>35</mn>\n</math> plants in his garden. This year, the number of plants in Cedric&rsquo;s garden is <math alttext=\"60 percent sign\"><mn>60</mn>\n<mo>%</mo></math> greater than the number of plants in his garden last year. How many plants does Cedric have in his garden this year?</p>",
+    "externalid": "47d32f6a-d945-4d6e-9f0f-18a983b72be4",
+    "templateid": "c3dc8198-475b-4689-9504-213ed97ce1b8",
+    "vaultid": "ba9043d2-69bd-437a-9c81-febd61cc891a",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "56"
+    ]
+  },
+  "createDate": 1691007959831,
+  "updateDate": 1691007959831
+}

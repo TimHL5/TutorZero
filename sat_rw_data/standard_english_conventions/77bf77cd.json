@@ -1,0 +1,51 @@
+{
+  "questionId": "77bf77cd",
+  "external_id": "b426ef5f-b7cb-4486-bd1e-c1576e4ef344",
+  "vaultid": "a2555bb8-a0fa-458f-bfb0-b2099c413fb9",
+  "uId": "298d7f81-d77c-4992-bea4-9d8e0c2b82b1",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": "<p>Farouk El-Baz, a geologist and space scientist, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> part of the team that selected the lunar landing sites for the Apollo program during the 1960s and 1970s.&nbsp;</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a5a54cf8-21b4-4b93-bd9f-41a768b77772",
+      "content": "<p>are</p>"
+    },
+    {
+      "id": "9d6b1c27-7407-4477-8bdd-50bdda545fe9",
+      "content": "<p>was</p>"
+    },
+    {
+      "id": "d093713f-38b5-46c9-bd49-2817803a2aa4",
+      "content": "<p>have been</p>"
+    },
+    {
+      "id": "6f1dd18a-ed2f-460a-80cc-0f59aa64e21c",
+      "content": "<p>were</p>"
+    }
+  ],
+  "keys": [
+    "9d6b1c27-7407-4477-8bdd-50bdda545fe9"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb \"was\" agrees in number with the singular subject \"Farouk El-Baz.\"</p><p>Choice A is incorrect because the plural verb \"are\" doesn&rsquo;t agree in number with the singular subject \"Farouk El-Baz.\" Choice C is incorrect because the plural verb \"have been\" doesn&rsquo;t agree in number with the singular subject \"Farouk El-Baz.\" Choice D is incorrect because the plural verb \"were\" doesn&rsquo;t agree in number with the singular subject \"Farouk El-Baz.\"</p>",
+  "parenttemplatename": "OSP-747-SEC",
+  "parenttemplateid": "",
+  "templateclusterid": "85261cf4-3aa7-4a0f-a6a1-661f590b9897",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959350,
+  "updateDate": 1691007959350
+}

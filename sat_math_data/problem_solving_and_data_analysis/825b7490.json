@@ -1,0 +1,66 @@
+{
+  "questionId": "825b7490",
+  "external_id": "e7ba7b4b-ddc3-498e-9508-402688a85aef",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "0b4abda1-4ec2-457b-949a-7f7808f87d98",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.A.",
+  "skill_desc": "Ratios, rates, proportional relationships, and units",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The ratio <math alttext=\"140\"><mn>140</mn>\n</math> to <math alttext=\"m\"><mi>m</mi>\n</math> is equivalent to the ratio <math alttext=\"4\"><mn>4</mn>\n</math> to <math alttext=\"28\"><mn>28</mn>\n</math>. What is the value of <math alttext=\"m\"><mi>m</mi>\n</math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "980"
+  ],
+  "correct_answer": [
+    "980"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"980\"><mn>980</mn>\n</math>. It's given that the ratio <math alttext=\"140\"><mn>140</mn>\n</math> to <math alttext=\"m\"><mi>m</mi>\n</math> is equivalent to the ratio <math alttext=\"4\"><mn>4</mn>\n</math> to <math alttext=\"28\"><mn>28</mn>\n</math>. Therefore, the value of <math alttext=\"m\"><mi>m</mi>\n</math> can be found by solving the equation <math alttext=\"StartFraction 140 Over m EndFraction equals four twenty eighths\"><mfrac><mn>140</mn><mi>m</mi></mfrac><mo>=</mo><mfrac><mn>4</mn><mn>28</mn></mfrac></math>. Multiplying each side of this equation by <math alttext=\"m\"><mi>m</mi>\n</math> yields&nbsp;<math alttext=\"140 equals StartFraction 4 m Over 28 EndFraction\"><mn>140</mn><mo>=</mo><mfrac><mrow><mn>4</mn><mi>m</mi></mrow><mn>28</mn></mfrac></math>. Multiplying each side of this equation by <math alttext=\"28\"><mn>28</mn>\n</math> yields <math alttext=\"3,920 equals 4 m\"><mrow>\n\t<mn>3,920</mn>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>4</mn>\n\t\t<mi>m</mi>\n\t</mrow>\n</mrow>\n</math>. Dividing each side of this equation by <math alttext=\"4\"><mn>4</mn>\n</math> yields <math alttext=\"980 equals m\"><mrow>\n\t<mn>980</mn>\n\t<mo>=</mo>\n\t<mi>m</mi>\n</mrow>\n</math>. Therefore, the value of <math alttext=\"m\"><mi>m</mi>\n</math> is <math alttext=\"980\"><mn>980</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357402,
+    "pPcc": "SAT#Q",
+    "questionId": "825b7490",
+    "skill_cd": "Q.A.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Ratios, rates, proportional relationships, and units",
+    "createDate": 1730147357402,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "e7ba7b4b-ddc3-498e-9508-402688a85aef",
+    "primary_class_cd": "Q",
+    "uId": "0b4abda1-4ec2-457b-949a-7f7808f87d98",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "e7ba7b4b-ddc3-498e-9508-402688a85aef",
+    "keys": [
+      "980"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"980\"><mn>980</mn>\n</math>. It's given that the ratio <math alttext=\"140\"><mn>140</mn>\n</math> to <math alttext=\"m\"><mi>m</mi>\n</math> is equivalent to the ratio <math alttext=\"4\"><mn>4</mn>\n</math> to <math alttext=\"28\"><mn>28</mn>\n</math>. Therefore, the value of <math alttext=\"m\"><mi>m</mi>\n</math> can be found by solving the equation <math alttext=\"StartFraction 140 Over m EndFraction equals four twenty eighths\"><mfrac><mn>140</mn><mi>m</mi></mfrac><mo>=</mo><mfrac><mn>4</mn><mn>28</mn></mfrac></math>. Multiplying each side of this equation by <math alttext=\"m\"><mi>m</mi>\n</math> yields&nbsp;<math alttext=\"140 equals StartFraction 4 m Over 28 EndFraction\"><mn>140</mn><mo>=</mo><mfrac><mrow><mn>4</mn><mi>m</mi></mrow><mn>28</mn></mfrac></math>. Multiplying each side of this equation by <math alttext=\"28\"><mn>28</mn>\n</math> yields <math alttext=\"3,920 equals 4 m\"><mrow>\n\t<mn>3,920</mn>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>4</mn>\n\t\t<mi>m</mi>\n\t</mrow>\n</mrow>\n</math>. Dividing each side of this equation by <math alttext=\"4\"><mn>4</mn>\n</math> yields <math alttext=\"980 equals m\"><mrow>\n\t<mn>980</mn>\n\t<mo>=</mo>\n\t<mi>m</mi>\n</mrow>\n</math>. Therefore, the value of <math alttext=\"m\"><mi>m</mi>\n</math> is <math alttext=\"980\"><mn>980</mn>\n</math>.</p>",
+    "stem": "<p style=\"text-align: left;\">The ratio <math alttext=\"140\"><mn>140</mn>\n</math> to <math alttext=\"m\"><mi>m</mi>\n</math> is equivalent to the ratio <math alttext=\"4\"><mn>4</mn>\n</math> to <math alttext=\"28\"><mn>28</mn>\n</math>. What is the value of <math alttext=\"m\"><mi>m</mi>\n</math>?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "980"
+    ]
+  },
+  "createDate": 1730147357402,
+  "updateDate": 1730147357402
+}

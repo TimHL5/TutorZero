@@ -1,0 +1,51 @@
+{
+  "questionId": "fa014d2d",
+  "external_id": "795e9067-ca0e-49c6-841d-5f4f976b3296",
+  "vaultid": null,
+  "uId": "00980503-cf22-452c-9317-058a5a7cc5d7",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "CAS",
+  "domain": "Craft and Structure",
+  "skill_cd": "WIC",
+  "skill_desc": "Words in Context",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "mcq",
+  "stimulus": "<p>The invention in 1958 of the integrated circuit (or microchip) radically altered the semiconductor industry. In fact, some historians argue that it fundamentally <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the industry by enabling it to take advantage of mass production methods for the first time.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "6a089008-2131-4afc-8924-ef1abcab2069",
+      "content": "<p>overwhelmed</p>"
+    },
+    {
+      "id": "1ab78f3f-f70b-4cde-8aee-2809fa1d0ef8",
+      "content": "<p>bypassed</p>"
+    },
+    {
+      "id": "18832e40-b081-46b2-868d-db7ff64e7256",
+      "content": "<p>obstructed</p>"
+    },
+    {
+      "id": "309561ac-6c63-4cf5-83b5-4e7ea5ec9b47",
+      "content": "<p>transformed</p>"
+    }
+  ],
+  "keys": [
+    "309561ac-6c63-4cf5-83b5-4e7ea5ec9b47"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer because it most logically completes the text&rsquo;s discussion of the invention of the integrated circuit. As used in this context, \"transformed\" means substantially changed in some way. The text states that the invention radically altered the semiconductor industry, with some historians claiming that it had a fundamental effect on the industry by allowing for mass production for the first time. This context conveys that the invention of the integrated circuit transformed the semiconductor industry.</p><p>Choice A is incorrect. Although the text indicates that the invention of the integrated circuit significantly affected (\"radically altered\") the semiconductor industry, it doesn&rsquo;t indicate that the invention \"overwhelmed\" the industry, which in this context would mean that it overcame the industry such that the industry struggled or was defeated. Instead, the text conveys that the invention&rsquo;s effect was positive, since it allowed the semiconductor industry to begin making use of mass production methods. Choice B is incorrect because it wouldn&rsquo;t make sense in context to say that the invention of the integrated circuit \"bypassed\" the semiconductor industry, which would mean it intentionally avoided the industry. The text indicates that the invention directly affected the semiconductor industry, since it made it possible for the industry to begin engaging in mass production methods. Choice C is incorrect because the text doesn&rsquo;t indicate that the invention of the integrated circuit \"obstructed\" the semiconductor industry, which would mean that it blocked or hindered the industry in some way. Instead, the text indicates that the invention&rsquo;s effect was positive, since it made it possible for the semiconductor industry to begin engaging in mass production methods.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323041,
+  "updateDate": 1730147323041
+}

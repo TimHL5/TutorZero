@@ -1,0 +1,66 @@
+{
+  "questionId": "73b3b7d8",
+  "external_id": "82f7e038-e8ce-4d33-b043-0d0d68435a80",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "ff794b1f-363f-4059-ac24-5780d9ea8df2",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.D.",
+  "skill_desc": "Systems of two linear equations in two variables",
+  "difficulty": "H",
+  "score_band_range_cd": 6,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"5 y equals 10 x plus 11\"><mrow>\n\t<mrow>\n\t\t<mn>5</mn>\n\t\t<mi>y</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mn>10</mn>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t\t<mo>+</mo>\n\t\t<mn>11</mn>\n\t</mrow>\n</mrow>\n</math></p>\n<p style=\"text-align: center;\"><math alttext=\"minus 5 y equals 5 x minus 21\"><mrow>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mn>5</mn>\n\t\t<mi>y</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mn>5</mn>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t\t<mo>-</mo>\n\t\t<mn>21</mn>\n\t</mrow>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">The solution to the given system of equations is <math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math alttext=\"30 x\"><mrow>\n\t<mn>30</mn>\n\t<mi>x</mi>\n</mrow>\n</math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "20"
+  ],
+  "correct_answer": [
+    "20"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"20\"><mn>20</mn>\n</math>. Adding the first equation to the second equation in the given system yields <math alttext=\"5 y minus 5 y equals 10 x plus 5 x plus 11 minus 21\"><mn>5</mn><mi>y</mi><mo>-</mo><mn>5</mn><mi>y</mi><mo>=</mo><mn>10</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>11</mn><mo>-</mo><mn>21</mn></math>, or <math alttext=\"0 equals 15 x minus 10\"><mn>0</mn><mo>=</mo><mn>15</mn><mi>x</mi><mo>-</mo><mn>10</mn></math>. Adding <math alttext=\"10\"><mn>10</mn>\n</math> to both sides of this equation yields <math alttext=\"10 equals 15 x\"><mn>10</mn><mo>=</mo><mn>15</mn><mi>x</mi></math>. Multiplying both sides of this equation by <math alttext=\"2\"><mn>2</mn>\n</math> yields <math alttext=\"20 equals 30 x\"><mn>20</mn><mo>=</mo><mn>30</mn><mi>x</mi></math>. Therefore, the value of <math alttext=\"30 x\"><mrow>\n\t<mn>30</mn>\n\t<mi>x</mi>\n</mrow>\n</math> is <math alttext=\"20\"><mn>20</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357392,
+    "pPcc": "SAT#H",
+    "questionId": "73b3b7d8",
+    "skill_cd": "H.D.",
+    "score_band_range_cd": 6,
+    "skill_desc": "Systems of two linear equations in two variables",
+    "createDate": 1730147357392,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "82f7e038-e8ce-4d33-b043-0d0d68435a80",
+    "primary_class_cd": "H",
+    "uId": "ff794b1f-363f-4059-ac24-5780d9ea8df2",
+    "difficulty": "H"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "82f7e038-e8ce-4d33-b043-0d0d68435a80",
+    "keys": [
+      "20"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"20\"><mn>20</mn>\n</math>. Adding the first equation to the second equation in the given system yields <math alttext=\"5 y minus 5 y equals 10 x plus 5 x plus 11 minus 21\"><mn>5</mn><mi>y</mi><mo>-</mo><mn>5</mn><mi>y</mi><mo>=</mo><mn>10</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>11</mn><mo>-</mo><mn>21</mn></math>, or <math alttext=\"0 equals 15 x minus 10\"><mn>0</mn><mo>=</mo><mn>15</mn><mi>x</mi><mo>-</mo><mn>10</mn></math>. Adding <math alttext=\"10\"><mn>10</mn>\n</math> to both sides of this equation yields <math alttext=\"10 equals 15 x\"><mn>10</mn><mo>=</mo><mn>15</mn><mi>x</mi></math>. Multiplying both sides of this equation by <math alttext=\"2\"><mn>2</mn>\n</math> yields <math alttext=\"20 equals 30 x\"><mn>20</mn><mo>=</mo><mn>30</mn><mi>x</mi></math>. Therefore, the value of <math alttext=\"30 x\"><mrow>\n\t<mn>30</mn>\n\t<mi>x</mi>\n</mrow>\n</math> is <math alttext=\"20\"><mn>20</mn>\n</math>.</p>",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"5 y equals 10 x plus 11\"><mrow>\n\t<mrow>\n\t\t<mn>5</mn>\n\t\t<mi>y</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mn>10</mn>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t\t<mo>+</mo>\n\t\t<mn>11</mn>\n\t</mrow>\n</mrow>\n</math></p>\n<p style=\"text-align: center;\"><math alttext=\"minus 5 y equals 5 x minus 21\"><mrow>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mn>5</mn>\n\t\t<mi>y</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mn>5</mn>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t\t<mo>-</mo>\n\t\t<mn>21</mn>\n\t</mrow>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">The solution to the given system of equations is <math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math alttext=\"30 x\"><mrow>\n\t<mn>30</mn>\n\t<mi>x</mi>\n</mrow>\n</math>?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "20"
+    ]
+  },
+  "createDate": 1730147357392,
+  "updateDate": 1730147357392
+}

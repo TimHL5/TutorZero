@@ -1,0 +1,51 @@
+{
+  "questionId": "60917233",
+  "external_id": "c8726d4a-0baa-4c7c-a1b5-9351e4a4832d",
+  "vaultid": null,
+  "uId": "0fa08ad7-874f-488d-a5ff-8ad52fcfb0ef",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "EOI",
+  "domain": "Expression of Ideas",
+  "skill_cd": "TRA",
+  "skill_desc": "Transitions",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "mcq",
+  "stimulus": "<p>In the 1880s, inventor Lewis Latimer improved upon Thomas Edison&rsquo;s design for the electric light bulb. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Latimer made the light bulb more durable by placing cardboard around its carbon filament. With this innovation, Latimer became the first Black inventor to contribute to the electrification of the world.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "f37d7c96-3688-42a7-8738-98cfd36098db",
+      "content": "<p>Soon,&nbsp;</p>"
+    },
+    {
+      "id": "a01e937f-ebdf-4946-bb6e-001fb503dfc6",
+      "content": "<p>Regardless,&nbsp;</p>"
+    },
+    {
+      "id": "e3749992-5ddb-4ef9-bd1a-28e2fc2605c0",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "5aa790ab-99b4-4893-8bd6-d703019a7884",
+      "content": "<p>Specifically,</p>"
+    }
+  ],
+  "keys": [
+    "5aa790ab-99b4-4893-8bd6-d703019a7884"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Specifically\" logically signals that the information in this sentence&mdash;Latimer making the light bulb more durable&mdash;provides a specific detail elaborating on the more general claim in the previous sentence that Latimer improved the light bulb.</p><p>Choice A is incorrect because \"soon\" illogically signals that the information in this sentence occurred shortly after Latimer improved the light bulb. Instead, Latimer making the bulb more durable was the specific improvement. Choice B is incorrect because \"regardless\" illogically signals that the information in this sentence is true despite the previous claim about Latimer. Instead, the information about Latimer making the bulb more durable provides a specific detail elaborating on that claim. Choice C is incorrect because \"however\" illogically signals that the information in this sentence contrasts with the previous claim about Latimer. Instead, the information about Latimer making the bulb more durable provides a specific detail elaborating on that claim.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323043,
+  "updateDate": 1730147323043
+}

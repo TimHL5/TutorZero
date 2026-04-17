@@ -1,0 +1,51 @@
+{
+  "questionId": "cd4b1a7e",
+  "external_id": "aca54523-e3d5-4486-aac0-0b3b70e3ecbe",
+  "vaultid": null,
+  "uId": "73cdbe43-fa65-4782-a824-1cf913ea6d0b",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": "<p>How did whales, once no bigger than seals, evolve to become the largest animals on Earth? Brazilian biologist Mariana Nery believes the answer might be found in whales&rsquo; DNA. In January 2023, Nery and her colleagues <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a study showing changes over time in four whale genes associated with body size.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "664e7eb6-c566-45e9-affb-6ca2036f8a9a",
+      "content": "<p>published</p>"
+    },
+    {
+      "id": "740e8d59-795d-4dcd-9bed-26ff4679c9c5",
+      "content": "<p>publishing</p>"
+    },
+    {
+      "id": "641acfeb-420f-4320-9885-302818a1b88f",
+      "content": "<p>having published</p>"
+    },
+    {
+      "id": "c917b569-b893-4649-b2d4-9d113a008396",
+      "content": "<p>to publish</p>"
+    }
+  ],
+  "keys": [
+    "664e7eb6-c566-45e9-affb-6ca2036f8a9a"
+  ],
+  "correct_answer": [
+    "A"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of verb forms within a sentence. A main clause requires a finite (tensed) verb to perform the action of the subject (in this case, Nery and her colleagues), and this choice supplies the finite past tense verb \"published\" to indicate that these biologists shared their findings about changes in whale genes associated with body size.</p><p>Choice B is incorrect because it results in an ungrammatical sentence. The nonfinite participle \"publishing\" doesn&rsquo;t supply the main clause with a finite verb. Choice C is incorrect because it results in an ungrammatical sentence. The nonfinite participle \"having published\" doesn&rsquo;t supply the main clause with a finite verb. Choice D is incorrect because it results in an ungrammatical sentence. The nonfinite to-infinitive \"to publish\" doesn&rsquo;t supply the main clause with a finite verb.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323049,
+  "updateDate": 1730147323049
+}

@@ -1,0 +1,66 @@
+{
+  "questionId": "f2b63f49",
+  "external_id": "55b379da-d6e2-4c9e-857d-8da822c1d1fa",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "16c00270-b89b-44be-80b4-58ca2a26a270",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.A.",
+  "skill_desc": "Linear equations in one variable",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"8 x minus 7 x plus 130 equals 260\"><mn>8</mn><mi>x</mi><mo>-</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>130</mn><mo>=</mo><mn>260</mn></math></p>\n<p style=\"text-align: left;\">What value of <math alttext=\"x\"><mi>x</mi>\n</math> is the solution to the given equation?</p>",
+  "answerOptions": [],
+  "keys": [
+    "130"
+  ],
+  "correct_answer": [
+    "130"
+  ],
+  "rationale": "<p>The correct answer is <math alttext=\"130\"><mn>130</mn>\n</math>. It&rsquo;s given that <math alttext=\"8 x minus 7 x plus 130 equals 260\"><mn>8</mn><mi>x</mi><mo>-</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>130</mn><mo>=</mo><mn>260</mn></math>. Combining like terms on the left-hand side of this equation yields <math alttext=\"x plus 130 equals 260\"><mi>x</mi><mo>+</mo><mn>130</mn><mo>=</mo><mn>260</mn></math>. Subtracting <math alttext=\"130\"><mn>130</mn>\n</math> from each side of this equation yields <math alttext=\"x equals 130\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>130</mn>\n</mrow>\n</math>. Therefore, the value of <math alttext=\"x\"><mi>x</mi>\n</math> that's the solution to the given equation is <math alttext=\"130\"><mn>130</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357387,
+    "pPcc": "SAT#H",
+    "questionId": "f2b63f49",
+    "skill_cd": "H.A.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Linear equations in one variable",
+    "createDate": 1730147357387,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "55b379da-d6e2-4c9e-857d-8da822c1d1fa",
+    "primary_class_cd": "H",
+    "uId": "16c00270-b89b-44be-80b4-58ca2a26a270",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "55b379da-d6e2-4c9e-857d-8da822c1d1fa",
+    "keys": [
+      "130"
+    ],
+    "rationale": "<p>The correct answer is <math alttext=\"130\"><mn>130</mn>\n</math>. It&rsquo;s given that <math alttext=\"8 x minus 7 x plus 130 equals 260\"><mn>8</mn><mi>x</mi><mo>-</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>130</mn><mo>=</mo><mn>260</mn></math>. Combining like terms on the left-hand side of this equation yields <math alttext=\"x plus 130 equals 260\"><mi>x</mi><mo>+</mo><mn>130</mn><mo>=</mo><mn>260</mn></math>. Subtracting <math alttext=\"130\"><mn>130</mn>\n</math> from each side of this equation yields <math alttext=\"x equals 130\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>130</mn>\n</mrow>\n</math>. Therefore, the value of <math alttext=\"x\"><mi>x</mi>\n</math> that's the solution to the given equation is <math alttext=\"130\"><mn>130</mn>\n</math>.</p>",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"8 x minus 7 x plus 130 equals 260\"><mn>8</mn><mi>x</mi><mo>-</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>130</mn><mo>=</mo><mn>260</mn></math></p>\n<p style=\"text-align: left;\">What value of <math alttext=\"x\"><mi>x</mi>\n</math> is the solution to the given equation?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "130"
+    ]
+  },
+  "createDate": 1730147357387,
+  "updateDate": 1730147357387
+}

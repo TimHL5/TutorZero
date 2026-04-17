@@ -1,0 +1,69 @@
+{
+  "questionId": "eaab8bc1",
+  "external_id": "71ad6fcc-0b8a-4040-a827-1cf9cc1ed910",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "384fc060-5d6d-4b31-8255-ddcfad0011eb",
+  "uId": "e611c307-ad7d-4abe-8e3a-91a384882a98",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.B.",
+  "skill_desc": "Percentages",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">Out of <math alttext=\"300\"><mn>300</mn>\n</math> seeds that were planted,&nbsp;<math alttext=\"80 percent sign\"><mn>80</mn><mo>%</mo></math>&nbsp;sprouted. How many of these seeds sprouted?</p>",
+  "answerOptions": [],
+  "keys": [
+    "240"
+  ],
+  "correct_answer": [
+    "240"
+  ],
+  "rationale": "<p>The correct answer is <math alttext=\"240\"><mn>240</mn>\n</math>. It&rsquo;s given that&nbsp;<math alttext=\"80 percent sign\"><mn>80</mn><mo>%</mo></math> of the <math alttext=\"300\"><mn>300</mn>\n</math> seeds sprouted. Therefore, the number of seeds that sprouted can be calculated by multiplying the number of seeds that were planted by <math alttext=\"StartFraction 80 Over 100 EndFraction\"><mfrac><mn>80</mn><mn>100</mn></mfrac></math>, which gives <math alttext=\"300 left parenthesis StartFraction 80 Over 100 EndFraction right parenthesis\"><mn>300</mn><mfenced><mfrac><mn>80</mn><mn>100</mn></mfrac></mfenced></math>, or <math alttext=\"240\"><mn>240</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959831,
+    "pPcc": "SAT#Q",
+    "questionId": "eaab8bc1",
+    "skill_cd": "Q.B.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Percentages",
+    "createDate": 1691007959831,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": null,
+    "external_id": "71ad6fcc-0b8a-4040-a827-1cf9cc1ed910",
+    "primary_class_cd": "Q",
+    "uId": "e611c307-ad7d-4abe-8e3a-91a384882a98",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "keys": [
+      "240"
+    ],
+    "rationale": "<p>The correct answer is <math alttext=\"240\"><mn>240</mn>\n</math>. It&rsquo;s given that&nbsp;<math alttext=\"80 percent sign\"><mn>80</mn><mo>%</mo></math> of the <math alttext=\"300\"><mn>300</mn>\n</math> seeds sprouted. Therefore, the number of seeds that sprouted can be calculated by multiplying the number of seeds that were planted by <math alttext=\"StartFraction 80 Over 100 EndFraction\"><mfrac><mn>80</mn><mn>100</mn></mfrac></math>, which gives <math alttext=\"300 left parenthesis StartFraction 80 Over 100 EndFraction right parenthesis\"><mn>300</mn><mfenced><mfrac><mn>80</mn><mn>100</mn></mfrac></mfenced></math>, or <math alttext=\"240\"><mn>240</mn>\n</math>.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">Out of <math alttext=\"300\"><mn>300</mn>\n</math> seeds that were planted,&nbsp;<math alttext=\"80 percent sign\"><mn>80</mn><mo>%</mo></math>&nbsp;sprouted. How many of these seeds sprouted?</p>",
+    "externalid": "71ad6fcc-0b8a-4040-a827-1cf9cc1ed910",
+    "templateid": "749385ab-7282-4c8b-a8c2-bb182eedf222",
+    "vaultid": "384fc060-5d6d-4b31-8255-ddcfad0011eb",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "240"
+    ]
+  },
+  "createDate": 1691007959831,
+  "updateDate": 1691007959831
+}

@@ -6,7 +6,7 @@ import { domainForSkill, skillSlugToDisplayName } from "@/react-app/lib/sat-taxo
 import { ExplanationChat } from "@/react-app/components/feedback/ExplanationChat";
 import { cn } from "@/react-app/lib/utils";
 import { MathText } from "@/react-app/components/ui/MathText";
-import { ChevronRight, Pause, Play, CheckCircle, XCircle, Lightbulb, BookOpen, ArrowRight, ChevronDown, MessageSquare, Lock, Target, Clock, X, Home, AlertTriangle } from "lucide-react";
+import { ChevronRight, Pause, Play, CheckCircle, XCircle, Lightbulb, BookOpen, ArrowRight, ChevronDown, Target, Clock, X, Home, AlertTriangle } from "lucide-react";
 
 const WORDMARK_LIGHT = "/logos/tutorzero-wordmark-dark.png";
 
@@ -563,18 +563,6 @@ export default function Practice() {
                   isExpanded={expandedSection === "next"}
                   onToggle={() => setExpandedSection(expandedSection === "next" ? null : "next")}
                 />
-              </div>
-
-              {/* Pro Feature: Explain Differently */}
-              <div className="bg-tz-gray-100 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 flex items-center justify-between">
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-tz-gray-400" />
-                  <span className="text-xs sm:text-body text-tz-gray-600">Explain differently</span>
-                </div>
-                <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-small text-tz-orange">
-                  <Lock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  <span>Pro</span>
-                </div>
               </div>
 
               {/* ExplanationChat */}

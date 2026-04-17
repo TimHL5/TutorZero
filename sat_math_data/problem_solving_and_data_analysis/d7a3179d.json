@@ -1,0 +1,66 @@
+{
+  "questionId": "d7a3179d",
+  "external_id": "4c11262b-41b4-4c46-84a0-c2f957e8f9e5",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "f064ed4b-2fe0-499c-a4a8-0833dd90d842",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.A.",
+  "skill_desc": "Ratios, rates, proportional relationships, and units",
+  "difficulty": "E",
+  "score_band_range_cd": 1,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">How many <span style=\"text-decoration: underline;\">yards</span> are equivalent to <math alttext=\"1,116\"><mn>1,116</mn>\n</math> inches? <math alttext=\"left parenthesis 1 yard  equals 36 inches right parenthesis\"><mfenced><mrow><mn>1</mn><mo>&#160;</mo><mtext>yard</mtext><mo>=</mo><mn>36</mn><mo>&#160;</mo><mtext>inches</mtext></mrow></mfenced></math></p>",
+  "answerOptions": [],
+  "keys": [
+    "31"
+  ],
+  "correct_answer": [
+    "31"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"31\"><mn>31</mn>\n</math>. It's given that <math alttext=\"1\"><mn>1</mn>\n</math> yard is equal to <math alttext=\"36\"><mn>36</mn>\n</math> inches. Therefore, <math alttext=\"1,116\"><mn>1,116</mn>\n</math> inches is equivalent to <math alttext=\"left parenthesis 1,116 inches right parenthesis left parenthesis StartFraction 1 yard Over 36 inches EndFraction right parenthesis\"><mfenced><mrow><mn>1,116</mn><mo>&#160;</mo><mtext>inches</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>1</mn><mo>&#160;</mo><mtext>yard</mtext></mrow><mrow><mn>36</mn><mo>&#160;</mo><mtext>inches</mtext></mrow></mfrac></mfenced></math>, or <math alttext=\"31\"><mn>31</mn>\n</math> yards.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357401,
+    "pPcc": "SAT#Q",
+    "questionId": "d7a3179d",
+    "skill_cd": "Q.A.",
+    "score_band_range_cd": 1,
+    "skill_desc": "Ratios, rates, proportional relationships, and units",
+    "createDate": 1730147357401,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "4c11262b-41b4-4c46-84a0-c2f957e8f9e5",
+    "primary_class_cd": "Q",
+    "uId": "f064ed4b-2fe0-499c-a4a8-0833dd90d842",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "4c11262b-41b4-4c46-84a0-c2f957e8f9e5",
+    "keys": [
+      "31"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"31\"><mn>31</mn>\n</math>. It's given that <math alttext=\"1\"><mn>1</mn>\n</math> yard is equal to <math alttext=\"36\"><mn>36</mn>\n</math> inches. Therefore, <math alttext=\"1,116\"><mn>1,116</mn>\n</math> inches is equivalent to <math alttext=\"left parenthesis 1,116 inches right parenthesis left parenthesis StartFraction 1 yard Over 36 inches EndFraction right parenthesis\"><mfenced><mrow><mn>1,116</mn><mo>&#160;</mo><mtext>inches</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>1</mn><mo>&#160;</mo><mtext>yard</mtext></mrow><mrow><mn>36</mn><mo>&#160;</mo><mtext>inches</mtext></mrow></mfrac></mfenced></math>, or <math alttext=\"31\"><mn>31</mn>\n</math> yards.</p>",
+    "stem": "<p style=\"text-align: left;\">How many <span style=\"text-decoration: underline;\">yards</span> are equivalent to <math alttext=\"1,116\"><mn>1,116</mn>\n</math> inches? <math alttext=\"left parenthesis 1 yard  equals 36 inches right parenthesis\"><mfenced><mrow><mn>1</mn><mo>&#160;</mo><mtext>yard</mtext><mo>=</mo><mn>36</mn><mo>&#160;</mo><mtext>inches</mtext></mrow></mfenced></math></p>",
+    "type": "spr",
+    "correct_answer": [
+      "31"
+    ]
+  },
+  "createDate": 1730147357401,
+  "updateDate": 1730147357401
+}

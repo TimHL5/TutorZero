@@ -1,0 +1,69 @@
+{
+  "questionId": "d0d9ede4",
+  "external_id": "313142de-ba5a-45df-9ffe-0993fba11dce",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "95005631-0eaf-40cd-a1de-adb3a652cd9b",
+  "uId": "6976163d-6f81-4868-8f4c-fb830e26fb3e",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.A.",
+  "skill_desc": "Ratios, rates, proportional relationships, and units",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">How many feet are equivalent to <math alttext=\"34\"><mn>34</mn>\n</math> yards? <math alttext=\"left parenthesis 1 yard  equals 3 feet right parenthesis\"><mfenced><mrow><mn>1</mn><mo>&#160;</mo><mtext>yard</mtext><mo>=</mo><mn>3</mn><mo>&#160;</mo><mtext>feet</mtext></mrow></mfenced></math></p>",
+  "answerOptions": [],
+  "keys": [
+    "102"
+  ],
+  "correct_answer": [
+    "102"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"102\"><mn>102</mn>\n</math>. It&rsquo;s given that <math alttext=\"1\"><mn>1</mn>\n</math> yard is equivalent to <math alttext=\"3\"><mn>3</mn>\n</math> feet. Therefore, <math alttext=\"34\"><mn>34</mn>\n</math> yards is equivalent to&nbsp;<math alttext=\"left parenthesis 34 yards right parenthesis left parenthesis StartFraction 3 feet Over 1 yard EndFraction right parenthesis\"><mfenced><mrow><mn>34</mn><mo>&#160;</mo><mtext>yards</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>3</mn><mo>&#160;</mo><mtext>feet</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>yard</mtext></mrow></mfrac></mfenced></math>, or <math alttext=\"102\"><mn>102</mn>\n</math>&nbsp;feet.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959830,
+    "pPcc": "SAT#Q",
+    "questionId": "d0d9ede4",
+    "skill_cd": "Q.A.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Ratios, rates, proportional relationships, and units",
+    "createDate": 1691007959830,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": null,
+    "external_id": "313142de-ba5a-45df-9ffe-0993fba11dce",
+    "primary_class_cd": "Q",
+    "uId": "6976163d-6f81-4868-8f4c-fb830e26fb3e",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "keys": [
+      "102"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"102\"><mn>102</mn>\n</math>. It&rsquo;s given that <math alttext=\"1\"><mn>1</mn>\n</math> yard is equivalent to <math alttext=\"3\"><mn>3</mn>\n</math> feet. Therefore, <math alttext=\"34\"><mn>34</mn>\n</math> yards is equivalent to&nbsp;<math alttext=\"left parenthesis 34 yards right parenthesis left parenthesis StartFraction 3 feet Over 1 yard EndFraction right parenthesis\"><mfenced><mrow><mn>34</mn><mo>&#160;</mo><mtext>yards</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>3</mn><mo>&#160;</mo><mtext>feet</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>yard</mtext></mrow></mfrac></mfenced></math>, or <math alttext=\"102\"><mn>102</mn>\n</math>&nbsp;feet.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">How many feet are equivalent to <math alttext=\"34\"><mn>34</mn>\n</math> yards? <math alttext=\"left parenthesis 1 yard  equals 3 feet right parenthesis\"><mfenced><mrow><mn>1</mn><mo>&#160;</mo><mtext>yard</mtext><mo>=</mo><mn>3</mn><mo>&#160;</mo><mtext>feet</mtext></mrow></mfenced></math></p>",
+    "externalid": "313142de-ba5a-45df-9ffe-0993fba11dce",
+    "templateid": "8fc23d54-fde4-4867-950e-4221a5db4c50",
+    "vaultid": "95005631-0eaf-40cd-a1de-adb3a652cd9b",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "102"
+    ]
+  },
+  "createDate": 1691007959830,
+  "updateDate": 1691007959830
+}

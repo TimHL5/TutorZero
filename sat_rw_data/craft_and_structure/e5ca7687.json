@@ -1,0 +1,51 @@
+{
+  "questionId": "e5ca7687",
+  "external_id": "85e286ca-e741-446a-a2f4-e98e6095a4dc",
+  "vaultid": null,
+  "uId": "7e5bce0a-8e6c-416d-a05a-7f82981e35b9",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "CAS",
+  "domain": "Craft and Structure",
+  "skill_cd": "TSP",
+  "skill_desc": "Text Structure and Purpose",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": "<p>Archaeologists studying the ancient city of Pompeii in Italy recently discovered a well-preserved food shop known as a <span lang=\"la\"><em>thermopolium</em></span>. The site contains food remains, artworks, and decorations. These items give researchers a better understanding of what daily life in Pompeii may have been like. For example, the archaeologists found a ceramic jar that they believe likely contained a meat and seafood stew.&nbsp;</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?&nbsp;</p>",
+  "answerOptions": [
+    {
+      "id": "a98984ca-8951-4886-b3cc-4430f5a84bf0",
+      "content": "<p>To compare ancient artworks with modern ones</p>"
+    },
+    {
+      "id": "31ed447e-f7da-4867-b767-9f91bf57ad59",
+      "content": "<p>To discuss the political system of Italy</p>"
+    },
+    {
+      "id": "f49544b0-2e6a-4c62-ae07-7f6ac7845651",
+      "content": "<p>To present a recent archaeological discovery&nbsp;</p>"
+    },
+    {
+      "id": "63553a65-9d42-46f1-b061-0fa0f35e2899",
+      "content": "<p>To describe a region&rsquo;s climate</p>"
+    }
+  ],
+  "keys": [
+    "f49544b0-2e6a-4c62-ae07-7f6ac7845651"
+  ],
+  "correct_answer": [
+    "C"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most accurately describes the main purpose of the text. The text states that archaeologists recently discovered a well-preserved food shop, or <span lang=\"la\"><em>thermopolium</em></span>, in Pompeii, Italy.  The text then further describes the contents of the discovery and provides an example of what was found. Thus, the overall purpose of the text is to present a recent archaeological discovery.</p><p>Choice A is incorrect. Although the text states that archaeologists found ancient artworks, it doesn&rsquo;t compare these artworks to modern ones or to any other artworks. Choice B is incorrect. Although the archaeological discovery discussed in the text was made in Italy, the text doesn&rsquo;t provide any information about politics or government in Italy. Choice D is incorrect because the text doesn&rsquo;t discuss the climate where the archaeological discovery was made or in any other region.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1743430669210,
+  "updateDate": 1743430669210
+}

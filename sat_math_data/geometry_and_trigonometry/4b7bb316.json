@@ -1,0 +1,66 @@
+{
+  "questionId": "4b7bb316",
+  "external_id": "f59b253c-f13a-4027-850d-9d1abc35bde5",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "03228106-76cd-4571-a4a9-46da38a37bc6",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "S",
+  "domain": "Geometry and Trigonometry",
+  "skill_cd": "S.A.",
+  "skill_desc": "Area and volume",
+  "difficulty": "M",
+  "score_band_range_cd": 5,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The length of each edge of a box is <math alttext=\"29\"><mn>29</mn>\n</math> inches. Each side of the box is in the shape of a square. The box does not have a lid. What is the exterior surface area, in square inches, of this box without a lid?</p>",
+  "answerOptions": [],
+  "keys": [
+    "4205"
+  ],
+  "correct_answer": [
+    "4205"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"4,205\"><mn>4,205</mn>\n</math>. The exterior surface area of a figure is the sum of the areas of all its faces. It's given that the box does not have a lid and that each side of the box is in the shape of a square. Therefore, the box consists of <math alttext=\"5\"><mn>5</mn>\n</math> congruent square faces. It's also given that the length of each edge is <math alttext=\"29\"><mn>29</mn>\n</math> inches. Let <math alttext=\"s\"><mi>s</mi>\n</math> represent the length of an edge of a square. It follows that the area of a square is equal to <math alttext=\"s squared\"><msup>\n\t<mi>s</mi>\n\t<mn>2</mn>\n</msup>\n</math>. Therefore, the area of each of the <math alttext=\"5\"><mn>5</mn>\n</math> square faces is equal to <math alttext=\"29 squared\"><msup><mn>29</mn><mn>2</mn></msup></math>, or <math alttext=\"841\"><mn>841</mn>\n</math>, square inches. Since the box consists of <math alttext=\"5\"><mn>5</mn>\n</math> congruent square faces, it follows that the sum of the areas of all its faces, or the exterior surface area of this box without a lid, is <math alttext=\"5 left parenthesis 841 right parenthesis\"><mn>5</mn><mfenced><mn>841</mn></mfenced></math>, or <math alttext=\"4,205\"><mn>4,205</mn>\n</math>, square inches.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357406,
+    "pPcc": "SAT#S",
+    "questionId": "4b7bb316",
+    "skill_cd": "S.A.",
+    "score_band_range_cd": 5,
+    "skill_desc": "Area and volume",
+    "createDate": 1730147357406,
+    "program": "SAT",
+    "primary_class_cd_desc": "Geometry and Trigonometry",
+    "ibn": "",
+    "external_id": "f59b253c-f13a-4027-850d-9d1abc35bde5",
+    "primary_class_cd": "S",
+    "uId": "03228106-76cd-4571-a4a9-46da38a37bc6",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "f59b253c-f13a-4027-850d-9d1abc35bde5",
+    "keys": [
+      "4205"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"4,205\"><mn>4,205</mn>\n</math>. The exterior surface area of a figure is the sum of the areas of all its faces. It's given that the box does not have a lid and that each side of the box is in the shape of a square. Therefore, the box consists of <math alttext=\"5\"><mn>5</mn>\n</math> congruent square faces. It's also given that the length of each edge is <math alttext=\"29\"><mn>29</mn>\n</math> inches. Let <math alttext=\"s\"><mi>s</mi>\n</math> represent the length of an edge of a square. It follows that the area of a square is equal to <math alttext=\"s squared\"><msup>\n\t<mi>s</mi>\n\t<mn>2</mn>\n</msup>\n</math>. Therefore, the area of each of the <math alttext=\"5\"><mn>5</mn>\n</math> square faces is equal to <math alttext=\"29 squared\"><msup><mn>29</mn><mn>2</mn></msup></math>, or <math alttext=\"841\"><mn>841</mn>\n</math>, square inches. Since the box consists of <math alttext=\"5\"><mn>5</mn>\n</math> congruent square faces, it follows that the sum of the areas of all its faces, or the exterior surface area of this box without a lid, is <math alttext=\"5 left parenthesis 841 right parenthesis\"><mn>5</mn><mfenced><mn>841</mn></mfenced></math>, or <math alttext=\"4,205\"><mn>4,205</mn>\n</math>, square inches.</p>",
+    "stem": "<p style=\"text-align: left;\">The length of each edge of a box is <math alttext=\"29\"><mn>29</mn>\n</math> inches. Each side of the box is in the shape of a square. The box does not have a lid. What is the exterior surface area, in square inches, of this box without a lid?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "4205"
+    ]
+  },
+  "createDate": 1730147357406,
+  "updateDate": 1730147357406
+}

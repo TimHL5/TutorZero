@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate, useSearchParams } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { Button } from "@/react-app/components/ui/button";
 import { Input } from "@/react-app/components/ui/input";
 import { Logo } from "@/react-app/components/Logo";
@@ -13,81 +13,24 @@ import {
   CheckCircle,
   Mail,
   Camera,
-  Crown,
-  Sparkles,
-  CreditCard,
-  ExternalLink,
-  AlertCircle,
-  Infinity as InfinityIcon,
-  BookOpen,
-  BarChart3,
-  MessageCircle,
   Bell,
   Trash2,
   Download,
-  Shield
+  Shield,
 } from "lucide-react";
 import { cn } from "@/react-app/lib/utils";
 
-interface Subscription {
-  tier: string;
-  isPremium: boolean;
-  stripeCustomerId: string | null;
-  stripeSubscriptionId: string | null;
-  cancelAtPeriodEnd: boolean;
-  expiresAt: string | null;
-  startedAt: string | null;
-}
-
 export default function Settings() {
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
   const { user, isPending, logout, fetchUser } = useAuth();
   const [displayName, setDisplayName] = useState("");
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  
-  // Subscription state
-  const [subscription, setSubscription] = useState<Subscription | null>(null);
-  const [isLoadingSubscription, setIsLoadingSubscription] = useState(true);
-  const [isLoadingPortal, setIsLoadingPortal] = useState(false);
-
-  // Billing cycle for upgrade CTA
-  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly");
 
   // Notification preferences
   const [emailReminders, setEmailReminders] = useState(true);
   const [weeklyDigest, setWeeklyDigest] = useState(true);
-
-  const [subscriptionMessage, setSubscriptionMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
-
-  // Check for Stripe redirect params
-  useEffect(() => {
-    if (searchParams.get('success') === 'true') {
-      setSubscriptionMessage({ type: 'success', text: 'Welcome to TutorZero Pro! Your subscription is now active.' });
-      navigate('/settings', { replace: true });
-      // Refresh subscription status
-      fetchSubscription();
-    } else if (searchParams.get('canceled') === 'true') {
-      setSubscriptionMessage({ type: 'error', text: 'Checkout was canceled. No charges were made.' });
-      navigate('/settings', { replace: true });
-    }
-  }, [searchParams, navigate]);
-
-  async function fetchSubscription() {
-    try {
-      const response = await fetch('/api/subscription', { credentials: "include" });
-      if (response.ok) {
-        const data = await response.json();
-        setSubscription(data);
-      }
-    } catch (err) {
-      console.error('Failed to fetch subscription:', err);
-    } finally {
-      setIsLoadingSubscription(false);
-    }
-  }
 
   // Redirect to login if not authenticated
   useEffect(() => {
@@ -95,13 +38,6 @@ export default function Settings() {
       navigate("/login");
     }
   }, [isPending, user, navigate]);
-
-  // Fetch subscription status
-  useEffect(() => {
-    if (user) {
-      fetchSubscription();
-    }
-  }, [user]);
 
   useEffect(() => {
     if (user) {
@@ -154,50 +90,6 @@ export default function Settings() {
     }
   };
 
-  const handleUpgrade = async () => {
-    try {
-      const response = await fetch('/api/subscription/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
-        body: JSON.stringify({ billingCycle })
-      });
-      
-      if (response.ok) {
-        const { url } = await response.json();
-        window.location.href = url;
-      } else {
-        setSubscriptionMessage({ type: 'error', text: 'Failed to start checkout. Please try again.' });
-      }
-    } catch (err) {
-      console.error('Checkout error:', err);
-      setSubscriptionMessage({ type: 'error', text: 'Failed to start checkout. Please try again.' });
-    }
-  };
-
-  const handleManageSubscription = async () => {
-    setIsLoadingPortal(true);
-    try {
-      const response = await fetch('/api/subscription/portal', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include'
-      });
-      
-      if (response.ok) {
-        const { url } = await response.json();
-        window.open(url, '_blank');
-      } else {
-        setSubscriptionMessage({ type: 'error', text: 'Failed to open billing portal. Please try again.' });
-      }
-    } catch (err) {
-      console.error('Portal error:', err);
-      setSubscriptionMessage({ type: 'error', text: 'Failed to open billing portal. Please try again.' });
-    } finally {
-      setIsLoadingPortal(false);
-    }
-  };
-
   if (isPending) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -211,7 +103,6 @@ export default function Settings() {
   }
 
   const pictureUrl = user.google_user_data?.picture;
-  const isPremium = subscription?.isPremium ?? false;
 
   return (
     <div className="min-h-screen bg-muted/30">
@@ -235,12 +126,6 @@ export default function Settings() {
               </Link>
             </nav>
             <div className="flex items-center gap-3">
-              {isPremium && (
-                <span className="hidden sm:flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-orange-500 px-2.5 py-1 rounded-full text-xs font-semibold">
-                  <Crown className="w-3 h-3" />
-                  Pro
-                </span>
-              )}
               {pictureUrl ? (
                 <img src={pictureUrl} alt="" className="w-8 h-8 rounded-full border-2 border-white/30" />
               ) : (
@@ -265,224 +150,6 @@ export default function Settings() {
 
         <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">Settings</h1>
 
-        {/* Subscription Message */}
-        {subscriptionMessage && (
-          <div className={cn(
-            "mb-6 p-4 rounded-lg flex items-start gap-3",
-            subscriptionMessage.type === 'success' 
-              ? "bg-green-50 border border-green-200" 
-              : "bg-red-50 border border-red-200"
-          )}>
-            {subscriptionMessage.type === 'success' ? (
-              <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-            ) : (
-              <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-            )}
-            <p className={cn(
-              "text-sm",
-              subscriptionMessage.type === 'success' ? "text-green-800" : "text-red-800"
-            )}>
-              {subscriptionMessage.text}
-            </p>
-            <button
-              onClick={() => setSubscriptionMessage(null)}
-              className="ml-auto text-gray-400 hover:text-gray-600"
-            >
-              ×
-            </button>
-          </div>
-        )}
-
-        {/* Subscription Section */}
-        <div className="bg-white rounded-xl shadow-sm border border-border p-6 mb-6">
-          <h2 className="text-lg font-semibold mb-6 flex items-center gap-2">
-            <CreditCard className="w-5 h-5 text-muted-foreground" />
-            Subscription
-          </h2>
-
-          {isLoadingSubscription ? (
-            <div className="flex items-center justify-center py-8">
-              <Loader2 className="w-6 h-6 animate-spin text-muted-foreground" />
-            </div>
-          ) : isPremium ? (
-            /* Pro User View */
-            <div className="space-y-6">
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
-                    <Crown className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg text-foreground">TutorZero Pro</h3>
-                    <p className="text-sm text-muted-foreground">$9.99/month</p>
-                  </div>
-                </div>
-
-                {subscription?.cancelAtPeriodEnd && subscription.expiresAt && (
-                  <div className="mb-4 p-3 bg-amber-100 rounded-lg">
-                    <p className="text-sm text-amber-800">
-                      Your subscription will end on {new Date(subscription.expiresAt).toLocaleDateString()}.
-                      Click "Manage Subscription" to reactivate.
-                    </p>
-                  </div>
-                )}
-
-                <div className="grid sm:grid-cols-2 gap-3 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-foreground">
-                    <MessageCircle className="w-4 h-4 text-amber-600" />
-                    <span>Unlimited AI tutoring</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-foreground">
-                    <BookOpen className="w-4 h-4 text-amber-600" />
-                    <span>Personalized study plans</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-foreground">
-                    <BarChart3 className="w-4 h-4 text-amber-600" />
-                    <span>Advanced analytics</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-foreground">
-                    <Sparkles className="w-4 h-4 text-amber-600" />
-                    <span>Explain differently feature</span>
-                  </div>
-                </div>
-
-                <Button
-                  onClick={handleManageSubscription}
-                  disabled={isLoadingPortal}
-                  variant="outline"
-                  className="w-full border-amber-300 hover:bg-amber-100"
-                >
-                  {isLoadingPortal ? (
-                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                  ) : (
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                  )}
-                  Manage Subscription
-                </Button>
-              </div>
-
-              {subscription?.startedAt && (
-                <p className="text-xs text-muted-foreground text-center">
-                  Pro member since {new Date(subscription.startedAt).toLocaleDateString()}
-                </p>
-              )}
-            </div>
-          ) : (
-            /* Free User View */
-            <div className="space-y-6">
-              {/* Current Plan */}
-              <div className="bg-muted/50 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center">
-                    <User className="w-6 h-6 text-muted-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg text-foreground">Free Plan</h3>
-                    <p className="text-sm text-muted-foreground">Limited features</p>
-                  </div>
-                </div>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
-                    5 AI tutor messages per day
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
-                    Unlimited practice questions
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
-                    Basic progress tracking
-                  </li>
-                </ul>
-              </div>
-
-              {/* Upgrade CTA */}
-              <div className="bg-gradient-to-br from-tz-navy to-[hsl(207,100%,25%)] rounded-xl p-6 text-white">
-                <div className="flex items-center gap-2 mb-3">
-                  <Sparkles className="w-5 h-5 text-amber-400" />
-                  <h3 className="font-bold text-lg">Upgrade to Pro</h3>
-                </div>
-                <p className="text-white/90 text-sm mb-6">
-                  Unlock your full potential with unlimited AI tutoring, personalized study plans, and advanced analytics.
-                </p>
-
-                <div className="grid sm:grid-cols-2 gap-3 mb-6">
-                  <div className="flex items-center gap-2 text-sm">
-                    <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
-                      <InfinityIcon className="w-3 h-3" />
-                    </div>
-                    <span>Unlimited AI tutoring</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
-                      <BookOpen className="w-3 h-3" />
-                    </div>
-                    <span>Personalized study plans</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
-                      <BarChart3 className="w-3 h-3" />
-                    </div>
-                    <span>Score trajectory projections</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
-                      <Sparkles className="w-3 h-3" />
-                    </div>
-                    <span>Explain differently feature</span>
-                  </div>
-                </div>
-
-                {/* Billing cycle toggle */}
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <button
-                    onClick={() => setBillingCycle("monthly")}
-                    className={cn(
-                      "px-3 py-1.5 rounded-lg text-xs font-medium transition-all",
-                      billingCycle === "monthly"
-                        ? "bg-white/20 text-white"
-                        : "bg-white/10 text-white/70 hover:bg-white/15"
-                    )}
-                  >
-                    Monthly
-                  </button>
-                  <button
-                    onClick={() => setBillingCycle("yearly")}
-                    className={cn(
-                      "px-3 py-1.5 rounded-lg text-xs font-medium transition-all relative",
-                      billingCycle === "yearly"
-                        ? "bg-white/20 text-white"
-                        : "bg-white/10 text-white/70 hover:bg-white/15"
-                    )}
-                  >
-                    Yearly
-                    <span className="absolute -top-2 -right-2 bg-green-500 text-white text-[9px] font-bold px-1 py-0.5 rounded-full">
-                      -33%
-                    </span>
-                  </button>
-                </div>
-
-                <div className="space-y-3">
-                  <Button
-                    onClick={handleUpgrade}
-                    className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold shadow-lg"
-                    size="lg"
-                  >
-                    <Crown className="w-4 h-4 mr-2" />
-                    Start 7-Day Free Trial
-                  </Button>
-                  <p className="text-xs text-white/70 text-center">
-                    {billingCycle === "monthly"
-                      ? "Then $9.99/month. Cancel anytime."
-                      : "Then $79.99/year ($6.67/mo). Cancel anytime."}
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-
         {/* Profile Section */}
         <div className="bg-white rounded-xl shadow-sm border border-border p-6 mb-6">
           <h2 className="text-lg font-semibold mb-6 flex items-center gap-2">
@@ -494,9 +161,9 @@ export default function Settings() {
           <div className="flex items-center gap-4 mb-6 pb-6 border-b border-border">
             <div className="relative">
               {pictureUrl ? (
-                <img 
-                  src={pictureUrl} 
-                  alt="" 
+                <img
+                  src={pictureUrl}
+                  alt=""
                   className="w-16 h-16 rounded-full border-2 border-border"
                 />
               ) : (

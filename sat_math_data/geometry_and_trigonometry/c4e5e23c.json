@@ -1,0 +1,100 @@
+{
+  "questionId": "c4e5e23c",
+  "external_id": "0103767c-8ef7-4ec8-a9fb-3a3fa9a5469f",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "d10ceeab-0b0d-4e22-a54f-11b7eeef0f28",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "S",
+  "domain": "Geometry and Trigonometry",
+  "skill_cd": "S.A.",
+  "skill_desc": "Area and volume",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The length of one side of square M is <math alttext=\"6\"><mn>6</mn>\n</math> times the length of one side of square N. The area of square N is <math alttext=\"49\"><mn>49</mn>\n</math> square feet. What is the area, in square feet, of square M?</p>",
+  "answerOptions": [
+    {
+      "id": "5da8d609-87eb-47af-8036-37d1d9bdaab6",
+      "content": "<p><math alttext=\"1,764\"><mn>1,764</mn>\n</math></p>"
+    },
+    {
+      "id": "70e562c6-5442-4464-8ec4-d881e9e4bc18",
+      "content": "<p><math alttext=\"504\"><mn>504</mn>\n</math></p>"
+    },
+    {
+      "id": "40ee4feb-8c76-4c72-a5c2-b3a72235a8ca",
+      "content": "<p><math alttext=\"294\"><mn>294</mn>\n</math></p>"
+    },
+    {
+      "id": "eb9130d7-c7b3-4eae-807c-27e511147c38",
+      "content": "<p><math alttext=\"252\"><mn>252</mn>\n</math></p>"
+    }
+  ],
+  "keys": [
+    "5da8d609-87eb-47af-8036-37d1d9bdaab6"
+  ],
+  "correct_answer": [
+    "A"
+  ],
+  "rationale": "<p style=\"text-align: left;\">Choice A is correct. The area,&nbsp;<math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A\"><mi>A</mi></math>, of a square is given by the equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals s squared\"><mi>A</mi><mo>=</mo><msup><mi>s</mi><mn>2</mn></msup></math>, where <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"s\"><mi>s</mi></math> is the length of one side of the square. Let <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"x\"><mi>x</mi></math> represent the length, in feet, of one side of square N. It's given that the area of square N is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"49\"><mn>49</mn></math> square feet; therefore, it follows that <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"49 equals x squared\"><mn>49</mn><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></math>. It&rsquo;s also given that the length of one side of square M is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"6\"><mn>6</mn></math> times the length of one side of square N. Therefore, the length of one side of square M can be represented by the expression <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"6 x\"><mn>6</mn><mi>x</mi></math>. Substituting <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"6 x\"><mn>6</mn><mi>x</mi></math> for <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"s\"><mi>s</mi></math> in the equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals s squared\"><mi>A</mi><mo>=</mo><msup><mi>s</mi><mn>2</mn></msup></math> yields <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals left parenthesis 6 x right parenthesis squared\"><msup><mrow><mi>A</mi><mo>=</mo><mo>(</mo><mn>6</mn><mi>x</mi><mo>)</mo></mrow><mn>2</mn></msup></math>, or <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals 36 x squared\"><mi>A</mi><mo>=</mo><mn>36</mn><msup><mi>x</mi><mn>2</mn></msup></math>. Since <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"49 equals x squared\"><mn>49</mn><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></math>, substituting <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"49\"><mn>49</mn></math> for <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"x squared\"><msup><mi>x</mi><mn>2</mn></msup></math> in the equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals 36 x squared\"><mi>A</mi><mo>=</mo><mn>36</mn><msup><mi>x</mi><mn>2</mn></msup></math> yields <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals 36 left parenthesis 49 right parenthesis\"><mi>A</mi><mo>=</mo><mn>36</mn><mo>(</mo><mn>49</mn><mo>)</mo></math>, or <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals 1,764\"><mi>A</mi><mo>=</mo><mn>1,764</mn></math>. Therefore, the area, in square feet, of square M is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"1,764\"><mn>1,764</mn></math>.</p>\n<p style=\"text-align: left;\">Choice B is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice C is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1776362727991,
+    "pPcc": "SAT#S",
+    "questionId": "c4e5e23c",
+    "skill_cd": "S.A.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Area and volume",
+    "createDate": 1776362727991,
+    "program": "SAT",
+    "primary_class_cd_desc": "Geometry and Trigonometry",
+    "ibn": "",
+    "external_id": "0103767c-8ef7-4ec8-a9fb-3a3fa9a5469f",
+    "primary_class_cd": "S",
+    "uId": "d10ceeab-0b0d-4e22-a54f-11b7eeef0f28",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "type": "mcq",
+    "stem": "<p style=\"text-align: left;\">The length of one side of square M is <math alttext=\"6\"><mn>6</mn>\n</math> times the length of one side of square N. The area of square N is <math alttext=\"49\"><mn>49</mn>\n</math> square feet. What is the area, in square feet, of square M?</p>",
+    "keys": [
+      "5da8d609-87eb-47af-8036-37d1d9bdaab6"
+    ],
+    "answerOptions": [
+      {
+        "id": "5da8d609-87eb-47af-8036-37d1d9bdaab6",
+        "content": "<p><math alttext=\"1,764\"><mn>1,764</mn>\n</math></p>"
+      },
+      {
+        "id": "70e562c6-5442-4464-8ec4-d881e9e4bc18",
+        "content": "<p><math alttext=\"504\"><mn>504</mn>\n</math></p>"
+      },
+      {
+        "id": "40ee4feb-8c76-4c72-a5c2-b3a72235a8ca",
+        "content": "<p><math alttext=\"294\"><mn>294</mn>\n</math></p>"
+      },
+      {
+        "id": "eb9130d7-c7b3-4eae-807c-27e511147c38",
+        "content": "<p><math alttext=\"252\"><mn>252</mn>\n</math></p>"
+      }
+    ],
+    "rationale": "<p style=\"text-align: left;\">Choice A is correct. The area,&nbsp;<math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A\"><mi>A</mi></math>, of a square is given by the equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals s squared\"><mi>A</mi><mo>=</mo><msup><mi>s</mi><mn>2</mn></msup></math>, where <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"s\"><mi>s</mi></math> is the length of one side of the square. Let <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"x\"><mi>x</mi></math> represent the length, in feet, of one side of square N. It's given that the area of square N is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"49\"><mn>49</mn></math> square feet; therefore, it follows that <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"49 equals x squared\"><mn>49</mn><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></math>. It&rsquo;s also given that the length of one side of square M is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"6\"><mn>6</mn></math> times the length of one side of square N. Therefore, the length of one side of square M can be represented by the expression <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"6 x\"><mn>6</mn><mi>x</mi></math>. Substituting <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"6 x\"><mn>6</mn><mi>x</mi></math> for <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"s\"><mi>s</mi></math> in the equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals s squared\"><mi>A</mi><mo>=</mo><msup><mi>s</mi><mn>2</mn></msup></math> yields <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals left parenthesis 6 x right parenthesis squared\"><msup><mrow><mi>A</mi><mo>=</mo><mo>(</mo><mn>6</mn><mi>x</mi><mo>)</mo></mrow><mn>2</mn></msup></math>, or <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals 36 x squared\"><mi>A</mi><mo>=</mo><mn>36</mn><msup><mi>x</mi><mn>2</mn></msup></math>. Since <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"49 equals x squared\"><mn>49</mn><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></math>, substituting <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"49\"><mn>49</mn></math> for <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"x squared\"><msup><mi>x</mi><mn>2</mn></msup></math> in the equation <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals 36 x squared\"><mi>A</mi><mo>=</mo><mn>36</mn><msup><mi>x</mi><mn>2</mn></msup></math> yields <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals 36 left parenthesis 49 right parenthesis\"><mi>A</mi><mo>=</mo><mn>36</mn><mo>(</mo><mn>49</mn><mo>)</mo></math>, or <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"upper A equals 1,764\"><mi>A</mi><mo>=</mo><mn>1,764</mn></math>. Therefore, the area, in square feet, of square M is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"1,764\"><mn>1,764</mn></math>.</p>\n<p style=\"text-align: left;\">Choice B is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice C is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+    "externalid": "0103767c-8ef7-4ec8-a9fb-3a3fa9a5469f",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "createDate": 1776362727991,
+  "updateDate": 1776362727991
+}

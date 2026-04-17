@@ -1,0 +1,51 @@
+{
+  "questionId": "d3898d32",
+  "external_id": "fa2d1a26-46bd-490d-8fe1-30454adad22a",
+  "vaultid": "51e94bf9-f7e3-4259-917a-af7499f47caa",
+  "uId": "ee14dbac-b013-48aa-9327-61a82306ed44",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "EOI",
+  "domain": "Expression of Ideas",
+  "skill_cd": "TRA",
+  "skill_desc": "Transitions",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "mcq",
+  "stimulus": "<p>Riley Black&mdash;the author of critically acclaimed books such as <em>My Beloved Brontosaurus</em> (2013)&mdash;is best known for writing about dinosaurs, but she has also conducted hands-on fieldwork. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> her fieldwork has included paleontological digs in Utah, Montana, and Wyoming, and her dinosaur fossil discoveries can be seen at places such as the Carnegie Museum of Natural History.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "32a32ad3-728b-49bc-96fe-dc9edeb6ab9b",
+      "content": "<p>Regardless,&nbsp;</p>"
+    },
+    {
+      "id": "c3abb5b7-dc1a-4aa0-8f36-41404ff0d160",
+      "content": "<p>Subsequently,</p>"
+    },
+    {
+      "id": "58e1022b-1edb-4adb-830e-d3fff82cf6ab",
+      "content": "<p>Specifically,&nbsp;</p>"
+    },
+    {
+      "id": "e09ef35a-2a57-4baf-8e9e-59ecf1e8f97a",
+      "content": "<p>Conversely,</p>"
+    }
+  ],
+  "keys": [
+    "58e1022b-1edb-4adb-830e-d3fff82cf6ab"
+  ],
+  "correct_answer": [
+    "C"
+  ],
+  "rationale": "<p>Choice C is the best answer. The second sentence provides more specific information about the fieldwork mentioned in the first sentence&mdash;that the paleontological digs took place in Utah, Montana, and Wyoming. Therefore, &ldquo;specifically&rdquo; fits perfectly in this context. </p><p>Choice A is incorrect. This choice uses a disagreement transition. But this sentence doesn&rsquo;t disagree with the previous sentence. Rather, this sentence agrees with and elaborates on the last sentence by providing more specifics about the fieldwork Black does. Choice B is incorrect. This choice uses a transition that indicates that an event took place after another event. But the two sentences are not describing different events&mdash;instead, this sentence gives more details about the fieldwork discussed in the first sentence. Choice D is incorrect. This choice uses a disagreement transition. But this sentence doesn&rsquo;t disagree with the previous sentence. Rather, this sentence agrees with and elaborates on the last sentence by providing more specifics about the fieldwork Black does. </p>",
+  "parenttemplatename": "OSP-KA-TRA-E010",
+  "parenttemplateid": "",
+  "templateclusterid": "b2e72c76-9323-47c4-b82c-bc58235395a7",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959373,
+  "updateDate": 1691007959373
+}

@@ -1,0 +1,51 @@
+{
+  "questionId": "1c65db8f",
+  "external_id": "0e4cc810-98b3-497e-b9cd-7415d29d1aef",
+  "vaultid": null,
+  "uId": "f299a49d-4ed3-4367-b1bb-2f75f44ce3d9",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "H",
+  "score_band_range_cd": 7,
+  "type": "mcq",
+  "stimulus": "<p>A species of <em>Byropsis</em> algae produces toxins to avoid being eaten by predators. However, in some cases, the toxins the organism uses to protect itself from predation actually <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> its attractiveness to predators. The Hawaiian sea slug, for example, not only tolerates <em>Byropsis</em>&nbsp;toxins but actually uses them for protection in the same way the algae does.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "7d3a3304-4a03-468c-9b94-83d431fac4bb",
+      "content": "<p>is increasing</p>"
+    },
+    {
+      "id": "c4d7dc6c-67fa-426b-8716-66fb51a4591b",
+      "content": "<p>increase</p>"
+    },
+    {
+      "id": "9f951aa2-16d0-4dbc-b027-7f05dad9183b",
+      "content": "<p>increases</p>"
+    },
+    {
+      "id": "a89c9155-5e76-4851-a491-15f879d46a7b",
+      "content": "<p>has increased</p>"
+    }
+  ],
+  "keys": [
+    "c4d7dc6c-67fa-426b-8716-66fb51a4591b"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The plural verb \"increase\" agrees in number with the plural subject \"toxins.\"</p><p>Choice A is incorrect because the singular verb \"is increasing\" doesn&rsquo;t agree in number with the plural subject \"toxins.\" Choice C is incorrect because the singular verb \"increases\" doesn&rsquo;t agree in number with the plural subject \"toxins.\" Choice D is incorrect because the singular verb \"has increased\" doesn&rsquo;t agree in number with the plural subject \"toxins.\"</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323048,
+  "updateDate": 1730147323048
+}

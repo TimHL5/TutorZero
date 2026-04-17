@@ -8,7 +8,6 @@ import {
   TrendingUp,
   Calendar,
   Settings,
-  ChevronRight,
   Menu,
   LogOut,
 } from "lucide-react";
@@ -21,7 +20,6 @@ interface NavItem {
   to: string;
   label: string;
   icon: React.ReactNode;
-  proOnly?: boolean;
 }
 
 const navItems: NavItem[] = [
@@ -29,7 +27,7 @@ const navItems: NavItem[] = [
   { to: "/practice", label: "Practice", icon: <Target className="w-5 h-5" /> },
   { to: "/tutor", label: "AI Tutor", icon: <MessageSquare className="w-5 h-5" /> },
   { to: "/progress", label: "Progress", icon: <TrendingUp className="w-5 h-5" /> },
-  { to: "/study-plan", label: "Study Plan", icon: <Calendar className="w-5 h-5" />, proOnly: true },
+  { to: "/study-plan", label: "Study Plan", icon: <Calendar className="w-5 h-5" /> },
 ];
 
 interface AppLayoutProps {
@@ -46,7 +44,6 @@ export function AppLayout({ children, title }: AppLayoutProps) {
   const profile = user?.profile;
   const displayName = profile?.displayName || user?.google_user_data?.given_name || "Student";
   const pictureUrl = user?.google_user_data?.picture;
-  const isPro = profile?.subscriptionTier === "pro";
 
   const handleLogout = async () => {
     await logout();
@@ -94,11 +91,6 @@ export function AppLayout({ children, title }: AppLayoutProps) {
               >
                 {item.icon}
                 <span>{item.label}</span>
-                {item.proOnly && !isPro && (
-                  <span className="ml-auto text-[10px] font-semibold px-1.5 py-0.5 rounded bg-tz-orange text-white">
-                    PRO
-                  </span>
-                )}
               </Link>
             );
           })}
@@ -106,17 +98,6 @@ export function AppLayout({ children, title }: AppLayoutProps) {
 
         {/* Bottom section */}
         <div className="p-3 border-t border-white/10">
-          {/* Upgrade prompt for free users */}
-          {!isPro && (
-            <Link
-              to="/pricing"
-              className="flex items-center gap-2 px-3 py-2 mb-2 text-sm text-tz-orange hover:text-orange-300 transition-colors"
-            >
-              <span>Unlock Pro features</span>
-              <ChevronRight className="w-4 h-4" />
-            </Link>
-          )}
-
           {/* Settings */}
           <Link
             to="/settings"

@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { AppLayout } from "@/react-app/components/layout/AppLayout";
 import { topicDisplayNames } from "@/data/questions";
 import { cn } from "@/react-app/lib/utils";
-import { Send, Bot, User, Sparkles, Lock, BookOpen, Target, TrendingUp, AlertCircle, ChevronDown, X } from "lucide-react";
+import { Send, Bot, User, BookOpen, Target, TrendingUp, AlertCircle, ChevronDown, X } from "lucide-react";
 import { ChatMarkdown } from "@/react-app/components/ui/ChatMarkdown";
 import { useAuth } from "@/react-app/lib/AuthProvider";
 import { Link } from "react-router";
@@ -12,14 +12,6 @@ interface Message {
   role: "user" | "assistant";
   content: string;
   timestamp: Date;
-}
-
-interface TutorUsage {
-  used: number;
-  limit: number;
-  remaining: number;
-  isPremium: boolean;
-  unlimited: boolean;
 }
 
 interface TopicProgressEntry {
@@ -73,7 +65,6 @@ export default function AITutor() {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [usage, setUsage] = useState<TutorUsage | null>(null);
   const [context, setContext] = useState<StudentContext>({
     recentTopics: [],
     weakAreas: [],
@@ -86,21 +77,10 @@ export default function AITutor() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  const isAtLimit = usage && !usage.unlimited && usage.remaining <= 0;
-
-  // Fetch usage status and context on mount
+  // Fetch student progress context on mount (no usage meter — paywall removed)
   useEffect(() => {
     const fetchUsageAndContext = async () => {
       try {
-        const params = new URLSearchParams();
-        params.set("browserId", browserId);
-
-        const usageRes = await fetch(`/api/tutor/usage?${params}`, { credentials: "include" });
-        if (usageRes.ok) {
-          const data = await usageRes.json();
-          setUsage(data);
-        }
-
         if (userId) {
           const progressRes = await fetch("/api/user/progress", { credentials: "include" });
           if (progressRes.ok) {
@@ -180,7 +160,7 @@ export default function AITutor() {
   }, [messages]);
 
   const handleSend = useCallback(async () => {
-    if (!input.trim() || isLoading || isAtLimit) return;
+    if (!input.trim() || isLoading) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -217,12 +197,8 @@ export default function AITutor() {
       const data = await response.json();
 
       if (!response.ok) {
-        if (data.error === "daily_limit_reached") {
-          setUsage(prev => prev ? { ...prev, remaining: 0 } : null);
-          setError("You've reached your daily message limit. Upgrade to Pro for unlimited tutoring!");
-        } else if (response.status === 429) {
-          setUsage(prev => prev ? { ...prev, remaining: 0 } : null);
-          setError(data.message || "You've reached your message limit. Upgrade to Pro for unlimited tutoring!");
+        if (data.error === "daily_limit_reached" || response.status === 429) {
+          setError("Unable to send message right now. Please try again in a moment.");
         } else {
           setError(data.message || "Failed to get a response. Please try again.");
         }
@@ -239,7 +215,7 @@ export default function AITutor() {
       setMessages(prev => [...prev, assistantMessage]);
       
       if (data.usage) {
-        setUsage(data.usage);
+        _setUsage(data.usage);
       }
     } catch (err) {
       console.error("Chat error:", err);
@@ -247,7 +223,7 @@ export default function AITutor() {
     } finally {
       setIsLoading(false);
     }
-  }, [input, isLoading, isAtLimit, messages, context, userId, browserId]);
+  }, [input, isLoading, messages, context, userId, browserId]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -361,66 +337,31 @@ export default function AITutor() {
 
           {/* Input Area */}
           <div className="border-t border-tz-gray-200 bg-white p-3 sm:p-4 lg:p-6">
-            {/* Message Counter */}
-            {usage && !usage.unlimited && (
-              <div className="flex items-center justify-between mb-2 sm:mb-3">
-                <span className={cn(
-                  "text-xs sm:text-small",
-                  usage.remaining <= 1 ? "text-tz-orange" : "text-tz-gray-400"
-                )}>
-                  {usage.remaining} left today
-                </span>
-                <Link 
-                  to="/pricing" 
-                  className="flex items-center gap-1 text-xs sm:text-small text-tz-orange hover:underline"
-                >
-                  <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  <span className="hidden sm:inline">Upgrade for unlimited</span>
-                  <span className="sm:hidden">Upgrade</span>
-                </Link>
-              </div>
-            )}
-
-            {isAtLimit ? (
-              <div className="bg-orange-50 border border-orange-200 rounded-lg p-3 sm:p-4 text-center">
-                <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-tz-orange mx-auto mb-2" />
-                <p className="text-sm sm:text-body-strong text-tz-navy mb-1">Daily limit reached</p>
-                <p className="text-xs sm:text-small text-tz-gray-600 mb-3">
-                  Upgrade to Pro for unlimited access
-                </p>
-                <Link 
-                  to="/pricing" 
-                  className="inline-block px-4 py-2 bg-tz-orange text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors"
-                >
-                  Unlock Pro
-                </Link>
-              </div>
-            ) : (
-              <div className="flex gap-2 sm:gap-3">
-                <textarea
-                  ref={inputRef}
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  placeholder="Ask about any SAT topic..."
-                  className="flex-1 resize-none rounded-lg border border-tz-gray-200 px-3 py-2.5 sm:px-4 sm:py-3 text-sm focus:outline-none focus:border-tz-blue focus:ring-1 focus:ring-tz-blue"
-                  rows={1}
-                  disabled={isLoading}
-                />
-                <button
-                  onClick={handleSend}
-                  disabled={!input.trim() || isLoading}
-                  className={cn(
-                    "px-3 sm:px-4 rounded-lg transition-all flex-shrink-0",
-                    input.trim() && !isLoading
-                      ? "bg-tz-blue text-white hover:bg-blue-600"
-                      : "bg-tz-gray-200 text-tz-gray-400 cursor-not-allowed"
-                  )}
-                >
-                  <Send className="w-4 h-4 sm:w-5 sm:h-5" />
-                </button>
-              </div>
-            )}
+            {/* Message counter / paywall UI removed */}
+            <div className="flex gap-2 sm:gap-3">
+              <textarea
+                ref={inputRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="Ask about any SAT topic..."
+                className="flex-1 resize-none rounded-lg border border-tz-gray-200 px-3 py-2.5 sm:px-4 sm:py-3 text-sm focus:outline-none focus:border-tz-blue focus:ring-1 focus:ring-tz-blue"
+                rows={1}
+                disabled={isLoading}
+              />
+              <button
+                onClick={handleSend}
+                disabled={!input.trim() || isLoading}
+                className={cn(
+                  "px-3 sm:px-4 rounded-lg transition-all flex-shrink-0",
+                  input.trim() && !isLoading
+                    ? "bg-tz-blue text-white hover:bg-blue-600"
+                    : "bg-tz-gray-200 text-tz-gray-400 cursor-not-allowed"
+                )}
+              >
+                <Send className="w-4 h-4 sm:w-5 sm:h-5" />
+              </button>
+            </div>
           </div>
         </div>
 

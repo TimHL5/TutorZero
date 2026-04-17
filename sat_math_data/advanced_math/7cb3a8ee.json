@@ -1,0 +1,69 @@
+{
+  "questionId": "7cb3a8ee",
+  "external_id": "bb261990-bccf-4eea-bddb-5b86e004de1f",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "5a8575af-33e4-4499-ae97-9ad6b9090a32",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "P",
+  "domain": "Advanced Math",
+  "skill_cd": "P.B.",
+  "skill_desc": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"StartAbsoluteValue x minus 5 EndAbsoluteValue equals 10\"><mrow>\n\t<mrow>\n\t\t<mfenced close=\"|\" open=\"|\">\n\t\t\t<mrow>\n\t\t\t\t<mi>x</mi>\n\t\t\t\t<mo>-</mo>\n\t\t\t\t<mn>5</mn>\n\t\t\t</mrow>\n\t\t</mfenced>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>10</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">What is one possible solution to the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "15",
+    "-5"
+  ],
+  "correct_answer": [
+    "15",
+    "-5"
+  ],
+  "rationale": "<p>The correct answer is <math alttext=\"15\"><mn>15</mn>\n</math> or <math alttext=\"negative 5\"><mo>-</mo><mn>5</mn>\n</math>. By the definition of absolute value, if <math alttext=\"StartAbsoluteValue x minus 5 EndAbsoluteValue equals 10\"><mfenced close=\"|\" open=\"|\"><mrow><mi>x</mi><mo>-</mo><mn>5</mn></mrow></mfenced><mo>=</mo><mn>10</mn></math>, then <math alttext=\"x minus 5 equals 10\"><mi>x</mi><mo>-</mo><mn>5</mn><mo>=</mo><mn>10</mn></math> or <math alttext=\"x minus 5 equals negative 10\"><mi>x</mi><mo>-</mo><mn>5</mn><mo>=</mo><mo>-</mo><mn>10</mn></math>. Adding <math alttext=\"5\"><mn>5</mn>\n</math> to both sides of the first equation yields <math alttext=\"x equals 15\"><mi>x</mi><mo>=</mo><mn>15</mn></math>. Adding <math alttext=\"5\"><mn>5</mn>\n</math> to both sides of the second equation yields <math alttext=\"x equals negative 5\"><mi>x</mi><mo>=</mo><mo>-</mo><mn>5</mn></math>. Thus, the given equation has two possible solutions, <math alttext=\"15\"><mn>15</mn>\n</math> and <math alttext=\"negative 5\"><mo>-</mo><mn>5</mn>\n</math>. Note that 15 and -5 are examples of ways to enter a correct answer.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959823,
+    "pPcc": "SAT#P",
+    "questionId": "7cb3a8ee",
+    "skill_cd": "P.B.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "createDate": 1691007959823,
+    "program": "SAT",
+    "primary_class_cd_desc": "Advanced Math",
+    "ibn": null,
+    "external_id": "bb261990-bccf-4eea-bddb-5b86e004de1f",
+    "primary_class_cd": "P",
+    "uId": "5a8575af-33e4-4499-ae97-9ad6b9090a32",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"StartAbsoluteValue x minus 5 EndAbsoluteValue equals 10\"><mrow>\n\t<mrow>\n\t\t<mfenced close=\"|\" open=\"|\">\n\t\t\t<mrow>\n\t\t\t\t<mi>x</mi>\n\t\t\t\t<mo>-</mo>\n\t\t\t\t<mn>5</mn>\n\t\t\t</mrow>\n\t\t</mfenced>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>10</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">What is one possible solution to the given equation?</p>",
+    "keys": [
+      "15",
+      "-5"
+    ],
+    "rationale": "<p>The correct answer is <math alttext=\"15\"><mn>15</mn>\n</math> or <math alttext=\"negative 5\"><mo>-</mo><mn>5</mn>\n</math>. By the definition of absolute value, if <math alttext=\"StartAbsoluteValue x minus 5 EndAbsoluteValue equals 10\"><mfenced close=\"|\" open=\"|\"><mrow><mi>x</mi><mo>-</mo><mn>5</mn></mrow></mfenced><mo>=</mo><mn>10</mn></math>, then <math alttext=\"x minus 5 equals 10\"><mi>x</mi><mo>-</mo><mn>5</mn><mo>=</mo><mn>10</mn></math> or <math alttext=\"x minus 5 equals negative 10\"><mi>x</mi><mo>-</mo><mn>5</mn><mo>=</mo><mo>-</mo><mn>10</mn></math>. Adding <math alttext=\"5\"><mn>5</mn>\n</math> to both sides of the first equation yields <math alttext=\"x equals 15\"><mi>x</mi><mo>=</mo><mn>15</mn></math>. Adding <math alttext=\"5\"><mn>5</mn>\n</math> to both sides of the second equation yields <math alttext=\"x equals negative 5\"><mi>x</mi><mo>=</mo><mo>-</mo><mn>5</mn></math>. Thus, the given equation has two possible solutions, <math alttext=\"15\"><mn>15</mn>\n</math> and <math alttext=\"negative 5\"><mo>-</mo><mn>5</mn>\n</math>. Note that 15 and -5 are examples of ways to enter a correct answer.</p>",
+    "externalid": "bb261990-bccf-4eea-bddb-5b86e004de1f",
+    "correct_answer": [
+      "15",
+      "-5"
+    ]
+  },
+  "createDate": 1691007959823,
+  "updateDate": 1691007959823
+}

@@ -1,0 +1,69 @@
+{
+  "questionId": "35bec412",
+  "external_id": "db1f16a5-024c-473c-aedc-cdda8967d1c1",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "50f34b4a-194b-46e6-9612-6e12893b7b9e",
+  "uId": "364057bf-5f06-491b-bad2-2c86e9116299",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.C.",
+  "skill_desc": "One-variable data: Distributions and measures of center and spread",
+  "difficulty": "E",
+  "score_band_range_cd": 1,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"73\"><mn>73</mn>\n</math>, <math alttext=\"74\"><mn>74</mn>\n</math>, <math alttext=\"75\"><mn>75</mn>\n</math>, <math alttext=\"77\"><mn>77</mn>\n</math>, <math alttext=\"79\"><mn>79</mn>\n</math>, <math alttext=\"82\"><mn>82</mn>\n</math>, <math alttext=\"84\"><mn>84</mn>\n</math>, <math alttext=\"85\"><mn>85</mn>\n</math>, <math alttext=\"91\"><mn>91</mn>\n</math></p>\n<p style=\"text-align: left;\">What is the median of the data shown?</p>",
+  "answerOptions": [],
+  "keys": [
+    "79"
+  ],
+  "correct_answer": [
+    "79"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"79\"><mn>79</mn>\n</math>. The median of a data set with an odd number of values is the middle value of the set when the values are ordered from least to greatest. Because the given data set consists of nine values that are ordered from least to greatest, the median is the fifth value in the data set. Therefore, the median of the data shown is <math alttext=\"79\"><mn>79</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959833,
+    "pPcc": "SAT#Q",
+    "questionId": "35bec412",
+    "skill_cd": "Q.C.",
+    "score_band_range_cd": 1,
+    "skill_desc": "One-variable data: Distributions and measures of center and spread",
+    "createDate": 1691007959833,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": null,
+    "external_id": "db1f16a5-024c-473c-aedc-cdda8967d1c1",
+    "primary_class_cd": "Q",
+    "uId": "364057bf-5f06-491b-bad2-2c86e9116299",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "keys": [
+      "79"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"79\"><mn>79</mn>\n</math>. The median of a data set with an odd number of values is the middle value of the set when the values are ordered from least to greatest. Because the given data set consists of nine values that are ordered from least to greatest, the median is the fifth value in the data set. Therefore, the median of the data shown is <math alttext=\"79\"><mn>79</mn>\n</math>.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"73\"><mn>73</mn>\n</math>, <math alttext=\"74\"><mn>74</mn>\n</math>, <math alttext=\"75\"><mn>75</mn>\n</math>, <math alttext=\"77\"><mn>77</mn>\n</math>, <math alttext=\"79\"><mn>79</mn>\n</math>, <math alttext=\"82\"><mn>82</mn>\n</math>, <math alttext=\"84\"><mn>84</mn>\n</math>, <math alttext=\"85\"><mn>85</mn>\n</math>, <math alttext=\"91\"><mn>91</mn>\n</math></p>\n<p style=\"text-align: left;\">What is the median of the data shown?</p>",
+    "externalid": "db1f16a5-024c-473c-aedc-cdda8967d1c1",
+    "templateid": "27e17546-96ca-406b-bb49-6b1af4e1f8c1",
+    "vaultid": "50f34b4a-194b-46e6-9612-6e12893b7b9e",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "79"
+    ]
+  },
+  "createDate": 1691007959833,
+  "updateDate": 1691007959833
+}

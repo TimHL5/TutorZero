@@ -1,0 +1,51 @@
+{
+  "questionId": "940ff6f7",
+  "external_id": "e7084bbb-2fb4-4871-be43-276160350da2",
+  "vaultid": null,
+  "uId": "0f12e7c0-7fc4-4fac-a808-1e00730eed14",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "BOU",
+  "skill_desc": "Boundaries",
+  "difficulty": "H",
+  "score_band_range_cd": 7,
+  "type": "mcq",
+  "stimulus": "<p>Jamaican British artist Willard Wigan is known for his remarkable <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> so small that they are best viewed through a microscope, Wigan&rsquo;s sculptures are made from tiny natural materials, such as spiderweb strands.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "7670b92d-e084-4b73-a490-e694c233b820",
+      "content": "<p>microsculptures creations</p>"
+    },
+    {
+      "id": "bc84810a-a656-4980-8ade-cae3d6fa3d01",
+      "content": "<p>microsculptures, creations</p>"
+    },
+    {
+      "id": "2aa47063-52ec-455f-b10e-aff278791d41",
+      "content": "<p>microsculptures. Creations</p>"
+    },
+    {
+      "id": "a3f36842-c70a-4668-9fc0-3e808653ba84",
+      "content": "<p>microsculptures and creations</p>"
+    }
+  ],
+  "keys": [
+    "2aa47063-52ec-455f-b10e-aff278791d41"
+  ],
+  "correct_answer": [
+    "C"
+  ],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is punctuation between sentences. In this choice, the period is used to correctly mark the boundary between one sentence (\"Jamaican&hellip;microsculptures\") and another (\"Creations&hellip;strands\"). The noun phrase beginning with \"creations\" modifies the subject of the next sentence, \"Wigan&rsquo;s sculptures.\"</p><p>Choice A is incorrect because it results in a run-on sentence. The sentences (\"Jamaican&hellip;microsculptures\" and \"Creations&hellip;strands\") are fused without punctuation and/or a conjunction. Choice B is incorrect because it results in a comma splice. A comma can&rsquo;t be used in this way to mark the boundary between sentences. Choice D is incorrect. Without a comma preceding it, the conjunction \"and\" can&rsquo;t be used in this way to join sentences.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323048,
+  "updateDate": 1730147323048
+}

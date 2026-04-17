@@ -1,0 +1,69 @@
+{
+  "questionId": "465c73ad",
+  "external_id": "c33a8ce0-debc-4709-b0d7-3f1800613186",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "129f5433-76c7-48f1-9f3f-74d993dbd2a0",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.A.",
+  "skill_desc": "Linear equations in one variable",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"10 x equals 86\"><mrow>\n\t<mrow>\n\t\t<mn>10</mn>\n\t\t<mi>x</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>86</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">What value of <math alttext=\"x\"><mi>x</mi>\n</math> is the solution to the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "8.6",
+    "43/5"
+  ],
+  "correct_answer": [
+    "8.6",
+    "43/5"
+  ],
+  "rationale": "<p>The correct answer is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"8.6\"><mn>8.6</mn></math>. Dividing both sides of the given equation by <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"10\"><mn>10</mn></math> yields <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"x equals 8.6\"><mi>x</mi><mo>=</mo><mn>8.6</mn></math>. Therefore, <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"8.6\"><mn>8.6</mn></math> is the solution to the given equation. Note that 8.6&nbsp;and 43/5&nbsp;are examples of ways to enter a correct answer.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1776362727993,
+    "pPcc": "SAT#H",
+    "questionId": "465c73ad",
+    "skill_cd": "H.A.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Linear equations in one variable",
+    "createDate": 1776362727993,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "c33a8ce0-debc-4709-b0d7-3f1800613186",
+    "primary_class_cd": "H",
+    "uId": "129f5433-76c7-48f1-9f3f-74d993dbd2a0",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"10 x equals 86\"><mrow>\n\t<mrow>\n\t\t<mn>10</mn>\n\t\t<mi>x</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>86</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">What value of <math alttext=\"x\"><mi>x</mi>\n</math> is the solution to the given equation?</p>",
+    "keys": [
+      "8.6",
+      "43/5"
+    ],
+    "rationale": "<p>The correct answer is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"8.6\"><mn>8.6</mn></math>. Dividing both sides of the given equation by <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"10\"><mn>10</mn></math> yields <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"x equals 8.6\"><mi>x</mi><mo>=</mo><mn>8.6</mn></math>. Therefore, <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"8.6\"><mn>8.6</mn></math> is the solution to the given equation. Note that 8.6&nbsp;and 43/5&nbsp;are examples of ways to enter a correct answer.</p>",
+    "externalid": "c33a8ce0-debc-4709-b0d7-3f1800613186",
+    "correct_answer": [
+      "8.6",
+      "43/5"
+    ]
+  },
+  "createDate": 1776362727993,
+  "updateDate": 1776362727993
+}

@@ -1,0 +1,86 @@
+{
+  "questionId": "566759ef",
+  "external_id": null,
+  "disclosed_item_id": "05321-DC",
+  "source": "disclosed",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.B.",
+  "skill_desc": "Percentages",
+  "difficulty": "M",
+  "score_band_range_cd": 5,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p class=\"stem_paragraph \">Thomas installed a new stove in his restaurant. At the time of installation, the stove had a value of $800. Thomas estimates that each year the value of the stove will depreciate by 20% of the previous year&rsquo;s estimated value. What is the estimated value of the stove exactly 2&nbsp;years after Thomas installed it?</p>\n",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p class=\"choice_paragraph \">$480</p>\n"
+    },
+    {
+      "id": "b",
+      "content": "<p class=\"choice_paragraph \">$512</p>\n"
+    },
+    {
+      "id": "c",
+      "content": "<p class=\"choice_paragraph \">$556</p>\n"
+    },
+    {
+      "id": "d",
+      "content": "<p class=\"choice_paragraph \">$640</p>\n"
+    }
+  ],
+  "keys": null,
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p>Choice B is correct. If the stove&rsquo;s value depreciates by 20% of the previous year&rsquo;s estimated value, then each year it retains 100% &ndash; 20% = 80%, or 0.80, of the previous year&rsquo;s estimated value. Since the stove&rsquo;s value was $800 when Thomas installed it, the estimated value after two years would be (0.80)(0.80)($800) = $512.<p>Choice A is incorrect. This is the value of the stove if each year it had depreciated by 20% of the original value rather than by 20% of the previous year&rsquo;s estimated value. Choice C is incorrect and may be the result of a computational error. Choice D is incorrect. This is the estimated value of the stove 1 year after Thomas installed it, not 2 years.</p><p>&nbsp;</p></p>\n",
+  "answer_style": "Multiple Choice",
+  "section": "Math",
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959629,
+    "pPcc": "SAT#Q",
+    "questionId": "566759ef",
+    "skill_cd": "Q.B.",
+    "score_band_range_cd": 5,
+    "skill_desc": "Percentages",
+    "createDate": 1691007959629,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "05321-DC",
+    "external_id": null,
+    "primary_class_cd": "Q",
+    "uId": "e27e20e8-fbd3-4e37-b609-b11b4a8df417",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "item_id": "05321-DC",
+    "section": "Math",
+    "prompt": "<p class=\"stem_paragraph \">Thomas installed a new stove in his restaurant. At the time of installation, the stove had a value of $800. Thomas estimates that each year the value of the stove will depreciate by 20% of the previous year&rsquo;s estimated value. What is the estimated value of the stove exactly 2&nbsp;years after Thomas installed it?</p>\n",
+    "answer": {
+      "style": "Multiple Choice",
+      "choices": {
+        "a": {
+          "body": "<p class=\"choice_paragraph \">$480</p>\n"
+        },
+        "b": {
+          "body": "<p class=\"choice_paragraph \">$512</p>\n"
+        },
+        "c": {
+          "body": "<p class=\"choice_paragraph \">$556</p>\n"
+        },
+        "d": {
+          "body": "<p class=\"choice_paragraph \">$640</p>\n"
+        }
+      },
+      "rationale": "<p>Choice B is correct. If the stove&rsquo;s value depreciates by 20% of the previous year&rsquo;s estimated value, then each year it retains 100% &ndash; 20% = 80%, or 0.80, of the previous year&rsquo;s estimated value. Since the stove&rsquo;s value was $800 when Thomas installed it, the estimated value after two years would be (0.80)(0.80)($800) = $512.<p>Choice A is incorrect. This is the value of the stove if each year it had depreciated by 20% of the original value rather than by 20% of the previous year&rsquo;s estimated value. Choice C is incorrect and may be the result of a computational error. Choice D is incorrect. This is the estimated value of the stove 1 year after Thomas installed it, not 2 years.</p><p>&nbsp;</p></p>\n"
+    }
+  },
+  "createDate": 1691007959629,
+  "updateDate": 1691007959629,
+  "correct_answer_extracted_from_rationale": true
+}

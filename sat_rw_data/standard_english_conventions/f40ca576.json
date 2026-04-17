@@ -1,0 +1,51 @@
+{
+  "questionId": "f40ca576",
+  "external_id": "5b1c2438-3440-4e43-8c57-b478c7ed0be7",
+  "vaultid": "7ee23969-0c6a-4e08-934a-1b5738675862",
+  "uId": "bdbdf7ed-7b6e-4f44-81ab-06e15a1822a1",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "mcq",
+  "stimulus": "<p>Each year in the fall, when the weather starts to cool in the northern hemisphere, millions of North American monarch butterflies journey south. Searching for food and warmer habitats, they <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> thousands of miles&mdash;from as far north as Canada all the way down to Mexico&mdash;on this annual migration.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "190c9e3b-0430-40c8-9c18-b18b8fb5f69f",
+      "content": "<p>flew</p>"
+    },
+    {
+      "id": "26d797aa-a815-41ce-b56c-267bd0c1daad",
+      "content": "<p>were flying</p>"
+    },
+    {
+      "id": "d007b47b-3443-404a-b78b-c4f9f273827e",
+      "content": "<p>had flown</p>"
+    },
+    {
+      "id": "68306de2-02bb-481c-82d4-bc99319ff107",
+      "content": "<p>fly</p>"
+    }
+  ],
+  "keys": [
+    "68306de2-02bb-481c-82d4-bc99319ff107"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of verbs to express tense. In this choice, the present tense verb &ldquo;fly&rdquo; is consistent with the other present tense verb ( &ldquo;journey&rdquo;) used to describe the butterflies&rsquo; yearly migration. Together, these simple present tense verbs correctly indicate that the migration is a current, yearly occurrence. </p><p>Choice A is incorrect. The simple past tense verb &ldquo;flew&rdquo; isn&rsquo;t consistent with the other present tense verb used to describe the butterflies&rsquo; yearly migration. Choice B is incorrect. The past progressive tense verb &ldquo;were flying&rdquo; isn&rsquo;t consistent with the other present tense verb used to describe the butterflies&rsquo; yearly migration. Choice C is incorrect. The past perfect tense verb &ldquo;had flown&rdquo; isn&rsquo;t consistent with the other present tense verb used to describe the butterflies&rsquo; yearly migration. </p>",
+  "parenttemplatename": "OSP-736-SEC",
+  "parenttemplateid": "",
+  "templateclusterid": "d6e07fc1-fb62-4e25-a5fb-ce3aec56e0b7",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959349,
+  "updateDate": 1691007959349
+}

@@ -1,0 +1,51 @@
+{
+  "questionId": "96953201",
+  "external_id": "21b4b72d-63c7-49b2-a0cc-f6a157bd755c",
+  "vaultid": "8b3ffccf-e0dd-4546-8c85-08a5a3cc814b",
+  "uId": "5229b60c-55ed-4b35-8d63-13fc2467c3ab",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "BOU",
+  "skill_desc": "Boundaries",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": "<p>In her two major series &ldquo;Memory Test&rdquo; and &ldquo;Autobiography,&rdquo; painter Howardena Pindell explored themes <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> healing, self-discovery, and memory by cutting and sewing back together pieces of canvas and inserting personal artifacts, such as postcards, into some of the paintings.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "13ff2c75-e680-4e7e-8331-26de021db851",
+      "content": "<p>of</p>"
+    },
+    {
+      "id": "e00361d9-dad1-4c79-9e5b-a20c5ddd8c4e",
+      "content": "<p>of,</p>"
+    },
+    {
+      "id": "1197b5eb-5fe5-4ae2-8e00-96db68395ea1",
+      "content": "<p>of&mdash;</p>"
+    },
+    {
+      "id": "201c69cb-2e71-4422-bfbb-579d7e9ba6cd",
+      "content": "<p>of:</p>"
+    }
+  ],
+  "keys": [
+    "13ff2c75-e680-4e7e-8331-26de021db851"
+  ],
+  "correct_answer": [
+    "A"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is punctuation between a preposition and its complement. No punctuation is needed between the preposition &ldquo;of&rdquo; and its complement, the noun phrase &ldquo;healing, self-discovery, and memory.&rdquo; </p><p>Choice B is incorrect because no punctuation is needed between a preposition and its complement.&nbsp;Choice C is incorrect because no punctuation is needed between a preposition and its complement. Choice D is incorrect because no punctuation is needed between a preposition and its complement.&nbsp;</p>",
+  "parenttemplatename": "OSP-702-SEC",
+  "parenttemplateid": "",
+  "templateclusterid": "77c1b64a-b511-42d5-b67d-4795b139ecf2",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959347,
+  "updateDate": 1691007959347
+}

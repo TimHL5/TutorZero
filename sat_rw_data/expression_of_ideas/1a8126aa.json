@@ -1,0 +1,51 @@
+{
+  "questionId": "1a8126aa",
+  "external_id": "643d6efb-497b-497b-a36c-4c6d2b2baa05",
+  "vaultid": "5c6ed375-32ba-49b9-9ea2-3301f59371fb",
+  "uId": "32adc5a3-db5d-42f3-b7c7-3d08229db116",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "EOI",
+  "domain": "Expression of Ideas",
+  "skill_cd": "TRA",
+  "skill_desc": "Transitions",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "mcq",
+  "stimulus": "<p>In 2019, researcher Patricia Jurado Gonzalez and food historian Nawal Nasrallah prepared a stew from a 4,000-year-old recipe found on a Mesopotamian clay tablet. When they tasted the dish, known as <em>pa&scaron;rūtum </em>(&ldquo;unwinding&rdquo;), they found that it had a mild taste and inspired a sense of calm. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the researchers, knowing that dishes were sometimes named after their intended effects, theorized that the dish&rsquo;s name, &ldquo;unwinding,&rdquo; referred to its function: to help ancient diners relax.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "7b193331-e950-44dd-a8e7-8f934c8eaa27",
+      "content": "<p>Therefore,</p>"
+    },
+    {
+      "id": "f424a0b1-8fbf-4de2-8ee2-cac83afb45f5",
+      "content": "<p>Alternately,</p>"
+    },
+    {
+      "id": "42e555a3-e19e-4562-ae5b-4b89f68454b3",
+      "content": "<p>Nevertheless,</p>"
+    },
+    {
+      "id": "2ab7f5f1-3bce-4865-a896-5dc1107da02d",
+      "content": "<p>Likewise,</p>"
+    }
+  ],
+  "keys": [
+    "7b193331-e950-44dd-a8e7-8f934c8eaa27"
+  ],
+  "correct_answer": [
+    "A"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Therefore\" logically signals that the action described in this sentence&mdash;the researchers theorizing that the dish was named for its effect on diners&mdash;is a result or consequence of the previous observation that the dish had a calming effect.</p><p>Choice B is incorrect because \"alternately\" illogically signals that the action described in this sentence offers an alternative or contrast to the previous observation that the dish had a calming effect. Instead, the action is a result or consequence of that observation. Choice C is incorrect because \"nevertheless\" illogically signals that the action described in this sentence occurs despite the previous observation that the dish had a calming effect. Instead, the action is a result or consequence of that observation. Choice D is incorrect because \"likewise\" illogically signals that this sentence merely adds a second, similar detail to the previous observation that the dish had a calming effect. Instead, this sentence describes an action that is a result or consequence of that observation.</p>",
+  "parenttemplatename": "OSP-201-TRA",
+  "parenttemplateid": "",
+  "templateclusterid": "a256a63b-bbad-4487-97e6-ce53d834e288",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959325,
+  "updateDate": 1691007959325
+}

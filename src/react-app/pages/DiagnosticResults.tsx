@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router";
 import { topicDisplayNames, type Question } from "@/data/questions";
 import { useStudentProgress } from "@/react-app/hooks/useStudentProgress";
-import { useAuth } from "@/react-app/lib/AuthProvider";
 import { ArrowRight, TrendingUp, TrendingDown, AlertTriangle, Home } from "lucide-react";
 // Utility classes used inline
 
@@ -41,7 +40,6 @@ interface DangerousGap {
 
 export default function DiagnosticResults() {
   const navigate = useNavigate();
-  const { user } = useAuth();
   const [results, setResults] = useState<StoredResults | null>(null);
   const [topicScores, setTopicScores] = useState<TopicScore[]>([]);
   const [estimatedScore, setEstimatedScore] = useState({ low: 0, high: 0 });
@@ -246,11 +244,6 @@ export default function DiagnosticResults() {
                 </span>
               ))}
             </div>
-            {!user && (
-              <p className="text-small text-red-500 mt-4">
-                Pro includes deep analysis of WHY these gaps exist and a targeted remediation path.
-              </p>
-            )}
           </div>
         )}
 

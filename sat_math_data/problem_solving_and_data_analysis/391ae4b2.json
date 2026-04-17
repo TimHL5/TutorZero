@@ -1,0 +1,103 @@
+{
+  "questionId": "391ae4b2",
+  "external_id": "4135b77c-4178-4cdc-8f4a-8f46e634b934",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "bcc03d51-28b8-4cb4-b581-0dd6e426b575",
+  "uId": "b8fe154b-37b8-4187-863c-dd1005243c95",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.C.",
+  "skill_desc": "One-variable data: Distributions and measures of center and spread",
+  "difficulty": "H",
+  "score_band_range_cd": 7,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">Data set F consists of <math alttext=\"55\"><mn>55</mn>\n</math> integers between <math alttext=\"170\"><mn>170</mn>\n</math> and <math alttext=\"290\"><mn>290</mn>\n</math>. Data set G consists of all the integers in data set F as well as the integer <math alttext=\"10\"><mn>10</mn>\n</math>. Which of the following must be less for data set F than for data set G?</p>\n<ol style=\"list-style-type: upper-roman;\">\n<li style=\"text-align: left;\">The mean</li>\n<li style=\"text-align: left;\">The median</li>\n</ol>",
+  "answerOptions": [
+    {
+      "id": "1694d33e-d682-4de8-a116-a0ef880c9e66",
+      "content": "<p style=\"text-align: left;\">I only</p>"
+    },
+    {
+      "id": "84d8c6af-88b5-42f9-9555-1ec0e8605d3a",
+      "content": "<p style=\"text-align: left;\">II only</p>"
+    },
+    {
+      "id": "ef1c7321-f4ad-4733-8951-96990e111b43",
+      "content": "<p style=\"text-align: left;\">I and II</p>"
+    },
+    {
+      "id": "46c11864-c95d-46b1-ac26-b6ec4faf05ed",
+      "content": "<p style=\"text-align: left;\">Neither I nor II</p>"
+    }
+  ],
+  "keys": [
+    "46c11864-c95d-46b1-ac26-b6ec4faf05ed"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p style=\"text-align: left;\">Choice D is correct. It's given that data set F consists of <math alttext=\"55\"><mn>55</mn>\n</math> integers between <math alttext=\"170\"><mn>170</mn>\n</math> and <math alttext=\"290\"><mn>290</mn>\n</math> and data set G consists of all the integers in data set F as well as the integer <math alttext=\"10\"><mn>10</mn>\n</math>. Since the integer <math alttext=\"10\"><mn>10</mn>\n</math> is less than all the integers in data set F, the mean of data set G must be less than the mean of data set F. Thus, the mean of data set F isn't less than the mean of data set G. When a data set is in ascending order, the median is between the two middle values when there is an even number of values and the median is the middle value when there is an odd number of values. It follows that the median of data set F is either greater than or equal to the median of data set G. Therefore, the median of data set F isn't less than the median of data set G. Thus, neither the mean nor the median must be less for data set F than for data set G.</p>\n<p style=\"text-align: left;\">Choice A is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice B is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice C is incorrect and may result from conceptual or calculation errors.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959833,
+    "pPcc": "SAT#Q",
+    "questionId": "391ae4b2",
+    "skill_cd": "Q.C.",
+    "score_band_range_cd": 7,
+    "skill_desc": "One-variable data: Distributions and measures of center and spread",
+    "createDate": 1691007959833,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": null,
+    "external_id": "4135b77c-4178-4cdc-8f4a-8f46e634b934",
+    "primary_class_cd": "Q",
+    "uId": "b8fe154b-37b8-4187-863c-dd1005243c95",
+    "difficulty": "H"
+  },
+  "raw_detail": {
+    "keys": [
+      "46c11864-c95d-46b1-ac26-b6ec4faf05ed"
+    ],
+    "rationale": "<p style=\"text-align: left;\">Choice D is correct. It's given that data set F consists of <math alttext=\"55\"><mn>55</mn>\n</math> integers between <math alttext=\"170\"><mn>170</mn>\n</math> and <math alttext=\"290\"><mn>290</mn>\n</math> and data set G consists of all the integers in data set F as well as the integer <math alttext=\"10\"><mn>10</mn>\n</math>. Since the integer <math alttext=\"10\"><mn>10</mn>\n</math> is less than all the integers in data set F, the mean of data set G must be less than the mean of data set F. Thus, the mean of data set F isn't less than the mean of data set G. When a data set is in ascending order, the median is between the two middle values when there is an even number of values and the median is the middle value when there is an odd number of values. It follows that the median of data set F is either greater than or equal to the median of data set G. Therefore, the median of data set F isn't less than the median of data set G. Thus, neither the mean nor the median must be less for data set F than for data set G.</p>\n<p style=\"text-align: left;\">Choice A is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice B is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice C is incorrect and may result from conceptual or calculation errors.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">Data set F consists of <math alttext=\"55\"><mn>55</mn>\n</math> integers between <math alttext=\"170\"><mn>170</mn>\n</math> and <math alttext=\"290\"><mn>290</mn>\n</math>. Data set G consists of all the integers in data set F as well as the integer <math alttext=\"10\"><mn>10</mn>\n</math>. Which of the following must be less for data set F than for data set G?</p>\n<ol style=\"list-style-type: upper-roman;\">\n<li style=\"text-align: left;\">The mean</li>\n<li style=\"text-align: left;\">The median</li>\n</ol>",
+    "externalid": "4135b77c-4178-4cdc-8f4a-8f46e634b934",
+    "templateid": "7660cf5d-13d8-4da6-8849-aa32da9aac4e",
+    "vaultid": "bcc03d51-28b8-4cb4-b581-0dd6e426b575",
+    "type": "mcq",
+    "answerOptions": [
+      {
+        "id": "1694d33e-d682-4de8-a116-a0ef880c9e66",
+        "content": "<p style=\"text-align: left;\">I only</p>"
+      },
+      {
+        "id": "84d8c6af-88b5-42f9-9555-1ec0e8605d3a",
+        "content": "<p style=\"text-align: left;\">II only</p>"
+      },
+      {
+        "id": "ef1c7321-f4ad-4733-8951-96990e111b43",
+        "content": "<p style=\"text-align: left;\">I and II</p>"
+      },
+      {
+        "id": "46c11864-c95d-46b1-ac26-b6ec4faf05ed",
+        "content": "<p style=\"text-align: left;\">Neither I nor II</p>"
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "createDate": 1691007959833,
+  "updateDate": 1691007959833
+}

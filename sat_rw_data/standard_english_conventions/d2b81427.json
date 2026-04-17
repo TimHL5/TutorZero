@@ -1,0 +1,51 @@
+{
+  "questionId": "d2b81427",
+  "external_id": "2ecd025a-d554-43f3-81bd-70826491a1b8",
+  "vaultid": "af09f4c3-aded-40c2-b89d-7d4d22b2f4a6",
+  "uId": "3f18edb2-74cf-4af6-b357-749944ae5eaf",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "H",
+  "score_band_range_cd": 6,
+  "type": "mcq",
+  "stimulus": "<p>In assessing the films of Japanese director Akira Kurosawa, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> have missed his equally deep engagement with Japanese artistic traditions such as Noh theater.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a567d491-9b10-4942-90ee-9fc416aa64fc",
+      "content": "<p>many critics have focused on Kurosawa&rsquo;s use of Western literary sources but&nbsp;</p>"
+    },
+    {
+      "id": "a48119a7-e7f6-4d00-848a-04659d4881e0",
+      "content": "<p>Kurosawa&rsquo;s use of Western literary sources has been the focus of many critics, who</p>"
+    },
+    {
+      "id": "335c5e1c-90fd-4703-9af3-05fce3c7c2b8",
+      "content": "<p>there are many critics who have focused on Kurosawa&rsquo;s use of Western literary sources, but they</p>"
+    },
+    {
+      "id": "7dd0bb53-5569-4a88-b756-5dbdbc838e18",
+      "content": "<p>the focus of many critics has been on Kurosawa&rsquo;s use of Western literary sources; they</p>"
+    }
+  ],
+  "keys": [
+    "a567d491-9b10-4942-90ee-9fc416aa64fc"
+  ],
+  "correct_answer": [
+    "A"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase &ldquo;many critics&rdquo; the subject of the sentence and places it immediately after the modifying phrase &ldquo;in assessing&hellip;Kurosawa.&rdquo; In doing so, this choice clearly establishes that it is the critics&mdash;and not another noun in the sentence&mdash;who assess Kurosawa&rsquo;s films. </p><p>Choice B is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;Kurosawa&rsquo;s&hellip;sources&rdquo; immediately after the modifying phrase illogically suggests that his use of Western literary sources is what assesses Kurosawa&rsquo;s films. Choice C is incorrect because it results in a dangling modifier. The placement of the function word &ldquo;there&rdquo; immediately after the modifying phrase illogically suggests that &ldquo;there&rdquo; is what assesses Kurosawa&rsquo;s films. Choice D is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;the focus&hellip;critics&rdquo; immediately after the modifying phrase illogically suggests that the critics&rsquo; focus is what assesses Kurosawa&rsquo;s films. </p>",
+  "parenttemplatename": "OSP-654-SEC",
+  "parenttemplateid": "",
+  "templateclusterid": "bcf74803-108e-498b-a5e2-8a8c17549908",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959341,
+  "updateDate": 1691007959341
+}

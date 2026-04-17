@@ -1,0 +1,51 @@
+{
+  "questionId": "4565a53c",
+  "external_id": "9ec6e792-f2d9-4e2e-92ec-c9b165923558",
+  "vaultid": "bf17a212-7bde-4adb-97f0-887f90cad5c5",
+  "uId": "b26cad93-09fc-4030-b95c-962de741c90a",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "BOU",
+  "skill_desc": "Boundaries",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "mcq",
+  "stimulus": "<p>Luc&iacute;a Michel of the University of Chile observed that alkaline soils contain an insoluble form of iron that blueberry plants cannot absorb, thus inhibiting blueberry growth. If these plants were grown in alkaline soil alongside grasses that aid in iron solubilization, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Michel was determined to find out.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "fa36a957-5d05-4ba2-99f2-fc8a843f229f",
+      "content": "<p>could the blueberries thrive.&nbsp;</p>"
+    },
+    {
+      "id": "7116c1cb-7369-4742-a4ee-dbb4dbabdad6",
+      "content": "<p>the blueberries could thrive.&nbsp;</p>"
+    },
+    {
+      "id": "bb599286-38d9-4b42-b1d5-b0f74350d97c",
+      "content": "<p>the blueberries could thrive?</p>"
+    },
+    {
+      "id": "f2546507-3902-4a4a-9b34-b43cbb0348d3",
+      "content": "<p>could the blueberries thrive?</p>"
+    }
+  ],
+  "keys": [
+    "f2546507-3902-4a4a-9b34-b43cbb0348d3"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is end-of-sentence punctuation. This choice correctly uses a question mark to punctuate the interrogative clause &ldquo;could the blueberries thrive,&rdquo; which asks a direct question at the end of the sentence. </p><p>Choice A is incorrect because a period can&rsquo;t be used in this way to punctuate an interrogative clause, such as &ldquo;could the blueberries thrive,&rdquo; at the end of a sentence. Choice B is incorrect because the context requires an interrogative clause. The declarative clause &ldquo;the blueberries could thrive&rdquo; incorrectly indicates that it was known that the blueberries could thrive in alkaline soil, whereas Michel had yet to find this out. Choice C is incorrect because a question mark can&rsquo;t be used in this way to punctuate a declarative clause, such as &ldquo;the blueberries could thrive,&rdquo; at the end of a sentence. </p>",
+  "parenttemplatename": "OSP-602-SEC",
+  "parenttemplateid": "",
+  "templateclusterid": "fa9f98d4-8fa8-4dbf-9bbc-dc2c8f4c1f7d",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959338,
+  "updateDate": 1691007959338
+}

@@ -1,0 +1,69 @@
+{
+  "questionId": "61b87506",
+  "external_id": "27dab70d-b227-496d-9793-7bbb537c6638",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "11a94d16-ddcf-4f87-b385-eabee90e73c7",
+  "uId": "94146940-9197-47af-87d9-9c73971b224b",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.A.",
+  "skill_desc": "Ratios, rates, proportional relationships, and units",
+  "difficulty": "M",
+  "score_band_range_cd": 5,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">For the values <math alttext=\"j\"><mi>j</mi>\n</math> and <math alttext=\"k\"><mi>k</mi>\n</math>, the ratio of <math alttext=\"j\"><mi>j</mi>\n</math> to <math alttext=\"k\"><mi>k</mi>\n</math> is <math alttext=\"11\"><mn>11</mn>\n</math> to <math alttext=\"12\"><mn>12</mn>\n</math>. If <math alttext=\"j\"><mi>j</mi>\n</math> is multiplied by <math alttext=\"17\"><mn>17</mn>\n</math>, what is <math alttext=\"k\"><mi>k</mi>\n</math> multiplied by in order to maintain the same ratio?</p>",
+  "answerOptions": [],
+  "keys": [
+    "17"
+  ],
+  "correct_answer": [
+    "17"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"17\"><mn>17</mn>\n</math>. If one value is multiplied by a number, then the other value must be multiplied by the same number in order to maintain the same ratio. It&rsquo;s given that <math alttext=\"j\"><mi>j</mi>\n</math> is multiplied by <math alttext=\"17\"><mn>17</mn>\n</math>. Therefore, in order to maintain the same ratio, <math alttext=\"k\"><mi>k</mi>\n</math> must also be multiplied by <math alttext=\"17\"><mn>17</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959831,
+    "pPcc": "SAT#Q",
+    "questionId": "61b87506",
+    "skill_cd": "Q.A.",
+    "score_band_range_cd": 5,
+    "skill_desc": "Ratios, rates, proportional relationships, and units",
+    "createDate": 1691007959831,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": null,
+    "external_id": "27dab70d-b227-496d-9793-7bbb537c6638",
+    "primary_class_cd": "Q",
+    "uId": "94146940-9197-47af-87d9-9c73971b224b",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "keys": [
+      "17"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"17\"><mn>17</mn>\n</math>. If one value is multiplied by a number, then the other value must be multiplied by the same number in order to maintain the same ratio. It&rsquo;s given that <math alttext=\"j\"><mi>j</mi>\n</math> is multiplied by <math alttext=\"17\"><mn>17</mn>\n</math>. Therefore, in order to maintain the same ratio, <math alttext=\"k\"><mi>k</mi>\n</math> must also be multiplied by <math alttext=\"17\"><mn>17</mn>\n</math>.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">For the values <math alttext=\"j\"><mi>j</mi>\n</math> and <math alttext=\"k\"><mi>k</mi>\n</math>, the ratio of <math alttext=\"j\"><mi>j</mi>\n</math> to <math alttext=\"k\"><mi>k</mi>\n</math> is <math alttext=\"11\"><mn>11</mn>\n</math> to <math alttext=\"12\"><mn>12</mn>\n</math>. If <math alttext=\"j\"><mi>j</mi>\n</math> is multiplied by <math alttext=\"17\"><mn>17</mn>\n</math>, what is <math alttext=\"k\"><mi>k</mi>\n</math> multiplied by in order to maintain the same ratio?</p>",
+    "externalid": "27dab70d-b227-496d-9793-7bbb537c6638",
+    "templateid": "2c49ba56-78d9-415a-8975-839d0a683157",
+    "vaultid": "11a94d16-ddcf-4f87-b385-eabee90e73c7",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "17"
+    ]
+  },
+  "createDate": 1691007959831,
+  "updateDate": 1691007959831
+}

@@ -1,0 +1,69 @@
+{
+  "questionId": "b4a6ed81",
+  "external_id": "74a8d55a-4db1-41ce-9d72-b5498e6a1d89",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "01f1db27-8e0b-4689-bfb9-26bbd0debe75",
+  "uId": "2350e4d0-5363-4994-aa2d-ef1dad6202d6",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "P",
+  "domain": "Advanced Math",
+  "skill_cd": "P.A.",
+  "skill_desc": "Equivalent expressions",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The expression <math alttext=\"90 y Superscript 5 minus 54 y Superscript 4\"><mrow>\n\t<mrow>\n\t\t<mn>90</mn>\n\t\t<msup>\n\t\t\t<mi>y</mi>\n\t\t\t<mn>5</mn>\n\t\t</msup>\n\t</mrow>\n\t<mo>-</mo>\n\t<mrow>\n\t\t<mn>54</mn>\n\t\t<msup>\n\t\t\t<mi>y</mi>\n\t\t\t<mn>4</mn>\n\t\t</msup>\n\t</mrow>\n</mrow>\n</math> is equivalent to <math alttext=\"r y Superscript 4 Baseline left parenthesis 15 y minus 9 right parenthesis\"><mi>r</mi><msup><mi>y</mi><mn>4</mn></msup><mfenced><mrow><mrow><mn>15</mn></mrow><mi>y</mi><mo>-</mo><mrow><mn>9</mn></mrow></mrow></mfenced></math>, where <math alttext=\"r\"><mi>r</mi>\n</math> is a constant. What is the value of <math alttext=\"r\"><mi>r</mi>\n</math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "6"
+  ],
+  "correct_answer": [
+    "6"
+  ],
+  "rationale": "<p>The correct answer is <math alttext=\"6\"><mn>6</mn>\n</math>. Applying the distributive property to the expression&nbsp;<math alttext=\"r y Superscript 4 Baseline left parenthesis 15 y minus 9 right parenthesis\"><mi>r</mi><msup><mi>y</mi><mn>4</mn></msup><mfenced><mrow><mn>15</mn><mi>y</mi><mo>-</mo><mn>9</mn></mrow></mfenced></math> yields <math alttext=\"15 r y Superscript 5 minus 9 r y Superscript 4\"><mn>15</mn><mi>r</mi><msup><mi>y</mi><mn>5</mn></msup><mo>-</mo><mn>9</mn><mi>r</mi><msup><mi>y</mi><mn>4</mn></msup></math>. Since <math alttext=\"90 y Superscript 5 minus 54 y Superscript 4\"><mn>90</mn><msup><mi>y</mi><mn>5</mn></msup><mo>-</mo><mn>54</mn><msup><mi>y</mi><mn>4</mn></msup></math> is equivalent to <math alttext=\"r y Superscript 4 Baseline left parenthesis 15 y minus 9 right parenthesis\"><mi>r</mi><msup><mi>y</mi><mn>4</mn></msup><mfenced><mrow><mn>15</mn><mi>y</mi><mo>-</mo><mn>9</mn></mrow></mfenced></math>, it follows that <math alttext=\"90 y Superscript 5 minus 54 y Superscript 4\"><mn>90</mn><msup><mi>y</mi><mn>5</mn></msup><mo>-</mo><mn>54</mn><msup><mi>y</mi><mn>4</mn></msup></math> is also equivalent to <math alttext=\"15 r y Superscript 5 minus 9 r y Superscript 4\"><mn>15</mn><mi>r</mi><msup><mi>y</mi><mn>5</mn></msup><mo>-</mo><mn>9</mn><mi>r</mi><msup><mi>y</mi><mn>4</mn></msup></math>. Since these expressions are equivalent, it follows that corresponding coefficients are equivalent. Therefore, <math alttext=\"90 equals 15 r\"><mrow>\n\t<mn>90</mn>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>15</mn>\n\t\t<mi>r</mi>\n\t</mrow>\n</mrow>\n</math> and <math alttext=\"negative 54 equals minus 9 r\"><mrow>\n\t<mo>-</mo><mn>54</mn>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mn>9</mn>\n\t\t<mi>r</mi>\n\t</mrow>\n</mrow>\n</math>. Solving either of these equations for <math alttext=\"r\"><mi>r</mi>\n</math> will yield the value of <math alttext=\"r\"><mi>r</mi>\n</math>. Dividing both sides of <math alttext=\"90 equals 15 r\"><mrow>\n\t<mn>90</mn>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>15</mn>\n\t\t<mi>r</mi>\n\t</mrow>\n</mrow>\n</math> by <math alttext=\"15\"><mn>15</mn>\n</math> yields <math alttext=\"6 equals r\"><mrow>\n\t<mn>6</mn>\n\t<mo>=</mo>\n\t<mi>r</mi>\n</mrow>\n</math>. Therefore, the value of <math alttext=\"r\"><mi>r</mi>\n</math> is <math alttext=\"6\"><mn>6</mn>\n</math>. &nbsp;</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959821,
+    "pPcc": "SAT#P",
+    "questionId": "b4a6ed81",
+    "skill_cd": "P.A.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Equivalent expressions",
+    "createDate": 1691007959821,
+    "program": "SAT",
+    "primary_class_cd_desc": "Advanced Math",
+    "ibn": null,
+    "external_id": "74a8d55a-4db1-41ce-9d72-b5498e6a1d89",
+    "primary_class_cd": "P",
+    "uId": "2350e4d0-5363-4994-aa2d-ef1dad6202d6",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "keys": [
+      "6"
+    ],
+    "rationale": "<p>The correct answer is <math alttext=\"6\"><mn>6</mn>\n</math>. Applying the distributive property to the expression&nbsp;<math alttext=\"r y Superscript 4 Baseline left parenthesis 15 y minus 9 right parenthesis\"><mi>r</mi><msup><mi>y</mi><mn>4</mn></msup><mfenced><mrow><mn>15</mn><mi>y</mi><mo>-</mo><mn>9</mn></mrow></mfenced></math> yields <math alttext=\"15 r y Superscript 5 minus 9 r y Superscript 4\"><mn>15</mn><mi>r</mi><msup><mi>y</mi><mn>5</mn></msup><mo>-</mo><mn>9</mn><mi>r</mi><msup><mi>y</mi><mn>4</mn></msup></math>. Since <math alttext=\"90 y Superscript 5 minus 54 y Superscript 4\"><mn>90</mn><msup><mi>y</mi><mn>5</mn></msup><mo>-</mo><mn>54</mn><msup><mi>y</mi><mn>4</mn></msup></math> is equivalent to <math alttext=\"r y Superscript 4 Baseline left parenthesis 15 y minus 9 right parenthesis\"><mi>r</mi><msup><mi>y</mi><mn>4</mn></msup><mfenced><mrow><mn>15</mn><mi>y</mi><mo>-</mo><mn>9</mn></mrow></mfenced></math>, it follows that <math alttext=\"90 y Superscript 5 minus 54 y Superscript 4\"><mn>90</mn><msup><mi>y</mi><mn>5</mn></msup><mo>-</mo><mn>54</mn><msup><mi>y</mi><mn>4</mn></msup></math> is also equivalent to <math alttext=\"15 r y Superscript 5 minus 9 r y Superscript 4\"><mn>15</mn><mi>r</mi><msup><mi>y</mi><mn>5</mn></msup><mo>-</mo><mn>9</mn><mi>r</mi><msup><mi>y</mi><mn>4</mn></msup></math>. Since these expressions are equivalent, it follows that corresponding coefficients are equivalent. Therefore, <math alttext=\"90 equals 15 r\"><mrow>\n\t<mn>90</mn>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>15</mn>\n\t\t<mi>r</mi>\n\t</mrow>\n</mrow>\n</math> and <math alttext=\"negative 54 equals minus 9 r\"><mrow>\n\t<mo>-</mo><mn>54</mn>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mo>-</mo>\n\t\t<mn>9</mn>\n\t\t<mi>r</mi>\n\t</mrow>\n</mrow>\n</math>. Solving either of these equations for <math alttext=\"r\"><mi>r</mi>\n</math> will yield the value of <math alttext=\"r\"><mi>r</mi>\n</math>. Dividing both sides of <math alttext=\"90 equals 15 r\"><mrow>\n\t<mn>90</mn>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>15</mn>\n\t\t<mi>r</mi>\n\t</mrow>\n</mrow>\n</math> by <math alttext=\"15\"><mn>15</mn>\n</math> yields <math alttext=\"6 equals r\"><mrow>\n\t<mn>6</mn>\n\t<mo>=</mo>\n\t<mi>r</mi>\n</mrow>\n</math>. Therefore, the value of <math alttext=\"r\"><mi>r</mi>\n</math> is <math alttext=\"6\"><mn>6</mn>\n</math>. &nbsp;</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">The expression <math alttext=\"90 y Superscript 5 minus 54 y Superscript 4\"><mrow>\n\t<mrow>\n\t\t<mn>90</mn>\n\t\t<msup>\n\t\t\t<mi>y</mi>\n\t\t\t<mn>5</mn>\n\t\t</msup>\n\t</mrow>\n\t<mo>-</mo>\n\t<mrow>\n\t\t<mn>54</mn>\n\t\t<msup>\n\t\t\t<mi>y</mi>\n\t\t\t<mn>4</mn>\n\t\t</msup>\n\t</mrow>\n</mrow>\n</math> is equivalent to <math alttext=\"r y Superscript 4 Baseline left parenthesis 15 y minus 9 right parenthesis\"><mi>r</mi><msup><mi>y</mi><mn>4</mn></msup><mfenced><mrow><mrow><mn>15</mn></mrow><mi>y</mi><mo>-</mo><mrow><mn>9</mn></mrow></mrow></mfenced></math>, where <math alttext=\"r\"><mi>r</mi>\n</math> is a constant. What is the value of <math alttext=\"r\"><mi>r</mi>\n</math>?</p>",
+    "externalid": "74a8d55a-4db1-41ce-9d72-b5498e6a1d89",
+    "templateid": "5835689a-f2b4-41f7-ae14-2546f7c50956",
+    "vaultid": "01f1db27-8e0b-4689-bfb9-26bbd0debe75",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "6"
+    ]
+  },
+  "createDate": 1691007959821,
+  "updateDate": 1691007959821
+}

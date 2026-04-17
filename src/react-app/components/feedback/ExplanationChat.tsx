@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { MessageCircle, Send, Loader2, X, Sparkles, Crown, Zap, Target, TrendingUp } from "lucide-react";
+import { useState } from "react";
+import { MessageCircle, Send, Loader2, X } from "lucide-react";
 import { ChatMarkdown } from "@/react-app/components/ui/ChatMarkdown";
 import { Button } from "@/react-app/components/ui/button";
 import type { Question } from "@/data/questions";
@@ -15,13 +15,6 @@ interface ChatMessage {
   content: string;
 }
 
-interface ChatUsage {
-  used: number;
-  limit: number;
-  remaining: number;
-  isPremium: boolean;
-}
-
 // Get browser ID for anonymous users
 function getBrowserId(): string {
   let browserId = localStorage.getItem("sat_prep_browser_id");
@@ -32,7 +25,10 @@ function getBrowserId(): string {
   return browserId;
 }
 
-// userId is now derived server-side from the auth cookie via optionalAuthMiddleware
+// Soft cap: 10 messages per problem. This is a UX ceiling (the chat is
+// meant for one question at a time) — NOT a paywall. The backend ignores
+// monthly/daily quotas now that everyone is treated as "pro".
+const MAX_MESSAGES_PER_PROBLEM = 10;
 
 export function ExplanationChat({ question, selectedIndex }: ExplanationChatProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,44 +36,14 @@ export function ExplanationChat({ question, selectedIndex }: ExplanationChatProp
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [usage, setUsage] = useState<ChatUsage | null>(null);
-  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
 
   const selectedLetter = String.fromCharCode(65 + selectedIndex);
   const correctLetter = String.fromCharCode(65 + question.correctIndex);
 
-  // Fetch usage on mount
-  useEffect(() => {
-    const fetchUsage = async () => {
-      try {
-        const browserId = getBrowserId();
-        const params = new URLSearchParams();
-        params.set("browserId", browserId);
-
-        const response = await fetch(`/api/chat/usage?${params}`, {
-          credentials: "include",
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setUsage(data);
-        }
-      } catch (err) {
-        console.error("Failed to fetch chat usage:", err);
-      }
-    };
-    fetchUsage();
-  }, []);
-
   const handleSendMessage = async () => {
     if (!input.trim() || isLoading) return;
-    
-    // Check if limit reached
-    if (usage && !usage.isPremium && usage.remaining <= 0) {
-      setShowUpgradeModal(true);
-      return;
-    }
-    
-    if (messages.length >= 10) {
+
+    if (messages.length >= MAX_MESSAGES_PER_PROBLEM) {
       setError("You've reached the maximum number of questions for this problem.");
       return;
     }
@@ -123,11 +89,6 @@ export function ExplanationChat({ question, selectedIndex }: ExplanationChatProp
       const data = await response.json();
 
       if (!response.ok) {
-        if (data.error === "monthly_limit_reached") {
-          setShowUpgradeModal(true);
-          setMessages(messages); // Revert
-          return;
-        }
         throw new Error(data.error || "Failed to get response");
       }
 
@@ -135,11 +96,6 @@ export function ExplanationChat({ question, selectedIndex }: ExplanationChatProp
         ...newMessages,
         { role: "assistant", content: data.message }
       ]);
-      
-      // Update usage from response
-      if (data.usage) {
-        setUsage(data.usage);
-      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setMessages(messages);
@@ -166,9 +122,6 @@ export function ExplanationChat({ question, selectedIndex }: ExplanationChatProp
         >
           <MessageCircle className="w-4 h-4 mr-2" />
           Still confused? Ask me
-          {usage && !usage.isPremium && (
-            <span className="ml-2 text-xs opacity-70">({usage.remaining} left)</span>
-          )}
         </Button>
       </div>
     );
@@ -254,142 +207,34 @@ export function ExplanationChat({ question, selectedIndex }: ExplanationChatProp
 
         {/* Input */}
         <div className="p-3 border-t border-slate-200 bg-white">
-          {usage && !usage.isPremium && usage.remaining <= 0 ? (
-            <button
-              onClick={() => setShowUpgradeModal(true)}
-              className="w-full py-3 px-4 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all"
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Ask a question..."
+              disabled={isLoading}
+              className="flex-1 px-3 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-slate-100 disabled:text-slate-500"
+            />
+            <Button
+              onClick={handleSendMessage}
+              disabled={!input.trim() || isLoading}
+              size="sm"
+              className="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 disabled:text-slate-500"
             >
-              <Crown className="w-4 h-4" />
-              Upgrade to Premium for Unlimited Help
-            </button>
-          ) : (
-            <>
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  placeholder="Ask a question..."
-                  disabled={isLoading}
-                  className="flex-1 px-3 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-slate-100 disabled:text-slate-500"
-                />
-                <Button
-                  onClick={handleSendMessage}
-                  disabled={!input.trim() || isLoading}
-                  size="sm"
-                  className="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 disabled:text-slate-500"
-                >
-                  {isLoading ? (
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                  ) : (
-                    <Send className="w-4 h-4" />
-                  )}
-                </Button>
-              </div>
-              <div className="flex items-center justify-between mt-2">
-                <p className="text-xs text-slate-500">
-                  {messages.filter(m => m.role === "user").length} / 5 questions this problem
-                </p>
-                {usage && !usage.isPremium && (
-                  <p className="text-xs text-slate-500">
-                    {usage.remaining} / {usage.limit} monthly chats left
-                  </p>
-                )}
-                {usage?.isPremium && (
-                  <p className="text-xs text-amber-600 flex items-center gap-1">
-                    <Crown className="w-3 h-3" /> Premium • Unlimited
-                  </p>
-                )}
-              </div>
-            </>
-          )}
+              {isLoading ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : (
+                <Send className="w-4 h-4" />
+              )}
+            </Button>
+          </div>
+          <p className="text-xs text-slate-500 mt-2">
+            {messages.filter((m) => m.role === "user").length} / {MAX_MESSAGES_PER_PROBLEM} questions this problem
+          </p>
         </div>
       </div>
-
-      {/* Premium Upgrade Modal */}
-      {showUpgradeModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full shadow-2xl overflow-hidden">
-            {/* Header */}
-            <div className="bg-gradient-to-br from-amber-400 via-orange-500 to-rose-500 p-6 text-white text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-white/20 backdrop-blur rounded-full flex items-center justify-center">
-                <Crown className="w-8 h-8" />
-              </div>
-              <h2 className="text-2xl font-bold mb-2">Upgrade to Premium</h2>
-              <p className="text-white/90 text-sm">
-                Get unlimited tutoring and personalized guidance
-              </p>
-            </div>
-            
-            {/* Features */}
-            <div className="p-6 space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-blue-100 text-blue-600">
-                  <MessageCircle className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-900">Unlimited AI Tutoring</h3>
-                  <p className="text-sm text-slate-600">Ask as many questions as you need to master every concept</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-purple-100 text-purple-600">
-                  <Target className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-900">Personalized Study Plan</h3>
-                  <p className="text-sm text-slate-600">AI-generated plans that adapt to your strengths and weaknesses</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-green-100 text-green-600">
-                  <TrendingUp className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-900">Detailed Progress Analytics</h3>
-                  <p className="text-sm text-slate-600">Track your improvement with in-depth performance insights</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-amber-100 text-amber-600">
-                  <Zap className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-900">Priority Support</h3>
-                  <p className="text-sm text-slate-600">Get faster responses and dedicated help when you need it</p>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100">
-                <p className="text-center text-slate-600 text-sm mb-4">
-                  You've used <span className="font-semibold">{usage?.used || 0}</span> of your <span className="font-semibold">{usage?.limit || 30}</span> free monthly chats
-                </p>
-                
-                <Button
-                  className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white py-6 text-lg font-semibold"
-                  onClick={() => {
-                    window.location.href = "/pricing";
-                  }}
-                >
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  Upgrade to Pro
-                </Button>
-                
-                <button
-                  onClick={() => setShowUpgradeModal(false)}
-                  className="w-full mt-3 py-2 text-slate-500 hover:text-slate-700 text-sm font-medium transition-colors"
-                >
-                  Maybe later
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }

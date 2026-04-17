@@ -1,0 +1,66 @@
+{
+  "questionId": "4837406c",
+  "external_id": "334db357-0b99-4f13-a766-9dde9a462af3",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "c5b2b684-54a5-4965-9923-d05d5b1e9a14",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.A.",
+  "skill_desc": "Ratios, rates, proportional relationships, and units",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">An object travels at a constant speed of <math alttext=\"6\"><mn>6</mn>\n</math> centimeters per second. At this speed, what is the time, in seconds, that it would take for the object to travel <math alttext=\"24\"><mn>24</mn>\n</math> centimeters?</p>",
+  "answerOptions": [],
+  "keys": [
+    "4"
+  ],
+  "correct_answer": [
+    "4"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"4\"><mn>4</mn>\n</math>. It&rsquo;s given that the object travels at a constant speed of <math alttext=\"6\"><mn>6</mn>\n</math> centimeters per second. The speed of the object can be written as <math alttext=\"StartFraction 6 centimeters Over 1 second EndFraction\"><mfrac><mrow><mn>6</mn><mo>&#160;</mo><mtext>centimeters</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>second</mtext></mrow></mfrac></math>. Let <math alttext=\"x\"><mi>x</mi>\n</math> represent the time, in seconds, it would take for the object to travel <math alttext=\"24\"><mn>24</mn>\n</math> centimeters. The value of <math alttext=\"x\"><mi>x</mi>\n</math> can be calculated by solving the equation <math alttext=\"StartFraction 6 centimeters Over 1 second EndFraction equals StartFraction 24 centimeters Over x seconds EndFraction\"><mfrac><mrow><mn>6</mn><mo>&#160;</mo><mtext>centimeters</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>second</mtext></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>24</mn><mo>&#160;</mo><mtext>centimeters</mtext></mrow><mrow><mi>x</mi><mo>&#160;</mo><mtext>seconds</mtext></mrow></mfrac></math>, which can be written as <math alttext=\"six oneths equals StartFraction 24 Over x EndFraction\"><mfrac><mn>6</mn><mn>1</mn></mfrac><mo>=</mo><mfrac><mn>24</mn><mi>x</mi></mfrac></math>, or <math alttext=\"6 equals StartFraction 24 Over x EndFraction\"><mn>6</mn><mo>=</mo><mfrac><mn>24</mn><mi>x</mi></mfrac></math>. Multiplying each side of this equation by <math alttext=\"x\"><mi>x</mi>\n</math> yields <math alttext=\"6 x equals 24\"><mrow>\n\t<mrow>\n\t\t<mn>6</mn>\n\t\t<mi>x</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>24</mn>\n</mrow>\n</math>. Dividing each side of this equation by <math alttext=\"6\"><mn>6</mn>\n</math> yields <math alttext=\"x equals 4\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>4</mn>\n</mrow>\n</math>. Therefore, it would take the object <math alttext=\"4\"><mn>4</mn>\n</math> seconds to travel <math alttext=\"24\"><mn>24</mn>\n</math> centimeters.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357401,
+    "pPcc": "SAT#Q",
+    "questionId": "4837406c",
+    "skill_cd": "Q.A.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Ratios, rates, proportional relationships, and units",
+    "createDate": 1730147357401,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "334db357-0b99-4f13-a766-9dde9a462af3",
+    "primary_class_cd": "Q",
+    "uId": "c5b2b684-54a5-4965-9923-d05d5b1e9a14",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "334db357-0b99-4f13-a766-9dde9a462af3",
+    "keys": [
+      "4"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"4\"><mn>4</mn>\n</math>. It&rsquo;s given that the object travels at a constant speed of <math alttext=\"6\"><mn>6</mn>\n</math> centimeters per second. The speed of the object can be written as <math alttext=\"StartFraction 6 centimeters Over 1 second EndFraction\"><mfrac><mrow><mn>6</mn><mo>&#160;</mo><mtext>centimeters</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>second</mtext></mrow></mfrac></math>. Let <math alttext=\"x\"><mi>x</mi>\n</math> represent the time, in seconds, it would take for the object to travel <math alttext=\"24\"><mn>24</mn>\n</math> centimeters. The value of <math alttext=\"x\"><mi>x</mi>\n</math> can be calculated by solving the equation <math alttext=\"StartFraction 6 centimeters Over 1 second EndFraction equals StartFraction 24 centimeters Over x seconds EndFraction\"><mfrac><mrow><mn>6</mn><mo>&#160;</mo><mtext>centimeters</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>second</mtext></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>24</mn><mo>&#160;</mo><mtext>centimeters</mtext></mrow><mrow><mi>x</mi><mo>&#160;</mo><mtext>seconds</mtext></mrow></mfrac></math>, which can be written as <math alttext=\"six oneths equals StartFraction 24 Over x EndFraction\"><mfrac><mn>6</mn><mn>1</mn></mfrac><mo>=</mo><mfrac><mn>24</mn><mi>x</mi></mfrac></math>, or <math alttext=\"6 equals StartFraction 24 Over x EndFraction\"><mn>6</mn><mo>=</mo><mfrac><mn>24</mn><mi>x</mi></mfrac></math>. Multiplying each side of this equation by <math alttext=\"x\"><mi>x</mi>\n</math> yields <math alttext=\"6 x equals 24\"><mrow>\n\t<mrow>\n\t\t<mn>6</mn>\n\t\t<mi>x</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>24</mn>\n</mrow>\n</math>. Dividing each side of this equation by <math alttext=\"6\"><mn>6</mn>\n</math> yields <math alttext=\"x equals 4\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>4</mn>\n</mrow>\n</math>. Therefore, it would take the object <math alttext=\"4\"><mn>4</mn>\n</math> seconds to travel <math alttext=\"24\"><mn>24</mn>\n</math> centimeters.</p>",
+    "stem": "<p style=\"text-align: left;\">An object travels at a constant speed of <math alttext=\"6\"><mn>6</mn>\n</math> centimeters per second. At this speed, what is the time, in seconds, that it would take for the object to travel <math alttext=\"24\"><mn>24</mn>\n</math> centimeters?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "4"
+    ]
+  },
+  "createDate": 1730147357401,
+  "updateDate": 1730147357401
+}

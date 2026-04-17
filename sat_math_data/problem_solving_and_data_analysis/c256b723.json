@@ -1,0 +1,66 @@
+{
+  "questionId": "c256b723",
+  "external_id": "967c754c-6ed6-4648-9b7b-4a17946cf25f",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "a61d57c5-d37d-48c0-8b85-45d986703bcd",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.B.",
+  "skill_desc": "Percentages",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The amount of Hanna's bill for a food order was <math alttext=\"dollar sign 50\"><mo>$</mo><mn>50</mn></math>. Hanna gave a tip of <math alttext=\"20 percent sign\"><mn>20</mn><mo>%</mo></math> of the amount of the bill. What is the amount, in dollars, of the tip Hanna gave?</p>",
+  "answerOptions": [],
+  "keys": [
+    "10"
+  ],
+  "correct_answer": [
+    "10"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"10\"><mn>10</mn>\n</math>. It&rsquo;s given that the amount of Hanna's food order was&nbsp;<math alttext=\"dollar sign 50\"><mo>$</mo><mn>50</mn></math> and that Hanna gave a tip of <math alttext=\"20 percent sign\"><mn>20</mn><mo>%</mo></math> of the amount of the bill.&nbsp;<math alttext=\"20 percent sign\"><mn>20</mn><mo>%</mo></math> of <math alttext=\"50\"><mn>50</mn>\n</math> can be calculated as <math alttext=\"left parenthesis StartFraction 20 Over 100 EndFraction right parenthesis left parenthesis 50 right parenthesis\"><mfenced><mfrac><mn>20</mn><mn>100</mn></mfrac></mfenced><mfenced><mn>50</mn></mfenced></math>, which yields <math alttext=\"StartFraction 1000 Over 100 EndFraction\"><mfrac><mn>1000</mn><mn>100</mn></mfrac></math>, or <math alttext=\"10\"><mn>10</mn>\n</math>. Therefore, the amount, in dollars, of the tip Hanna gave is <math alttext=\"10\"><mn>10</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357402,
+    "pPcc": "SAT#Q",
+    "questionId": "c256b723",
+    "skill_cd": "Q.B.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Percentages",
+    "createDate": 1730147357402,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "967c754c-6ed6-4648-9b7b-4a17946cf25f",
+    "primary_class_cd": "Q",
+    "uId": "a61d57c5-d37d-48c0-8b85-45d986703bcd",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "967c754c-6ed6-4648-9b7b-4a17946cf25f",
+    "keys": [
+      "10"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"10\"><mn>10</mn>\n</math>. It&rsquo;s given that the amount of Hanna's food order was&nbsp;<math alttext=\"dollar sign 50\"><mo>$</mo><mn>50</mn></math> and that Hanna gave a tip of <math alttext=\"20 percent sign\"><mn>20</mn><mo>%</mo></math> of the amount of the bill.&nbsp;<math alttext=\"20 percent sign\"><mn>20</mn><mo>%</mo></math> of <math alttext=\"50\"><mn>50</mn>\n</math> can be calculated as <math alttext=\"left parenthesis StartFraction 20 Over 100 EndFraction right parenthesis left parenthesis 50 right parenthesis\"><mfenced><mfrac><mn>20</mn><mn>100</mn></mfrac></mfenced><mfenced><mn>50</mn></mfenced></math>, which yields <math alttext=\"StartFraction 1000 Over 100 EndFraction\"><mfrac><mn>1000</mn><mn>100</mn></mfrac></math>, or <math alttext=\"10\"><mn>10</mn>\n</math>. Therefore, the amount, in dollars, of the tip Hanna gave is <math alttext=\"10\"><mn>10</mn>\n</math>.</p>",
+    "stem": "<p style=\"text-align: left;\">The amount of Hanna's bill for a food order was <math alttext=\"dollar sign 50\"><mo>$</mo><mn>50</mn></math>. Hanna gave a tip of <math alttext=\"20 percent sign\"><mn>20</mn><mo>%</mo></math> of the amount of the bill. What is the amount, in dollars, of the tip Hanna gave?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "10"
+    ]
+  },
+  "createDate": 1730147357402,
+  "updateDate": 1730147357402
+}

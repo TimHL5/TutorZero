@@ -1,0 +1,51 @@
+{
+  "questionId": "04ad68ca",
+  "external_id": "c490a6f2-5032-4f04-a7d8-655c68bad279",
+  "vaultid": "3dca2189-e56a-4b79-a9b5-5f2f12af8931",
+  "uId": "253c82e2-9203-4e3a-bdff-6a3fe16ee9f7",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "EOI",
+  "domain": "Expression of Ideas",
+  "skill_cd": "TRA",
+  "skill_desc": "Transitions",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "mcq",
+  "stimulus": "<p>In Gothic architecture, flying buttresses are large arches that help support a building&rsquo;s exterior walls. Before the Gothic era, cathedrals&rsquo; heavy ceilings had to be supported by thick, short walls, but the invention of flying buttresses eliminated this need. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Gothic cathedrals could be built with thinner, higher walls.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "097c1f9b-733e-4ffc-bc5f-9933ef3b76fd",
+      "content": "<p>Similarly,</p>"
+    },
+    {
+      "id": "adbd7a46-4582-49c1-95dd-d97bc9d86060",
+      "content": "<p>For instance,</p>"
+    },
+    {
+      "id": "fbbc5b02-9500-436f-a7b0-46bbbf72b2df",
+      "content": "<p>Nevertheless,</p>"
+    },
+    {
+      "id": "a0caf447-92e7-44d1-9ecf-e753795a2246",
+      "content": "<p>As a result,</p>"
+    }
+  ],
+  "keys": [
+    "a0caf447-92e7-44d1-9ecf-e753795a2246"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer. &ldquo;As a result&rdquo; logically signals that the thinner, higher walls in this sentence were a result of the invention of flying buttresses in the previous sentence. </p><p>Choice A is incorrect because &ldquo;similarly&rdquo; illogically signals that the thinner, higher walls in this sentence are similar to the invention of flying buttresses in the previous sentence. Instead, the walls were a result of that invention. Choice B is incorrect because &ldquo;for instance&rdquo; illogically signals that the thinner, higher walls in this sentence are an example supporting the statement about the invention of flying buttresses in the previous sentence. Instead, the walls were a result of that invention. Choice C is incorrect because &ldquo;nevertheless&rdquo; illogically signals that the thinner, higher walls in this sentence occurred despite the invention of flying buttresses in the previous sentence. Instead, the walls were a result of that invention. </p>",
+  "parenttemplatename": "OSP-248-TRA",
+  "parenttemplateid": "",
+  "templateclusterid": "e3c6f316-0cdc-4d70-bd42-ea98fffe73e8",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959333,
+  "updateDate": 1691007959333
+}

@@ -1,0 +1,69 @@
+{
+  "questionId": "96c3e32d",
+  "external_id": "65c97795-cef4-4246-9fe9-82f67f8f7823",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "1c4e32a2-0302-4288-81f5-9317b2bb283f",
+  "uId": "b79782b3-1473-4230-99bf-ad5e894da117",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.A.",
+  "skill_desc": "Ratios, rates, proportional relationships, and units",
+  "difficulty": "M",
+  "score_band_range_cd": 5,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">One side of a flat board has an area of <math alttext=\"874\"><mn>874</mn>\n</math> square inches. If a pressure of <math alttext=\"19\"><mn>19</mn>\n</math> pounds per square inch of area is exerted on this side of the board, what is the total force, in pounds, exerted on this side of the board?</p>",
+  "answerOptions": [],
+  "keys": [
+    "16606"
+  ],
+  "correct_answer": [
+    "16606"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"16,606\"><mn>16,606</mn>\n</math>. It's given that one side of a flat board has an area of <math alttext=\"874\"><mn>874</mn>\n</math> square inches. If a pressure of <math alttext=\"19\"><mn>19</mn>\n</math> pounds per square inch of area is exerted on this side of the board, the total force exerted on this side of the board is <math alttext=\"left parenthesis 874 square inches right parenthesis left parenthesis StartFraction 19 pounds Over 1 square inch EndFraction right parenthesis\"><mfenced><mrow><mn>874</mn><mo>&#160;</mo><mtext>square</mtext><mo>&#160;</mo><mtext>inches</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>19</mn><mo>&#160;</mo><mtext>pounds</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>square</mtext><mo>&#160;</mo><mtext>inch</mtext></mrow></mfrac></mfenced></math>, or <math alttext=\"16,606\"><mn>16,606</mn>\n</math> pounds.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959829,
+    "pPcc": "SAT#Q",
+    "questionId": "96c3e32d",
+    "skill_cd": "Q.A.",
+    "score_band_range_cd": 5,
+    "skill_desc": "Ratios, rates, proportional relationships, and units",
+    "createDate": 1691007959829,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": null,
+    "external_id": "65c97795-cef4-4246-9fe9-82f67f8f7823",
+    "primary_class_cd": "Q",
+    "uId": "b79782b3-1473-4230-99bf-ad5e894da117",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "keys": [
+      "16606"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"16,606\"><mn>16,606</mn>\n</math>. It's given that one side of a flat board has an area of <math alttext=\"874\"><mn>874</mn>\n</math> square inches. If a pressure of <math alttext=\"19\"><mn>19</mn>\n</math> pounds per square inch of area is exerted on this side of the board, the total force exerted on this side of the board is <math alttext=\"left parenthesis 874 square inches right parenthesis left parenthesis StartFraction 19 pounds Over 1 square inch EndFraction right parenthesis\"><mfenced><mrow><mn>874</mn><mo>&#160;</mo><mtext>square</mtext><mo>&#160;</mo><mtext>inches</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>19</mn><mo>&#160;</mo><mtext>pounds</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>square</mtext><mo>&#160;</mo><mtext>inch</mtext></mrow></mfrac></mfenced></math>, or <math alttext=\"16,606\"><mn>16,606</mn>\n</math> pounds.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">One side of a flat board has an area of <math alttext=\"874\"><mn>874</mn>\n</math> square inches. If a pressure of <math alttext=\"19\"><mn>19</mn>\n</math> pounds per square inch of area is exerted on this side of the board, what is the total force, in pounds, exerted on this side of the board?</p>",
+    "externalid": "65c97795-cef4-4246-9fe9-82f67f8f7823",
+    "templateid": "2fbb1cd2-a0cd-4816-bceb-3aa79544539f",
+    "vaultid": "1c4e32a2-0302-4288-81f5-9317b2bb283f",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "16606"
+    ]
+  },
+  "createDate": 1691007959829,
+  "updateDate": 1691007959829
+}

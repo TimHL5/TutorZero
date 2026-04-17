@@ -1,0 +1,51 @@
+{
+  "questionId": "e31b0056",
+  "external_id": "2676f9c1-ebb4-4b58-87f5-8d5146ce67a4",
+  "vaultid": null,
+  "uId": "b8d0fd9c-9a20-4d06-8328-e0045811176a",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": "<p>Mary Madden of Ohio <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a fierce advocate of women&rsquo;s voting rights in the late 1800s. The dedication of Madden and her fellow activists was rewarded in 1920, when the Nineteenth Amendment to the US Constitution guaranteed American women the right to vote.&nbsp;&nbsp;</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "78d54b81-905e-4bb5-81ce-681dc8b9e063",
+      "content": "<p>are</p>"
+    },
+    {
+      "id": "1a7f620d-0890-45a4-b097-dd15801f7bf0",
+      "content": "<p>was</p>"
+    },
+    {
+      "id": "f64c2591-9b16-489f-829d-71ea5252c7bd",
+      "content": "<p>have been</p>"
+    },
+    {
+      "id": "2eb04511-42c9-4637-96c9-2137f42df7c1",
+      "content": "<p>were</p>"
+    }
+  ],
+  "keys": [
+    "1a7f620d-0890-45a4-b097-dd15801f7bf0"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb \"was\" agrees in number with the singular subject \"Mary Madden of Ohio.\"</p><p>Choice A is incorrect because the plural verb \"are\" doesn&rsquo;t agree in number with the singular subject \"Mary Madden of Ohio.\" Choice C is incorrect because the plural verb \"have been\" doesn&rsquo;t agree in number with the singular subject \"Mary Madden of Ohio.\" Choice D is incorrect because the plural verb \"were\" doesn&rsquo;t agree in number with the singular subject \"Mary Madden of Ohio.\"</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1755117061176,
+  "updateDate": 1755117061176
+}

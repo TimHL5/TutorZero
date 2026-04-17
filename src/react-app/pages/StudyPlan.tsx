@@ -2,8 +2,7 @@ import { useState, useCallback } from "react";
 import { AppLayout } from "@/react-app/components/layout/AppLayout";
 import { topicDisplayNames } from "@/data/questions";
 import { cn } from "@/react-app/lib/utils";
-import { Calendar, Clock, Lock, ChevronLeft, ChevronRight, GripVertical, CheckCircle, Circle, Plus } from "lucide-react";
-import { Link } from "react-router";
+import { Calendar, Clock, ChevronLeft, ChevronRight, GripVertical, CheckCircle, Circle, Plus } from "lucide-react";
 import { useAuth } from "@/react-app/lib/AuthProvider";
 import { useStudentProgress } from "@/react-app/hooks/useStudentProgress";
 
@@ -59,7 +58,6 @@ export default function StudyPlan() {
   const [dragOverDay, setDragOverDay] = useState<number | null>(null);
 
   const profile = user?.profile;
-  const isPro = profile?.subscriptionTier === "pro";
   const testDate = profile?.testDate ? new Date(profile.testDate) : null;
   const currentScore = progress.estimatedMathScore + progress.estimatedRWScore;
   const targetScore = profile?.targetScore || 1400;
@@ -165,81 +163,7 @@ export default function StudyPlan() {
     setWeekPlan(generateInitialWeekPlan(newStartDate));
   }, [weekOffset]);
 
-  if (!isPro) {
-    return (
-      <AppLayout>
-        <div className="max-w-3xl mx-auto px-4 lg:px-8 py-12 text-center">
-          <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-6">
-            <Lock className="w-8 h-8 text-tz-orange" />
-          </div>
-          <h1 className="text-h1 text-tz-navy mb-4">Personalized Study Plan</h1>
-          <p className="text-body text-tz-gray-600 mb-8 max-w-lg mx-auto">
-            Get a weekly study calendar tailored to your goals, with specific topics and time blocks 
-            designed to maximize your score improvement before test day.
-          </p>
-          
-          {/* Preview - Interactive Demo */}
-          <div className="bg-white rounded-xl border border-tz-gray-200 p-6 mb-8 text-left relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white z-10 pointer-events-none" />
-            
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-h3 text-tz-navy">This Week</h3>
-              <div className="flex items-center gap-2 text-small text-tz-gray-400">
-                <Calendar className="w-4 h-4" />
-                <span>{daysUntilTest} days until test</span>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-7 gap-2 opacity-75">
-              {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((day, i) => (
-                <div key={day} className="text-center">
-                  <div className="text-label text-tz-gray-400 mb-2">{day}</div>
-                  <div className="space-y-1">
-                    {[1, 2].slice(0, i % 2 + 1).map(j => (
-                      <div key={j} className="bg-tz-off-white rounded p-2 text-small">
-                        <div className="text-tz-navy truncate">Algebra</div>
-                        <div className="text-tz-gray-400 text-xs">25m</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Benefits */}
-          <div className="bg-tz-off-white rounded-xl p-6 mb-8 text-left">
-            <h3 className="text-h3 text-tz-navy mb-4">What you'll get:</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-tz-green flex-shrink-0 mt-0.5" />
-                <span className="text-body text-tz-gray-600">Drag-and-drop weekly calendar with daily study blocks</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-tz-green flex-shrink-0 mt-0.5" />
-                <span className="text-body text-tz-gray-600">Topics prioritized based on your diagnostic and practice performance</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-tz-green flex-shrink-0 mt-0.5" />
-                <span className="text-body text-tz-gray-600">Adaptive scheduling that adjusts as you improve</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-tz-green flex-shrink-0 mt-0.5" />
-                <span className="text-body text-tz-gray-600">Countdown to your test date with pace tracking</span>
-              </li>
-            </ul>
-          </div>
-          
-          <Link 
-            to="/pricing"
-            className="inline-block px-8 py-3 bg-tz-orange text-white rounded-lg font-medium hover-scale transition-all"
-          >
-            Unlock Study Plan
-          </Link>
-        </div>
-      </AppLayout>
-    );
-  }
+  // Paywall gate removed — study plan is available to all users
 
   return (
     <AppLayout>

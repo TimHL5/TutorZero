@@ -1,0 +1,66 @@
+{
+  "questionId": "05195d8a",
+  "external_id": "ccae50dc-b231-44c5-869e-aacfc573e043",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "1729dbb1-4947-4e19-a531-5c38cf698164",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.B.",
+  "skill_desc": "Percentages",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">In a sample, <math alttext=\"80 percent sign\"><mn>80</mn><mo>%</mo></math> of the items are faulty. There are <math alttext=\"88\"><mn>88</mn>\n</math> faulty items in the sample. How many total items are in the sample?</p>",
+  "answerOptions": [],
+  "keys": [
+    "110"
+  ],
+  "correct_answer": [
+    "110"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"110\"><mn>110</mn>\n</math>. Let <math alttext=\"x\"><mi>x</mi>\n</math> represent the total number of items in the sample. It&rsquo;s given that <math alttext=\"80 percent sign\"><mn>80</mn><mo>%</mo></math> of the items are faulty and that there are <math alttext=\"88\"><mn>88</mn>\n</math> faulty items in the sample. Therefore, <math alttext=\"80 percent sign\"><mn>80</mn><mo>%</mo></math> of <math alttext=\"x\"><mi>x</mi>\n</math> is <math alttext=\"88\"><mn>88</mn>\n</math>. Since <math alttext=\"80 percent sign\"><mn>80</mn><mo>%</mo></math> can be rewritten as <math alttext=\"StartFraction 80 Over 100 EndFraction\"><mfrac><mn>80</mn><mn>100</mn></mfrac></math>, it follows that <math alttext=\"StartFraction 80 Over 100 EndFraction x equals 88\"><mfrac><mn>80</mn><mn>100</mn></mfrac><mi>x</mi><mo>=</mo><mn>88</mn></math>.&nbsp;Multiplying both sides of this equation by <math alttext=\"100\"><mn>100</mn>\n</math> yields <math alttext=\"80 x equals 8,800\"><mrow>\n<mrow>\n<mn>80</mn>\n<mi>x</mi>\n</mrow>\n<mo>=</mo>\n<mn>8,800</mn>\n</mrow>\n</math>. Dividing both sides of this equation by <math alttext=\"80\"><mn>80</mn>\n</math> yields <math alttext=\"x equals 110\"><mrow>\n<mi>x</mi>\n<mo>=</mo>\n<mn>110</mn>\n</mrow>\n</math>. Therefore, there are <math alttext=\"110\"><mn>110</mn>\n</math> total items in the sample.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554987,
+    "pPcc": "SAT#Q",
+    "questionId": "05195d8a",
+    "skill_cd": "Q.B.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Percentages",
+    "createDate": 1743430554987,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "ccae50dc-b231-44c5-869e-aacfc573e043",
+    "primary_class_cd": "Q",
+    "uId": "1729dbb1-4947-4e19-a531-5c38cf698164",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: left;\">In a sample, <math alttext=\"80 percent sign\"><mn>80</mn><mo>%</mo></math> of the items are faulty. There are <math alttext=\"88\"><mn>88</mn>\n</math> faulty items in the sample. How many total items are in the sample?</p>",
+    "keys": [
+      "110"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"110\"><mn>110</mn>\n</math>. Let <math alttext=\"x\"><mi>x</mi>\n</math> represent the total number of items in the sample. It&rsquo;s given that <math alttext=\"80 percent sign\"><mn>80</mn><mo>%</mo></math> of the items are faulty and that there are <math alttext=\"88\"><mn>88</mn>\n</math> faulty items in the sample. Therefore, <math alttext=\"80 percent sign\"><mn>80</mn><mo>%</mo></math> of <math alttext=\"x\"><mi>x</mi>\n</math> is <math alttext=\"88\"><mn>88</mn>\n</math>. Since <math alttext=\"80 percent sign\"><mn>80</mn><mo>%</mo></math> can be rewritten as <math alttext=\"StartFraction 80 Over 100 EndFraction\"><mfrac><mn>80</mn><mn>100</mn></mfrac></math>, it follows that <math alttext=\"StartFraction 80 Over 100 EndFraction x equals 88\"><mfrac><mn>80</mn><mn>100</mn></mfrac><mi>x</mi><mo>=</mo><mn>88</mn></math>.&nbsp;Multiplying both sides of this equation by <math alttext=\"100\"><mn>100</mn>\n</math> yields <math alttext=\"80 x equals 8,800\"><mrow>\n<mrow>\n<mn>80</mn>\n<mi>x</mi>\n</mrow>\n<mo>=</mo>\n<mn>8,800</mn>\n</mrow>\n</math>. Dividing both sides of this equation by <math alttext=\"80\"><mn>80</mn>\n</math> yields <math alttext=\"x equals 110\"><mrow>\n<mi>x</mi>\n<mo>=</mo>\n<mn>110</mn>\n</mrow>\n</math>. Therefore, there are <math alttext=\"110\"><mn>110</mn>\n</math> total items in the sample.</p>",
+    "externalid": "ccae50dc-b231-44c5-869e-aacfc573e043",
+    "answerOptions": [],
+    "correct_answer": [
+      "110"
+    ]
+  },
+  "createDate": 1743430554987,
+  "updateDate": 1743430554987
+}

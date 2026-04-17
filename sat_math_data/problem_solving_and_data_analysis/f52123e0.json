@@ -1,0 +1,66 @@
+{
+  "questionId": "f52123e0",
+  "external_id": "e556a06b-805c-4238-8c14-3bcafe7e1ddf",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "7284fea0-625a-4390-9706-43ec6ef693ae",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.C.",
+  "skill_desc": "One-variable data: Distributions and measures of center and spread",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"23\"><mn>23</mn>\n</math>, <math alttext=\"27\"><mn>27</mn>\n</math>, <math alttext=\"27\"><mn>27</mn>\n</math>, <math alttext=\"32\"><mn>32</mn>\n</math>, <math alttext=\"35\"><mn>35</mn>\n</math>, <math alttext=\"36\"><mn>36</mn>\n</math>, <math alttext=\"52\"><mn>52</mn>\n</math></p>\n<p style=\"text-align: left;\">What is the range of the <math alttext=\"7\"><mn>7</mn>\n</math> scores shown?</p>",
+  "answerOptions": [],
+  "keys": [
+    "29"
+  ],
+  "correct_answer": [
+    "29"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"29\"><mn>29</mn>\n</math>. The range of a data set is the difference between its maximum value and its minimum value. For the data set shown, the maximum score is <math alttext=\"52\"><mn>52</mn>\n</math> and the minimum score is <math alttext=\"23\"><mn>23</mn>\n</math>. The difference between those scores is <math alttext=\"52 minus 23\"><mn>52</mn><mo>-</mo><mn>23</mn></math>, or <math alttext=\"29\"><mn>29</mn>\n</math>. Therefore, the range of the <math alttext=\"7\"><mn>7</mn>\n</math> scores shown is <math alttext=\"29\"><mn>29</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357404,
+    "pPcc": "SAT#Q",
+    "questionId": "f52123e0",
+    "skill_cd": "Q.C.",
+    "score_band_range_cd": 4,
+    "skill_desc": "One-variable data: Distributions and measures of center and spread",
+    "createDate": 1730147357404,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "e556a06b-805c-4238-8c14-3bcafe7e1ddf",
+    "primary_class_cd": "Q",
+    "uId": "7284fea0-625a-4390-9706-43ec6ef693ae",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "e556a06b-805c-4238-8c14-3bcafe7e1ddf",
+    "keys": [
+      "29"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"29\"><mn>29</mn>\n</math>. The range of a data set is the difference between its maximum value and its minimum value. For the data set shown, the maximum score is <math alttext=\"52\"><mn>52</mn>\n</math> and the minimum score is <math alttext=\"23\"><mn>23</mn>\n</math>. The difference between those scores is <math alttext=\"52 minus 23\"><mn>52</mn><mo>-</mo><mn>23</mn></math>, or <math alttext=\"29\"><mn>29</mn>\n</math>. Therefore, the range of the <math alttext=\"7\"><mn>7</mn>\n</math> scores shown is <math alttext=\"29\"><mn>29</mn>\n</math>.</p>",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"23\"><mn>23</mn>\n</math>, <math alttext=\"27\"><mn>27</mn>\n</math>, <math alttext=\"27\"><mn>27</mn>\n</math>, <math alttext=\"32\"><mn>32</mn>\n</math>, <math alttext=\"35\"><mn>35</mn>\n</math>, <math alttext=\"36\"><mn>36</mn>\n</math>, <math alttext=\"52\"><mn>52</mn>\n</math></p>\n<p style=\"text-align: left;\">What is the range of the <math alttext=\"7\"><mn>7</mn>\n</math> scores shown?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "29"
+    ]
+  },
+  "createDate": 1730147357404,
+  "updateDate": 1730147357404
+}

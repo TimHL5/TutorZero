@@ -1,0 +1,51 @@
+{
+  "questionId": "6a5939c2",
+  "external_id": "d72a5a0b-bdd4-477d-a9f4-008853b581b1",
+  "vaultid": null,
+  "uId": "303a58a6-0607-46f1-8e3c-48fabe36012b",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "EOI",
+  "domain": "Expression of Ideas",
+  "skill_cd": "TRA",
+  "skill_desc": "Transitions",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "mcq",
+  "stimulus": "<p>Paleontologists once thought that early apes lived in tropical forests, but recent research suggests that they may have actually lived in savannas. Tropical forests are humid and have many trees spaced close together. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> savannas are drier, and their trees are spaced further apart.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "1c278495-fe98-443e-a712-9481cc94754f",
+      "content": "<p>For instance,</p>"
+    },
+    {
+      "id": "605c1f47-0ed2-491b-8c60-5b722b237271",
+      "content": "<p>In comparison,</p>"
+    },
+    {
+      "id": "31ab7665-d5ca-44f9-a0fc-4e64eb3489e7",
+      "content": "<p>Firstly,</p>"
+    },
+    {
+      "id": "3c981bbf-3c52-4d2e-add6-3e38a3bdb723",
+      "content": "<p>In conclusion,</p>"
+    }
+  ],
+  "keys": [
+    "605c1f47-0ed2-491b-8c60-5b722b237271"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"In comparison\" logically signals that the description of savannas in this sentence&mdash;that they are drier and their trees are spaced further apart&mdash;forms a comparison with the description of tropical forests in the previous sentence.</p><p>Choice A is incorrect because \"for instance\" illogically signals that the description of savannas in this sentence exemplifies the description of tropical forests in the previous sentence. Instead, this description forms a comparison with the description of tropical forests. Choice C is incorrect because \"firstly\" illogically signals that the description of savannas in this sentence indicates the first in a series of things. Instead, this description forms a comparison with the description of tropical forests in the previous sentence. Choice D is incorrect because \"in conclusion\" illogically signals that the description of savannas in this sentence concludes or summarizes information in the previous sentences. Instead, this description forms a comparison with the description of tropical forests in the previous sentence.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323044,
+  "updateDate": 1730147323044
+}

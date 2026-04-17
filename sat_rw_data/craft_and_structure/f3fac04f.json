@@ -1,0 +1,51 @@
+{
+  "questionId": "f3fac04f",
+  "external_id": "d9aeeac9-0ed0-4fd1-83af-365e28e781a0",
+  "vaultid": "e7f5159c-c73c-4aa4-8778-10bff3e4953b",
+  "uId": "30e11a84-7363-4d68-8e09-51ca04383616",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "CAS",
+  "domain": "Craft and Structure",
+  "skill_cd": "WIC",
+  "skill_desc": "Words in Context",
+  "difficulty": "E",
+  "score_band_range_cd": 1,
+  "type": "mcq",
+  "stimulus": "<p>Bioluminescent beetles called fireflies may seem to create flashes of light randomly, but each species of firefly actually has its own special series of repeated flashes and pauses. These unique <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> allow fireflies of the same species to find each other.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "f016aed6-4fa8-4baa-aa64-f6f915b8be7b",
+      "content": "<p>quantities&nbsp;</p>"
+    },
+    {
+      "id": "a0c8e875-7aa4-4f1a-9271-5d48df713e00",
+      "content": "<p>decorations</p>"
+    },
+    {
+      "id": "180f4983-0473-47bf-b171-24c7824eaee4",
+      "content": "<p>patterns</p>"
+    },
+    {
+      "id": "4e74bb4c-bbdc-4624-9398-e68cfec07182",
+      "content": "<p>agreements</p>"
+    }
+  ],
+  "keys": [
+    "180f4983-0473-47bf-b171-24c7824eaee4"
+  ],
+  "correct_answer": [
+    "C"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most logically completes the text&rsquo;s discussion of the flashes created by fireflies. In this context, &ldquo;patterns&rdquo; means distinct and predictable sequences. The text indicates that although the flashes that fireflies produce appear to occur randomly&mdash;that is, without any particular sequence or rhythm&mdash;each species actually produces its own special series of flashes and pauses. Indeed, these series of flashes are so unique that fireflies can use them to find other members of their species. Therefore, this context supports the idea that fireflies produce flashes in distinct and recognizable patterns. </p><p>Choice A is incorrect because &ldquo;quantities&rdquo; means certain amounts or numbers of something. Although the text discusses how different firefly species produce flashes and pauses in unique sequences that help other members of their species to find them, it doesn&rsquo;t mention the number of flashes that are used in these sequences. Choice B is incorrect because in this context, &ldquo;decorations&rdquo; would mean things that make an object more beautiful. Although it may be reasonable to say that firefly flashes are beautiful, the text focuses on the fact that fireflies use these unique sequences of flashes to find other members of their own species, not that the flashes make fireflies more beautiful. Choice D is incorrect because in this context, &ldquo;agreements&rdquo; would refer to deals that individuals have discussed and come to a consensus about. Since fireflies aren&rsquo;t capable of making such agreements, it wouldn&rsquo;t make sense to use this word to refer to the signals they send each other with their flashes. </p>",
+  "parenttemplatename": "OSP-013-WIC",
+  "parenttemplateid": "",
+  "templateclusterid": "b073cbfd-64b0-43f2-8e21-eadc489c4697",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959315,
+  "updateDate": 1691007959315
+}

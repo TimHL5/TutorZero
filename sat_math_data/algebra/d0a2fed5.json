@@ -1,0 +1,66 @@
+{
+  "questionId": "d0a2fed5",
+  "external_id": "568627eb-0784-4a63-a56a-ddffad314bb8",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "b2825bbe-b675-49f7-a9a3-e40d1fcf0bbe",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.A.",
+  "skill_desc": "Linear equations in one variable",
+  "difficulty": "M",
+  "score_band_range_cd": 5,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">If <math alttext=\"six sevenths p plus 18 equals 54\"><mfrac>\n\t<mn>6</mn>\n\t<mn>7</mn>\n</mfrac>\n<mi>p</mi><mo>+</mo><mn>18</mn>\n<mo>=</mo><mn>54</mn>\n</math>, what is the value of <math alttext=\"7 p\"><mrow>\n\t<mn>7</mn>\n\t<mi>p</mi>\n</mrow>\n</math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "294"
+  ],
+  "correct_answer": [
+    "294"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"294\"><mn>294</mn>\n</math>. Subtracting <math alttext=\"18\"><mn>18</mn>\n</math> from each side of the given equation yields <math alttext=\"six sevenths p equals 36\"><mfrac><mn>6</mn><mn>7</mn></mfrac><mi>p</mi><mo>=</mo><mn>36</mn></math>. Multiplying each side of this equation by <math alttext=\"seven sixths\"><mfrac>\n<mn>7</mn>\n<mn>6</mn>\n</mfrac>\n</math> yields <math alttext=\"p equals 42\"><mrow>\n<mi>p</mi>\n<mo>=</mo>\n<mn>42</mn>\n</mrow>\n</math>. Multiplying each side of this equation by <math alttext=\"7\"><mn>7</mn>\n</math> yields <math alttext=\"7 p equals 294\"><mrow>\n<mrow>\n<mn>7</mn>\n<mi>p</mi>\n</mrow>\n<mo>=</mo>\n<mn>294</mn>\n</mrow>\n</math>. Therefore, the value of <math alttext=\"7 p\"><mrow>\n<mn>7</mn>\n<mi>p</mi>\n</mrow>\n</math> is <math alttext=\"294\"><mn>294</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554982,
+    "pPcc": "SAT#H",
+    "questionId": "d0a2fed5",
+    "skill_cd": "H.A.",
+    "score_band_range_cd": 5,
+    "skill_desc": "Linear equations in one variable",
+    "createDate": 1743430554982,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "568627eb-0784-4a63-a56a-ddffad314bb8",
+    "primary_class_cd": "H",
+    "uId": "b2825bbe-b675-49f7-a9a3-e40d1fcf0bbe",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: left;\">If <math alttext=\"six sevenths p plus 18 equals 54\"><mfrac>\n\t<mn>6</mn>\n\t<mn>7</mn>\n</mfrac>\n<mi>p</mi><mo>+</mo><mn>18</mn>\n<mo>=</mo><mn>54</mn>\n</math>, what is the value of <math alttext=\"7 p\"><mrow>\n\t<mn>7</mn>\n\t<mi>p</mi>\n</mrow>\n</math>?</p>",
+    "keys": [
+      "294"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"294\"><mn>294</mn>\n</math>. Subtracting <math alttext=\"18\"><mn>18</mn>\n</math> from each side of the given equation yields <math alttext=\"six sevenths p equals 36\"><mfrac><mn>6</mn><mn>7</mn></mfrac><mi>p</mi><mo>=</mo><mn>36</mn></math>. Multiplying each side of this equation by <math alttext=\"seven sixths\"><mfrac>\n<mn>7</mn>\n<mn>6</mn>\n</mfrac>\n</math> yields <math alttext=\"p equals 42\"><mrow>\n<mi>p</mi>\n<mo>=</mo>\n<mn>42</mn>\n</mrow>\n</math>. Multiplying each side of this equation by <math alttext=\"7\"><mn>7</mn>\n</math> yields <math alttext=\"7 p equals 294\"><mrow>\n<mrow>\n<mn>7</mn>\n<mi>p</mi>\n</mrow>\n<mo>=</mo>\n<mn>294</mn>\n</mrow>\n</math>. Therefore, the value of <math alttext=\"7 p\"><mrow>\n<mn>7</mn>\n<mi>p</mi>\n</mrow>\n</math> is <math alttext=\"294\"><mn>294</mn>\n</math>.</p>",
+    "externalid": "568627eb-0784-4a63-a56a-ddffad314bb8",
+    "answerOptions": [],
+    "correct_answer": [
+      "294"
+    ]
+  },
+  "createDate": 1743430554982,
+  "updateDate": 1743430554982
+}

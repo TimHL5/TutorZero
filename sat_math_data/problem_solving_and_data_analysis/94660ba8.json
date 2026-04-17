@@ -1,0 +1,66 @@
+{
+  "questionId": "94660ba8",
+  "external_id": "9d4083e9-df43-4c60-9f48-cb64e2d3dc9d",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "c0585af1-2300-4c01-a4bb-0e2a59c2739d",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.A.",
+  "skill_desc": "Ratios, rates, proportional relationships, and units",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A participant in a bicycle race completes the race with an average speed of <math alttext=\"24,816\"><mn>24,816</mn>\n</math> yards per hour. What is this average speed, in <span style=\"text-decoration: underline;\">miles</span> per hour?&nbsp;<math alttext=\"left parenthesis 1 mile  equals 1,760 yards right parenthesis\"><mfenced><mrow><mn>1</mn><mo>&#160;</mo><mtext>mile</mtext><mo>=</mo><mn>1,760</mn><mo>&#160;</mo><mtext>yards</mtext></mrow></mfenced></math></p>",
+  "answerOptions": [],
+  "keys": [
+    "14.1"
+  ],
+  "correct_answer": [
+    "14.1"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"14.1\"><mn>14.1</mn>\n</math>. It&rsquo;s given that a participant completes the bicycle race with an average speed of <math alttext=\"24,816\"><mn>24,816</mn>\n</math> yards per hour and <math alttext=\"1 mile  equals 1,760 yards\"><mn>1</mn><mo>&#160;</mo><mtext>mile</mtext><mo>=</mo><mn>1,760</mn><mo>&#160;</mo><mtext>yards</mtext></math>. It follows that this average speed is equivalent to <math alttext=\"left parenthesis StartFraction 24,816 yards Over 1 hour EndFraction right parenthesis left parenthesis StartFraction 1 mile Over 1,760 yards EndFraction right parenthesis\"><mfenced><mfrac><mrow><mn>24,816</mn><mo>&#160;</mo><mtext>yards</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>hour</mtext></mrow></mfrac></mfenced><mfenced><mfrac><mrow><mn>1</mn><mo>&#160;</mo><mtext>mile</mtext></mrow><mrow><mn>1,760</mn><mo>&#160;</mo><mtext>yards</mtext></mrow></mfrac></mfenced></math>, which yields <math alttext=\"StartFraction 14.1 miles Over 1 hour EndFraction\"><mfrac><mrow><mn>14.1</mn><mo>&#160;</mo><mtext>miles</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>hour</mtext></mrow></mfrac></math>, or <math alttext=\"14.1\"><mn>14.1</mn>\n</math> miles per hour.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357402,
+    "pPcc": "SAT#Q",
+    "questionId": "94660ba8",
+    "skill_cd": "Q.A.",
+    "score_band_range_cd": 3,
+    "skill_desc": "Ratios, rates, proportional relationships, and units",
+    "createDate": 1730147357402,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "9d4083e9-df43-4c60-9f48-cb64e2d3dc9d",
+    "primary_class_cd": "Q",
+    "uId": "c0585af1-2300-4c01-a4bb-0e2a59c2739d",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "9d4083e9-df43-4c60-9f48-cb64e2d3dc9d",
+    "keys": [
+      "14.1"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"14.1\"><mn>14.1</mn>\n</math>. It&rsquo;s given that a participant completes the bicycle race with an average speed of <math alttext=\"24,816\"><mn>24,816</mn>\n</math> yards per hour and <math alttext=\"1 mile  equals 1,760 yards\"><mn>1</mn><mo>&#160;</mo><mtext>mile</mtext><mo>=</mo><mn>1,760</mn><mo>&#160;</mo><mtext>yards</mtext></math>. It follows that this average speed is equivalent to <math alttext=\"left parenthesis StartFraction 24,816 yards Over 1 hour EndFraction right parenthesis left parenthesis StartFraction 1 mile Over 1,760 yards EndFraction right parenthesis\"><mfenced><mfrac><mrow><mn>24,816</mn><mo>&#160;</mo><mtext>yards</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>hour</mtext></mrow></mfrac></mfenced><mfenced><mfrac><mrow><mn>1</mn><mo>&#160;</mo><mtext>mile</mtext></mrow><mrow><mn>1,760</mn><mo>&#160;</mo><mtext>yards</mtext></mrow></mfrac></mfenced></math>, which yields <math alttext=\"StartFraction 14.1 miles Over 1 hour EndFraction\"><mfrac><mrow><mn>14.1</mn><mo>&#160;</mo><mtext>miles</mtext></mrow><mrow><mn>1</mn><mo>&#160;</mo><mtext>hour</mtext></mrow></mfrac></math>, or <math alttext=\"14.1\"><mn>14.1</mn>\n</math> miles per hour.</p>",
+    "stem": "<p style=\"text-align: left;\">A participant in a bicycle race completes the race with an average speed of <math alttext=\"24,816\"><mn>24,816</mn>\n</math> yards per hour. What is this average speed, in <span style=\"text-decoration: underline;\">miles</span> per hour?&nbsp;<math alttext=\"left parenthesis 1 mile  equals 1,760 yards right parenthesis\"><mfenced><mrow><mn>1</mn><mo>&#160;</mo><mtext>mile</mtext><mo>=</mo><mn>1,760</mn><mo>&#160;</mo><mtext>yards</mtext></mrow></mfenced></math></p>",
+    "type": "spr",
+    "correct_answer": [
+      "14.1"
+    ]
+  },
+  "createDate": 1730147357402,
+  "updateDate": 1730147357402
+}

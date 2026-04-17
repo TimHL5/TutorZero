@@ -1,0 +1,66 @@
+{
+  "questionId": "edc1b7b7",
+  "external_id": "d384e4e9-870d-4026-ba15-b7eb23e0c5fc",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "015305f9-b9f2-4e73-8654-dad0656ff31c",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.D.",
+  "skill_desc": "Systems of two linear equations in two variables",
+  "difficulty": "H",
+  "score_band_range_cd": 6,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"2 left parenthesis 8 x right parenthesis plus 4 left parenthesis 7 y right parenthesis equals 12\"><mrow><mn>2</mn></mrow><mfenced><mrow><mrow><mn>8</mn></mrow><mi>x</mi></mrow></mfenced><mo>+</mo><mrow><mn>4</mn></mrow><mfenced><mrow><mrow><mn>7</mn></mrow><mi>y</mi></mrow></mfenced><mo>=</mo><mrow><mn>12</mn></mrow></math></p>\n<p style=\"text-align: center;\"><math alttext=\"minus 2 left parenthesis 8 x right parenthesis plus 4 left parenthesis 7 y right parenthesis equals 12\"><mo>-</mo><mrow><mn>2</mn></mrow><mfenced><mrow><mrow><mn>8</mn></mrow><mi>x</mi></mrow></mfenced><mo>+</mo><mrow><mn>4</mn></mrow><mfenced><mrow><mrow><mn>7</mn></mrow><mi>y</mi></mrow></mfenced><mo>=</mo><mrow><mn>12</mn></mrow></math></p>\n<p style=\"text-align: left;\">The solution to the given system of equations is <math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math alttext=\"8 x plus 7 y\"><mrow>\n\t<mrow>\n\t\t<mn>8</mn>\n\t\t<mi>x</mi>\n\t</mrow>\n\t<mo>+</mo>\n\t<mrow>\n\t\t<mn>7</mn>\n\t\t<mi>y</mi>\n\t</mrow>\n</mrow>\n</math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "3"
+  ],
+  "correct_answer": [
+    "3"
+  ],
+  "rationale": "<p>The correct answer is <math alttext=\"3\"><mn>3</mn>\n</math>. Adding the second equation to the first equation in the given system of equations yields <math alttext=\"left parenthesis 2 left parenthesis 8 x right parenthesis minus 2 left parenthesis 8 x right parenthesis right parenthesis plus left parenthesis 4 left parenthesis 7 y right parenthesis plus 4 left parenthesis 7 y right parenthesis right parenthesis equals 12 plus 12\"><mfenced><mrow><mn>2</mn><mfenced><mrow><mn>8</mn><mi>x</mi></mrow></mfenced><mo>-</mo><mn>2</mn><mfenced><mrow><mn>8</mn><mi>x</mi></mrow></mfenced></mrow></mfenced><mo>+</mo><mfenced><mrow><mn>4</mn><mfenced><mrow><mn>7</mn><mi>y</mi></mrow></mfenced><mo>+</mo><mn>4</mn><mfenced><mrow><mn>7</mn><mi>y</mi></mrow></mfenced></mrow></mfenced><mo>=</mo><mn>12</mn><mo>+</mo><mn>12</mn></math>, or <math alttext=\"8 left parenthesis 7 y right parenthesis equals 24\"><mn>8</mn><mfenced><mrow><mn>7</mn><mi>y</mi></mrow></mfenced><mo>=</mo><mn>24</mn></math>. Dividing both sides of this equation by <math alttext=\"8\"><mn>8</mn>\n</math> yields <math alttext=\"7 y equals 3\"><mrow>\n<mrow>\n<mn>7</mn>\n<mi>y</mi>\n</mrow>\n<mo>=</mo>\n<mn>3</mn>\n</mrow>\n</math>. Substituting <math alttext=\"3\"><mn>3</mn>\n</math> for <math alttext=\"7 y\"><mrow>\n<mn>7</mn>\n<mi>y</mi>\n</mrow>\n</math> in the first equation, <math alttext=\"2 left parenthesis 8 x right parenthesis plus 4 left parenthesis 7 y right parenthesis equals 12\"><mn>2</mn><mfenced><mrow><mn>8</mn><mi>x</mi></mrow></mfenced><mo>+</mo><mn>4</mn><mfenced><mrow><mn>7</mn><mi>y</mi></mrow></mfenced><mo>=</mo><mn>12</mn></math>, yields<math alttext=\"2 left parenthesis 8 x right parenthesis plus 4 left parenthesis 3 right parenthesis equals 12\"><mo>&nbsp;</mo><mn>2</mn><mfenced><mrow><mn>8</mn><mi>x</mi></mrow></mfenced><mo>+</mo><mn>4</mn><mfenced><mn>3</mn></mfenced><mo>=</mo><mn>12</mn></math>, or <math alttext=\"2 left parenthesis 8 x right parenthesis plus 12 equals 12\"><mn>2</mn><mfenced><mrow><mn>8</mn><mi>x</mi></mrow></mfenced><mo>+</mo><mn>12</mn><mo>=</mo><mn>12</mn></math>. Subtracting <math alttext=\"12\"><mn>12</mn>\n</math> from both sides of this equation yields <math alttext=\"2 left parenthesis 8 x right parenthesis equals 0\"><mn>2</mn><mfenced><mrow><mn>8</mn><mi>x</mi></mrow></mfenced><mo>=</mo><mn>0</mn></math>. Dividing both sides of this equation by <math alttext=\"2\"><mn>2</mn>\n</math> yields <math alttext=\"8 x equals 0\"><mrow>\n<mrow>\n<mn>8</mn>\n<mi>x</mi>\n</mrow>\n<mo>=</mo>\n<mn>0</mn>\n</mrow>\n</math>. Substituting <math alttext=\"0\"><mn>0</mn>\n</math> for <math alttext=\"8 x\"><mrow>\n<mn>8</mn>\n<mi>x</mi>\n</mrow>\n</math> and <math alttext=\"3\"><mn>3</mn>\n</math> for <math alttext=\"7 y\"><mrow>\n<mn>7</mn>\n<mi>y</mi>\n</mrow>\n</math> in the expression <math alttext=\"8 x plus 7 y\"><mn>8</mn><mi>x</mi><mo>+</mo><mn>7</mn><mi>y</mi></math> yields <math alttext=\"0 plus 3\"><mn>0</mn><mo>+</mo><mn>3</mn></math>, or <math alttext=\"3\"><mn>3</mn>\n</math>. Therefore, the value of <math alttext=\"8 x plus 7 y\"><mrow>\n<mrow>\n<mn>8</mn>\n<mi>x</mi>\n</mrow>\n<mo>+</mo>\n<mrow>\n<mn>7</mn>\n<mi>y</mi>\n</mrow>\n</mrow>\n</math> is <math alttext=\"3\"><mn>3</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554987,
+    "pPcc": "SAT#H",
+    "questionId": "edc1b7b7",
+    "skill_cd": "H.D.",
+    "score_band_range_cd": 6,
+    "skill_desc": "Systems of two linear equations in two variables",
+    "createDate": 1743430554987,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "d384e4e9-870d-4026-ba15-b7eb23e0c5fc",
+    "primary_class_cd": "H",
+    "uId": "015305f9-b9f2-4e73-8654-dad0656ff31c",
+    "difficulty": "H"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"2 left parenthesis 8 x right parenthesis plus 4 left parenthesis 7 y right parenthesis equals 12\"><mrow><mn>2</mn></mrow><mfenced><mrow><mrow><mn>8</mn></mrow><mi>x</mi></mrow></mfenced><mo>+</mo><mrow><mn>4</mn></mrow><mfenced><mrow><mrow><mn>7</mn></mrow><mi>y</mi></mrow></mfenced><mo>=</mo><mrow><mn>12</mn></mrow></math></p>\n<p style=\"text-align: center;\"><math alttext=\"minus 2 left parenthesis 8 x right parenthesis plus 4 left parenthesis 7 y right parenthesis equals 12\"><mo>-</mo><mrow><mn>2</mn></mrow><mfenced><mrow><mrow><mn>8</mn></mrow><mi>x</mi></mrow></mfenced><mo>+</mo><mrow><mn>4</mn></mrow><mfenced><mrow><mrow><mn>7</mn></mrow><mi>y</mi></mrow></mfenced><mo>=</mo><mrow><mn>12</mn></mrow></math></p>\n<p style=\"text-align: left;\">The solution to the given system of equations is <math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math alttext=\"8 x plus 7 y\"><mrow>\n\t<mrow>\n\t\t<mn>8</mn>\n\t\t<mi>x</mi>\n\t</mrow>\n\t<mo>+</mo>\n\t<mrow>\n\t\t<mn>7</mn>\n\t\t<mi>y</mi>\n\t</mrow>\n</mrow>\n</math>?</p>",
+    "keys": [
+      "3"
+    ],
+    "rationale": "<p>The correct answer is <math alttext=\"3\"><mn>3</mn>\n</math>. Adding the second equation to the first equation in the given system of equations yields <math alttext=\"left parenthesis 2 left parenthesis 8 x right parenthesis minus 2 left parenthesis 8 x right parenthesis right parenthesis plus left parenthesis 4 left parenthesis 7 y right parenthesis plus 4 left parenthesis 7 y right parenthesis right parenthesis equals 12 plus 12\"><mfenced><mrow><mn>2</mn><mfenced><mrow><mn>8</mn><mi>x</mi></mrow></mfenced><mo>-</mo><mn>2</mn><mfenced><mrow><mn>8</mn><mi>x</mi></mrow></mfenced></mrow></mfenced><mo>+</mo><mfenced><mrow><mn>4</mn><mfenced><mrow><mn>7</mn><mi>y</mi></mrow></mfenced><mo>+</mo><mn>4</mn><mfenced><mrow><mn>7</mn><mi>y</mi></mrow></mfenced></mrow></mfenced><mo>=</mo><mn>12</mn><mo>+</mo><mn>12</mn></math>, or <math alttext=\"8 left parenthesis 7 y right parenthesis equals 24\"><mn>8</mn><mfenced><mrow><mn>7</mn><mi>y</mi></mrow></mfenced><mo>=</mo><mn>24</mn></math>. Dividing both sides of this equation by <math alttext=\"8\"><mn>8</mn>\n</math> yields <math alttext=\"7 y equals 3\"><mrow>\n<mrow>\n<mn>7</mn>\n<mi>y</mi>\n</mrow>\n<mo>=</mo>\n<mn>3</mn>\n</mrow>\n</math>. Substituting <math alttext=\"3\"><mn>3</mn>\n</math> for <math alttext=\"7 y\"><mrow>\n<mn>7</mn>\n<mi>y</mi>\n</mrow>\n</math> in the first equation, <math alttext=\"2 left parenthesis 8 x right parenthesis plus 4 left parenthesis 7 y right parenthesis equals 12\"><mn>2</mn><mfenced><mrow><mn>8</mn><mi>x</mi></mrow></mfenced><mo>+</mo><mn>4</mn><mfenced><mrow><mn>7</mn><mi>y</mi></mrow></mfenced><mo>=</mo><mn>12</mn></math>, yields<math alttext=\"2 left parenthesis 8 x right parenthesis plus 4 left parenthesis 3 right parenthesis equals 12\"><mo>&nbsp;</mo><mn>2</mn><mfenced><mrow><mn>8</mn><mi>x</mi></mrow></mfenced><mo>+</mo><mn>4</mn><mfenced><mn>3</mn></mfenced><mo>=</mo><mn>12</mn></math>, or <math alttext=\"2 left parenthesis 8 x right parenthesis plus 12 equals 12\"><mn>2</mn><mfenced><mrow><mn>8</mn><mi>x</mi></mrow></mfenced><mo>+</mo><mn>12</mn><mo>=</mo><mn>12</mn></math>. Subtracting <math alttext=\"12\"><mn>12</mn>\n</math> from both sides of this equation yields <math alttext=\"2 left parenthesis 8 x right parenthesis equals 0\"><mn>2</mn><mfenced><mrow><mn>8</mn><mi>x</mi></mrow></mfenced><mo>=</mo><mn>0</mn></math>. Dividing both sides of this equation by <math alttext=\"2\"><mn>2</mn>\n</math> yields <math alttext=\"8 x equals 0\"><mrow>\n<mrow>\n<mn>8</mn>\n<mi>x</mi>\n</mrow>\n<mo>=</mo>\n<mn>0</mn>\n</mrow>\n</math>. Substituting <math alttext=\"0\"><mn>0</mn>\n</math> for <math alttext=\"8 x\"><mrow>\n<mn>8</mn>\n<mi>x</mi>\n</mrow>\n</math> and <math alttext=\"3\"><mn>3</mn>\n</math> for <math alttext=\"7 y\"><mrow>\n<mn>7</mn>\n<mi>y</mi>\n</mrow>\n</math> in the expression <math alttext=\"8 x plus 7 y\"><mn>8</mn><mi>x</mi><mo>+</mo><mn>7</mn><mi>y</mi></math> yields <math alttext=\"0 plus 3\"><mn>0</mn><mo>+</mo><mn>3</mn></math>, or <math alttext=\"3\"><mn>3</mn>\n</math>. Therefore, the value of <math alttext=\"8 x plus 7 y\"><mrow>\n<mrow>\n<mn>8</mn>\n<mi>x</mi>\n</mrow>\n<mo>+</mo>\n<mrow>\n<mn>7</mn>\n<mi>y</mi>\n</mrow>\n</mrow>\n</math> is <math alttext=\"3\"><mn>3</mn>\n</math>.</p>",
+    "externalid": "d384e4e9-870d-4026-ba15-b7eb23e0c5fc",
+    "answerOptions": [],
+    "correct_answer": [
+      "3"
+    ]
+  },
+  "createDate": 1743430554987,
+  "updateDate": 1743430554987
+}

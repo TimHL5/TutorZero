@@ -1,0 +1,51 @@
+{
+  "questionId": "c5d39bc7",
+  "external_id": "cfcb1e78-476f-40a1-8f13-5193567c4c5c",
+  "vaultid": "b930bcda-e90e-4dda-844e-c3658973fbc3",
+  "uId": "a4beaec6-6aac-45a5-b1be-f6e3c141749b",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "mcq",
+  "stimulus": "<p>Scientists believe that, unlike most other species of barnacle, turtle barnacles (<em>Chelonibia testudinari</em>) can dissolve the cement-like secretions they use to attach <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to a sea turtle shell, enabling the barnacles to move short distances across the shell&rsquo;s surface.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "326422dd-fd3f-4bed-be32-612023c03035",
+      "content": "<p>it</p>"
+    },
+    {
+      "id": "27ea6c37-75c8-4fba-9642-a7fa24337b70",
+      "content": "<p>themselves</p>"
+    },
+    {
+      "id": "60f52975-e20b-484c-a789-0dafa292ea57",
+      "content": "<p>&nbsp;them</p>"
+    },
+    {
+      "id": "846c84e0-4aea-43da-946d-d4fd8e6ddfd8",
+      "content": "<p>itself</p>"
+    }
+  ],
+  "keys": [
+    "27ea6c37-75c8-4fba-9642-a7fa24337b70"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is pronoun-antecedent agreement. The plural reflexive pronoun &ldquo;themselves&rdquo; agrees in number with the plural antecedent &ldquo;turtle barnacles,&rdquo; correctly indicating what is attached to a sea turtle shell.&nbsp;&nbsp;</p><p>Choice A is incorrect because the singular pronoun &ldquo;it&rdquo; doesn&rsquo;t agree in number with the plural antecedent &ldquo;turtle barnacles.&rdquo; Choice C is incorrect because it results in an unclear and confusing sentence. In this context, it&rsquo;s unclear what the plural pronoun &ldquo;them&rdquo; refers to. Choice D is incorrect because the singular reflexive pronoun &ldquo;itself&rdquo; doesn&rsquo;t agree in number with the plural antecedent &ldquo;turtle barnacles.&rdquo; </p>",
+  "parenttemplatename": "OSP-695-SEC",
+  "parenttemplateid": "",
+  "templateclusterid": "33fd8903-b02a-40a8-aa42-b3840862137a",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959347,
+  "updateDate": 1691007959347
+}

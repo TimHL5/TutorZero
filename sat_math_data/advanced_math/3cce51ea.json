@@ -1,0 +1,100 @@
+{
+  "questionId": "3cce51ea",
+  "external_id": "7fb0079b-bb84-4295-8b22-1174f114e4e5",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "8a4ad2fe-08e0-4886-b857-c00f822f9fd1",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "P",
+  "domain": "Advanced Math",
+  "skill_cd": "P.B.",
+  "skill_desc": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "difficulty": "E",
+  "score_band_range_cd": 1,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"StartAbsoluteValue p EndAbsoluteValue plus 61 equals 65\"><mfenced open=\"|\" close=\"|\"><mi>p</mi></mfenced><mo>+</mo><mrow><mn>61</mn></mrow><mo>=</mo><mrow><mn>65</mn></mrow></math></p>\n<p style=\"text-align: left;\">Which value is a solution to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "02499654-7de0-4840-9b59-b6f4a0f6abc8",
+      "content": "<p><math alttext=\"StartFraction 65 Over 61 EndFraction\"><mfrac>\n\t<mn>65</mn>\n\t<mn>61</mn>\n</mfrac>\n</math></p>"
+    },
+    {
+      "id": "d7f4a4b9-987c-469d-992c-0b78178c6729",
+      "content": "<p><math alttext=\"4\"><mn>4</mn>\n</math></p>"
+    },
+    {
+      "id": "c76de447-3e52-4eac-a846-4fc9d21aef0b",
+      "content": "<p><math alttext=\"126\"><mn>126</mn>\n</math></p>"
+    },
+    {
+      "id": "508df551-8c63-4b95-8dd1-4a19fbdffab6",
+      "content": "<p><math alttext=\"130\"><mn>130</mn>\n</math></p>"
+    }
+  ],
+  "keys": [
+    "d7f4a4b9-987c-469d-992c-0b78178c6729"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p style=\"text-align: left;\">Choice B is correct. Subtracting <math alttext=\"61\"><mn>61</mn>\n</math> from each side of the given equation yields <math alttext=\"StartAbsoluteValue p EndAbsoluteValue equals 4\"><mfenced close=\"|\" open=\"|\"><mi>p</mi></mfenced><mo>=</mo><mn>4</mn></math>. By the definition of absolute value, if <math alttext=\"StartAbsoluteValue p EndAbsoluteValue equals 4\"><mfenced close=\"|\" open=\"|\"><mi>p</mi></mfenced><mo>=</mo><mn>4</mn></math>, then <math alttext=\"p equals 4\"><mrow>\n<mi>p</mi>\n<mo>=</mo>\n<mn>4</mn>\n</mrow>\n</math> or <math alttext=\"p equals negative 4\"><mrow>\n<mi>p</mi>\n<mo>=</mo>\n<mrow>\n<mo>-</mo>\n<mn>4</mn>\n</mrow>\n</mrow>\n</math>. Of the given choices, <math alttext=\"4\"><mn>4</mn>\n</math> is a solution to the given equation.</p>\n<p style=\"text-align: left;\">Choice A is incorrect. This is the quotient, not the difference, of <math alttext=\"65\"><mn>65</mn>\n</math> and <math alttext=\"61\"><mn>61</mn>\n</math>.</p>\n<p style=\"text-align: left;\">Choice C is incorrect. This is the sum, not the difference, of <math alttext=\"65\"><mn>65</mn>\n</math> and <math alttext=\"61\"><mn>61</mn>\n</math>.</p>\n<p style=\"text-align: left;\">Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554983,
+    "pPcc": "SAT#P",
+    "questionId": "3cce51ea",
+    "skill_cd": "P.B.",
+    "score_band_range_cd": 1,
+    "skill_desc": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "createDate": 1743430554983,
+    "program": "SAT",
+    "primary_class_cd_desc": "Advanced Math",
+    "ibn": "",
+    "external_id": "7fb0079b-bb84-4295-8b22-1174f114e4e5",
+    "primary_class_cd": "P",
+    "uId": "8a4ad2fe-08e0-4886-b857-c00f822f9fd1",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "type": "mcq",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"StartAbsoluteValue p EndAbsoluteValue plus 61 equals 65\"><mfenced open=\"|\" close=\"|\"><mi>p</mi></mfenced><mo>+</mo><mrow><mn>61</mn></mrow><mo>=</mo><mrow><mn>65</mn></mrow></math></p>\n<p style=\"text-align: left;\">Which value is a solution to the given equation?</p>",
+    "keys": [
+      "d7f4a4b9-987c-469d-992c-0b78178c6729"
+    ],
+    "answerOptions": [
+      {
+        "id": "02499654-7de0-4840-9b59-b6f4a0f6abc8",
+        "content": "<p><math alttext=\"StartFraction 65 Over 61 EndFraction\"><mfrac>\n\t<mn>65</mn>\n\t<mn>61</mn>\n</mfrac>\n</math></p>"
+      },
+      {
+        "id": "d7f4a4b9-987c-469d-992c-0b78178c6729",
+        "content": "<p><math alttext=\"4\"><mn>4</mn>\n</math></p>"
+      },
+      {
+        "id": "c76de447-3e52-4eac-a846-4fc9d21aef0b",
+        "content": "<p><math alttext=\"126\"><mn>126</mn>\n</math></p>"
+      },
+      {
+        "id": "508df551-8c63-4b95-8dd1-4a19fbdffab6",
+        "content": "<p><math alttext=\"130\"><mn>130</mn>\n</math></p>"
+      }
+    ],
+    "rationale": "<p style=\"text-align: left;\">Choice B is correct. Subtracting <math alttext=\"61\"><mn>61</mn>\n</math> from each side of the given equation yields <math alttext=\"StartAbsoluteValue p EndAbsoluteValue equals 4\"><mfenced close=\"|\" open=\"|\"><mi>p</mi></mfenced><mo>=</mo><mn>4</mn></math>. By the definition of absolute value, if <math alttext=\"StartAbsoluteValue p EndAbsoluteValue equals 4\"><mfenced close=\"|\" open=\"|\"><mi>p</mi></mfenced><mo>=</mo><mn>4</mn></math>, then <math alttext=\"p equals 4\"><mrow>\n<mi>p</mi>\n<mo>=</mo>\n<mn>4</mn>\n</mrow>\n</math> or <math alttext=\"p equals negative 4\"><mrow>\n<mi>p</mi>\n<mo>=</mo>\n<mrow>\n<mo>-</mo>\n<mn>4</mn>\n</mrow>\n</mrow>\n</math>. Of the given choices, <math alttext=\"4\"><mn>4</mn>\n</math> is a solution to the given equation.</p>\n<p style=\"text-align: left;\">Choice A is incorrect. This is the quotient, not the difference, of <math alttext=\"65\"><mn>65</mn>\n</math> and <math alttext=\"61\"><mn>61</mn>\n</math>.</p>\n<p style=\"text-align: left;\">Choice C is incorrect. This is the sum, not the difference, of <math alttext=\"65\"><mn>65</mn>\n</math> and <math alttext=\"61\"><mn>61</mn>\n</math>.</p>\n<p style=\"text-align: left;\">Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+    "externalid": "7fb0079b-bb84-4295-8b22-1174f114e4e5",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "createDate": 1743430554983,
+  "updateDate": 1743430554983
+}

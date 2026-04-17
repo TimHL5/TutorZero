@@ -1,0 +1,103 @@
+{
+  "questionId": "776cfa7c",
+  "external_id": "bba90b53-4666-4123-babf-8f8dbe2f8a7f",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "6c078e90-6763-4352-b937-ac8fca6ea1ed",
+  "uId": "c7af64c8-342c-40eb-b7f3-038b5fad4353",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.B.",
+  "skill_desc": "Linear functions",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Hana deposited a fixed amount into her bank account each month. The function&nbsp;<math alttext=\"f left parenthesis t right parenthesis equals 100 plus 25 t\"><mi>f</mi><mfenced><mi>t</mi></mfenced><mo>=</mo><mn>100</mn><mo>+</mo><mn>25</mn><mi>t</mi></math> gives the amount, in dollars, in Hana's bank account after <math alttext=\"t\"><mi>t</mi>\n</math> monthly deposits. What is the best interpretation of <math alttext=\"25\"><mn>25</mn>\n</math> in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "1cc99136-611b-416d-b525-508f618a4e4e",
+      "content": "<p>With each monthly deposit, the amount in Hana's bank account increased by <math alttext=\"dollar sign 25\"><mo>$</mo><mn>25</mn></math>.</p>"
+    },
+    {
+      "id": "c4e13a46-363c-454e-b825-a4ca8b67fa27",
+      "content": "<p>Before Hana made any monthly deposits, the amount in her bank account was&nbsp;<math alttext=\"dollar sign 25\"><mo>$</mo><mn>25</mn></math>.</p>"
+    },
+    {
+      "id": "c70859ea-ee5a-4e1d-b46a-4f183b4f833d",
+      "content": "<p>After <math alttext=\"1\"><mn>1</mn>\n</math> monthly deposit, the amount in Hana's bank account was <math alttext=\"dollar sign 25\"><mo>$</mo><mn>25</mn></math>.</p>"
+    },
+    {
+      "id": "1d3ef378-ef5e-48d9-a26a-f00e360e7e88",
+      "content": "<p>Hana made a total of <math alttext=\"25\"><mn>25</mn>\n</math> monthly deposits.</p>"
+    }
+  ],
+  "keys": [
+    "1cc99136-611b-416d-b525-508f618a4e4e"
+  ],
+  "correct_answer": [
+    "A"
+  ],
+  "rationale": "<p>Choice A is correct. It's given that <math alttext=\"t\"><mi>t</mi>\n</math> represents the number of monthly deposits. In the given function&nbsp;<math alttext=\"f left parenthesis t right parenthesis equals 100 plus 25 t\"><mi>f</mi><mfenced><mi>t</mi></mfenced><mo>=</mo><mn>100</mn><mo>+</mo><mn>25</mn><mi>t</mi></math>, the coefficient of <math alttext=\"t\"><mi>t</mi>\n</math> is <math alttext=\"25\"><mn>25</mn>\n</math>. This means that for every increase in the value of <math alttext=\"t\"><mi>t</mi>\n</math> by <math alttext=\"1\"><mn>1</mn>\n</math>, the value of&nbsp;<math alttext=\"f left parenthesis t right parenthesis\"><mi>f</mi><mfenced><mi>t</mi></mfenced></math> increases by <math alttext=\"25\"><mn>25</mn>\n</math>. It follows that with each monthly deposit, the amount in Hana's bank account increased by <math alttext=\"dollar sign 25\"><mo>$</mo><mn>25</mn></math>.</p>\n<p>Choice B is incorrect. Before Hana made any monthly deposits, the amount in her bank account was&nbsp;<math alttext=\"dollar sign 100\"><mo>$</mo><mn>100</mn></math>.&nbsp;</p>\n<p>Choice C is incorrect. After <math alttext=\"1\"><mn>1</mn>\n</math> monthly deposit, the amount in Hana's bank account was <math alttext=\"dollar sign 125\"><mo>$</mo><mn>125</mn></math>.&nbsp;</p>\n<p>Choice D is incorrect and may result from conceptual errors.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959811,
+    "pPcc": "SAT#H",
+    "questionId": "776cfa7c",
+    "skill_cd": "H.B.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Linear functions",
+    "createDate": 1691007959811,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": null,
+    "external_id": "bba90b53-4666-4123-babf-8f8dbe2f8a7f",
+    "primary_class_cd": "H",
+    "uId": "c7af64c8-342c-40eb-b7f3-038b5fad4353",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "keys": [
+      "1cc99136-611b-416d-b525-508f618a4e4e"
+    ],
+    "rationale": "<p>Choice A is correct. It's given that <math alttext=\"t\"><mi>t</mi>\n</math> represents the number of monthly deposits. In the given function&nbsp;<math alttext=\"f left parenthesis t right parenthesis equals 100 plus 25 t\"><mi>f</mi><mfenced><mi>t</mi></mfenced><mo>=</mo><mn>100</mn><mo>+</mo><mn>25</mn><mi>t</mi></math>, the coefficient of <math alttext=\"t\"><mi>t</mi>\n</math> is <math alttext=\"25\"><mn>25</mn>\n</math>. This means that for every increase in the value of <math alttext=\"t\"><mi>t</mi>\n</math> by <math alttext=\"1\"><mn>1</mn>\n</math>, the value of&nbsp;<math alttext=\"f left parenthesis t right parenthesis\"><mi>f</mi><mfenced><mi>t</mi></mfenced></math> increases by <math alttext=\"25\"><mn>25</mn>\n</math>. It follows that with each monthly deposit, the amount in Hana's bank account increased by <math alttext=\"dollar sign 25\"><mo>$</mo><mn>25</mn></math>.</p>\n<p>Choice B is incorrect. Before Hana made any monthly deposits, the amount in her bank account was&nbsp;<math alttext=\"dollar sign 100\"><mo>$</mo><mn>100</mn></math>.&nbsp;</p>\n<p>Choice C is incorrect. After <math alttext=\"1\"><mn>1</mn>\n</math> monthly deposit, the amount in Hana's bank account was <math alttext=\"dollar sign 125\"><mo>$</mo><mn>125</mn></math>.&nbsp;</p>\n<p>Choice D is incorrect and may result from conceptual errors.</p>",
+    "origin": "manifold",
+    "stem": "<p>Hana deposited a fixed amount into her bank account each month. The function&nbsp;<math alttext=\"f left parenthesis t right parenthesis equals 100 plus 25 t\"><mi>f</mi><mfenced><mi>t</mi></mfenced><mo>=</mo><mn>100</mn><mo>+</mo><mn>25</mn><mi>t</mi></math> gives the amount, in dollars, in Hana's bank account after <math alttext=\"t\"><mi>t</mi>\n</math> monthly deposits. What is the best interpretation of <math alttext=\"25\"><mn>25</mn>\n</math> in this context?</p>",
+    "externalid": "bba90b53-4666-4123-babf-8f8dbe2f8a7f",
+    "templateid": "52adb7ef-73f3-4808-b303-482202b4e0a6",
+    "vaultid": "6c078e90-6763-4352-b937-ac8fca6ea1ed",
+    "type": "mcq",
+    "answerOptions": [
+      {
+        "id": "1cc99136-611b-416d-b525-508f618a4e4e",
+        "content": "<p>With each monthly deposit, the amount in Hana's bank account increased by <math alttext=\"dollar sign 25\"><mo>$</mo><mn>25</mn></math>.</p>"
+      },
+      {
+        "id": "c4e13a46-363c-454e-b825-a4ca8b67fa27",
+        "content": "<p>Before Hana made any monthly deposits, the amount in her bank account was&nbsp;<math alttext=\"dollar sign 25\"><mo>$</mo><mn>25</mn></math>.</p>"
+      },
+      {
+        "id": "c70859ea-ee5a-4e1d-b46a-4f183b4f833d",
+        "content": "<p>After <math alttext=\"1\"><mn>1</mn>\n</math> monthly deposit, the amount in Hana's bank account was <math alttext=\"dollar sign 25\"><mo>$</mo><mn>25</mn></math>.</p>"
+      },
+      {
+        "id": "1d3ef378-ef5e-48d9-a26a-f00e360e7e88",
+        "content": "<p>Hana made a total of <math alttext=\"25\"><mn>25</mn>\n</math> monthly deposits.</p>"
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "createDate": 1691007959811,
+  "updateDate": 1691007959811
+}

@@ -1,0 +1,66 @@
+{
+  "questionId": "55447be2",
+  "external_id": "7bbaeebb-c7b9-4d87-ac22-9fb4f0d77968",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "d0874fa9-1e9f-4c49-98fe-e50b46fa4c65",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.D.",
+  "skill_desc": "Systems of two linear equations in two variables",
+  "difficulty": "M",
+  "score_band_range_cd": 5,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"y equals one third x minus 14\"><mi>y</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>-</mo><mn>14</mn></math></p>\n<p style=\"text-align: center;\"><math alttext=\"y equals negative x plus 18\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mo>-</mo>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t\t<mo>+</mo>\n\t\t<mn>18</mn>\n\t</mrow>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">The solution to the given system of equations is <math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math><em>.</em> What is the value of <math alttext=\"x\"><mi>x</mi>\n</math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "24"
+  ],
+  "correct_answer": [
+    "24"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"24\"><mn>24</mn>\n</math>. The given system of equations can be solved by the substitution method. The first equation in the given system of equations is <math alttext=\"y equals one third x minus 14\"><mi>y</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>-</mo><mn>14</mn></math>. Substituting <math alttext=\"one third x minus 14\"><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>-</mo><mn>14</mn></math> for <math alttext=\"y\"><mi>y</mi>\n</math> in the second equation in the given system yields <math alttext=\"one third x minus 14 equals negative x plus 18\"><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>-</mo><mn>14</mn><mo>=</mo><mo>-</mo><mi>x</mi><mo>+</mo><mn>18</mn></math>. Adding <math alttext=\"14\"><mn>14</mn>\n</math> to both sides of this equation yields <math alttext=\"one third x equals negative x plus 32\"><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>=</mo><mo>-</mo><mi>x</mi><mo>+</mo><mn>32</mn></math>. Adding <math alttext=\"x\"><mi>x</mi>\n</math> to both sides of this equation yields <math alttext=\"four thirds x equals 32\"><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>x</mi><mo>=</mo><mn>32</mn></math>. Multiplying both sides of this equation by <math alttext=\"three fourths\"><mfrac><mn>3</mn><mn>4</mn></mfrac></math> yields <math alttext=\"x equals 24\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>24</mn>\n</mrow>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357393,
+    "pPcc": "SAT#H",
+    "questionId": "55447be2",
+    "skill_cd": "H.D.",
+    "score_band_range_cd": 5,
+    "skill_desc": "Systems of two linear equations in two variables",
+    "createDate": 1730147357393,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "7bbaeebb-c7b9-4d87-ac22-9fb4f0d77968",
+    "primary_class_cd": "H",
+    "uId": "d0874fa9-1e9f-4c49-98fe-e50b46fa4c65",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "7bbaeebb-c7b9-4d87-ac22-9fb4f0d77968",
+    "keys": [
+      "24"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"24\"><mn>24</mn>\n</math>. The given system of equations can be solved by the substitution method. The first equation in the given system of equations is <math alttext=\"y equals one third x minus 14\"><mi>y</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>-</mo><mn>14</mn></math>. Substituting <math alttext=\"one third x minus 14\"><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>-</mo><mn>14</mn></math> for <math alttext=\"y\"><mi>y</mi>\n</math> in the second equation in the given system yields <math alttext=\"one third x minus 14 equals negative x plus 18\"><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>-</mo><mn>14</mn><mo>=</mo><mo>-</mo><mi>x</mi><mo>+</mo><mn>18</mn></math>. Adding <math alttext=\"14\"><mn>14</mn>\n</math> to both sides of this equation yields <math alttext=\"one third x equals negative x plus 32\"><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>=</mo><mo>-</mo><mi>x</mi><mo>+</mo><mn>32</mn></math>. Adding <math alttext=\"x\"><mi>x</mi>\n</math> to both sides of this equation yields <math alttext=\"four thirds x equals 32\"><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>x</mi><mo>=</mo><mn>32</mn></math>. Multiplying both sides of this equation by <math alttext=\"three fourths\"><mfrac><mn>3</mn><mn>4</mn></mfrac></math> yields <math alttext=\"x equals 24\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>24</mn>\n</mrow>\n</math>.</p>",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"y equals one third x minus 14\"><mi>y</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>-</mo><mn>14</mn></math></p>\n<p style=\"text-align: center;\"><math alttext=\"y equals negative x plus 18\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mo>-</mo>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t\t<mo>+</mo>\n\t\t<mn>18</mn>\n\t</mrow>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">The solution to the given system of equations is <math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math><em>.</em> What is the value of <math alttext=\"x\"><mi>x</mi>\n</math>?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "24"
+    ]
+  },
+  "createDate": 1730147357393,
+  "updateDate": 1730147357393
+}

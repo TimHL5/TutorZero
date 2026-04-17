@@ -1,0 +1,103 @@
+{
+  "questionId": "ece00725",
+  "external_id": "f0db62a7-74c8-4e51-91dd-8c8b80649a49",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "91e80815-e437-4123-b32a-c25631b7e0e8",
+  "uId": "97fe0864-941b-42ec-854a-281701c0b8c5",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.D.",
+  "skill_desc": "Systems of two linear equations in two variables",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">Connor has <math alttext=\"c\"><mi>c</mi>\n</math> dollars and Maria has <math alttext=\"m\"><mi>m</mi>\n</math> dollars. Connor has <math alttext=\"4\"><mn>4</mn>\n</math>&nbsp;times as many dollars as Maria, and together they have a total of <math alttext=\"dollar sign 25.00\"><mo>$</mo><mn>25.00</mn>\n</math>. Which system of equations represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "8ca10533-20a6-4230-af4c-f332c764b0c0",
+      "content": "<p><math alttext=\"c equals 4 m\"><mi>c</mi><mo>=</mo><mn>4</mn><mi>m</mi></math></p>\n<p><math alttext=\"c plus m equals 25\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>25</mn></math></p>"
+    },
+    {
+      "id": "5d62c273-ac17-45f3-a36a-961dca62b052",
+      "content": "<p><math alttext=\"m equals 4 c\"><mi>m</mi><mo>=</mo><mn>4</mn><mi>c</mi></math></p>\n<p><math alttext=\"c plus m equals 25\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>25</mn></math></p>"
+    },
+    {
+      "id": "c51c2bf1-7798-4cce-8a00-e890c4836c1b",
+      "content": "<p><math alttext=\"c equals 25 m\"><mi>c</mi><mo>=</mo><mn>25</mn><mi>m</mi></math></p>\n<p><math alttext=\"c plus m equals 4\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>4</mn></math></p>"
+    },
+    {
+      "id": "770c34ef-d478-483e-aa3b-a5fc03c88b71",
+      "content": "<p><math alttext=\"m equals 25 c\"><mi>m</mi><mo>=</mo><mn>25</mn><mi>c</mi></math></p>\n<p><math alttext=\"c plus m equals 4\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>4</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "8ca10533-20a6-4230-af4c-f332c764b0c0"
+  ],
+  "correct_answer": [
+    "A"
+  ],
+  "rationale": "<p style=\"text-align: left;\">Choice A is correct. It&rsquo;s given that Connor has <math alttext=\"c\"><mi>c</mi>\n</math> dollars, Maria has <math alttext=\"m\"><mi>m</mi>\n</math> dollars, and Connor has <math alttext=\"4\"><mn>4</mn>\n</math> times as many dollars as Maria. This can be represented by the equation <math alttext=\"c equals 4 m\"><mrow>\n\t<mi>c</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>4</mn>\n\t\t<mi>m</mi>\n\t</mrow>\n</mrow>\n</math>. It&rsquo;s also given that together, Connor and Maria have a total of <math alttext=\"dollar sign 25.00\"><mo>$</mo><mn>25.00</mn></math>, which can be represented by the equation <math alttext=\"c plus m equals 25\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>25</mn></math>. Therefore, the system consisting of the equations <math alttext=\"c equals 4 m\"><mrow>\n\t<mi>c</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>4</mn>\n\t\t<mi>m</mi>\n\t</mrow>\n</mrow>\n</math> and <math alttext=\"c plus m equals 25\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>25</mn></math> represents this situation.</p>\n<p style=\"text-align: left;\">Choice B is incorrect. The equation <math alttext=\"m equals 4 c\"><mrow>\n\t<mi>m</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>4</mn>\n\t\t<mi>c</mi>\n\t</mrow>\n</mrow>\n</math> represents a situation where Maria has <math alttext=\"4\"><mn>4</mn>\n</math> times as many dollars as Connor, rather than the situation where Connor has <math alttext=\"4\"><mn>4</mn>\n</math> times as many dollars as Maria.</p>\n<p style=\"text-align: left;\">Choice C is incorrect. The equation <math alttext=\"c equals 25 m\"><mrow>\n\t<mi>c</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>25</mn>\n\t\t<mi>m</mi>\n\t</mrow>\n</mrow>\n</math> represents a situation where Connor has <math alttext=\"25\"><mn>25</mn>\n</math> times, rather than <math alttext=\"4\"><mn>4</mn>\n</math> times, as many dollars as Maria. The equation <math alttext=\"c plus m equals 4\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>4</mn></math> represents a situation where Connor and Maria together have a total of <math alttext=\"dollar sign 4.00\"><mo>$</mo><mn>4.00</mn></math>, rather than <math alttext=\"dollar sign 25.00\"><mo>$</mo><mn>25.00</mn></math>.</p>\n<p style=\"text-align: left;\">Choice D is incorrect. The equation <math alttext=\"m equals 25 c\"><mrow>\n\t<mi>m</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>25</mn>\n\t\t<mi>c</mi>\n\t</mrow>\n</mrow>\n</math> represents a situation where Maria has <math alttext=\"25\"><mn>25</mn>\n</math> times as many dollars as Connor, rather than the situation where Connor has <math alttext=\"4\"><mn>4</mn>\n</math> times as many dollars as Maria. The equation <math alttext=\"c plus m equals 4\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>4</mn></math> represents a situation where Connor and Maria together have a total of <math alttext=\"dollar sign 4.00\"><mo>$</mo><mn>4.00</mn></math>, rather than <math alttext=\"dollar sign 25.00\"><mo>$</mo><mn>25.00</mn></math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959817,
+    "pPcc": "SAT#H",
+    "questionId": "ece00725",
+    "skill_cd": "H.D.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Systems of two linear equations in two variables",
+    "createDate": 1691007959817,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": null,
+    "external_id": "f0db62a7-74c8-4e51-91dd-8c8b80649a49",
+    "primary_class_cd": "H",
+    "uId": "97fe0864-941b-42ec-854a-281701c0b8c5",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "keys": [
+      "8ca10533-20a6-4230-af4c-f332c764b0c0"
+    ],
+    "rationale": "<p style=\"text-align: left;\">Choice A is correct. It&rsquo;s given that Connor has <math alttext=\"c\"><mi>c</mi>\n</math> dollars, Maria has <math alttext=\"m\"><mi>m</mi>\n</math> dollars, and Connor has <math alttext=\"4\"><mn>4</mn>\n</math> times as many dollars as Maria. This can be represented by the equation <math alttext=\"c equals 4 m\"><mrow>\n\t<mi>c</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>4</mn>\n\t\t<mi>m</mi>\n\t</mrow>\n</mrow>\n</math>. It&rsquo;s also given that together, Connor and Maria have a total of <math alttext=\"dollar sign 25.00\"><mo>$</mo><mn>25.00</mn></math>, which can be represented by the equation <math alttext=\"c plus m equals 25\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>25</mn></math>. Therefore, the system consisting of the equations <math alttext=\"c equals 4 m\"><mrow>\n\t<mi>c</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>4</mn>\n\t\t<mi>m</mi>\n\t</mrow>\n</mrow>\n</math> and <math alttext=\"c plus m equals 25\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>25</mn></math> represents this situation.</p>\n<p style=\"text-align: left;\">Choice B is incorrect. The equation <math alttext=\"m equals 4 c\"><mrow>\n\t<mi>m</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>4</mn>\n\t\t<mi>c</mi>\n\t</mrow>\n</mrow>\n</math> represents a situation where Maria has <math alttext=\"4\"><mn>4</mn>\n</math> times as many dollars as Connor, rather than the situation where Connor has <math alttext=\"4\"><mn>4</mn>\n</math> times as many dollars as Maria.</p>\n<p style=\"text-align: left;\">Choice C is incorrect. The equation <math alttext=\"c equals 25 m\"><mrow>\n\t<mi>c</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>25</mn>\n\t\t<mi>m</mi>\n\t</mrow>\n</mrow>\n</math> represents a situation where Connor has <math alttext=\"25\"><mn>25</mn>\n</math> times, rather than <math alttext=\"4\"><mn>4</mn>\n</math> times, as many dollars as Maria. The equation <math alttext=\"c plus m equals 4\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>4</mn></math> represents a situation where Connor and Maria together have a total of <math alttext=\"dollar sign 4.00\"><mo>$</mo><mn>4.00</mn></math>, rather than <math alttext=\"dollar sign 25.00\"><mo>$</mo><mn>25.00</mn></math>.</p>\n<p style=\"text-align: left;\">Choice D is incorrect. The equation <math alttext=\"m equals 25 c\"><mrow>\n\t<mi>m</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>25</mn>\n\t\t<mi>c</mi>\n\t</mrow>\n</mrow>\n</math> represents a situation where Maria has <math alttext=\"25\"><mn>25</mn>\n</math> times as many dollars as Connor, rather than the situation where Connor has <math alttext=\"4\"><mn>4</mn>\n</math> times as many dollars as Maria. The equation <math alttext=\"c plus m equals 4\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>4</mn></math> represents a situation where Connor and Maria together have a total of <math alttext=\"dollar sign 4.00\"><mo>$</mo><mn>4.00</mn></math>, rather than <math alttext=\"dollar sign 25.00\"><mo>$</mo><mn>25.00</mn></math>.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">Connor has <math alttext=\"c\"><mi>c</mi>\n</math> dollars and Maria has <math alttext=\"m\"><mi>m</mi>\n</math> dollars. Connor has <math alttext=\"4\"><mn>4</mn>\n</math>&nbsp;times as many dollars as Maria, and together they have a total of <math alttext=\"dollar sign 25.00\"><mo>$</mo><mn>25.00</mn>\n</math>. Which system of equations represents this situation?</p>",
+    "externalid": "f0db62a7-74c8-4e51-91dd-8c8b80649a49",
+    "templateid": "62d15c05-46b4-4831-a7a6-df8cd9244c96",
+    "vaultid": "91e80815-e437-4123-b32a-c25631b7e0e8",
+    "type": "mcq",
+    "answerOptions": [
+      {
+        "id": "8ca10533-20a6-4230-af4c-f332c764b0c0",
+        "content": "<p><math alttext=\"c equals 4 m\"><mi>c</mi><mo>=</mo><mn>4</mn><mi>m</mi></math></p>\n<p><math alttext=\"c plus m equals 25\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>25</mn></math></p>"
+      },
+      {
+        "id": "5d62c273-ac17-45f3-a36a-961dca62b052",
+        "content": "<p><math alttext=\"m equals 4 c\"><mi>m</mi><mo>=</mo><mn>4</mn><mi>c</mi></math></p>\n<p><math alttext=\"c plus m equals 25\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>25</mn></math></p>"
+      },
+      {
+        "id": "c51c2bf1-7798-4cce-8a00-e890c4836c1b",
+        "content": "<p><math alttext=\"c equals 25 m\"><mi>c</mi><mo>=</mo><mn>25</mn><mi>m</mi></math></p>\n<p><math alttext=\"c plus m equals 4\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>4</mn></math></p>"
+      },
+      {
+        "id": "770c34ef-d478-483e-aa3b-a5fc03c88b71",
+        "content": "<p><math alttext=\"m equals 25 c\"><mi>m</mi><mo>=</mo><mn>25</mn><mi>c</mi></math></p>\n<p><math alttext=\"c plus m equals 4\"><mi>c</mi><mo>+</mo><mi>m</mi><mo>=</mo><mn>4</mn></math></p>"
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "createDate": 1691007959817,
+  "updateDate": 1691007959817
+}

@@ -1,0 +1,103 @@
+{
+  "questionId": "499cb491",
+  "external_id": "4363efa2-3674-407a-a249-7f0cf0daff53",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "33f86941-9c06-4161-8a00-5b82957088a3",
+  "uId": "b0f80856-a7cf-4b74-b27c-320f58604caa",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "P",
+  "domain": "Advanced Math",
+  "skill_cd": "P.A.",
+  "skill_desc": "Equivalent expressions",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to <math alttext=\"5 x squared minus 50 x y squared\"><mrow>\n\t<mrow>\n\t\t<mn>5</mn>\n\t\t<msup>\n\t\t\t<mi>x</mi>\n\t\t\t<mn>2</mn>\n\t\t</msup>\n\t</mrow>\n\t<mo>-</mo>\n\t<mrow>\n\t\t<mn>50</mn>\n\t\t<mi>x</mi>\n\t\t<msup>\n\t\t\t<mi>y</mi>\n\t\t\t<mn>2</mn>\n\t\t</msup>\n\t</mrow>\n</mrow>\n</math>?</p>",
+  "answerOptions": [
+    {
+      "id": "55a88f83-9132-444d-b43b-b201571d4da2",
+      "content": "<p><math alttext=\"5 x left parenthesis x minus 10 y squared right parenthesis\"><mrow><mn>5</mn></mrow><mi>x</mi><mfenced><mrow><mi>x</mi><mo>-</mo><mrow><mn>10</mn></mrow><msup><mi>y</mi><mn>2</mn></msup></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "f1058334-669f-4323-8a4c-2b65f3b604c7",
+      "content": "<p><math alttext=\"5 x left parenthesis x minus 50 y squared right parenthesis\"><mrow><mn>5</mn></mrow><mi>x</mi><mfenced><mrow><mi>x</mi><mo>-</mo><mrow><mn>50</mn></mrow><msup><mi>y</mi><mn>2</mn></msup></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "383cd879-422c-44ed-aa8e-9859f15dcbb2",
+      "content": "<p><math alttext=\"5 x squared left parenthesis 10 x y squared right parenthesis\"><mrow><mn>5</mn></mrow><msup><mi>x</mi><mn>2</mn></msup><mfenced><mrow><mrow><mn>10</mn></mrow><mi>x</mi><msup><mi>y</mi><mn>2</mn></msup></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "8d8fa952-ec11-4ede-b4b0-b354fe78d0c4",
+      "content": "<p><math alttext=\"5 x squared left parenthesis 50 x y squared right parenthesis\"><mrow><mn>5</mn></mrow><msup><mi>x</mi><mn>2</mn></msup><mfenced><mrow><mrow><mn>50</mn></mrow><mi>x</mi><msup><mi>y</mi><mn>2</mn></msup></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "55a88f83-9132-444d-b43b-b201571d4da2"
+  ],
+  "correct_answer": [
+    "A"
+  ],
+  "rationale": "<p>Choice A is correct. Since each term of the given expression has a factor of <math alttext=\"5 x\"><mrow>\n\t<mn>5</mn>\n\t<mi>x</mi>\n</mrow>\n</math>, it can be rewritten as <math alttext=\"5 x left parenthesis x right parenthesis minus 5 x left parenthesis 10 y squared right parenthesis\"><mn>5</mn><mi>x</mi><mfenced><mi>x</mi></mfenced><mo>-</mo><mn>5</mn><mi>x</mi><mfenced><mrow><mn>10</mn><msup><mi>y</mi><mn>2</mn></msup></mrow></mfenced></math>, or <math alttext=\"5 x left parenthesis x minus 10 y squared right parenthesis\"><mn>5</mn><mi>x</mi><mfenced><mrow><mi>x</mi><mo>-</mo><mn>10</mn><msup><mi>y</mi><mn>2</mn></msup></mrow></mfenced></math>.</p>\n<p>Choice B is incorrect and may result from conceptual or calculation errors.</p>\n<p>Choice C is incorrect and may result from conceptual or calculation errors.</p>\n<p>Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959821,
+    "pPcc": "SAT#P",
+    "questionId": "499cb491",
+    "skill_cd": "P.A.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Equivalent expressions",
+    "createDate": 1691007959821,
+    "program": "SAT",
+    "primary_class_cd_desc": "Advanced Math",
+    "ibn": null,
+    "external_id": "4363efa2-3674-407a-a249-7f0cf0daff53",
+    "primary_class_cd": "P",
+    "uId": "b0f80856-a7cf-4b74-b27c-320f58604caa",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "keys": [
+      "55a88f83-9132-444d-b43b-b201571d4da2"
+    ],
+    "rationale": "<p>Choice A is correct. Since each term of the given expression has a factor of <math alttext=\"5 x\"><mrow>\n\t<mn>5</mn>\n\t<mi>x</mi>\n</mrow>\n</math>, it can be rewritten as <math alttext=\"5 x left parenthesis x right parenthesis minus 5 x left parenthesis 10 y squared right parenthesis\"><mn>5</mn><mi>x</mi><mfenced><mi>x</mi></mfenced><mo>-</mo><mn>5</mn><mi>x</mi><mfenced><mrow><mn>10</mn><msup><mi>y</mi><mn>2</mn></msup></mrow></mfenced></math>, or <math alttext=\"5 x left parenthesis x minus 10 y squared right parenthesis\"><mn>5</mn><mi>x</mi><mfenced><mrow><mi>x</mi><mo>-</mo><mn>10</mn><msup><mi>y</mi><mn>2</mn></msup></mrow></mfenced></math>.</p>\n<p>Choice B is incorrect and may result from conceptual or calculation errors.</p>\n<p>Choice C is incorrect and may result from conceptual or calculation errors.</p>\n<p>Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+    "origin": "manifold",
+    "stem": "<p>Which expression is equivalent to <math alttext=\"5 x squared minus 50 x y squared\"><mrow>\n\t<mrow>\n\t\t<mn>5</mn>\n\t\t<msup>\n\t\t\t<mi>x</mi>\n\t\t\t<mn>2</mn>\n\t\t</msup>\n\t</mrow>\n\t<mo>-</mo>\n\t<mrow>\n\t\t<mn>50</mn>\n\t\t<mi>x</mi>\n\t\t<msup>\n\t\t\t<mi>y</mi>\n\t\t\t<mn>2</mn>\n\t\t</msup>\n\t</mrow>\n</mrow>\n</math>?</p>",
+    "externalid": "4363efa2-3674-407a-a249-7f0cf0daff53",
+    "templateid": "02afe51a-678f-4cbe-949d-805542fd9c38",
+    "vaultid": "33f86941-9c06-4161-8a00-5b82957088a3",
+    "type": "mcq",
+    "answerOptions": [
+      {
+        "id": "55a88f83-9132-444d-b43b-b201571d4da2",
+        "content": "<p><math alttext=\"5 x left parenthesis x minus 10 y squared right parenthesis\"><mrow><mn>5</mn></mrow><mi>x</mi><mfenced><mrow><mi>x</mi><mo>-</mo><mrow><mn>10</mn></mrow><msup><mi>y</mi><mn>2</mn></msup></mrow></mfenced></math></p>"
+      },
+      {
+        "id": "f1058334-669f-4323-8a4c-2b65f3b604c7",
+        "content": "<p><math alttext=\"5 x left parenthesis x minus 50 y squared right parenthesis\"><mrow><mn>5</mn></mrow><mi>x</mi><mfenced><mrow><mi>x</mi><mo>-</mo><mrow><mn>50</mn></mrow><msup><mi>y</mi><mn>2</mn></msup></mrow></mfenced></math></p>"
+      },
+      {
+        "id": "383cd879-422c-44ed-aa8e-9859f15dcbb2",
+        "content": "<p><math alttext=\"5 x squared left parenthesis 10 x y squared right parenthesis\"><mrow><mn>5</mn></mrow><msup><mi>x</mi><mn>2</mn></msup><mfenced><mrow><mrow><mn>10</mn></mrow><mi>x</mi><msup><mi>y</mi><mn>2</mn></msup></mrow></mfenced></math></p>"
+      },
+      {
+        "id": "8d8fa952-ec11-4ede-b4b0-b354fe78d0c4",
+        "content": "<p><math alttext=\"5 x squared left parenthesis 50 x y squared right parenthesis\"><mrow><mn>5</mn></mrow><msup><mi>x</mi><mn>2</mn></msup><mfenced><mrow><mrow><mn>50</mn></mrow><mi>x</mi><msup><mi>y</mi><mn>2</mn></msup></mrow></mfenced></math></p>"
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "createDate": 1691007959821,
+  "updateDate": 1691007959821
+}

@@ -1,0 +1,69 @@
+{
+  "questionId": "0700a2d5",
+  "external_id": "973f54f3-20e6-4be8-a0e8-f04182a1dc93",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "4ec3251e-dd14-45a0-91c3-1e628795b346",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.A.",
+  "skill_desc": "Ratios, rates, proportional relationships, and units",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">How many <span style=\"text-decoration: underline;\">yards</span> are equivalent to <math alttext=\"77\"><mn>77</mn>\n</math> rods? <math alttext=\"left parenthesis 5.5 yards  equals 1 rod right parenthesis\"><mfenced><mrow><mn>5.5</mn><mo>&#160;</mo><mtext>yards</mtext><mo>=</mo><mn>1</mn><mo>&#160;</mo><mtext>rod</mtext></mrow></mfenced></math></p>",
+  "answerOptions": null,
+  "keys": [
+    "423.5",
+    "847/2"
+  ],
+  "correct_answer": [
+    "423.5",
+    "847/2"
+  ],
+  "rationale": "<p>The correct answer is <math alttext=\"423.5\"><mn>423.5</mn></math>. It's given that <math alttext=\"5.5 yards  equals 1 rod\"><mn>5.5</mn><mo>&nbsp;</mo><mtext>yards</mtext><mo>=</mo><mn>1</mn><mo>&nbsp;</mo><mtext>rod</mtext></math>. Therefore, <math alttext=\"77\"><mn>77</mn>\n</math> rods is equivalent to <math alttext=\"left parenthesis 77 rods right parenthesis left parenthesis StartFraction 5.5 yards Over 1 rod EndFraction right parenthesis\"><mfenced><mrow><mn>77</mn><mo>&nbsp;</mo><mtext>rods</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>5.5</mn><mo>&nbsp;</mo><mtext>yards</mtext></mrow><mrow><mn>1</mn><mo>&nbsp;</mo><mtext>rod</mtext></mrow></mfrac></mfenced></math>, or <math alttext=\"423.5\"><mn>423.5</mn></math> yards. Note that 423.5 and 847/2 are examples of ways to enter a correct answer.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357402,
+    "pPcc": "SAT#Q",
+    "questionId": "0700a2d5",
+    "skill_cd": "Q.A.",
+    "score_band_range_cd": 3,
+    "skill_desc": "Ratios, rates, proportional relationships, and units",
+    "createDate": 1730147357402,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "973f54f3-20e6-4be8-a0e8-f04182a1dc93",
+    "primary_class_cd": "Q",
+    "uId": "4ec3251e-dd14-45a0-91c3-1e628795b346",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: left;\">How many <span style=\"text-decoration: underline;\">yards</span> are equivalent to <math alttext=\"77\"><mn>77</mn>\n</math> rods? <math alttext=\"left parenthesis 5.5 yards  equals 1 rod right parenthesis\"><mfenced><mrow><mn>5.5</mn><mo>&#160;</mo><mtext>yards</mtext><mo>=</mo><mn>1</mn><mo>&#160;</mo><mtext>rod</mtext></mrow></mfenced></math></p>",
+    "keys": [
+      "423.5",
+      "847/2"
+    ],
+    "rationale": "<p>The correct answer is <math alttext=\"423.5\"><mn>423.5</mn></math>. It's given that <math alttext=\"5.5 yards  equals 1 rod\"><mn>5.5</mn><mo>&nbsp;</mo><mtext>yards</mtext><mo>=</mo><mn>1</mn><mo>&nbsp;</mo><mtext>rod</mtext></math>. Therefore, <math alttext=\"77\"><mn>77</mn>\n</math> rods is equivalent to <math alttext=\"left parenthesis 77 rods right parenthesis left parenthesis StartFraction 5.5 yards Over 1 rod EndFraction right parenthesis\"><mfenced><mrow><mn>77</mn><mo>&nbsp;</mo><mtext>rods</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>5.5</mn><mo>&nbsp;</mo><mtext>yards</mtext></mrow><mrow><mn>1</mn><mo>&nbsp;</mo><mtext>rod</mtext></mrow></mfrac></mfenced></math>, or <math alttext=\"423.5\"><mn>423.5</mn></math> yards. Note that 423.5 and 847/2 are examples of ways to enter a correct answer.</p>",
+    "externalid": "973f54f3-20e6-4be8-a0e8-f04182a1dc93",
+    "correct_answer": [
+      "423.5",
+      "847/2"
+    ]
+  },
+  "createDate": 1730147357402,
+  "updateDate": 1730147357402
+}

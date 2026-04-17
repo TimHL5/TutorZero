@@ -1,11 +1,10 @@
 import { useState, useMemo } from "react";
-import { Link } from "react-router";
 import { AppLayout } from "@/react-app/components/layout/AppLayout";
 import { useStudentProgress } from "@/react-app/hooks/useStudentProgress";
 import { topicDisplayNames } from "@/data/questions";
 import { cn } from "@/react-app/lib/utils";
 import { useAuth } from "@/react-app/lib/AuthProvider";
-import { TrendingUp, Target, Clock, Lock, ChevronRight, BarChart3, Flame, Sparkles, Calendar, Download } from "lucide-react";
+import { TrendingUp, Target, Clock, BarChart3, Flame, Sparkles, Calendar, Download } from "lucide-react";
 import { downloadProgressReport } from "@/react-app/lib/pdfExport";
 
 function formatRelativeDate(dateStr: string): string {
@@ -48,8 +47,6 @@ export default function Progress() {
   const [activeTab, setActiveTab] = useState<"overview" | "topics" | "history">("overview");
 
   const profile = user?.profile;
-  const isPro = profile?.subscriptionTier === "pro";
-
   const stats = getOverallStats();
 
   const targetScore = profile?.targetScore || 1400;
@@ -218,17 +215,15 @@ export default function Progress() {
             <p className="text-body text-tz-gray-600">Track your improvement over time</p>
           </div>
           
-          {/* Export Button - Pro feature */}
-          {isPro && (
-            <button
-              onClick={handleExportPDF}
-              className="flex items-center gap-2 px-4 py-2 bg-tz-navy text-white rounded-lg text-sm font-medium hover:bg-tz-navy/90 transition-all"
-            >
-              <Download className="w-4 h-4" />
-              <span className="hidden sm:inline">Export Report</span>
-              <span className="sm:hidden">PDF</span>
-            </button>
-          )}
+          {/* Export Button — available to all users */}
+          <button
+            onClick={handleExportPDF}
+            className="flex items-center gap-2 px-4 py-2 bg-tz-navy text-white rounded-lg text-sm font-medium hover:bg-tz-navy/90 transition-all"
+          >
+            <Download className="w-4 h-4" />
+            <span className="hidden sm:inline">Export Report</span>
+            <span className="sm:hidden">PDF</span>
+          </button>
         </div>
 
         {/* Score Overview */}
@@ -341,9 +336,8 @@ export default function Progress() {
               )}
             </div>
 
-            {/* Pro Analytics Section */}
-            {isPro ? (
-              <>
+            {/* Analytics Section — available to all users */}
+            <>
                 {/* Score Trajectory Chart */}
                 <div className="bg-white rounded-xl border border-tz-gray-200 p-4 lg:p-6">
                   <div className="flex items-center justify-between mb-6">
@@ -594,44 +588,7 @@ export default function Progress() {
                     </p>
                   </div>
                 </div>
-              </>
-            ) : (
-              /* Pro Features Preview for Free Users */
-              <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl border border-orange-200 p-4 lg:p-6">
-                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <Lock className="w-5 h-5 text-tz-orange" />
-                      <h3 className="text-h3 text-tz-navy">Pro Analytics</h3>
-                    </div>
-                    <p className="text-body text-tz-gray-600 mb-4">
-                      Unlock advanced insights including score trajectory predictions, topic heat maps, 
-                      and confidence calibration analysis.
-                    </p>
-                    <ul className="space-y-2 text-small text-tz-gray-600">
-                      <li className="flex items-center gap-2">
-                        <ChevronRight className="w-4 h-4 text-tz-orange" />
-                        Predicted score on test day
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <ChevronRight className="w-4 h-4 text-tz-orange" />
-                        Visual topic mastery heat map
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <ChevronRight className="w-4 h-4 text-tz-orange" />
-                        Confidence calibration report
-                      </li>
-                    </ul>
-                  </div>
-                  <Link 
-                    to="/pricing"
-                    className="px-4 py-2 bg-tz-orange text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-all whitespace-nowrap self-start"
-                  >
-                    Unlock Pro
-                  </Link>
-                </div>
-              </div>
-            )}
+            </>
           </div>
         )}
 

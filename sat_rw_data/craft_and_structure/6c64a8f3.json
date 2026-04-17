@@ -1,0 +1,51 @@
+{
+  "questionId": "6c64a8f3",
+  "external_id": "0d6410db-f8b9-48d2-8712-acc6993450ec",
+  "vaultid": null,
+  "uId": "d3122ea5-45be-4c04-ad47-dd3e6508f02c",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "CAS",
+  "domain": "Craft and Structure",
+  "skill_cd": "WIC",
+  "skill_desc": "Words in Context",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "mcq",
+  "stimulus": "<p>Ecologist Exequiel Ezcurra and colleagues found that the inhabitants of the Mexica empire used natural landmarks to track time with a high degree of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>. By observing the sun&rsquo;s position in relation to various points on the mountains surrounding the Basin of Mexico, the Mexica were able to precisely identify the dates when significant events such as solstices occurred.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "7e1a0f86-bebc-4673-b1b6-160224513869",
+      "content": "<p>precariousness</p>"
+    },
+    {
+      "id": "da4e56cb-904a-445a-b2f1-71a03a7dbd2b",
+      "content": "<p>exactitude</p>"
+    },
+    {
+      "id": "a9805c95-e028-4940-8df0-fa8954eedd28",
+      "content": "<p>resilience</p>"
+    },
+    {
+      "id": "8752969d-1a2a-4da1-b700-2e149e0eecc9",
+      "content": "<p>inconspicuousness</p>"
+    }
+  ],
+  "keys": [
+    "da4e56cb-904a-445a-b2f1-71a03a7dbd2b"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most logically completes the text&rsquo;s discussion of the method the inhabitants of the Mexica empire used to track time. In this context, \"exactitude\" means precision. The text indicates that the Mexica used the sun&rsquo;s position relative to various natural landmarks to track the passage of time, explaining that such methods allowed the Mexica to accurately determine the dates of important events such as solstices. This context supports the idea that the Mexica people were able to track time with a high degree of precision, or exactitude.</p><p>Choice A is incorrect because in this context \"precariousness\" would mean instability, and there&rsquo;s nothing in the text to suggest that the method used by the Mexica people to track time was unstable or produced unstable results. Rather, the text indicates that the method yielded precise results, allowing the Mexica to accurately determine the dates of significant events. Choice C is incorrect because in this context \"resilience\" would mean persistence, and there&rsquo;s nothing in the text to suggest that the Mexica worked stubbornly in spite of obstacles in order to track time. Choice D is incorrect because in this context \"inconspicuousness\" would mean discreetness, and there&rsquo;s nothing in the text to suggest that the Mexica wanted to track time without being noticed.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323052,
+  "updateDate": 1730147323052
+}

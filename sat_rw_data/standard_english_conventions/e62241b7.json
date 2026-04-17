@@ -1,0 +1,51 @@
+{
+  "questionId": "e62241b7",
+  "external_id": "3bf90a30-ea0e-4762-adb2-a5e07db0fb4d",
+  "vaultid": null,
+  "uId": "05a081a0-1679-4ecb-a3ed-56fd171077f5",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": "<p>What is the correct pronunciation of Kiribati? In the Gilbertese language spoken by residents of the island nation, the letter combination -ti makes the -s sound; as a result, the country&rsquo;s name <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> pronounced &ldquo;Kiribas.&rdquo;</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "ff237006-8c1a-46f5-afd2-61ae81ef3374",
+      "content": "<p>are</p>"
+    },
+    {
+      "id": "6b90b181-e3eb-4ff1-97d5-c82f84e78261",
+      "content": "<p>have been</p>"
+    },
+    {
+      "id": "8dd2c271-cd07-43b4-a11f-01bc86ad05aa",
+      "content": "<p>are being</p>"
+    },
+    {
+      "id": "cff8b8a3-a073-40d6-afe3-4e40ace314fc",
+      "content": "<p>is</p>"
+    }
+  ],
+  "keys": [
+    "cff8b8a3-a073-40d6-afe3-4e40ace314fc"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-verb agreement. The singular verb \"is\" agrees in number with the singular subject \"the country&rsquo;s name.\"</p><p>Choice A is incorrect because the plural verb \"are\" doesn&rsquo;t agree in number with the singular subject \"the country&rsquo;s name.\" Choice B is incorrect because the plural verb \"have been\" doesn&rsquo;t agree in number with the singular subject \"the country&rsquo;s name.\" Choice C is incorrect because the plural verb \"are being\" doesn&rsquo;t agree in number with the singular subject \"the country&rsquo;s name.\"</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323051,
+  "updateDate": 1730147323051
+}

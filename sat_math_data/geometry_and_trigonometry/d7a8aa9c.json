@@ -1,0 +1,100 @@
+{
+  "questionId": "d7a8aa9c",
+  "external_id": "009bb623-417f-401a-bef5-57d78eeaaf99",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "3ccc9424-f44a-49bd-adc2-0c6cb99ea73f",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "S",
+  "domain": "Geometry and Trigonometry",
+  "skill_cd": "S.B.",
+  "skill_desc": "Lines, angles, and triangles",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">Each side of equilateral triangle S is multiplied by a scale factor of <math alttext=\"k\"><mi>k</mi>\n</math> to create equilateral triangle T. The length of each side of triangle T is greater than the length of each side of triangle S. Which of the following could be the value of <math alttext=\"k\"><mi>k</mi>\n</math>?</p>",
+  "answerOptions": [
+    {
+      "id": "7e189e0f-7556-46b7-9d41-ef3ce36b1566",
+      "content": "<p><math alttext=\"StartFraction 29 Over 28 EndFraction\"><mfrac>\n\t<mn>29</mn>\n\t<mn>28</mn>\n</mfrac>\n</math></p>"
+    },
+    {
+      "id": "8f26720f-5ffa-419a-a97f-d028c4113abd",
+      "content": "<p><math alttext=\"1\"><mn>1</mn>\n</math></p>"
+    },
+    {
+      "id": "c41e8370-4ed2-44fa-abcb-cd550966e96b",
+      "content": "<p><math alttext=\"StartFraction 28 Over 29 EndFraction\"><mfrac>\n\t<mn>28</mn>\n\t<mn>29</mn>\n</mfrac>\n</math></p>"
+    },
+    {
+      "id": "3c895ff7-54fb-4d1a-9640-29b4705cbc89",
+      "content": "<p><math alttext=\"0\"><mn>0</mn>\n</math></p>"
+    }
+  ],
+  "keys": [
+    "7e189e0f-7556-46b7-9d41-ef3ce36b1566"
+  ],
+  "correct_answer": [
+    "A"
+  ],
+  "rationale": "<p style=\"text-align: left;\">Choice A is correct. It's given that each side of equilateral triangle S is multiplied by a scale factor of <math alttext=\"k\"><mi>k</mi>\n</math> to create equilateral triangle T. Since the length of each side of triangle T is greater than the length of each side of triangle S, the scale factor of <math alttext=\"k\"><mi>k</mi>\n</math> must be greater than <math alttext=\"1\"><mn>1</mn>\n</math>. Of the given choices, only <math alttext=\"StartFraction 29 Over 28 EndFraction\"><mfrac>\n<mn>29</mn>\n<mn>28</mn>\n</mfrac>\n</math> is greater than <math alttext=\"1\"><mn>1</mn>\n</math>.</p>\n<p style=\"text-align: left;\">Choice B is incorrect. If each side of equilateral triangle S is multiplied by a scale factor of <math alttext=\"1\"><mn>1</mn>\n</math>, the length of each side of triangle T would be equal to the length of each side of triangle S.</p>\n<p style=\"text-align: left;\">Choice C is incorrect. If each side of equilateral triangle S is multiplied by a scale factor of <math alttext=\"StartFraction 28 Over 29 EndFraction\"><mfrac>\n<mn>28</mn>\n<mn>29</mn>\n</mfrac>\n</math>, the length of each side of triangle T would be less than the length of each side of triangle S.</p>\n<p style=\"text-align: left;\">Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554978,
+    "pPcc": "SAT#S",
+    "questionId": "d7a8aa9c",
+    "skill_cd": "S.B.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Lines, angles, and triangles",
+    "createDate": 1743430554978,
+    "program": "SAT",
+    "primary_class_cd_desc": "Geometry and Trigonometry",
+    "ibn": "",
+    "external_id": "009bb623-417f-401a-bef5-57d78eeaaf99",
+    "primary_class_cd": "S",
+    "uId": "3ccc9424-f44a-49bd-adc2-0c6cb99ea73f",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "type": "mcq",
+    "stem": "<p style=\"text-align: left;\">Each side of equilateral triangle S is multiplied by a scale factor of <math alttext=\"k\"><mi>k</mi>\n</math> to create equilateral triangle T. The length of each side of triangle T is greater than the length of each side of triangle S. Which of the following could be the value of <math alttext=\"k\"><mi>k</mi>\n</math>?</p>",
+    "keys": [
+      "7e189e0f-7556-46b7-9d41-ef3ce36b1566"
+    ],
+    "answerOptions": [
+      {
+        "id": "7e189e0f-7556-46b7-9d41-ef3ce36b1566",
+        "content": "<p><math alttext=\"StartFraction 29 Over 28 EndFraction\"><mfrac>\n\t<mn>29</mn>\n\t<mn>28</mn>\n</mfrac>\n</math></p>"
+      },
+      {
+        "id": "8f26720f-5ffa-419a-a97f-d028c4113abd",
+        "content": "<p><math alttext=\"1\"><mn>1</mn>\n</math></p>"
+      },
+      {
+        "id": "c41e8370-4ed2-44fa-abcb-cd550966e96b",
+        "content": "<p><math alttext=\"StartFraction 28 Over 29 EndFraction\"><mfrac>\n\t<mn>28</mn>\n\t<mn>29</mn>\n</mfrac>\n</math></p>"
+      },
+      {
+        "id": "3c895ff7-54fb-4d1a-9640-29b4705cbc89",
+        "content": "<p><math alttext=\"0\"><mn>0</mn>\n</math></p>"
+      }
+    ],
+    "rationale": "<p style=\"text-align: left;\">Choice A is correct. It's given that each side of equilateral triangle S is multiplied by a scale factor of <math alttext=\"k\"><mi>k</mi>\n</math> to create equilateral triangle T. Since the length of each side of triangle T is greater than the length of each side of triangle S, the scale factor of <math alttext=\"k\"><mi>k</mi>\n</math> must be greater than <math alttext=\"1\"><mn>1</mn>\n</math>. Of the given choices, only <math alttext=\"StartFraction 29 Over 28 EndFraction\"><mfrac>\n<mn>29</mn>\n<mn>28</mn>\n</mfrac>\n</math> is greater than <math alttext=\"1\"><mn>1</mn>\n</math>.</p>\n<p style=\"text-align: left;\">Choice B is incorrect. If each side of equilateral triangle S is multiplied by a scale factor of <math alttext=\"1\"><mn>1</mn>\n</math>, the length of each side of triangle T would be equal to the length of each side of triangle S.</p>\n<p style=\"text-align: left;\">Choice C is incorrect. If each side of equilateral triangle S is multiplied by a scale factor of <math alttext=\"StartFraction 28 Over 29 EndFraction\"><mfrac>\n<mn>28</mn>\n<mn>29</mn>\n</mfrac>\n</math>, the length of each side of triangle T would be less than the length of each side of triangle S.</p>\n<p style=\"text-align: left;\">Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+    "externalid": "009bb623-417f-401a-bef5-57d78eeaaf99",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "createDate": 1743430554978,
+  "updateDate": 1743430554978
+}

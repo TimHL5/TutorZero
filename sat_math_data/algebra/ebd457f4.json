@@ -1,0 +1,66 @@
+{
+  "questionId": "ebd457f4",
+  "external_id": "74ab7488-2efa-4e42-86ec-970c72177393",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "5db216ea-5762-4e45-bd9a-282270705d87",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.B.",
+  "skill_desc": "Linear functions",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">Brian saves <math alttext=\"two fifths\"><mfrac>\n\t<mn>2</mn>\n\t<mn>5</mn>\n</mfrac>\n</math> of the <math alttext=\"dollar sign 215\"><mo>$</mo><mn>215</mn></math> he earns each week from his job. If Brian continues to save at this rate, how much money, in dollars, will Brian save in <math alttext=\"9\"><mn>9</mn>\n</math> weeks?</p>",
+  "answerOptions": [],
+  "keys": [
+    "774"
+  ],
+  "correct_answer": [
+    "774"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"774\"><mn>774</mn>\n</math>. It's given that Brian saves <math alttext=\"two fifths\"><mfrac>\n\t<mn>2</mn>\n\t<mn>5</mn>\n</mfrac>\n</math> of the <math alttext=\"dollar sign 215\"><mo>$</mo><mn>215</mn></math> he earns each week from his job. Therefore, Brian saves <math alttext=\"left parenthesis two fifths right parenthesis left parenthesis dollar sign 215 right parenthesis\"><mfenced><mfrac><mn>2</mn><mn>5</mn></mfrac></mfenced><mfenced><mrow><mo>$</mo><mn>215</mn></mrow></mfenced></math>, or <math alttext=\"dollar sign 86\"><mo>$</mo><mn>86</mn></math>, per week. If Brian continues to save at this rate of <math alttext=\"dollar sign 86\"><mo>$</mo><mn>86</mn></math> per week for <math alttext=\"9\"><mn>9</mn>\n</math> weeks, then he will save a total of <math alttext=\"left parenthesis 9 right parenthesis left parenthesis 86 right parenthesis\"><mfenced><mn>9</mn></mfenced><mfenced><mn>86</mn></mfenced></math>, or <math alttext=\"774\"><mn>774</mn>\n</math>, dollars.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357388,
+    "pPcc": "SAT#H",
+    "questionId": "ebd457f4",
+    "skill_cd": "H.B.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Linear functions",
+    "createDate": 1730147357388,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "74ab7488-2efa-4e42-86ec-970c72177393",
+    "primary_class_cd": "H",
+    "uId": "5db216ea-5762-4e45-bd9a-282270705d87",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "74ab7488-2efa-4e42-86ec-970c72177393",
+    "keys": [
+      "774"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"774\"><mn>774</mn>\n</math>. It's given that Brian saves <math alttext=\"two fifths\"><mfrac>\n\t<mn>2</mn>\n\t<mn>5</mn>\n</mfrac>\n</math> of the <math alttext=\"dollar sign 215\"><mo>$</mo><mn>215</mn></math> he earns each week from his job. Therefore, Brian saves <math alttext=\"left parenthesis two fifths right parenthesis left parenthesis dollar sign 215 right parenthesis\"><mfenced><mfrac><mn>2</mn><mn>5</mn></mfrac></mfenced><mfenced><mrow><mo>$</mo><mn>215</mn></mrow></mfenced></math>, or <math alttext=\"dollar sign 86\"><mo>$</mo><mn>86</mn></math>, per week. If Brian continues to save at this rate of <math alttext=\"dollar sign 86\"><mo>$</mo><mn>86</mn></math> per week for <math alttext=\"9\"><mn>9</mn>\n</math> weeks, then he will save a total of <math alttext=\"left parenthesis 9 right parenthesis left parenthesis 86 right parenthesis\"><mfenced><mn>9</mn></mfenced><mfenced><mn>86</mn></mfenced></math>, or <math alttext=\"774\"><mn>774</mn>\n</math>, dollars.</p>",
+    "stem": "<p style=\"text-align: left;\">Brian saves <math alttext=\"two fifths\"><mfrac>\n\t<mn>2</mn>\n\t<mn>5</mn>\n</mfrac>\n</math> of the <math alttext=\"dollar sign 215\"><mo>$</mo><mn>215</mn></math> he earns each week from his job. If Brian continues to save at this rate, how much money, in dollars, will Brian save in <math alttext=\"9\"><mn>9</mn>\n</math> weeks?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "774"
+    ]
+  },
+  "createDate": 1730147357388,
+  "updateDate": 1730147357388
+}

@@ -1,0 +1,69 @@
+{
+  "questionId": "4e77195b",
+  "external_id": "26011899-7805-4655-b434-d6a03ef7d8de",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "b8ba825a-382a-4e5b-bb6d-36af77b3c050",
+  "uId": "c162022f-9e0f-44af-8ed5-d6cc7ec2f758",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.A.",
+  "skill_desc": "Linear equations in one variable",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">If <math alttext=\"2 plus x equals 60\"><mrow><mn>2</mn></mrow><mo>+</mo><mi>x</mi><mo>=</mo><mrow><mn>60</mn></mrow></math>, what is the value of <math alttext=\"16 plus 8 x\"><mrow><mn>16</mn></mrow><mo>+</mo><mrow><mn>8</mn></mrow><mi>x</mi></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "480"
+  ],
+  "correct_answer": [
+    "480"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"480\"><mn>480</mn>\n</math>.&nbsp;Multiplying both sides of the given equation by <math alttext=\"8\"><mn>8</mn>\n</math> yields <math alttext=\"8 left parenthesis 2 plus x right parenthesis equals 8 left parenthesis 60 right parenthesis\"><mn>8</mn><mfenced><mrow><mn>2</mn><mo>+</mo><mi>x</mi></mrow></mfenced><mo>=</mo><mn>8</mn><mfenced><mn>60</mn></mfenced></math>, or <math alttext=\"16 plus 8 x equals 480\"><mn>16</mn><mo>+</mo><mn>8</mn><mi>x</mi><mo>=</mo><mn>480</mn></math>. Therefore, if <math alttext=\"2 plus x equals 60\"><mn>2</mn><mo>+</mo><mi>x</mi><mo>=</mo><mn>60</mn></math>, the value of <math alttext=\"16 plus 8 x\"><mn>16</mn><mo>+</mo><mn>8</mn><mi>x</mi></math> is <math alttext=\"480\"><mn>480</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959809,
+    "pPcc": "SAT#H",
+    "questionId": "4e77195b",
+    "skill_cd": "H.A.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Linear equations in one variable",
+    "createDate": 1691007959809,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": null,
+    "external_id": "26011899-7805-4655-b434-d6a03ef7d8de",
+    "primary_class_cd": "H",
+    "uId": "c162022f-9e0f-44af-8ed5-d6cc7ec2f758",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "keys": [
+      "480"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"480\"><mn>480</mn>\n</math>.&nbsp;Multiplying both sides of the given equation by <math alttext=\"8\"><mn>8</mn>\n</math> yields <math alttext=\"8 left parenthesis 2 plus x right parenthesis equals 8 left parenthesis 60 right parenthesis\"><mn>8</mn><mfenced><mrow><mn>2</mn><mo>+</mo><mi>x</mi></mrow></mfenced><mo>=</mo><mn>8</mn><mfenced><mn>60</mn></mfenced></math>, or <math alttext=\"16 plus 8 x equals 480\"><mn>16</mn><mo>+</mo><mn>8</mn><mi>x</mi><mo>=</mo><mn>480</mn></math>. Therefore, if <math alttext=\"2 plus x equals 60\"><mn>2</mn><mo>+</mo><mi>x</mi><mo>=</mo><mn>60</mn></math>, the value of <math alttext=\"16 plus 8 x\"><mn>16</mn><mo>+</mo><mn>8</mn><mi>x</mi></math> is <math alttext=\"480\"><mn>480</mn>\n</math>.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">If <math alttext=\"2 plus x equals 60\"><mrow><mn>2</mn></mrow><mo>+</mo><mi>x</mi><mo>=</mo><mrow><mn>60</mn></mrow></math>, what is the value of <math alttext=\"16 plus 8 x\"><mrow><mn>16</mn></mrow><mo>+</mo><mrow><mn>8</mn></mrow><mi>x</mi></math>?</p>",
+    "externalid": "26011899-7805-4655-b434-d6a03ef7d8de",
+    "templateid": "c65aea51-d698-4087-a29e-50f68d769e24",
+    "vaultid": "b8ba825a-382a-4e5b-bb6d-36af77b3c050",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "480"
+    ]
+  },
+  "createDate": 1691007959809,
+  "updateDate": 1691007959809
+}

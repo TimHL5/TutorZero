@@ -1,15 +1,48 @@
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router";
 import { AppLayout } from "@/react-app/components/layout/AppLayout";
 import { useStudentProgress } from "@/react-app/hooks/useStudentProgress";
 import { useAuth } from "@/react-app/lib/AuthProvider";
-import { topicDisplayNames } from "@/data/questions";
-import { TrendingUp, TrendingDown, Minus, Target, Clock, Flame, AlertTriangle, Calculator, BookOpen, BarChart2 } from "lucide-react";
+import { getSkillCounts, topicDisplayNames, type SkillCounts } from "@/data/questions";
+import {
+  DOMAINS_IN_ORDER,
+  SKILLS_BY_DOMAIN,
+} from "@/react-app/lib/sat-taxonomy";
+import { TrendingUp, TrendingDown, Minus, Target, Clock, Flame, AlertTriangle, Calculator, BookOpen, BarChart2, ChevronRight } from "lucide-react";
 import { cn } from "@/react-app/lib/utils";
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const { user, isPending } = useAuth();
   const { progress, isLoaded, getWeakestTopics } = useStudentProgress();
+
+  // Live question counts for the "Browse all skills" card. Pulled from the
+  // in-memory cache in questions.ts — no extra Supabase round-trip.
+  const [counts, setCounts] = useState<SkillCounts | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    getSkillCounts().then((c) => {
+      if (!cancelled) setCounts(c);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const domainsBySection = useMemo(() => {
+    const groups: Record<"math" | "reading" | "writing", typeof DOMAINS_IN_ORDER> = {
+      math: [],
+      reading: [],
+      writing: [],
+    };
+    for (const d of DOMAINS_IN_ORDER) groups[d.section].push(d);
+    return groups;
+  }, []);
+
+  const goToDomain = (domainSlug: string) =>
+    navigate(`/practice/session?topic=${encodeURIComponent(domainSlug)}`);
+  const goToSkill = (skillSlug: string) =>
+    navigate(`/practice/session?skills=${encodeURIComponent(skillSlug)}`);
 
   if (!isLoaded || isPending) {
     return (
@@ -28,21 +61,18 @@ export default function Dashboard() {
 
   const profile = user?.profile;
   const displayName = profile?.displayName || user?.google_user_data?.given_name || "Student";
-  const isPro = profile?.subscriptionTier === "pro";
-  
+
   // Calculate stats
   const estimatedTotal = progress.estimatedMathScore + progress.estimatedRWScore;
   const baselineScore = progress.diagnosticCompleted ? 800 : null;
   const scoreChange = baselineScore ? estimatedTotal - baselineScore : null;
-  
+
   // Sessions this week
   const sessionsThisWeek = progress.sessions.filter(s => {
     const weekAgo = new Date();
     weekAgo.setDate(weekAgo.getDate() - 7);
     return new Date(s.date) > weekAgo;
   }).length;
-  const maxFreeSessions = 3;
-  const sessionsUsed = Math.min(sessionsThisWeek, maxFreeSessions);
   
   // Get weakest topic
   const weakTopics = getWeakestTopics(1);
@@ -110,11 +140,7 @@ export default function Dashboard() {
             value={sessionsThisWeek.toString()}
             unit="sessions"
             subtext={
-              isPro ? (
-                <span className="text-tz-gray-400">{sessionsThisWeek} completed</span>
-              ) : (
-                <span className="text-tz-gray-400">{sessionsUsed}/{maxFreeSessions} free</span>
-              )
+              <span className="text-tz-gray-400">{sessionsThisWeek} completed</span>
             }
           />
 
@@ -172,14 +198,6 @@ export default function Dashboard() {
               onClick={() => navigate("/practice")}
             />
           </div>
-          
-          {/* Free session limit message */}
-          {!isPro && sessionsUsed >= maxFreeSessions && (
-            <p className="text-xs sm:text-small text-tz-gray-600 mt-4">
-              You've used your free sessions this week. 
-              <a href="/pricing" className="text-tz-blue hover:underline ml-1">Upgrade to Pro</a> for unlimited.
-            </p>
-          )}
         </div>
 
         {/* Progress Snapshot */}
@@ -217,13 +235,66 @@ export default function Dashboard() {
               ))}
             </div>
           )}
+        </div>
 
-          {/* Pro analytics teaser */}
-          {!isPro && allTopics.length > 0 && (
-            <p className="text-xs sm:text-small text-tz-gray-600 mt-4">
-              <a href="/pricing" className="text-tz-blue hover:underline">Unlock detailed analytics with Pro</a>
-            </p>
-          )}
+        {/* Browse all skills — full curriculum, click any row to deep-link
+            into /practice/session filtered to that skill or domain. */}
+        <div className="mt-8 sm:mt-10">
+          <div className="flex items-baseline justify-between mb-3 sm:mb-4">
+            <h3 className="text-lg sm:text-h3 text-tz-navy">Browse all skills</h3>
+            <span className="text-xs sm:text-small text-tz-gray-400 tabular-nums">
+              {counts?.total != null ? `${counts.total.toLocaleString()} questions` : "—"}
+            </span>
+          </div>
+          <div className="bg-white rounded-lg border border-tz-gray-200 overflow-hidden">
+            {(["math", "reading", "writing"] as const).map((section, sIdx) => (
+              <div key={section} className={cn(sIdx > 0 && "border-t border-tz-gray-200")}>
+                <div className="px-4 sm:px-5 pt-4 pb-1 text-[10px] sm:text-label text-tz-gray-400 tracking-wide uppercase">
+                  {section === "reading" ? "Reading" : section === "writing" ? "Writing" : "Math"}
+                </div>
+                {domainsBySection[section].map((domain) => {
+                  const domainCount = counts?.byDomain[domain.slug];
+                  const skills = SKILLS_BY_DOMAIN[domain.slug] ?? [];
+                  return (
+                    <div key={domain.slug}>
+                      <button
+                        type="button"
+                        onClick={() => goToDomain(domain.slug)}
+                        className="group w-full flex items-center gap-3 pl-4 sm:pl-5 pr-4 py-2.5 text-left transition-colors hover:bg-tz-gray-100 focus-visible:outline-none focus-visible:bg-tz-gray-100"
+                      >
+                        <span className="flex-1 text-sm sm:text-base font-semibold text-tz-navy">
+                          {domain.displayName}
+                        </span>
+                        <span className="text-xs text-tz-gray-400 tabular-nums">
+                          {domainCount != null ? domainCount : "—"}
+                        </span>
+                        <ChevronRight className="w-4 h-4 text-tz-gray-400 group-hover:text-tz-blue transition-colors" />
+                      </button>
+                      {skills.map((skill) => {
+                        const skillCount = counts?.bySkill[skill.slug];
+                        return (
+                          <button
+                            key={skill.slug}
+                            type="button"
+                            onClick={() => goToSkill(skill.slug)}
+                            className="group w-full flex items-center gap-3 pl-10 sm:pl-12 pr-4 py-2 text-left transition-colors hover:bg-tz-gray-100 focus-visible:outline-none focus-visible:bg-tz-gray-100"
+                          >
+                            <span className="flex-1 text-sm text-tz-gray-700 group-hover:text-tz-navy transition-colors">
+                              {skill.displayName}
+                            </span>
+                            <span className="text-xs text-tz-gray-400 tabular-nums">
+                              {skillCount != null ? skillCount : "—"}
+                            </span>
+                            <ChevronRight className="w-4 h-4 text-tz-gray-300 group-hover:text-tz-blue transition-colors" />
+                          </button>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </AppLayout>

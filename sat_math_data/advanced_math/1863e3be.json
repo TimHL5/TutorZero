@@ -1,0 +1,66 @@
+{
+  "questionId": "1863e3be",
+  "external_id": "2c8d6c87-c4db-4555-8418-f31510d6ec98",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "c0202002-a95e-4584-af56-89fdfa31fdd2",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "P",
+  "domain": "Advanced Math",
+  "skill_cd": "P.C.",
+  "skill_desc": "Nonlinear functions",
+  "difficulty": "E",
+  "score_band_range_cd": 3,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The <math alttext=\"y\"><mi>y</mi>\n</math>-intercept of the graph of <math alttext=\"y equals x squared plus 31\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<msup>\n\t\t\t<mi>x</mi>\n\t\t\t<mn>2</mn>\n\t\t</msup>\n\t\t<mo>+</mo>\n\t\t<mn>31</mn>\n\t</mrow>\n</mrow>\n</math> in the <em>xy</em>-plane is <math alttext=\"left parenthesis 0 comma y right parenthesis\"><mfenced><mrow><mn>0</mn><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math alttext=\"y\"><mi>y</mi>\n</math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "31"
+  ],
+  "correct_answer": [
+    "31"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"31\"><mn>31</mn>\n</math>. It's given that the <em>y</em>-intercept of the graph of <math alttext=\"y equals x squared plus 31\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<msup>\n\t\t\t<mi>x</mi>\n\t\t\t<mn>2</mn>\n\t\t</msup>\n\t\t<mo>+</mo>\n\t\t<mn>31</mn>\n\t</mrow>\n</mrow>\n</math> in the <em>xy</em>-plane is <math alttext=\"left parenthesis 0 comma y right parenthesis\"><mfenced><mrow><mn>0</mn><mo>,</mo><mi>y</mi></mrow></mfenced></math>. Substituting <math alttext=\"0\"><mn>0</mn>\n</math> for <math alttext=\"x\"><mi>x</mi>\n</math> in the given equation yields <math alttext=\"y equals left parenthesis 0 right parenthesis squared plus 31\"><mi>y</mi><mo>=</mo><msup><mfenced><mn>0</mn></mfenced><mn>2</mn></msup><mo>+</mo><mn>31</mn></math>, or <math alttext=\"y equals 31\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mn>31</mn>\n</mrow>\n</math>. Thus, the value of <math alttext=\"y\"><mi>y</mi>\n</math> is <math alttext=\"31\"><mn>31</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357399,
+    "pPcc": "SAT#P",
+    "questionId": "1863e3be",
+    "skill_cd": "P.C.",
+    "score_band_range_cd": 3,
+    "skill_desc": "Nonlinear functions",
+    "createDate": 1730147357399,
+    "program": "SAT",
+    "primary_class_cd_desc": "Advanced Math",
+    "ibn": "",
+    "external_id": "2c8d6c87-c4db-4555-8418-f31510d6ec98",
+    "primary_class_cd": "P",
+    "uId": "c0202002-a95e-4584-af56-89fdfa31fdd2",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "2c8d6c87-c4db-4555-8418-f31510d6ec98",
+    "keys": [
+      "31"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"31\"><mn>31</mn>\n</math>. It's given that the <em>y</em>-intercept of the graph of <math alttext=\"y equals x squared plus 31\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<msup>\n\t\t\t<mi>x</mi>\n\t\t\t<mn>2</mn>\n\t\t</msup>\n\t\t<mo>+</mo>\n\t\t<mn>31</mn>\n\t</mrow>\n</mrow>\n</math> in the <em>xy</em>-plane is <math alttext=\"left parenthesis 0 comma y right parenthesis\"><mfenced><mrow><mn>0</mn><mo>,</mo><mi>y</mi></mrow></mfenced></math>. Substituting <math alttext=\"0\"><mn>0</mn>\n</math> for <math alttext=\"x\"><mi>x</mi>\n</math> in the given equation yields <math alttext=\"y equals left parenthesis 0 right parenthesis squared plus 31\"><mi>y</mi><mo>=</mo><msup><mfenced><mn>0</mn></mfenced><mn>2</mn></msup><mo>+</mo><mn>31</mn></math>, or <math alttext=\"y equals 31\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mn>31</mn>\n</mrow>\n</math>. Thus, the value of <math alttext=\"y\"><mi>y</mi>\n</math> is <math alttext=\"31\"><mn>31</mn>\n</math>.</p>",
+    "stem": "<p style=\"text-align: left;\">The <math alttext=\"y\"><mi>y</mi>\n</math>-intercept of the graph of <math alttext=\"y equals x squared plus 31\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<msup>\n\t\t\t<mi>x</mi>\n\t\t\t<mn>2</mn>\n\t\t</msup>\n\t\t<mo>+</mo>\n\t\t<mn>31</mn>\n\t</mrow>\n</mrow>\n</math> in the <em>xy</em>-plane is <math alttext=\"left parenthesis 0 comma y right parenthesis\"><mfenced><mrow><mn>0</mn><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math alttext=\"y\"><mi>y</mi>\n</math>?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "31"
+    ]
+  },
+  "createDate": 1730147357399,
+  "updateDate": 1730147357399
+}

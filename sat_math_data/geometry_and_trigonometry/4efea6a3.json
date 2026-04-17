@@ -1,0 +1,66 @@
+{
+  "questionId": "4efea6a3",
+  "external_id": "2bde9f21-d49c-42af-b7ec-38c87b242d02",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "c0652b03-9db3-4311-a9fc-75f008693976",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "S",
+  "domain": "Geometry and Trigonometry",
+  "skill_cd": "S.A.",
+  "skill_desc": "Area and volume",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The area of a rectangle is <math alttext=\"57\"><mn>57</mn>\n</math> square inches. The length of the longest side of the rectangle is <math alttext=\"19\"><mn>19</mn>\n</math> inches. What is the length, in inches, of the shortest side of this rectangle?</p>",
+  "answerOptions": [],
+  "keys": [
+    "3"
+  ],
+  "correct_answer": [
+    "3"
+  ],
+  "rationale": "<p>The correct answer is <math alttext=\"3\"><mn>3</mn>\n</math>. The area of a rectangle can be calculated by multiplying the length of its longest side by the length of its shortest side. It&rsquo;s given that the area of the rectangle is <math alttext=\"57\"><mn>57</mn>\n</math> square inches and the length of the longest side of the rectangle is <math alttext=\"19\"><mn>19</mn>\n</math> inches. Let <math alttext=\"x\"><mi>x</mi>\n</math> represent the length, in inches, of the shortest side of this rectangle. It follows that <math alttext=\"57 equals 19 x\"><mn>57</mn><mo>=</mo><mn>19</mn><mi>x</mi></math>. Dividing both sides of this equation by <math alttext=\"19\"><mn>19</mn>\n</math> yields <math alttext=\"3 equals x\"><mn>3</mn><mo>=</mo><mi>x</mi></math>. Therefore, the length, in inches, of the shortest side of the rectangle is <math alttext=\"3\"><mn>3</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357406,
+    "pPcc": "SAT#S",
+    "questionId": "4efea6a3",
+    "skill_cd": "S.A.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Area and volume",
+    "createDate": 1730147357406,
+    "program": "SAT",
+    "primary_class_cd_desc": "Geometry and Trigonometry",
+    "ibn": "",
+    "external_id": "2bde9f21-d49c-42af-b7ec-38c87b242d02",
+    "primary_class_cd": "S",
+    "uId": "c0652b03-9db3-4311-a9fc-75f008693976",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "answerOptions": [],
+    "externalid": "2bde9f21-d49c-42af-b7ec-38c87b242d02",
+    "keys": [
+      "3"
+    ],
+    "rationale": "<p>The correct answer is <math alttext=\"3\"><mn>3</mn>\n</math>. The area of a rectangle can be calculated by multiplying the length of its longest side by the length of its shortest side. It&rsquo;s given that the area of the rectangle is <math alttext=\"57\"><mn>57</mn>\n</math> square inches and the length of the longest side of the rectangle is <math alttext=\"19\"><mn>19</mn>\n</math> inches. Let <math alttext=\"x\"><mi>x</mi>\n</math> represent the length, in inches, of the shortest side of this rectangle. It follows that <math alttext=\"57 equals 19 x\"><mn>57</mn><mo>=</mo><mn>19</mn><mi>x</mi></math>. Dividing both sides of this equation by <math alttext=\"19\"><mn>19</mn>\n</math> yields <math alttext=\"3 equals x\"><mn>3</mn><mo>=</mo><mi>x</mi></math>. Therefore, the length, in inches, of the shortest side of the rectangle is <math alttext=\"3\"><mn>3</mn>\n</math>.</p>",
+    "stem": "<p style=\"text-align: left;\">The area of a rectangle is <math alttext=\"57\"><mn>57</mn>\n</math> square inches. The length of the longest side of the rectangle is <math alttext=\"19\"><mn>19</mn>\n</math> inches. What is the length, in inches, of the shortest side of this rectangle?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "3"
+    ]
+  },
+  "createDate": 1730147357406,
+  "updateDate": 1730147357406
+}

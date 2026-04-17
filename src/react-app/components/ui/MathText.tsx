@@ -1,102 +1,153 @@
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
+import DOMPurify from "dompurify";
+import { MathJax } from "better-react-mathjax";
 import katex from "katex";
 
 interface MathTextProps {
-  text: string;
+  /** Back-compat name. Can be plain text, HTML, MathML, or LaTeX. */
+  text?: string;
+  /** Preferred name. Same semantics as `text`. If both are set, `html` wins. */
+  html?: string;
   className?: string;
 }
 
-/**
- * Renders text that may contain inline math delimited by $...$ or \(...\).
- * Display math ($$...$$ or \[...\]) is also supported.
- * Non-math text is rendered as-is. Invalid LaTeX falls back to plain text.
- */
-export function MathText({ text, className }: MathTextProps) {
-  const html = useMemo(() => renderMathText(text), [text]);
+// ─── Content classification ────────────────────────────────────────────────
 
-  if (!text) return null;
+function containsRich(s: string): boolean {
+  if (!s) return false;
+  if (s.indexOf("<") >= 0) return true;
+  if (s.indexOf("&") >= 0) return true;
+  return /\$[^$\n]+\$|\\\(|\\\[|\$\$[\s\S]+?\$\$/.test(s);
+}
 
-  // If there's no math, render as plain text (no dangerouslySetInnerHTML needed)
-  if (!containsMath(text)) {
-    return <span className={className}>{text}</span>;
+function containsMathML(s: string): boolean {
+  return /<math[\s>]/i.test(s);
+}
+
+// ─── KaTeX auto-render ─────────────────────────────────────────────────────
+// Replaces LaTeX delimiters ($…$, $$…$$, \(…\), \[…\]) in an HTML string
+// with KaTeX-rendered output. Falls back to the original token on error.
+
+const LATEX_RE =
+  /(\$\$[\s\S]+?\$\$|\$[^$\n]+?\$|\\\[[\s\S]+?\\\]|\\\([\s\S]+?\\\))/g;
+
+function renderLatexInHtml(html: string): string {
+  return html.replace(LATEX_RE, (match) => {
+    let latex: string;
+    let displayMode: boolean;
+
+    if (match.startsWith("$$")) {
+      latex = match.slice(2, -2);
+      displayMode = true;
+    } else if (match.startsWith("\\[")) {
+      latex = match.slice(2, -2);
+      displayMode = true;
+    } else if (match.startsWith("$")) {
+      latex = match.slice(1, -1);
+      displayMode = false;
+    } else {
+      // \( … \)
+      latex = match.slice(2, -2);
+      displayMode = false;
+    }
+
+    try {
+      return katex.renderToString(latex.trim(), {
+        displayMode,
+        throwOnError: false,
+        output: "html",
+        trust: false,
+      });
+    } catch {
+      return match;
+    }
+  });
+}
+
+// ─── Sanitization ─────────────────────────────────────────────────────────
+
+const STORAGE_PREFIX =
+  "https://bkmyfcolrdumyrwktjrr.supabase.co/storage/v1/object/public/sat-images/";
+
+let hooksRegistered = false;
+function registerHooksOnce() {
+  if (hooksRegistered) return;
+  hooksRegistered = true;
+
+  DOMPurify.addHook("uponSanitizeAttribute", (_node, data) => {
+    if (data.attrName === "src") {
+      const v = data.attrValue;
+      if (!v) return;
+      const ok = v.startsWith(STORAGE_PREFIX) || v.startsWith("data:image/");
+      if (!ok) data.keepAttr = false;
+    }
+  });
+
+  DOMPurify.addHook("afterSanitizeAttributes", (node) => {
+    if (node.nodeName === "A" && (node as Element).hasAttribute("href")) {
+      (node as Element).setAttribute("target", "_blank");
+      (node as Element).setAttribute("rel", "noopener noreferrer");
+    }
+  });
+}
+
+function sanitize(dirty: string): string {
+  registerHooksOnce();
+  return DOMPurify.sanitize(dirty, {
+    USE_PROFILES: { html: true, mathMl: true, svg: true },
+    ADD_ATTR: [
+      "alttext", "display", "displaystyle", "mathvariant", "scope",
+      // KaTeX-generated attributes
+      "aria-hidden", "focusable",
+    ],
+    FORBID_TAGS: ["script", "style", "iframe", "object", "embed", "form", "input", "button"],
+    FORBID_ATTR: ["onerror", "onload", "onclick", "onmouseover", "onfocus", "onblur"],
+  });
+}
+
+// ─── Component ────────────────────────────────────────────────────────────
+
+function MathTextImpl({ text, html, className }: MathTextProps) {
+  const content = html ?? text ?? "";
+
+  const prepared = useMemo(() => {
+    if (!content) return { mode: "empty" as const, clean: "" };
+    if (!containsRich(content)) return { mode: "plain" as const, clean: content };
+
+    // Content with MathML → use MathJax (handles MathML + LaTeX together)
+    if (containsMathML(content)) {
+      return { mode: "mathjax" as const, clean: sanitize(content) };
+    }
+
+    // Content with LaTeX delimiters but no MathML → use KaTeX (faster, offline)
+    const katexRendered = renderLatexInHtml(content);
+    return { mode: "katex" as const, clean: sanitize(katexRendered) };
+  }, [content]);
+
+  if (prepared.mode === "empty") return null;
+
+  if (prepared.mode === "plain") {
+    return <span className={className}>{content}</span>;
   }
 
+  if (prepared.mode === "katex") {
+    return (
+      <span
+        className={className}
+        dangerouslySetInnerHTML={{ __html: prepared.clean }}
+      />
+    );
+  }
+
+  // mathjax fallback for MathML content
   return (
-    <span
-      className={className}
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    <MathJax dynamic hideUntilTypeset="first">
+      <span
+        className={className}
+        dangerouslySetInnerHTML={{ __html: prepared.clean }}
+      />
+    </MathJax>
   );
 }
 
-function containsMath(text: string): boolean {
-  // Check for $...$ (but not $$), $$...$$, \(...\), or \[...\]
-  return /\$[^$].*?\$|\$\$.*?\$\$|\\\(.*?\\\)|\\\[.*?\\\]/s.test(text);
-}
-
-function renderMathText(text: string): string {
-  if (!text || !containsMath(text)) return escapeHtml(text);
-
-  // Process in order: display math first ($$...$$, \[...\]), then inline ($...$, \(...\))
-  let result = text;
-
-  // Display math: $$...$$
-  result = result.replace(/\$\$([\s\S]*?)\$\$/g, (_match, latex) => {
-    return renderKatex(latex, true);
-  });
-
-  // Display math: \[...\]
-  result = result.replace(/\\\[([\s\S]*?)\\\]/g, (_match, latex) => {
-    return renderKatex(latex, true);
-  });
-
-  // Inline math: \(...\)
-  result = result.replace(/\\\(([\s\S]*?)\\\)/g, (_match, latex) => {
-    return renderKatex(latex, false);
-  });
-
-  // Inline math: $...$  (single dollar, not double)
-  // Negative lookbehind for $ to avoid matching $$ that wasn't already handled
-  result = result.replace(/(?<!\$)\$(?!\$)((?:[^$\\]|\\.)+?)\$/g, (_match, latex) => {
-    return renderKatex(latex, false);
-  });
-
-  // Escape any remaining non-math text segments
-  // We need to be careful here — the math has already been rendered to HTML
-  // So we only escape text that's NOT inside a katex span
-  return escapeNonMathHtml(result);
-}
-
-function renderKatex(latex: string, displayMode: boolean): string {
-  try {
-    return katex.renderToString(latex.trim(), {
-      displayMode,
-      throwOnError: false,
-      strict: false,
-      trust: true,
-    });
-  } catch {
-    // Fallback: show the raw LaTeX text
-    return escapeHtml(`$${latex}$`);
-  }
-}
-
-function escapeHtml(text: string): string {
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
-function escapeNonMathHtml(text: string): string {
-  // Split on katex-generated spans, escape only non-katex parts
-  // KaTeX output contains class="katex" — use that as a marker
-  const parts = text.split(/(<span class="katex[\s\S]*?<\/span>)/);
-  return parts.map(part => {
-    if (part.startsWith('<span class="katex')) {
-      return part; // already rendered HTML from KaTeX
-    }
-    return escapeHtml(part);
-  }).join("");
-}
+export const MathText = memo(MathTextImpl);

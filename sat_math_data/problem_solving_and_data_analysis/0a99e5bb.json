@@ -1,0 +1,100 @@
+{
+  "questionId": "0a99e5bb",
+  "external_id": "3d240b77-f771-4bb8-aa9a-72ee23938503",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "e035f6a3-cdec-42b3-b0c9-1644c7aca3e3",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.E.",
+  "skill_desc": "Probability and conditional probability",
+  "difficulty": "E",
+  "score_band_range_cd": 1,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"negative 13\"><mo>-</mo><mn>13</mn>\n</math>, <math alttext=\"4\"><mn>4</mn>\n</math>, <math alttext=\"23\"><mn>23</mn>\n</math></p>\n<p style=\"text-align: left;\">A data set of three numbers is shown. If a number from this data set is selected at random, what is the probability of selecting a negative number?</p>",
+  "answerOptions": [
+    {
+      "id": "d47c4cdb-bf94-49bf-8aeb-6c1bf8c2f8aa",
+      "content": "<p><math alttext=\"0\"><mn>0</mn>\n</math></p>"
+    },
+    {
+      "id": "7ad1e97c-c668-430a-aa4a-3edb933d9b3f",
+      "content": "<p><math alttext=\"one third\"><mfrac>\n\t<mn>1</mn>\n\t<mn>3</mn>\n</mfrac>\n</math></p>"
+    },
+    {
+      "id": "980da0e3-320d-4669-99ba-eab2571634b0",
+      "content": "<p><math alttext=\"two thirds\"><mfrac>\n\t<mn>2</mn>\n\t<mn>3</mn>\n</mfrac>\n</math></p>"
+    },
+    {
+      "id": "42d8e13c-a13c-4f68-b61f-f58d13c39753",
+      "content": "<p><math alttext=\"1\"><mn>1</mn>\n</math></p>"
+    }
+  ],
+  "keys": [
+    "7ad1e97c-c668-430a-aa4a-3edb933d9b3f"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p style=\"text-align: left;\">Choice B is correct. If a number from the data set is selected at random, the probability of selecting a negative number is the count of negative numbers in the data set divided by the total count of numbers in the data set. It's given that a data set of three numbers is shown. It follows that the total count of numbers in the data set is <math alttext=\"3\"><mn>3</mn>\n</math>. In the data set shown, <math alttext=\"negative 13\"><mrow>\n\t<mo>-</mo>\n\t<mn>13</mn>\n</mrow>\n</math> is the only negative number. It follows that the count of negative numbers in the data set is <math alttext=\"1\"><mn>1</mn>\n</math>. Therefore, if a number from the data set is selected at random, the probability of selecting a negative number is <math alttext=\"one third\"><mfrac><mn>1</mn><mn>3</mn></mfrac></math>.</p>\n<p>Choice A is incorrect. This is the probability of selecting a negative number from a data set that doesn&rsquo;t contain any negative numbers.</p>\n<p>Choice C is incorrect. This is the probability of selecting a positive number, not a negative number, from the data set.</p>\n<p>Choice D is incorrect. This is the probability of selecting a negative number from a data set that contains only negative numbers.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357405,
+    "pPcc": "SAT#Q",
+    "questionId": "0a99e5bb",
+    "skill_cd": "Q.E.",
+    "score_band_range_cd": 1,
+    "skill_desc": "Probability and conditional probability",
+    "createDate": 1730147357405,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "3d240b77-f771-4bb8-aa9a-72ee23938503",
+    "primary_class_cd": "Q",
+    "uId": "e035f6a3-cdec-42b3-b0c9-1644c7aca3e3",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "answerOptions": [
+      {
+        "content": "<p><math alttext=\"0\"><mn>0</mn>\n</math></p>",
+        "id": "d47c4cdb-bf94-49bf-8aeb-6c1bf8c2f8aa"
+      },
+      {
+        "content": "<p><math alttext=\"one third\"><mfrac>\n\t<mn>1</mn>\n\t<mn>3</mn>\n</mfrac>\n</math></p>",
+        "id": "7ad1e97c-c668-430a-aa4a-3edb933d9b3f"
+      },
+      {
+        "content": "<p><math alttext=\"two thirds\"><mfrac>\n\t<mn>2</mn>\n\t<mn>3</mn>\n</mfrac>\n</math></p>",
+        "id": "980da0e3-320d-4669-99ba-eab2571634b0"
+      },
+      {
+        "content": "<p><math alttext=\"1\"><mn>1</mn>\n</math></p>",
+        "id": "42d8e13c-a13c-4f68-b61f-f58d13c39753"
+      }
+    ],
+    "externalid": "3d240b77-f771-4bb8-aa9a-72ee23938503",
+    "keys": [
+      "7ad1e97c-c668-430a-aa4a-3edb933d9b3f"
+    ],
+    "rationale": "<p style=\"text-align: left;\">Choice B is correct. If a number from the data set is selected at random, the probability of selecting a negative number is the count of negative numbers in the data set divided by the total count of numbers in the data set. It's given that a data set of three numbers is shown. It follows that the total count of numbers in the data set is <math alttext=\"3\"><mn>3</mn>\n</math>. In the data set shown, <math alttext=\"negative 13\"><mrow>\n\t<mo>-</mo>\n\t<mn>13</mn>\n</mrow>\n</math> is the only negative number. It follows that the count of negative numbers in the data set is <math alttext=\"1\"><mn>1</mn>\n</math>. Therefore, if a number from the data set is selected at random, the probability of selecting a negative number is <math alttext=\"one third\"><mfrac><mn>1</mn><mn>3</mn></mfrac></math>.</p>\n<p>Choice A is incorrect. This is the probability of selecting a negative number from a data set that doesn&rsquo;t contain any negative numbers.</p>\n<p>Choice C is incorrect. This is the probability of selecting a positive number, not a negative number, from the data set.</p>\n<p>Choice D is incorrect. This is the probability of selecting a negative number from a data set that contains only negative numbers.</p>",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"negative 13\"><mo>-</mo><mn>13</mn>\n</math>, <math alttext=\"4\"><mn>4</mn>\n</math>, <math alttext=\"23\"><mn>23</mn>\n</math></p>\n<p style=\"text-align: left;\">A data set of three numbers is shown. If a number from this data set is selected at random, what is the probability of selecting a negative number?</p>",
+    "type": "mcq",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "createDate": 1730147357405,
+  "updateDate": 1730147357405
+}

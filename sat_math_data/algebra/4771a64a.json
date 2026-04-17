@@ -1,0 +1,66 @@
+{
+  "questionId": "4771a64a",
+  "external_id": "0797e1a5-ab62-4b2e-b8db-ec842244529a",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "cf979414-421b-4c84-95e4-a9b5902cbca7",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.A.",
+  "skill_desc": "Linear equations in one variable",
+  "difficulty": "H",
+  "score_band_range_cd": 6,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">If&nbsp;<math alttext=\"5 minus 7 left parenthesis 2 minus 4 x right parenthesis equals 16 minus 8 left parenthesis 2 minus 4 x right parenthesis\"><mrow><mn>5</mn></mrow><mo>-</mo><mrow><mn>7</mn></mrow><mfenced><mrow><mrow><mn>2</mn></mrow><mo>-</mo><mrow><mn>4</mn></mrow><mi>x</mi></mrow></mfenced><mo>=</mo><mrow><mn>16</mn></mrow><mo>-</mo><mrow><mn>8</mn></mrow><mfenced><mrow><mrow><mn>2</mn></mrow><mo>-</mo><mrow><mn>4</mn></mrow><mi>x</mi></mrow></mfenced></math>, what is the value of&nbsp;<math alttext=\"2 minus 4 x\"><mrow><mn>2</mn></mrow><mo>-</mo><mrow><mn>4</mn></mrow><mi>x</mi></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "11"
+  ],
+  "correct_answer": [
+    "11"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"11\"><mn>11</mn>\n</math>. Subtracting <math alttext=\"5\"><mn>5</mn>\n</math> from each side of the given equation yields <math alttext=\"minus 7 left parenthesis 2 minus 4 x right parenthesis equals 11 minus 8 left parenthesis 2 minus 4 x right parenthesis\"><mo>-</mo><mn>7</mn><mfenced><mrow><mn>2</mn><mo>-</mo><mn>4</mn><mi>x</mi></mrow></mfenced><mo>=</mo><mn>11</mn><mo>-</mo><mn>8</mn><mfenced><mrow><mn>2</mn><mo>-</mo><mn>4</mn><mi>x</mi></mrow></mfenced></math>. Adding <math alttext=\"8 left parenthesis 2 minus 4 x right parenthesis\"><mn>8</mn><mfenced><mrow><mn>2</mn><mo>-</mo><mn>4</mn><mi>x</mi></mrow></mfenced></math> to each side of this equation yields&nbsp;<math alttext=\"2 minus 4 x equals 11\"><mn>2</mn><mo>-</mo><mn>4</mn><mi>x</mi><mo>=</mo><mn>11</mn></math>. Therefore, the value of <math alttext=\"2 minus 4 x\"><mn>2</mn><mo>-</mo><mn>4</mn><mi>x</mi></math> is <math alttext=\"11\"><mn>11</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554979,
+    "pPcc": "SAT#H",
+    "questionId": "4771a64a",
+    "skill_cd": "H.A.",
+    "score_band_range_cd": 6,
+    "skill_desc": "Linear equations in one variable",
+    "createDate": 1743430554979,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "0797e1a5-ab62-4b2e-b8db-ec842244529a",
+    "primary_class_cd": "H",
+    "uId": "cf979414-421b-4c84-95e4-a9b5902cbca7",
+    "difficulty": "H"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: left;\">If&nbsp;<math alttext=\"5 minus 7 left parenthesis 2 minus 4 x right parenthesis equals 16 minus 8 left parenthesis 2 minus 4 x right parenthesis\"><mrow><mn>5</mn></mrow><mo>-</mo><mrow><mn>7</mn></mrow><mfenced><mrow><mrow><mn>2</mn></mrow><mo>-</mo><mrow><mn>4</mn></mrow><mi>x</mi></mrow></mfenced><mo>=</mo><mrow><mn>16</mn></mrow><mo>-</mo><mrow><mn>8</mn></mrow><mfenced><mrow><mrow><mn>2</mn></mrow><mo>-</mo><mrow><mn>4</mn></mrow><mi>x</mi></mrow></mfenced></math>, what is the value of&nbsp;<math alttext=\"2 minus 4 x\"><mrow><mn>2</mn></mrow><mo>-</mo><mrow><mn>4</mn></mrow><mi>x</mi></math>?</p>",
+    "keys": [
+      "11"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"11\"><mn>11</mn>\n</math>. Subtracting <math alttext=\"5\"><mn>5</mn>\n</math> from each side of the given equation yields <math alttext=\"minus 7 left parenthesis 2 minus 4 x right parenthesis equals 11 minus 8 left parenthesis 2 minus 4 x right parenthesis\"><mo>-</mo><mn>7</mn><mfenced><mrow><mn>2</mn><mo>-</mo><mn>4</mn><mi>x</mi></mrow></mfenced><mo>=</mo><mn>11</mn><mo>-</mo><mn>8</mn><mfenced><mrow><mn>2</mn><mo>-</mo><mn>4</mn><mi>x</mi></mrow></mfenced></math>. Adding <math alttext=\"8 left parenthesis 2 minus 4 x right parenthesis\"><mn>8</mn><mfenced><mrow><mn>2</mn><mo>-</mo><mn>4</mn><mi>x</mi></mrow></mfenced></math> to each side of this equation yields&nbsp;<math alttext=\"2 minus 4 x equals 11\"><mn>2</mn><mo>-</mo><mn>4</mn><mi>x</mi><mo>=</mo><mn>11</mn></math>. Therefore, the value of <math alttext=\"2 minus 4 x\"><mn>2</mn><mo>-</mo><mn>4</mn><mi>x</mi></math> is <math alttext=\"11\"><mn>11</mn>\n</math>.</p>",
+    "externalid": "0797e1a5-ab62-4b2e-b8db-ec842244529a",
+    "answerOptions": [],
+    "correct_answer": [
+      "11"
+    ]
+  },
+  "createDate": 1743430554979,
+  "updateDate": 1743430554979
+}

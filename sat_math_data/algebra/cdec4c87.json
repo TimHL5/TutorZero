@@ -1,0 +1,100 @@
+{
+  "questionId": "cdec4c87",
+  "external_id": "d9637287-6236-4171-8284-30cfa0ba9e23",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "22b5afb6-65bd-486a-b679-b5420bb68390",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.D.",
+  "skill_desc": "Systems of two linear equations in two variables",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"y equals 12 x minus 20\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mn>12</mn>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t\t<mo>-</mo>\n\t\t<mn>20</mn>\n\t</mrow>\n</mrow>\n</math></p>\n<p style=\"text-align: center;\"><math alttext=\"y equals 28\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mn>28</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">What is the solution&nbsp;<math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math> to the given system of equations?</p>",
+  "answerOptions": [
+    {
+      "id": "6fd225aa-d292-4579-a6b4-385c642ce881",
+      "content": "<p><math alttext=\"left parenthesis 4 comma 28 right parenthesis\"><mfenced><mrow><mrow><mn>4</mn></mrow><mo>,</mo><mrow><mn>28</mn></mrow></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "15e7e595-54aa-4ba3-87c2-fcfb2b365d79",
+      "content": "<p><math alttext=\"left parenthesis 20 comma 28 right parenthesis\"><mfenced><mrow><mrow><mn>20</mn></mrow><mo>,</mo><mrow><mn>28</mn></mrow></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "2fec5a7e-99b3-49f2-a6cd-adad1cbfdce4",
+      "content": "<p><math alttext=\"left parenthesis 28 comma 4 right parenthesis\"><mfenced><mrow><mrow><mn>28</mn></mrow><mo>,</mo><mrow><mn>4</mn></mrow></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "69d7c610-adca-40fd-b795-6b5bb263374b",
+      "content": "<p><math alttext=\"left parenthesis 28 comma 20 right parenthesis\"><mfenced><mrow><mrow><mn>28</mn></mrow><mo>,</mo><mrow><mn>20</mn></mrow></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "6fd225aa-d292-4579-a6b4-385c642ce881"
+  ],
+  "correct_answer": [
+    "A"
+  ],
+  "rationale": "<p style=\"text-align: left;\">Choice A is correct. The second equation in the given system is <math alttext=\"y equals 28\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mn>28</mn>\n</mrow>\n</math>. Substituting <math alttext=\"28\"><mn>28</mn>\n</math> for <math alttext=\"y\"><mi>y</mi>\n</math> in the first equation in the given system yields <math alttext=\"28 equals 12 x minus 20\"><mrow>\n\t<mn>28</mn>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mn>12</mn>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t\t<mo>-</mo>\n\t\t<mn>20</mn>\n\t</mrow>\n</mrow>\n</math>. Adding <math alttext=\"20\"><mn>20</mn>\n</math> to both sides of this equation yields <math alttext=\"48 equals 12 x\"><mrow>\n\t<mn>48</mn>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>12</mn>\n\t\t<mi>x</mi>\n\t</mrow>\n</mrow>\n</math>. Dividing both sides of this equation by <math alttext=\"12\"><mn>12</mn>\n</math> yields <math alttext=\"4 equals x\"><mrow>\n\t<mn>4</mn>\n\t<mo>=</mo>\n\t<mi>x</mi>\n</mrow>\n</math>. Therefore, the solution <math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math> to the given system of equations is <math alttext=\"left parenthesis 4 comma 28 right parenthesis\"><mfenced><mrow><mn>4</mn><mo>,</mo><mn>28</mn></mrow></mfenced></math>.</p>\n<p style=\"text-align: left;\">Choice B is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice C is incorrect. This is the solution <math alttext=\"left parenthesis y comma x right parenthesis\"><mfenced><mrow><mi>y</mi><mo>,</mo><mi>x</mi></mrow></mfenced></math>, not <math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>, to the given system of equations.</p>\n<p style=\"text-align: left;\">Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1730147357393,
+    "pPcc": "SAT#H",
+    "questionId": "cdec4c87",
+    "skill_cd": "H.D.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Systems of two linear equations in two variables",
+    "createDate": 1730147357393,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "d9637287-6236-4171-8284-30cfa0ba9e23",
+    "primary_class_cd": "H",
+    "uId": "22b5afb6-65bd-486a-b679-b5420bb68390",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "answerOptions": [
+      {
+        "content": "<p><math alttext=\"left parenthesis 4 comma 28 right parenthesis\"><mfenced><mrow><mrow><mn>4</mn></mrow><mo>,</mo><mrow><mn>28</mn></mrow></mrow></mfenced></math></p>",
+        "id": "6fd225aa-d292-4579-a6b4-385c642ce881"
+      },
+      {
+        "content": "<p><math alttext=\"left parenthesis 20 comma 28 right parenthesis\"><mfenced><mrow><mrow><mn>20</mn></mrow><mo>,</mo><mrow><mn>28</mn></mrow></mrow></mfenced></math></p>",
+        "id": "15e7e595-54aa-4ba3-87c2-fcfb2b365d79"
+      },
+      {
+        "content": "<p><math alttext=\"left parenthesis 28 comma 4 right parenthesis\"><mfenced><mrow><mrow><mn>28</mn></mrow><mo>,</mo><mrow><mn>4</mn></mrow></mrow></mfenced></math></p>",
+        "id": "2fec5a7e-99b3-49f2-a6cd-adad1cbfdce4"
+      },
+      {
+        "content": "<p><math alttext=\"left parenthesis 28 comma 20 right parenthesis\"><mfenced><mrow><mrow><mn>28</mn></mrow><mo>,</mo><mrow><mn>20</mn></mrow></mrow></mfenced></math></p>",
+        "id": "69d7c610-adca-40fd-b795-6b5bb263374b"
+      }
+    ],
+    "externalid": "d9637287-6236-4171-8284-30cfa0ba9e23",
+    "keys": [
+      "6fd225aa-d292-4579-a6b4-385c642ce881"
+    ],
+    "rationale": "<p style=\"text-align: left;\">Choice A is correct. The second equation in the given system is <math alttext=\"y equals 28\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mn>28</mn>\n</mrow>\n</math>. Substituting <math alttext=\"28\"><mn>28</mn>\n</math> for <math alttext=\"y\"><mi>y</mi>\n</math> in the first equation in the given system yields <math alttext=\"28 equals 12 x minus 20\"><mrow>\n\t<mn>28</mn>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mn>12</mn>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t\t<mo>-</mo>\n\t\t<mn>20</mn>\n\t</mrow>\n</mrow>\n</math>. Adding <math alttext=\"20\"><mn>20</mn>\n</math> to both sides of this equation yields <math alttext=\"48 equals 12 x\"><mrow>\n\t<mn>48</mn>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>12</mn>\n\t\t<mi>x</mi>\n\t</mrow>\n</mrow>\n</math>. Dividing both sides of this equation by <math alttext=\"12\"><mn>12</mn>\n</math> yields <math alttext=\"4 equals x\"><mrow>\n\t<mn>4</mn>\n\t<mo>=</mo>\n\t<mi>x</mi>\n</mrow>\n</math>. Therefore, the solution <math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math> to the given system of equations is <math alttext=\"left parenthesis 4 comma 28 right parenthesis\"><mfenced><mrow><mn>4</mn><mo>,</mo><mn>28</mn></mrow></mfenced></math>.</p>\n<p style=\"text-align: left;\">Choice B is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice C is incorrect. This is the solution <math alttext=\"left parenthesis y comma x right parenthesis\"><mfenced><mrow><mi>y</mi><mo>,</mo><mi>x</mi></mrow></mfenced></math>, not <math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>, to the given system of equations.</p>\n<p style=\"text-align: left;\">Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"y equals 12 x minus 20\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mn>12</mn>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t\t<mo>-</mo>\n\t\t<mn>20</mn>\n\t</mrow>\n</mrow>\n</math></p>\n<p style=\"text-align: center;\"><math alttext=\"y equals 28\"><mrow>\n\t<mi>y</mi>\n\t<mo>=</mo>\n\t<mn>28</mn>\n</mrow>\n</math></p>\n<p style=\"text-align: left;\">What is the solution&nbsp;<math alttext=\"left parenthesis x comma y right parenthesis\"><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math> to the given system of equations?</p>",
+    "type": "mcq",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "createDate": 1730147357393,
+  "updateDate": 1730147357393
+}

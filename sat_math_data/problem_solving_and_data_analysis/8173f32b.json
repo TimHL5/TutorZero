@@ -1,0 +1,100 @@
+{
+  "questionId": "8173f32b",
+  "external_id": "c2be4ad8-5127-48a8-8cd4-4a6d2c61e2c6",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "dd7f6f70-61aa-4a54-b703-cb7a9fede60a",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.F.",
+  "skill_desc": "Inference from sample statistics and margin of error ",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">An analyst collected data on the price of a carton of grape tomatoes at <math alttext=\"30\"><mn>30</mn>\n</math> locations selected at random in Utah. The mean price of a carton of grape tomatoes in Utah was estimated to be <math alttext=\"dollar sign 4.23\"><mo>$</mo><mn>4.23</mn></math>, with an associated margin of error of <math alttext=\"dollar sign 0.08\"><mo>$</mo><mn>0.08</mn></math>. Which of the following is a plausible statement about the mean price of a carton of grape tomatoes for all locations that sell this product in Utah?</p>",
+  "answerOptions": [
+    {
+      "id": "53bcf8de-802b-4d3c-94da-c4039ec6f72f",
+      "content": "<p>It is between <math alttext=\"dollar sign 4.15\"><mo>$</mo><mn>4.15</mn></math> and <math alttext=\"dollar sign 4.31\"><mo>$</mo><mn>4.31</mn></math>.</p>"
+    },
+    {
+      "id": "35c73b6d-c388-4d3d-9068-f262f19a5131",
+      "content": "<p>It is either less than <math alttext=\"dollar sign 4.15\"><mo>$</mo><mn>4.15</mn></math> or greater than <math alttext=\"dollar sign 4.31\"><mo>$</mo><mn>4.31</mn></math>.</p>"
+    },
+    {
+      "id": "1ffadcf3-1e54-4c25-a1fb-786fb83fe449",
+      "content": "<p>It is less than <math alttext=\"dollar sign 4.15\"><mo>$</mo><mn>4.15</mn></math>.</p>"
+    },
+    {
+      "id": "add38af9-ef0b-4b3b-82f9-62bf9472bb21",
+      "content": "<p>It is greater than <math alttext=\"dollar sign 4.31\"><mo>$</mo><mn>4.31</mn></math>.</p>"
+    }
+  ],
+  "keys": [
+    "53bcf8de-802b-4d3c-94da-c4039ec6f72f"
+  ],
+  "correct_answer": [
+    "A"
+  ],
+  "rationale": "<p style=\"text-align: left;\">Choice A is correct. It's given that the mean price of a carton of grape tomatoes in Utah was estimated to be <math alttext=\"dollar sign 4.23\"><mo>$</mo><mn>4.23</mn></math>, with an associated margin of error of&nbsp;<math alttext=\"dollar sign 0.08\"><mo>$</mo><mn>0.08</mn></math>. It follows that plausible values for this mean price are between <math alttext=\"dollar sign 4.23 minus dollar sign 0.08\"><mo>$</mo><mn>4.23</mn><mo>-</mo><mo>$</mo><mn>0.08</mn></math> and&nbsp;<math alttext=\"dollar sign 4.23 plus dollar sign 0.08\"><mo>$</mo><mn>4.23</mn><mo>+</mo><mo>$</mo><mn>0.08</mn></math>. Therefore, it's plausible that the mean price of a carton of grape tomatoes for all locations that sell this product in Utah is between <math alttext=\"dollar sign 4.15\"><mo>$</mo><mn>4.15</mn></math> and&nbsp;<math alttext=\"dollar sign 4.31\"><mo>$</mo><mn>4.31</mn></math>.</p>\n<p style=\"text-align: left;\">Choice B is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice C is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554986,
+    "pPcc": "SAT#Q",
+    "questionId": "8173f32b",
+    "skill_cd": "Q.F.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Inference from sample statistics and margin of error ",
+    "createDate": 1743430554986,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "c2be4ad8-5127-48a8-8cd4-4a6d2c61e2c6",
+    "primary_class_cd": "Q",
+    "uId": "dd7f6f70-61aa-4a54-b703-cb7a9fede60a",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "type": "mcq",
+    "stem": "<p style=\"text-align: left;\">An analyst collected data on the price of a carton of grape tomatoes at <math alttext=\"30\"><mn>30</mn>\n</math> locations selected at random in Utah. The mean price of a carton of grape tomatoes in Utah was estimated to be <math alttext=\"dollar sign 4.23\"><mo>$</mo><mn>4.23</mn></math>, with an associated margin of error of <math alttext=\"dollar sign 0.08\"><mo>$</mo><mn>0.08</mn></math>. Which of the following is a plausible statement about the mean price of a carton of grape tomatoes for all locations that sell this product in Utah?</p>",
+    "keys": [
+      "53bcf8de-802b-4d3c-94da-c4039ec6f72f"
+    ],
+    "answerOptions": [
+      {
+        "id": "53bcf8de-802b-4d3c-94da-c4039ec6f72f",
+        "content": "<p>It is between <math alttext=\"dollar sign 4.15\"><mo>$</mo><mn>4.15</mn></math> and <math alttext=\"dollar sign 4.31\"><mo>$</mo><mn>4.31</mn></math>.</p>"
+      },
+      {
+        "id": "35c73b6d-c388-4d3d-9068-f262f19a5131",
+        "content": "<p>It is either less than <math alttext=\"dollar sign 4.15\"><mo>$</mo><mn>4.15</mn></math> or greater than <math alttext=\"dollar sign 4.31\"><mo>$</mo><mn>4.31</mn></math>.</p>"
+      },
+      {
+        "id": "1ffadcf3-1e54-4c25-a1fb-786fb83fe449",
+        "content": "<p>It is less than <math alttext=\"dollar sign 4.15\"><mo>$</mo><mn>4.15</mn></math>.</p>"
+      },
+      {
+        "id": "add38af9-ef0b-4b3b-82f9-62bf9472bb21",
+        "content": "<p>It is greater than <math alttext=\"dollar sign 4.31\"><mo>$</mo><mn>4.31</mn></math>.</p>"
+      }
+    ],
+    "rationale": "<p style=\"text-align: left;\">Choice A is correct. It's given that the mean price of a carton of grape tomatoes in Utah was estimated to be <math alttext=\"dollar sign 4.23\"><mo>$</mo><mn>4.23</mn></math>, with an associated margin of error of&nbsp;<math alttext=\"dollar sign 0.08\"><mo>$</mo><mn>0.08</mn></math>. It follows that plausible values for this mean price are between <math alttext=\"dollar sign 4.23 minus dollar sign 0.08\"><mo>$</mo><mn>4.23</mn><mo>-</mo><mo>$</mo><mn>0.08</mn></math> and&nbsp;<math alttext=\"dollar sign 4.23 plus dollar sign 0.08\"><mo>$</mo><mn>4.23</mn><mo>+</mo><mo>$</mo><mn>0.08</mn></math>. Therefore, it's plausible that the mean price of a carton of grape tomatoes for all locations that sell this product in Utah is between <math alttext=\"dollar sign 4.15\"><mo>$</mo><mn>4.15</mn></math> and&nbsp;<math alttext=\"dollar sign 4.31\"><mo>$</mo><mn>4.31</mn></math>.</p>\n<p style=\"text-align: left;\">Choice B is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice C is incorrect and may result from conceptual or calculation errors.</p>\n<p style=\"text-align: left;\">Choice D is incorrect and may result from conceptual or calculation errors.</p>",
+    "externalid": "c2be4ad8-5127-48a8-8cd4-4a6d2c61e2c6",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "createDate": 1743430554986,
+  "updateDate": 1743430554986
+}

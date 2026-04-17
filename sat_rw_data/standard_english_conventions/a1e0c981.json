@@ -1,0 +1,51 @@
+{
+  "questionId": "a1e0c981",
+  "external_id": "680f1070-ecf0-4f32-97f8-edc4a018f80c",
+  "vaultid": "dc8ddfae-f734-4558-a57c-b614a51b9c7e",
+  "uId": "409cfe03-0bd6-4c19-bdcb-42f4074dd348",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "BOU",
+  "skill_desc": "Boundaries",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": "<p>In her book <em>The Woman Warrior: Memoirs of a Girlhood Among Ghosts</em>, author Maxine Hong Kingston examines themes <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> childhood, womanhood, and Chinese American identity by intertwining autobiography and mythology.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "73132b60-7a25-4f23-9f19-c4893cefc05c",
+      "content": "<p>of:</p>"
+    },
+    {
+      "id": "1bba0ecd-1f32-4d62-a4bb-c48a681847e9",
+      "content": "<p>&nbsp;of</p>"
+    },
+    {
+      "id": "323c2f5f-ea39-4c89-bcf1-d155a3555aa6",
+      "content": "<p>of&mdash;</p>"
+    },
+    {
+      "id": "e613556a-2070-4963-84d8-74125b20c00d",
+      "content": "<p>of,</p>"
+    }
+  ],
+  "keys": [
+    "1bba0ecd-1f32-4d62-a4bb-c48a681847e9"
+  ],
+  "correct_answer": [
+    "B"
+  ],
+  "rationale": "<p>Choice B is the best answer. &ldquo;Themes of childhood&rdquo; is one noun phrase, with &ldquo;themes of&rdquo; implicitly carrying over to the other items on the list (&ldquo;themes of childhood, [themes of] womanhood, and [themes of] Chinese American identity&rdquo;). &nbsp;</p><p>Choice A is incorrect. This choice inappropriately breaks up the introduction of a list. Also, &ldquo;In her book&hellip;themes of&rdquo; is not an independent clause, thanks to the dangling &ldquo;of&rdquo; at the end, so it can&rsquo;t precede a colon.&nbsp;Choice C is incorrect. This choice inappropriately breaks up the introduction of a list. Also, &ldquo;In her book&hellip;themes of&rdquo; is not an independent clause, thanks to the dangling &ldquo;of&rdquo; at the end, so it can&rsquo;t precede a single dash.&nbsp;Choice D is incorrect. This choice inappropriately breaks up the introduction of a list. &ldquo;Themes of&rdquo; implicitly carries over to each item on the list (&ldquo;themes of childhood, [themes of] womanhood, and [themes of] Chinese American identity&rdquo;), so we don&rsquo;t want to use a comma to separate it.&nbsp;</p>",
+  "parenttemplatename": "OSP-KA-BOU-E004",
+  "parenttemplateid": "",
+  "templateclusterid": "a19c9473-629a-486f-a6ba-6ba4c50c6fd7",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959358,
+  "updateDate": 1691007959358
+}

@@ -1,0 +1,51 @@
+{
+  "questionId": "9aa44886",
+  "external_id": "01e38e21-9fcc-47d0-befd-d547fc90bc9c",
+  "vaultid": "16615aa8-04d9-4940-926e-398734a907c9",
+  "uId": "550f8089-1db2-423b-ac31-3ad4a132a321",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "CAS",
+  "domain": "Craft and Structure",
+  "skill_cd": "WIC",
+  "skill_desc": "Words in Context",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "mcq",
+  "stimulus": "<p>The following text is from F. Scott Fitzgerald&rsquo;s 1925 novel&nbsp;<em>The Great Gatsby</em>.</p>\n<blockquote>\n<p>[Jay Gatsby] was balancing himself on the dashboard of his car with that resourcefulness of movement that is so peculiarly American&mdash;that comes, I suppose, with the absence of lifting work in youth and, even more, with the formless grace of our nervous, sporadic games. This <span role=\"region\" aria-label=\"Referenced Content\"><u>quality</u></span> was continually breaking through his punctilious manner in the shape of restlessness.</p>\n</blockquote>",
+  "stem": "<p>As used in the text, what does the word &ldquo;quality&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "3dfe9450-1e9c-4efd-85c7-3593b34997c2",
+      "content": "<p>Standard</p>"
+    },
+    {
+      "id": "2de58e9e-9bda-48e4-9259-a209be071663",
+      "content": "<p>Prestige</p>"
+    },
+    {
+      "id": "e550d111-e552-40ed-8c18-4dfe548bf8e9",
+      "content": "<p>Characteristic</p>"
+    },
+    {
+      "id": "5b42fa61-4a89-49b6-8894-aefab541c722",
+      "content": "<p>Accomplishment</p>"
+    }
+  ],
+  "keys": [
+    "e550d111-e552-40ed-8c18-4dfe548bf8e9"
+  ],
+  "correct_answer": [
+    "C"
+  ],
+  "rationale": "<p>Choice C is the best answer. &ldquo;This quality&rdquo; refers to Gatsby&rsquo;s &ldquo;resourcefulness of movement,&rdquo; which is described as a characteristic or trait of his.&nbsp;</p><p>Choice A is incorrect. This isn&rsquo;t what &ldquo;quality&rdquo; means in this context. Here, &ldquo;this quality&rdquo; refers to Gatsby&rsquo;s &ldquo;resourcefulness of movement,&rdquo; which is described as a characteristic or trait of his. &ldquo;Standard&rdquo; is a synonym for a different definition of &ldquo;quality&rdquo;: the degree of excellence of something.&nbsp;Choice B is incorrect. This isn&rsquo;t what &ldquo;quality&rdquo; means in this context. Here, &ldquo;this quality&rdquo; refers to Gatsby&rsquo;s &ldquo;resourcefulness of movement,&rdquo; which is described as a characteristic or trait of his. &ldquo;Prestige&rdquo; would suggest a high status or an admirable reputation, which doesn&rsquo;t match that description. Choice D is incorrect. This isn&rsquo;t what &ldquo;quality&rdquo; means in this context. Here, &ldquo;this quality&rdquo; refers to Gatsby&rsquo;s &ldquo;resourcefulness of movement,&rdquo; which is described as a characteristic or trait of his. &ldquo;Accomplishment&rdquo; would suggest an achievement, which doesn&rsquo;t match that description. &nbsp;&nbsp;</p>",
+  "parenttemplatename": "OSP-030-WIC",
+  "parenttemplateid": "",
+  "templateclusterid": "7caa8259-b6ae-45cf-96fe-814aa6f77232",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959319,
+  "updateDate": 1691007959319
+}

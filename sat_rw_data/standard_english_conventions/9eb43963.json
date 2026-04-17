@@ -1,0 +1,51 @@
+{
+  "questionId": "9eb43963",
+  "external_id": "d2a292d9-9931-40c0-912f-7cf36f65379e",
+  "vaultid": null,
+  "uId": "332bd7e5-9902-4f30-b32c-6166d02e5122",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "M",
+  "score_band_range_cd": 5,
+  "type": "mcq",
+  "stimulus": "<p>Water in the North Atlantic Ocean is pushed eastward by powerful winds, but the rotation of Earth and interference from nearby landmasses together cause <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to swirl into a massive, churning whirlpool&mdash;also called the North Atlantic Gyre&mdash;that spins clockwise.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "d6fc1fc5-24a6-4643-8343-60be99dd5b92",
+      "content": "<p>these</p>"
+    },
+    {
+      "id": "100cd5e8-537d-4456-9cb0-00d5b20a1745",
+      "content": "<p>those</p>"
+    },
+    {
+      "id": "fa7f6710-df37-43be-b743-862fde0358cd",
+      "content": "<p>them</p>"
+    },
+    {
+      "id": "aaaeaee3-adf1-4124-9f13-849d6640344f",
+      "content": "<p>it</p>"
+    }
+  ],
+  "keys": [
+    "aaaeaee3-adf1-4124-9f13-849d6640344f"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is pronoun-antecedent agreement. The singular pronoun \"it\" agrees in number with the singular antecedent \"water\" and clearly indicates that the water swirls into a whirlpool.</p><p>Choice A is incorrect. The plural pronoun \"these\" neither agrees in number with the singular antecedent \"water\" nor clearly indicates that the water&mdash;not another plural noun in the sentence, such as \"landmasses\" or \"winds\"&mdash;swirls into a whirlpool. Choice B is incorrect. The plural pronoun \"those\" neither agrees in number with the singular antecedent \"water\" nor clearly indicates that the water&mdash;not another plural noun in the sentence, such as \"landmasses\" or \"winds\"&mdash;swirls into a whirlpool. Choice C is incorrect. The plural pronoun \"them\" neither agrees in number with the singular antecedent \"water\" nor clearly indicates that the water&mdash;not another plural noun in the sentence, such as \"landmasses\" or \"winds\"&mdash;swirls into a whirlpool.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "createDate": 1730147323048,
+  "updateDate": 1730147323048
+}

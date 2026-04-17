@@ -203,3 +203,94 @@
     transform: scale(1.02);
   }
 }
+
+/* ────────────────────────────────────────────────────────────────────────
+   .sat-content — shared typography for College Board question/passage HTML
+   injected via MathText. Applied on the container that wraps <MathText>.
+   ──────────────────────────────────────────────────────────────────────── */
+
+.sat-content p {
+  margin: 0 0 0.75em 0;
+}
+.sat-content p:last-child {
+  margin-bottom: 0;
+}
+
+.sat-content img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Most CB math images are tiny inline glyphs; keep their natural size up to
+   a cap so they don't explode when scaled by their parent font-size. */
+.sat-content img.math-img {
+  display: inline-block;
+  max-height: 2.5em;
+  width: auto;
+  margin: 0 1px;
+}
+
+.sat-content figure {
+  margin: 1em 0;
+  text-align: center;
+}
+.sat-content figure svg,
+.sat-content figure img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.sat-content table {
+  border-collapse: collapse;
+  margin: 0.75em auto;
+  font-size: 0.9em;
+  background: #fff;
+}
+.sat-content table th,
+.sat-content table td {
+  border: 1px solid #e2e8f0;
+  padding: 0.4em 0.7em;
+  text-align: left;
+  vertical-align: top;
+}
+.sat-content table caption {
+  caption-side: top;
+  padding-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.sat-content ul,
+.sat-content ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.sat-content em,
+.sat-content i {
+  font-style: italic;
+}
+.sat-content strong,
+.sat-content b {
+  font-weight: 600;
+}
+
+/* Let MathJax block equations breathe but still center under tight widths. */
+.sat-content mjx-container[display="true"] {
+  margin: 0.5em 0;
+  overflow-x: auto;
+}
+
+/* Respect CB's screen-reader-only spans (used for blank-fill questions). */
+.sat-content .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

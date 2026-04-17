@@ -1,0 +1,69 @@
+{
+  "questionId": "5ad6bc97",
+  "external_id": "2825ecca-ede4-4a29-bbb0-928be95b590b",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "22c94036-14d3-4a5c-8952-a4b142925e0f",
+  "uId": "fe44994b-a61c-4ff7-9939-d3a6b5dd434b",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.B.",
+  "skill_desc": "Linear functions",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"f left parenthesis x right parenthesis equals 7 x plus 1\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>1</mn></math></p>\n<p style=\"text-align: left;\">The function gives the total number of people on a company retreat with <math alttext=\"x\"><mi>x</mi>\n</math> managers. What is the total number of people on a company retreat with <math alttext=\"7\"><mn>7</mn>\n</math> managers?</p>",
+  "answerOptions": [],
+  "keys": [
+    "50"
+  ],
+  "correct_answer": [
+    "50"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"50\"><mn>50</mn>\n</math>. It's given that the function <math alttext=\"f\"><mi>f</mi>\n</math> gives the total number of people on a company retreat with <math alttext=\"x\"><mi>x</mi>\n</math> managers. It's also given that <math alttext=\"7\"><mn>7</mn>\n</math> managers are on the company retreat. Substituting <math alttext=\"7\"><mn>7</mn>\n</math> for <math alttext=\"x\"><mi>x</mi>\n</math> in the given function&nbsp;yields <math alttext=\"f left parenthesis 7 right parenthesis equals 7 left parenthesis 7 right parenthesis plus 1\"><mi>f</mi><mfenced><mn>7</mn></mfenced><mo>=</mo><mn>7</mn><mfenced><mn>7</mn></mfenced><mo>+</mo><mn>1</mn></math>, or <math alttext=\"f left parenthesis 7 right parenthesis equals 50\"><mi>f</mi><mfenced><mn>7</mn></mfenced><mo>=</mo><mn>50</mn></math>. Therefore, there are a total of <math alttext=\"50\"><mn>50</mn>\n</math> people on a company retreat with <math alttext=\"7\"><mn>7</mn>\n</math> managers.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959812,
+    "pPcc": "SAT#H",
+    "questionId": "5ad6bc97",
+    "skill_cd": "H.B.",
+    "score_band_range_cd": 2,
+    "skill_desc": "Linear functions",
+    "createDate": 1691007959812,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": null,
+    "external_id": "2825ecca-ede4-4a29-bbb0-928be95b590b",
+    "primary_class_cd": "H",
+    "uId": "fe44994b-a61c-4ff7-9939-d3a6b5dd434b",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "keys": [
+      "50"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"50\"><mn>50</mn>\n</math>. It's given that the function <math alttext=\"f\"><mi>f</mi>\n</math> gives the total number of people on a company retreat with <math alttext=\"x\"><mi>x</mi>\n</math> managers. It's also given that <math alttext=\"7\"><mn>7</mn>\n</math> managers are on the company retreat. Substituting <math alttext=\"7\"><mn>7</mn>\n</math> for <math alttext=\"x\"><mi>x</mi>\n</math> in the given function&nbsp;yields <math alttext=\"f left parenthesis 7 right parenthesis equals 7 left parenthesis 7 right parenthesis plus 1\"><mi>f</mi><mfenced><mn>7</mn></mfenced><mo>=</mo><mn>7</mn><mfenced><mn>7</mn></mfenced><mo>+</mo><mn>1</mn></math>, or <math alttext=\"f left parenthesis 7 right parenthesis equals 50\"><mi>f</mi><mfenced><mn>7</mn></mfenced><mo>=</mo><mn>50</mn></math>. Therefore, there are a total of <math alttext=\"50\"><mn>50</mn>\n</math> people on a company retreat with <math alttext=\"7\"><mn>7</mn>\n</math> managers.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"f left parenthesis x right parenthesis equals 7 x plus 1\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>1</mn></math></p>\n<p style=\"text-align: left;\">The function gives the total number of people on a company retreat with <math alttext=\"x\"><mi>x</mi>\n</math> managers. What is the total number of people on a company retreat with <math alttext=\"7\"><mn>7</mn>\n</math> managers?</p>",
+    "externalid": "2825ecca-ede4-4a29-bbb0-928be95b590b",
+    "templateid": "d1c87135-b9b6-49fc-bb35-227b5d2bb61c",
+    "vaultid": "22c94036-14d3-4a5c-8952-a4b142925e0f",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "50"
+    ]
+  },
+  "createDate": 1691007959812,
+  "updateDate": 1691007959812
+}

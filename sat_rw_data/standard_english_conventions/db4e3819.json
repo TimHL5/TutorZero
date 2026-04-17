@@ -1,0 +1,51 @@
+{
+  "questionId": "db4e3819",
+  "external_id": "d9ad9716-d123-456c-8e83-a43bf63d78d8",
+  "vaultid": "b3156fde-bf09-4938-a621-20fe3f540118",
+  "uId": "339336e6-62cc-412c-ad0c-9a888a1f5599",
+  "program": "SAT",
+  "test_type": 1,
+  "test_type_desc": "Reading and Writing",
+  "primary_class_cd": "SEC",
+  "domain": "Standard English Conventions",
+  "skill_cd": "FSS",
+  "skill_desc": "Form, Structure, and Sense",
+  "difficulty": "E",
+  "score_band_range_cd": 2,
+  "type": "mcq",
+  "stimulus": "<p>Midway through her 1968 jazz album <em>A Monastic Trio</em>, Alice Coltrane switches instruments, swapping the piano for the harp. With the same fluid style that Coltrane was famous for on piano, she <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> her fingers across the harp strings and creates a radiant sound.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "ba377fcd-dfa5-42af-a91b-ea86ed806e28",
+      "content": "<p>sweep</p>"
+    },
+    {
+      "id": "0be08c93-e5a3-4a63-8723-5255db18a46c",
+      "content": "<p>are sweeping</p>"
+    },
+    {
+      "id": "7db3dd0d-3f16-4ff5-9477-7315e9919857",
+      "content": "<p>were sweeping</p>"
+    },
+    {
+      "id": "c89a837f-ebed-43db-9fa3-a2689e26648c",
+      "content": "<p>sweeps</p>"
+    }
+  ],
+  "keys": [
+    "c89a837f-ebed-43db-9fa3-a2689e26648c"
+  ],
+  "correct_answer": [
+    "D"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-verb agreement. The singular verb \"sweeps\" agrees in number with the singular subject \"she,\" which refers to Alice Coltrane.</p><p>Choice A is incorrect because the plural verb \"sweep\" doesn&rsquo;t agree in number with the singular subject \"she.\" Choice B is incorrect because the plural verb \"are sweeping\" doesn&rsquo;t agree in number with the singular subject \"she.\" Choice C is incorrect because the plural verb \"were sweeping\" doesn&rsquo;t agree in number with the singular subject \"she.\"</p>",
+  "parenttemplatename": "OSP-758-SEC",
+  "parenttemplateid": "",
+  "templateclusterid": "281d3676-954f-48c4-b21d-c9b8c911cbba",
+  "templateclustername": "",
+  "origin": "proteus",
+  "position": "0",
+  "createDate": 1691007959351,
+  "updateDate": 1691007959351
+}

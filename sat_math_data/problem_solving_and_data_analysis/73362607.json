@@ -1,0 +1,65 @@
+{
+  "questionId": "73362607",
+  "external_id": "46e791de-a8dd-4add-bf7d-3a1c1fbef6ce",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "d2f410a2-8424-4753-a73e-4bd5b4d29083",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.B.",
+  "skill_desc": "Percentages",
+  "difficulty": "E",
+  "score_band_range_cd": 1,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">Amara grows cherry tomatoes in her backyard. This year, she harvested <math alttext=\"750\"><mn>750</mn>\n</math> cherry tomatoes and gave <math alttext=\"10 percent sign\"><mn>10</mn><mo>%</mo></math> of them to her neighbor. How many of the harvested cherry tomatoes did Amara give to her neighbor?</p>",
+  "answerOptions": null,
+  "keys": [
+    "75"
+  ],
+  "correct_answer": [
+    "75"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"75\"><mn>75</mn></math>. It&rsquo;s given that Amara harvested <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"750\"><mn>750</mn></math> cherry tomatoes and gave <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"10 percent sign\"><mn>10</mn><mo>%</mo></math> of them to her neighbor. <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"10 percent sign\"><mn>10</mn><mo>%</mo></math> can be written as <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"StartFraction 10 Over 100 EndFraction\"><mfrac><mn>10</mn><mn>100</mn></mfrac></math>, or <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"0.1\"><mn>0.1</mn></math>. Therefore, the number of cherry tomatoes that Amara gave to her neighbor can be calculated by multiplying the total number of cherry tomatoes by <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"0.1\"><mn>0.1</mn></math>, which gives&nbsp;<math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"left parenthesis 0.1 right parenthesis left parenthesis 750 right parenthesis\"><mo>(</mo><mn>0.1</mn><mo>)</mo><mo>(</mo><mn>750</mn><mo>)</mo></math>, or <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"75\"><mn>75</mn></math>.&nbsp;</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1776362727992,
+    "pPcc": "SAT#Q",
+    "questionId": "73362607",
+    "skill_cd": "Q.B.",
+    "score_band_range_cd": 1,
+    "skill_desc": "Percentages",
+    "createDate": 1776362727992,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": "",
+    "external_id": "46e791de-a8dd-4add-bf7d-3a1c1fbef6ce",
+    "primary_class_cd": "Q",
+    "uId": "d2f410a2-8424-4753-a73e-4bd5b4d29083",
+    "difficulty": "E"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: left;\">Amara grows cherry tomatoes in her backyard. This year, she harvested <math alttext=\"750\"><mn>750</mn>\n</math> cherry tomatoes and gave <math alttext=\"10 percent sign\"><mn>10</mn><mo>%</mo></math> of them to her neighbor. How many of the harvested cherry tomatoes did Amara give to her neighbor?</p>",
+    "keys": [
+      "75"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"75\"><mn>75</mn></math>. It&rsquo;s given that Amara harvested <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"750\"><mn>750</mn></math> cherry tomatoes and gave <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"10 percent sign\"><mn>10</mn><mo>%</mo></math> of them to her neighbor. <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"10 percent sign\"><mn>10</mn><mo>%</mo></math> can be written as <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"StartFraction 10 Over 100 EndFraction\"><mfrac><mn>10</mn><mn>100</mn></mfrac></math>, or <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"0.1\"><mn>0.1</mn></math>. Therefore, the number of cherry tomatoes that Amara gave to her neighbor can be calculated by multiplying the total number of cherry tomatoes by <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"0.1\"><mn>0.1</mn></math>, which gives&nbsp;<math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"left parenthesis 0.1 right parenthesis left parenthesis 750 right parenthesis\"><mo>(</mo><mn>0.1</mn><mo>)</mo><mo>(</mo><mn>750</mn><mo>)</mo></math>, or <math xmlns=\"http://www.w3.org/1998/Math/MathML\" alttext=\"75\"><mn>75</mn></math>.&nbsp;</p>",
+    "externalid": "46e791de-a8dd-4add-bf7d-3a1c1fbef6ce",
+    "correct_answer": [
+      "75"
+    ]
+  },
+  "createDate": 1776362727992,
+  "updateDate": 1776362727992
+}

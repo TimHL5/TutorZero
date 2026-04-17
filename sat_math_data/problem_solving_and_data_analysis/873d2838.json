@@ -1,0 +1,69 @@
+{
+  "questionId": "873d2838",
+  "external_id": "01f43331-d478-491e-90be-1bf336840ec3",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": "f8ab2a45-3f01-4ffb-8550-67c751c60e21",
+  "uId": "88b06fdc-8b74-4385-a2c2-20ee5a39da52",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "Q",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill_cd": "Q.A.",
+  "skill_desc": "Ratios, rates, proportional relationships, and units",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The population density of Cedar County is <math alttext=\"230\"><mn>230</mn>\n</math> people per square mile. The county has a population of <math alttext=\"85,100\"><mn>85,100</mn>\n</math> people. What is the area, in square miles, of Cedar County?</p>",
+  "answerOptions": [],
+  "keys": [
+    "370"
+  ],
+  "correct_answer": [
+    "370"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"370\"><mn>370</mn>\n</math>. It&rsquo;s given that the population density of Cedar County is <math alttext=\"230\"><mn>230</mn>\n</math> people per square mile and the county has a population of <math alttext=\"85,100\"><mn>85,100</mn>\n</math> people. Based on the population density, it follows that the area of Cedar County is <math alttext=\"left parenthesis 85,100 people right parenthesis left parenthesis StartFraction 1 square mile Over 230 people EndFraction right parenthesis\"><mfenced><mrow><mn>85,100</mn><mo>&#160;</mo><mtext>people</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>1</mn><mo>&#160;</mo><mtext>square</mtext><mo>&#160;</mo><mtext>mile</mtext></mrow><mrow><mn>230</mn><mo>&#160;</mo><mtext>people</mtext></mrow></mfrac></mfenced></math>, or <math alttext=\"370\"><mn>370</mn>\n</math> square miles.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": "manifold",
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1691007959829,
+    "pPcc": "SAT#Q",
+    "questionId": "873d2838",
+    "skill_cd": "Q.A.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Ratios, rates, proportional relationships, and units",
+    "createDate": 1691007959829,
+    "program": "SAT",
+    "primary_class_cd_desc": "Problem-Solving and Data Analysis",
+    "ibn": null,
+    "external_id": "01f43331-d478-491e-90be-1bf336840ec3",
+    "primary_class_cd": "Q",
+    "uId": "88b06fdc-8b74-4385-a2c2-20ee5a39da52",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "keys": [
+      "370"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"370\"><mn>370</mn>\n</math>. It&rsquo;s given that the population density of Cedar County is <math alttext=\"230\"><mn>230</mn>\n</math> people per square mile and the county has a population of <math alttext=\"85,100\"><mn>85,100</mn>\n</math> people. Based on the population density, it follows that the area of Cedar County is <math alttext=\"left parenthesis 85,100 people right parenthesis left parenthesis StartFraction 1 square mile Over 230 people EndFraction right parenthesis\"><mfenced><mrow><mn>85,100</mn><mo>&#160;</mo><mtext>people</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>1</mn><mo>&#160;</mo><mtext>square</mtext><mo>&#160;</mo><mtext>mile</mtext></mrow><mrow><mn>230</mn><mo>&#160;</mo><mtext>people</mtext></mrow></mfrac></mfenced></math>, or <math alttext=\"370\"><mn>370</mn>\n</math> square miles.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">The population density of Cedar County is <math alttext=\"230\"><mn>230</mn>\n</math> people per square mile. The county has a population of <math alttext=\"85,100\"><mn>85,100</mn>\n</math> people. What is the area, in square miles, of Cedar County?</p>",
+    "externalid": "01f43331-d478-491e-90be-1bf336840ec3",
+    "templateid": "761351f5-4efd-4966-9c0d-d2202d3c16ea",
+    "vaultid": "f8ab2a45-3f01-4ffb-8550-67c751c60e21",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "370"
+    ]
+  },
+  "createDate": 1691007959829,
+  "updateDate": 1691007959829
+}

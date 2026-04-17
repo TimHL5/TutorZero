@@ -1,0 +1,66 @@
+{
+  "questionId": "b78cd5df",
+  "external_id": "a19c43f7-f093-4542-805a-9d67d7af0efa",
+  "disclosed_item_id": null,
+  "source": "qbank",
+  "vaultid": null,
+  "uId": "7012bedf-1125-48da-bd24-d6d3794df5f8",
+  "program": "SAT",
+  "test_type": 2,
+  "test_type_desc": "Math",
+  "primary_class_cd": "H",
+  "domain": "Algebra",
+  "skill_cd": "H.E.",
+  "skill_desc": "Linear inequalities in one or two variables",
+  "difficulty": "M",
+  "score_band_range_cd": 4,
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">An event planner is planning a party. It costs the event planner a onetime fee of <math alttext=\"dollar sign 35\"><mo>$</mo><mn>35</mn>\n</math> to rent the venue and <math alttext=\"dollar sign 10.25\"><mo>$</mo><mn>10.25</mn>\n</math> per attendee. The event planner has a budget of <math alttext=\"dollar sign 300\"><mo>$</mo><mn>300</mn>\n</math>. What is the greatest number of attendees possible without exceeding the budget?</p>",
+  "answerOptions": [],
+  "keys": [
+    "25"
+  ],
+  "correct_answer": [
+    "25"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"25\"><mn>25</mn>\n</math>. The total cost of the party is found by adding the onetime fee of the venue to the cost per attendee times the number of attendees. Let <math alttext=\"x\"><mi>x</mi>\n</math> be the number of attendees. The expression <math alttext=\"35 plus 10.25 x\"><mn>35</mn><mo>+</mo><mn>10.25</mn><mi>x</mi></math> thus represents the total cost of the party. It's given that the budget is <math alttext=\"dollar sign 300\"><mo>$</mo><mn>300</mn></math>, so this situation can be represented by the inequality <math alttext=\"35 plus 10.25 x less than or equals 300\"><mn>35</mn><mo>+</mo><mn>10.25</mn><mi>x</mi><mo>&le;</mo><mn>300</mn></math>. Subtracting <math alttext=\"35\"><mn>35</mn>\n</math> from both sides of this inequality gives <math alttext=\"10.25 x less than or equals 265\"><mn>10.25</mn><mi>x</mi><mo>&le;</mo><mn>265</mn></math>. Dividing both sides of this inequality by <math alttext=\"10.25\"><mn>10.25</mn>\n</math> results in approximately <math alttext=\"x less than or equals 25.854\"><mi>x</mi><mo>&le;</mo><mn>25.854</mn></math>. Since the question is stated in terms of attendees, rounding <math alttext=\"25.854\"><mn>25.854</mn>\n</math> down to the greatest whole number gives the greatest number of attendees possible, which is <math alttext=\"25\"><mn>25</mn>\n</math>.</p>",
+  "parenttemplatename": null,
+  "parenttemplateid": null,
+  "templateclusterid": null,
+  "templateclustername": null,
+  "origin": null,
+  "position": null,
+  "image_count": 0,
+  "raw_list": {
+    "updateDate": 1743430554984,
+    "pPcc": "SAT#H",
+    "questionId": "b78cd5df",
+    "skill_cd": "H.E.",
+    "score_band_range_cd": 4,
+    "skill_desc": "Linear inequalities in one or two variables",
+    "createDate": 1743430554984,
+    "program": "SAT",
+    "primary_class_cd_desc": "Algebra",
+    "ibn": "",
+    "external_id": "a19c43f7-f093-4542-805a-9d67d7af0efa",
+    "primary_class_cd": "H",
+    "uId": "7012bedf-1125-48da-bd24-d6d3794df5f8",
+    "difficulty": "M"
+  },
+  "raw_detail": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: left;\">An event planner is planning a party. It costs the event planner a onetime fee of <math alttext=\"dollar sign 35\"><mo>$</mo><mn>35</mn>\n</math> to rent the venue and <math alttext=\"dollar sign 10.25\"><mo>$</mo><mn>10.25</mn>\n</math> per attendee. The event planner has a budget of <math alttext=\"dollar sign 300\"><mo>$</mo><mn>300</mn>\n</math>. What is the greatest number of attendees possible without exceeding the budget?</p>",
+    "keys": [
+      "25"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"25\"><mn>25</mn>\n</math>. The total cost of the party is found by adding the onetime fee of the venue to the cost per attendee times the number of attendees. Let <math alttext=\"x\"><mi>x</mi>\n</math> be the number of attendees. The expression <math alttext=\"35 plus 10.25 x\"><mn>35</mn><mo>+</mo><mn>10.25</mn><mi>x</mi></math> thus represents the total cost of the party. It's given that the budget is <math alttext=\"dollar sign 300\"><mo>$</mo><mn>300</mn></math>, so this situation can be represented by the inequality <math alttext=\"35 plus 10.25 x less than or equals 300\"><mn>35</mn><mo>+</mo><mn>10.25</mn><mi>x</mi><mo>&le;</mo><mn>300</mn></math>. Subtracting <math alttext=\"35\"><mn>35</mn>\n</math> from both sides of this inequality gives <math alttext=\"10.25 x less than or equals 265\"><mn>10.25</mn><mi>x</mi><mo>&le;</mo><mn>265</mn></math>. Dividing both sides of this inequality by <math alttext=\"10.25\"><mn>10.25</mn>\n</math> results in approximately <math alttext=\"x less than or equals 25.854\"><mi>x</mi><mo>&le;</mo><mn>25.854</mn></math>. Since the question is stated in terms of attendees, rounding <math alttext=\"25.854\"><mn>25.854</mn>\n</math> down to the greatest whole number gives the greatest number of attendees possible, which is <math alttext=\"25\"><mn>25</mn>\n</math>.</p>",
+    "externalid": "a19c43f7-f093-4542-805a-9d67d7af0efa",
+    "answerOptions": [],
+    "correct_answer": [
+      "25"
+    ]
+  },
+  "createDate": 1743430554984,
+  "updateDate": 1743430554984
+}

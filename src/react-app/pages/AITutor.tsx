@@ -213,10 +213,6 @@ export default function AITutor() {
       };
       
       setMessages(prev => [...prev, assistantMessage]);
-      
-      if (data.usage) {
-        _setUsage(data.usage);
-      }
     } catch (err) {
       console.error("Chat error:", err);
       setError("Something went wrong. Please try again.");

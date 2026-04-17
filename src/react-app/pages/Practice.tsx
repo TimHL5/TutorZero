@@ -1,7 +1,8 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router";
 import { useStudentProgress } from "@/react-app/hooks/useStudentProgress";
 import { getAdaptiveNextQuestion, topicDisplayNames, type Question } from "@/data/questions";
+import { domainForSkill, skillSlugToDisplayName } from "@/react-app/lib/sat-taxonomy";
 import { ExplanationChat } from "@/react-app/components/feedback/ExplanationChat";
 import { cn } from "@/react-app/lib/utils";
 import { MathText } from "@/react-app/components/ui/MathText";
@@ -32,6 +33,17 @@ export default function Practice() {
   const [searchParams] = useSearchParams();
   const targetTopic = searchParams.get("topic") || undefined;
   const targetSection = searchParams.get("section") || undefined;
+  const skillsParam = searchParams.get("skills") || searchParams.get("skill") || "";
+  const targetSkills = useMemo(
+    () =>
+      skillsParam
+        ? skillsParam
+            .split(",")
+            .map((s) => s.trim())
+            .filter(Boolean)
+        : undefined,
+    [skillsParam]
+  );
   const { recordSession } = useStudentProgress();
   const feedbackRef = useRef<HTMLDivElement>(null);
 
@@ -61,12 +73,12 @@ export default function Practice() {
 
   // Load first question
   useEffect(() => {
-    const firstQuestion = getAdaptiveNextQuestion([], [], targetTopic, sectionTopicList);
+    const firstQuestion = getAdaptiveNextQuestion([], [], targetTopic, sectionTopicList, targetSkills);
     if (firstQuestion) {
       setCurrentQuestion(firstQuestion);
       setQuestionStartTime(Date.now());
     }
-  }, [targetTopic, sectionTopicList]);
+  }, [targetTopic, sectionTopicList, targetSkills]);
 
   // Update session time
   useEffect(() => {
@@ -103,7 +115,7 @@ export default function Practice() {
         return acc;
       }, {} as Record<string, number>);
       
-      const frustratingTopic = Object.entries(topicCounts).find(([_, count]) => count >= 3);
+      const frustratingTopic = Object.entries(topicCounts).find(([, count]) => count >= 3);
       if (frustratingTopic) {
         return { detected: true, topic: frustratingTopic[0] };
       }
@@ -159,7 +171,7 @@ export default function Practice() {
     if (currentQuestion && selectedIndex !== null) {
       recentCorrect.push(selectedIndex === currentQuestion.correctIndex);
     }
-    const nextQuestion = getAdaptiveNextQuestion(answeredIds, recentCorrect, targetTopic, sectionTopicList);
+    const nextQuestion = getAdaptiveNextQuestion(answeredIds, recentCorrect, targetTopic, sectionTopicList, targetSkills);
     if (nextQuestion) {
       setCurrentQuestion(nextQuestion);
       setSelectedIndex(null);
@@ -171,7 +183,7 @@ export default function Practice() {
     } else {
       handleEndSession();
     }
-  }, [attemptedQuestions, currentQuestion, selectedIndex, targetTopic]);
+  }, [attemptedQuestions, currentQuestion, selectedIndex, targetTopic, sectionTopicList, targetSkills]);
 
   const handleFeedbackResponse = useCallback((understood: boolean) => {
     setAttemptedQuestions(prev => {
@@ -197,7 +209,7 @@ export default function Practice() {
     }
   }, [frustrationTopic, goToNextQuestion]);
 
-  const handleFrustrationChoice = useCallback((_tryEasier: boolean) => {
+  const handleFrustrationChoice = useCallback((_: boolean) => {
     setShowFrustrationIntervention(false);
     setFrustrationTopic(null);
     // If trying easier, we'll naturally get easier questions from adaptive algorithm
@@ -387,17 +399,28 @@ export default function Practice() {
           {/* Topic Label */}
           <div className="mb-4 sm:mb-6">
             <span className="text-[10px] sm:text-label text-tz-gray-400 tracking-wide">
-              {currentQuestion.section === "math" ? "MATH" : "R&W"} · {topicDisplayNames[currentQuestion.topic]?.toUpperCase()}
+              {currentQuestion.section === "math" ? "MATH" : "R&W"} ·{" "}
+              {skillSelectionLabel(targetSkills, currentQuestion.topic)}
             </span>
           </div>
+
+          {/* Passage / Stimulus — rendered in both states so R&W passages and
+              Math figures stay visible while reviewing feedback. */}
+          {currentQuestion.passageText && (
+            <div className="mb-4 sm:mb-6 p-4 sm:p-5 bg-tz-off-white border border-tz-gray-200 rounded-lg max-h-[40vh] overflow-y-auto">
+              <div className="text-sm sm:text-base text-tz-gray-700 leading-relaxed sat-content">
+                <MathText text={currentQuestion.passageText} />
+              </div>
+            </div>
+          )}
 
           {!showFeedback ? (
             <>
               {/* Question */}
               <div className="mb-6 sm:mb-8">
-                <p className="text-base sm:text-lg font-medium text-tz-navy leading-relaxed">
+                <div className="text-base sm:text-lg font-medium text-tz-navy leading-relaxed sat-content">
                   <MathText text={currentQuestion.questionText} />
-                </p>
+                </div>
               </div>
 
               {/* Answer Choices */}
@@ -423,7 +446,7 @@ export default function Practice() {
                       )}>
                         {letter}
                       </div>
-                      <span className={cn("text-sm sm:text-body flex-1", isSelected ? "text-tz-navy" : "text-tz-gray-600")}>
+                      <span className={cn("text-sm sm:text-body flex-1 sat-content", isSelected ? "text-tz-navy" : "text-tz-gray-600")}>
                         <MathText text={option} />
                       </span>
                     </button>
@@ -603,6 +626,31 @@ export default function Practice() {
   );
 }
 
+// Compact label for the MATH/R&W header pill. Picks the most informative
+// thing to say given the active skill selection:
+//   - 0 skills: the current question's domain.
+//   - 1 skill: that skill's display name.
+//   - N skills in one domain: "{Domain} ({N} skills)".
+//   - N skills across domains: "Custom · {N} skills".
+function skillSelectionLabel(
+  skills: string[] | undefined,
+  fallbackTopic: string
+): string {
+  if (!skills || skills.length === 0) {
+    return (topicDisplayNames[fallbackTopic] ?? fallbackTopic).toUpperCase();
+  }
+  if (skills.length === 1) {
+    return skillSlugToDisplayName(skills[0]).toUpperCase();
+  }
+  const domains = new Set(skills.map((s) => domainForSkill(s)).filter(Boolean));
+  if (domains.size === 1) {
+    const only = Array.from(domains)[0];
+    const name = topicDisplayNames[only] ?? only;
+    return `${name.toUpperCase()} · ${skills.length} SKILLS`;
+  }
+  return `CUSTOM · ${skills.length} SKILLS`;
+}
+
 interface FeedbackLayerProps {
   icon: React.ReactNode;
   title: string;
@@ -636,8 +684,8 @@ function FeedbackLayer({ icon, title, content, color, isExpanded, onToggle }: Fe
       </button>
       {isExpanded && (
         <div className="px-3 pb-3 sm:px-4 sm:pb-4">
-          <div className={cn("pl-10 sm:pl-12 text-xs sm:text-sm leading-relaxed", styles.content)}>
-            {content}
+          <div className={cn("pl-10 sm:pl-12 text-xs sm:text-sm leading-relaxed sat-content", styles.content)}>
+            <MathText text={content} />
           </div>
         </div>
       )}

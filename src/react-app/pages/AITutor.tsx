@@ -22,6 +22,18 @@ interface TutorUsage {
   unlimited: boolean;
 }
 
+interface TopicProgressEntry {
+  questionsAttempted: number;
+  questionsCorrect: number;
+}
+
+interface SessionEntry {
+  topics?: string[];
+  date?: string;
+  questionsAttempted?: number;
+  questionsCorrect?: number;
+}
+
 interface StudentContext {
   recentTopics: string[];
   weakAreas: string[];
@@ -97,24 +109,24 @@ export default function AITutor() {
               const { topicProgress, currentStreak, sessions } = progressData.data;
               
               const weakAreas = Object.entries(topicProgress)
-                .filter(([, data]: [string, any]) => 
+                .filter(([, data]: [string, TopicProgressEntry]) => 
                   data.questionsAttempted >= 3 && 
                   (data.questionsCorrect / data.questionsAttempted) < 0.7
                 )
                 .map(([topic]) => topic);
               
               const recentTopics: string[] = [...new Set<string>(
-                sessions.slice(0, 5).flatMap((s: any) => s.topics || [])
+                sessions.slice(0, 5).flatMap((s: SessionEntry) => s.topics || [])
               )].slice(0, 3);
               
               const today = new Date().toISOString().split('T')[0];
-              const todaySessions = sessions.filter((s: any) => 
+              const todaySessions = sessions.filter((s: SessionEntry) => 
                 s.date && s.date.startsWith(today)
               );
-              const questionsToday = todaySessions.reduce((sum: number, s: any) => 
+              const questionsToday = todaySessions.reduce((sum: number, s: SessionEntry) => 
                 sum + (s.questionsAttempted || 0), 0
               );
-              const correctToday = todaySessions.reduce((sum: number, s: any) => 
+              const correctToday = todaySessions.reduce((sum: number, s: SessionEntry) => 
                 sum + (s.questionsCorrect || 0), 0
               );
               
@@ -135,14 +147,14 @@ export default function AITutor() {
               const { topicProgress, currentStreak, sessions } = progressData.data;
               
               const weakAreas = Object.entries(topicProgress)
-                .filter(([, data]: [string, any]) => 
+                .filter(([, data]: [string, TopicProgressEntry]) => 
                   data.questionsAttempted >= 3 && 
                   (data.questionsCorrect / data.questionsAttempted) < 0.7
                 )
                 .map(([topic]) => topic);
               
               const recentTopics: string[] = [...new Set<string>(
-                sessions.slice(0, 5).flatMap((s: any) => s.topics || [])
+                sessions.slice(0, 5).flatMap((s: SessionEntry) => s.topics || [])
               )].slice(0, 3);
               
               setContext({

@@ -98,7 +98,7 @@ export default function DiagnosticResults() {
 
     // Dangerous gaps
     const gaps: DangerousGap[] = Array.from(confidenceMap.entries())
-      .filter(([_, data]) => data.confidentWrong > 0)
+      .filter(([, data]) => data.confidentWrong > 0)
       .map(([topic, data]) => ({
         topic,
         displayName: topicDisplayNames[topic] || topic,

@@ -9,6 +9,29 @@ const SUPABASE_URL = "https://bkmyfcolrdumyrwktjrr.supabase.co";
 const SUPABASE_ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrbXlmY29scmR1bXlyd2t0anJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5NDg3NTcsImV4cCI6MjA4OTUyNDc1N30.ClqyVHYOazJduEi6NTfENRcz2fdlDbiN2vBOJ937oHQ";
 
+interface TopicProgressEntry {
+  topic: string;
+  questionsAttempted: number;
+  questionsCorrect: number;
+  lastPracticed: string | null;
+  currentLevel: string;
+}
+
+interface SkillScoreRow {
+  topic: string;
+  avg_score: number | null;
+  total_attempted: number | null;
+}
+
+interface SessionRow {
+  id: number | string;
+  started_at: string;
+  session_type: string;
+  questions_total: number | null;
+  questions_correct: number | null;
+  metadata: unknown;
+}
+
 interface SupabaseUser {
   id: string;
   email: string;
@@ -169,7 +192,7 @@ app.get("/api/users/me", authMiddleware, async (c) => {
   }
 
   // Look up active subscription
-  const { data: subscription } = await supabase
+  const { data: _subscription } = await supabase
     .from("subscriptions")
     .select("tier")
     .eq("user_id", user.id)
@@ -198,7 +221,10 @@ app.get("/api/users/me", authMiddleware, async (c) => {
       targetScore: profile?.target_score || null,
       testDate: profile?.test_date || null,
       studyHoursPerWeek: profile?.study_hours_per_week || null,
-      subscriptionTier: subscription?.tier === "premium" ? "pro" : "free",
+      // HAI demo: everyone is "pro" so no UI paywalls fire. Stripe tables
+      // remain populated for future re-activation; only the derivation
+      // the frontend consumes is hardcoded here.
+      subscriptionTier: "pro",
     },
   });
 });
@@ -817,7 +843,7 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
       .maybeSingle();
 
     // Build topic progress from skill scores
-    const topicProgress: Record<string, any> = {};
+    const topicProgress: Record<string, TopicProgressEntry> = {};
     const defaultTopics = [
       "algebra", "advanced_math", "problem_solving", "geometry",
       "information_ideas", "craft_structure", "expression", "conventions"
@@ -834,7 +860,7 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
     });
 
     if (skillScores) {
-      skillScores.forEach((row: any) => {
+      skillScores.forEach((row: SkillScoreRow) => {
         const accuracy = row.avg_score || 0;
         topicProgress[row.topic] = {
           topic: row.topic,
@@ -875,7 +901,7 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
         lastPracticeDate: profile?.streak_last_date || null,
         estimatedMathScore: calcScore(mathTopics),
         estimatedRWScore: calcScore(rwTopics),
-        sessions: (sessions || []).map((s: any) => ({
+        sessions: (sessions || []).map((s: SessionRow) => ({
           id: `session_${s.id}`,
           date: s.started_at,
           type: s.session_type,
@@ -1393,7 +1419,7 @@ app.get("/api/progress/:browserId", async (c) => {
       .limit(1)
       .maybeSingle();
 
-    const topicProgress: Record<string, any> = {};
+    const topicProgress: Record<string, TopicProgressEntry> = {};
     const defaultTopics = [
       "algebra", "advanced_math", "problem_solving", "geometry",
       "information_ideas", "craft_structure", "expression", "conventions"
@@ -1410,7 +1436,7 @@ app.get("/api/progress/:browserId", async (c) => {
     });
 
     if (skillScores) {
-      skillScores.forEach((row: any) => {
+      skillScores.forEach((row: SkillScoreRow) => {
         const accuracy = row.avg_score || 0;
         topicProgress[row.topic] = {
           topic: row.topic,
@@ -1450,7 +1476,7 @@ app.get("/api/progress/:browserId", async (c) => {
         lastPracticeDate: anonSession.streak_last_date || null,
         estimatedMathScore: calcScore(mathTopics),
         estimatedRWScore: calcScore(rwTopics),
-        sessions: (sessions || []).map((s: any) => ({
+        sessions: (sessions || []).map((s: SessionRow) => ({
           id: `session_${s.id}`,
           date: s.started_at,
           type: s.session_type,

@@ -3,6 +3,47 @@ import { getCookie, setCookie } from "hono/cookie";
 import Stripe from "stripe";
 import type { Context, Next } from "hono";
 import { getSupabaseAdmin } from "./supabase";
+import { fetchOpenAI } from "./openai";
+import { runAgent } from "./agents/runner";
+import { echoAgent } from "./agents/echo";
+import {
+  diagnosticianAgent,
+  type DiagnosticianInput,
+  type DiagnosticianAttempt,
+  type ConfidenceLevel,
+  type DifficultyCode,
+} from "./agents/diagnostician";
+import {
+  coachAgent,
+  type CoachInput,
+  type CoachRecentAttempt,
+} from "./agents/coach";
+import {
+  explainerAgent,
+  type ExplainerInput,
+} from "./agents/explainer";
+import {
+  conceptAgent,
+  type ConceptInput,
+} from "./agents/concept";
+import {
+  nextPracticeAgent,
+  type NextPracticeInput,
+  type NextPracticeRecentAttempt,
+} from "./agents/next_practice";
+import {
+  reviewerAgent,
+  type ReviewerInput,
+  type ReviewerAttempt,
+  type SessionType as ReviewerSessionType,
+} from "./agents/reviewer";
+import {
+  plannerAgent,
+  type PlannerInput,
+  type PlannerWeakSkill,
+  type PlannerSeverity,
+  type PlannerOutput,
+} from "./agents/planner";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 const SUPABASE_URL = "https://bkmyfcolrdumyrwktjrr.supabase.co";
@@ -51,47 +92,6 @@ type AppEnv = {
 };
 
 const app = new Hono<AppEnv>();
-
-// OpenAI fetch helper with timeout and error handling
-async function fetchOpenAI(
-  apiKey: string,
-  body: Record<string, unknown>,
-  timeoutMs = 25000
-): Promise<{ data?: { choices?: { message?: { content?: string } }[] }; error?: string; status: number }> {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-
-  try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify(body),
-      signal: controller.signal,
-    });
-
-    clearTimeout(timer);
-
-    if (!response.ok) {
-      const errorText = await response.text().catch(() => "Unknown error");
-      console.error("OpenAI API error:", response.status, errorText);
-      return { error: `OpenAI returned ${response.status}`, status: response.status };
-    }
-
-    const data = await response.json() as { choices?: { message?: { content?: string } }[] };
-    return { data, status: 200 };
-  } catch (err: unknown) {
-    clearTimeout(timer);
-    if (err instanceof DOMException && err.name === "AbortError") {
-      console.error("OpenAI request timed out");
-      return { error: "AI request timed out. Please try again.", status: 504 };
-    }
-    console.error("OpenAI fetch failed:", err);
-    return { error: "Failed to reach AI service. Please try again.", status: 502 };
-  }
-}
 
 // Supabase auth middleware - validates JWT from cookie
 // Soft auth: extracts user if token present, but allows anonymous access
@@ -149,6 +149,21 @@ const STRIPE_YEARLY_PRICE_ID = "price_1THC36RBhjUJNe8k93TzNGFi";  // $79.99/year
 function safeParseTopics(metadata: unknown): string[] {
   try { return metadata ? JSON.parse(metadata as string).topics || [] : []; }
   catch { return []; }
+}
+
+// Normalize env var names at module load so route handlers can read a
+// single canonical name. .env.local uses TutorZero's legacy names
+// (OPENAI_KEY, SUPABASE_ID, SUPABASE_SECRET_KEY); the worker code reads the
+// Vercel/Supabase official names. Aliasing here lets local dev + production
+// both work without renaming secrets.
+if (!process.env.OPENAI_API_KEY && process.env.OPENAI_KEY) {
+  process.env.OPENAI_API_KEY = process.env.OPENAI_KEY;
+}
+if (!process.env.SUPABASE_SERVICE_ROLE_KEY && process.env.SUPABASE_SECRET_KEY) {
+  process.env.SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SECRET_KEY;
+}
+if (!process.env.SUPABASE_URL && process.env.SUPABASE_ID) {
+  process.env.SUPABASE_URL = `https://${process.env.SUPABASE_ID}.supabase.co`;
 }
 
 // ============================================
@@ -1673,6 +1688,1165 @@ app.delete("/api/progress/:browserId", async (c) => {
     console.error("Error deleting progress:", error);
     return c.json({ error: "Failed to delete progress" }, 500);
   }
+});
+
+// ===========================================================================
+// AI Agents — typed framework with structured output + per-call logging.
+// Every call lands in ai_agent_calls (success or failure).
+// ===========================================================================
+
+app.post("/api/agents/echo", optionalAuthMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser | undefined;
+
+  if (!process.env.OPENAI_API_KEY) {
+    return c.json({ error: "AI service is not configured" }, 503);
+  }
+
+  let body: { message?: unknown };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ error: "Invalid JSON" }, 400);
+  }
+
+  if (typeof body.message !== "string" || body.message.length === 0) {
+    return c.json({ error: "message required" }, 400);
+  }
+
+  try {
+    const supabase = getSupabaseAdmin();
+    const result = await runAgent(
+      echoAgent,
+      { message: body.message },
+      { userId: user?.id },
+      process.env.OPENAI_API_KEY,
+      supabase
+    );
+    return c.json({ success: true, ...result });
+  } catch (err) {
+    console.error("Echo agent error:", err);
+    return c.json({ error: "Agent failed" }, 500);
+  }
+});
+
+// Parse + validate raw attempt rows posted from the diagnostic page.
+// Anything invalid returns null so the route can 400 cleanly.
+function parseDiagnosticianAttempts(raw: unknown): DiagnosticianAttempt[] | null {
+  if (!Array.isArray(raw) || raw.length === 0) return null;
+  const out: DiagnosticianAttempt[] = [];
+  for (const item of raw) {
+    if (typeof item !== "object" || item === null) return null;
+    const o = item as Record<string, unknown>;
+    if (
+      typeof o.questionId !== "string" ||
+      typeof o.domain !== "string" ||
+      typeof o.skill !== "string" ||
+      (o.difficulty !== "E" && o.difficulty !== "M" && o.difficulty !== "H") ||
+      typeof o.selectedIndex !== "number" ||
+      typeof o.correctIndex !== "number" ||
+      typeof o.isCorrect !== "boolean" ||
+      (o.confidence !== "guessing" && o.confidence !== "somewhat" && o.confidence !== "confident") ||
+      typeof o.timeSpent !== "number"
+    ) {
+      return null;
+    }
+    out.push({
+      questionId: o.questionId,
+      domain: o.domain,
+      skill: o.skill,
+      difficulty: o.difficulty as DifficultyCode,
+      selectedIndex: o.selectedIndex,
+      correctIndex: o.correctIndex,
+      isCorrect: o.isCorrect,
+      confidence: o.confidence as ConfidenceLevel,
+      timeSpent: o.timeSpent,
+    });
+  }
+  return out;
+}
+
+app.post("/api/agents/diagnostician", optionalAuthMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser | undefined;
+
+  if (!process.env.OPENAI_API_KEY) {
+    return c.json({ error: "AI service is not configured" }, 503);
+  }
+
+  let body: { attempts?: unknown; testDate?: unknown; sessionId?: unknown };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ error: "Invalid JSON" }, 400);
+  }
+
+  const attempts = parseDiagnosticianAttempts(body.attempts);
+  if (!attempts) {
+    return c.json({ error: "attempts[] missing or malformed" }, 400);
+  }
+
+  const input: DiagnosticianInput = {
+    attempts,
+    testDate: typeof body.testDate === "string" ? body.testDate : undefined,
+  };
+  const sessionId = typeof body.sessionId === "number" ? body.sessionId : undefined;
+
+  const supabase = getSupabaseAdmin();
+
+  try {
+    const result = await runAgent(
+      diagnosticianAgent,
+      input,
+      { userId: user?.id, sessionId },
+      process.env.OPENAI_API_KEY,
+      supabase
+    );
+
+    // Persist the diagnosis. Insert is a new row every time — history is preserved
+    // so we can show score trajectory across repeat diagnostics.
+    const { data: inserted, error: insertErr } = await supabase
+      .from("ai_diagnoses")
+      .insert({
+        user_id: user?.id ?? null,
+        session_id: sessionId ?? null,
+        weaknesses: result.output.weaknesses,
+        strengths: result.output.strengths,
+        estimated_math: result.output.estimated_math_score,
+        estimated_rw: result.output.estimated_rw_score,
+        calibration_score: result.output.calibration_score,
+        top_focus: result.output.top_focus,
+        summary: result.output.summary,
+      })
+      .select("id")
+      .single();
+
+    if (insertErr) {
+      console.error("Failed to persist ai_diagnoses:", insertErr.message);
+    }
+
+    // Update the user's profile with the initial predicted scores so Dashboard
+    // and downstream agents read a single source of truth.
+    if (user?.id) {
+      const { error: profileErr } = await supabase
+        .from("user_profiles")
+        .update({
+          estimated_math_score: result.output.estimated_math_score,
+          estimated_rw_score: result.output.estimated_rw_score,
+          has_completed_diagnostic: true,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("user_id", user.id);
+      if (profileErr) {
+        console.error("Failed to update user_profiles:", profileErr.message);
+      }
+    }
+
+    return c.json({
+      success: true,
+      diagnosis_id: inserted?.id ?? null,
+      diagnosis: result.output,
+      model: result.model,
+      promptTokens: result.promptTokens,
+      completionTokens: result.completionTokens,
+      latencyMs: result.latencyMs,
+    });
+  } catch (err) {
+    console.error("Diagnostician agent error:", err);
+    return c.json({ error: "Diagnostician failed" }, 500);
+  }
+});
+
+// ─── Coach ──────────────────────────────────────────────────────────────
+
+function parseCoachRecentAttempts(raw: unknown): CoachRecentAttempt[] | null {
+  if (!Array.isArray(raw)) return null;
+  const out: CoachRecentAttempt[] = [];
+  for (const item of raw) {
+    if (typeof item !== "object" || item === null) return null;
+    const o = item as Record<string, unknown>;
+    if (
+      typeof o.topic !== "string" ||
+      typeof o.skill !== "string" ||
+      typeof o.difficulty !== "string" ||
+      typeof o.isCorrect !== "boolean" ||
+      typeof o.timeSpent !== "number" ||
+      typeof o.confidence !== "string"
+    ) {
+      return null;
+    }
+    out.push({
+      topic: o.topic,
+      skill: o.skill,
+      skillDisplay: typeof o.skillDisplay === "string" ? o.skillDisplay : undefined,
+      difficulty: o.difficulty,
+      isCorrect: o.isCorrect,
+      timeSpent: o.timeSpent,
+      confidence: o.confidence,
+    });
+  }
+  return out;
+}
+
+app.post("/api/agents/coach", optionalAuthMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser | undefined;
+
+  if (!process.env.OPENAI_API_KEY) {
+    return c.json({ error: "AI service is not configured" }, 503);
+  }
+
+  let body: {
+    recentAttempts?: unknown;
+    currentQuestion?: unknown;
+    sessionDuration?: unknown;
+    totalAttempts?: unknown;
+  };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ error: "Invalid JSON" }, 400);
+  }
+
+  const recentAttempts = parseCoachRecentAttempts(body.recentAttempts);
+  if (!recentAttempts) {
+    return c.json({ error: "recentAttempts[] missing or malformed" }, 400);
+  }
+
+  const cq = body.currentQuestion;
+  if (
+    typeof cq !== "object" ||
+    cq === null ||
+    typeof (cq as Record<string, unknown>).topic !== "string" ||
+    typeof (cq as Record<string, unknown>).skill !== "string" ||
+    typeof (cq as Record<string, unknown>).difficulty !== "string"
+  ) {
+    return c.json({ error: "currentQuestion missing or malformed" }, 400);
+  }
+  const cqRec = cq as Record<string, string>;
+
+  if (typeof body.sessionDuration !== "number" || typeof body.totalAttempts !== "number") {
+    return c.json({ error: "sessionDuration and totalAttempts required (numbers)" }, 400);
+  }
+
+  const input: CoachInput = {
+    recentAttempts,
+    currentQuestion: {
+      topic: cqRec.topic,
+      skill: cqRec.skill,
+      topicDisplay:
+        typeof (cq as Record<string, unknown>).topicDisplay === "string"
+          ? ((cq as Record<string, unknown>).topicDisplay as string)
+          : undefined,
+      skillDisplay:
+        typeof (cq as Record<string, unknown>).skillDisplay === "string"
+          ? ((cq as Record<string, unknown>).skillDisplay as string)
+          : undefined,
+      difficulty: cqRec.difficulty,
+    },
+    sessionDuration: body.sessionDuration,
+    totalAttempts: body.totalAttempts,
+    sessionAccuracy:
+      typeof (body as Record<string, unknown>).sessionAccuracy === "number"
+        ? ((body as Record<string, unknown>).sessionAccuracy as number)
+        : undefined,
+    skillAccuracy:
+      typeof (body as Record<string, unknown>).skillAccuracy === "number"
+        ? ((body as Record<string, unknown>).skillAccuracy as number)
+        : undefined,
+  };
+
+  try {
+    const supabase = getSupabaseAdmin();
+    const result = await runAgent(
+      coachAgent,
+      input,
+      { userId: user?.id },
+      process.env.OPENAI_API_KEY,
+      supabase
+    );
+    return c.json({
+      success: true,
+      coach: result.output,
+      model: result.model,
+      latencyMs: result.latencyMs,
+    });
+  } catch (err) {
+    console.error("Coach agent error:", err);
+    return c.json({ error: "Coach failed" }, 500);
+  }
+});
+
+// ─── Explainer ──────────────────────────────────────────────────────────
+
+app.post("/api/agents/explainer", optionalAuthMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser | undefined;
+
+  if (!process.env.OPENAI_API_KEY) {
+    return c.json({ error: "AI service is not configured" }, 503);
+  }
+
+  let body: Record<string, unknown>;
+  try {
+    body = (await c.req.json()) as Record<string, unknown>;
+  } catch {
+    return c.json({ error: "Invalid JSON" }, 400);
+  }
+
+  const required: Array<keyof ExplainerInput> = [
+    "questionId", "stem", "correctAnswer", "studentAnswer",
+    "officialRationale", "studentExplanation", "topic", "skill", "difficulty",
+  ];
+  for (const k of required) {
+    if (typeof body[k] !== "string" || (body[k] as string).length === 0) {
+      return c.json({ error: `${k} must be a non-empty string` }, 400);
+    }
+  }
+  if (!Array.isArray(body.options) || !body.options.every((s) => typeof s === "string")) {
+    return c.json({ error: "options must be string[]" }, 400);
+  }
+
+  const input: ExplainerInput = {
+    questionId: body.questionId as string,
+    stem: body.stem as string,
+    passage: typeof body.passage === "string" ? body.passage : undefined,
+    options: body.options as string[],
+    correctAnswer: body.correctAnswer as string,
+    studentAnswer: body.studentAnswer as string,
+    officialRationale: body.officialRationale as string,
+    studentExplanation: body.studentExplanation as string,
+    topic: body.topic as string,
+    skill: body.skill as string,
+    difficulty: body.difficulty as string,
+  };
+
+  try {
+    const supabase = getSupabaseAdmin();
+    const result = await runAgent(
+      explainerAgent,
+      input,
+      { userId: user?.id },
+      process.env.OPENAI_API_KEY,
+      supabase
+    );
+    return c.json({
+      success: true,
+      explainer: result.output,
+      model: result.model,
+      latencyMs: result.latencyMs,
+    });
+  } catch (err) {
+    console.error("Explainer agent error:", err);
+    return c.json({ error: "Explainer failed" }, 500);
+  }
+});
+
+// ─── Reviewer ──────────────────────────────────────────────────────────────
+// Runs after every practice/diagnostic session. Updates the user's predicted
+// scores on user_profiles (auth users only), persists the full review to
+// ai_session_reviews so the summary page and dashboard can read it back.
+
+function parseReviewerAttempts(raw: unknown): ReviewerAttempt[] | null {
+  if (!Array.isArray(raw)) return null;
+  const out: ReviewerAttempt[] = [];
+  for (const item of raw) {
+    if (typeof item !== "object" || item === null) return null;
+    const o = item as Record<string, unknown>;
+    if (
+      typeof o.questionId !== "string" ||
+      typeof o.topic !== "string" ||
+      typeof o.skill !== "string" ||
+      typeof o.difficulty !== "string" ||
+      typeof o.isCorrect !== "boolean" ||
+      typeof o.timeSpent !== "number" ||
+      typeof o.confidence !== "string"
+    ) {
+      return null;
+    }
+    out.push({
+      questionId: o.questionId,
+      topic: o.topic,
+      skill: o.skill,
+      difficulty: o.difficulty,
+      isCorrect: o.isCorrect,
+      timeSpent: o.timeSpent,
+      confidence: o.confidence,
+    });
+  }
+  return out;
+}
+
+interface PreviousScoresFromDB {
+  math: number;
+  rw: number;
+  calibration: number;
+  weaknesses: string[];
+}
+
+// Pulls the freshest baseline for the Reviewer's prompt: prefer the latest
+// review (covers repeat sessions), fall back to the most recent diagnosis,
+// fall back to the profile's defaults. Never returns NaN.
+async function fetchPreviousContext(
+  supabase: SupabaseClient,
+  userId: string | undefined
+): Promise<PreviousScoresFromDB> {
+  const fallback: PreviousScoresFromDB = {
+    math: 400,
+    rw: 400,
+    calibration: 50,
+    weaknesses: [],
+  };
+  if (!userId) return fallback;
+
+  const { data: latestReview } = await supabase
+    .from("ai_session_reviews")
+    .select("estimated_math, estimated_rw, calibration_score")
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  const { data: latestDiagnosis } = await supabase
+    .from("ai_diagnoses")
+    .select("estimated_math, estimated_rw, calibration_score, weaknesses")
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  const { data: profile } = await supabase
+    .from("user_profiles")
+    .select("estimated_math_score, estimated_rw_score")
+    .eq("user_id", userId)
+    .maybeSingle();
+
+  const weaknesses: string[] = (() => {
+    const raw = latestDiagnosis?.weaknesses;
+    if (!Array.isArray(raw)) return [];
+    return raw
+      .map((w: unknown) => (typeof w === "object" && w !== null ? (w as { skill?: unknown }).skill : null))
+      .filter((s): s is string => typeof s === "string");
+  })();
+
+  const math =
+    (latestReview?.estimated_math as number | undefined) ??
+    (latestDiagnosis?.estimated_math as number | undefined) ??
+    (profile?.estimated_math_score as number | undefined) ??
+    fallback.math;
+  const rw =
+    (latestReview?.estimated_rw as number | undefined) ??
+    (latestDiagnosis?.estimated_rw as number | undefined) ??
+    (profile?.estimated_rw_score as number | undefined) ??
+    fallback.rw;
+  const calibration =
+    (latestReview?.calibration_score as number | undefined) ??
+    (latestDiagnosis?.calibration_score as number | undefined) ??
+    fallback.calibration;
+
+  return { math, rw, calibration, weaknesses };
+}
+
+app.post("/api/agents/reviewer", optionalAuthMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser | undefined;
+
+  if (!process.env.OPENAI_API_KEY) {
+    return c.json({ error: "AI service is not configured" }, 503);
+  }
+
+  let body: {
+    sessionId?: unknown;
+    session?: unknown;
+    attempts?: unknown;
+  };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ error: "Invalid JSON" }, 400);
+  }
+
+  const sessionId = typeof body.sessionId === "number" ? body.sessionId : null;
+  if (sessionId === null) {
+    return c.json({ error: "sessionId (number) required" }, 400);
+  }
+
+  if (typeof body.session !== "object" || body.session === null) {
+    return c.json({ error: "session metadata required" }, 400);
+  }
+  const sessionMeta = body.session as Record<string, unknown>;
+  if (
+    typeof sessionMeta.startedAt !== "string" ||
+    typeof sessionMeta.endedAt !== "string" ||
+    typeof sessionMeta.sessionType !== "string" ||
+    typeof sessionMeta.totalAttempts !== "number" ||
+    typeof sessionMeta.correctCount !== "number"
+  ) {
+    return c.json({ error: "session metadata malformed" }, 400);
+  }
+
+  const attempts = parseReviewerAttempts(body.attempts);
+  if (!attempts || attempts.length === 0) {
+    return c.json({ error: "attempts[] missing or empty" }, 400);
+  }
+
+  const supabase = getSupabaseAdmin();
+  const previous = await fetchPreviousContext(supabase, user?.id);
+
+  const input: ReviewerInput = {
+    session: {
+      startedAt: sessionMeta.startedAt,
+      endedAt: sessionMeta.endedAt,
+      sessionType: sessionMeta.sessionType as ReviewerSessionType,
+      topic: typeof sessionMeta.topic === "string" ? sessionMeta.topic : undefined,
+      totalAttempts: sessionMeta.totalAttempts,
+      correctCount: sessionMeta.correctCount,
+    },
+    attempts,
+    previousScores: {
+      math: previous.math,
+      rw: previous.rw,
+      calibration: previous.calibration,
+    },
+    previousWeaknesses: previous.weaknesses.length > 0 ? previous.weaknesses : undefined,
+  };
+
+  try {
+    const result = await runAgent(
+      reviewerAgent,
+      input,
+      { userId: user?.id, sessionId },
+      process.env.OPENAI_API_KEY,
+      supabase
+    );
+
+    // Persist the review. Insert is a new row every session — history is the
+    // point. dismissed_patterns starts empty and grows via /api/reviewer/dismiss.
+    const { data: inserted, error: insertErr } = await supabase
+      .from("ai_session_reviews")
+      .insert({
+        session_id: sessionId,
+        user_id: user?.id ?? null,
+        highlights: result.output.highlights,
+        patterns: result.output.patterns,
+        calibration_score: result.output.new_calibration,
+        estimated_math: result.output.new_math,
+        estimated_rw: result.output.new_rw,
+        next_session_focus: result.output.next_session_focus,
+        summary: result.output.summary,
+      })
+      .select("id")
+      .single();
+
+    if (insertErr) {
+      console.error("Failed to persist ai_session_reviews:", insertErr.message);
+    }
+
+    // Auth users: update predicted scores on the profile so Dashboard reads the
+    // single source of truth on next load. Anonymous users have no profile row;
+    // their scores live in localStorage and get refreshed by useStudentProgress.
+    if (user?.id) {
+      const { error: profileErr } = await supabase
+        .from("user_profiles")
+        .update({
+          estimated_math_score: result.output.new_math,
+          estimated_rw_score: result.output.new_rw,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("user_id", user.id);
+      if (profileErr) {
+        console.error("Failed to update user_profiles after review:", profileErr.message);
+      }
+    }
+
+    return c.json({
+      success: true,
+      review_id: inserted?.id ?? null,
+      review: result.output,
+      previous: {
+        math: previous.math,
+        rw: previous.rw,
+        calibration: previous.calibration,
+      },
+      model: result.model,
+      promptTokens: result.promptTokens,
+      completionTokens: result.completionTokens,
+      latencyMs: result.latencyMs,
+    });
+  } catch (err) {
+    console.error("Reviewer agent error:", err);
+    return c.json({ error: "Reviewer failed" }, 500);
+  }
+});
+
+// Dismiss a pattern from a specific review so it doesn't resurface in the
+// dashboard's recent insights. Append-only — once dismissed, stays dismissed.
+app.post("/api/reviewer/dismiss", optionalAuthMiddleware, async (c) => {
+  let body: { review_id?: unknown; pattern?: unknown };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ error: "Invalid JSON" }, 400);
+  }
+
+  const reviewId = Number(body.review_id);
+  const pattern = typeof body.pattern === "string" ? body.pattern : "";
+  if (!Number.isFinite(reviewId) || !pattern) {
+    return c.json({ error: "review_id (number) and pattern (string) required" }, 400);
+  }
+
+  const supabase = getSupabaseAdmin();
+  const { data: row, error: readErr } = await supabase
+    .from("ai_session_reviews")
+    .select("dismissed_patterns")
+    .eq("id", reviewId)
+    .maybeSingle();
+  if (readErr || !row) {
+    return c.json({ error: "Review not found" }, 404);
+  }
+
+  const current = Array.isArray(row.dismissed_patterns) ? row.dismissed_patterns : [];
+  if (current.includes(pattern)) {
+    return c.json({ success: true, already: true });
+  }
+  const next = [...current, pattern];
+  const { error: updErr } = await supabase
+    .from("ai_session_reviews")
+    .update({ dismissed_patterns: next })
+    .eq("id", reviewId);
+  if (updErr) {
+    return c.json({ error: updErr.message }, 500);
+  }
+  return c.json({ success: true });
+});
+
+// Latest non-dismissed patterns for a user — drives Dashboard "Recent insights".
+app.get("/api/reviewer/recent-insights", optionalAuthMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser | undefined;
+  if (!user?.id) {
+    return c.json({ insights: [] });
+  }
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
+    .from("ai_session_reviews")
+    .select("id, patterns, dismissed_patterns, created_at, estimated_math, estimated_rw, summary")
+    .eq("user_id", user.id)
+    .order("created_at", { ascending: false })
+    .limit(5);
+  if (error) {
+    return c.json({ error: error.message }, 500);
+  }
+  const insights: Array<{
+    review_id: number;
+    pattern: string;
+    severity: string;
+    type: string;
+    evidence: string;
+    created_at: string;
+  }> = [];
+  for (const row of data ?? []) {
+    const dismissed = new Set(Array.isArray(row.dismissed_patterns) ? row.dismissed_patterns : []);
+    const patterns = Array.isArray(row.patterns) ? row.patterns : [];
+    for (const p of patterns) {
+      if (typeof p !== "object" || p === null) continue;
+      const obj = p as Record<string, unknown>;
+      if (typeof obj.pattern !== "string" || dismissed.has(obj.pattern)) continue;
+      insights.push({
+        review_id: row.id as number,
+        pattern: obj.pattern,
+        severity: typeof obj.severity === "string" ? obj.severity : "low",
+        type: typeof obj.type === "string" ? obj.type : "topic_weakness",
+        evidence: typeof obj.evidence === "string" ? obj.evidence : "",
+        created_at: row.created_at as string,
+      });
+      if (insights.length >= 3) break;
+    }
+    if (insights.length >= 3) break;
+  }
+  return c.json({ insights });
+});
+
+// ─── Planner ───────────────────────────────────────────────────────────────
+// Generates a weekly study plan from the student's diagnosed weaknesses,
+// test_date, and study_hours_per_week. Persists to ai_study_plans, marking
+// any prior active plan inactive so /api/plan/active always returns the
+// freshest one. The original_plan_json is preserved across edits so the UI
+// can show "vs original" diffs and so next week's Planner can compare.
+
+function parseWeakSkills(raw: unknown): PlannerWeakSkill[] | null {
+  if (!Array.isArray(raw)) return null;
+  const out: PlannerWeakSkill[] = [];
+  for (const item of raw) {
+    if (typeof item !== "object" || item === null) return null;
+    const o = item as Record<string, unknown>;
+    if (
+      typeof o.skill !== "string" ||
+      typeof o.severity !== "string" ||
+      (o.severity !== "high" && o.severity !== "medium" && o.severity !== "low") ||
+      typeof o.verified !== "boolean"
+    ) {
+      return null;
+    }
+    out.push({
+      skill: o.skill,
+      severity: o.severity as PlannerSeverity,
+      verified: o.verified,
+    });
+  }
+  return out;
+}
+
+// Pull verified-or-otherwise weaknesses from the latest diagnosis. Falls back
+// to an empty list when no diagnosis exists yet — the agent will then choose
+// a balanced mix per its system prompt.
+async function fetchLatestWeaknesses(
+  supabase: SupabaseClient,
+  userId: string
+): Promise<PlannerWeakSkill[]> {
+  const { data: latest } = await supabase
+    .from("ai_diagnoses")
+    .select("id, weaknesses")
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (!latest || !Array.isArray(latest.weaknesses)) return [];
+
+  // verifications live in ai_weakness_verifications (added by the
+  // diagnostician/verify route). Treat "confirmed" as verified.
+  const { data: verifications } = await supabase
+    .from("ai_weakness_verifications")
+    .select("skill, user_response")
+    .eq("diagnosis_id", latest.id);
+  const verifiedSet = new Set<string>(
+    (verifications ?? [])
+      .filter((v: { user_response?: string }) => v.user_response === "confirmed")
+      .map((v: { skill: string }) => v.skill)
+  );
+
+  const out: PlannerWeakSkill[] = [];
+  for (const w of latest.weaknesses) {
+    if (typeof w !== "object" || w === null) continue;
+    const obj = w as Record<string, unknown>;
+    if (typeof obj.skill !== "string") continue;
+    const sev = obj.severity;
+    const severity: PlannerSeverity =
+      sev === "high" || sev === "medium" || sev === "low" ? sev : "medium";
+    out.push({
+      skill: obj.skill,
+      severity,
+      verified: verifiedSet.has(obj.skill),
+    });
+  }
+  return out;
+}
+
+function nextMondayISO(from: Date = new Date()): string {
+  const d = new Date(from);
+  const day = d.getDay(); // 0=Sun..6=Sat
+  const offset = day === 0 ? 1 : day === 1 ? 0 : 8 - day;
+  d.setDate(d.getDate() + offset);
+  return d.toISOString().slice(0, 10);
+}
+
+app.post("/api/agents/planner", authMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser;
+
+  if (!process.env.OPENAI_API_KEY) {
+    return c.json({ error: "AI service is not configured" }, 503);
+  }
+
+  let body: {
+    testDate?: unknown;
+    hoursPerWeek?: unknown;
+    weekStartDate?: unknown;
+    weakSkills?: unknown;
+  };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ error: "Invalid JSON" }, 400);
+  }
+
+  const supabase = getSupabaseAdmin();
+  const { data: profile } = await supabase
+    .from("user_profiles")
+    .select("test_date, study_hours_per_week")
+    .eq("user_id", user.id)
+    .maybeSingle();
+
+  // Body overrides profile so the page can let the student tweak inputs
+  // without persisting them on the profile until they're happy.
+  const testDate =
+    typeof body.testDate === "string" && body.testDate.length > 0
+      ? body.testDate
+      : (profile?.test_date as string | undefined);
+  const hoursPerWeekRaw =
+    typeof body.hoursPerWeek === "number"
+      ? body.hoursPerWeek
+      : Number(profile?.study_hours_per_week as string | undefined);
+  const hoursPerWeek = Number.isFinite(hoursPerWeekRaw) ? Math.max(1, Math.min(40, hoursPerWeekRaw)) : null;
+  const weekStartDate =
+    typeof body.weekStartDate === "string" && body.weekStartDate.length > 0
+      ? body.weekStartDate
+      : nextMondayISO();
+
+  if (!testDate) {
+    return c.json({ error: "testDate required (in body or on profile)" }, 400);
+  }
+  if (hoursPerWeek === null) {
+    return c.json({ error: "hoursPerWeek (1-40) required" }, 400);
+  }
+
+  // Soft validation: if testDate is in the past, the plan still generates but
+  // the agent gets a hint in the prompt. The route doesn't reject — students
+  // sometimes plan post-test review weeks.
+
+  const bodyWeak = parseWeakSkills(body.weakSkills);
+  const weakSkills = bodyWeak ?? (await fetchLatestWeaknesses(supabase, user.id));
+
+  // Pull last week's edits so the Planner can bias toward the user's preferred
+  // distribution. We compare original_plan_json vs plan_json on the most
+  // recent plan and surface skill-level moves.
+  const { data: priorPlan } = await supabase
+    .from("ai_study_plans")
+    .select("original_plan_json, plan_json")
+    .eq("user_id", user.id)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  const previousPlanEdits: { originalSuggestion: string; userEdit: string }[] = [];
+  if (priorPlan) {
+    try {
+      const orig = priorPlan.original_plan_json as PlannerOutput;
+      const edited = priorPlan.plan_json as PlannerOutput;
+      const origDayBySkill: Record<string, string> = {};
+      for (const day of orig?.week ?? []) {
+        for (const s of day.sessions ?? []) {
+          if (!(s.focusSkill in origDayBySkill)) origDayBySkill[s.focusSkill] = day.day;
+        }
+      }
+      for (const day of edited?.week ?? []) {
+        for (const s of day.sessions ?? []) {
+          const origDay = origDayBySkill[s.focusSkill];
+          if (origDay && origDay !== day.day) {
+            previousPlanEdits.push({
+              originalSuggestion: `${s.focusSkill} on ${origDay}`,
+              userEdit: `${s.focusSkill} on ${day.day}`,
+            });
+          }
+        }
+      }
+    } catch {
+      // Malformed prior plan — ignore, generate fresh.
+    }
+  }
+
+  const input: PlannerInput = {
+    weakSkills,
+    testDate,
+    hoursPerWeek,
+    weekStartDate,
+    previousPlanEdits: previousPlanEdits.length > 0 ? previousPlanEdits : undefined,
+  };
+
+  try {
+    const result = await runAgent(
+      plannerAgent,
+      input,
+      { userId: user.id },
+      process.env.OPENAI_API_KEY,
+      supabase
+    );
+
+    // Mark any prior active plan inactive so /api/plan/active returns the
+    // freshest one. Done in a transactional pattern: flip first, then insert.
+    await supabase
+      .from("ai_study_plans")
+      .update({ active: false, updated_at: new Date().toISOString() })
+      .eq("user_id", user.id)
+      .eq("active", true);
+
+    const { data: inserted, error: insertErr } = await supabase
+      .from("ai_study_plans")
+      .insert({
+        user_id: user.id,
+        week_start: weekStartDate,
+        plan_json: result.output,
+        original_plan_json: result.output,
+        generated_by: "planner",
+        active: true,
+      })
+      .select("id, week_start, plan_json, original_plan_json, active, created_at")
+      .single();
+
+    if (insertErr || !inserted) {
+      console.error("Failed to persist ai_study_plans:", insertErr?.message);
+      return c.json({ error: "Plan generated but failed to save" }, 500);
+    }
+
+    return c.json({
+      success: true,
+      plan_id: inserted.id,
+      plan: result.output,
+      week_start: inserted.week_start,
+      meta: {
+        hoursAllocated: result.output.totalHoursAllocated,
+        hoursBudget: hoursPerWeek,
+      },
+      model: result.model,
+      promptTokens: result.promptTokens,
+      completionTokens: result.completionTokens,
+      latencyMs: result.latencyMs,
+    });
+  } catch (err) {
+    console.error("Planner agent error:", err);
+    return c.json({ error: "Planner failed" }, 500);
+  }
+});
+
+// Return the user's current active plan (or null). Auth-only — anonymous
+// users don't have plans.
+app.get("/api/plan/active", authMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser;
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
+    .from("ai_study_plans")
+    .select("id, week_start, plan_json, original_plan_json, active, created_at, updated_at")
+    .eq("user_id", user.id)
+    .eq("active", true)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (error) return c.json({ error: error.message }, 500);
+  return c.json({ plan: data ?? null });
+});
+
+// Persist edits (drag-drop, reorder, duration tweaks). Replaces plan_json
+// only — original_plan_json is immutable so we can compare against it for
+// next-week's Planner edit-feedback loop.
+app.post("/api/plan/save", authMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser;
+  let body: { plan_id?: unknown; plan_json?: unknown };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ error: "Invalid JSON" }, 400);
+  }
+  const planId = Number(body.plan_id);
+  if (!Number.isFinite(planId)) {
+    return c.json({ error: "plan_id (number) required" }, 400);
+  }
+  if (typeof body.plan_json !== "object" || body.plan_json === null) {
+    return c.json({ error: "plan_json (object) required" }, 400);
+  }
+
+  const supabase = getSupabaseAdmin();
+  // Defensive: only update plans owned by this user.
+  const { data: row, error: readErr } = await supabase
+    .from("ai_study_plans")
+    .select("id, user_id, active")
+    .eq("id", planId)
+    .maybeSingle();
+  if (readErr || !row) return c.json({ error: "Plan not found" }, 404);
+  if (row.user_id !== user.id) return c.json({ error: "Forbidden" }, 403);
+
+  const { error: updErr } = await supabase
+    .from("ai_study_plans")
+    .update({ plan_json: body.plan_json, updated_at: new Date().toISOString() })
+    .eq("id", planId);
+  if (updErr) return c.json({ error: updErr.message }, 500);
+  return c.json({ success: true });
+});
+
+// ─── Concept ────────────────────────────────────────────────────────────
+
+app.post("/api/agents/concept", optionalAuthMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser | undefined;
+
+  if (!process.env.OPENAI_API_KEY) {
+    return c.json({ error: "AI service is not configured" }, 503);
+  }
+
+  let body: Record<string, unknown>;
+  try {
+    body = (await c.req.json()) as Record<string, unknown>;
+  } catch {
+    return c.json({ error: "Invalid JSON" }, 400);
+  }
+
+  const required: Array<keyof ConceptInput> = [
+    "questionId", "stem", "correctAnswer", "topic", "skill", "difficulty",
+  ];
+  for (const k of required) {
+    if (typeof body[k] !== "string" || (body[k] as string).length === 0) {
+      return c.json({ error: `${k} must be a non-empty string` }, 400);
+    }
+  }
+  if (!Array.isArray(body.options) || !body.options.every((s) => typeof s === "string")) {
+    return c.json({ error: "options must be string[]" }, 400);
+  }
+
+  const input: ConceptInput = {
+    questionId: body.questionId as string,
+    stem: body.stem as string,
+    passage: typeof body.passage === "string" ? body.passage : undefined,
+    options: body.options as string[],
+    correctAnswer: body.correctAnswer as string,
+    studentAnswer: typeof body.studentAnswer === "string" ? body.studentAnswer : undefined,
+    topic: body.topic as string,
+    skill: body.skill as string,
+    difficulty: body.difficulty as string,
+    officialRationale: typeof body.officialRationale === "string" ? body.officialRationale : undefined,
+  };
+
+  try {
+    const supabase = getSupabaseAdmin();
+    const result = await runAgent(
+      conceptAgent,
+      input,
+      { userId: user?.id },
+      process.env.OPENAI_API_KEY,
+      supabase
+    );
+    return c.json({
+      success: true,
+      concept: result.output,
+      model: result.model,
+      latencyMs: result.latencyMs,
+    });
+  } catch (err) {
+    console.error("Concept agent error:", err);
+    return c.json({ error: "Concept failed" }, 500);
+  }
+});
+
+// ─── NextPractice ───────────────────────────────────────────────────────
+
+function parseNextPracticeRecent(raw: unknown): NextPracticeRecentAttempt[] | null {
+  if (!Array.isArray(raw)) return null;
+  const out: NextPracticeRecentAttempt[] = [];
+  for (const item of raw) {
+    if (typeof item !== "object" || item === null) return null;
+    const o = item as Record<string, unknown>;
+    if (
+      typeof o.topic !== "string" ||
+      typeof o.skill !== "string" ||
+      typeof o.difficulty !== "string" ||
+      typeof o.isCorrect !== "boolean"
+    ) {
+      return null;
+    }
+    out.push({
+      topic: o.topic,
+      skill: o.skill,
+      difficulty: o.difficulty,
+      isCorrect: o.isCorrect,
+    });
+  }
+  return out;
+}
+
+app.post("/api/agents/next-practice", optionalAuthMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser | undefined;
+
+  if (!process.env.OPENAI_API_KEY) {
+    return c.json({ error: "AI service is not configured" }, 503);
+  }
+
+  let body: Record<string, unknown>;
+  try {
+    body = (await c.req.json()) as Record<string, unknown>;
+  } catch {
+    return c.json({ error: "Invalid JSON" }, 400);
+  }
+
+  const requiredStrings: Array<keyof NextPracticeInput> = [
+    "questionId", "topic", "skill", "difficulty",
+  ];
+  for (const k of requiredStrings) {
+    if (typeof body[k] !== "string" || (body[k] as string).length === 0) {
+      return c.json({ error: `${k} must be a non-empty string` }, 400);
+    }
+  }
+  if (typeof body.isCorrect !== "boolean") {
+    return c.json({ error: "isCorrect must be boolean" }, 400);
+  }
+  const recent = parseNextPracticeRecent(body.recentAttempts ?? []);
+  if (!recent) {
+    return c.json({ error: "recentAttempts malformed" }, 400);
+  }
+
+  const input: NextPracticeInput = {
+    questionId: body.questionId as string,
+    topic: body.topic as string,
+    skill: body.skill as string,
+    difficulty: body.difficulty as string,
+    isCorrect: body.isCorrect,
+    recentAttempts: recent,
+  };
+
+  try {
+    const supabase = getSupabaseAdmin();
+    const result = await runAgent(
+      nextPracticeAgent,
+      input,
+      { userId: user?.id },
+      process.env.OPENAI_API_KEY,
+      supabase
+    );
+    return c.json({
+      success: true,
+      nextPractice: result.output,
+      model: result.model,
+      latencyMs: result.latencyMs,
+    });
+  } catch (err) {
+    console.error("NextPractice agent error:", err);
+    return c.json({ error: "NextPractice failed" }, 500);
+  }
+});
+
+app.post("/api/diagnostician/verify", optionalAuthMiddleware, async (c) => {
+  let body: { diagnosis_id?: unknown; skill?: unknown; response?: unknown };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ error: "Invalid JSON" }, 400);
+  }
+
+  const diagnosisId = Number(body.diagnosis_id);
+  const skill = typeof body.skill === "string" ? body.skill : "";
+  const response = body.response;
+
+  if (!Number.isFinite(diagnosisId) || !skill ||
+      (response !== "confirmed" && response !== "misread" && response !== "maybe")) {
+    return c.json({ error: "diagnosis_id (number), skill (string), response ('confirmed'|'misread'|'maybe') required" }, 400);
+  }
+
+  const supabase = getSupabaseAdmin();
+  const { error } = await supabase.from("ai_weakness_verifications").insert({
+    diagnosis_id: diagnosisId,
+    skill,
+    user_response: response,
+  });
+
+  if (error) {
+    console.error("Failed to insert ai_weakness_verifications:", error.message);
+    return c.json({ error: "Failed to save verification" }, 500);
+  }
+
+  return c.json({ success: true });
+});
+
+// DEMO ONLY — no auth guard. Remove or gate before exposing publicly.
+app.get("/api/admin/agent-calls", async (c) => {
+  const supabase = getSupabaseAdmin();
+  const agent = c.req.query("agent");
+  let q = supabase
+    .from("ai_agent_calls")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(100);
+  if (agent && agent !== "all") q = q.eq("agent", agent);
+  const { data, error } = await q;
+  if (error) return c.json({ error: error.message }, 500);
+  return c.json({ rows: data ?? [] });
 });
 
 export default app;

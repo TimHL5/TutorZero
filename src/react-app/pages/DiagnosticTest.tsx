@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { getDiagnosticQuestions, type Question, topicDisplayNames } from "@/data/questions";
 import { cn } from "@/react-app/lib/utils";
 import { MathText } from "@/react-app/components/ui/MathText";
+import { Loader2 } from "lucide-react";
 
 type ConfidenceLevel = "guessing" | "somewhat" | "confident";
 
@@ -14,6 +15,13 @@ interface Answer {
   timeSpent: number;
 }
 
+// difficulty on Question is "easy" | "medium" | "hard" — agent wants E/M/H.
+function difficultyToCode(d: Question["difficulty"]): "E" | "M" | "H" {
+  if (d === "easy") return "E";
+  if (d === "hard") return "H";
+  return "M";
+}
+
 export default function DiagnosticTest() {
   const navigate = useNavigate();
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -22,6 +30,8 @@ export default function DiagnosticTest() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [confidence, setConfidence] = useState<ConfidenceLevel | null>(null);
   const [questionStartTime, setQuestionStartTime] = useState(Date.now());
+  const [analyzing, setAnalyzing] = useState(false);
+  const [analyzeError, setAnalyzeError] = useState<string | null>(null);
 
   useEffect(() => {
     const diagnosticQuestions = getDiagnosticQuestions(20);
@@ -47,7 +57,7 @@ export default function DiagnosticTest() {
     setConfidence(level);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (selectedIndex === null || confidence === null || !currentQuestion) return;
 
     const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
@@ -67,19 +77,78 @@ export default function DiagnosticTest() {
       setCurrentIndex(currentIndex + 1);
       setSelectedIndex(null);
       setConfidence(null);
-    } else {
-      // Complete - go to results
-      const answersArray = Array.from(newAnswers.values());
-      const results = {
-        answers: answersArray,
-        questions,
-        totalQuestions: questions.length,
-        correctAnswers: answersArray.filter((a) => a.isCorrect).length,
-        timestamp: Date.now(),
-      };
-      localStorage.setItem("diagnosticResults", JSON.stringify(results));
-      navigate("/diagnostic/results");
+      return;
     }
+
+    // Final question: persist raw answers, then call Diagnostician agent.
+    const answersArray = Array.from(newAnswers.values());
+    const results = {
+      answers: answersArray,
+      questions,
+      totalQuestions: questions.length,
+      correctAnswers: answersArray.filter((a) => a.isCorrect).length,
+      timestamp: Date.now(),
+    };
+    localStorage.setItem("diagnosticResults", JSON.stringify(results));
+
+    setAnalyzing(true);
+    setAnalyzeError(null);
+
+    const attemptsPayload = answersArray.map((a) => {
+      const q = questions.find((qq) => qq.id === a.questionId);
+      return {
+        questionId: q?.questionId ?? String(a.questionId),
+        domain: q?.topic ?? "",
+        skill: q?.skill ?? "",
+        difficulty: difficultyToCode(q?.difficulty ?? "medium"),
+        selectedIndex: a.selectedIndex,
+        correctIndex: q?.correctIndex ?? -1,
+        isCorrect: a.isCorrect,
+        confidence: a.confidence,
+        // Agent wants ms; we stored seconds above.
+        timeSpent: a.timeSpent * 1000,
+      };
+    });
+
+    try {
+      const response = await fetch("/api/agents/diagnostician", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ attempts: attemptsPayload }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error((data as { error?: string }).error || "Analysis failed");
+      }
+
+      const data = await response.json();
+      localStorage.setItem(
+        "diagnosticAgentResult",
+        JSON.stringify({
+          diagnosis_id: data.diagnosis_id ?? null,
+          diagnosis: data.diagnosis,
+          model: data.model,
+          latencyMs: data.latencyMs,
+          timestamp: Date.now(),
+        })
+      );
+      navigate("/diagnostic/results");
+    } catch (err) {
+      console.error("Diagnostician call failed:", err);
+      setAnalyzing(false);
+      setAnalyzeError(
+        err instanceof Error ? err.message : "Could not analyze your results. Please try again."
+      );
+    }
+  };
+
+  const retryAnalysis = () => {
+    setAnalyzeError(null);
+    setAnalyzing(false);
+    // Re-submit final question so the pipeline runs again.
+    handleSubmit();
   };
 
   const handleSaveAndExit = () => {
@@ -96,6 +165,35 @@ export default function DiagnosticTest() {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="animate-pulse text-tz-gray-400">Loading questions...</div>
+      </div>
+    );
+  }
+
+  if (analyzing || analyzeError) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center px-4">
+        <div className="max-w-md w-full text-center">
+          {analyzeError ? (
+            <>
+              <p className="text-h3 text-tz-navy mb-2">Analysis hiccup</p>
+              <p className="text-sm text-tz-gray-600 mb-6">{analyzeError}</p>
+              <button
+                onClick={retryAnalysis}
+                className="px-5 py-2.5 bg-tz-blue text-white rounded-lg font-medium hover:bg-[#005a9e] transition-colors"
+              >
+                Try again
+              </button>
+            </>
+          ) : (
+            <>
+              <Loader2 className="w-10 h-10 text-tz-blue animate-spin mx-auto mb-4" />
+              <p className="text-h3 text-tz-navy mb-2">Analyzing your results…</p>
+              <p className="text-sm text-tz-gray-600">
+                Your AI tutor is reading all 20 answers — this takes a few seconds.
+              </p>
+            </>
+          )}
+        </div>
       </div>
     );
   }

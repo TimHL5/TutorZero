@@ -6,11 +6,21 @@ import { domainForSkill, skillSlugToDisplayName } from "@/react-app/lib/sat-taxo
 import { ExplanationChat } from "@/react-app/components/feedback/ExplanationChat";
 import { cn } from "@/react-app/lib/utils";
 import { MathText } from "@/react-app/components/ui/MathText";
-import { ChevronRight, Pause, Play, CheckCircle, XCircle, Lightbulb, BookOpen, ArrowRight, ChevronDown, Target, Clock, X, Home, AlertTriangle } from "lucide-react";
+import { ChevronRight, Pause, Play, CheckCircle, XCircle, Lightbulb, BookOpen, ArrowRight, ChevronDown, Target, Clock, X, Home, Loader2, Sparkles } from "lucide-react";
 
 const WORDMARK_LIGHT = "/logos/tutorzero-wordmark-dark.png";
 
 type ConfidenceLevel = "guessing" | "somewhat" | "confident";
+
+// Mirror of Coach agent's output (src/worker/agents/coach.ts). Kept inline
+// here to avoid leaking the worker types into the bundle via a shared module.
+interface CoachAction { label: string; action: string; }
+interface CoachCall {
+  intervention: "offer_easier" | "switch_topic" | "take_break" | "keep_pushing" | "review_concept";
+  message: string;
+  primary_action: CoachAction;
+  secondary_action: CoachAction;
+}
 
 interface AttemptedQuestion {
   question: Question;
@@ -61,12 +71,130 @@ export default function Practice() {
   const [sessionStartTime] = useState(Date.now());
   const [totalSessionTime, setTotalSessionTime] = useState(0);
 
-  // Frustration detection state
-  const [showFrustrationIntervention, setShowFrustrationIntervention] = useState(false);
+  // Frustration detection state — still client-side. When it trips we call
+  // the Coach agent for the intervention copy + actions.
   const [frustrationTopic, setFrustrationTopic] = useState<string | null>(null);
+  const [coachLoading, setCoachLoading] = useState(false);
+  const [coachCall, setCoachCall] = useState<CoachCall | null>(null);
 
   // ExplanationChat state
   const [showExplanationChat, setShowExplanationChat] = useState(false);
+
+  // Concept + NextPractice agents — lazy-loaded when the student expands the
+  // "The concept" or "What to practice next" section. Cached per question id
+  // so re-opening the same layer doesn't re-spend tokens.
+  const [conceptAI, setConceptAI] = useState<string | null>(null);
+  const [conceptLoading, setConceptLoading] = useState(false);
+  const [nextPracticeAI, setNextPracticeAI] = useState<string | null>(null);
+  const [nextPracticeLoading, setNextPracticeLoading] = useState(false);
+  const lastEnrichedQuestionId = useRef<string | null>(null);
+
+  // Reviewer overlay — shown while /api/agents/reviewer is in flight after the
+  // student ends a session. Cleared in handleEndSession before navigating.
+  const [isReviewing, setIsReviewing] = useState(false);
+
+  // Reset Concept + NextPractice cache whenever the question changes — a new
+  // question is a brand-new prompt payload.
+  useEffect(() => {
+    if (!currentQuestion) return;
+    if (lastEnrichedQuestionId.current !== currentQuestion.questionId) {
+      lastEnrichedQuestionId.current = currentQuestion.questionId;
+      setConceptAI(null);
+      setNextPracticeAI(null);
+    }
+  }, [currentQuestion]);
+
+  const fetchConceptAI = useCallback(async () => {
+    if (!currentQuestion || conceptAI || conceptLoading) return;
+    setConceptLoading(true);
+    try {
+      const response = await fetch("/api/agents/concept", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          questionId: currentQuestion.questionId,
+          stem: currentQuestion.questionText,
+          passage: currentQuestion.passageText,
+          options: currentQuestion.options,
+          correctAnswer: String.fromCharCode(65 + currentQuestion.correctIndex),
+          studentAnswer: selectedIndex !== null ? String.fromCharCode(65 + selectedIndex) : undefined,
+          topic: currentQuestion.topic,
+          skill: currentQuestion.skill,
+          difficulty: currentQuestion.difficulty,
+          officialRationale: currentQuestion.explainWhy,
+        }),
+      });
+      if (!response.ok) throw new Error("Concept failed");
+      const data = await response.json();
+      const c = data.concept as {
+        overview: string;
+        key_idea: string;
+        when_it_applies: string;
+        common_pitfall: string;
+      };
+      setConceptAI(
+        `${c.overview}\n\n**Key idea:** ${c.key_idea}\n\n**When it applies:** ${c.when_it_applies}\n\n**Common pitfall:** ${c.common_pitfall}`
+      );
+    } catch (err) {
+      console.error("Concept agent call failed:", err);
+      // Silent fail — the static rationale remains visible.
+    } finally {
+      setConceptLoading(false);
+    }
+  }, [currentQuestion, conceptAI, conceptLoading, selectedIndex]);
+
+  const fetchNextPracticeAI = useCallback(async () => {
+    if (!currentQuestion || nextPracticeAI || nextPracticeLoading) return;
+    setNextPracticeLoading(true);
+    try {
+      const recentAttempts = attemptedQuestions.slice(-5).map((a) => ({
+        topic: a.question.topic,
+        skill: a.question.skill,
+        difficulty: a.question.difficulty,
+        isCorrect: a.isCorrect,
+      }));
+      const response = await fetch("/api/agents/next-practice", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          questionId: currentQuestion.questionId,
+          topic: currentQuestion.topic,
+          skill: currentQuestion.skill,
+          difficulty: currentQuestion.difficulty,
+          isCorrect:
+            selectedIndex !== null && selectedIndex === currentQuestion.correctIndex,
+          recentAttempts,
+        }),
+      });
+      if (!response.ok) throw new Error("NextPractice failed");
+      const data = await response.json();
+      const n = data.nextPractice as {
+        next_skill: string;
+        next_difficulty: string;
+        why: string;
+        warmup_idea: string;
+      };
+      setNextPracticeAI(
+        `${n.why}\n\n**Try next:** ${n.next_skill} (${n.next_difficulty})\n\n**Warm-up:** ${n.warmup_idea}`
+      );
+    } catch (err) {
+      console.error("NextPractice agent call failed:", err);
+    } finally {
+      setNextPracticeLoading(false);
+    }
+  }, [currentQuestion, nextPracticeAI, nextPracticeLoading, selectedIndex, attemptedQuestions]);
+
+  const toggleFeedbackSection = useCallback(
+    (section: "why" | "concept" | "next") => {
+      const nextOpen = expandedSection === section ? null : section;
+      setExpandedSection(nextOpen);
+      if (nextOpen === "concept") fetchConceptAI();
+      if (nextOpen === "next") fetchNextPracticeAI();
+    },
+    [expandedSection, fetchConceptAI, fetchNextPracticeAI]
+  );
 
   // Get section topics if filtering by section
   const sectionTopicList = targetSection ? sectionTopics[targetSection] : undefined;
@@ -185,6 +313,86 @@ export default function Practice() {
     }
   }, [attemptedQuestions, currentQuestion, selectedIndex, targetTopic, sectionTopicList, targetSkills]);
 
+  const callCoach = useCallback(async () => {
+    if (!currentQuestion) return;
+    setCoachLoading(true);
+    setCoachCall(null);
+    const startedAt = Date.now();
+
+    const recentAttempts = attemptedQuestions.slice(-5).map((a) => ({
+      topic: a.question.topic,
+      skill: a.question.skill,
+      skillDisplay: skillSlugToDisplayName(a.question.skill),
+      difficulty: a.question.difficulty,
+      isCorrect: a.isCorrect,
+      timeSpent: a.timeSpent,
+      confidence: a.confidence ?? "somewhat",
+    }));
+
+    // Session- and skill-level accuracy for the Coach's prompt — lets it
+    // cite numbers instead of platitudes.
+    const totalCorrect = attemptedQuestions.filter((a) => a.isCorrect).length;
+    const sessionAccuracy =
+      attemptedQuestions.length > 0
+        ? Math.round((totalCorrect / attemptedQuestions.length) * 100)
+        : undefined;
+    const currentSkillAttempts = attemptedQuestions.filter(
+      (a) => a.question.skill === currentQuestion.skill
+    );
+    const skillAccuracy =
+      currentSkillAttempts.length > 0
+        ? Math.round(
+            (currentSkillAttempts.filter((a) => a.isCorrect).length /
+              currentSkillAttempts.length) *
+              100
+          )
+        : undefined;
+
+    try {
+      const response = await fetch("/api/agents/coach", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          recentAttempts,
+          currentQuestion: {
+            topic: currentQuestion.topic,
+            topicDisplay: topicDisplayNames[currentQuestion.topic] ?? currentQuestion.topic,
+            skill: currentQuestion.skill,
+            skillDisplay: skillSlugToDisplayName(currentQuestion.skill),
+            difficulty: currentQuestion.difficulty,
+          },
+          sessionDuration: totalSessionTime,
+          totalAttempts: attemptedQuestions.length,
+          sessionAccuracy,
+          skillAccuracy,
+        }),
+      });
+
+      // Keep the loading state visible for at least 1.5s so the HAI "thinking"
+      // beat lands on stage.
+      const elapsed = Date.now() - startedAt;
+      if (elapsed < 1500) {
+        await new Promise((r) => setTimeout(r, 1500 - elapsed));
+      }
+
+      if (!response.ok) throw new Error("Coach call failed");
+      const data = await response.json();
+      setCoachCall(data.coach as CoachCall);
+    } catch (err) {
+      console.error("Coach call failed:", err);
+      // Fall back to a static message so the student isn't stuck.
+      setCoachCall({
+        intervention: "keep_pushing",
+        message: "You've been working hard on this. Want to try another one, or take a breather?",
+        primary_action: { label: "Keep going", action: "keep_pushing" },
+        secondary_action: { label: "Take a break", action: "take_break" },
+      });
+    } finally {
+      setCoachLoading(false);
+    }
+  }, [attemptedQuestions, currentQuestion, totalSessionTime]);
+
   const handleFeedbackResponse = useCallback((understood: boolean) => {
     setAttemptedQuestions(prev => {
       const updated = [...prev];
@@ -200,39 +408,133 @@ export default function Practice() {
       return;
     }
 
-    // Show frustration intervention if detected
+    // If frustration was detected, let the Coach decide what to say.
     if (frustrationTopic) {
-      setShowFrustrationIntervention(true);
+      callCoach();
     } else {
-      setFrustrationTopic(null);
       goToNextQuestion();
     }
-  }, [frustrationTopic, goToNextQuestion]);
+  }, [frustrationTopic, goToNextQuestion, callCoach]);
 
-  const handleFrustrationChoice = useCallback((_: boolean) => {
-    setShowFrustrationIntervention(false);
+  // Dispatch Coach actions. Each button click maps the agent's action slug to
+  // a concrete side-effect; unknown actions are treated as "dismiss" so a
+  // malformed agent response can't brick the flow.
+  const handleCoachAction = useCallback((action: string) => {
+    setCoachCall(null);
     setFrustrationTopic(null);
-    // If trying easier, we'll naturally get easier questions from adaptive algorithm
-    // since recent answers were wrong
-    goToNextQuestion();
-  }, [goToNextQuestion]);
 
-  const handleEndSession = useCallback(() => {
-    if (attemptedQuestions.length > 0) {
-      const attempts = attemptedQuestions.map(a => ({
-        topic: a.question.topic,
-        isCorrect: a.isCorrect,
-        confidence: a.confidence
-      }));
-      recordSession("practice", attempts, Math.floor(totalSessionTime / 1000));
+    switch (action) {
+      case "take_break":
+        setIsPaused(true);
+        return;
+      case "switch_topic": {
+        const otherSection = currentQuestion?.section === "math" ? "reading" : "math";
+        navigate(`/practice/session?section=${otherSection}`);
+        return;
+      }
+      case "review_concept":
+        setShowExplanationChat(true);
+        return;
+      case "offer_easier":
+        // Adaptive algorithm already biases toward easier after recent wrongs
+        // (questions.ts getAdaptiveNextQuestion). No explicit re-weight needed.
+        goToNextQuestion();
+        return;
+      case "keep_pushing":
+      case "dismiss":
+      default:
+        goToNextQuestion();
+        return;
     }
+  }, [currentQuestion, navigate, goToNextQuestion]);
+
+  const handleEndSession = useCallback(async () => {
+    if (attemptedQuestions.length === 0) {
+      navigate("/practice/summary", {
+        state: { attempts: attemptedQuestions, sessionTime: totalSessionTime }
+      });
+      return;
+    }
+
+    // 1. Persist the session and capture the server-issued ID. Reviewer wants it
+    // so it can attribute the review row in ai_session_reviews.
+    const recordAttempts = attemptedQuestions.map(a => ({
+      topic: a.question.topic,
+      isCorrect: a.isCorrect,
+      confidence: a.confidence,
+      timeSpentSec: Math.round(a.timeSpent / 1000),
+    }));
+    let sessionId: number | null = null;
+    try {
+      const recordResult = await recordSession(
+        "practice",
+        recordAttempts,
+        Math.floor(totalSessionTime / 1000)
+      );
+      sessionId = recordResult?.sessionId ?? null;
+    } catch (e) {
+      console.error("recordSession failed:", e);
+    }
+
+    // 2. Show the reviewing state. Even if the call fails or there's no
+    // sessionId (anon edge cases), we still navigate to summary so the student
+    // sees their answers.
+    setIsReviewing(true);
+
+    const correctCount = attemptedQuestions.filter(a => a.isCorrect).length;
+    const sessionMeta = {
+      startedAt: new Date(sessionStartTime).toISOString(),
+      endedAt: new Date().toISOString(),
+      sessionType: "practice" as const,
+      topic: targetTopic,
+      totalAttempts: attemptedQuestions.length,
+      correctCount,
+    };
+    const reviewerAttempts = attemptedQuestions.map(a => ({
+      questionId: a.question.questionId,
+      topic: a.question.topic,
+      skill: a.question.skill,
+      difficulty: a.question.difficulty,
+      isCorrect: a.isCorrect,
+      timeSpent: a.timeSpent,
+      confidence: a.confidence ?? "somewhat",
+    }));
+
+    let review: unknown = null;
+    let reviewError: string | null = null;
+    if (sessionId !== null) {
+      try {
+        const res = await fetch("/api/agents/reviewer", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ sessionId, session: sessionMeta, attempts: reviewerAttempts }),
+        });
+        const json = await res.json().catch(() => null);
+        if (!res.ok) {
+          reviewError = json?.error ?? "Reviewer failed";
+          console.error("Reviewer route error:", reviewError);
+        } else {
+          review = json;
+        }
+      } catch (e) {
+        reviewError = e instanceof Error ? e.message : "Network error";
+        console.error("Reviewer fetch failed:", e);
+      }
+    } else {
+      reviewError = "Session not persisted";
+    }
+
+    setIsReviewing(false);
     navigate("/practice/summary", {
       state: {
         attempts: attemptedQuestions,
-        sessionTime: totalSessionTime
+        sessionTime: totalSessionTime,
+        review,
+        reviewError,
       }
     });
-  }, [navigate, attemptedQuestions, totalSessionTime, recordSession]);
+  }, [navigate, attemptedQuestions, totalSessionTime, recordSession, sessionStartTime, targetTopic]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -289,6 +591,18 @@ export default function Practice() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
+      {/* Reviewer overlay — covers the screen while /api/agents/reviewer runs */}
+      {isReviewing && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white/95 backdrop-blur-sm"
+        >
+          <Loader2 className="w-10 h-10 text-tz-blue animate-spin mb-4" />
+          <p className="text-lg font-medium text-tz-navy">Reviewing your session…</p>
+          <p className="text-sm text-tz-gray-500 mt-1">Analyzing patterns and updating your predicted score.</p>
+        </div>
+      )}
       {/* Header */}
       <header className="h-12 sm:h-14 border-b border-tz-gray-200 flex items-center px-3 sm:px-4 lg:px-8 flex-shrink-0">
         {/* Home button + Logo */}
@@ -359,36 +673,44 @@ export default function Practice() {
         </div>
       )}
 
-      {/* Frustration Intervention */}
-      {showFrustrationIntervention && (
+      {/* Coach — AI-driven frustration intervention */}
+      {(coachLoading || coachCall) && (
         <div className="fixed inset-0 bg-tz-navy/60 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-xl p-6 sm:p-8 max-w-md w-full animate-in fade-in zoom-in-95 duration-200">
-            <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <AlertTriangle className="w-6 h-6 text-amber-600" />
-            </div>
-            <h2 className="text-xl sm:text-h2 text-tz-navy text-center mb-2">
-              You're working hard
-            </h2>
-            <p className="text-sm sm:text-body text-tz-gray-600 text-center mb-6">
-              {frustrationTopic && (
-                <>You've been tackling {topicDisplayNames[frustrationTopic] || frustrationTopic} questions. </>
-              )}
-              Would you like to try some easier questions to build confidence, or keep pushing through?
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={() => handleFrustrationChoice(true)}
-                className="flex-1 py-3 px-4 bg-tz-blue text-white rounded-lg font-medium hover-scale transition-all"
-              >
-                Try easier questions
-              </button>
-              <button
-                onClick={() => handleFrustrationChoice(false)}
-                className="flex-1 py-3 px-4 border-2 border-tz-gray-200 text-tz-gray-600 rounded-lg font-medium hover:bg-tz-gray-100 transition-all"
-              >
-                Keep going
-              </button>
-            </div>
+            {coachLoading ? (
+              <>
+                <Loader2 className="w-10 h-10 text-tz-blue animate-spin mx-auto mb-4" />
+                <h2 className="text-xl sm:text-h2 text-tz-navy text-center mb-1">
+                  Your coach is checking in…
+                </h2>
+                <p className="text-sm sm:text-body text-tz-gray-600 text-center">
+                  Reading your last few answers to figure out what helps most.
+                </p>
+              </>
+            ) : coachCall ? (
+              <>
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Sparkles className="w-6 h-6 text-tz-blue" />
+                </div>
+                <p className="text-sm sm:text-body text-tz-navy text-center mb-6 leading-relaxed">
+                  {coachCall.message}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={() => handleCoachAction(coachCall.primary_action.action)}
+                    className="flex-1 py-3 px-4 bg-tz-blue text-white rounded-lg font-medium hover-scale transition-all"
+                  >
+                    {coachCall.primary_action.label}
+                  </button>
+                  <button
+                    onClick={() => handleCoachAction(coachCall.secondary_action.action)}
+                    className="flex-1 py-3 px-4 border-2 border-tz-gray-200 text-tz-gray-600 rounded-lg font-medium hover:bg-tz-gray-100 transition-all"
+                  >
+                    {coachCall.secondary_action.label}
+                  </button>
+                </div>
+              </>
+            ) : null}
           </div>
         </div>
       )}
@@ -537,7 +859,70 @@ export default function Practice() {
                 </div>
               </div>
 
-              {/* Explanation Layers */}
+              {/* Question stem + Answer review — let students re-examine the
+                  question with their selection + the correct one highlighted. */}
+              <div className="mb-5 sm:mb-6">
+                <div className="text-base sm:text-lg font-medium text-tz-navy leading-relaxed sat-content mb-4">
+                  <MathText text={currentQuestion.questionText} />
+                </div>
+                <div className="space-y-2 sm:space-y-3">
+                  {currentQuestion.options.map((option, index) => {
+                    const letter = String.fromCharCode(65 + index);
+                    const isStudentChoice = index === selectedIndex;
+                    const isCorrectChoice = index === currentQuestion.correctIndex;
+                    const studentWasWrong = isStudentChoice && !isCorrectChoice;
+
+                    let containerCls = "border-tz-gray-200 bg-white";
+                    let badgeCls = "bg-tz-gray-100 text-tz-gray-600";
+                    let textCls = "text-tz-gray-600";
+                    let icon: React.ReactNode = null;
+
+                    if (isCorrectChoice) {
+                      containerCls = "border-tz-green bg-green-50";
+                      badgeCls = "bg-tz-green text-white";
+                      textCls = "text-green-900";
+                      icon = <CheckCircle className="w-5 h-5 text-tz-green flex-shrink-0" />;
+                    } else if (studentWasWrong) {
+                      containerCls = "border-red-300 bg-red-50";
+                      badgeCls = "bg-red-500 text-white";
+                      textCls = "text-red-900";
+                      icon = <XCircle className="w-5 h-5 text-red-500 flex-shrink-0" />;
+                    }
+
+                    return (
+                      <div
+                        key={index}
+                        className={cn(
+                          "w-full flex items-start sm:items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg border-2",
+                          containerCls
+                        )}
+                      >
+                        <div
+                          className={cn(
+                            "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold flex-shrink-0",
+                            badgeCls
+                          )}
+                        >
+                          {letter}
+                        </div>
+                        <span className={cn("text-sm sm:text-body flex-1 sat-content", textCls)}>
+                          <MathText text={option} />
+                        </span>
+                        {icon}
+                        {isStudentChoice && (
+                          <span className="text-[10px] sm:text-xs uppercase tracking-wide font-semibold text-tz-gray-400 flex-shrink-0">
+                            Your pick
+                          </span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Explanation Layers — "The concept" and "What to practice
+                  next" lazy-load AI content on first expand via the Concept
+                  and NextPractice agents. */}
               <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                 <FeedbackLayer
                   icon={<Lightbulb className="w-4 h-4 sm:w-5 sm:h-5" />}
@@ -545,23 +930,27 @@ export default function Practice() {
                   content={currentQuestion.explainWhy}
                   color="blue"
                   isExpanded={expandedSection === "why"}
-                  onToggle={() => setExpandedSection(expandedSection === "why" ? null : "why")}
+                  onToggle={() => toggleFeedbackSection("why")}
                 />
                 <FeedbackLayer
                   icon={<BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />}
                   title="The concept"
-                  content={currentQuestion.explainConcept}
+                  content={conceptAI ?? currentQuestion.explainConcept}
                   color="purple"
                   isExpanded={expandedSection === "concept"}
-                  onToggle={() => setExpandedSection(expandedSection === "concept" ? null : "concept")}
+                  onToggle={() => toggleFeedbackSection("concept")}
+                  isLoading={conceptLoading}
+                  aiGenerated={conceptAI !== null}
                 />
                 <FeedbackLayer
                   icon={<ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />}
                   title="What to practice next"
-                  content={currentQuestion.explainNext}
+                  content={nextPracticeAI ?? currentQuestion.explainNext}
                   color="amber"
                   isExpanded={expandedSection === "next"}
-                  onToggle={() => setExpandedSection(expandedSection === "next" ? null : "next")}
+                  onToggle={() => toggleFeedbackSection("next")}
+                  isLoading={nextPracticeLoading}
+                  aiGenerated={nextPracticeAI !== null}
                 />
               </div>
 
@@ -585,11 +974,11 @@ export default function Practice() {
                   <button
                     onClick={() => {
                       setShowExplanationChat(false);
-                      // Check frustration after chat
+                      // After the chat, route through Coach if frustration was
+                      // flagged earlier; otherwise just advance.
                       if (frustrationTopic) {
-                        setShowFrustrationIntervention(true);
+                        callCoach();
                       } else {
-                        setFrustrationTopic(null);
                         goToNextQuestion();
                       }
                     }}
@@ -646,9 +1035,13 @@ interface FeedbackLayerProps {
   color: "blue" | "purple" | "amber";
   isExpanded: boolean;
   onToggle: () => void;
+  /** True while an agent is fetching personalized content. */
+  isLoading?: boolean;
+  /** True once AI content has replaced the static fallback. */
+  aiGenerated?: boolean;
 }
 
-function FeedbackLayer({ icon, title, content, color, isExpanded, onToggle }: FeedbackLayerProps) {
+function FeedbackLayer({ icon, title, content, color, isExpanded, onToggle, isLoading, aiGenerated }: FeedbackLayerProps) {
   const colorStyles = {
     blue: { bg: "bg-blue-50", border: "border-blue-100", iconBg: "bg-blue-100", iconText: "text-tz-blue", title: "text-blue-900", content: "text-blue-800" },
     purple: { bg: "bg-purple-50", border: "border-purple-100", iconBg: "bg-purple-100", iconText: "text-purple-600", title: "text-purple-900", content: "text-purple-800" },
@@ -667,13 +1060,26 @@ function FeedbackLayer({ icon, title, content, color, isExpanded, onToggle }: Fe
         </div>
         <div className="flex-1 min-w-0">
           <span className={cn("font-semibold text-xs sm:text-sm", styles.title)}>{title}</span>
+          {aiGenerated && (
+            <span className="ml-2 text-[10px] uppercase tracking-wide font-semibold text-tz-gray-400">
+              · AI
+            </span>
+          )}
         </div>
-        <ChevronDown className={cn("w-4 h-4 sm:w-5 sm:h-5 transition-transform flex-shrink-0", styles.iconText, isExpanded && "rotate-180")} />
+        {isLoading ? (
+          <Loader2 className={cn("w-4 h-4 sm:w-5 sm:h-5 animate-spin flex-shrink-0", styles.iconText)} />
+        ) : (
+          <ChevronDown className={cn("w-4 h-4 sm:w-5 sm:h-5 transition-transform flex-shrink-0", styles.iconText, isExpanded && "rotate-180")} />
+        )}
       </button>
       {isExpanded && (
         <div className="px-3 pb-3 sm:px-4 sm:pb-4">
-          <div className={cn("pl-10 sm:pl-12 text-xs sm:text-sm leading-relaxed sat-content", styles.content)}>
-            <MathText text={content} />
+          <div className={cn("pl-10 sm:pl-12 text-xs sm:text-sm leading-relaxed whitespace-pre-line sat-content", styles.content)}>
+            {isLoading && !content ? (
+              <span className="text-tz-gray-400">Tutor is thinking…</span>
+            ) : (
+              <MathText text={content} />
+            )}
           </div>
         </div>
       )}

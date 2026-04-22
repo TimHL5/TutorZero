@@ -261,12 +261,13 @@ export function useStudentProgress() {
 
     setProgress(updatedProgress);
 
-    // Sync to server in background
+    // Sync to server in background. Capture the server-issued session ID so
+    // callers (Practice.tsx) can fan it out to downstream agents like Reviewer.
     setIsSyncing(true);
+    let serverSessionId: number | null = null;
     try {
       if (isAuthenticated) {
-        // Use authenticated endpoint
-        await fetch("/api/user/sessions", {
+        const res = await fetch("/api/user/sessions", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           credentials: "include",
@@ -276,7 +277,12 @@ export function useStudentProgress() {
             timeSpentSeconds
           })
         });
-        
+        if (res.ok) {
+          const json = await res.json().catch(() => null);
+          const id = json?.data?.sessionId;
+          if (typeof id === "number") serverSessionId = id;
+        }
+
         // If this is a diagnostic, also update the user profile
         if (type === "diagnostic") {
           await fetch("/api/user/diagnostic", {
@@ -290,8 +296,7 @@ export function useStudentProgress() {
           });
         }
       } else {
-        // Use anonymous endpoint
-        await fetch("/api/anonymous/sessions", {
+        const res = await fetch("/api/anonymous/sessions", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -301,7 +306,12 @@ export function useStudentProgress() {
             timeSpentSeconds
           })
         });
-        
+        if (res.ok) {
+          const json = await res.json().catch(() => null);
+          const id = json?.data?.sessionId;
+          if (typeof id === "number") serverSessionId = id;
+        }
+
         // If this is a diagnostic, also save diagnostic results
         if (type === "diagnostic") {
           await fetch("/api/anonymous/diagnostic", {
@@ -320,6 +330,8 @@ export function useStudentProgress() {
     } finally {
       setIsSyncing(false);
     }
+
+    return { sessionId: serverSessionId };
   }, [progress, isAuthenticated]);
 
   // Mark diagnostic as complete

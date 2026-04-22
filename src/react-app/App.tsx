@@ -19,6 +19,8 @@ import AITutor from "@/react-app/pages/AITutor";
 import Progress from "@/react-app/pages/Progress";
 import StudyPlan from "@/react-app/pages/StudyPlan";
 import Pricing from "@/react-app/pages/Pricing";
+import AgentLog from "@/react-app/pages/AgentLog";
+import AIPlan from "@/react-app/pages/AIPlan";
 
 // MathJax config — enables TeX and MathML input, rendered with CHTML output.
 // Scripts load from the default CDN on first use (no bundle impact).
@@ -80,6 +82,8 @@ export default function App() {
             <Route path="/progress" element={<Progress />} />
             <Route path="/study-plan" element={<StudyPlan />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="/admin/agents" element={<AgentLog />} />
+            <Route path="/plan" element={<AIPlan />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Router>

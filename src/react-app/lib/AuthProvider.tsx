@@ -19,6 +19,10 @@ export interface UserProfile {
   mathConfidence?: number;
   readingConfidence?: number;
   studyHoursPerWeek?: string;
+  /** Server-authoritative predicted scores — Diagnostician seeds them,
+   * Reviewer updates them after each practice session. */
+  estimatedMathScore?: number;
+  estimatedRWScore?: number;
 }
 
 export interface TutorZeroUser {

@@ -88,9 +88,9 @@ export default function AITutor() {
             if (progressData.success && progressData.data) {
               const { topicProgress, currentStreak, sessions } = progressData.data;
               
-              const weakAreas = Object.entries(topicProgress)
-                .filter(([, data]: [string, TopicProgressEntry]) => 
-                  data.questionsAttempted >= 3 && 
+              const weakAreas = Object.entries(topicProgress as Record<string, TopicProgressEntry>)
+                .filter(([, data]) =>
+                  data.questionsAttempted >= 3 &&
                   (data.questionsCorrect / data.questionsAttempted) < 0.7
                 )
                 .map(([topic]) => topic);
@@ -126,9 +126,9 @@ export default function AITutor() {
             if (progressData.success && progressData.data) {
               const { topicProgress, currentStreak, sessions } = progressData.data;
               
-              const weakAreas = Object.entries(topicProgress)
-                .filter(([, data]: [string, TopicProgressEntry]) => 
-                  data.questionsAttempted >= 3 && 
+              const weakAreas = Object.entries(topicProgress as Record<string, TopicProgressEntry>)
+                .filter(([, data]) =>
+                  data.questionsAttempted >= 3 &&
                   (data.questionsCorrect / data.questionsAttempted) < 0.7
                 )
                 .map(([topic]) => topic);

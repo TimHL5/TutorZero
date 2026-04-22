@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { MessageCircle, Send, Loader2, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { MessageCircle, Send, Loader2, X, Sparkles } from "lucide-react";
 import { ChatMarkdown } from "@/react-app/components/ui/ChatMarkdown";
 import { Button } from "@/react-app/components/ui/button";
 import type { Question } from "@/data/questions";
@@ -8,12 +8,17 @@ import { cn } from "@/react-app/lib/utils";
 interface ExplanationChatProps {
   question: Question;
   selectedIndex: number;
+  /** Pre-filled self-explanation. When present the reflection stage is
+   * skipped and the chat opens directly. */
+  initialSelfExplanation?: string;
 }
 
 interface ChatMessage {
   role: "user" | "assistant";
   content: string;
 }
+
+type ChatStage = "reflect" | "chat";
 
 // Get browser ID for anonymous users
 function getBrowserId(): string {
@@ -30,15 +35,92 @@ function getBrowserId(): string {
 // monthly/daily quotas now that everyone is treated as "pro".
 const MAX_MESSAGES_PER_PROBLEM = 10;
 
-export function ExplanationChat({ question, selectedIndex }: ExplanationChatProps) {
+export function ExplanationChat({
+  question,
+  selectedIndex,
+  initialSelfExplanation,
+}: ExplanationChatProps) {
   const [isOpen, setIsOpen] = useState(false);
+  // Skip reflection if caller pre-filled a self-explanation.
+  const [stage, setStage] = useState<ChatStage>(
+    initialSelfExplanation && initialSelfExplanation.trim().length > 0 ? "chat" : "reflect"
+  );
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Reflection-stage state
+  const [reflection, setReflection] = useState(initialSelfExplanation ?? "");
+  const [reflectionLoading, setReflectionLoading] = useState(false);
+  const [reflectionError, setReflectionError] = useState<string | null>(null);
+
   const selectedLetter = String.fromCharCode(65 + selectedIndex);
   const correctLetter = String.fromCharCode(65 + question.correctIndex);
+
+  const callExplainer = async (studentExplanation: string) => {
+    setReflectionLoading(true);
+    setReflectionError(null);
+    try {
+      const response = await fetch("/api/agents/explainer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          questionId: question.questionId,
+          stem: question.questionText,
+          passage: question.passageText,
+          options: question.options,
+          correctAnswer: correctLetter,
+          studentAnswer: selectedLetter,
+          officialRationale: question.explainWhy,
+          studentExplanation,
+          topic: question.topic,
+          skill: question.skill,
+          difficulty: question.difficulty,
+        }),
+      });
+      if (!response.ok) throw new Error("Explainer failed");
+      const data = await response.json();
+      const ex = data.explainer as {
+        response: string;
+        misconception_type: string;
+        specific_fix: string;
+        follow_up_practice: string;
+      };
+      // Seed the chat with the student's own explanation + the Explainer's
+      // reply so the follow-up conversation has context for /api/chat.
+      const seeded: ChatMessage[] = [
+        { role: "user", content: studentExplanation },
+        {
+          role: "assistant",
+          content:
+            `${ex.response}\n\n**Try this:** ${ex.specific_fix}\n\n` +
+            `**Next step:** ${ex.follow_up_practice}`,
+        },
+      ];
+      setMessages(seeded);
+      setStage("chat");
+    } catch (err) {
+      console.error("Explainer call failed:", err);
+      setReflectionError(
+        err instanceof Error ? err.message : "Could not get a response. Try again."
+      );
+    } finally {
+      setReflectionLoading(false);
+    }
+  };
+
+  const handleSubmitReflection = () => {
+    const trimmed = reflection.trim();
+    if (!trimmed || reflectionLoading) return;
+    callExplainer(trimmed);
+  };
+
+  const handleSkipReflection = () => {
+    setReflectionError(null);
+    setStage("chat");
+  };
 
   const handleSendMessage = async () => {
     if (!input.trim() || isLoading) return;
@@ -124,6 +206,21 @@ export function ExplanationChat({ question, selectedIndex }: ExplanationChatProp
           Still confused? Ask me
         </Button>
       </div>
+    );
+  }
+
+  if (stage === "reflect") {
+    return (
+      <ReflectStage
+        reflection={reflection}
+        setReflection={setReflection}
+        loading={reflectionLoading}
+        error={reflectionError}
+        selectedLetter={selectedLetter}
+        onSubmit={handleSubmitReflection}
+        onSkip={handleSkipReflection}
+        onClose={() => setIsOpen(false)}
+      />
     );
   }
 
@@ -236,5 +333,106 @@ export function ExplanationChat({ question, selectedIndex }: ExplanationChatProp
         </div>
       </div>
     </>
+  );
+}
+
+// ─── Reflection stage ───────────────────────────────────────────────────
+// Split out so the textarea keeps a stable ref, which we auto-focus on
+// mount. Cmd/Ctrl+Enter submits without leaving the keyboard.
+
+interface ReflectStageProps {
+  reflection: string;
+  setReflection: (v: string) => void;
+  loading: boolean;
+  error: string | null;
+  selectedLetter: string;
+  onSubmit: () => void;
+  onSkip: () => void;
+  onClose: () => void;
+}
+
+function ReflectStage({
+  reflection,
+  setReflection,
+  loading,
+  error,
+  selectedLetter,
+  onSubmit,
+  onSkip,
+  onClose,
+}: ReflectStageProps) {
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  useEffect(() => {
+    textareaRef.current?.focus();
+  }, []);
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === "Enter") {
+      e.preventDefault();
+      if (reflection.trim() && !loading) onSubmit();
+    }
+  };
+
+  return (
+    <div className="mt-4 border border-blue-200 rounded-lg bg-white shadow-sm">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-blue-100 bg-gradient-to-r from-blue-50 to-white">
+        <div className="flex items-center gap-2">
+          <div className="p-1.5 rounded-lg bg-blue-100">
+            <Sparkles className="w-4 h-4 text-blue-600" />
+          </div>
+          <div>
+            <h3 className="font-semibold text-sm text-slate-900">Tell me your thinking (optional)</h3>
+            <p className="text-xs text-slate-500">Share it and I'll explain where it went sideways — or skip to jump straight into chat.</p>
+          </div>
+        </div>
+        <button
+          onClick={onClose}
+          className="p-1 hover:bg-blue-100 rounded-lg transition-colors"
+          aria-label="Close"
+        >
+          <X className="w-4 h-4 text-slate-500" />
+        </button>
+      </div>
+      <div className="p-4 space-y-3">
+        <textarea
+          ref={textareaRef}
+          value={reflection}
+          onChange={(e) => setReflection(e.target.value)}
+          onKeyDown={onKeyDown}
+          placeholder={`Why ${selectedLetter}? (⌘/Ctrl+Enter to send)`}
+          rows={2}
+          disabled={loading}
+          className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-slate-100 resize-y"
+        />
+        {error && <p className="text-xs text-red-600">{error}</p>}
+        <div className="flex flex-col-reverse sm:flex-row gap-2">
+          <button
+            type="button"
+            onClick={onSkip}
+            disabled={loading}
+            className="flex-1 sm:flex-none sm:min-w-[140px] px-4 py-2.5 text-sm font-medium border border-slate-300 text-slate-700 hover:bg-slate-50 rounded-lg transition-colors disabled:opacity-60"
+          >
+            Skip — just open chat
+          </button>
+          <Button
+            onClick={onSubmit}
+            disabled={!reflection.trim() || loading}
+            className="flex-1 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 disabled:text-slate-500"
+          >
+            {loading ? (
+              <>
+                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                Reading…
+              </>
+            ) : (
+              <>
+                <Sparkles className="w-4 h-4 mr-2" />
+                Explain my thinking
+              </>
+            )}
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 }

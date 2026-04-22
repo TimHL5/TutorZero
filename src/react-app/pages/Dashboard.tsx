@@ -8,7 +8,7 @@ import {
   DOMAINS_IN_ORDER,
   SKILLS_BY_DOMAIN,
 } from "@/react-app/lib/sat-taxonomy";
-import { TrendingUp, TrendingDown, Minus, Target, Clock, Flame, AlertTriangle, Calculator, BookOpen, BarChart2, ChevronRight } from "lucide-react";
+import { TrendingUp, TrendingDown, Minus, Target, Clock, Flame, AlertTriangle, Calculator, BookOpen, BarChart2, ChevronRight, Sparkles } from "lucide-react";
 import { cn } from "@/react-app/lib/utils";
 
 export default function Dashboard() {
@@ -24,6 +24,74 @@ export default function Dashboard() {
     getSkillCounts().then((c) => {
       if (!cancelled) setCounts(c);
     });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Recent insights — latest non-dismissed Reviewer patterns. Auth-only;
+  // anonymous users get an empty array from the endpoint. Refreshed on mount;
+  // no polling — the dashboard isn't a live feed.
+  interface RecentInsight {
+    review_id: number;
+    pattern: string;
+    severity: string;
+    type: string;
+    evidence: string;
+    created_at: string;
+  }
+  const [recentInsights, setRecentInsights] = useState<RecentInsight[]>([]);
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/reviewer/recent-insights", { credentials: "include" })
+      .then((r) => (r.ok ? r.json() : { insights: [] }))
+      .then((j) => {
+        if (cancelled) return;
+        if (Array.isArray(j?.insights)) setRecentInsights(j.insights);
+      })
+      .catch(() => {
+        // Silent fail — insights are nice-to-have, not required.
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Today's planned session — pulled from the active study plan. We pick the
+  // first session for the current weekday name; if there's none we render a
+  // CTA to /plan instead.
+  interface TodaySession {
+    durationMin: number;
+    focusSkill: string;
+    focusSkillDisplay: string;
+    rationale: string;
+  }
+  const [todaySession, setTodaySession] = useState<TodaySession | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/plan/active", { credentials: "include" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        if (cancelled || !j?.plan?.plan_json?.week) return;
+        const weekday = new Date()
+          .toLocaleDateString("en-US", { weekday: "long" })
+          .toLowerCase();
+        const day = j.plan.plan_json.week.find(
+          (d: { day: string }) => d.day === weekday
+        );
+        const first = day?.sessions?.[0];
+        if (first) {
+          setTodaySession({
+            durationMin: first.durationMin,
+            focusSkill: first.focusSkill,
+            focusSkillDisplay: first.focusSkillDisplay ?? first.focusSkill,
+            rationale: first.rationale ?? "",
+          });
+        }
+      })
+      .catch(() => {
+        // Anonymous user or no plan — stay quiet.
+      });
     return () => {
       cancelled = true;
     };
@@ -62,8 +130,14 @@ export default function Dashboard() {
   const profile = user?.profile;
   const displayName = profile?.displayName || user?.google_user_data?.given_name || "Student";
 
-  // Calculate stats
-  const estimatedTotal = progress.estimatedMathScore + progress.estimatedRWScore;
+  // Calculate stats. Server-authoritative predicted scores live on the profile
+  // (Diagnostician seeds them, Reviewer updates them post-session). Fall back
+  // to the client-side progress estimate for anonymous / pre-diagnostic users.
+  const serverMath = profile?.estimatedMathScore;
+  const serverRW = profile?.estimatedRWScore;
+  const estimatedMath = serverMath ?? progress.estimatedMathScore;
+  const estimatedRW = serverRW ?? progress.estimatedRWScore;
+  const estimatedTotal = estimatedMath + estimatedRW;
   const baselineScore = progress.diagnosticCompleted ? 800 : null;
   const scoreChange = baselineScore ? estimatedTotal - baselineScore : null;
 
@@ -172,6 +246,76 @@ export default function Dashboard() {
             }
           />
         </div>
+
+        {/* Today's session — pulled from the active study plan. Hidden when
+            there's no active plan or no session for today. */}
+        {todaySession && (
+          <div className="mb-6 sm:mb-8">
+            <button
+              onClick={() => navigate(`/practice?skill=${encodeURIComponent(todaySession.focusSkill)}`)}
+              className="w-full text-left rounded-xl bg-tz-navy text-white p-4 sm:p-5 shadow-sm hover:bg-[#0c1a36] transition-colors"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <div className="text-xs uppercase tracking-wide text-white/60">Today's session</div>
+                  <div className="text-base sm:text-lg font-semibold mt-0.5 truncate">
+                    {todaySession.durationMin} min · {topicDisplayNames[todaySession.focusSkill] ?? todaySession.focusSkillDisplay}
+                  </div>
+                  {todaySession.rationale && (
+                    <p className="text-xs sm:text-sm text-white/70 mt-1 line-clamp-2">
+                      {todaySession.rationale}
+                    </p>
+                  )}
+                </div>
+                <span className="inline-flex items-center gap-1 rounded-full bg-tz-orange px-3 py-1.5 text-sm font-medium text-white flex-shrink-0">
+                  Start <ChevronRight className="w-4 h-4" />
+                </span>
+              </div>
+            </button>
+          </div>
+        )}
+
+        {/* Recent insights — pulled from non-dismissed Reviewer patterns */}
+        {recentInsights.length > 0 && (
+          <div className="mb-8 sm:mb-10">
+            <h3 className="text-lg sm:text-h3 text-tz-navy mb-3 sm:mb-4 flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-tz-orange" />
+              Recent insights
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {recentInsights.map((ins) => {
+                const sevTone =
+                  ins.severity === "high" ? "border-red-200 bg-red-50"
+                  : ins.severity === "medium" ? "border-orange-200 bg-orange-50"
+                  : "border-blue-200 bg-blue-50";
+                const ago = (() => {
+                  const ms = Date.now() - new Date(ins.created_at).getTime();
+                  const days = Math.floor(ms / 86400000);
+                  if (days < 1) return "today";
+                  if (days === 1) return "yesterday";
+                  if (days < 7) return `${days}d ago`;
+                  return new Date(ins.created_at).toLocaleDateString();
+                })();
+                return (
+                  <article
+                    key={`${ins.review_id}-${ins.pattern}`}
+                    className={cn("border rounded-lg p-3 sm:p-4", sevTone)}
+                  >
+                    <div className="text-xs uppercase tracking-wide text-tz-gray-500 mb-1">
+                      {ins.type.replace("_", " ")} · {ago}
+                    </div>
+                    <div className="text-sm font-semibold text-tz-navy">{ins.pattern}</div>
+                    {ins.evidence && (
+                      <p className="text-xs text-tz-gray-600 mt-1.5 leading-snug line-clamp-3">
+                        {ins.evidence}
+                      </p>
+                    )}
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         {/* Start Practicing */}
         <div className="mb-8 sm:mb-10">

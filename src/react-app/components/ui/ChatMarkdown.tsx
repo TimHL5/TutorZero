@@ -1,8 +1,22 @@
 import ReactMarkdown from "react-markdown";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+
+// remark-math only recognizes $...$ and $$...$$ out of the box. OpenAI models
+// often emit \( … \) and \[ … \] despite prompt instructions. Normalize to
+// the dollar form so KaTeX still renders them.
+function normalizeMathDelimiters(s: string): string {
+  return s
+    .replace(/\\\[([\s\S]+?)\\\]/g, (_m, body) => `$$${body}$$`)
+    .replace(/\\\(([\s\S]+?)\\\)/g, (_m, body) => `$${body}$`);
+}
 
 export function ChatMarkdown({ content }: { content: string }) {
+  const normalized = normalizeMathDelimiters(content);
   return (
     <ReactMarkdown
+      remarkPlugins={[remarkMath]}
+      rehypePlugins={[[rehypeKatex, { throwOnError: false, output: "html", strict: "ignore" }]]}
       components={{
         p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
         strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
@@ -30,7 +44,7 @@ export function ChatMarkdown({ content }: { content: string }) {
         ),
       }}
     >
-      {content}
+      {normalized}
     </ReactMarkdown>
   );
 }

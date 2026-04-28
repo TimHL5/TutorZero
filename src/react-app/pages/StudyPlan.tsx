@@ -59,7 +59,12 @@ export default function StudyPlan() {
 
   const profile = user?.profile;
   const testDate = profile?.testDate ? new Date(profile.testDate) : null;
-  const currentScore = progress.estimatedMathScore + progress.estimatedRWScore;
+  // Match Dashboard/Progress: prefer server-authoritative profile estimate,
+  // fall back to client-side progress only when the server hasn't filled it
+  // in. Otherwise StudyPlan's "Current" can disagree with the other pages.
+  const estimatedMath = profile?.estimatedMathScore ?? progress.estimatedMathScore;
+  const estimatedRW = profile?.estimatedRWScore ?? progress.estimatedRWScore;
+  const currentScore = estimatedMath + estimatedRW;
   const targetScore = profile?.targetScore || 1400;
 
   // Calculate days until test

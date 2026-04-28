@@ -294,10 +294,13 @@ export default function StudyPlan() {
                               <Circle className="w-3.5 h-3.5 text-tz-gray-300 hover:text-tz-blue" />
                             )}
                           </button>
-                          <span className={cn(
-                            "text-small truncate",
-                            block.completed ? "text-green-700 line-through" : "text-tz-navy"
-                          )}>
+                          <span
+                            title={topicDisplayNames[block.topic] || block.topic}
+                            className={cn(
+                              "text-small truncate",
+                              block.completed ? "text-green-700 line-through" : "text-tz-navy"
+                            )}
+                          >
                             {topicDisplayNames[block.topic] || block.topic}
                           </span>
                         </div>

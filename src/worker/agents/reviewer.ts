@@ -185,7 +185,10 @@ function isNextFocus(v: unknown): v is ReviewerNextFocus {
 
 export const reviewerAgent: AgentCall<ReviewerInput, ReviewerOutput> = {
   name: "reviewer",
-  model: process.env.OPENAI_MODEL_STRONG || "gpt-4o",
+  // Default to gpt-4o-mini because basic OpenAI projects (without Tier 1+
+  // gpt-4o access) get a 403 "model_not_found" otherwise. Override with
+  // OPENAI_MODEL_STRONG=gpt-4o (or any other model) once the key has access.
+  model: process.env.OPENAI_MODEL_STRONG || "gpt-4o-mini",
   responseFormat: "json_object",
   temperature: 0.3,
   maxTokens: 1500,

@@ -83,14 +83,21 @@ function mapSupabaseUser(
 }
 
 async function fetchProfile(): Promise<UserProfile | undefined> {
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), 5000);
   try {
-    const response = await fetch("/api/users/me", { credentials: "include" });
+    const response = await fetch("/api/users/me", {
+      credentials: "include",
+      signal: ctl.signal,
+    });
     if (response.ok) {
       const data = await response.json();
       return data.profile;
     }
   } catch {
-    // Profile not found yet - new user
+    // Timeout, network error, or non-OK — treat as "no profile yet"
+  } finally {
+    clearTimeout(t);
   }
   return undefined;
 }
@@ -99,17 +106,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<TutorZeroUser | null>(null);
   const [isPending, setIsPending] = useState(true);
 
-  const loadUser = useCallback(async (sbUser: SupabaseUser) => {
-    const profile = await fetchProfile();
-    setUser(mapSupabaseUser(sbUser, profile));
+  const loadUser = useCallback((sbUser: SupabaseUser) => {
+    setUser(mapSupabaseUser(sbUser));
+    fetchProfile().then((profile) => {
+      if (profile) {
+        setUser((prev) => (prev ? mapSupabaseUser(sbUser, profile) : prev));
+      }
+    });
   }, []);
 
   useEffect(() => {
     // Get initial session
-    supabase.auth.getSession().then(async ({ data: { session } }) => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
       if (session?.user) {
         setAccessTokenCookie(session.access_token, session.expires_in);
-        await loadUser(session.user);
+        loadUser(session.user);
       }
       setIsPending(false);
     });
@@ -117,7 +128,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // Listen for auth changes
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(async (event, session) => {
+    } = supabase.auth.onAuthStateChange((event, session) => {
       if (session?.access_token) {
         setAccessTokenCookie(session.access_token, session.expires_in);
       } else {
@@ -130,7 +141,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         event === "USER_UPDATED"
       ) {
         if (session?.user) {
-          await loadUser(session.user);
+          loadUser(session.user);
         }
       } else if (event === "SIGNED_OUT") {
         setUser(null);

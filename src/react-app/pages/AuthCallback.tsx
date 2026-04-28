@@ -19,7 +19,14 @@ export default function AuthCallback() {
     };
 
     handleCallback();
-  }, [exchangeCodeForSessionToken]);
+
+    const timeout = setTimeout(() => {
+      if (!user) {
+        setError("Sign in is taking too long. Please try again.");
+      }
+    }, 10000);
+    return () => clearTimeout(timeout);
+  }, [exchangeCodeForSessionToken, user]);
 
   // Once user is available, redirect based on onboarding/diagnostic status
   useEffect(() => {

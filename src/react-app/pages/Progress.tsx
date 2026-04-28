@@ -371,7 +371,7 @@ export default function Progress() {
                       </div>
                       
                       {/* Line chart */}
-                      <svg className="w-full h-[calc(100%-2rem)]" preserveAspectRatio="none">
+                      <svg className="w-full h-[calc(100%-2rem)]" viewBox="0 0 100 100" preserveAspectRatio="none">
                         {/* Historical line */}
                         <polyline
                           fill="none"
@@ -384,12 +384,12 @@ export default function Progress() {
                             .map((p, i) => {
                               const x = (i / (trajectoryData.points.length - 1)) * 100;
                               const y = 100 - ((p.score - 900) / (targetScore - 900 + 100)) * 100;
-                              return `${x}%,${y}%`;
+                              return `${x},${y}`;
                             })
                             .join(' ')
                           }
                         />
-                        
+
                         {/* Projected line */}
                         <polyline
                           fill="none"
@@ -404,7 +404,7 @@ export default function Progress() {
                             .map((p, i) => {
                               const x = ((i + scoreHistory.length - 1) / (trajectoryData.points.length - 1)) * 100;
                               const y = 100 - ((p.score - 900) / (targetScore - 900 + 100)) * 100;
-                              return `${x}%,${y}%`;
+                              return `${x},${y}`;
                             })
                             .join(' ')
                           }
@@ -417,9 +417,9 @@ export default function Progress() {
                           return (
                             <circle
                               key={i}
-                              cx={`${x}%`}
-                              cy={`${y}%`}
-                              r="5"
+                              cx={x}
+                              cy={y}
+                              r="2"
                               fill={p.isProjected ? "#00A651" : "#006BB6"}
                               stroke="white"
                               strokeWidth="2"

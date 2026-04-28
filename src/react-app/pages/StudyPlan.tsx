@@ -12,6 +12,8 @@ import {
   Plus,
   X,
   Sparkles,
+  Loader2,
+  Wand2,
 } from "lucide-react";
 import { useAuth } from "@/react-app/lib/AuthProvider";
 import { useStudentProgress } from "@/react-app/hooks/useStudentProgress";
@@ -39,6 +41,53 @@ const DEFAULT_TOPIC_ROTATION = [
 ];
 
 const DURATION_OPTIONS = [15, 20, 25, 30, 45, 60];
+
+// Maps the onboarding/Settings study-intensity choice to a numeric weekly hour
+// budget the planner agent expects. Keep aligned with Settings.tsx and
+// Onboarding.tsx — those write the string label, the planner needs the number.
+const STUDY_HOURS_BY_INTENSITY: Record<string, number> = {
+  light: 3,
+  moderate: 6,
+  intensive: 10,
+};
+
+// Shape returned by /api/agents/planner and /api/plan/active. Loosely typed
+// here so we can feature-detect missing fields rather than crash on parse.
+type PlannerSession = {
+  id?: string;
+  durationMin?: number;
+  focusSkill?: string;
+  focusSkillDisplay?: string;
+  rationale?: string;
+};
+type PlannerDay = {
+  day?: string;
+  date?: string;
+  sessions?: PlannerSession[];
+};
+type PlannerOutput = { week?: PlannerDay[] };
+
+// Convert a planner-agent week to the local DayPlan shape. Defensive: any
+// missing field falls back to a safe value so a partially-malformed response
+// doesn't blank the whole UI.
+function plannerToDayPlan(week: PlannerDay[], fallbackStartIso: string): DayPlan[] {
+  return week.slice(0, 7).map((d, i) => {
+    const dateIso = (typeof d.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d.date))
+      ? d.date
+      : (() => {
+          const fb = new Date(fallbackStartIso + "T00:00:00");
+          fb.setDate(fb.getDate() + i);
+          return isoDate(fb);
+        })();
+    const blocks: StudyBlock[] = (d.sessions ?? []).map((s, j) => ({
+      id: typeof s.id === "string" && s.id.length > 0 ? s.id : `${dateIso}-${j}-${Math.random().toString(36).slice(2, 6)}`,
+      topic: typeof s.focusSkill === "string" && s.focusSkill.length > 0 ? s.focusSkill : "algebra",
+      duration: typeof s.durationMin === "number" && s.durationMin > 0 ? s.durationMin : 25,
+      completed: false,
+    }));
+    return { date: dateIso, blocks };
+  });
+}
 
 function isoDate(d: Date): string {
   return d.toISOString().split("T")[0];
@@ -105,6 +154,9 @@ export default function StudyPlan() {
   const [draggedBlock, setDraggedBlock] = useState<{ dayIndex: number; blockIndex: number } | null>(null);
   const [dragOverDay, setDragOverDay] = useState<number | null>(null);
   const [pickerDay, setPickerDay] = useState<number | null>(null);
+  const [generating, setGenerating] = useState(false);
+  const [genError, setGenError] = useState<string | null>(null);
+  const [autoLoadDone, setAutoLoadDone] = useState(false);
 
   const profile = user?.profile;
   const userId = user?.id;
@@ -124,6 +176,106 @@ export default function StudyPlan() {
   useEffect(() => {
     saveWeekToStorage(userId, weekStartIso, weekPlan);
   }, [userId, weekStartIso, weekPlan]);
+
+  // Generate a fresh plan from the planner agent. Uses the user's testDate
+  // and study intensity from their profile (set in Onboarding / Settings).
+  // The agent automatically pulls the latest diagnostic weaknesses on the
+  // server side via fetchLatestWeaknesses(). Result replaces the current
+  // week and is persisted to localStorage so it survives reloads.
+  const generateFromDiagnostic = useCallback(async () => {
+    if (!user) {
+      setGenError("Sign in to generate a personalized plan from your diagnostic.");
+      return;
+    }
+    if (!profile?.testDate) {
+      setGenError("Add your SAT test date in Settings first.");
+      return;
+    }
+    const intensity = profile?.studyHoursPerWeek ?? "moderate";
+    const hoursPerWeek = STUDY_HOURS_BY_INTENSITY[intensity] ?? 6;
+
+    setGenerating(true);
+    setGenError(null);
+    const ctl = new AbortController();
+    const timer = setTimeout(() => ctl.abort(), 90_000);
+    try {
+      const res = await fetch("/api/agents/planner", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          testDate: profile.testDate,
+          hoursPerWeek,
+          weekStartDate: weekStartIso,
+        }),
+        signal: ctl.signal,
+      });
+      const json = await res.json().catch(() => null);
+      if (!res.ok) {
+        setGenError(json?.error ?? "Plan generation failed");
+        return;
+      }
+      const week = (json?.plan as PlannerOutput | undefined)?.week;
+      if (Array.isArray(week) && week.length > 0) {
+        const days = plannerToDayPlan(week, weekStartIso);
+        if (days.length === 7) {
+          setWeekPlan(days);
+          setWeekStartIso(days[0].date);
+          saveWeekToStorage(userId, days[0].date, days);
+        }
+      }
+    } catch (e) {
+      if (e instanceof DOMException && e.name === "AbortError") {
+        setGenError("Plan generation took too long. Please try again.");
+      } else {
+        setGenError(e instanceof Error ? e.message : "Plan generation failed");
+      }
+    } finally {
+      clearTimeout(timer);
+      setGenerating(false);
+    }
+  }, [user, profile?.testDate, profile?.studyHoursPerWeek, userId, weekStartIso]);
+
+  // First-visit hydration. For authed users with a testDate but no
+  // localStorage plan yet, try the persisted active plan from /api/plan/active
+  // (created by an earlier planner call). If there's no active plan either,
+  // auto-generate one from the diagnostic so the page is never empty for
+  // someone who's done onboarding. Anon users skip this entirely and keep
+  // the seeded rotation.
+  useEffect(() => {
+    if (autoLoadDone) return;
+    if (!user || !userId) return;
+    if (!profile?.testDate) return;
+    if (loadWeekFromStorage(userId, weekStartIso)) {
+      setAutoLoadDone(true);
+      return;
+    }
+
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("/api/plan/active", { credentials: "include" });
+        if (cancelled) return;
+        const json = res.ok ? await res.json().catch(() => null) : null;
+        const week = json?.plan?.plan_json?.week as PlannerDay[] | undefined;
+        if (Array.isArray(week) && week.length === 7) {
+          const days = plannerToDayPlan(week, weekStartIso);
+          setWeekPlan(days);
+          if (days[0]?.date) setWeekStartIso(days[0].date);
+          setAutoLoadDone(true);
+          return;
+        }
+      } catch {
+        // network error → fall through to generation
+      }
+      if (cancelled) return;
+      setAutoLoadDone(true);
+      generateFromDiagnostic();
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [user, userId, profile?.testDate, weekStartIso, autoLoadDone, generateFromDiagnostic]);
 
   const today = new Date();
   const daysUntilTest = testDate
@@ -344,6 +496,45 @@ export default function StudyPlan() {
             <span>{Math.max(0, Math.round(((currentScore - 400) / Math.max(1, targetScore - 400)) * 100))}% to goal</span>
             <span>{targetScore}</span>
           </div>
+        </div>
+
+        {/* Generated from your diagnostic */}
+        <div className="bg-tz-blue/5 border border-tz-blue/20 rounded-xl p-5 mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
+            <div className="flex items-center gap-2">
+              <Wand2 className="w-5 h-5 text-tz-blue" />
+              <h2 className="text-h3 text-tz-navy">Personalized plan</h2>
+            </div>
+            <button
+              onClick={generateFromDiagnostic}
+              disabled={generating}
+              className="inline-flex items-center justify-center gap-1.5 bg-tz-blue hover:bg-tz-navy disabled:bg-tz-gray-300 disabled:cursor-not-allowed text-white text-small font-medium rounded-lg px-3 py-2 transition-colors"
+            >
+              {generating ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Generating…
+                </>
+              ) : (
+                <>
+                  <Wand2 className="w-4 h-4" />
+                  {user ? "Regenerate from diagnostic" : "Sign in to generate"}
+                </>
+              )}
+            </button>
+          </div>
+          <p className="text-small text-tz-gray-600">
+            {user && profile?.testDate
+              ? "AI builds a 7-day plan from your latest diagnostic, target score, and study intensity. Edit anything; your changes save automatically."
+              : user
+              ? "Add your SAT test date in Settings, then we can build a plan from your latest diagnostic."
+              : "Sign in to get a plan tailored to your diagnostic results, target score, and weekly hours."}
+          </p>
+          {genError && (
+            <div className="mt-3 text-small text-red-600 bg-red-50 border border-red-200 rounded px-3 py-2">
+              {genError}
+            </div>
+          )}
         </div>
 
         {/* Suggested for you */}

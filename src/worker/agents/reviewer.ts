@@ -12,6 +12,7 @@
 // it clamps deltas + final scores even if the model drifts outside the rules.
 
 import type { AgentCall } from "./types";
+import { loadPrompt } from "./prompts/loader";
 
 export type SessionType = "diagnostic" | "practice" | "full_test";
 export type ConfidenceLevel = "guessing" | "somewhat" | "confident";
@@ -49,11 +50,24 @@ export interface ReviewerScores {
   calibration: number;
 }
 
+// Optional context that lets the summary connect to the student's bigger arc
+// (target score, days-to-test, streak). Coach uses an analogous shape — see
+// the THE MOTIVATOR'S JOB section in coach.md.
+export interface ReviewerStudentContext {
+  displayName?: string;
+  targetScore?: number;
+  testDate?: string;
+  daysUntilTest?: number;
+  streakDays?: number;
+  sessionsThisWeek?: number;
+}
+
 export interface ReviewerInput {
   session: ReviewerSessionMeta;
   attempts: ReviewerAttempt[];
   previousScores: ReviewerScores;
   previousWeaknesses?: string[];
+  studentContext?: ReviewerStudentContext;
 }
 
 export interface ReviewerPattern {
@@ -81,30 +95,6 @@ export interface ReviewerOutput {
   next_session_focus: ReviewerNextFocus;
   summary: string;
 }
-
-const SYSTEM_PROMPT = `You are an SAT coach reviewing a student's practice session. Analyze patterns, update score predictions, and recommend next focus.
-
-SCORE UPDATE LOGIC:
-- Start from previous scores
-- For each correct answer: +2 (easy) / +3 (medium) / +4 (hard)
-- For each wrong answer: -1 to -3 based on difficulty
-- Confidence-calibrated answers (right+confident, wrong+guessing) weight more
-- Cap deltas at ±20 per session to avoid whiplash
-- Floor 200, cap 800
-
-PATTERN DETECTION:
-- Pacing: time per question increasing/decreasing across session
-- Calibration: confidence matching outcomes better/worse than before
-- Topic: specific skill gaining or losing accuracy
-- Improvement: skills showing positive trend vs previous sessions
-- Misconception: multiple wrong answers sharing error pattern
-
-TONE:
-- Celebrate real progress (be specific, don't flatter)
-- Name patterns clearly
-- Suggest ONE focus for next session, not a laundry list
-
-RESPOND ONLY IN JSON.`;
 
 const VALID_SEVERITIES = new Set<PatternSeverity>(["high", "medium", "low"]);
 const VALID_TYPES = new Set<PatternType>([
@@ -195,13 +185,13 @@ function isNextFocus(v: unknown): v is ReviewerNextFocus {
 
 export const reviewerAgent: AgentCall<ReviewerInput, ReviewerOutput> = {
   name: "reviewer",
-  model: "gpt-4o-mini",
+  model: process.env.OPENAI_MODEL_STRONG || "gpt-4o",
   responseFormat: "json_object",
   temperature: 0.3,
   maxTokens: 1500,
-  systemPrompt: SYSTEM_PROMPT,
+  loadSystemPrompt: () => loadPrompt("reviewer"),
   buildUserPrompt: (input) => {
-    const { session, attempts, previousScores, previousWeaknesses } = input;
+    const { session, attempts, previousScores, previousWeaknesses, studentContext } = input;
     const accuracy = session.totalAttempts > 0
       ? Math.round((session.correctCount / session.totalAttempts) * 100)
       : 0;
@@ -209,7 +199,20 @@ export const reviewerAgent: AgentCall<ReviewerInput, ReviewerOutput> = {
       ? `\nPreviously flagged weak skills: ${previousWeaknesses.join(", ")}`
       : "";
 
-    return `SESSION META
+    // Render the optional student context as a CONTEXT block above SESSION
+    // META so the summary can reach for name/target/streak/test-date.
+    const ctxLines: string[] = [];
+    if (studentContext) {
+      if (studentContext.displayName) ctxLines.push(`displayName=${studentContext.displayName}`);
+      if (studentContext.targetScore != null) ctxLines.push(`targetScore=${studentContext.targetScore}`);
+      if (studentContext.testDate) ctxLines.push(`testDate=${studentContext.testDate}`);
+      if (studentContext.daysUntilTest != null) ctxLines.push(`daysUntilTest=${studentContext.daysUntilTest}`);
+      if (studentContext.streakDays != null) ctxLines.push(`streakDays=${studentContext.streakDays}`);
+      if (studentContext.sessionsThisWeek != null) ctxLines.push(`sessionsThisWeek=${studentContext.sessionsThisWeek}`);
+    }
+    const ctxBlock = ctxLines.length > 0 ? `STUDENT CONTEXT\n${ctxLines.join("\n")}\n\n` : "";
+
+    return `${ctxBlock}SESSION META
 type=${session.sessionType} topic=${session.topic ?? "mixed"} startedAt=${session.startedAt} endedAt=${session.endedAt}
 attempts=${session.totalAttempts} correct=${session.correctCount} accuracy=${accuracy}%
 

@@ -4,6 +4,7 @@
 // Always returns two buttons so the student keeps agency.
 
 import type { AgentCall } from "./types";
+import { loadPrompt } from "./prompts/loader";
 
 export type CoachIntervention =
   | "offer_easier"
@@ -26,6 +27,18 @@ export interface CoachRecentAttempt {
   confidence: string;
 }
 
+// Optional student context that lets the message connect to the bigger arc
+// (target score, days-to-test, streak) — see THE MOTIVATOR'S JOB section in
+// coach.md. Mirrors ReviewerStudentContext.
+export interface CoachStudentContext {
+  displayName?: string;
+  targetScore?: number;
+  currentPredictedScore?: number;
+  testDate?: string;
+  daysUntilTest?: number;
+  streakDays?: number;
+}
+
 export interface CoachInput {
   recentAttempts: CoachRecentAttempt[];
   currentQuestion: {
@@ -42,6 +55,7 @@ export interface CoachInput {
   sessionAccuracy?: number;
   /** Accuracy on the current question's skill so far this session, 0–100. */
   skillAccuracy?: number;
+  studentContext?: CoachStudentContext;
 }
 
 export interface CoachAction {
@@ -55,39 +69,6 @@ export interface CoachOutput {
   primary_action: CoachAction;
   secondary_action: CoachAction;
 }
-
-const SYSTEM_PROMPT = `You are a supportive SAT tutor watching a student struggle. Based on their recent attempt pattern, decide the best intervention. Respect the student's autonomy — always offer a choice.
-
-INTERVENTION GUIDE:
-- offer_easier: 3+ wrong in a row on same skill — drop difficulty.
-- switch_topic: on one topic > 15 min AND accuracy is dropping.
-- take_break: session > 45 min OR time-per-question is doubling.
-- keep_pushing: student is close (mix of right/wrong, improving) — encourage with specifics.
-- review_concept: wrong answers share a misconception pattern — suggest they try the concept explainer first.
-
-USE THE NUMBERS. Every message MUST cite at least one real number or name from the input. "You've been working hard" is a FAIL — always say *on what*, *for how long*, or *how many wrong*. Use the student-facing skill display name, not the slug.
-
-VOICE:
-- Warm, direct, never condescending.
-- Never "I know this is tough" without evidence.
-- Offer agency. Frame both buttons as legitimate paths.
-
-EXAMPLES OF THE RIGHT VOICE:
-- "You've missed the last 3 Linear equations in one variable questions in 6 minutes. That's a sign the rule-switching is getting tangled — want to drop to the easier pool and rebuild pattern?"
-- "You're 47 minutes in and your time-per-question has doubled from 45s to 1m40s. Pause for 2 min? You'll come back sharper."
-- "You just flipped a wrong streak: 2 wrong on Inferences, then correct. That's the pattern we want. Keep going, or switch if you'd like a break from this passage style."
-
-BAD (too generic) — do NOT produce:
-- "You're working hard."
-- "Great effort so far!"
-- "This topic seems difficult."
-
-ACTION SLUGS — STRICT.
-Both primary_action.action and secondary_action.action MUST be one of exactly these five strings:
-"offer_easier", "switch_topic", "take_break", "keep_pushing", "review_concept".
-Do not invent slugs like "continue_topic" or "continue_session". The primary_action.action should match the intervention; the secondary_action.action should be a different slug from the same five (the student's alternative).
-
-RESPOND ONLY IN JSON.`;
 
 function summarizeAttempts(input: CoachInput): string {
   const lines: string[] = [];
@@ -145,9 +126,23 @@ export const coachAgent: AgentCall<CoachInput, CoachOutput> = {
   responseFormat: "json_object",
   temperature: 0.2,
   maxTokens: 700,
-  systemPrompt: SYSTEM_PROMPT,
+  loadSystemPrompt: () => loadPrompt("coach"),
   buildUserPrompt: (input) => {
-    return `Student signal:
+    // Render typed student context as a STUDENT block above the session
+    // signal so the message can name stakes (target, test date, streak).
+    const ctx = input.studentContext;
+    const ctxLines: string[] = [];
+    if (ctx) {
+      if (ctx.displayName) ctxLines.push(`displayName=${ctx.displayName}`);
+      if (ctx.targetScore != null) ctxLines.push(`targetScore=${ctx.targetScore}`);
+      if (ctx.currentPredictedScore != null) ctxLines.push(`currentPredictedScore=${ctx.currentPredictedScore}`);
+      if (ctx.testDate) ctxLines.push(`testDate=${ctx.testDate}`);
+      if (ctx.daysUntilTest != null) ctxLines.push(`daysUntilTest=${ctx.daysUntilTest}`);
+      if (ctx.streakDays != null) ctxLines.push(`streakDays=${ctx.streakDays}`);
+    }
+    const studentBlock = ctxLines.length > 0 ? `STUDENT\n${ctxLines.join("\n")}\n\n` : "";
+
+    return `${studentBlock}Student signal:
 
 ${summarizeAttempts(input)}
 

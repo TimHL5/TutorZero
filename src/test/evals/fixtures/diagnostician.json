@@ -1,0 +1,34 @@
+[
+  {
+    "name": "heavy_algebra_weakness",
+    "input": {
+      "attempts": [
+        { "questionId": "q1",  "domain": "algebra",         "skill": "linear_equations_one_var", "difficulty": "M", "selectedIndex": 2, "correctIndex": 0, "isCorrect": false, "confidence": "confident", "timeSpent": 55000 },
+        { "questionId": "q2",  "domain": "algebra",         "skill": "linear_equations_one_var", "difficulty": "M", "selectedIndex": 1, "correctIndex": 2, "isCorrect": false, "confidence": "confident", "timeSpent": 62000 },
+        { "questionId": "q3",  "domain": "algebra",         "skill": "linear_equations_one_var", "difficulty": "E", "selectedIndex": 3, "correctIndex": 1, "isCorrect": false, "confidence": "somewhat",  "timeSpent": 40000 },
+        { "questionId": "q4",  "domain": "algebra",         "skill": "linear_inequalities",      "difficulty": "M", "selectedIndex": 0, "correctIndex": 3, "isCorrect": false, "confidence": "guessing",  "timeSpent": 80000 },
+        { "questionId": "q5",  "domain": "algebra",         "skill": "linear_inequalities",      "difficulty": "M", "selectedIndex": 2, "correctIndex": 2, "isCorrect": true,  "confidence": "guessing",  "timeSpent": 85000 },
+        { "questionId": "q6",  "domain": "advanced_math",   "skill": "quadratic_equations",      "difficulty": "H", "selectedIndex": 1, "correctIndex": 1, "isCorrect": true,  "confidence": "confident", "timeSpent": 70000 },
+        { "questionId": "q7",  "domain": "advanced_math",   "skill": "quadratic_equations",      "difficulty": "M", "selectedIndex": 2, "correctIndex": 2, "isCorrect": true,  "confidence": "confident", "timeSpent": 50000 },
+        { "questionId": "q8",  "domain": "problem_solving", "skill": "ratios_rates",             "difficulty": "E", "selectedIndex": 0, "correctIndex": 0, "isCorrect": true,  "confidence": "confident", "timeSpent": 30000 },
+        { "questionId": "q9",  "domain": "problem_solving", "skill": "ratios_rates",             "difficulty": "M", "selectedIndex": 1, "correctIndex": 1, "isCorrect": true,  "confidence": "somewhat",  "timeSpent": 48000 },
+        { "questionId": "q10", "domain": "geometry",        "skill": "circles",                  "difficulty": "H", "selectedIndex": 3, "correctIndex": 0, "isCorrect": false, "confidence": "guessing",  "timeSpent": 95000 },
+        { "questionId": "q11", "domain": "information_ideas","skill": "inference",               "difficulty": "M", "selectedIndex": 1, "correctIndex": 1, "isCorrect": true,  "confidence": "confident", "timeSpent": 65000 },
+        { "questionId": "q12", "domain": "information_ideas","skill": "inference",               "difficulty": "H", "selectedIndex": 2, "correctIndex": 2, "isCorrect": true,  "confidence": "confident", "timeSpent": 72000 },
+        { "questionId": "q13", "domain": "craft_structure", "skill": "author_attitude",          "difficulty": "M", "selectedIndex": 1, "correctIndex": 3, "isCorrect": false, "confidence": "somewhat",  "timeSpent": 60000 },
+        { "questionId": "q14", "domain": "craft_structure", "skill": "author_attitude",          "difficulty": "M", "selectedIndex": 3, "correctIndex": 3, "isCorrect": true,  "confidence": "somewhat",  "timeSpent": 55000 },
+        { "questionId": "q15", "domain": "expression",      "skill": "transitions",              "difficulty": "E", "selectedIndex": 0, "correctIndex": 0, "isCorrect": true,  "confidence": "confident", "timeSpent": 28000 },
+        { "questionId": "q16", "domain": "expression",      "skill": "transitions",              "difficulty": "M", "selectedIndex": 2, "correctIndex": 2, "isCorrect": true,  "confidence": "confident", "timeSpent": 38000 },
+        { "questionId": "q17", "domain": "conventions",     "skill": "subject_verb_agreement",   "difficulty": "E", "selectedIndex": 1, "correctIndex": 1, "isCorrect": true,  "confidence": "confident", "timeSpent": 25000 },
+        { "questionId": "q18", "domain": "conventions",     "skill": "pronoun_agreement",        "difficulty": "M", "selectedIndex": 0, "correctIndex": 2, "isCorrect": false, "confidence": "guessing",  "timeSpent": 45000 },
+        { "questionId": "q19", "domain": "algebra",         "skill": "linear_equations_one_var", "difficulty": "H", "selectedIndex": 0, "correctIndex": 2, "isCorrect": false, "confidence": "confident", "timeSpent": 65000 },
+        { "questionId": "q20", "domain": "advanced_math",   "skill": "nonlinear_functions",      "difficulty": "M", "selectedIndex": 2, "correctIndex": 2, "isCorrect": true,  "confidence": "somewhat",  "timeSpent": 70000 }
+      ]
+    },
+    "expect": {
+      "weaknesses_include": ["linear_equations_one_var"],
+      "math_score_range": [400, 700],
+      "rw_score_range": [450, 750]
+    }
+  }
+]

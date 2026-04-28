@@ -1,9 +1,10 @@
 import { Hono } from "hono";
 import { getCookie, setCookie } from "hono/cookie";
+import { stream } from "hono/streaming";
 import Stripe from "stripe";
 import type { Context, Next } from "hono";
 import { getSupabaseAdmin } from "./supabase";
-import { fetchOpenAI } from "./openai";
+import { fetchOpenAI, fetchOpenAIStream } from "./openai";
 import { runAgent } from "./agents/runner";
 import { echoAgent } from "./agents/echo";
 import {
@@ -44,6 +45,9 @@ import {
   type PlannerSeverity,
   type PlannerOutput,
 } from "./agents/planner";
+import { tutorAgent } from "./agents/tutor";
+import { runToolAgent } from "./agents/tool_runner";
+import type { ChatMessage, StreamEvent } from "./agents/tool_agent";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 const SUPABASE_URL = "https://bkmyfcolrdumyrwktjrr.supabase.co";
@@ -139,6 +143,61 @@ async function authMiddleware(c: Context<AppEnv>, next: Next) {
     await next();
   } catch {
     return c.json({ error: "Unauthorized" }, 401);
+  }
+}
+
+// Compact student context for agent personalization. Pulls display_name and
+// the top-3 current weaknesses (from latest diagnosis) so agents can address
+// the student by name and cite their known weak areas. Returns undefined for
+// anonymous users; returns {} and swallows errors so a logging failure never
+// blocks an agent response.
+async function fetchStudentContext(
+  supabase: SupabaseClient,
+  userId: string | undefined
+): Promise<Record<string, unknown> | undefined> {
+  if (!userId) return undefined;
+  try {
+    const [profileRes, diagnosisRes] = await Promise.all([
+      supabase
+        .from("user_profiles")
+        .select("display_name, estimated_math_score, estimated_rw_score, target_score, test_date")
+        .eq("user_id", userId)
+        .maybeSingle(),
+      supabase
+        .from("ai_diagnoses")
+        .select("weaknesses, top_focus")
+        .eq("user_id", userId)
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle(),
+    ]);
+
+    const profile = profileRes.data as
+      | { display_name?: string; estimated_math_score?: number; estimated_rw_score?: number; target_score?: number; test_date?: string }
+      | null;
+    const diagnosis = diagnosisRes.data as
+      | { weaknesses?: Array<{ skill_display?: string; skill?: string; severity?: string }>; top_focus?: string }
+      | null;
+
+    const weakAreas = Array.isArray(diagnosis?.weaknesses)
+      ? diagnosis!.weaknesses
+          .slice(0, 3)
+          .map((w) => w.skill_display || w.skill)
+          .filter((x): x is string => typeof x === "string" && x.length > 0)
+      : [];
+
+    const ctx: Record<string, unknown> = {};
+    if (profile?.display_name) ctx.student_name = profile.display_name;
+    if (profile?.estimated_math_score) ctx.estimated_math_score = profile.estimated_math_score;
+    if (profile?.estimated_rw_score) ctx.estimated_rw_score = profile.estimated_rw_score;
+    if (profile?.target_score) ctx.target_score = profile.target_score;
+    if (profile?.test_date) ctx.test_date = profile.test_date;
+    if (weakAreas.length > 0) ctx.top_weak_areas = weakAreas;
+    if (diagnosis?.top_focus) ctx.primary_focus = diagnosis.top_focus;
+    return Object.keys(ctx).length > 0 ? ctx : undefined;
+  } catch (err) {
+    console.error("[fetchStudentContext] failed:", err);
+    return undefined;
   }
 }
 
@@ -325,7 +384,18 @@ app.get("/api/logout", async (c) => {
 // AI Tutor API (general SAT tutoring)
 // ============================================
 
-const FREE_DAILY_TUTOR_LIMIT = 5;
+// Bumped to 10000 for the demo — paywall enforcement code stays in place so
+// the infrastructure can be re-enabled without code surgery.
+const FREE_DAILY_TUTOR_LIMIT = 10000;
+
+const MATH_FORMATTING_RULES = `MATH FORMATTING (strict):
+- Wrap every math expression, variable, number-with-unit, formula, or equation in LaTeX delimiters so the client can render them with KaTeX.
+- Inline math uses single dollars: $x$, $d = rt$, $\\frac{a}{b}$, $x^2 - 5x + 6 = 0$.
+- Display math (equations on their own line) uses double dollars: $$d = rt$$.
+- Do NOT use plain parentheses like ( x ) or ( d = rt ) for math.
+- Do NOT use \\( … \\) or \\[ … \\] — always use $ … $ or $$ … $$.
+- Do NOT write the literal word "latex" anywhere in your reply.
+- Do NOT wrap the whole reply in a code block or prefix it with a language tag.`;
 
 async function getTutorUsage(supabase: SupabaseClient, userId: string | null, browserId: string | null): Promise<{ count: number; isPremium: boolean }> {
   const today = new Date().toISOString().split('T')[0];
@@ -424,104 +494,102 @@ app.get("/api/tutor/usage", optionalAuthMiddleware, async (c) => {
   });
 });
 
-// AI Tutor chat endpoint
+// AI Tutor chat — multi-turn, tool-calling agent with SSE streaming.
+// Framed as Server-Sent Events: each frame is `data: {json}\n\n` where json
+// matches StreamEvent from tool_agent.ts. The client parses these to update
+// the message, show tool-call pills, and finalize on "done" or "error".
 app.post("/api/tutor/chat", optionalAuthMiddleware, async (c) => {
+  const supabase = getSupabaseAdmin();
+  const user = c.get("user") as SupabaseUser | undefined;
+  const userId = user?.id || null;
+
+  let body: {
+    messages?: unknown;
+    browserId?: unknown;
+    conversationId?: unknown;
+  };
   try {
-    const body = await c.req.json();
-    const { messages, context, browserId: clientBrowserId } = body;
-    const supabase = getSupabaseAdmin();
-    const user = c.get("user") as SupabaseUser | undefined;
-    const userId = user?.id || null;
-    const browserId = userId ? null : (clientBrowserId || null);
+    body = await c.req.json();
+  } catch {
+    return c.json({ error: "Invalid JSON" }, 400);
+  }
 
-    if (!messages || !Array.isArray(messages)) {
-      return c.json({ error: "Invalid messages format" }, 400);
+  const rawMessages = body.messages;
+  if (!Array.isArray(rawMessages) || rawMessages.length === 0) {
+    return c.json({ error: "messages must be a non-empty array" }, 400);
+  }
+  const clientBrowserId = typeof body.browserId === "string" ? body.browserId : null;
+  const browserId = userId ? null : clientBrowserId;
+  const conversationId =
+    typeof body.conversationId === "string" && body.conversationId.length > 0
+      ? body.conversationId
+      : crypto.randomUUID();
+
+  // Normalize messages to the ChatMessage shape; only keep user/assistant
+  // turns from the client (system is injected by the runner, tool turns are
+  // never sent by the client).
+  const messages: ChatMessage[] = [];
+  for (const m of rawMessages.slice(-20)) {
+    if (typeof m !== "object" || m === null) continue;
+    const o = m as { role?: unknown; content?: unknown };
+    if ((o.role === "user" || o.role === "assistant") && typeof o.content === "string") {
+      messages.push({ role: o.role, content: o.content });
     }
+  }
+  if (messages.length === 0 || messages[messages.length - 1].role !== "user") {
+    return c.json({ error: "Last message must have role 'user'" }, 400);
+  }
 
-    // Check daily usage limit
-    const { count, isPremium } = await getTutorUsage(supabase, userId, browserId);
+  if (!process.env.OPENAI_API_KEY) {
+    return c.json({ error: "AI service is not configured" }, 503);
+  }
 
-    if (!isPremium && count >= FREE_DAILY_TUTOR_LIMIT) {
-      return c.json({
+  const { count, isPremium } = await getTutorUsage(supabase, userId, browserId);
+  if (!isPremium && count >= FREE_DAILY_TUTOR_LIMIT) {
+    return c.json(
+      {
         error: "daily_limit_reached",
         message: "You've reached your free daily tutor limit. Upgrade to Pro for unlimited tutoring.",
         used: count,
-        limit: FREE_DAILY_TUTOR_LIMIT
-      }, 429);
-    }
-
-    // Build system prompt with student context
-    const systemPrompt = `You are a friendly and knowledgeable SAT tutor named TutorZero. Your goal is to help students improve their SAT scores through clear explanations, strategic advice, and encouragement.
-
-STUDENT CONTEXT:
-${context?.recentTopics?.length ? `Recent practice topics: ${context.recentTopics.join(', ')}` : ''}
-${context?.weakAreas?.length ? `Areas needing attention: ${context.weakAreas.join(', ')}` : ''}
-${context?.recentAccuracy ? `Recent accuracy: ${context.recentAccuracy}%` : ''}
-${context?.currentStreak ? `Current streak: ${context.currentStreak} days` : ''}
-
-YOUR APPROACH:
-1. Be encouraging and supportive - building confidence is key to SAT success
-2. Give clear, concise explanations (aim for 2-4 short paragraphs max)
-3. Use concrete examples when explaining concepts
-4. Connect advice to actual SAT patterns and strategies
-5. When explaining math, break down steps clearly
-6. When discussing reading/writing, focus on evidence-based reasoning
-7. Offer to work through practice problems when relevant
-8. Celebrate progress and effort, not just correct answers
-
-SAT-SPECIFIC KNOWLEDGE:
-- The SAT has two main sections: Reading & Writing (54 min, 54 questions) and Math (80 min, 44 questions)
-- Reading & Writing covers: Information and Ideas, Craft and Structure, Expression of Ideas, Standard English Conventions
-- Math covers: Algebra, Advanced Math, Problem-Solving and Data Analysis, Geometry and Trigonometry
-- Scores range from 400-1600 (200-800 per section)
-- Time management is crucial - about 1 min per R&W question, ~2 min per math question
-
-Keep responses helpful but concise. Use formatting (numbered lists, line breaks) to improve readability.`;
-
-    const apiMessages = [
-      { role: "system", content: systemPrompt },
-      ...messages.slice(-10) // Keep last 10 messages for context
-    ];
-
-    if (!process.env.OPENAI_API_KEY) {
-      return c.json({ error: "AI service is not configured" }, 503);
-    }
-
-    const result = await fetchOpenAI(process.env.OPENAI_API_KEY, {
-      model: "gpt-4o-mini",
-      messages: apiMessages,
-      max_tokens: 500,
-      temperature: 0.7,
-    });
-
-    if (result.error || !result.data) {
-      return c.json({ error: result.error || "Failed to get response from AI" }, result.status as 500);
-    }
-
-    const assistantMessage = result.data.choices?.[0]?.message?.content;
-
-    if (!assistantMessage) {
-      return c.json({ error: "No response from AI" }, 500);
-    }
-
-    // Increment usage after successful response
-    await incrementTutorUsage(supabase, userId, browserId);
-    const newUsage = await getTutorUsage(supabase, userId, browserId);
-
-    return c.json({
-      success: true,
-      message: assistantMessage,
-      usage: {
-        used: newUsage.count,
         limit: FREE_DAILY_TUTOR_LIMIT,
-        remaining: Math.max(0, FREE_DAILY_TUTOR_LIMIT - newUsage.count),
-        isPremium: newUsage.isPremium
-      }
-    });
-  } catch (error) {
-    console.error("Tutor API error:", error);
-    return c.json({ error: "Failed to process request" }, 500);
+      },
+      429
+    );
   }
+
+  // Usage is incremented optimistically here — a user disconnecting mid-stream
+  // still consumed a quota unit since OpenAI has already accepted the request.
+  await incrementTutorUsage(supabase, userId, browserId);
+
+  c.header("Content-Type", "text/event-stream; charset=utf-8");
+  c.header("Cache-Control", "no-cache, no-transform");
+  c.header("X-Accel-Buffering", "no");
+  c.header("X-Conversation-Id", conversationId);
+
+  return stream(c, async (s) => {
+    const write = async (event: StreamEvent) => {
+      await s.write(`data: ${JSON.stringify(event)}\n\n`);
+    };
+    try {
+      await runToolAgent({
+        agent: tutorAgent,
+        messages,
+        apiKey: process.env.OPENAI_API_KEY as string,
+        context: {
+          userId,
+          browserId,
+          supabase,
+          conversationId,
+        },
+        emit: write,
+      });
+    } catch (err) {
+      await write({
+        type: "error",
+        message: err instanceof Error ? err.message : "Tutor failed",
+      });
+    }
+  });
 });
 
 // ============================================
@@ -577,7 +645,9 @@ Correct answer: ${question.correctAnswer}
 
 Original explanation: ${question.explanation}
 
-Provide a fresh explanation in the requested style. Keep it concise (3-5 sentences max) but clear. Focus on helping the student truly understand, not just memorize.`;
+Provide a fresh explanation in the requested style. Keep it concise (3-5 sentences max) but clear. Focus on helping the student truly understand, not just memorize.
+
+${MATH_FORMATTING_RULES}`;
 
     if (!process.env.OPENAI_API_KEY) {
       return c.json({ error: "AI service is not configured" }, 503);
@@ -614,7 +684,8 @@ Provide a fresh explanation in the requested style. Keep it concise (3-5 sentenc
 // AI Chat API (for explanation chat)
 // ============================================
 
-const FREE_MONTHLY_CHAT_LIMIT = 30;
+// Bumped to 10000 for the demo — same reasoning as FREE_DAILY_TUTOR_LIMIT.
+const FREE_MONTHLY_CHAT_LIMIT = 10000;
 
 async function getChatUsage(supabase: SupabaseClient, userId: string | null, browserId: string | null): Promise<{ count: number; isPremium: boolean }> {
   const monthYear = new Date().toISOString().slice(0, 7); // "2024-01"
@@ -713,7 +784,7 @@ app.get("/api/chat/usage", optionalAuthMiddleware, async (c) => {
 app.post("/api/chat", optionalAuthMiddleware, async (c) => {
   try {
     const body = await c.req.json();
-    const { messages, questionContext, browserId: clientBrowserId } = body;
+    const { messages, questionContext, browserId: clientBrowserId, stream: wantStream } = body;
     const supabase = getSupabaseAdmin();
     const user = c.get("user") as SupabaseUser | undefined;
     const userId = user?.id || null;
@@ -722,6 +793,8 @@ app.post("/api/chat", optionalAuthMiddleware, async (c) => {
     if (!messages || !Array.isArray(messages)) {
       return c.json({ error: "Invalid messages format" }, 400);
     }
+
+    const shouldStream = wantStream === true;
 
     // Check monthly usage limit
     const { count, isPremium } = await getChatUsage(supabase, userId, browserId);
@@ -771,7 +844,9 @@ YOUR ROLE AS AN SAT TUTOR:
 6. If a student asks about the question, passage, or specific answer choices, you can reference them directly since you have full context
 7. Focus on teaching the underlying concept and how it applies to the SAT
 
-Remember: You can see everything about this question, so if a student asks "what does the passage say about X?" or "why is choice B wrong?", you can answer directly using the full context provided above.`;
+Remember: You can see everything about this question, so if a student asks "what does the passage say about X?" or "why is choice B wrong?", you can answer directly using the full context provided above.
+
+${MATH_FORMATTING_RULES}`;
 
     const apiMessages = [
       { role: "system", content: systemPrompt },
@@ -780,6 +855,33 @@ Remember: You can see everything about this question, so if a student asks "what
 
     if (!process.env.OPENAI_API_KEY) {
       return c.json({ error: "AI service is not configured" }, 503);
+    }
+
+    if (shouldStream) {
+      const started = await fetchOpenAIStream(process.env.OPENAI_API_KEY, {
+        model: "gpt-4o-mini",
+        messages: apiMessages,
+        max_tokens: 300,
+        temperature: 0.7,
+      });
+
+      if (started.error || !started.stream) {
+        return c.json(
+          { error: started.error || "Failed to get response from AI" },
+          started.status as 500
+        );
+      }
+
+      await incrementChatUsage(supabase, userId, browserId);
+
+      c.header("Content-Type", "text/plain; charset=utf-8");
+      c.header("Cache-Control", "no-cache, no-transform");
+      c.header("X-Accel-Buffering", "no");
+      return stream(c, async (s) => {
+        for await (const chunk of started.stream!) {
+          await s.write(chunk);
+        }
+      });
     }
 
     const result = await fetchOpenAI(process.env.OPENAI_API_KEY, {
@@ -1695,6 +1797,49 @@ app.delete("/api/progress/:browserId", async (c) => {
 // Every call lands in ai_agent_calls (success or failure).
 // ===========================================================================
 
+// Feedback — thumbs up/down on a specific agent call or tutor turn. Must
+// provide exactly one of agentCallId / tutorTurnId. Rating is ±1.
+app.post("/api/agents/feedback", optionalAuthMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser | undefined;
+
+  let body: {
+    agentCallId?: unknown;
+    tutorTurnId?: unknown;
+    rating?: unknown;
+    freeText?: unknown;
+  };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ error: "Invalid JSON" }, 400);
+  }
+
+  const rating = Number(body.rating);
+  if (rating !== 1 && rating !== -1) {
+    return c.json({ error: "rating must be 1 or -1" }, 400);
+  }
+  const agentCallId = typeof body.agentCallId === "number" ? body.agentCallId : null;
+  const tutorTurnId = typeof body.tutorTurnId === "number" ? body.tutorTurnId : null;
+  if (agentCallId === null && tutorTurnId === null) {
+    return c.json({ error: "agentCallId or tutorTurnId required" }, 400);
+  }
+  const freeText = typeof body.freeText === "string" ? body.freeText.slice(0, 2000) : null;
+
+  const supabase = getSupabaseAdmin();
+  const { error } = await supabase.from("ai_agent_feedback").insert({
+    agent_call_id: agentCallId,
+    tutor_turn_id: tutorTurnId,
+    user_id: user?.id ?? null,
+    rating,
+    free_text: freeText,
+  });
+  if (error) {
+    console.error("Failed to insert ai_agent_feedback:", error.message);
+    return c.json({ error: "Failed to record feedback" }, 500);
+  }
+  return c.json({ success: true });
+});
+
 app.post("/api/agents/echo", optionalAuthMiddleware, async (c) => {
   const user = c.get("user") as SupabaseUser | undefined;
 
@@ -1848,6 +1993,7 @@ app.post("/api/agents/diagnostician", optionalAuthMiddleware, async (c) => {
       promptTokens: result.promptTokens,
       completionTokens: result.completionTokens,
       latencyMs: result.latencyMs,
+      agentCallId: result.agentCallId,
     });
   } catch (err) {
     console.error("Diagnostician agent error:", err);
@@ -1955,6 +2101,49 @@ app.post("/api/agents/coach", optionalAuthMiddleware, async (c) => {
 
   try {
     const supabase = getSupabaseAdmin();
+    // Build typed studentContext (vs the older opaque extraContext shim).
+    // Anon users → undefined, message will fall through generic-but-still-numbered.
+    if (user?.id) {
+      try {
+        const { data: profile } = await supabase
+          .from("user_profiles")
+          .select("display_name, target_score, test_date, streak_days, estimated_math_score, estimated_rw_score")
+          .eq("user_id", user.id)
+          .maybeSingle();
+        if (profile) {
+          const typedProfile = profile as {
+            display_name?: string;
+            target_score?: number;
+            test_date?: string;
+            streak_days?: number;
+            estimated_math_score?: number;
+            estimated_rw_score?: number;
+          };
+          const daysUntilTest = typedProfile.test_date
+            ? Math.max(
+                0,
+                Math.ceil(
+                  (new Date(typedProfile.test_date).getTime() - Date.now()) /
+                    86_400_000
+                )
+              )
+            : undefined;
+          const currentPredictedScore =
+            (typedProfile.estimated_math_score ?? 0) +
+            (typedProfile.estimated_rw_score ?? 0);
+          input.studentContext = {
+            displayName: typedProfile.display_name,
+            targetScore: typedProfile.target_score,
+            currentPredictedScore: currentPredictedScore || undefined,
+            testDate: typedProfile.test_date,
+            daysUntilTest,
+            streakDays: typedProfile.streak_days,
+          };
+        }
+      } catch (err) {
+        console.error("[coach route] failed to fetch studentContext:", err);
+      }
+    }
     const result = await runAgent(
       coachAgent,
       input,
@@ -1967,6 +2156,7 @@ app.post("/api/agents/coach", optionalAuthMiddleware, async (c) => {
       coach: result.output,
       model: result.model,
       latencyMs: result.latencyMs,
+      agentCallId: result.agentCallId,
     });
   } catch (err) {
     console.error("Coach agent error:", err);
@@ -2019,10 +2209,11 @@ app.post("/api/agents/explainer", optionalAuthMiddleware, async (c) => {
 
   try {
     const supabase = getSupabaseAdmin();
+    const extraContext = await fetchStudentContext(supabase, user?.id);
     const result = await runAgent(
       explainerAgent,
       input,
-      { userId: user?.id },
+      { userId: user?.id, extraContext },
       process.env.OPENAI_API_KEY,
       supabase
     );
@@ -2031,6 +2222,7 @@ app.post("/api/agents/explainer", optionalAuthMiddleware, async (c) => {
       explainer: result.output,
       model: result.model,
       latencyMs: result.latencyMs,
+      agentCallId: result.agentCallId,
     });
   } catch (err) {
     console.error("Explainer agent error:", err);
@@ -2188,6 +2380,55 @@ app.post("/api/agents/reviewer", optionalAuthMiddleware, async (c) => {
   const supabase = getSupabaseAdmin();
   const previous = await fetchPreviousContext(supabase, user?.id);
 
+  // Reviewer-only student context for the motivator voice. Skipped cleanly
+  // for anon users so the summary still works (just without the arc tie-in).
+  let reviewerStudentContext:
+    | {
+        displayName?: string;
+        targetScore?: number;
+        testDate?: string;
+        daysUntilTest?: number;
+        streakDays?: number;
+        sessionsThisWeek?: number;
+      }
+    | undefined;
+  if (user?.id) {
+    try {
+      const [profileRes, sessionsCountRes] = await Promise.all([
+        supabase
+          .from("user_profiles")
+          .select("display_name, target_score, test_date, streak_days")
+          .eq("user_id", user.id)
+          .maybeSingle(),
+        supabase
+          .from("user_sessions")
+          .select("id", { count: "exact", head: true })
+          .eq("user_id", user.id)
+          .gte(
+            "started_at",
+            new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
+          ),
+      ]);
+      const profile = profileRes.data as
+        | { display_name?: string; target_score?: number; test_date?: string; streak_days?: number }
+        | null;
+      const daysUntilTest =
+        profile?.test_date
+          ? Math.max(0, Math.ceil((new Date(profile.test_date).getTime() - Date.now()) / 86_400_000))
+          : undefined;
+      reviewerStudentContext = {
+        displayName: profile?.display_name,
+        targetScore: profile?.target_score,
+        testDate: profile?.test_date,
+        daysUntilTest,
+        streakDays: profile?.streak_days,
+        sessionsThisWeek: sessionsCountRes.count ?? undefined,
+      };
+    } catch (err) {
+      console.error("[reviewer route] failed to fetch student context:", err);
+    }
+  }
+
   const input: ReviewerInput = {
     session: {
       startedAt: sessionMeta.startedAt,
@@ -2204,6 +2445,7 @@ app.post("/api/agents/reviewer", optionalAuthMiddleware, async (c) => {
       calibration: previous.calibration,
     },
     previousWeaknesses: previous.weaknesses.length > 0 ? previous.weaknesses : undefined,
+    studentContext: reviewerStudentContext,
   };
 
   try {
@@ -2267,6 +2509,7 @@ app.post("/api/agents/reviewer", optionalAuthMiddleware, async (c) => {
       promptTokens: result.promptTokens,
       completionTokens: result.completionTokens,
       latencyMs: result.latencyMs,
+      agentCallId: result.agentCallId,
     });
   } catch (err) {
     console.error("Reviewer agent error:", err);
@@ -2593,11 +2836,34 @@ app.post("/api/agents/planner", authMiddleware, async (c) => {
       promptTokens: result.promptTokens,
       completionTokens: result.completionTokens,
       latencyMs: result.latencyMs,
+      agentCallId: result.agentCallId,
     });
   } catch (err) {
     console.error("Planner agent error:", err);
     return c.json({ error: "Planner failed" }, 500);
   }
+});
+
+// Return the student's baseline score — the math/RW from their FIRST
+// diagnosis. Used by Dashboard to show real "+X from start" deltas instead
+// of the previous hardcoded 800. Returns 404 when no diagnosis exists.
+app.get("/api/user/baseline-score", authMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser;
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
+    .from("ai_diagnoses")
+    .select("estimated_math, estimated_rw, created_at")
+    .eq("user_id", user.id)
+    .order("created_at", { ascending: true })
+    .limit(1)
+    .maybeSingle();
+  if (error) return c.json({ error: error.message }, 500);
+  if (!data) return c.json({ error: "no_diagnosis" }, 404);
+  return c.json({
+    baselineMath: data.estimated_math,
+    baselineRw: data.estimated_rw,
+    diagnosisDate: data.created_at,
+  });
 });
 
 // Return the user's current active plan (or null). Auth-only — anonymous
@@ -2697,10 +2963,11 @@ app.post("/api/agents/concept", optionalAuthMiddleware, async (c) => {
 
   try {
     const supabase = getSupabaseAdmin();
+    const extraContext = await fetchStudentContext(supabase, user?.id);
     const result = await runAgent(
       conceptAgent,
       input,
-      { userId: user?.id },
+      { userId: user?.id, extraContext },
       process.env.OPENAI_API_KEY,
       supabase
     );
@@ -2709,6 +2976,7 @@ app.post("/api/agents/concept", optionalAuthMiddleware, async (c) => {
       concept: result.output,
       model: result.model,
       latencyMs: result.latencyMs,
+      agentCallId: result.agentCallId,
     });
   } catch (err) {
     console.error("Concept agent error:", err);
@@ -2783,10 +3051,11 @@ app.post("/api/agents/next-practice", optionalAuthMiddleware, async (c) => {
 
   try {
     const supabase = getSupabaseAdmin();
+    const extraContext = await fetchStudentContext(supabase, user?.id);
     const result = await runAgent(
       nextPracticeAgent,
       input,
-      { userId: user?.id },
+      { userId: user?.id, extraContext },
       process.env.OPENAI_API_KEY,
       supabase
     );
@@ -2795,6 +3064,7 @@ app.post("/api/agents/next-practice", optionalAuthMiddleware, async (c) => {
       nextPractice: result.output,
       model: result.model,
       latencyMs: result.latencyMs,
+      agentCallId: result.agentCallId,
     });
   } catch (err) {
     console.error("NextPractice agent error:", err);
@@ -2847,6 +3117,38 @@ app.get("/api/admin/agent-calls", async (c) => {
   const { data, error } = await q;
   if (error) return c.json({ error: error.message }, 500);
   return c.json({ rows: data ?? [] });
+});
+
+// TODO post-demo: add auth guard. Returns the latest 100 ai_tutor_turns rows
+// (across all conversations) so the admin page can group them by
+// conversation_id. `content` is truncated to 200 chars to keep the payload
+// small — full content is still in the DB for audits.
+app.get("/api/admin/tutor-turns", async (c) => {
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
+    .from("ai_tutor_turns")
+    .select(
+      "id, conversation_id, role, content, tool_calls, model, prompt_tokens, completion_tokens, latency_ms, created_at, user_id, error"
+    )
+    .order("created_at", { ascending: false })
+    .limit(100);
+  if (error) return c.json({ error: error.message }, 500);
+  const rows = (data ?? []).map((r) => ({
+    ...r,
+    content:
+      typeof r.content === "string" && r.content.length > 200
+        ? r.content.slice(0, 200) + "…"
+        : r.content,
+  }));
+  // Today's tool-call count for the header stat.
+  const startOfToday = new Date();
+  startOfToday.setHours(0, 0, 0, 0);
+  const { count: toolCallsToday } = await supabase
+    .from("ai_tutor_turns")
+    .select("id", { count: "exact", head: true })
+    .gte("created_at", startOfToday.toISOString())
+    .not("tool_calls", "is", null);
+  return c.json({ rows, toolCallsToday: toolCallsToday ?? 0 });
 });
 
 export default app;

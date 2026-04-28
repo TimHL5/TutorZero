@@ -1,4 +1,5 @@
 import type { AgentCall } from "./types";
+import { loadPrompt } from "./prompts/loader";
 
 export interface EchoInput {
   message: string;
@@ -15,9 +16,7 @@ export const echoAgent: AgentCall<EchoInput, EchoOutput> = {
   responseFormat: "json_object",
   temperature: 0,
   maxTokens: 200,
-  systemPrompt:
-    'You are a test agent. Echo back the user\'s message and count its words. ' +
-    'Respond in JSON: {"echo": string, "wordCount": number}',
+  loadSystemPrompt: () => loadPrompt("echo"),
   buildUserPrompt: (input) => `Message: ${input.message}`,
   parseOutput: (raw) => {
     const parsed = JSON.parse(raw);

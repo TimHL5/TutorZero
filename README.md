@@ -5,9 +5,14 @@ Free, adaptive SAT prep web app. React 19 + Hono + Supabase + Stripe, deployed o
 ## Development
 
 ```bash
+cp .env.local.example .env.local   # then fill in OPENAI / SUPABASE keys
 npm install
 npm run dev
 ```
+
+The tutor's `searchWeb` tool uses [Tavily](https://tavily.com) (1000 free
+queries/month). Set `TAVILY_API_KEY` to enable; without it, the tutor will
+gracefully tell the student to check collegeboard.org directly.
 
 ## Scripts
 

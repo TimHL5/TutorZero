@@ -12,10 +12,14 @@ export type AgentName =
   | "reviewer"
   | "echo";
 
+// AgentCall defines a one-shot call. Either `systemPrompt` or
+// `loadSystemPrompt` must be set — the runner reads whichever is provided,
+// preferring the loader so prompt files can be swapped without code changes.
 export interface AgentCall<TInput, TOutput> {
   name: AgentName;
   model: string;
-  systemPrompt: string;
+  systemPrompt?: string;
+  loadSystemPrompt?: () => string;
   buildUserPrompt(input: TInput): string;
   parseOutput(raw: string): TOutput;
   responseFormat?: "json_object" | "text";
@@ -29,6 +33,7 @@ export interface AgentResult<TOutput> {
   promptTokens: number;
   completionTokens: number;
   latencyMs: number;
+  agentCallId: number | null;
 }
 
 export type AgentErrorStage = "openai" | "parse" | "log";

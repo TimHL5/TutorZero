@@ -5,13 +5,20 @@ import { echoAgent } from "@/worker/agents/echo";
 import { AgentError } from "@/worker/agents/types";
 
 // Build a minimal Supabase double that records the rows it was asked to insert.
+// Mirrors the `.insert(row).select("id").single()` chain the runner now uses.
 function makeSupabaseDouble() {
   const inserts: Record<string, unknown>[] = [];
+  let nextId = 1;
   const client = {
     from: (_table: string) => ({
-      insert: async (row: Record<string, unknown>) => {
+      insert: (row: Record<string, unknown>) => {
         inserts.push(row);
-        return { data: null, error: null };
+        const id = nextId++;
+        return {
+          select: (_cols: string) => ({
+            single: async () => ({ data: { id }, error: null }),
+          }),
+        };
       },
     }),
   } as unknown as SupabaseClient;

@@ -19,6 +19,8 @@
     "react-dom": "19.0.0",
     "react-markdown": "^10.1.0",
     "react-router": "^7.5.3",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "stripe": "^20.3.1",
     "tailwind-merge": "^3.4.0"
   },
@@ -51,6 +53,7 @@
     "dev": "vite",
     "test": "vitest run",
     "test:watch": "vitest",
+    "evals": "RUN_EVALS=1 vitest run src/test/evals",
     "knip": "knip",
     "lint": "eslint ."
   }

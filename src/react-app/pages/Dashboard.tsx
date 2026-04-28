@@ -68,6 +68,7 @@ export default function Dashboard() {
   }
   const [todaySession, setTodaySession] = useState<TodaySession | null>(null);
   useEffect(() => {
+    if (!user) return; // /api/plan/active is auth-only — skip the 401.
     let cancelled = false;
     fetch("/api/plan/active", { credentials: "include" })
       .then((r) => (r.ok ? r.json() : null))
@@ -90,12 +91,33 @@ export default function Dashboard() {
         }
       })
       .catch(() => {
-        // Anonymous user or no plan — stay quiet.
+        // No active plan or transient error — stay quiet, fallback card covers it.
       });
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [user]);
+
+  // Baseline score — the student's FIRST diagnosis. Used to show real
+  // "+X from start" deltas. Auth-only; anon users see "Complete diagnostic".
+  const [baselineTotal, setBaselineTotal] = useState<number | null>(null);
+  useEffect(() => {
+    if (!user) return;
+    let cancelled = false;
+    fetch("/api/user/baseline-score", { credentials: "include" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        if (cancelled || !j) return;
+        const total = (j.baselineMath ?? 0) + (j.baselineRw ?? 0);
+        if (total > 0) setBaselineTotal(total);
+      })
+      .catch(() => {
+        /* no baseline yet — show "Complete diagnostic" subtext */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
 
   const domainsBySection = useMemo(() => {
     const groups: Record<"math" | "reading" | "writing", typeof DOMAINS_IN_ORDER> = {
@@ -138,8 +160,10 @@ export default function Dashboard() {
   const estimatedMath = serverMath ?? progress.estimatedMathScore;
   const estimatedRW = serverRW ?? progress.estimatedRWScore;
   const estimatedTotal = estimatedMath + estimatedRW;
-  const baselineScore = progress.diagnosticCompleted ? 800 : null;
-  const scoreChange = baselineScore ? estimatedTotal - baselineScore : null;
+  // Real baseline: student's FIRST diagnosis total (math + rw). When the
+  // baseline endpoint hasn't returned yet — or there's no diagnosis — leave
+  // null so the subtext shows "Complete diagnostic" instead of a fake delta.
+  const scoreChange = baselineTotal !== null ? estimatedTotal - baselineTotal : null;
 
   // Sessions this week
   const sessionsThisWeek = progress.sessions.filter(s => {
@@ -247,9 +271,10 @@ export default function Dashboard() {
           />
         </div>
 
-        {/* Today's session — pulled from the active study plan. Hidden when
-            there's no active plan or no session for today. */}
-        {todaySession && (
+        {/* Today's session — pulled from the active study plan when one
+            exists. Anonymous users + auth users without an active plan see
+            the generic "Ready to practice" fallback instead of nothing. */}
+        {todaySession ? (
           <div className="mb-6 sm:mb-8">
             <button
               onClick={() => navigate(`/practice?skill=${encodeURIComponent(todaySession.focusSkill)}`)}
@@ -266,6 +291,28 @@ export default function Dashboard() {
                       {todaySession.rationale}
                     </p>
                   )}
+                </div>
+                <span className="inline-flex items-center gap-1 rounded-full bg-tz-orange px-3 py-1.5 text-sm font-medium text-white flex-shrink-0">
+                  Start <ChevronRight className="w-4 h-4" />
+                </span>
+              </div>
+            </button>
+          </div>
+        ) : (
+          <div className="mb-6 sm:mb-8">
+            <button
+              onClick={() => navigate("/practice")}
+              className="w-full text-left rounded-xl bg-tz-navy text-white p-4 sm:p-5 shadow-sm hover:bg-[#0c1a36] transition-colors"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <div className="text-xs uppercase tracking-wide text-white/60">Ready to practice?</div>
+                  <div className="text-base sm:text-lg font-semibold mt-0.5">
+                    Start a session
+                  </div>
+                  <p className="text-xs sm:text-sm text-white/70 mt-1">
+                    Pick a topic or skill — the AI adapts in real time.
+                  </p>
                 </div>
                 <span className="inline-flex items-center gap-1 rounded-full bg-tz-orange px-3 py-1.5 text-sm font-medium text-white flex-shrink-0">
                   Start <ChevronRight className="w-4 h-4" />

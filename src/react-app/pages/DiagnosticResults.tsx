@@ -273,11 +273,21 @@ export default function DiagnosticResults() {
         {/* 6. CTA */}
         <section className="flex flex-col sm:flex-row gap-3">
           <button
-            onClick={() => navigate("/plan")}
+            onClick={() => {
+              // /plan is auth-only. Anon users get sent into practice on
+              // their top-focus skill instead of hitting an auth wall.
+              if (user) {
+                navigate("/plan");
+              } else {
+                navigate(
+                  `/practice/session?topic=${encodeURIComponent(diagnosis.top_focus)}`
+                );
+              }
+            }}
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-tz-blue text-white rounded-lg font-semibold hover:bg-[#005a9e] hover-scale transition-all"
           >
             <Sparkles className="w-5 h-5" />
-            Start your personalized plan
+            {user ? "Start your personalized plan" : "Start practicing your weak spots"}
             <ArrowRight className="w-5 h-5" />
           </button>
           <button

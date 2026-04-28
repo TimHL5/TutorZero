@@ -6,6 +6,8 @@ export type AgentName =
   | "diagnostician"
   | "coach"
   | "explainer"
+  | "concept"
+  | "next_practice"
   | "planner"
   | "reviewer"
   | "echo";

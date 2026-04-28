@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router";
 import { useEffect } from "react";
 import { Button } from "@/react-app/components/ui/button";
 import { useAuth } from "@/react-app/lib/AuthProvider";
-import { Check } from "lucide-react";
 
 export default function LandingPage() {
   const { user, isPending, redirectToLogin } = useAuth();
@@ -37,12 +36,6 @@ export default function LandingPage() {
                 className="text-base text-[#475569] hover:text-[#003366] transition-colors hidden sm:block py-2 px-2 min-h-[44px] flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006BB6]/50 focus-visible:ring-offset-2"
               >
                 How It Works
-              </button>
-              <button
-                onClick={() => scrollToSection("pricing")}
-                className="text-base text-[#475569] hover:text-[#003366] transition-colors hidden sm:block py-2 px-2 min-h-[44px] flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006BB6]/50 focus-visible:ring-offset-2"
-              >
-                Pricing
               </button>
               <button
                 onClick={() => redirectToLogin()}
@@ -181,87 +174,7 @@ export default function LandingPage() {
             <div className="p-6 bg-white rounded-lg shadow-sm ring-1 ring-[#006BB6]/20">
               <h3 className="text-lg font-bold text-[#003366] mb-3">TutorZero</h3>
               <p className="text-base text-[#475569] leading-relaxed">
-                Adaptive AI + human input. Diagnoses real gaps. Free.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="bg-white py-20 sm:py-28">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-8">
-          <h2 className="text-h1 text-[#003366] text-center mb-3" style={{ textWrap: 'balance' }}>Simple, honest pricing.</h2>
-          <p className="text-body text-[#475569] text-center mb-12">
-            The free tier is real. No trials, no bait-and-switch.
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Free Card */}
-            <div className="bg-white border border-[#E2E8F0] rounded-xl p-8 shadow-subtle">
-              <p className="text-label text-[#94A3B8] mb-2">FREE</p>
-              <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-4xl font-bold text-[#003366]">$0</span>
-                <span className="text-sm text-[#94A3B8]">/forever</span>
-              </div>
-              <p className="text-base text-[#475569] mb-6">Everything you need to start improving.</p>
-              
-              <div className="border-t border-[#E2E8F0] pt-6 space-y-3">
-                <FeatureItem>Full diagnostic test</FeatureItem>
-                <FeatureItem>3 practice sessions per week</FeatureItem>
-                <FeatureItem>Confidence ratings on every question</FeatureItem>
-                <FeatureItem>Feedback on every wrong answer</FeatureItem>
-                <FeatureItem>Predicted score + top weaknesses</FeatureItem>
-                <FeatureItem>5 AI tutor messages per day</FeatureItem>
-                <FeatureItem>Streak tracking</FeatureItem>
-              </div>
-              
-              <Button 
-                variant="outline"
-                onClick={() => redirectToLogin()}
-                className="w-full mt-8 h-12 border-[#006BB6] text-[#006BB6] hover:bg-[#006BB6]/5 font-medium transition-all duration-200 hover:scale-[1.02]"
-              >
-                Get Started Free
-              </Button>
-            </div>
-            
-            {/* Pro Card */}
-            <div className="relative bg-[#003366] rounded-xl p-8 text-white">
-              {/* Recommended badge */}
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="bg-[#F47920] text-white text-xs font-semibold px-3 py-1 rounded-full">
-                  RECOMMENDED
-                </span>
-              </div>
-              
-              <p className="text-label text-[#4DA8DA] mb-2 mt-2">PRO</p>
-              <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-4xl font-bold text-white">$9.99</span>
-                <span className="text-sm text-white/60">/month</span>
-              </div>
-              <p className="text-base text-white/80 mb-6">The full private tutor experience.</p>
-              
-              <div className="border-t border-white/10 pt-6 space-y-3">
-                <FeatureItem pro>Everything in Free, plus:</FeatureItem>
-                <FeatureItem pro>Unlimited practice sessions</FeatureItem>
-                <FeatureItem pro>Full SAT section simulations (timed)</FeatureItem>
-                <FeatureItem pro>Frustration detection + adaptive interventions</FeatureItem>
-                <FeatureItem pro>Advanced analytics + score trajectory</FeatureItem>
-                <FeatureItem pro>Unlimited AI tutor messages</FeatureItem>
-                <FeatureItem pro>Multiple explanation styles</FeatureItem>
-                <FeatureItem pro>Foundational gap analysis</FeatureItem>
-                <FeatureItem pro>AI-generated weekly study plan</FeatureItem>
-                <FeatureItem pro>Exportable PDF progress reports</FeatureItem>
-              </div>
-              
-              <Button 
-                onClick={() => redirectToLogin()}
-                className="w-full mt-8 h-12 bg-[#00A651] hover:bg-[#008c44] text-white font-semibold transition-all duration-200 hover:scale-[1.02]"
-              >
-                Start 7-Day Free Trial
-              </Button>
-              <p className="text-center text-sm text-white/50 mt-3">
-                or $79.99/year (save 33%)
+                Adaptive AI + human input. Diagnoses real gaps. Free, period.
               </p>
             </div>
           </div>
@@ -288,15 +201,6 @@ export default function LandingPage() {
           </p>
         </div>
       </footer>
-    </div>
-  );
-}
-
-function FeatureItem({ children, pro = false }: { children: React.ReactNode; pro?: boolean }) {
-  return (
-    <div className="flex items-start gap-2">
-      <Check className={`w-4 h-4 mt-0.5 flex-shrink-0 ${pro ? "text-[#90EE90]" : "text-[#00A651]"}`} />
-      <span className={`text-sm ${pro ? "text-white/90" : "text-[#475569]"}`}>{children}</span>
     </div>
   );
 }

@@ -1,0 +1,47 @@
+[
+  {
+    "name": "offer_easier_three_in_a_row_wrong",
+    "input": {
+      "recentAttempts": [
+        { "topic": "algebra", "skill": "linear_equations_one_var", "skillDisplay": "Linear equations in one variable", "difficulty": "H", "isCorrect": false, "timeSpent": 82000, "confidence": "somewhat" },
+        { "topic": "algebra", "skill": "linear_equations_one_var", "skillDisplay": "Linear equations in one variable", "difficulty": "H", "isCorrect": false, "timeSpent": 76000, "confidence": "guessing" },
+        { "topic": "algebra", "skill": "linear_equations_one_var", "skillDisplay": "Linear equations in one variable", "difficulty": "H", "isCorrect": false, "timeSpent": 90000, "confidence": "guessing" }
+      ],
+      "currentQuestion": {
+        "topic": "algebra",
+        "skill": "linear_equations_one_var",
+        "skillDisplay": "Linear equations in one variable",
+        "topicDisplay": "Algebra",
+        "difficulty": "H"
+      },
+      "sessionDuration": 1320000,
+      "totalAttempts": 14,
+      "sessionAccuracy": 43,
+      "skillAccuracy": 25
+    },
+    "expect": {
+      "intervention": "offer_easier"
+    }
+  },
+  {
+    "name": "take_break_long_session_slowing_down",
+    "input": {
+      "recentAttempts": [
+        { "topic": "reading", "skill": "words_in_context", "difficulty": "M", "isCorrect": false, "timeSpent": 95000, "confidence": "somewhat" },
+        { "topic": "reading", "skill": "words_in_context", "difficulty": "M", "isCorrect": true, "timeSpent": 110000, "confidence": "somewhat" },
+        { "topic": "reading", "skill": "inference", "difficulty": "M", "isCorrect": false, "timeSpent": 98000, "confidence": "guessing" }
+      ],
+      "currentQuestion": {
+        "topic": "reading",
+        "skill": "words_in_context",
+        "difficulty": "M"
+      },
+      "sessionDuration": 3120000,
+      "totalAttempts": 24,
+      "sessionAccuracy": 61
+    },
+    "expect": {
+      "intervention": "take_break"
+    }
+  }
+]

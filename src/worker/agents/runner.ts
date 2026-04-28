@@ -5,6 +5,10 @@ import { AgentError, type AgentCall, type AgentResult } from "./types";
 export interface AgentContext {
   userId?: string;
   sessionId?: number;
+  // Arbitrary student/session context rendered as a prelude to the user
+  // message. Pass display_name, weak_areas, etc. here so prompts can stay
+  // templated and agents can cite the student concretely.
+  extraContext?: Record<string, unknown>;
 }
 
 interface AgentLogRow {
@@ -20,12 +24,35 @@ interface AgentLogRow {
   error: string | null;
 }
 
-async function logAgentCall(supabase: SupabaseClient, row: AgentLogRow): Promise<void> {
-  const { error } = await supabase.from("ai_agent_calls").insert(row);
+async function logAgentCall(supabase: SupabaseClient, row: AgentLogRow): Promise<number | null> {
+  const { data, error } = await supabase
+    .from("ai_agent_calls")
+    .insert(row)
+    .select("id")
+    .single();
   if (error) {
-    // Never let a logging failure break the agent response — surface to console only.
     console.error("[runAgent] Failed to log to ai_agent_calls:", error.message);
+    return null;
   }
+  return (data?.id as number | undefined) ?? null;
+}
+
+function resolveSystemPrompt<TIn, TOut>(agent: AgentCall<TIn, TOut>): string {
+  if (agent.loadSystemPrompt) return agent.loadSystemPrompt();
+  if (agent.systemPrompt) return agent.systemPrompt;
+  throw new AgentError(
+    `Agent "${agent.name}" has neither systemPrompt nor loadSystemPrompt`,
+    "parse"
+  );
+}
+
+function renderExtraContext(extra?: Record<string, unknown>): string {
+  if (!extra || Object.keys(extra).length === 0) return "";
+  const lines = Object.entries(extra)
+    .filter(([, v]) => v !== undefined && v !== null)
+    .map(([k, v]) => `- ${k}: ${typeof v === "string" ? v : JSON.stringify(v)}`);
+  if (lines.length === 0) return "";
+  return `Student context:\n${lines.join("\n")}\n\n`;
 }
 
 export async function runAgent<TIn, TOut>(
@@ -36,12 +63,14 @@ export async function runAgent<TIn, TOut>(
   supabase: SupabaseClient
 ): Promise<AgentResult<TOut>> {
   const model = agent.model || process.env.OPENAI_MODEL || "gpt-4o-mini";
+  const systemPrompt = resolveSystemPrompt(agent);
+  const userPrompt = renderExtraContext(context.extraContext) + agent.buildUserPrompt(input);
 
   const body: Record<string, unknown> = {
     model,
     messages: [
-      { role: "system", content: agent.systemPrompt },
-      { role: "user", content: agent.buildUserPrompt(input) },
+      { role: "system", content: systemPrompt },
+      { role: "user", content: userPrompt },
     ],
   };
   if (agent.responseFormat === "json_object") {
@@ -94,7 +123,7 @@ export async function runAgent<TIn, TOut>(
     throw new AgentError(message, "parse", err);
   }
 
-  await logAgentCall(supabase, {
+  const agentCallId = await logAgentCall(supabase, {
     user_id: context.userId ?? null,
     session_id: context.sessionId ?? null,
     agent: agent.name,
@@ -113,5 +142,6 @@ export async function runAgent<TIn, TOut>(
     promptTokens,
     completionTokens,
     latencyMs,
+    agentCallId,
   };
 }

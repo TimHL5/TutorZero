@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { MessageCircle, Send, Loader2, X, Sparkles } from "lucide-react";
 import { ChatMarkdown } from "@/react-app/components/ui/ChatMarkdown";
 import { Button } from "@/react-app/components/ui/button";
+import { FeedbackThumbs } from "@/react-app/components/ui/FeedbackThumbs";
 import type { Question } from "@/data/questions";
 import { cn } from "@/react-app/lib/utils";
 
@@ -16,6 +17,9 @@ interface ExplanationChatProps {
 interface ChatMessage {
   role: "user" | "assistant";
   content: string;
+  // Present on the seeded Explainer reply so thumbs can attach to the row
+  // in ai_agent_calls. Follow-up chat messages leave this undefined.
+  agentCallId?: number | null;
 }
 
 type ChatStage = "reflect" | "chat";
@@ -48,6 +52,8 @@ export function ExplanationChat({
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  // True while we're reading SSE chunks for the most recent assistant reply.
+  const [isStreaming, setIsStreaming] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   // Reflection-stage state
@@ -90,6 +96,8 @@ export function ExplanationChat({
       };
       // Seed the chat with the student's own explanation + the Explainer's
       // reply so the follow-up conversation has context for /api/chat.
+      const agentCallId =
+        typeof data.agentCallId === "number" ? (data.agentCallId as number) : null;
       const seeded: ChatMessage[] = [
         { role: "user", content: studentExplanation },
         {
@@ -97,6 +105,7 @@ export function ExplanationChat({
           content:
             `${ex.response}\n\n**Try this:** ${ex.specific_fix}\n\n` +
             `**Next step:** ${ex.follow_up_practice}`,
+          agentCallId,
         },
       ];
       setMessages(seeded);
@@ -164,25 +173,51 @@ export function ExplanationChat({
         body: JSON.stringify({
           messages: newMessages,
           questionContext,
-          browserId
+          browserId,
+          stream: true,
         })
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
-        throw new Error(data.error || "Failed to get response");
+        let message = "Failed to get response";
+        try {
+          const data = await response.json();
+          if (data.error) message = data.error;
+        } catch { /* non-JSON */ }
+        throw new Error(message);
       }
 
-      setMessages([
-        ...newMessages,
-        { role: "assistant", content: data.message }
-      ]);
+      if (!response.body) {
+        throw new Error("Streaming not supported");
+      }
+
+      // Seed an empty assistant message; append chunks as they arrive.
+      setMessages([...newMessages, { role: "assistant", content: "" }]);
+      setIsStreaming(true);
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let assembled = "";
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value, { stream: true });
+        if (!chunk) continue;
+        assembled += chunk;
+        const snapshot = assembled;
+        setMessages(prev => {
+          if (prev.length === 0) return prev;
+          const last = prev[prev.length - 1];
+          if (last.role !== "assistant") return prev;
+          return [...prev.slice(0, -1), { ...last, content: snapshot }];
+        });
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setMessages(messages);
     } finally {
       setIsLoading(false);
+      setIsStreaming(false);
     }
   };
 
@@ -261,32 +296,50 @@ export function ExplanationChat({
             </div>
           )}
 
-          {messages.map((msg, idx) => (
-            <div
-              key={idx}
-              className={cn(
-                "flex",
-                msg.role === "user" ? "justify-end" : "justify-start"
-              )}
-            >
+          {messages.map((msg, idx) => {
+            const isLastAssistant =
+              msg.role === "assistant" && idx === messages.length - 1;
+            const showCaret = isLastAssistant && isStreaming;
+            return (
               <div
+                key={idx}
                 className={cn(
-                  "max-w-[85%] sm:max-w-[75%] rounded-2xl px-4 py-2.5 text-sm",
-                  msg.role === "user"
-                    ? "bg-blue-600 text-white"
-                    : "bg-white border border-slate-200 text-slate-800"
+                  "flex",
+                  msg.role === "user" ? "justify-end" : "justify-start"
                 )}
               >
-                {msg.role === "assistant" ? (
-                  <ChatMarkdown content={msg.content} />
-                ) : (
-                  msg.content
-                )}
+                <div
+                  className={cn(
+                    "max-w-[85%] sm:max-w-[75%] rounded-2xl px-4 py-2.5 text-sm",
+                    msg.role === "user"
+                      ? "bg-blue-600 text-white"
+                      : "bg-white border border-slate-200 text-slate-800"
+                  )}
+                >
+                  {msg.role === "assistant" ? (
+                    <>
+                      <ChatMarkdown content={msg.content} />
+                      {showCaret && (
+                        <span
+                          aria-hidden="true"
+                          className="inline-block w-1.5 h-4 ml-0.5 -mb-0.5 bg-blue-600 align-middle animate-pulse"
+                        />
+                      )}
+                      {msg.agentCallId != null && !showCaret && (
+                        <div className="mt-2 pt-2 border-t border-slate-100">
+                          <FeedbackThumbs agentCallId={msg.agentCallId} />
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    msg.content
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
 
-          {isLoading && (
+          {isLoading && !isStreaming && (
             <div className="flex justify-start">
               <div className="bg-white border border-slate-200 rounded-2xl px-4 py-2.5 flex items-center gap-2">
                 <Loader2 className="w-4 h-4 animate-spin text-blue-600" />

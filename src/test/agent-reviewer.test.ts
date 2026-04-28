@@ -6,11 +6,17 @@ import { AgentError } from "@/worker/agents/types";
 
 function makeSupabaseDouble() {
   const inserts: Record<string, unknown>[] = [];
+  let nextId = 1;
   const client = {
     from: () => ({
-      insert: async (row: Record<string, unknown>) => {
+      insert: (row: Record<string, unknown>) => {
         inserts.push(row);
-        return { data: null, error: null };
+        const id = nextId++;
+        return {
+          select: (_cols: string) => ({
+            single: async () => ({ data: { id }, error: null }),
+          }),
+        };
       },
     }),
   } as unknown as SupabaseClient;

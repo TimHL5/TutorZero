@@ -29,8 +29,8 @@ export default function AuthCallback() {
         // Brand new user - go to onboarding to enter name
         navigate("/onboarding", { replace: true });
       } else if (!profile?.hasCompletedDiagnostic) {
-        // Returning user who hasn't done diagnostic - show welcome options
-        navigate("/welcome", { replace: true });
+        // Returning user who hasn't done diagnostic — drop them straight in.
+        navigate("/diagnostic", { replace: true });
       } else {
         // Returning user - go to dashboard
         navigate("/dashboard", { replace: true });

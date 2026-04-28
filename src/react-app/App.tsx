@@ -12,7 +12,6 @@ import PracticeSetup from "@/react-app/pages/PracticeSetup";
 import Practice from "@/react-app/pages/Practice";
 import PracticeSummary from "@/react-app/pages/PracticeSummary";
 import Dashboard from "@/react-app/pages/Dashboard";
-import Welcome from "@/react-app/pages/Welcome";
 import Onboarding from "@/react-app/pages/Onboarding";
 import Settings from "@/react-app/pages/Settings";
 import AITutor from "@/react-app/pages/AITutor";
@@ -55,7 +54,6 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/auth/v1/callback" element={<AuthCallback />} />
             <Route path="/onboarding" element={<Onboarding />} />
-            <Route path="/welcome" element={<Welcome />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/diagnostic" element={<DiagnosticIntro />} />
             <Route

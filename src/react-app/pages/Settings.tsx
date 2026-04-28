@@ -17,8 +17,25 @@ import {
   Trash2,
   Download,
   Shield,
+  Target,
+  Calendar,
+  Clock,
 } from "lucide-react";
 import { cn } from "@/react-app/lib/utils";
+
+const CONFIDENCE_LABELS = ["Struggling", "Okay", "Strong", "Very Strong"];
+const STUDY_INTENSITY: { value: "light" | "moderate" | "intensive"; label: string; sub: string }[] = [
+  { value: "light", label: "Light", sub: "~3 hr / week" },
+  { value: "moderate", label: "Moderate", sub: "~6 hr / week" },
+  { value: "intensive", label: "Intensive", sub: "~10 hr / week" },
+];
+
+function getScoreLabel(score: number) {
+  if (score < 1100) return "Building Foundations";
+  if (score < 1300) return "Solid Score";
+  if (score < 1500) return "Competitive";
+  return "Elite";
+}
 
 export default function Settings() {
   const navigate = useNavigate();
@@ -27,6 +44,16 @@ export default function Settings() {
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Study preferences
+  const [targetScore, setTargetScore] = useState(1200);
+  const [testDate, setTestDate] = useState<string>("");
+  const [mathConfidence, setMathConfidence] = useState(1);
+  const [readingConfidence, setReadingConfidence] = useState(1);
+  const [studyIntensity, setStudyIntensity] = useState<"light" | "moderate" | "intensive">("moderate");
+  const [isSavingPrefs, setIsSavingPrefs] = useState(false);
+  const [prefsSuccess, setPrefsSuccess] = useState(false);
+  const [prefsError, setPrefsError] = useState<string | null>(null);
 
   // Notification preferences
   const [emailReminders, setEmailReminders] = useState(true);
@@ -48,6 +75,17 @@ export default function Settings() {
         user.email?.split('@')[0] ||
         ""
       );
+      if (typeof profile?.targetScore === "number") setTargetScore(profile.targetScore);
+      if (typeof profile?.testDate === "string") setTestDate(profile.testDate);
+      if (typeof profile?.mathConfidence === "number") setMathConfidence(profile.mathConfidence);
+      if (typeof profile?.readingConfidence === "number") setReadingConfidence(profile.readingConfidence);
+      if (
+        profile?.studyHoursPerWeek === "light" ||
+        profile?.studyHoursPerWeek === "moderate" ||
+        profile?.studyHoursPerWeek === "intensive"
+      ) {
+        setStudyIntensity(profile.studyHoursPerWeek);
+      }
     }
   }, [user]);
 
@@ -90,6 +128,39 @@ export default function Settings() {
     }
   };
 
+  const handleSavePrefs = async () => {
+    setIsSavingPrefs(true);
+    setPrefsError(null);
+    setPrefsSuccess(false);
+
+    try {
+      const body: Record<string, unknown> = {
+        targetScore,
+        mathConfidence,
+        readingConfidence,
+        studyHoursPerWeek: studyIntensity,
+      };
+      if (testDate) body.testDate = testDate;
+
+      const response = await fetch("/api/user/profile", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify(body),
+      });
+      if (!response.ok) throw new Error(`Failed (HTTP ${response.status})`);
+
+      await fetchUser();
+      setPrefsSuccess(true);
+      setTimeout(() => setPrefsSuccess(false), 3000);
+    } catch (err) {
+      console.error("Error saving preferences:", err);
+      setPrefsError(err instanceof Error ? err.message : "Failed to save");
+    } finally {
+      setIsSavingPrefs(false);
+    }
+  };
+
   if (isPending) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -103,6 +174,7 @@ export default function Settings() {
   }
 
   const pictureUrl = user.google_user_data?.picture;
+  const todayIso = new Date().toISOString().split("T")[0];
 
   return (
     <div className="min-h-screen bg-muted/30">
@@ -238,6 +310,163 @@ export default function Settings() {
           </div>
         </div>
 
+        {/* Study Preferences Section */}
+        <div className="bg-white rounded-xl shadow-sm border border-border p-6 mb-6">
+          <h2 className="text-lg font-semibold mb-1 flex items-center gap-2">
+            <Target className="w-5 h-5 text-muted-foreground" />
+            Study Preferences
+          </h2>
+          <p className="text-sm text-muted-foreground mb-6">
+            These tune your study plan, target tracking, and AI tutoring. Update them anytime.
+          </p>
+
+          {/* Target Score */}
+          <div className="mb-6">
+            <div className="flex items-center justify-between mb-2">
+              <label htmlFor="targetScore" className="block text-sm font-medium text-foreground">
+                Target Score
+              </label>
+              <span className="text-sm text-muted-foreground">
+                <strong className="text-tz-navy">{targetScore}</strong> · {getScoreLabel(targetScore)}
+              </span>
+            </div>
+            <input
+              id="targetScore"
+              type="range"
+              min={800}
+              max={1600}
+              step={10}
+              value={targetScore}
+              onChange={(e) => setTargetScore(Number(e.target.value))}
+              className="w-full accent-tz-blue"
+            />
+            <div className="flex justify-between text-xs text-muted-foreground mt-1">
+              <span>800</span>
+              <span>1600</span>
+            </div>
+          </div>
+
+          {/* Test Date */}
+          <div className="mb-6">
+            <label htmlFor="testDate" className="block text-sm font-medium text-foreground mb-2 flex items-center gap-1">
+              <Calendar className="w-4 h-4 text-muted-foreground" />
+              SAT Test Date
+            </label>
+            <Input
+              id="testDate"
+              type="date"
+              value={testDate}
+              min={todayIso}
+              onChange={(e) => setTestDate(e.target.value)}
+              className="w-full sm:w-64"
+            />
+            <p className="text-xs text-muted-foreground mt-1">
+              Used to count down on your dashboard and pace your study plan.
+            </p>
+          </div>
+
+          {/* Math Confidence */}
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-foreground mb-2">
+              How confident are you in Math?
+            </label>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              {CONFIDENCE_LABELS.map((label, i) => (
+                <button
+                  key={label}
+                  type="button"
+                  onClick={() => setMathConfidence(i)}
+                  className={cn(
+                    "px-3 py-2 rounded-md text-sm border transition-colors",
+                    mathConfidence === i
+                      ? "bg-tz-blue text-white border-tz-blue"
+                      : "bg-white text-foreground border-border hover:border-tz-blue/40"
+                  )}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Reading Confidence */}
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-foreground mb-2">
+              How confident are you in Reading & Writing?
+            </label>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              {CONFIDENCE_LABELS.map((label, i) => (
+                <button
+                  key={label}
+                  type="button"
+                  onClick={() => setReadingConfidence(i)}
+                  className={cn(
+                    "px-3 py-2 rounded-md text-sm border transition-colors",
+                    readingConfidence === i
+                      ? "bg-tz-blue text-white border-tz-blue"
+                      : "bg-white text-foreground border-border hover:border-tz-blue/40"
+                  )}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Study Intensity */}
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-foreground mb-2 flex items-center gap-1">
+              <Clock className="w-4 h-4 text-muted-foreground" />
+              Study Intensity
+            </label>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              {STUDY_INTENSITY.map((opt) => (
+                <button
+                  key={opt.value}
+                  type="button"
+                  onClick={() => setStudyIntensity(opt.value)}
+                  className={cn(
+                    "px-3 py-3 rounded-md text-left border transition-colors",
+                    studyIntensity === opt.value
+                      ? "bg-tz-blue text-white border-tz-blue"
+                      : "bg-white text-foreground border-border hover:border-tz-blue/40"
+                  )}
+                >
+                  <div className="text-sm font-medium">{opt.label}</div>
+                  <div className={cn(
+                    "text-xs",
+                    studyIntensity === opt.value ? "text-white/80" : "text-muted-foreground"
+                  )}>{opt.sub}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Save preferences */}
+          <div className="flex items-center gap-3 pt-2 border-t border-border">
+            <Button
+              onClick={handleSavePrefs}
+              disabled={isSavingPrefs}
+              className="bg-tz-blue hover:bg-tz-blue/90"
+            >
+              {isSavingPrefs ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : prefsSuccess ? (
+                <CheckCircle className="w-4 h-4" />
+              ) : (
+                <Save className="w-4 h-4" />
+              )}
+              <span className="ml-2">
+                {isSavingPrefs ? "Saving..." : prefsSuccess ? "Saved!" : "Save preferences"}
+              </span>
+            </Button>
+            {prefsError && <p className="text-destructive text-sm">{prefsError}</p>}
+            {prefsSuccess && (
+              <p className="text-green-600 text-sm">Your study plan will reflect these on next visit.</p>
+            )}
+          </div>
+        </div>
+
         {/* Notifications Section */}
         <div className="bg-white rounded-xl shadow-sm border border-border p-6 mb-6">
           <h2 className="text-lg font-semibold mb-6 flex items-center gap-2">
@@ -339,9 +568,9 @@ export default function Settings() {
 
         {/* Footer */}
         <div className="mt-8 text-center text-xs text-muted-foreground space-x-4">
-          <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
+          <Link to="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
           <span>·</span>
-          <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+          <Link to="/terms" className="hover:text-foreground transition-colors">Terms of Service</Link>
           <span>·</span>
           <a href="mailto:support@tutorzero.com" className="hover:text-foreground transition-colors">Contact Support</a>
         </div>

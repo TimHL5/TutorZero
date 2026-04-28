@@ -33,5 +33,3 @@ scripts/__pycache__/
 .env.local
 .env.*.local
 .vercel
-api/_index.ts.bak
-api/index.mjs

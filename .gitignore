@@ -34,6 +34,4 @@ scripts/__pycache__/
 .env.*.local
 .vercel
 
-# build-api.mjs preserves the original entry here for re-runs / local restore.
-api/_index.ts.original
 .claude/

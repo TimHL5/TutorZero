@@ -10,6 +10,14 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// On Vercel the worker is bundled into api/index.ts, so __dirname points at
+// the bundled function (no .md files there). vercel.json `includeFiles`
+// ships the prompts/ tree at <cwd>/src/worker/agents/prompts. Locally the
+// loader file sits next to the .md files, so __dirname works directly.
+const PROMPT_DIR = fs.existsSync(path.join(__dirname, "tutor.md"))
+  ? __dirname
+  : path.join(process.cwd(), "src", "worker", "agents", "prompts");
+
 const cache = new Map<string, string>();
 
 function readFileCached(absPath: string): string | null {
@@ -24,10 +32,10 @@ function readFileCached(absPath: string): string | null {
 }
 
 export function loadPrompt(name: string): string {
-  const base = readFileCached(path.join(__dirname, `${name}.md`));
+  const base = readFileCached(path.join(PROMPT_DIR, `${name}.md`));
   if (base == null) {
     throw new Error(`[loadPrompt] prompt not found: ${name}.md`);
   }
-  const fewShot = readFileCached(path.join(__dirname, "_shared", `few_shot_${name}.md`));
+  const fewShot = readFileCached(path.join(PROMPT_DIR, "_shared", `few_shot_${name}.md`));
   return fewShot ? `${base.trim()}\n\n${fewShot.trim()}\n` : base;
 }

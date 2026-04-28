@@ -9,8 +9,21 @@
 // Node ESM strict resolution at runtime.
 
 import type { IncomingMessage, ServerResponse } from "node:http";
-import { Readable } from "node:stream";
 import app from "../src/worker/index";
+
+// Buffer the request body before constructing the Request. Streaming via
+// Readable.toWeb(req) + duplex:"half" hangs in Vercel's Node runtime —
+// c.req.json() never sees EOF, so any POST that reads the body times out at
+// the 300s function limit. Buffering uses the well-tested IncomingMessage
+// async iteration path.
+async function bufferBody(req: IncomingMessage): Promise<Buffer | undefined> {
+  if (req.method === "GET" || req.method === "HEAD") return undefined;
+  const chunks: Buffer[] = [];
+  for await (const chunk of req as AsyncIterable<Buffer | string>) {
+    chunks.push(typeof chunk === "string" ? Buffer.from(chunk) : chunk);
+  }
+  return chunks.length ? Buffer.concat(chunks) : undefined;
+}
 
 export default async function handler(req: IncomingMessage, res: ServerResponse) {
   const protocol = (req.headers["x-forwarded-proto"] as string | undefined) ?? "https";
@@ -24,12 +37,8 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
   }
 
   const method = req.method ?? "GET";
-  const init: RequestInit & { duplex?: "half" } = { method, headers };
-  if (method !== "GET" && method !== "HEAD") {
-    // Stream the request body — Vercel Node passes IncomingMessage as a Readable.
-    init.body = Readable.toWeb(req) as ReadableStream<Uint8Array>;
-    init.duplex = "half";
-  }
+  const body = await bufferBody(req);
+  const init: RequestInit = body ? { method, headers, body } : { method, headers };
 
   const response = await app.fetch(new Request(url, init));
 

@@ -20,6 +20,8 @@ import StudyPlan from "@/react-app/pages/StudyPlan";
 import Pricing from "@/react-app/pages/Pricing";
 import AgentLog from "@/react-app/pages/AgentLog";
 import AIPlan from "@/react-app/pages/AIPlan";
+import Terms from "@/react-app/pages/Terms";
+import Privacy from "@/react-app/pages/Privacy";
 
 // MathJax config — enables TeX and MathML input, rendered with CHTML output.
 // Scripts load from the default CDN on first use (no bundle impact).
@@ -82,6 +84,8 @@ export default function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/admin/agents" element={<AgentLog />} />
             <Route path="/plan" element={<AIPlan />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Router>

@@ -1,6 +1,6 @@
-// Vercel serverless catch-all that mounts the Hono worker.
-// Restored after accidental deletion in commit 3b4cc686 ("Task 1"). Every
-// `/api/*` request hits this file thanks to vercel.json's rewrite rule.
+// Vercel serverless function that mounts the Hono worker. This is Hono's
+// documented pattern: `api/index.ts` + a vercel.json rewrite that sends every
+// `/api/*` path to `/api`. Hono then routes off the original request URL.
 
 import { handle } from "hono/vercel";
 import app from "../src/worker/index";

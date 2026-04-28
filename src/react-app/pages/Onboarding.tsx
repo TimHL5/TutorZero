@@ -22,6 +22,7 @@ export default function Onboarding() {
   const { fetchUser } = useAuth();
   const [step, setStep] = useState<Step>(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState<OnboardingData>({
     targetScore: 1200,
     testDate: null,
@@ -56,6 +57,7 @@ export default function Onboarding() {
   };
 
   const savePreferences = async (navigateTo: string) => {
+    setError(null);
     setIsSubmitting(true);
     try {
       const response = await fetch("/api/user/profile", {
@@ -72,12 +74,15 @@ export default function Onboarding() {
         }),
       });
 
-      if (!response.ok) throw new Error("Failed to save preferences");
+      if (!response.ok) {
+        throw new Error(`Failed to save preferences (HTTP ${response.status})`);
+      }
 
       await fetchUser();
       navigate(navigateTo, { replace: true });
     } catch (err) {
       console.error("Error saving preferences:", err);
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -341,6 +346,10 @@ export default function Onboarding() {
               </button>
             )}
           </div>
+
+          {error && (
+            <p className="text-center mt-4 text-red-300 text-small">{error}</p>
+          )}
 
           {/* Completion message and skip option on step 4 */}
           {step === 4 && (

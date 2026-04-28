@@ -274,10 +274,11 @@ export default function DiagnosticResults() {
         <section className="flex flex-col sm:flex-row gap-3">
           <button
             onClick={() => {
-              // /plan is auth-only. Anon users get sent into practice on
-              // their top-focus skill instead of hitting an auth wall.
+              // Authed users land on /study-plan to see their weekly schedule.
+              // Anon users get sent into practice on their top-focus skill so
+              // they hit something useful immediately without an auth wall.
               if (user) {
-                navigate("/plan");
+                navigate("/study-plan");
               } else {
                 navigate(
                   `/practice/session?topic=${encodeURIComponent(diagnosis.top_focus)}`

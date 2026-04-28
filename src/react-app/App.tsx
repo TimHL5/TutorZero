@@ -19,7 +19,6 @@ import Progress from "@/react-app/pages/Progress";
 import StudyPlan from "@/react-app/pages/StudyPlan";
 import Pricing from "@/react-app/pages/Pricing";
 import AgentLog from "@/react-app/pages/AgentLog";
-import AIPlan from "@/react-app/pages/AIPlan";
 import Terms from "@/react-app/pages/Terms";
 import Privacy from "@/react-app/pages/Privacy";
 
@@ -83,7 +82,8 @@ export default function App() {
             <Route path="/study-plan" element={<StudyPlan />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/admin/agents" element={<AgentLog />} />
-            <Route path="/plan" element={<AIPlan />} />
+            {/* /plan is intentionally absent — folded into /study-plan.
+                The catch-all below redirects any stale /plan link to /. */}
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<Navigate to="/" replace />} />

@@ -20,10 +20,14 @@ export interface FetchOpenAIResult {
   status: number;
 }
 
+// Default 60s. Earlier 25s aborted longer structured-output calls (notably the
+// planner with max_tokens=2500) before they could finish, leaving the route to
+// hang against Vercel's 300s function cap. 60s comfortably covers the slowest
+// gpt-4o-mini JSON responses while staying inside the function budget.
 export async function fetchOpenAI(
   apiKey: string,
   body: Record<string, unknown>,
-  timeoutMs = 25000
+  timeoutMs = 60000
 ): Promise<FetchOpenAIResult> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);

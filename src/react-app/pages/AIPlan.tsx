@@ -143,12 +143,18 @@ export default function AIPlan() {
     }
     setGenerating(true);
     setError(null);
+    // Hard client timeout — 90s comfortably covers the server's 60s OpenAI
+    // budget plus network slack. Without this, a stalled connection leaves
+    // the spinner up indefinitely.
+    const ctl = new AbortController();
+    const timeout = setTimeout(() => ctl.abort(), 90_000);
     try {
       const res = await fetch("/api/agents/planner", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
         body: JSON.stringify({ testDate, hoursPerWeek: hours }),
+        signal: ctl.signal,
       });
       const json = await res.json().catch(() => null);
       if (!res.ok) {
@@ -158,8 +164,13 @@ export default function AIPlan() {
       // Refetch the active plan so we have id + canonical state.
       await loadActive();
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Plan generation failed");
+      if (e instanceof DOMException && e.name === "AbortError") {
+        setError("Plan generation took too long. Please try again.");
+      } else {
+        setError(e instanceof Error ? e.message : "Plan generation failed");
+      }
     } finally {
+      clearTimeout(timeout);
       setGenerating(false);
     }
   }, [testDate, hours, loadActive]);

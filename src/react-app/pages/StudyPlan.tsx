@@ -30,16 +30,6 @@ interface DayPlan {
   blocks: StudyBlock[];
 }
 
-const DEFAULT_TOPIC_ROTATION = [
-  "algebra",
-  "information_ideas",
-  "advanced_math",
-  "craft_structure",
-  "geometry",
-  "expression",
-  "conventions",
-];
-
 const DURATION_OPTIONS = [15, 20, 25, 30, 45, 60];
 
 // Maps the onboarding/Settings study-intensity choice to a numeric weekly hour
@@ -97,23 +87,16 @@ function blockId(dateIso: string): string {
   return `${dateIso}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
 }
 
-function generateInitialWeekPlan(startDate: Date): DayPlan[] {
+// Empty 7-day skeleton starting from `startDate`. Other weeks are intentionally
+// empty until the user explicitly fills them in (via the planner agent or by
+// adding topics manually). The earlier seeded rotation made past/future weeks
+// look populated even when the user had never generated anything for them.
+function generateEmptyWeek(startDate: Date): DayPlan[] {
   const days: DayPlan[] = [];
   for (let i = 0; i < 7; i++) {
-    const date = new Date(startDate);
-    date.setDate(date.getDate() + i);
-    const dateIso = isoDate(date);
-    const numBlocks = (i % 2) + 2;
-    const blocks: StudyBlock[] = [];
-    for (let j = 0; j < numBlocks; j++) {
-      blocks.push({
-        id: blockId(dateIso) + `-${j}`,
-        topic: DEFAULT_TOPIC_ROTATION[(i + j) % DEFAULT_TOPIC_ROTATION.length],
-        duration: [20, 25, 30][j % 3],
-        completed: false,
-      });
-    }
-    days.push({ date: dateIso, blocks });
+    const d = new Date(startDate);
+    d.setDate(d.getDate() + i);
+    days.push({ date: isoDate(d), blocks: [] });
   }
   return days;
 }
@@ -149,7 +132,7 @@ export default function StudyPlan() {
   const [weekStartIso, setWeekStartIso] = useState(() => isoDate(new Date()));
   const [weekPlan, setWeekPlan] = useState<DayPlan[]>(() => {
     const startDate = new Date();
-    return loadWeekFromStorage(undefined, isoDate(startDate)) ?? generateInitialWeekPlan(startDate);
+    return loadWeekFromStorage(undefined, isoDate(startDate)) ?? generateEmptyWeek(startDate);
   });
   const [draggedBlock, setDraggedBlock] = useState<{ dayIndex: number; blockIndex: number } | null>(null);
   const [dragOverDay, setDragOverDay] = useState<number | null>(null);
@@ -177,12 +160,16 @@ export default function StudyPlan() {
     saveWeekToStorage(userId, weekStartIso, weekPlan);
   }, [userId, weekStartIso, weekPlan]);
 
-  // Generate a fresh plan from the planner agent. Uses the user's testDate
-  // and study intensity from their profile (set in Onboarding / Settings).
-  // The agent automatically pulls the latest diagnostic weaknesses on the
-  // server side via fetchLatestWeaknesses(). Result replaces the current
-  // week and is persisted to localStorage so it survives reloads.
-  const generateFromDiagnostic = useCallback(async () => {
+  // Generate a plan for the current calendar week (the week containing today).
+  // Always anchors to "this week" — if the user has navigated to a different
+  // week and clicks the button, snap back to today's week first so the
+  // generated plan lands where the button copy promises.
+  //
+  // The planner agent pulls the user's latest diagnostic weaknesses
+  // server-side via fetchLatestWeaknesses(); we only send testDate, hours,
+  // and weekStartDate. Result replaces just the current week and persists to
+  // localStorage; other weeks remain empty until the user fills them in.
+  const generateForThisWeek = useCallback(async () => {
     if (!user) {
       setGenError("Sign in to generate a personalized plan from your diagnostic.");
       return;
@@ -193,6 +180,14 @@ export default function StudyPlan() {
     }
     const intensity = profile?.studyHoursPerWeek ?? "moderate";
     const hoursPerWeek = STUDY_HOURS_BY_INTENSITY[intensity] ?? 6;
+    const todayIso = isoDate(new Date());
+
+    // Snap to "this week" so the result is visible immediately without the
+    // user having to navigate back manually.
+    if (weekOffset !== 0 || weekStartIso !== todayIso) {
+      setWeekOffset(0);
+      setWeekStartIso(todayIso);
+    }
 
     setGenerating(true);
     setGenError(null);
@@ -206,7 +201,7 @@ export default function StudyPlan() {
         body: JSON.stringify({
           testDate: profile.testDate,
           hoursPerWeek,
-          weekStartDate: weekStartIso,
+          weekStartDate: todayIso,
         }),
         signal: ctl.signal,
       });
@@ -217,7 +212,7 @@ export default function StudyPlan() {
       }
       const week = (json?.plan as PlannerOutput | undefined)?.week;
       if (Array.isArray(week) && week.length > 0) {
-        const days = plannerToDayPlan(week, weekStartIso);
+        const days = plannerToDayPlan(week, todayIso);
         if (days.length === 7) {
           setWeekPlan(days);
           setWeekStartIso(days[0].date);
@@ -234,18 +229,15 @@ export default function StudyPlan() {
       clearTimeout(timer);
       setGenerating(false);
     }
-  }, [user, profile?.testDate, profile?.studyHoursPerWeek, userId, weekStartIso]);
+  }, [user, profile?.testDate, profile?.studyHoursPerWeek, userId, weekOffset, weekStartIso]);
 
-  // First-visit hydration. For authed users with a testDate but no
-  // localStorage plan yet, try the persisted active plan from /api/plan/active
-  // (created by an earlier planner call). If there's no active plan either,
-  // auto-generate one from the diagnostic so the page is never empty for
-  // someone who's done onboarding. Anon users skip this entirely and keep
-  // the seeded rotation.
+  // First-visit hydration. For authed users with a previously saved server
+  // plan, hydrate it so a returning user doesn't have to re-click the
+  // button. Otherwise leave the week empty — generation is explicit, only
+  // when the user clicks "Generate plan for this week".
   useEffect(() => {
     if (autoLoadDone) return;
     if (!user || !userId) return;
-    if (!profile?.testDate) return;
     if (loadWeekFromStorage(userId, weekStartIso)) {
       setAutoLoadDone(true);
       return;
@@ -262,20 +254,16 @@ export default function StudyPlan() {
           const days = plannerToDayPlan(week, weekStartIso);
           setWeekPlan(days);
           if (days[0]?.date) setWeekStartIso(days[0].date);
-          setAutoLoadDone(true);
-          return;
         }
       } catch {
-        // network error → fall through to generation
+        // network error → leave the week empty; user can click the button
       }
-      if (cancelled) return;
-      setAutoLoadDone(true);
-      generateFromDiagnostic();
+      if (!cancelled) setAutoLoadDone(true);
     })();
     return () => {
       cancelled = true;
     };
-  }, [user, userId, profile?.testDate, weekStartIso, autoLoadDone, generateFromDiagnostic]);
+  }, [user, userId, weekStartIso, autoLoadDone]);
 
   const today = new Date();
   const daysUntilTest = testDate
@@ -449,7 +437,7 @@ export default function StudyPlan() {
       setWeekOffset(newOffset);
       setWeekStartIso(newStartIso);
       const stored = loadWeekFromStorage(userId, newStartIso);
-      setWeekPlan(stored ?? generateInitialWeekPlan(newStart));
+      setWeekPlan(stored ?? generateEmptyWeek(newStart));
     },
     [weekOffset, userId]
   );
@@ -506,7 +494,7 @@ export default function StudyPlan() {
               <h2 className="text-h3 text-tz-navy">Personalized plan</h2>
             </div>
             <button
-              onClick={generateFromDiagnostic}
+              onClick={generateForThisWeek}
               disabled={generating}
               className="inline-flex items-center justify-center gap-1.5 bg-tz-blue hover:bg-tz-navy disabled:bg-tz-gray-300 disabled:cursor-not-allowed text-white text-small font-medium rounded-lg px-3 py-2 transition-colors"
             >
@@ -518,14 +506,14 @@ export default function StudyPlan() {
               ) : (
                 <>
                   <Wand2 className="w-4 h-4" />
-                  {user ? "Regenerate from diagnostic" : "Sign in to generate"}
+                  Generate plan for this week
                 </>
               )}
             </button>
           </div>
           <p className="text-small text-tz-gray-600">
             {user && profile?.testDate
-              ? "AI builds a 7-day plan from your latest diagnostic, target score, and study intensity. Edit anything; your changes save automatically."
+              ? "AI builds a 7-day plan from your latest diagnostic, target score, and study intensity. Other weeks stay empty until you generate or add tasks yourself."
               : user
               ? "Add your SAT test date in Settings, then we can build a plan from your latest diagnostic."
               : "Sign in to get a plan tailored to your diagnostic results, target score, and weekly hours."}

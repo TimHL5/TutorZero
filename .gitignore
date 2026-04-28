@@ -33,7 +33,3 @@ scripts/__pycache__/
 .env.local
 .env.*.local
 .vercel
-
-# build-api.mjs preserves the original entry here so a re-run / local
-# restore can recover the source after in-place bundling.
-api/_index.ts.original

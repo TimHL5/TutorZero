@@ -18,8 +18,8 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 
 const root = path.resolve(import.meta.dirname, "..");
-const entry = path.join(root, "api", "[[...route]].ts");
-const backup = path.join(root, "api", "_route.ts.original");
+const entry = path.join(root, "api", "index.ts");
+const backup = path.join(root, "api", "_index.ts.original");
 const tmpOut = path.join(root, "api", ".bundle.mjs");
 
 async function run() {

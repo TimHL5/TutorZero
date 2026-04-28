@@ -36,4 +36,4 @@ scripts/__pycache__/
 
 # build-api.mjs preserves the original entry here so a re-run / local
 # restore can recover the source after in-place bundling.
-api/_route.ts.original
+api/_index.ts.original

@@ -138,8 +138,16 @@ export default function Progress() {
     return Math.round((data.questionsCorrect / data.questionsAttempted) * 100);
   };
 
-  // Current estimated score from real progress data
-  const currentScore = progress.estimatedMathScore + progress.estimatedRWScore;
+  // Current estimated score. Match Dashboard's logic: prefer the
+  // server-authoritative value on profile (Diagnostician/Reviewer keep this
+  // updated post-session) and fall back to the client-side calc only when
+  // the server hasn't filled it in yet (anonymous / pre-diagnostic users).
+  // Without this fallback, Dashboard and Progress could show different
+  // current scores after the server updates the profile but before the
+  // client re-runs its own estimate.
+  const estimatedMath = profile?.estimatedMathScore ?? progress.estimatedMathScore;
+  const estimatedRW = profile?.estimatedRWScore ?? progress.estimatedRWScore;
+  const currentScore = estimatedMath + estimatedRW;
   const scoreChange = scoreHistory.length >= 2
     ? currentScore - scoreHistory[scoreHistory.length - 2].score
     : 0;

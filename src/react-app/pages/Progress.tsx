@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { AppLayout } from "@/react-app/components/layout/AppLayout";
 import { useStudentProgress } from "@/react-app/hooks/useStudentProgress";
 import { topicDisplayNames } from "@/data/questions";
@@ -6,6 +6,11 @@ import { cn } from "@/react-app/lib/utils";
 import { useAuth } from "@/react-app/lib/AuthProvider";
 import { TrendingUp, Target, Clock, BarChart3, Flame, Sparkles, Calendar, Download } from "lucide-react";
 import { downloadProgressReport } from "@/react-app/lib/pdfExport";
+import {
+  SKILLS_BY_DOMAIN,
+  DOMAINS_IN_ORDER,
+  skillSlugToDisplayName,
+} from "@/react-app/lib/sat-taxonomy";
 
 function formatRelativeDate(dateStr: string): string {
   const date = new Date(dateStr);
@@ -18,28 +23,12 @@ function formatRelativeDate(dateStr: string): string {
   return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
-// Heat map data structure for topics
-const MATH_TOPICS = [
-  "algebra_linear", "algebra_systems", "algebra_functions",
-  "advanced_quadratic", "advanced_exponential", "advanced_polynomial",
-  "problem_solving_ratios", "problem_solving_statistics", "problem_solving_probability",
-  "geometry_lines", "geometry_triangles", "geometry_circles"
-];
-
-const RW_TOPICS = [
-  "reading_main_idea", "reading_inference", "reading_vocabulary",
-  "writing_grammar", "writing_punctuation", "writing_transitions",
-  "craft_structure", "craft_purpose", "expression_rhetoric"
-];
-
-// Mock confidence calibration data (real calibration requires tracking per-question confidence)
-const mockCalibrationData = [
-  { confidence: "Very Low", predicted: 20, actual: 35 },
-  { confidence: "Low", predicted: 40, actual: 52 },
-  { confidence: "Medium", predicted: 60, actual: 68 },
-  { confidence: "High", predicted: 80, actual: 75 },
-  { confidence: "Very High", predicted: 95, actual: 82 },
-];
+interface CalibrationRow {
+  confidence: string;
+  expected: number;
+  actual: number | null;
+  n: number;
+}
 
 export default function Progress() {
   const { user } = useAuth();
@@ -52,44 +41,64 @@ export default function Progress() {
   const targetScore = profile?.targetScore || 1400;
   const testDate = profile?.testDate ? new Date(profile.testDate) : null;
 
-  // Derive score history from real sessions grouped by week
+  // Real per-bucket calibration sourced from attempts.confidence × is_correct.
+  const [calibrationData, setCalibrationData] = useState<CalibrationRow[] | null>(null);
+  useEffect(() => {
+    if (!user) return;
+    let cancelled = false;
+    fetch("/api/user/calibration", { credentials: "include" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        if (cancelled) return;
+        if (j?.success && Array.isArray(j.data)) setCalibrationData(j.data as CalibrationRow[]);
+      })
+      .catch(() => {
+        // Card shows empty-state if the fetch fails; not worth surfacing.
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
+
+  // One bar per session, plotting the per-session estimated total score
+  // (from ai_session_reviews) so this chart, the stat card, and the
+  // trajectory all speak the same units. Falls back to an accuracy-derived
+  // estimate for any session without a review yet. Micro-sessions (<3 q)
+  // are filtered so a single accidental answer can't drop a 400-score bar.
   const scoreHistory = useMemo(() => {
     if (progress.sessions.length === 0) return [];
-    const sorted = [...progress.sessions].sort(
-      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
-    );
-    const weeks: { weekKey: string; totalCorrect: number; totalAttempted: number }[] = [];
-    let runningCorrect = 0;
-    let runningTotal = 0;
-    sorted.forEach((session) => {
-      const d = new Date(session.date);
-      const weekStart = new Date(d);
-      weekStart.setDate(weekStart.getDate() - weekStart.getDay());
-      const weekKey = weekStart.toISOString().split("T")[0];
-      runningCorrect += session.questionsCorrect;
-      runningTotal += session.questionsAttempted;
-      const existing = weeks.find((w) => w.weekKey === weekKey);
-      if (existing) {
-        existing.totalCorrect = runningCorrect;
-        existing.totalAttempted = runningTotal;
-      } else {
-        weeks.push({ weekKey, totalCorrect: runningCorrect, totalAttempted: runningTotal });
-      }
-    });
-    return weeks.map((w, i) => ({
-      date: `Week ${i + 1}`,
-      score: Math.round(400 + (w.totalAttempted > 0 ? Math.min(1, w.totalCorrect / w.totalAttempted) : 0.5) * 1200),
-      timestamp: new Date(w.weekKey).getTime(),
-    }));
+    return [...progress.sessions]
+      .filter((s) => s.questionsAttempted >= 3)
+      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+      .map((session) => {
+        const review =
+          session.estimatedMathScore != null && session.estimatedRWScore != null
+            ? session.estimatedMathScore + session.estimatedRWScore
+            : null;
+        const acc =
+          session.questionsAttempted > 0
+            ? session.questionsCorrect / session.questionsAttempted
+            : 0;
+        const accDerived = Math.round(400 + Math.min(1, Math.max(0, acc)) * 1200);
+        return {
+          date: formatRelativeDate(session.date),
+          score: review ?? accDerived,
+          timestamp: new Date(session.date).getTime(),
+        };
+      });
   }, [progress.sessions]);
 
-  // Derive session list from real data
+  // Derive session list from real data. skillTrackedAttempted lets the row
+  // render a footnote when only some of the session's questions have skill
+  // identity recorded — so users can see why the heatmap may not reflect
+  // every old question.
   const recentSessions = useMemo(() => {
     return progress.sessions.slice(0, 20).map((s, i) => ({
       id: i + 1,
       date: formatRelativeDate(s.date),
       type: s.type === "diagnostic" ? "Diagnostic" : "Practice",
       questions: s.questionsAttempted,
+      skillTracked: s.skillTrackedAttempted ?? 0,
       accuracy: s.questionsAttempted > 0 ? Math.round((s.questionsCorrect / s.questionsAttempted) * 100) : 0,
       duration: Math.round(s.timeSpentSeconds / 60),
     }));
@@ -113,7 +122,7 @@ export default function Progress() {
       totalCorrect: stats.totalCorrect,
       accuracy: stats.overallAccuracy * 100,
       studyTimeMinutes: stats.totalTimeMinutes,
-      streak: progress.currentStreak || 0,
+      streak: profile?.streakDays ?? progress.currentStreak ?? 0,
       testDate: testDate || new Date(),
       scoreHistory,
       topicMastery: topicMastery.map(t => ({
@@ -131,13 +140,6 @@ export default function Progress() {
     });
   };
 
-  // Generate heat map data
-  const getTopicHeatValue = (topic: string) => {
-    const data = progress.topicProgress[topic];
-    if (!data || data.questionsAttempted === 0) return null;
-    return Math.round((data.questionsCorrect / data.questionsAttempted) * 100);
-  };
-
   // Current estimated score. Match Dashboard's logic: prefer the
   // server-authoritative value on profile (Diagnostician/Reviewer keep this
   // updated post-session) and fall back to the client-side calc only when
@@ -151,6 +153,16 @@ export default function Progress() {
   const scoreChange = scoreHistory.length >= 2
     ? currentScore - scoreHistory[scoreHistory.length - 2].score
     : 0;
+
+  // Y-axis floor for the trajectory chart. Hardcoded 900 used to clip any
+  // baseline diagnostic that scored under 900 off the bottom of the chart.
+  // Anchor 100 below the lowest historical point (or 400 absolute floor),
+  // so every score plots inside the visible area.
+  const yMin = useMemo(() => {
+    const candidates = scoreHistory.map((p) => p.score);
+    candidates.push(currentScore);
+    return Math.max(400, Math.min(...candidates) - 100);
+  }, [scoreHistory, currentScore]);
 
   // Calculate score trajectory projection
   const trajectoryData = useMemo(() => {
@@ -286,7 +298,7 @@ export default function Progress() {
               <Flame className="w-4 h-4" />
               <span>Streak</span>
             </div>
-            <div className="text-2xl lg:text-display font-bold text-tz-navy">{progress.currentStreak || 0}</div>
+            <div className="text-2xl lg:text-display font-bold text-tz-navy">{profile?.streakDays ?? progress.currentStreak ?? 0}</div>
             <div className="text-small text-tz-gray-400 mt-1">
               Days
             </div>
@@ -320,27 +332,80 @@ export default function Progress() {
           <div className="space-y-6">
             {/* Score Trend Chart */}
             <div className="bg-white rounded-xl border border-tz-gray-200 p-4 lg:p-6">
-              <h2 className="text-h3 text-tz-navy mb-6">Score Trend</h2>
+              <h2 className="text-h3 text-tz-navy mb-2">Score Trend</h2>
+              <p className="text-small text-tz-gray-400 mb-6">
+                One bar per practice session, ordered chronologically.
+              </p>
               {scoreHistory.length === 0 ? (
                 <p className="text-body text-tz-gray-400 text-center py-8">
                   Complete some practice sessions to see your score trend
                 </p>
               ) : (
-                <div className="h-48 flex items-end justify-between gap-1 lg:gap-2">
-                  {scoreHistory.map((point, i) => {
-                    const height = Math.max(5, ((point.score - 400) / 1200) * 100);
-                    return (
-                      <div key={i} className="flex-1 flex flex-col items-center gap-2">
-                        <div className="text-xs lg:text-small text-tz-gray-600 font-medium">{point.score}</div>
-                        <div
-                          className="w-full bg-tz-blue rounded-t-lg transition-all duration-500"
-                          style={{ height: `${height}%` }}
-                        />
-                        <div className="text-xs lg:text-small text-tz-gray-400">{point.date}</div>
-                      </div>
-                    );
-                  })}
-                </div>
+                (() => {
+                  // SVG is reliable across browsers — flex+percentage-height
+                  // bar charts compute 0 height when the column has no
+                  // explicit height, so we draw bars as rects in SVG instead.
+                  const W = 1000;
+                  const H = 220;
+                  const pad = { top: 28, right: 12, bottom: 36, left: 12 };
+                  const innerW = W - pad.left - pad.right;
+                  const innerH = H - pad.top - pad.bottom;
+                  const yMinBar = 400;
+                  const yMaxBar = 1600;
+                  const xStep = innerW / scoreHistory.length;
+                  const barW = Math.min(80, xStep * 0.7);
+                  return (
+                    <svg
+                      viewBox={`0 0 ${W} ${H}`}
+                      className="w-full h-56"
+                      preserveAspectRatio="none"
+                    >
+                      {/* Gridlines: 400, 800, 1200, 1600 */}
+                      {[400, 800, 1200, 1600].map((g) => {
+                        const y = pad.top + (1 - (g - yMinBar) / (yMaxBar - yMinBar)) * innerH;
+                        return (
+                          <g key={g}>
+                            <line
+                              x1={pad.left} x2={W - pad.right}
+                              y1={y} y2={y}
+                              stroke="#E5E7EB" strokeDasharray="4 4" strokeWidth="1"
+                            />
+                            <text
+                              x={pad.left + 4} y={y - 4}
+                              fontSize="11" fill="#9CA3AF"
+                            >{g}</text>
+                          </g>
+                        );
+                      })}
+
+                      {scoreHistory.map((p, i) => {
+                        const cx = pad.left + xStep * (i + 0.5);
+                        const x = cx - barW / 2;
+                        const yTop = pad.top + (1 - (p.score - yMinBar) / (yMaxBar - yMinBar)) * innerH;
+                        const barHeight = innerH - (yTop - pad.top);
+                        return (
+                          <g key={i}>
+                            <rect
+                              x={x} y={yTop}
+                              width={barW} height={barHeight}
+                              fill="#006BB6" rx="6"
+                            />
+                            <text
+                              x={cx} y={yTop - 6}
+                              textAnchor="middle"
+                              fontSize="13" fontWeight="600" fill="#0A2540"
+                            >{p.score}</text>
+                            <text
+                              x={cx} y={H - pad.bottom + 18}
+                              textAnchor="middle"
+                              fontSize="11" fill="#9CA3AF"
+                            >{p.date}</text>
+                          </g>
+                        );
+                      })}
+                    </svg>
+                  );
+                })()
               )}
             </div>
 
@@ -359,91 +424,108 @@ export default function Progress() {
                     </div>
                   </div>
                   
-                  {/* Trajectory Visualization */}
-                  <div className="relative h-64 mb-6">
-                    {/* Y-axis labels */}
-                    <div className="absolute left-0 top-0 bottom-8 w-12 flex flex-col justify-between text-small text-tz-gray-400">
-                      <span>{targetScore}</span>
-                      <span>{Math.round((targetScore + 900) / 2)}</span>
-                      <span>900</span>
-                    </div>
-                    
-                    {/* Chart area */}
-                    <div className="ml-14 h-full relative">
-                      {/* Target line */}
-                      <div 
-                        className="absolute left-0 right-0 border-t-2 border-dashed border-tz-green/50"
-                        style={{ top: `${100 - ((targetScore - 900) / (targetScore - 900 + 100)) * 100}%` }}
+                  {/* Trajectory Visualization — single SVG with explicit
+                      coordinate space. Avoids fragile mixes of CSS percentages
+                      and SVG to keep gridlines, labels, and points all in
+                      lockstep. */}
+                  {(() => {
+                    const W = 1000;
+                    const H = 280;
+                    const pad = { top: 28, right: 16, bottom: 36, left: 56 };
+                    const innerW = W - pad.left - pad.right;
+                    const innerH = H - pad.top - pad.bottom;
+                    const yLo = yMin;
+                    const yHi = targetScore + 50;
+                    const yToPx = (s: number) =>
+                      pad.top + (1 - (s - yLo) / (yHi - yLo)) * innerH;
+                    const N = trajectoryData.points.length;
+                    const xToPx = (i: number) => pad.left + (i / Math.max(1, N - 1)) * innerW;
+                    const histN = scoreHistory.length;
+                    const boundaryX = xToPx(Math.max(0, histN - 1));
+                    const yTicks = [yLo, Math.round((yLo + yHi) / 2), yHi];
+
+                    const histPath = trajectoryData.points
+                      .filter((p) => !p.isProjected)
+                      .map((p, i) => `${i === 0 ? "M" : "L"}${xToPx(i)},${yToPx(p.score)}`)
+                      .join(" ");
+                    const projPath = trajectoryData.points
+                      .slice(histN - 1)
+                      .map((p, i) => {
+                        const idx = histN - 1 + i;
+                        return `${i === 0 ? "M" : "L"}${xToPx(idx)},${yToPx(p.score)}`;
+                      })
+                      .join(" ");
+
+                    return (
+                      <svg
+                        viewBox={`0 0 ${W} ${H}`}
+                        className="w-full h-72 mb-2"
+                        preserveAspectRatio="none"
                       >
-                        <span className="absolute right-0 -top-5 text-xs text-tz-green">Target: {targetScore}</span>
-                      </div>
-                      
-                      {/* Line chart */}
-                      <svg className="w-full h-[calc(100%-2rem)]" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        {/* Historical line */}
-                        <polyline
-                          fill="none"
-                          stroke="#006BB6"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          points={trajectoryData.points
-                            .filter(p => !p.isProjected)
-                            .map((p, i) => {
-                              const x = (i / (trajectoryData.points.length - 1)) * 100;
-                              const y = 100 - ((p.score - 900) / (targetScore - 900 + 100)) * 100;
-                              return `${x},${y}`;
-                            })
-                            .join(' ')
-                          }
+                        {/* Gridlines + y-axis labels */}
+                        {yTicks.map((y) => (
+                          <g key={y}>
+                            <line
+                              x1={pad.left} x2={W - pad.right}
+                              y1={yToPx(y)} y2={yToPx(y)}
+                              stroke="#E5E7EB" strokeDasharray="4 4" strokeWidth="1"
+                            />
+                            <text
+                              x={pad.left - 8} y={yToPx(y) + 4}
+                              fontSize="12" fill="#9CA3AF" textAnchor="end"
+                            >{y}</text>
+                          </g>
+                        ))}
+
+                        {/* Target line */}
+                        <line
+                          x1={pad.left} x2={W - pad.right}
+                          y1={yToPx(targetScore)} y2={yToPx(targetScore)}
+                          stroke="#00A651" strokeWidth="2" strokeDasharray="6 4"
                         />
+                        <text
+                          x={W - pad.right} y={yToPx(targetScore) - 6}
+                          fontSize="12" fill="#00A651" textAnchor="end" fontWeight="600"
+                        >Target {targetScore}</text>
+
+                        {/* Today divider */}
+                        <line
+                          x1={boundaryX} x2={boundaryX}
+                          y1={pad.top} y2={H - pad.bottom}
+                          stroke="#9CA3AF" strokeWidth="1" strokeDasharray="3 3"
+                        />
+                        <text
+                          x={boundaryX} y={pad.top - 10}
+                          fontSize="11" fill="#6B7280" textAnchor="middle"
+                        >Today</text>
+
+                        {/* Historical line */}
+                        <path d={histPath} stroke="#006BB6" strokeWidth="3"
+                          fill="none" strokeLinecap="round" strokeLinejoin="round" />
 
                         {/* Projected line */}
-                        <polyline
-                          fill="none"
-                          stroke="#00A651"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeDasharray="8,4"
-                          points={trajectoryData.points
-                            .filter((p, i) => !p.isProjected || i === scoreHistory.length - 1 || p.isProjected)
-                            .slice(scoreHistory.length - 1)
-                            .map((p, i) => {
-                              const x = ((i + scoreHistory.length - 1) / (trajectoryData.points.length - 1)) * 100;
-                              const y = 100 - ((p.score - 900) / (targetScore - 900 + 100)) * 100;
-                              return `${x},${y}`;
-                            })
-                            .join(' ')
-                          }
-                        />
-                        
+                        <path d={projPath} stroke="#00A651" strokeWidth="3"
+                          fill="none" strokeDasharray="8 4"
+                          strokeLinecap="round" strokeLinejoin="round" />
+
                         {/* Data points */}
-                        {trajectoryData.points.map((p, i) => {
-                          const x = (i / (trajectoryData.points.length - 1)) * 100;
-                          const y = 100 - ((p.score - 900) / (targetScore - 900 + 100)) * 100;
-                          return (
-                            <circle
-                              key={i}
-                              cx={x}
-                              cy={y}
-                              r="2"
-                              fill={p.isProjected ? "#00A651" : "#006BB6"}
-                              stroke="white"
-                              strokeWidth="2"
-                            />
-                          );
-                        })}
+                        {trajectoryData.points.map((p, i) => (
+                          <circle
+                            key={i}
+                            cx={xToPx(i)} cy={yToPx(p.score)}
+                            r={p.isProjected ? 3.5 : 4}
+                            fill={p.isProjected ? "#00A651" : "#006BB6"}
+                            stroke="white" strokeWidth="2"
+                          />
+                        ))}
+
+                        {/* X-axis labels */}
+                        <text x={pad.left} y={H - 8} fontSize="11" fill="#9CA3AF">Start</text>
+                        <text x={boundaryX} y={H - 8} fontSize="11" fill="#9CA3AF" textAnchor="middle">Now</text>
+                        <text x={W - pad.right} y={H - 8} fontSize="11" fill="#9CA3AF" textAnchor="end">Test day</text>
                       </svg>
-                      
-                      {/* X-axis labels */}
-                      <div className="flex justify-between mt-2 text-xs text-tz-gray-400">
-                        <span>Start</span>
-                        <span>Now</span>
-                        <span>Test Day</span>
-                      </div>
-                    </div>
-                  </div>
+                    );
+                  })()}
                   
                   {/* Projection Summary */}
                   <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-4 bg-tz-off-white rounded-lg">
@@ -491,64 +573,123 @@ export default function Progress() {
                   </div>
                 </div>
 
-                {/* Topic Heat Map */}
+                {/* Topic Heat Map — every SAT skill, grouped by domain. Cells
+                    with no attempts render as gray "Not yet" so users can spot
+                    untouched skills, not just weak ones. The formula box below
+                    the cells is the canonical "how is mastery calculated"
+                    explanation; the same number is shown both on each cell
+                    and in the native tooltip. */}
                 <div className="bg-white rounded-xl border border-tz-gray-200 p-4 lg:p-6">
-                  <div className="flex items-center gap-2 mb-6">
+                  <div className="flex items-center gap-2 mb-2">
                     <Sparkles className="w-5 h-5 text-tz-orange" />
                     <h2 className="text-h3 text-tz-navy">Topic Heat Map</h2>
                   </div>
-                  
-                  <div className="grid md:grid-cols-2 gap-8">
-                    {/* Math Section */}
-                    <div>
-                      <h3 className="text-label text-tz-gray-400 mb-4">MATH</h3>
-                      <div className="grid grid-cols-3 gap-2">
-                        {MATH_TOPICS.map((topic) => {
-                          const value = getTopicHeatValue(topic);
-                          return (
-                            <HeatMapCell 
-                              key={topic} 
-                              label={topicDisplayNames[topic]?.split(' ').slice(-1)[0] || topic}
-                              value={value}
-                            />
-                          );
-                        })}
-                      </div>
-                    </div>
-                    
-                    {/* Reading & Writing Section */}
-                    <div>
-                      <h3 className="text-label text-tz-gray-400 mb-4">READING & WRITING</h3>
-                      <div className="grid grid-cols-3 gap-2">
-                        {RW_TOPICS.map((topic) => {
-                          const value = getTopicHeatValue(topic);
-                          return (
-                            <HeatMapCell 
-                              key={topic} 
-                              label={topicDisplayNames[topic]?.split(' ').slice(-1)[0] || topic}
-                              value={value}
-                            />
-                          );
-                        })}
-                      </div>
-                    </div>
+                  <p className="text-small text-tz-gray-400 mb-3">
+                    Every SAT skill, color-coded by mastery. Gray cells haven't been practiced yet — start there to close gaps.
+                  </p>
+                  <div className="bg-tz-blue/5 border border-tz-blue/20 rounded-lg px-3 py-2 mb-6">
+                    <p className="text-small text-tz-navy">
+                      <strong>Mastery</strong> = correct &divide; attempted, per skill, across all your practice. Each cell shows the percentage and your raw count. Hover for the date you last practiced.
+                    </p>
                   </div>
 
-                  {/* Legend */}
-                  <div className="flex flex-wrap items-center justify-center gap-4 mt-6 pt-4 border-t border-tz-gray-100">
-                    <span className="text-small text-tz-gray-400">Mastery:</span>
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded bg-red-400" />
-                      <span className="text-small text-tz-gray-600">0-40%</span>
+                  {(["math", "reading", "writing"] as const).map((section) => {
+                    const sectionDomains = DOMAINS_IN_ORDER.filter((d) => d.section === section);
+                    if (sectionDomains.length === 0) return null;
+                    return (
+                      <div key={section} className="mb-6 last:mb-0">
+                        <h3 className="text-label text-tz-gray-400 mb-3 uppercase tracking-wide">
+                          {section === "math" ? "MATH" : section === "reading" ? "READING" : "WRITING"}
+                        </h3>
+                        <div className="space-y-4">
+                          {sectionDomains.map((domain) => {
+                            const skills = SKILLS_BY_DOMAIN[domain.slug] ?? [];
+                            const domainRollup = progress.domainProgress[domain.slug];
+                            const skillAttempted = skills.reduce(
+                              (sum, s) => sum + (progress.topicProgress[s.slug]?.questionsAttempted ?? 0),
+                              0
+                            );
+                            // "Untracked" = practice that landed on the domain
+                            // before the skill column existed. We can't split
+                            // those across the cells, but we can show the
+                            // total so the page doesn't pretend they're zero.
+                            const untrackedAttempted = Math.max(0, (domainRollup?.attempted ?? 0) - skillAttempted);
+                            const untrackedCorrect = Math.max(0, (domainRollup?.correct ?? 0) - skills.reduce(
+                              (sum, s) => sum + (progress.topicProgress[s.slug]?.questionsCorrect ?? 0),
+                              0
+                            ));
+                            const untrackedPct = untrackedAttempted > 0
+                              ? Math.round((untrackedCorrect / untrackedAttempted) * 100)
+                              : null;
+                            return (
+                              <div key={domain.slug}>
+                                <div className="flex items-baseline justify-between gap-2 mb-2">
+                                  <div className="text-xs text-tz-gray-600 font-medium">
+                                    {domain.displayName}
+                                  </div>
+                                  {untrackedAttempted > 0 && (
+                                    <div className="text-[11px] text-tz-gray-500">
+                                      <span className="text-tz-gray-400">Earlier sessions:</span>{" "}
+                                      <strong className="text-tz-navy">{untrackedCorrect}/{untrackedAttempted}</strong>
+                                      {untrackedPct !== null ? ` (${untrackedPct}%)` : ""}
+                                      <span className="text-tz-gray-400"> · domain only</span>
+                                    </div>
+                                  )}
+                                </div>
+                                <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
+                                  {skills.map((skill) => {
+                                    const data = progress.topicProgress[skill.slug];
+                                    const attempted = data?.questionsAttempted ?? 0;
+                                    const correct = data?.questionsCorrect ?? 0;
+                                    const value = attempted > 0
+                                      ? Math.round((correct / attempted) * 100)
+                                      : null;
+                                    return (
+                                      <HeatMapCell
+                                        key={skill.slug}
+                                        label={skillSlugToDisplayName(skill.slug)}
+                                        value={value}
+                                        attempted={attempted}
+                                        correct={correct}
+                                        lastPracticed={data?.lastPracticed ?? null}
+                                      />
+                                    );
+                                  })}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  {/* Legend — color bands plus the formula spelled out so a
+                      student can verify any cell's number by hand. */}
+                  <div className="mt-6 pt-4 border-t border-tz-gray-100 space-y-2">
+                    <div className="flex flex-wrap items-center justify-center gap-4">
+                      <span className="text-small text-tz-gray-400">Mastery bands:</span>
+                      <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 rounded bg-tz-gray-100 border border-tz-gray-200" />
+                        <span className="text-small text-tz-gray-600">Not yet</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 rounded bg-red-400" />
+                        <span className="text-small text-tz-gray-600">0-40%</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 rounded bg-yellow-400" />
+                        <span className="text-small text-tz-gray-600">40-70%</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 rounded bg-tz-green" />
+                        <span className="text-small text-tz-gray-600">70-100%</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded bg-yellow-400" />
-                      <span className="text-small text-tz-gray-600">40-70%</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded bg-tz-green" />
-                      <span className="text-small text-tz-gray-600">70-100%</span>
-                    </div>
+                    <p className="text-center text-xs text-tz-gray-500">
+                      Each cell: <strong>correct &divide; attempted</strong>.
+                      Hover any cell to see the date you last practiced.
+                    </p>
                   </div>
                 </div>
 
@@ -559,42 +700,111 @@ export default function Progress() {
                     <h2 className="text-h3 text-tz-navy">Confidence Calibration</h2>
                   </div>
                   <p className="text-small text-tz-gray-400 mb-6">
-                    Compare your confidence level with actual performance. Perfect calibration means the bars match.
+                    Compare your confidence level with actual performance. Well-calibrated means the actual matches the expected.
                   </p>
 
-                  <div className="space-y-4">
-                    {mockCalibrationData.map((row, i) => (
-                      <div key={i}>
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-1 gap-1">
-                          <span className="text-small text-tz-gray-600 w-24">{row.confidence}</span>
-                          <div className="flex items-center gap-4 text-small">
-                            <span className="text-tz-blue">Expected: {row.predicted}%</span>
-                            <span className="text-tz-green">Actual: {row.actual}%</span>
-                          </div>
-                        </div>
-                        <div className="flex gap-1 h-6">
-                          <div 
-                            className="bg-tz-blue/30 rounded-l"
-                            style={{ width: `${row.predicted}%` }}
-                          />
-                          <div 
-                            className={cn(
-                              "rounded-r",
-                              row.actual >= row.predicted ? "bg-tz-green" : "bg-tz-orange"
-                            )}
-                            style={{ width: `${Math.abs(row.actual - row.predicted)}%`, marginLeft: row.actual < row.predicted ? `-${row.predicted - row.actual}%` : 0 }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
-                    <p className="text-small text-tz-navy">
-                      <strong>Insight:</strong> You tend to be overconfident on high-difficulty questions. 
-                      Focus on building genuine mastery before feeling "very high" confidence.
+                  {!calibrationData || calibrationData.every((r) => r.n === 0) ? (
+                    <p className="text-body text-tz-gray-400 text-center py-8">
+                      Complete a few practice questions with confidence ratings to see your calibration.
                     </p>
-                  </div>
+                  ) : (
+                    <>
+                      <div className="space-y-5">
+                        {calibrationData.map((row) => {
+                          const hasData = row.actual !== null && row.n > 0;
+                          const actual = row.actual ?? 0;
+                          const gap = hasData ? actual - row.expected : 0;
+                          const status: "calibrated" | "over" | "under" | "none" =
+                            !hasData ? "none" : Math.abs(gap) <= 5 ? "calibrated" : gap > 0 ? "under" : "over";
+                          const badge = {
+                            calibrated: { label: "Well-calibrated", classes: "bg-tz-green/15 text-tz-green border-tz-green/30" },
+                            over:        { label: "Overconfident",  classes: "bg-orange-100 text-orange-700 border-orange-200" },
+                            under:       { label: "Underconfident", classes: "bg-blue-100 text-tz-blue border-blue-200" },
+                            none:        { label: "No data yet",    classes: "bg-tz-gray-100 text-tz-gray-400 border-tz-gray-200" },
+                          }[status];
+                          const gapText =
+                            !hasData ? "" : gap === 0 ? "On target" : `${gap > 0 ? "+" : ""}${gap}%`;
+
+                          return (
+                            <div key={row.confidence} className={cn(!hasData && "opacity-60")}>
+                              <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <div className="flex items-center gap-2">
+                                  <span className="text-body-strong text-tz-navy">{row.confidence}</span>
+                                  <span className={cn("text-xs font-medium px-2 py-0.5 rounded-full border", badge.classes)}>
+                                    {badge.label}
+                                  </span>
+                                </div>
+                                {hasData && (
+                                  <span className={cn(
+                                    "text-small font-semibold",
+                                    status === "calibrated" ? "text-tz-green" :
+                                    status === "under"      ? "text-tz-blue"  : "text-orange-600"
+                                  )}>
+                                    {gapText}
+                                  </span>
+                                )}
+                              </div>
+
+                              <div className="space-y-1.5">
+                                <div>
+                                  <div className="flex justify-between text-xs text-tz-gray-400 mb-0.5">
+                                    <span>Expected accuracy</span>
+                                    <span>{row.expected}%</span>
+                                  </div>
+                                  <div className="h-2.5 bg-tz-gray-100 rounded">
+                                    <div className="h-full bg-tz-blue/40 rounded" style={{ width: `${row.expected}%` }} />
+                                  </div>
+                                </div>
+                                <div>
+                                  <div className="flex justify-between text-xs text-tz-gray-400 mb-0.5">
+                                    <span>Your actual accuracy</span>
+                                    <span>{hasData ? `${actual}%` : "—"}</span>
+                                  </div>
+                                  <div className="h-2.5 bg-tz-gray-100 rounded">
+                                    <div
+                                      className={cn(
+                                        "h-full rounded",
+                                        status === "calibrated" ? "bg-tz-green" :
+                                        status === "under"      ? "bg-tz-blue"  :
+                                        status === "over"       ? "bg-orange-500" : ""
+                                      )}
+                                      style={{ width: `${actual}%` }}
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="text-xs text-tz-gray-400 mt-1.5">
+                                {hasData ? `Based on ${row.n} answer${row.n === 1 ? "" : "s"}` : "Tag confidence on more questions to populate this bucket."}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                        <p className="text-small text-tz-navy">
+                          <strong>Insight:</strong> {(() => {
+                            const populated = calibrationData.filter((r) => r.actual !== null && r.n >= 3);
+                            if (populated.length === 0) {
+                              return "Keep tagging your confidence on each question — your calibration profile sharpens as the sample grows.";
+                            }
+                            const worst = populated.reduce((acc, r) =>
+                              Math.abs((r.actual! - r.expected)) > Math.abs((acc.actual! - acc.expected)) ? r : acc
+                            );
+                            const gap = (worst.actual ?? 0) - worst.expected;
+                            if (Math.abs(gap) <= 5) {
+                              return "Your self-rating tracks your accuracy across all three confidence levels. That's well-calibrated — a real strength on test day.";
+                            }
+                            if (gap > 0) {
+                              return `Your biggest gap is on "${worst.confidence}" questions — you're scoring ${worst.actual}% when ~${worst.expected}% would match your self-rating. Trust yourself a bit more on those; you're underselling.`;
+                            }
+                            return `Your biggest gap is on "${worst.confidence}" questions — you rate yourself for ~${worst.expected}% but actually score ${worst.actual}%. Slow down and double-check before locking in those answers.`;
+                          })()}
+                        </p>
+                      </div>
+                    </>
+                  )}
                 </div>
             </>
           </div>
@@ -664,7 +874,14 @@ export default function Progress() {
                     </span>
                   </div>
                   <div className="flex items-center justify-between text-small text-tz-gray-600">
-                    <span>{session.questions} questions</span>
+                    <span>
+                      {session.questions} questions
+                      {session.skillTracked > 0 && session.skillTracked < session.questions && (
+                        <span className="text-xs text-tz-gray-400 ml-1">
+                          ({session.skillTracked} skill-tracked)
+                        </span>
+                      )}
+                    </span>
                     <span className={cn(
                       "font-medium",
                       session.accuracy >= 80 ? "text-tz-green" :
@@ -703,7 +920,14 @@ export default function Progress() {
                         {session.type}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-center text-body text-tz-gray-600">{session.questions}</td>
+                    <td className="px-6 py-4 text-center text-body text-tz-gray-600">
+                      {session.questions}
+                      {session.skillTracked > 0 && session.skillTracked < session.questions && (
+                        <span className="text-xs text-tz-gray-400 ml-1">
+                          ({session.skillTracked} skill-tracked)
+                        </span>
+                      )}
+                    </td>
                     <td className="px-6 py-4 text-center">
                       <span className={cn(
                         "text-body-strong",
@@ -726,32 +950,54 @@ export default function Progress() {
   );
 }
 
-function HeatMapCell({ label, value }: { label: string; value: number | null }) {
-  const getBgColor = (v: number | null) => {
-    if (v === null) return "bg-tz-gray-100";
-    if (v >= 70) return "bg-tz-green";
-    if (v >= 40) return "bg-yellow-400";
-    return "bg-red-400";
-  };
+function HeatMapCell({
+  label,
+  value,
+  attempted,
+  correct,
+  lastPracticed,
+}: {
+  label: string;
+  value: number | null;
+  attempted: number;
+  correct: number;
+  lastPracticed: string | null;
+}) {
+  const bg =
+    value === null ? "bg-tz-gray-100 border border-dashed border-tz-gray-300"
+      : value >= 70 ? "bg-tz-green"
+      : value >= 40 ? "bg-yellow-400"
+      : "bg-red-400";
+  const text = value === null ? "text-tz-gray-400" : "text-white";
 
-  const getTextColor = (v: number | null) => {
-    if (v === null) return "text-tz-gray-400";
-    return "text-white";
-  };
+  // Native title acts as the accessible tooltip — works on mobile and respects
+  // user preferences without needing a portal-rendered popover. Built from the
+  // same correct/attempted figures shown on the cell so hover always agrees
+  // with what's visible.
+  const lastSeen = lastPracticed
+    ? new Date(lastPracticed).toLocaleDateString("en-US", { month: "short", day: "numeric" })
+    : "never";
+  const tooltip = value === null
+    ? `${label} — never practiced`
+    : `${label} — ${correct}/${attempted} correct (${value}% mastery). Last practiced: ${lastSeen}.`;
 
   return (
-    <div className={cn(
-      "aspect-square rounded-lg flex flex-col items-center justify-center p-1 lg:p-2 transition-all",
-      getBgColor(value)
-    )}>
-      <span className={cn("text-xs font-medium truncate w-full text-center", getTextColor(value))}>
+    <div
+      className={cn(
+        "min-h-[68px] rounded-lg flex flex-col items-center justify-center px-2 py-2 text-center transition-all",
+        bg
+      )}
+      title={tooltip}
+    >
+      <span className={cn("text-[11px] leading-tight font-medium line-clamp-2", text)}>
         {label}
       </span>
-      {value !== null && (
-        <span className={cn("text-sm lg:text-lg font-bold", getTextColor(value))}>
-          {value}%
-        </span>
-      )}
+      <span className={cn("text-base font-bold mt-1 leading-none", text)}>
+        {value === null ? "Not yet" : `${value}%`}
+      </span>
+      <span className={cn("text-[10px] mt-0.5 leading-none", text, "opacity-90")}>
+        {attempted === 0 ? "0 attempted" : `${correct}/${attempted}`}
+      </span>
     </div>
   );
 }

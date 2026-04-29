@@ -81,6 +81,11 @@ const INPUT = {
     { skill: "linear_equations_one_var", severity: "high" as const, verified: true },
     { skill: "geom_circles", severity: "medium" as const, verified: false },
   ],
+  practiceSummary: [
+    { skill: "linear_equations_one_var", domain: "algebra", attempted: 0, mastery: 0 },
+    { skill: "linear_functions", domain: "algebra", attempted: 4, mastery: 0.5 },
+    { skill: "geom_circles", domain: "geometry", attempted: 0, mastery: 0 },
+  ],
   testDate: "2026-06-01",
   hoursPerWeek: 5,
   weekStartDate: "2026-04-20",
@@ -144,7 +149,11 @@ describe("plannerAgent", () => {
     expect(userMsg).toContain("hoursPerWeek=5");
     expect(userMsg).toContain("totalMinuteBudget=300");
     expect(userMsg).toContain("linear_equations_one_var");
-    expect(userMsg).toContain("[high]");
+    // Diagnostic-weak entry now includes the practiced/unpracticed status.
+    expect(userMsg).toMatch(/\[high, (un)?practiced\]/);
+    // Practice summary block is rendered alongside the weak-skills list.
+    expect(userMsg).toContain("PRACTICE SUMMARY");
+    expect(userMsg).toContain("[low_mastery, attempted=4");
   });
 
   it("throws when day name is invalid", async () => {

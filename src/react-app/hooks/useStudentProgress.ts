@@ -1,12 +1,50 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useAuth } from "@/react-app/lib/AuthProvider";
+import {
+  SKILLS_BY_DOMAIN,
+  DOMAINS_IN_ORDER,
+  domainForSkill,
+  skillSlugToDisplayName,
+} from "@/react-app/lib/sat-taxonomy";
+
+// Mastery thresholds (single source of truth — heatmap legend, prioritizer,
+// and the planner prompt all reference these). Match the worker's level
+// buckets so server-side level strings agree with client-side ones.
+export const MASTERY_FOUNDATION = 0.5;
+export const MASTERY_PROFICIENT = 0.7;
+export const MASTERY_ADVANCED = 0.85;
 
 export interface TopicProgress {
+  /** Skill slug (e.g. "linear_equations_one_var"). The dictionary is keyed by
+   * skill slug, so this duplicates the key for ergonomic Object.values use. */
   topic: string;
   questionsAttempted: number;
   questionsCorrect: number;
   lastPracticed: string | null;
   currentLevel: "foundation" | "developing" | "proficient" | "advanced";
+}
+
+/** Diagnostic-derived weakness as returned by /api/user/progress. */
+export interface DiagnosticWeakness {
+  skill: string;
+  severity: "high" | "medium" | "low";
+  verified: boolean;
+}
+
+export type PriorityTier = "diagnostic_unpracticed" | "low_mastery" | "unpracticed" | "maintenance";
+
+export interface PriorityTopic {
+  /** Skill slug — same identifier the planner's focusSkill uses. */
+  topic: string;
+  displayName: string;
+  domain: string;
+  domainDisplayName: string;
+  attempted: number;
+  correct: number;
+  mastery: number | null;
+  tier: PriorityTier;
+  severity: "high" | "medium" | "low" | null;
+  reason: string;
 }
 
 export interface SessionRecord {
@@ -15,12 +53,39 @@ export interface SessionRecord {
   type: "diagnostic" | "practice";
   questionsAttempted: number;
   questionsCorrect: number;
+  /** Subset of questionsAttempted that has per-skill identity recorded in
+   * user_skill_scores. The history row renders a "(N skill-tracked)"
+   * footnote when this is less than questionsAttempted, so the user can
+   * see why the heatmap doesn't show every question of every old session. */
+  skillTrackedAttempted?: number;
+  skillTrackedCorrect?: number;
   topics: string[];
   timeSpentSeconds: number;
+  /** From ai_session_reviews when present. Lets Score Trend plot the same
+   * "estimated total score" the dashboard stat card uses, so the chart and
+   * the headline number agree. */
+  estimatedMathScore?: number | null;
+  estimatedRWScore?: number | null;
+}
+
+export interface DomainProgress {
+  attempted: number;
+  correct: number;
 }
 
 export interface StudentProgress {
+  /** Keyed by **skill slug** (29 entries). Heatmap, suggestions, and the
+   * planner all read from this. The legacy domain-keyed shape lived only
+   * to match the user_skill_scores table — that table is now skill-aware
+   * (see migration 007), so the in-memory layer follows. */
   topicProgress: Record<string, TopicProgress>;
+  /** Domain-level rollup keyed by domain slug (8 entries). Used to surface
+   * pre-migration practice on the heatmap (sessions before skill-level
+   * tracking can't be split per-skill but their domain totals are kept). */
+  domainProgress: Record<string, DomainProgress>;
+  /** Diagnostic-flagged weak skills, mirrored from /api/user/progress so
+   * getPriorityTopics doesn't need a second round-trip. */
+  diagnosticWeaknesses: DiagnosticWeakness[];
   currentStreak: number;
   longestStreak: number;
   lastPracticeDate: string | null;
@@ -31,19 +96,38 @@ export interface StudentProgress {
   diagnosticDate: string | null;
 }
 
-const DEFAULT_TOPICS: Record<string, TopicProgress> = {
-  algebra: { topic: "algebra", questionsAttempted: 0, questionsCorrect: 0, lastPracticed: null, currentLevel: "foundation" },
-  advanced_math: { topic: "advanced_math", questionsAttempted: 0, questionsCorrect: 0, lastPracticed: null, currentLevel: "foundation" },
-  problem_solving: { topic: "problem_solving", questionsAttempted: 0, questionsCorrect: 0, lastPracticed: null, currentLevel: "foundation" },
-  geometry: { topic: "geometry", questionsAttempted: 0, questionsCorrect: 0, lastPracticed: null, currentLevel: "foundation" },
-  information_ideas: { topic: "information_ideas", questionsAttempted: 0, questionsCorrect: 0, lastPracticed: null, currentLevel: "foundation" },
-  craft_structure: { topic: "craft_structure", questionsAttempted: 0, questionsCorrect: 0, lastPracticed: null, currentLevel: "foundation" },
-  expression: { topic: "expression", questionsAttempted: 0, questionsCorrect: 0, lastPracticed: null, currentLevel: "foundation" },
-  conventions: { topic: "conventions", questionsAttempted: 0, questionsCorrect: 0, lastPracticed: null, currentLevel: "foundation" },
-};
+// Build the 29-skill default seed from the canonical taxonomy. Every skill
+// starts at zero; rows hydrate from /api/user/progress when the user
+// authenticates.
+const ALL_SKILL_SLUGS: string[] = DOMAINS_IN_ORDER.flatMap((d) =>
+  (SKILLS_BY_DOMAIN[d.slug] ?? []).map((s) => s.slug)
+);
+const DEFAULT_TOPICS: Record<string, TopicProgress> = Object.fromEntries(
+  ALL_SKILL_SLUGS.map((slug) => [
+    slug,
+    {
+      topic: slug,
+      questionsAttempted: 0,
+      questionsCorrect: 0,
+      lastPracticed: null,
+      currentLevel: "foundation" as const,
+    },
+  ])
+);
+
+const MATH_SKILL_SLUGS: string[] = (["algebra", "advanced_math", "problem_solving", "geometry"] as const)
+  .flatMap((d) => (SKILLS_BY_DOMAIN[d] ?? []).map((s) => s.slug));
+const RW_SKILL_SLUGS: string[] = (["information_ideas", "craft_structure", "expression", "conventions"] as const)
+  .flatMap((d) => (SKILLS_BY_DOMAIN[d] ?? []).map((s) => s.slug));
+
+const DEFAULT_DOMAIN_PROGRESS: Record<string, DomainProgress> = Object.fromEntries(
+  DOMAINS_IN_ORDER.map((d) => [d.slug, { attempted: 0, correct: 0 }])
+);
 
 const DEFAULT_PROGRESS: StudentProgress = {
   topicProgress: DEFAULT_TOPICS,
+  domainProgress: DEFAULT_DOMAIN_PROGRESS,
+  diagnosticWeaknesses: [],
   currentStreak: 0,
   longestStreak: 0,
   lastPracticeDate: null,
@@ -102,10 +186,24 @@ export function useStudentProgress() {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         const parsed = JSON.parse(stored);
+        const incoming = (parsed.topicProgress ?? {}) as Record<string, TopicProgress>;
+        const filtered: Record<string, TopicProgress> = { ...DEFAULT_TOPICS };
+        for (const [k, v] of Object.entries(incoming)) {
+          if (k in DEFAULT_TOPICS) filtered[k] = v;
+        }
+        const incomingDomain = (parsed.domainProgress ?? {}) as Record<string, DomainProgress>;
+        const filteredDomain: Record<string, DomainProgress> = { ...DEFAULT_DOMAIN_PROGRESS };
+        for (const [k, v] of Object.entries(incomingDomain)) {
+          if (k in DEFAULT_DOMAIN_PROGRESS) filteredDomain[k] = v;
+        }
         setProgress({
           ...DEFAULT_PROGRESS,
           ...parsed,
-          topicProgress: { ...DEFAULT_TOPICS, ...parsed.topicProgress }
+          topicProgress: filtered,
+          domainProgress: filteredDomain,
+          diagnosticWeaknesses: Array.isArray(parsed.diagnosticWeaknesses)
+            ? parsed.diagnosticWeaknesses
+            : [],
         });
       }
     } catch (e) {
@@ -138,8 +236,26 @@ export function useStudentProgress() {
       if (response.ok) {
         const result = await response.json();
         if (result.success && result.data) {
+          // Filter incoming topicProgress to known skill slugs only — older
+          // (anon) endpoints return domain-keyed entries that would otherwise
+          // contaminate skill-level views.
+          const incoming = (result.data.topicProgress ?? {}) as Record<string, TopicProgress>;
+          const filteredTopicProgress: Record<string, TopicProgress> = { ...DEFAULT_TOPICS };
+          for (const [k, v] of Object.entries(incoming)) {
+            if (k in DEFAULT_TOPICS) filteredTopicProgress[k] = v;
+          }
+          // Filter domainProgress similarly to keep keyspace clean.
+          const incomingDomain = (result.data.domainProgress ?? {}) as Record<string, DomainProgress>;
+          const filteredDomainProgress: Record<string, DomainProgress> = { ...DEFAULT_DOMAIN_PROGRESS };
+          for (const [k, v] of Object.entries(incomingDomain)) {
+            if (k in DEFAULT_DOMAIN_PROGRESS) filteredDomainProgress[k] = v;
+          }
           const serverProgress: StudentProgress = {
-            topicProgress: { ...DEFAULT_TOPICS, ...result.data.topicProgress },
+            topicProgress: filteredTopicProgress,
+            domainProgress: filteredDomainProgress,
+            diagnosticWeaknesses: Array.isArray(result.data.diagnosticWeaknesses)
+              ? (result.data.diagnosticWeaknesses as DiagnosticWeakness[])
+              : [],
             currentStreak: result.data.currentStreak || 0,
             longestStreak: result.data.longestStreak || 0,
             lastPracticeDate: result.data.lastPracticeDate,
@@ -176,6 +292,7 @@ export function useStudentProgress() {
     type: "diagnostic" | "practice",
     attempts: Array<{
       topic: string;
+      skill?: string;
       isCorrect: boolean;
       questionId?: number;
       selectedIndex?: number;
@@ -198,32 +315,55 @@ export function useStudentProgress() {
       timeSpentSeconds
     };
 
-    // Update local state immediately
-    const newTopicProgress = { ...progress.topicProgress };
-    
-    attempts.forEach(attempt => {
-      const topic = newTopicProgress[attempt.topic];
-      if (topic) {
-        topic.questionsAttempted++;
-        if (attempt.isCorrect) topic.questionsCorrect++;
-        topic.lastPracticed = today;
-        
-        const accuracy = topic.questionsAttempted > 0 
-          ? topic.questionsCorrect / topic.questionsAttempted 
-          : 0;
-        topic.currentLevel = calculateLevel(accuracy);
-      }
+    // Update local state immediately. Increment the skill-level entry — the
+    // attempt's `skill` field carries the granular slug; the legacy `topic`
+    // field is the domain rollup. Attempts without a skill (older clients)
+    // are dropped from the in-memory skill view but still bump the domain
+    // counter so the heatmap's domain footnote stays accurate.
+    const newDomainProgress: Record<string, DomainProgress> = {
+      ...progress.domainProgress,
+    };
+    attempts.forEach((attempt) => {
+      const domainSlug = attempt.topic;
+      if (!domainSlug || !(domainSlug in newDomainProgress)) return;
+      const prev = newDomainProgress[domainSlug];
+      newDomainProgress[domainSlug] = {
+        attempted: prev.attempted + 1,
+        correct: prev.correct + (attempt.isCorrect ? 1 : 0),
+      };
     });
 
-    // Calculate scores
-    const mathTopics = ["algebra", "advanced_math", "problem_solving", "geometry"];
-    const rwTopics = ["information_ideas", "craft_structure", "expression", "conventions"];
+    const newTopicProgress = { ...progress.topicProgress };
+    attempts.forEach(attempt => {
+      const skillSlug = typeof attempt.skill === "string" && attempt.skill.length > 0
+        ? attempt.skill
+        : null;
+      if (!skillSlug) return;
+      const entry = newTopicProgress[skillSlug] ?? {
+        topic: skillSlug,
+        questionsAttempted: 0,
+        questionsCorrect: 0,
+        lastPracticed: null,
+        currentLevel: "foundation" as const,
+      };
+      entry.questionsAttempted++;
+      if (attempt.isCorrect) entry.questionsCorrect++;
+      entry.lastPracticed = today;
+      const acc = entry.questionsAttempted > 0
+        ? entry.questionsCorrect / entry.questionsAttempted
+        : 0;
+      entry.currentLevel = calculateLevel(acc);
+      newTopicProgress[skillSlug] = entry;
+    });
 
-    const calcSectionScore = (topicKeys: string[]) => {
+    // Section score: sum across the section's skill rollups so the chart
+    // moves the moment a student finishes a session, without waiting for
+    // the server roundtrip.
+    const calcSectionScore = (skillSlugs: string[]) => {
       let totalAttempted = 0;
       let totalCorrect = 0;
-      topicKeys.forEach(key => {
-        const t = newTopicProgress[key];
+      skillSlugs.forEach(slug => {
+        const t = newTopicProgress[slug];
         if (t) {
           totalAttempted += t.questionsAttempted;
           totalCorrect += t.questionsCorrect;
@@ -249,9 +389,10 @@ export function useStudentProgress() {
     const updatedProgress: StudentProgress = {
       ...progress,
       topicProgress: newTopicProgress,
+      domainProgress: newDomainProgress,
       sessions: [session, ...progress.sessions].slice(0, 50),
-      estimatedMathScore: calcSectionScore(mathTopics),
-      estimatedRWScore: calcSectionScore(rwTopics),
+      estimatedMathScore: calcSectionScore(MATH_SKILL_SLUGS),
+      estimatedRWScore: calcSectionScore(RW_SKILL_SLUGS),
       diagnosticCompleted: type === "diagnostic" ? true : progress.diagnosticCompleted,
       diagnosticDate: type === "diagnostic" ? today : progress.diagnosticDate,
       currentStreak: newStreak,
@@ -392,17 +533,115 @@ export function useStudentProgress() {
     };
   }, [progress]);
 
-  // Get weakest topics
-  const getWeakestTopics = useCallback((count: number = 3) => {
-    return Object.values(progress.topicProgress)
-      .filter(t => t.questionsAttempted > 0)
-      .sort((a, b) => {
-        const aAccuracy = a.questionsCorrect / a.questionsAttempted;
-        const bAccuracy = b.questionsCorrect / b.questionsAttempted;
-        return aAccuracy - bAccuracy;
-      })
-      .slice(0, count);
-  }, [progress.topicProgress]);
+  // Tiered priority list — the canonical "what should this student work on
+  // next" answer for both the StudyPlan suggestion chips and the planner
+  // agent. Ordering, in priority sequence:
+  //   1. Diagnostic-flagged weak skills (high → medium) the student has
+  //      NOT practiced yet. These are the highest-signal gaps.
+  //   2. Practiced skills with mastery < MASTERY_PROFICIENT (0.70),
+  //      sorted ascending so the weakest surface first.
+  //   3. Skills the student has never practiced AND the diagnostic
+  //      didn't flag. Filling in unknown territory.
+  //   4. Practiced skills 0.70 ≤ mastery < 0.85 — maintenance for proficient
+  //      skills, only if (1)-(3) don't fill `count`.
+  const getPriorityTopics = useCallback((count: number = 5): PriorityTopic[] => {
+    const out: PriorityTopic[] = [];
+    const seen = new Set<string>();
+
+    const buildEntry = (
+      slug: string,
+      tier: PriorityTier,
+      severity: PriorityTopic["severity"],
+      reason: string
+    ): PriorityTopic => {
+      const data = progress.topicProgress[slug];
+      const attempted = data?.questionsAttempted ?? 0;
+      const correct = data?.questionsCorrect ?? 0;
+      const mastery = attempted > 0 ? correct / attempted : null;
+      const domain = domainForSkill(slug);
+      const domainDisplay = DOMAINS_IN_ORDER.find((d) => d.slug === domain)?.displayName ?? domain;
+      return {
+        topic: slug,
+        displayName: skillSlugToDisplayName(slug),
+        domain,
+        domainDisplayName: domainDisplay,
+        attempted,
+        correct,
+        mastery,
+        tier,
+        severity,
+        reason,
+      };
+    };
+
+    const push = (entry: PriorityTopic) => {
+      if (seen.has(entry.topic) || out.length >= count) return;
+      seen.add(entry.topic);
+      out.push(entry);
+    };
+
+    // Tier 1: diagnostic-weak unpracticed
+    const weaknessesBySeverity = [...progress.diagnosticWeaknesses].sort((a, b) => {
+      const order = { high: 0, medium: 1, low: 2 } as const;
+      return (order[a.severity] ?? 2) - (order[b.severity] ?? 2);
+    });
+    for (const w of weaknessesBySeverity) {
+      const data = progress.topicProgress[w.skill];
+      if ((data?.questionsAttempted ?? 0) === 0) {
+        push(buildEntry(w.skill, "diagnostic_unpracticed", w.severity, `Diagnostic-flagged · ${w.severity}`));
+      }
+    }
+
+    // Tier 2: practiced, mastery < proficient (0.70)
+    const practiced = ALL_SKILL_SLUGS
+      .map((slug) => ({ slug, data: progress.topicProgress[slug] }))
+      .filter((p) => (p.data?.questionsAttempted ?? 0) > 0)
+      .map((p) => ({
+        slug: p.slug,
+        mastery: (p.data!.questionsCorrect / p.data!.questionsAttempted),
+      }))
+      .sort((a, b) => a.mastery - b.mastery);
+    for (const p of practiced) {
+      if (p.mastery < MASTERY_PROFICIENT) {
+        push(buildEntry(p.slug, "low_mastery", null, `${Math.round(p.mastery * 100)}% mastery — needs work`));
+      }
+    }
+
+    // Tier 3: unpracticed and not flagged by diagnostic. Math-first ordering
+    // so a balanced distribution surfaces (mirrors the planner's bias).
+    const flaggedSet = new Set(progress.diagnosticWeaknesses.map((w) => w.skill));
+    for (const slug of ALL_SKILL_SLUGS) {
+      const data = progress.topicProgress[slug];
+      if ((data?.questionsAttempted ?? 0) === 0 && !flaggedSet.has(slug)) {
+        push(buildEntry(slug, "unpracticed", null, "Not yet practiced"));
+      }
+    }
+
+    // Tier 4: proficient maintenance, only if there's room.
+    for (const p of practiced) {
+      if (p.mastery >= MASTERY_PROFICIENT && p.mastery < MASTERY_ADVANCED) {
+        push(buildEntry(p.slug, "maintenance", null, `${Math.round(p.mastery * 100)}% — keep sharp`));
+      }
+    }
+
+    return out.slice(0, count);
+  }, [progress.topicProgress, progress.diagnosticWeaknesses]);
+
+  // Backwards-compat alias for any caller that hasn't migrated yet. Returns
+  // PriorityTopic shape, which is a superset of the old TopicProgress fields
+  // most callers consume (questionsAttempted/Correct, topic).
+  const getWeakestTopics = useCallback(
+    (count: number = 3) => {
+      return getPriorityTopics(count).map((p) => ({
+        topic: p.topic,
+        questionsAttempted: p.attempted,
+        questionsCorrect: p.correct,
+        lastPracticed: progress.topicProgress[p.topic]?.lastPracticed ?? null,
+        currentLevel: calculateLevel(p.mastery ?? 0),
+      }));
+    },
+    [getPriorityTopics, progress.topicProgress]
+  );
 
   // Reset all progress
   const resetProgress = useCallback(async () => {
@@ -430,6 +669,7 @@ export function useStudentProgress() {
     markDiagnosticComplete,
     getOverallStats,
     getWeakestTopics,
+    getPriorityTopics,
     resetProgress,
     refreshFromServer: fetchProgressFromServer
   };

@@ -4,6 +4,7 @@ import { getDiagnosticQuestions, type Question, topicDisplayNames } from "@/data
 import { cn } from "@/react-app/lib/utils";
 import { MathText } from "@/react-app/components/ui/MathText";
 import { Loader2 } from "lucide-react";
+import { useStudentProgress } from "@/react-app/hooks/useStudentProgress";
 
 type ConfidenceLevel = "guessing" | "somewhat" | "confident";
 
@@ -24,6 +25,7 @@ function difficultyToCode(d: Question["difficulty"]): "E" | "M" | "H" {
 
 export default function DiagnosticTest() {
   const navigate = useNavigate();
+  const { recordSession } = useStudentProgress();
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Map<number, Answer>>(new Map());
@@ -110,12 +112,42 @@ export default function DiagnosticTest() {
       };
     });
 
+    // Persist the diagnostic as a real user_sessions row + attempts + skill
+    // scores, just like a practice session. Without this, diagnostics are
+    // invisible on Score Trend / History and don't seed the heatmap. The
+    // session id is forwarded to the Diagnostician so ai_diagnoses.session_id
+    // links the analysis to its source attempts.
+    const sessionAttempts = answersArray.map((a) => {
+      const q = questions.find((qq) => qq.id === a.questionId);
+      return {
+        topic: q?.topic ?? "",
+        skill: q?.skill,
+        questionId: a.questionId,
+        selectedIndex: a.selectedIndex,
+        isCorrect: a.isCorrect,
+        timeSpentSec: a.timeSpent,
+        confidence: a.confidence,
+      };
+    });
+    const totalDiagnosticTime = answersArray.reduce((sum, a) => sum + a.timeSpent, 0);
+    let diagnosticSessionId: number | null = null;
+    try {
+      const result = await recordSession(
+        "diagnostic",
+        sessionAttempts,
+        totalDiagnosticTime
+      );
+      diagnosticSessionId = result?.sessionId ?? null;
+    } catch (e) {
+      console.error("Diagnostic recordSession failed:", e);
+    }
+
     try {
       const response = await fetch("/api/agents/diagnostician", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ attempts: attemptsPayload }),
+        body: JSON.stringify({ attempts: attemptsPayload, sessionId: diagnosticSessionId }),
       });
 
       if (!response.ok) {

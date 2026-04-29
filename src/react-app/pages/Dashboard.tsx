@@ -14,7 +14,23 @@ import { cn } from "@/react-app/lib/utils";
 export default function Dashboard() {
   const navigate = useNavigate();
   const { user, isPending } = useAuth();
-  const { progress, isLoaded, getWeakestTopics } = useStudentProgress();
+  const { progress, isLoaded, getWeakestTopics, refreshFromServer } = useStudentProgress();
+  // Refetch on focus / visibility change so coming back from a practice
+  // session immediately reflects new attempts. Without this, the dashboard
+  // can sit on stale localStorage data that pre-dates the session.
+  useEffect(() => {
+    if (!user) return;
+    const onFocus = () => refreshFromServer();
+    const onVis = () => {
+      if (document.visibilityState === "visible") refreshFromServer();
+    };
+    window.addEventListener("focus", onFocus);
+    document.addEventListener("visibilitychange", onVis);
+    return () => {
+      window.removeEventListener("focus", onFocus);
+      document.removeEventListener("visibilitychange", onVis);
+    };
+  }, [user, refreshFromServer]);
 
   // Live question counts for the "Browse all skills" card. Pulled from the
   // in-memory cache in questions.ts — no extra Supabase round-trip.
@@ -57,44 +73,119 @@ export default function Dashboard() {
     };
   }, []);
 
-  // Today's planned session — pulled from the active study plan. We pick the
-  // first session for the current weekday name; if there's none we render a
-  // CTA to /plan instead.
-  interface TodaySession {
+  // Up-next from the active study plan: today's full session list (so users
+  // can pick from multiple), plus a look-ahead to the next non-empty day if
+  // today is empty. The "Start" button on each card jumps straight to the
+  // practice runner pre-filtered to that skill.
+  interface PlannedSession {
     durationMin: number;
     focusSkill: string;
     focusSkillDisplay: string;
     rationale: string;
+    sessionType?: string;
+    /** "Today" when this is on the current weekday, otherwise "Tuesday", etc. */
+    dayLabel: string;
   }
-  const [todaySession, setTodaySession] = useState<TodaySession | null>(null);
+  const [planSessions, setPlanSessions] = useState<PlannedSession[]>([]);
+  // hasActivePlan === null  → still loading
+  // hasActivePlan === true  → active plan exists (planSessions may still be empty if nothing within the next 7 days)
+  // hasActivePlan === false → no active plan at all
+  const [hasActivePlan, setHasActivePlan] = useState<boolean | null>(null);
   useEffect(() => {
-    if (!user) return; // /api/plan/active is auth-only — skip the 401.
+    if (!user) {
+      setHasActivePlan(null);
+      return;
+    }
     let cancelled = false;
-    fetch("/api/plan/active", { credentials: "include" })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((j) => {
-        if (cancelled || !j?.plan?.plan_json?.week) return;
-        const weekday = new Date()
+    const fetchPlan = async () => {
+      try {
+        const r = await fetch("/api/plan/active", { credentials: "include" });
+        if (!r.ok) {
+          if (!cancelled) {
+            setHasActivePlan(false);
+            setPlanSessions([]);
+          }
+          return;
+        }
+        const j = await r.json();
+        const week = j?.plan?.plan_json?.week as
+          | Array<{ day?: string; sessions?: Array<{ durationMin?: number; focusSkill?: string; focusSkillDisplay?: string; rationale?: string; sessionType?: string }> }>
+          | undefined;
+        if (cancelled) return;
+
+        // No plan row at all → distinct empty state.
+        if (!j?.plan) {
+          setHasActivePlan(false);
+          setPlanSessions([]);
+          return;
+        }
+        setHasActivePlan(true);
+
+        if (!Array.isArray(week) || week.length === 0) {
+          setPlanSessions([]);
+          return;
+        }
+
+        const weekdayOrder = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        const todayName = new Date()
           .toLocaleDateString("en-US", { weekday: "long" })
           .toLowerCase();
-        const day = j.plan.plan_json.week.find(
-          (d: { day: string }) => d.day === weekday
-        );
-        const first = day?.sessions?.[0];
-        if (first) {
-          setTodaySession({
-            durationMin: first.durationMin,
-            focusSkill: first.focusSkill,
-            focusSkillDisplay: first.focusSkillDisplay ?? first.focusSkill,
-            rationale: first.rationale ?? "",
-          });
+        const todayIdx = weekdayOrder.indexOf(todayName);
+
+        // Walk forward from today through the week; first day with sessions wins.
+        let chosenDay: { day?: string; sessions?: Array<{ durationMin?: number; focusSkill?: string; focusSkillDisplay?: string; rationale?: string; sessionType?: string }> } | undefined;
+        let chosenDayName = "";
+        for (let i = 0; i < 7; i++) {
+          const wd = weekdayOrder[(todayIdx + i) % 7];
+          const day = week.find((d) => typeof d.day === "string" && d.day.toLowerCase() === wd);
+          if (day && Array.isArray(day.sessions) && day.sessions.length > 0) {
+            chosenDay = day;
+            chosenDayName = wd;
+            break;
+          }
         }
-      })
-      .catch(() => {
-        // No active plan or transient error — stay quiet, fallback card covers it.
-      });
+        if (!chosenDay || !Array.isArray(chosenDay.sessions)) {
+          setPlanSessions([]);
+          return;
+        }
+
+        const dayLabel = chosenDayName === todayName
+          ? "Today"
+          : chosenDayName.charAt(0).toUpperCase() + chosenDayName.slice(1);
+
+        setPlanSessions(
+          chosenDay.sessions
+            .filter((s) => typeof s?.focusSkill === "string" && s.focusSkill.length > 0)
+            .map((s) => ({
+              durationMin: typeof s.durationMin === "number" ? s.durationMin : 25,
+              focusSkill: s.focusSkill as string,
+              focusSkillDisplay: s.focusSkillDisplay ?? (s.focusSkill as string),
+              rationale: s.rationale ?? "",
+              sessionType: typeof s.sessionType === "string" ? s.sessionType : undefined,
+              dayLabel,
+            }))
+        );
+      } catch {
+        // Transient error — keep last-known state, fallback card covers it.
+      }
+    };
+    fetchPlan();
+    // Refetch on tab/window focus and on a custom event the StudyPlan page
+    // dispatches after every successful save. Without these, the dashboard
+    // could show stale data after the user edits or generates a plan.
+    const onFocus = () => fetchPlan();
+    const onVis = () => {
+      if (document.visibilityState === "visible") fetchPlan();
+    };
+    const onPlanUpdated = () => fetchPlan();
+    window.addEventListener("focus", onFocus);
+    document.addEventListener("visibilitychange", onVis);
+    window.addEventListener("tutorzero:plan-updated", onPlanUpdated);
     return () => {
       cancelled = true;
+      window.removeEventListener("focus", onFocus);
+      document.removeEventListener("visibilitychange", onVis);
+      window.removeEventListener("tutorzero:plan-updated", onPlanUpdated);
     };
   }, [user]);
 
@@ -245,10 +336,10 @@ export default function Dashboard() {
           <StatCard
             icon={<Flame className="w-4 h-4" />}
             label="Streak"
-            value={progress.currentStreak.toString()}
+            value={(user?.profile?.streakDays ?? progress.currentStreak ?? 0).toString()}
             unit="days"
             subtext={
-              <span className="text-tz-gray-400">Best: {progress.longestStreak}d</span>
+              <span className="text-tz-gray-400">Best: {Math.max(user?.profile?.streakDays ?? 0, progress.longestStreak ?? 0)}d</span>
             }
           />
 
@@ -271,24 +362,29 @@ export default function Dashboard() {
           />
         </div>
 
-        {/* Today's session — pulled from the active study plan when one
-            exists. Anonymous users + auth users without an active plan see
-            the generic "Ready to practice" fallback instead of nothing. */}
-        {todaySession ? (
-          <div className="mb-6 sm:mb-8">
+        {/* What's scheduled — pulled from the active study plan. Shows every
+            session for today (or the next non-empty day), with a Start button
+            on each that goes straight to /practice/session?skills=<slug>. */}
+        {planSessions.length > 0 ? (
+          <div className="mb-6 sm:mb-8 space-y-3">
+            {/* Hero card for the first session */}
             <button
-              onClick={() => navigate(`/practice?skill=${encodeURIComponent(todaySession.focusSkill)}`)}
+              onClick={() =>
+                navigate(`/practice/session?skills=${encodeURIComponent(planSessions[0].focusSkill)}`)
+              }
               className="w-full text-left rounded-xl bg-tz-navy text-white p-4 sm:p-5 shadow-sm hover:bg-[#0c1a36] transition-colors"
             >
               <div className="flex items-center justify-between gap-3">
                 <div className="min-w-0">
-                  <div className="text-xs uppercase tracking-wide text-white/60">Today's session</div>
-                  <div className="text-base sm:text-lg font-semibold mt-0.5 truncate">
-                    {todaySession.durationMin} min · {topicDisplayNames[todaySession.focusSkill] ?? todaySession.focusSkillDisplay}
+                  <div className="text-xs uppercase tracking-wide text-white/60">
+                    {planSessions[0].dayLabel === "Today" ? "Today's session" : `Up next · ${planSessions[0].dayLabel}`}
                   </div>
-                  {todaySession.rationale && (
+                  <div className="text-base sm:text-lg font-semibold mt-0.5 truncate">
+                    {planSessions[0].durationMin} min · {topicDisplayNames[planSessions[0].focusSkill] ?? planSessions[0].focusSkillDisplay}
+                  </div>
+                  {planSessions[0].rationale && (
                     <p className="text-xs sm:text-sm text-white/70 mt-1 line-clamp-2">
-                      {todaySession.rationale}
+                      {planSessions[0].rationale}
                     </p>
                   )}
                 </div>
@@ -297,8 +393,63 @@ export default function Dashboard() {
                 </span>
               </div>
             </button>
+
+            {/* Other sessions for the same day, if any. */}
+            {planSessions.length > 1 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                {planSessions.slice(1).map((s, i) => (
+                  <button
+                    key={i}
+                    onClick={() =>
+                      navigate(`/practice/session?skills=${encodeURIComponent(s.focusSkill)}`)
+                    }
+                    className="text-left rounded-lg bg-white border border-tz-gray-200 p-3 sm:p-4 hover:border-tz-blue hover:shadow-sm transition-all"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="min-w-0">
+                        <div className="text-xs text-tz-gray-400">
+                          {s.dayLabel === "Today" ? "Also today" : s.dayLabel}
+                          {s.sessionType ? ` · ${s.sessionType.replace("_", " ")}` : ""}
+                        </div>
+                        <div className="text-sm font-medium text-tz-navy mt-0.5 truncate">
+                          {s.durationMin} min · {topicDisplayNames[s.focusSkill] ?? s.focusSkillDisplay}
+                        </div>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-tz-gray-400 flex-shrink-0" />
+                    </div>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        ) : hasActivePlan === true ? (
+          // Plan exists, but nothing scheduled in the next 7 days. Don't
+          // pretend the user has no plan — direct them back to /study-plan
+          // so they can schedule something instead of starting a generic
+          // practice session.
+          <div className="mb-6 sm:mb-8">
+            <button
+              onClick={() => navigate("/study-plan")}
+              className="w-full text-left rounded-xl bg-white border border-tz-gray-200 p-4 sm:p-5 shadow-sm hover:border-tz-blue hover:shadow-md transition-all"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <div className="text-xs uppercase tracking-wide text-tz-gray-400">Your plan</div>
+                  <div className="text-base sm:text-lg font-semibold mt-0.5 text-tz-navy">
+                    Nothing scheduled this week
+                  </div>
+                  <p className="text-xs sm:text-sm text-tz-gray-600 mt-1">
+                    Open your study plan to add a session for today or this week.
+                  </p>
+                </div>
+                <span className="inline-flex items-center gap-1 rounded-full bg-tz-blue px-3 py-1.5 text-sm font-medium text-white flex-shrink-0">
+                  Open plan <ChevronRight className="w-4 h-4" />
+                </span>
+              </div>
+            </button>
           </div>
         ) : (
+          // hasActivePlan === null (still loading) OR === false (no plan yet)
           <div className="mb-6 sm:mb-8">
             <button
               onClick={() => navigate("/practice")}
@@ -319,10 +470,20 @@ export default function Dashboard() {
                 </span>
               </div>
             </button>
+            {hasActivePlan === false && (
+              <button
+                onClick={() => navigate("/study-plan")}
+                className="mt-2 w-full sm:w-auto inline-flex items-center gap-1.5 text-sm text-tz-blue hover:text-[#005a9e] transition-colors"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                Generate a personalized study plan
+                <ChevronRight className="w-3.5 h-3.5" />
+              </button>
+            )}
           </div>
         )}
 
-        {/* Recent insights — pulled from non-dismissed Reviewer patterns */}
+        {/* Recent insights — pulled from non-dismissed Reviewer patterns. */}
         {recentInsights.length > 0 && (
           <div className="mb-8 sm:mb-10">
             <h3 className="text-lg sm:text-h3 text-tz-navy mb-3 sm:mb-4 flex items-center gap-2">
@@ -331,31 +492,103 @@ export default function Dashboard() {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {recentInsights.map((ins) => {
-                const sevTone =
-                  ins.severity === "high" ? "border-red-200 bg-red-50"
-                  : ins.severity === "medium" ? "border-orange-200 bg-orange-50"
-                  : "border-blue-200 bg-blue-50";
+                // Humanize the pattern slug ("overconfident_advanced_math" →
+                // "Overconfident: advanced math") so the title is readable
+                // instead of an internal token.
+                const titleFromPattern = (() => {
+                  const segments = ins.pattern.split("_");
+                  if (segments.length === 0) return ins.pattern;
+                  const head = segments[0].charAt(0).toUpperCase() + segments[0].slice(1);
+                  const rest = segments.slice(1).join(" ");
+                  return rest ? `${head}: ${rest}` : head;
+                })();
+                // Try to extract a domain or skill slug from the pattern so
+                // we can offer a "Practice this" link. Look at the longest
+                // suffix that matches a known slug.
+                const knownSlugs = [
+                  "algebra", "advanced_math", "problem_solving", "geometry",
+                  "information_ideas", "craft_structure", "expression", "conventions",
+                  "linear_equations_one_var", "linear_functions",
+                  "linear_equations_two_var", "systems_of_linear_equations",
+                  "linear_inequalities", "equivalent_expressions",
+                  "nonlinear_equations", "nonlinear_functions",
+                  "ratios_rates_proportions", "percentages",
+                  "one_variable_data", "two_variable_data", "probability",
+                  "inference_statistics", "evaluating_statistical_claims",
+                  "area_and_volume", "lines_angles_triangles",
+                  "right_triangles_trigonometry", "circles",
+                  "central_ideas_details", "command_of_evidence", "inferences",
+                  "cross_text_connections", "text_structure_purpose",
+                  "words_in_context", "rhetorical_synthesis", "transitions",
+                  "boundaries", "form_structure_sense",
+                ].sort((a, b) => b.length - a.length); // longest first
+                const matchedSlug = knownSlugs.find((s) => ins.pattern.endsWith(s));
+                const practiceLabel = matchedSlug
+                  ? topicDisplayNames[matchedSlug] ?? matchedSlug
+                  : null;
+
+                const sev = ins.severity === "high"
+                  ? { dot: "bg-red-500", label: "High", text: "text-red-700" }
+                  : ins.severity === "medium"
+                  ? { dot: "bg-orange-500", label: "Medium", text: "text-orange-700" }
+                  : { dot: "bg-tz-blue", label: "Low", text: "text-tz-blue" };
+
+                const typeLabel = ins.type
+                  .replace(/_/g, " ")
+                  .replace(/\b\w/g, (c) => c.toUpperCase());
+
                 const ago = (() => {
                   const ms = Date.now() - new Date(ins.created_at).getTime();
                   const days = Math.floor(ms / 86400000);
-                  if (days < 1) return "today";
-                  if (days === 1) return "yesterday";
+                  if (days < 1) return "Today";
+                  if (days === 1) return "Yesterday";
                   if (days < 7) return `${days}d ago`;
-                  return new Date(ins.created_at).toLocaleDateString();
+                  return new Date(ins.created_at).toLocaleDateString("en-US", {
+                    month: "short", day: "numeric",
+                  });
                 })();
+
                 return (
                   <article
                     key={`${ins.review_id}-${ins.pattern}`}
-                    className={cn("border rounded-lg p-3 sm:p-4", sevTone)}
+                    className="bg-white border border-tz-gray-200 rounded-lg p-3 sm:p-4 flex flex-col"
                   >
-                    <div className="text-xs uppercase tracking-wide text-tz-gray-500 mb-1">
-                      {ins.type.replace("_", " ")} · {ago}
+                    {/* Header: severity dot + type tag + relative date */}
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <span
+                          className={cn("inline-block w-2 h-2 rounded-full flex-shrink-0", sev.dot)}
+                          aria-label={`${sev.label} severity`}
+                        />
+                        <span className={cn("text-xs font-semibold uppercase tracking-wide", sev.text)}>
+                          {sev.label}
+                        </span>
+                        <span className="text-xs text-tz-gray-400">·</span>
+                        <span className="text-xs text-tz-gray-500 truncate">{typeLabel}</span>
+                      </div>
+                      <span className="text-xs text-tz-gray-400 flex-shrink-0">{ago}</span>
                     </div>
-                    <div className="text-sm font-semibold text-tz-navy">{ins.pattern}</div>
+                    {/* Title */}
+                    <div className="text-sm font-semibold text-tz-navy leading-snug">
+                      {titleFromPattern}
+                    </div>
+                    {/* Evidence */}
                     {ins.evidence && (
-                      <p className="text-xs text-tz-gray-600 mt-1.5 leading-snug line-clamp-3">
+                      <p className="text-xs text-tz-gray-600 mt-1.5 leading-relaxed flex-1">
                         {ins.evidence}
                       </p>
+                    )}
+                    {/* CTA — only if we matched a known skill/domain. */}
+                    {matchedSlug && practiceLabel && (
+                      <button
+                        onClick={() =>
+                          navigate(`/practice/session?skills=${encodeURIComponent(matchedSlug)}`)
+                        }
+                        className="mt-3 self-start inline-flex items-center gap-1 text-xs font-medium text-tz-blue hover:text-[#005a9e] transition-colors"
+                      >
+                        Practice {practiceLabel}
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      </button>
                     )}
                   </article>
                 );
@@ -393,14 +626,38 @@ export default function Dashboard() {
 
         {/* Progress Snapshot */}
         <div>
-          <h3 className="text-lg sm:text-h3 text-tz-navy mb-3 sm:mb-4">Your Progress</h3>
-          
-          {allTopics.length === 0 ? (
+          <div className="flex items-baseline justify-between mb-3 sm:mb-4">
+            <h3 className="text-lg sm:text-h3 text-tz-navy">Your Progress</h3>
+            <button
+              onClick={() => navigate("/progress")}
+              className="text-xs sm:text-small text-tz-blue hover:text-[#005a9e] transition-colors inline-flex items-center gap-0.5"
+            >
+              See all <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+
+          {/* Empty-state precedence:
+              - progress.sessions.length === 0 → user genuinely has no data
+                yet (true empty state, friendly CTA).
+              - allTopics empty but sessions exist → topicProgress hasn't
+                hydrated yet from /api/user/progress; show a thin skeleton
+                instead of the misleading "no data" copy. */}
+          {progress.sessions.length === 0 ? (
             <div className="bg-white rounded-lg border border-tz-gray-200 p-6 sm:p-8 text-center">
               <p className="text-body text-tz-gray-600 mb-2">No practice data yet</p>
               <p className="text-xs sm:text-small text-tz-gray-400">
                 Start a practice session to see your progress by topic
               </p>
+            </div>
+          ) : allTopics.length === 0 ? (
+            <div className="bg-white rounded-lg border border-tz-gray-200 p-4 sm:p-6 space-y-3 animate-pulse">
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className="flex items-center gap-4">
+                  <div className="w-36 h-3 bg-tz-gray-100 rounded" />
+                  <div className="flex-1 h-2 bg-tz-gray-100 rounded-full" />
+                  <div className="w-10 h-3 bg-tz-gray-100 rounded" />
+                </div>
+              ))}
             </div>
           ) : (
             <div className="bg-white rounded-lg border border-tz-gray-200 p-4 sm:p-6 space-y-4">

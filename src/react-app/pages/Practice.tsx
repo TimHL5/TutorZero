@@ -82,10 +82,24 @@ export default function Practice() {
 
   // Concept + NextPractice agents — lazy-loaded when the student expands the
   // "The concept" or "What to practice next" section. Cached per question id
-  // so re-opening the same layer doesn't re-spend tokens.
-  const [conceptAI, setConceptAI] = useState<string | null>(null);
+  // so re-opening the same layer doesn't re-spend tokens. Structured rather
+  // than a pre-rendered markdown string so labels render as real bold via
+  // JSX instead of literal **asterisks**.
+  type ConceptAI = {
+    overview: string;
+    key_idea: string;
+    when_it_applies: string;
+    common_pitfall: string;
+  };
+  type NextPracticeAI = {
+    why: string;
+    next_skill: string;
+    next_difficulty: string;
+    warmup_idea: string;
+  };
+  const [conceptAI, setConceptAI] = useState<ConceptAI | null>(null);
   const [conceptLoading, setConceptLoading] = useState(false);
-  const [nextPracticeAI, setNextPracticeAI] = useState<string | null>(null);
+  const [nextPracticeAI, setNextPracticeAI] = useState<NextPracticeAI | null>(null);
   const [nextPracticeLoading, setNextPracticeLoading] = useState(false);
   const lastEnrichedQuestionId = useRef<string | null>(null);
 
@@ -127,15 +141,7 @@ export default function Practice() {
       });
       if (!response.ok) throw new Error("Concept failed");
       const data = await response.json();
-      const c = data.concept as {
-        overview: string;
-        key_idea: string;
-        when_it_applies: string;
-        common_pitfall: string;
-      };
-      setConceptAI(
-        `${c.overview}\n\n**Key idea:** ${c.key_idea}\n\n**When it applies:** ${c.when_it_applies}\n\n**Common pitfall:** ${c.common_pitfall}`
-      );
+      setConceptAI(data.concept as ConceptAI);
     } catch (err) {
       console.error("Concept agent call failed:", err);
       // Silent fail — the static rationale remains visible.
@@ -170,15 +176,7 @@ export default function Practice() {
       });
       if (!response.ok) throw new Error("NextPractice failed");
       const data = await response.json();
-      const n = data.nextPractice as {
-        next_skill: string;
-        next_difficulty: string;
-        why: string;
-        warmup_idea: string;
-      };
-      setNextPracticeAI(
-        `${n.why}\n\n**Try next:** ${n.next_skill} (${n.next_difficulty})\n\n**Warm-up:** ${n.warmup_idea}`
-      );
+      setNextPracticeAI(data.nextPractice as NextPracticeAI);
     } catch (err) {
       console.error("NextPractice agent call failed:", err);
     } finally {
@@ -460,6 +458,7 @@ export default function Practice() {
     // so it can attribute the review row in ai_session_reviews.
     const recordAttempts = attemptedQuestions.map(a => ({
       topic: a.question.topic,
+      skill: a.question.skill,
       isCorrect: a.isCorrect,
       confidence: a.confidence,
       timeSpentSec: Math.round(a.timeSpent / 1000),
@@ -935,7 +934,18 @@ export default function Practice() {
                 <FeedbackLayer
                   icon={<BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />}
                   title="The concept"
-                  content={conceptAI ?? currentQuestion.explainConcept}
+                  content={
+                    conceptAI ? (
+                      <>
+                        <MathText text={conceptAI.overview} />
+                        <div className="mt-3"><strong>Key idea:</strong> <MathText text={conceptAI.key_idea} /></div>
+                        <div className="mt-3"><strong>When it applies:</strong> <MathText text={conceptAI.when_it_applies} /></div>
+                        <div className="mt-3"><strong>Common pitfall:</strong> <MathText text={conceptAI.common_pitfall} /></div>
+                      </>
+                    ) : (
+                      currentQuestion.explainConcept
+                    )
+                  }
                   color="purple"
                   isExpanded={expandedSection === "concept"}
                   onToggle={() => toggleFeedbackSection("concept")}
@@ -945,7 +955,17 @@ export default function Practice() {
                 <FeedbackLayer
                   icon={<ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />}
                   title="What to practice next"
-                  content={nextPracticeAI ?? currentQuestion.explainNext}
+                  content={
+                    nextPracticeAI ? (
+                      <>
+                        <MathText text={nextPracticeAI.why} />
+                        <div className="mt-3"><strong>Try next:</strong> <MathText text={nextPracticeAI.next_skill} /> ({nextPracticeAI.next_difficulty})</div>
+                        <div className="mt-3"><strong>Warm-up:</strong> <MathText text={nextPracticeAI.warmup_idea} /></div>
+                      </>
+                    ) : (
+                      currentQuestion.explainNext
+                    )
+                  }
                   color="amber"
                   isExpanded={expandedSection === "next"}
                   onToggle={() => toggleFeedbackSection("next")}
@@ -1031,7 +1051,10 @@ function skillSelectionLabel(
 interface FeedbackLayerProps {
   icon: React.ReactNode;
   title: string;
-  content: string;
+  /** Plain string for static fallback content; ReactNode for already-rendered
+   * structured content (e.g. agent responses with bold labels). Strings get
+   * piped through MathText for KaTeX/HTML rendering; nodes render directly. */
+  content: string | React.ReactNode;
   color: "blue" | "purple" | "amber";
   isExpanded: boolean;
   onToggle: () => void;
@@ -1077,8 +1100,10 @@ function FeedbackLayer({ icon, title, content, color, isExpanded, onToggle, isLo
           <div className={cn("pl-10 sm:pl-12 text-xs sm:text-sm leading-relaxed whitespace-pre-line sat-content", styles.content)}>
             {isLoading && !content ? (
               <span className="text-tz-gray-400">Tutor is thinking…</span>
-            ) : (
+            ) : typeof content === "string" ? (
               <MathText text={content} />
+            ) : (
+              content
             )}
           </div>
         </div>

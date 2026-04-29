@@ -1,7 +1,11 @@
-import { useState, useCallback, useEffect, useMemo } from "react";
+import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { AppLayout } from "@/react-app/components/layout/AppLayout";
 import { topicDisplayNames } from "@/data/questions";
-import { DOMAINS_IN_ORDER } from "@/react-app/lib/sat-taxonomy";
+import {
+  DOMAINS_IN_ORDER,
+  SKILLS_BY_DOMAIN,
+  skillSlugToDisplayName,
+} from "@/react-app/lib/sat-taxonomy";
 import { cn } from "@/react-app/lib/utils";
 import {
   Calendar,
@@ -42,12 +46,17 @@ const STUDY_HOURS_BY_INTENSITY: Record<string, number> = {
 };
 
 // Shape returned by /api/agents/planner and /api/plan/active. Loosely typed
-// here so we can feature-detect missing fields rather than crash on parse.
+// here so we can feature-detect missing fields rather than crash on parse,
+// but the round-trip projection in projectPlanForSave needs access to the
+// rich fields (sessionType, rationale, weekGoal, etc.) so they're declared
+// here too.
+type PlannerSessionType = "drill" | "review" | "mixed" | "timed_test";
 type PlannerSession = {
   id?: string;
   durationMin?: number;
   focusSkill?: string;
   focusSkillDisplay?: string;
+  sessionType?: PlannerSessionType;
   rationale?: string;
 };
 type PlannerDay = {
@@ -55,7 +64,12 @@ type PlannerDay = {
   date?: string;
   sessions?: PlannerSession[];
 };
-type PlannerOutput = { week?: PlannerDay[] };
+type PlannerOutput = {
+  week?: PlannerDay[];
+  totalHoursAllocated?: number;
+  coverage?: Record<string, number>;
+  weekGoal?: string;
+};
 
 // Convert a planner-agent week to the local DayPlan shape. Defensive: any
 // missing field falls back to a safe value so a partially-malformed response
@@ -85,6 +99,55 @@ function isoDate(d: Date): string {
 
 function blockId(dateIso: string): string {
   return `${dateIso}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
+}
+
+const WEEKDAY_NAMES = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+
+// Project the editable DayPlan[] back into PlannerOutput shape so /api/plan/save
+// can replace plan_json without losing the rich agent-emitted fields. When a
+// block matches a session.id from the original plan, that session's metadata
+// (focusSkillDisplay, sessionType, rationale) is preserved; manually-added
+// blocks fill defaults so the JSON parses on the next planner round-trip.
+function projectPlanForSave(weekPlan: DayPlan[], original: PlannerOutput | null): PlannerOutput {
+  const sessionLookup: Record<string, PlannerSession> = {};
+  for (const day of original?.week ?? []) {
+    for (const sess of day.sessions ?? []) {
+      if (typeof sess.id === "string") sessionLookup[sess.id] = sess;
+    }
+  }
+  const week: PlannerDay[] = weekPlan.map((day) => {
+    const dayDate = new Date(day.date + "T00:00:00");
+    const dayName = WEEKDAY_NAMES[dayDate.getDay()];
+    const sessions: PlannerSession[] = day.blocks.map((block) => {
+      const orig = sessionLookup[block.id];
+      return {
+        id: block.id,
+        durationMin: block.duration,
+        focusSkill: block.topic,
+        focusSkillDisplay: orig?.focusSkillDisplay ?? block.topic,
+        sessionType: orig?.sessionType ?? "drill",
+        rationale: orig?.rationale ?? "",
+      };
+    });
+    return { day: dayName, date: day.date, sessions };
+  });
+  // Recompute coverage + total so the saved json stays internally consistent.
+  let totalMinutes = 0;
+  const coverage: Record<string, number> = {};
+  for (const day of week) {
+    for (const sess of day.sessions ?? []) {
+      const dur = sess.durationMin ?? 0;
+      const focus = sess.focusSkill ?? "";
+      totalMinutes += dur;
+      if (focus) coverage[focus] = (coverage[focus] ?? 0) + dur;
+    }
+  }
+  return {
+    week,
+    totalHoursAllocated: Math.round((totalMinutes / 60) * 10) / 10,
+    coverage,
+    weekGoal: original?.weekGoal ?? "",
+  };
 }
 
 // Empty 7-day skeleton starting from `startDate`. Other weeks are intentionally
@@ -127,19 +190,48 @@ function saveWeekToStorage(userId: string | undefined, weekStartIso: string, pla
 
 export default function StudyPlan() {
   const { user } = useAuth();
-  const { progress, getWeakestTopics } = useStudentProgress();
+  const { progress, getPriorityTopics } = useStudentProgress();
   const [weekOffset, setWeekOffset] = useState(0);
   const [weekStartIso, setWeekStartIso] = useState(() => isoDate(new Date()));
-  const [weekPlan, setWeekPlan] = useState<DayPlan[]>(() => {
-    const startDate = new Date();
-    return loadWeekFromStorage(undefined, isoDate(startDate)) ?? generateEmptyWeek(startDate);
-  });
+  // Always start empty. Per-user storage rehydrates in the effect below once
+  // userId is known; reading any anon-keyed entry on first render would leak
+  // a logged-out user's plan into a freshly authed session.
+  const [weekPlan, setWeekPlan] = useState<DayPlan[]>(() => generateEmptyWeek(new Date()));
   const [draggedBlock, setDraggedBlock] = useState<{ dayIndex: number; blockIndex: number } | null>(null);
   const [dragOverDay, setDragOverDay] = useState<number | null>(null);
   const [pickerDay, setPickerDay] = useState<number | null>(null);
   const [generating, setGenerating] = useState(false);
   const [genError, setGenError] = useState<string | null>(null);
   const [autoLoadDone, setAutoLoadDone] = useState(false);
+  // Ephemeral save status. Drives the inline toast in the header so users
+  // see explicit confirmation that their edits / fresh generation persisted.
+  // Auto-clears 2 s after each transition (success state); error state
+  // sticks until the next save attempt.
+  const [saveStatus, setSaveStatus] = useState<
+    "idle" | "saving" | "saved" | "generated" | "error"
+  >("idle");
+  const saveStatusTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const setSaveStatusEphemeral = useCallback(
+    (s: "saving" | "saved" | "generated" | "error") => {
+      setSaveStatus(s);
+      if (saveStatusTimerRef.current) clearTimeout(saveStatusTimerRef.current);
+      if (s === "saved" || s === "generated") {
+        saveStatusTimerRef.current = setTimeout(() => setSaveStatus("idle"), 2000);
+      }
+    },
+    []
+  );
+  // ai_study_plans.id of the active plan we're editing. Captured from
+  // /api/agents/planner (on generate) and from /api/plan/active (on hydrate).
+  // null = no server-side plan; debounced save effect skips while null.
+  const [planId, setPlanId] = useState<number | null>(null);
+  // Cache the rich PlannerOutput so edits can round-trip through
+  // /api/plan/save without losing totalHoursAllocated / coverage / weekGoal.
+  const lastFullPlanRef = useRef<PlannerOutput | null>(null);
+  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastSavedKeyRef = useRef<string | null>(null);
+  // Pending plan_json that beforeunload should flush via sendBeacon.
+  const pendingSavePayloadRef = useRef<string | null>(null);
 
   const profile = user?.profile;
   const userId = user?.id;
@@ -159,6 +251,68 @@ export default function StudyPlan() {
   useEffect(() => {
     saveWeekToStorage(userId, weekStartIso, weekPlan);
   }, [userId, weekStartIso, weekPlan]);
+
+  // Server-side persistence for plan edits — drag/drop, mark-complete, add,
+  // remove, duration changes. Debounced 800 ms so a flurry of clicks
+  // collapses into a single POST. Skipped while planId is null (no plan
+  // generated yet) and while the just-set weekPlan still matches what the
+  // server already has (lastSavedKeyRef short-circuit).
+  useEffect(() => {
+    if (!planId) return;
+    const key = JSON.stringify(weekPlan);
+    if (lastSavedKeyRef.current === key) return;
+
+    const projection = projectPlanForSave(weekPlan, lastFullPlanRef.current);
+    const payload = JSON.stringify({ plan_id: planId, plan_json: projection });
+    pendingSavePayloadRef.current = payload;
+
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    saveTimerRef.current = setTimeout(async () => {
+      setSaveStatusEphemeral("saving");
+      try {
+        const res = await fetch("/api/plan/save", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: payload,
+        });
+        if (res.ok) {
+          lastSavedKeyRef.current = key;
+          pendingSavePayloadRef.current = null;
+          setSaveStatusEphemeral("saved");
+          // Tell sibling pages (Dashboard) to re-fetch the active plan.
+          window.dispatchEvent(new CustomEvent("tutorzero:plan-updated"));
+        } else {
+          setSaveStatusEphemeral("error");
+        }
+      } catch {
+        // Network blip — leave pendingSavePayloadRef set so the next edit
+        // (or beforeunload) retries. localStorage already has the edit.
+        setSaveStatusEphemeral("error");
+      }
+    }, 800);
+
+    return () => {
+      if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    };
+  }, [weekPlan, planId]);
+
+  // beforeunload flush — if the user closes the tab mid-debounce, post the
+  // pending payload synchronously via sendBeacon. Without this, edits made
+  // less than 800 ms before navigation get lost.
+  useEffect(() => {
+    const handler = () => {
+      const payload = pendingSavePayloadRef.current;
+      if (!payload) return;
+      try {
+        navigator.sendBeacon("/api/plan/save", new Blob([payload], { type: "application/json" }));
+      } catch {
+        // sendBeacon can't be retried; the user is closing the page anyway.
+      }
+    };
+    window.addEventListener("beforeunload", handler);
+    return () => window.removeEventListener("beforeunload", handler);
+  }, []);
 
   // Generate a plan for the current calendar week (the week containing today).
   // Always anchors to "this week" — if the user has navigated to a different
@@ -210,13 +364,27 @@ export default function StudyPlan() {
         setGenError(json?.error ?? "Plan generation failed");
         return;
       }
-      const week = (json?.plan as PlannerOutput | undefined)?.week;
+      const planOut = json?.plan as PlannerOutput | undefined;
+      const week = planOut?.week;
       if (Array.isArray(week) && week.length > 0) {
         const days = plannerToDayPlan(week, todayIso);
         if (days.length === 7) {
           setWeekPlan(days);
           setWeekStartIso(days[0].date);
           saveWeekToStorage(userId, days[0].date, days);
+          // Snapshot the rich plan + capture plan_id so subsequent edits
+          // can round-trip through /api/plan/save without losing the
+          // agent-generated metadata fields. lastSavedKeyRef seeds with
+          // the just-generated plan so the debounced save doesn't fire
+          // immediately on the first weekPlan effect tick.
+          lastFullPlanRef.current = planOut ?? null;
+          if (typeof json?.plan_id === "number") setPlanId(json.plan_id);
+          lastSavedKeyRef.current = JSON.stringify(days);
+          // The /api/agents/planner handler already inserted the row with
+          // active=true, so this notification simply tells the Dashboard to
+          // pick the new plan up.
+          setSaveStatusEphemeral("generated");
+          window.dispatchEvent(new CustomEvent("tutorzero:plan-updated"));
         }
       }
     } catch (e) {
@@ -234,14 +402,13 @@ export default function StudyPlan() {
   // First-visit hydration. For authed users with a previously saved server
   // plan, hydrate it so a returning user doesn't have to re-click the
   // button. Otherwise leave the week empty — generation is explicit, only
-  // when the user clicks "Generate plan for this week".
+  // when the user clicks "Generate plan for this week". The server is always
+  // the source of truth; localStorage is only a fallback when the fetch
+  // fails (offline, transient 5xx). Previously a stale localStorage entry
+  // could short-circuit the server fetch and trap the user in an empty week.
   useEffect(() => {
     if (autoLoadDone) return;
     if (!user || !userId) return;
-    if (loadWeekFromStorage(userId, weekStartIso)) {
-      setAutoLoadDone(true);
-      return;
-    }
 
     let cancelled = false;
     (async () => {
@@ -249,14 +416,44 @@ export default function StudyPlan() {
         const res = await fetch("/api/plan/active", { credentials: "include" });
         if (cancelled) return;
         const json = res.ok ? await res.json().catch(() => null) : null;
-        const week = json?.plan?.plan_json?.week as PlannerDay[] | undefined;
-        if (Array.isArray(week) && week.length === 7) {
-          const days = plannerToDayPlan(week, weekStartIso);
-          setWeekPlan(days);
-          if (days[0]?.date) setWeekStartIso(days[0].date);
+        const plan = json?.plan;
+        const planJson = plan?.plan_json as PlannerOutput | undefined;
+        const week = planJson?.week as PlannerDay[] | undefined;
+        const planWeekStart = typeof plan?.week_start === "string" ? plan.week_start : null;
+        if (Array.isArray(week) && week.length === 7 && planWeekStart) {
+          // Restore the plan as long as it isn't strictly in the past (more
+          // than 7 days behind today). The previous strict-containment check
+          // hid plans whose week_start was a few days in the future, even
+          // though the dashboard happily surfaced them — so the user saw a
+          // pre-populated dashboard sitting on top of an empty plan page,
+          // which is confusing. Anchoring the visible week to the plan's
+          // week_start makes both pages tell the same story.
+          const startMs = new Date(planWeekStart + "T00:00:00").getTime();
+          const todayMs = new Date(isoDate(new Date()) + "T00:00:00").getTime();
+          const dayMs = 86_400_000;
+          const isStale = todayMs >= startMs + 7 * dayMs;
+          if (!isStale) {
+            const days = plannerToDayPlan(week, planWeekStart);
+            setWeekPlan(days);
+            if (days[0]?.date) setWeekStartIso(days[0].date);
+            lastFullPlanRef.current = planJson ?? null;
+            if (typeof plan?.id === "number") setPlanId(plan.id);
+            lastSavedKeyRef.current = JSON.stringify(days);
+          } else {
+            // Plan exists but is stale (>7 days old). Fall back to local
+            // cache for the visible week so the user keeps any manual edits.
+            const stored = loadWeekFromStorage(userId, weekStartIso);
+            if (stored) setWeekPlan(stored);
+          }
+        } else {
+          // Server returned no plan. Fall back to localStorage if present.
+          const stored = loadWeekFromStorage(userId, weekStartIso);
+          if (stored) setWeekPlan(stored);
         }
       } catch {
-        // network error → leave the week empty; user can click the button
+        // network error → fall back to localStorage so navigation still works
+        const stored = loadWeekFromStorage(userId, weekStartIso);
+        if (stored && !cancelled) setWeekPlan(stored);
       }
       if (!cancelled) setAutoLoadDone(true);
     })();
@@ -280,31 +477,19 @@ export default function StudyPlan() {
     0
   );
 
-  // Suggested topics: weakest topics from real practice data, or fall back to
-  // the first three topics from the user's confidence ratings.
+  // Suggested topics — same prioritizer the planner agent reads, so the
+  // chips, the heatmap, and the generated plan all surface the same skills
+  // for the same reasons. Tier ordering: diagnostic-flagged unpracticed →
+  // low-mastery practiced → unpracticed-not-flagged → maintenance.
   const suggestedTopics = useMemo(() => {
-    const weak = getWeakestTopics(5);
-    if (weak.length > 0) {
-      return weak.map((w) => ({
-        slug: w.topic,
-        label: topicDisplayNames[w.topic] || w.topic,
-        accuracy: w.questionsAttempted > 0
-          ? Math.round((w.questionsCorrect / w.questionsAttempted) * 100)
-          : null,
-        attempted: w.questionsAttempted,
-        reason:
-          w.questionsAttempted === 0
-            ? "Not yet attempted"
-            : `${Math.round((w.questionsCorrect / w.questionsAttempted) * 100)}% accuracy — needs work`,
-      }));
-    }
-    // Cold start: suggest the first domain from each section.
-    return [
-      { slug: "algebra", label: "Algebra", accuracy: null, attempted: 0, reason: "Foundation for SAT Math" },
-      { slug: "information_ideas", label: "Information and Ideas", accuracy: null, attempted: 0, reason: "Highest-weight Reading domain" },
-      { slug: "expression", label: "Expression of Ideas", accuracy: null, attempted: 0, reason: "Common Writing topic" },
-    ];
-  }, [getWeakestTopics]);
+    return getPriorityTopics(5).map((p) => ({
+      slug: p.topic,
+      label: p.displayName,
+      accuracy: p.mastery !== null ? Math.round(p.mastery * 100) : null,
+      attempted: p.attempted,
+      reason: p.reason,
+    }));
+  }, [getPriorityTopics]);
 
   const formatDate = (dateIso: string) => {
     const d = new Date(dateIso + "T00:00:00");
@@ -437,7 +622,14 @@ export default function StudyPlan() {
       setWeekOffset(newOffset);
       setWeekStartIso(newStartIso);
       const stored = loadWeekFromStorage(userId, newStartIso);
-      setWeekPlan(stored ?? generateEmptyWeek(newStart));
+      const nextWeekPlan = stored ?? generateEmptyWeek(newStart);
+      setWeekPlan(nextWeekPlan);
+      // Clear server-save context — only the current-week plan has a
+      // server row. Edits on other weeks stay localStorage-only until
+      // the user generates a plan for that week.
+      setPlanId(null);
+      lastFullPlanRef.current = null;
+      lastSavedKeyRef.current = JSON.stringify(nextWeekPlan);
     },
     [weekOffset, userId]
   );
@@ -492,6 +684,29 @@ export default function StudyPlan() {
             <div className="flex items-center gap-2">
               <Wand2 className="w-5 h-5 text-tz-blue" />
               <h2 className="text-h3 text-tz-navy">Personalized plan</h2>
+              {/* Inline save status — small, ephemeral, lives next to the
+                  title so users see explicit save confirmation without
+                  having to navigate away. */}
+              {saveStatus !== "idle" && (
+                <span
+                  className={cn(
+                    "inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full transition-opacity",
+                    saveStatus === "saving" && "bg-tz-gray-100 text-tz-gray-600",
+                    saveStatus === "saved" && "bg-tz-green/15 text-tz-green",
+                    saveStatus === "generated" && "bg-tz-blue/15 text-tz-blue",
+                    saveStatus === "error" && "bg-red-100 text-red-700"
+                  )}
+                >
+                  {saveStatus === "saving" && <Loader2 className="w-3 h-3 animate-spin" />}
+                  {saveStatus === "saving"
+                    ? "Saving…"
+                    : saveStatus === "saved"
+                    ? "Plan saved"
+                    : saveStatus === "generated"
+                    ? "Plan generated and saved"
+                    : "Save failed — please try again"}
+                </span>
+              )}
             </div>
             <button
               onClick={generateForThisWeek}
@@ -726,12 +941,15 @@ export default function StudyPlan() {
                       </div>
                     )}
 
-                    {/* Add picker / button */}
+                    {/* Add picker / button — every SAT skill is selectable
+                        (29 in total, grouped by domain). Clicking the domain
+                        header schedules a mixed-domain block; clicking a
+                        specific skill drills into that single skill. */}
                     {pickerDay === dayIndex ? (
-                      <div className="bg-white border border-tz-blue/30 rounded-lg p-3">
-                        <div className="flex items-center justify-between mb-2">
+                      <div className="bg-white border border-tz-blue/30 rounded-lg p-3 max-h-[420px] overflow-y-auto">
+                        <div className="flex items-center justify-between mb-2 sticky top-0 bg-white pb-1.5">
                           <span className="text-label text-tz-gray-500 uppercase tracking-wide">
-                            Pick a topic
+                            Pick a skill
                           </span>
                           <button
                             onClick={() => setPickerDay(null)}
@@ -741,29 +959,48 @@ export default function StudyPlan() {
                             <X className="w-4 h-4" />
                           </button>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                          {(["math", "reading", "writing"] as const).map((section) => (
-                            <div key={section}>
-                              <div className="text-label text-tz-gray-400 mb-1.5 uppercase tracking-wide">
-                                {section === "reading"
-                                  ? "Reading"
-                                  : section === "writing"
-                                  ? "Writing"
-                                  : "Math"}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          {(["math", "reading", "writing"] as const).map((section) => {
+                            const sectionDomains = DOMAINS_IN_ORDER.filter(
+                              (d) => d.section === section
+                            );
+                            return (
+                              <div key={section} className="space-y-3">
+                                <div className="text-label text-tz-gray-400 uppercase tracking-wide">
+                                  {section === "reading"
+                                    ? "Reading"
+                                    : section === "writing"
+                                    ? "Writing"
+                                    : "Math"}
+                                </div>
+                                {sectionDomains.map((d) => {
+                                  const skills = SKILLS_BY_DOMAIN[d.slug] ?? [];
+                                  return (
+                                    <div key={d.slug}>
+                                      <button
+                                        onClick={() => addBlock(dayIndex, d.slug, 25)}
+                                        className="w-full text-left px-2 py-1 rounded text-small font-semibold text-tz-navy hover:bg-tz-blue/10 transition-colors"
+                                        title="Add a mixed-skill block from this domain"
+                                      >
+                                        {d.displayName}
+                                      </button>
+                                      <div className="space-y-0.5 mt-0.5 ml-2 border-l border-tz-gray-100 pl-2">
+                                        {skills.map((s) => (
+                                          <button
+                                            key={s.slug}
+                                            onClick={() => addBlock(dayIndex, s.slug, 25)}
+                                            className="w-full text-left px-2 py-1 rounded text-xs text-tz-gray-600 hover:text-tz-navy hover:bg-tz-blue/5 transition-colors"
+                                          >
+                                            {skillSlugToDisplayName(s.slug)}
+                                          </button>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  );
+                                })}
                               </div>
-                              <div className="space-y-0.5">
-                                {DOMAINS_IN_ORDER.filter((d) => d.section === section).map((d) => (
-                                  <button
-                                    key={d.slug}
-                                    onClick={() => addBlock(dayIndex, d.slug, 25)}
-                                    className="w-full text-left px-2 py-1.5 rounded text-small text-tz-navy hover:bg-tz-blue/10 transition-colors"
-                                  >
-                                    {d.displayName}
-                                  </button>
-                                ))}
-                              </div>
-                            </div>
-                          ))}
+                            );
+                          })}
                         </div>
                       </div>
                     ) : (

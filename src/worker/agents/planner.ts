@@ -27,8 +27,24 @@ export interface PlannerPriorEdit {
   userEdit: string;
 }
 
+export interface PlannerPracticeRow {
+  /** Skill slug — same as PlannerWeakSkill.skill so the prompt can join them. */
+  skill: string;
+  /** Domain slug ("algebra" etc.) so the agent doesn't need to compute it. */
+  domain: string;
+  /** Total questions answered in this skill across all practice. */
+  attempted: number;
+  /** Mastery in [0,1]. -1 when attempted is 0 — keep the field always present
+   * so downstream prompt builders don't have to special-case nulls. */
+  mastery: number;
+}
+
 export interface PlannerInput {
   weakSkills: PlannerWeakSkill[];
+  /** Per-skill practice rollup (29 rows, padded with attempted=0 for skills
+   * the student hasn't touched). The planner reads this alongside weakSkills
+   * to prioritize unpracticed gaps even when the diagnostic didn't flag them. */
+  practiceSummary: PlannerPracticeRow[];
   testDate: string;
   hoursPerWeek: number;
   weekStartDate: string;
@@ -116,23 +132,65 @@ export const plannerAgent: AgentCall<PlannerInput, PlannerOutput> = {
   maxTokens: 2500,
   loadSystemPrompt: () => loadPrompt("planner"),
   buildUserPrompt: (input) => {
-    const { weakSkills, testDate, hoursPerWeek, weekStartDate, previousPlanEdits } = input;
+    const { weakSkills, practiceSummary, testDate, hoursPerWeek, weekStartDate, previousPlanEdits } = input;
     const verifiedTag = (w: PlannerWeakSkill) => (w.verified ? " (verified)" : " (unverified)");
+
+    // Tag every diagnostic-weak skill with whether the student has actually
+    // practiced it — so the agent can apply Rule 1 (high-severity unpracticed
+    // → 3-4 sessions/week) without having to cross-reference two lists.
+    const practicedSet = new Set(practiceSummary.filter((p) => p.attempted > 0).map((p) => p.skill));
     const skillsLine = weakSkills.length === 0
-      ? "(none flagged — choose a balanced mix across math + reading/writing)"
-      : weakSkills.map((w) => `- ${w.skill} [${w.severity}]${verifiedTag(w)}`).join("\n");
+      ? "(none flagged — fall through to PRACTICE SUMMARY priorities)"
+      : weakSkills
+          .map((w) => {
+            const status = practicedSet.has(w.skill) ? "practiced" : "unpracticed";
+            return `- ${w.skill} [${w.severity}, ${status}]${verifiedTag(w)}`;
+          })
+          .join("\n");
+
+    // Practice summary, grouped by domain, with attempted/mastery alongside
+    // an [unpracticed] / [low_mastery] / [proficient] label so the agent can
+    // pattern-match priority rules without computing them.
+    const summaryByDomain: Record<string, PlannerPracticeRow[]> = {};
+    for (const row of practiceSummary) {
+      if (!summaryByDomain[row.domain]) summaryByDomain[row.domain] = [];
+      summaryByDomain[row.domain].push(row);
+    }
+    const labelFor = (row: PlannerPracticeRow) => {
+      if (row.attempted === 0) return "unpracticed";
+      if (row.mastery < 0.7) return "low_mastery";
+      if (row.mastery < 0.85) return "proficient";
+      return "advanced";
+    };
+    const summaryBlock = practiceSummary.length === 0
+      ? "(no practice data yet — treat all skills as unpracticed)"
+      : Object.entries(summaryByDomain)
+          .map(([domain, rows]) =>
+            `${domain}:\n` +
+            rows
+              .map((r) => {
+                const masteryStr = r.attempted > 0 ? `${Math.round(r.mastery * 100)}%` : "—";
+                return `  - ${r.skill} [${labelFor(r)}, attempted=${r.attempted}, mastery=${masteryStr}]`;
+              })
+              .join("\n")
+          )
+          .join("\n");
+
     const editsBlock = previousPlanEdits && previousPlanEdits.length > 0
       ? `\nPREVIOUS USER EDITS (last week's plan)\n${previousPlanEdits.map((e) => `- "${e.originalSuggestion}" → "${e.userEdit}"`).join("\n")}\nBias this week's distribution toward what the student kept after editing.\n`
       : "";
 
     return `STUDENT CONTEXT
-weekStartDate=${weekStartDate} (a Monday ISO date)
+weekStartDate=${weekStartDate}
 testDate=${testDate}
 hoursPerWeek=${hoursPerWeek}
 totalMinuteBudget=${hoursPerWeek * 60}
 
-WEAK SKILLS
+WEAK SKILLS (from diagnostic — skill slugs)
 ${skillsLine}
+
+PRACTICE SUMMARY (skill-level rollup of all real attempts)
+${summaryBlock}
 ${editsBlock}
 TASK
 Produce a 7-day plan (Monday → Sunday). Each day has 0-N sessions. Each session has a duration in minutes, a focus skill (slug), a display name, a session type, and a 1-sentence rationale that mentions WHY this session today (e.g. "spaced from Monday's algebra drill").

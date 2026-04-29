@@ -23,6 +23,10 @@ export interface UserProfile {
    * Reviewer updates them after each practice session. */
   estimatedMathScore?: number;
   estimatedRWScore?: number;
+  /** Server-authoritative streak (`user_profiles.streak_days`). The hook's
+   * `progress.currentStreak` is a client-side mirror; prefer this when the
+   * profile is loaded so Dashboard/Progress can't drift from the DB. */
+  streakDays?: number;
 }
 
 export interface TutorZeroUser {

@@ -44,7 +44,9 @@ import {
   type PlannerWeakSkill,
   type PlannerSeverity,
   type PlannerOutput,
+  type PlannerPracticeRow,
 } from "./agents/planner";
+import { DOMAINS_IN_ORDER, SKILLS_BY_DOMAIN } from "../react-app/lib/sat-taxonomy";
 import { tutorAgent } from "./agents/tutor";
 import { runToolAgent } from "./agents/tool_runner";
 import type { ChatMessage, StreamEvent } from "./agents/tool_agent";
@@ -157,26 +159,54 @@ async function fetchStudentContext(
 ): Promise<Record<string, unknown> | undefined> {
   if (!userId) return undefined;
   try {
-    const [profileRes, diagnosisRes] = await Promise.all([
+    // Four parallel reads → one stitched RAG block: profile, latest
+    // diagnosis, latest review, and per-skill mastery.
+    const [profileRes, diagnosisRes, reviewRes, skillRes] = await Promise.all([
       supabase
         .from("user_profiles")
-        .select("display_name, estimated_math_score, estimated_rw_score, target_score, test_date")
+        .select("display_name, estimated_math_score, estimated_rw_score, target_score, test_date, streak_days, study_hours_per_week")
         .eq("user_id", userId)
         .maybeSingle(),
       supabase
         .from("ai_diagnoses")
-        .select("weaknesses, top_focus")
+        .select("weaknesses, top_focus, calibration_score, summary")
         .eq("user_id", userId)
         .order("created_at", { ascending: false })
         .limit(1)
         .maybeSingle(),
+      supabase
+        .from("ai_session_reviews")
+        .select("calibration_score, estimated_math, estimated_rw, summary, patterns, next_session_focus")
+        .eq("user_id", userId)
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle(),
+      supabase.rpc("get_user_skill_summary", { p_user_id: userId }),
     ]);
 
     const profile = profileRes.data as
-      | { display_name?: string; estimated_math_score?: number; estimated_rw_score?: number; target_score?: number; test_date?: string }
+      | {
+          display_name?: string;
+          estimated_math_score?: number;
+          estimated_rw_score?: number;
+          target_score?: number;
+          test_date?: string;
+          streak_days?: number;
+          study_hours_per_week?: string;
+        }
       | null;
     const diagnosis = diagnosisRes.data as
-      | { weaknesses?: Array<{ skill_display?: string; skill?: string; severity?: string }>; top_focus?: string }
+      | { weaknesses?: Array<{ skill_display?: string; skill?: string; severity?: string }>; top_focus?: string; calibration_score?: number; summary?: string }
+      | null;
+    const review = reviewRes.data as
+      | {
+          calibration_score?: number;
+          estimated_math?: number;
+          estimated_rw?: number;
+          summary?: string;
+          patterns?: Array<{ pattern?: string; severity?: string; type?: string; evidence?: string }>;
+          next_session_focus?: Array<{ skill?: string; display?: string; reason?: string }>;
+        }
       | null;
 
     const weakAreas = Array.isArray(diagnosis?.weaknesses)
@@ -186,14 +216,69 @@ async function fetchStudentContext(
           .filter((x): x is string => typeof x === "string" && x.length > 0)
       : [];
 
+    // Skill-level mastery — top-3 weakest + top-3 strongest. Filter to real
+    // skill slugs (not domain rows) and require ≥3 attempts so a single
+    // accidental answer can't dominate the picture.
+    const skillRows = (Array.isArray(skillRes.data) ? skillRes.data : []) as Array<{
+      topic?: string;
+      total_attempted?: number;
+      avg_score?: number;
+    }>;
+    const SKILL_SLUGS = new Set([
+      "linear_equations_one_var", "linear_functions", "linear_equations_two_var",
+      "systems_of_linear_equations", "linear_inequalities",
+      "equivalent_expressions", "nonlinear_equations", "nonlinear_functions",
+      "ratios_rates_proportions", "percentages", "one_variable_data",
+      "two_variable_data", "probability", "inference_statistics",
+      "evaluating_statistical_claims", "area_and_volume",
+      "lines_angles_triangles", "right_triangles_trigonometry", "circles",
+      "central_ideas_details", "command_of_evidence", "inferences",
+      "cross_text_connections", "text_structure_purpose", "words_in_context",
+      "rhetorical_synthesis", "transitions", "boundaries", "form_structure_sense",
+    ]);
+    const skillMastery = skillRows
+      .filter((r) => typeof r.topic === "string" && SKILL_SLUGS.has(r.topic))
+      .filter((r) => (r.total_attempted ?? 0) >= 3);
+    const sortedAsc = [...skillMastery].sort(
+      (a, b) => (a.avg_score ?? 0) - (b.avg_score ?? 0)
+    );
+    const fmtSkill = (r: { topic?: string; avg_score?: number; total_attempted?: number }) =>
+      `${r.topic} ${Math.round((r.avg_score ?? 0) * 100)}% (n=${r.total_attempted})`;
+    const weakestSkills = sortedAsc.slice(0, 3).map(fmtSkill);
+    const strongestSkills = sortedAsc.slice(-3).reverse().map(fmtSkill);
+
+    let daysToTest: number | undefined;
+    if (profile?.test_date) {
+      const t = new Date(profile.test_date).getTime();
+      const now = Date.now();
+      if (!Number.isNaN(t) && t > now) {
+        daysToTest = Math.ceil((t - now) / (1000 * 60 * 60 * 24));
+      }
+    }
+
+    const reviewPatterns = Array.isArray(review?.patterns)
+      ? review!.patterns
+          .slice(0, 2)
+          .map((p) => (typeof p?.pattern === "string" ? p.pattern : null))
+          .filter((s): s is string => typeof s === "string" && s.length > 0)
+      : [];
+
     const ctx: Record<string, unknown> = {};
     if (profile?.display_name) ctx.student_name = profile.display_name;
     if (profile?.estimated_math_score) ctx.estimated_math_score = profile.estimated_math_score;
     if (profile?.estimated_rw_score) ctx.estimated_rw_score = profile.estimated_rw_score;
     if (profile?.target_score) ctx.target_score = profile.target_score;
     if (profile?.test_date) ctx.test_date = profile.test_date;
-    if (weakAreas.length > 0) ctx.top_weak_areas = weakAreas;
+    if (typeof daysToTest === "number") ctx.days_to_test = daysToTest;
+    if (profile?.streak_days) ctx.current_streak_days = profile.streak_days;
+    if (profile?.study_hours_per_week) ctx.study_hours_per_week = profile.study_hours_per_week;
+    if (weakAreas.length > 0) ctx.diagnostic_weaknesses = weakAreas;
     if (diagnosis?.top_focus) ctx.primary_focus = diagnosis.top_focus;
+    if (typeof review?.calibration_score === "number") ctx.recent_calibration_score = review.calibration_score;
+    if (review?.summary) ctx.last_session_summary = review.summary;
+    if (reviewPatterns.length > 0) ctx.recent_patterns = reviewPatterns;
+    if (weakestSkills.length > 0) ctx.weakest_skills_now = weakestSkills;
+    if (strongestSkills.length > 0) ctx.strongest_skills_now = strongestSkills;
     return Object.keys(ctx).length > 0 ? ctx : undefined;
   } catch (err) {
     console.error("[fetchStudentContext] failed:", err);
@@ -208,6 +293,14 @@ const STRIPE_YEARLY_PRICE_ID = "price_1THC36RBhjUJNe8k93TzNGFi";  // $79.99/year
 function safeParseTopics(metadata: unknown): string[] {
   try { return metadata ? JSON.parse(metadata as string).topics || [] : []; }
   catch { return []; }
+}
+
+function safeParseTimeSpent(metadata: unknown): number {
+  try {
+    if (!metadata) return 0;
+    const parsed = JSON.parse(metadata as string);
+    return typeof parsed?.timeSpentSeconds === "number" ? parsed.timeSpentSeconds : 0;
+  } catch { return 0; }
 }
 
 // Normalize env var names at module load so route handlers can read a
@@ -950,6 +1043,54 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
       .order("started_at", { ascending: false })
       .limit(50);
 
+    // Per-session estimated scores from the Reviewer agent. Score Trend
+    // plots these so the chart, the stat card, and the trajectory all
+    // speak the same definition of "your estimated score" instead of one
+    // showing accuracy and the other showing weighted mastery.
+    const sessionIds = (sessions ?? []).map((s: SessionRow) => s.id);
+    const reviewsBySessionId: Record<number, { math: number; rw: number }> = {};
+    if (sessionIds.length > 0) {
+      const { data: reviews } = await supabase
+        .from("ai_session_reviews")
+        .select("session_id, estimated_math, estimated_rw")
+        .in("session_id", sessionIds);
+      for (const r of reviews ?? []) {
+        if (r.session_id != null && r.estimated_math != null && r.estimated_rw != null) {
+          reviewsBySessionId[r.session_id as number] = {
+            math: r.estimated_math as number,
+            rw: r.estimated_rw as number,
+          };
+        }
+      }
+    }
+
+    // Per-session skill-tracked subset. The history list shows total
+    // questions from user_sessions (now reconciled to attempts via migration
+    // 008), but a subset of those questions may not have skill identity
+    // recorded — typically because the original write predates migration
+    // 007. Surfacing the skill-tracked count lets the UI render an honest
+    // "X of Y skill-tracked" footnote rather than silently mismatching the
+    // heatmap.
+    const skillTrackedBySessionId: Record<number, { attempted: number; correct: number }> = {};
+    if (sessionIds.length > 0) {
+      const { data: trackedRows } = await supabase
+        .from("user_skill_scores")
+        .select("session_id, questions_n, score")
+        .eq("user_id", user.id)
+        .not("skill", "is", null)
+        .in("session_id", sessionIds);
+      for (const r of trackedRows ?? []) {
+        const sid = r.session_id as number | null;
+        if (sid == null) continue;
+        const cur = skillTrackedBySessionId[sid] ?? { attempted: 0, correct: 0 };
+        const qn = (r.questions_n as number | null) ?? 0;
+        const sc = (r.score as number | null) ?? 0;
+        cur.attempted += qn;
+        cur.correct += Math.round(qn * sc);
+        skillTrackedBySessionId[sid] = cur;
+      }
+    }
+
     // Get latest diagnostic result
     const { data: diagnosticResult } = await supabase
       .from("user_diagnostic_results")
@@ -959,31 +1100,28 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
       .limit(1)
       .maybeSingle();
 
-    // Build topic progress from skill scores
-    const topicProgress: Record<string, TopicProgressEntry> = {};
-    const defaultTopics = [
-      "algebra", "advanced_math", "problem_solving", "geometry",
-      "information_ideas", "craft_structure", "expression", "conventions"
-    ];
-
-    defaultTopics.forEach(topic => {
-      topicProgress[topic] = {
-        topic,
-        questionsAttempted: 0,
-        questionsCorrect: 0,
-        lastPracticed: null,
-        currentLevel: "foundation"
-      };
+    // Build topic progress at SKILL granularity. The new RPC groups
+    // user_skill_scores rows by (domain, skill); legacy rows (skill IS NULL)
+    // Skill-level rollup: only post-migration sessions populate this (the
+    // skill column on user_skill_scores went live with migration 007).
+    // Historical sessions still show up in the domainProgress rollup below
+    // and on the dashboard's section scores; the heatmap surfaces both.
+    const { data: skillRowsBySkill } = await supabase.rpc("get_user_skill_summary_by_skill", {
+      p_user_id: user.id,
     });
 
-    if (skillScores) {
-      skillScores.forEach((row: SkillScoreRow) => {
-        const accuracy = row.avg_score || 0;
-        topicProgress[row.topic] = {
-          topic: row.topic,
-          questionsAttempted: row.total_attempted || 0,
-          questionsCorrect: Math.round((row.total_attempted || 0) * accuracy),
-          lastPracticed: null,
+    const topicProgress: Record<string, TopicProgressEntry> = {};
+    if (Array.isArray(skillRowsBySkill)) {
+      type SkillRow = { domain: string; skill: string; total_attempted: number | null; avg_score: number | null; last_practiced: string | null };
+      (skillRowsBySkill as SkillRow[]).forEach((row) => {
+        if (!row.skill) return;
+        const accuracy = row.avg_score ?? 0;
+        const attempted = row.total_attempted ?? 0;
+        topicProgress[row.skill] = {
+          topic: row.skill,
+          questionsAttempted: attempted,
+          questionsCorrect: Math.round(attempted * accuracy),
+          lastPracticed: row.last_practiced,
           currentLevel: accuracy >= 0.85 ? "advanced" :
                        accuracy >= 0.7 ? "proficient" :
                        accuracy >= 0.5 ? "developing" : "foundation"
@@ -991,17 +1129,40 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
       });
     }
 
-    // Calculate estimated scores
-    const mathTopics = ["algebra", "advanced_math", "problem_solving", "geometry"];
-    const rwTopics = ["information_ideas", "craft_structure", "expression", "conventions"];
+    // Domain rollups still drive estimatedMathScore / estimatedRWScore so
+    // legacy attempts (recorded pre-migration with skill=NULL) keep
+    // contributing to the headline number. Pulled from the original
+    // get_user_skill_summary RPC which sums every row regardless of
+    // whether the new skill column is set.
+    const domainProgress: Record<string, { attempted: number; correct: number }> = {};
+    const defaultDomains = [
+      "algebra", "advanced_math", "problem_solving", "geometry",
+      "information_ideas", "craft_structure", "expression", "conventions"
+    ];
+    defaultDomains.forEach((d) => {
+      domainProgress[d] = { attempted: 0, correct: 0 };
+    });
+    if (skillScores) {
+      skillScores.forEach((row: SkillScoreRow) => {
+        const accuracy = row.avg_score || 0;
+        const attempted = row.total_attempted || 0;
+        domainProgress[row.topic] = {
+          attempted,
+          correct: Math.round(attempted * accuracy),
+        };
+      });
+    }
 
-    const calcScore = (topics: string[]) => {
+    const mathDomains = ["algebra", "advanced_math", "problem_solving", "geometry"];
+    const rwDomains = ["information_ideas", "craft_structure", "expression", "conventions"];
+
+    const calcScore = (domains: string[]) => {
       let total = 0;
       let count = 0;
-      topics.forEach(t => {
-        const p = topicProgress[t];
-        if (p && p.questionsAttempted > 0) {
-          total += p.questionsCorrect / p.questionsAttempted;
+      domains.forEach(t => {
+        const p = domainProgress[t];
+        if (p && p.attempted > 0) {
+          total += p.correct / p.attempted;
           count++;
         }
       });
@@ -1009,24 +1170,46 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
       return Math.round(200 + accuracy * 600);
     };
 
+    // Diagnostic-flagged weak skills, surfaced alongside topicProgress so the
+    // frontend prioritizer doesn't need a second round-trip.
+    const diagnosticWeaknesses = await fetchLatestWeaknesses(supabase, user.id);
+
     return c.json({
       success: true,
       data: {
         topicProgress,
+        // Domain-level rollup so the UI can show "X attempted, Y correct"
+        // for the 8 SAT domains even when no skill-level rows exist
+        // (legacy sessions written before migration 007 had no skill
+        // column). The heatmap surfaces this above each domain's skill
+        // grid as a "before skill tracking" footnote.
+        domainProgress,
+        diagnosticWeaknesses,
         currentStreak: profile?.streak_days || 0,
         longestStreak: profile?.streak_days || 0,
         lastPracticeDate: profile?.streak_last_date || null,
-        estimatedMathScore: calcScore(mathTopics),
-        estimatedRWScore: calcScore(rwTopics),
-        sessions: (sessions || []).map((s: SessionRow) => ({
-          id: `session_${s.id}`,
-          date: s.started_at,
-          type: s.session_type,
-          questionsAttempted: s.questions_total || 0,
-          questionsCorrect: s.questions_correct || 0,
-          topics: safeParseTopics(s.metadata),
-          timeSpentSeconds: 0
-        })),
+        estimatedMathScore: calcScore(mathDomains),
+        estimatedRWScore: calcScore(rwDomains),
+        sessions: (sessions || []).map((s: SessionRow) => {
+          const review = reviewsBySessionId[s.id as number];
+          const tracked = skillTrackedBySessionId[s.id as number];
+          return {
+            id: `session_${s.id}`,
+            date: s.started_at,
+            type: s.session_type,
+            questionsAttempted: s.questions_total || 0,
+            questionsCorrect: s.questions_correct || 0,
+            // Subset of questionsAttempted that has skill-level identity in
+            // user_skill_scores. The history row uses this to render a
+            // "(N skill-tracked)" footnote when N is less than the total.
+            skillTrackedAttempted: tracked?.attempted ?? 0,
+            skillTrackedCorrect: tracked?.correct ?? 0,
+            topics: safeParseTopics(s.metadata),
+            timeSpentSeconds: safeParseTimeSpent(s.metadata),
+            estimatedMathScore: review?.math ?? null,
+            estimatedRWScore: review?.rw ?? null,
+          };
+        }),
         diagnosticCompleted: profile?.has_completed_diagnostic === true,
         diagnosticDate: diagnosticResult?.created_at || null
       }
@@ -1035,6 +1218,61 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
     console.error("Error fetching user progress:", error);
     return c.json({ error: "Failed to fetch progress" }, 500);
   }
+});
+
+// Confidence calibration: per-bucket actual accuracy vs. canonical "expected"
+// for each self-rating. Drives the Confidence Calibration card on /progress.
+// Expected anchors: guessing≈25% (random across 4 options), somewhat=60%,
+// confident=90%. The narrative is whether `actual` matches `expected`.
+app.get("/api/user/calibration", authMiddleware, async (c) => {
+  const user = c.get("user") as SupabaseUser;
+  const supabase = getSupabaseAdmin();
+
+  // Scope attempts to this user via the session join. attempts has no user_id
+  // column — `session_id` → user_sessions is the only path.
+  const { data: sessions } = await supabase
+    .from("user_sessions")
+    .select("id")
+    .eq("user_id", user.id);
+  const sessionIds = (sessions ?? []).map((s) => s.id);
+  const buckets = {
+    guessing: { n: 0, c: 0 },
+    somewhat: { n: 0, c: 0 },
+    confident: { n: 0, c: 0 },
+  };
+  if (sessionIds.length > 0) {
+    const { data: rows, error } = await supabase
+      .from("attempts")
+      .select("confidence, is_correct")
+      .in("session_id", sessionIds)
+      .not("confidence", "is", null);
+    if (error) {
+      console.error("calibration query failed:", error.message);
+      return c.json({ error: error.message }, 500);
+    }
+    for (const r of rows ?? []) {
+      const b = (buckets as Record<string, { n: number; c: number }>)[
+        r.confidence as string
+      ];
+      if (!b) continue;
+      b.n += 1;
+      if (r.is_correct) b.c += 1;
+    }
+  }
+  const fmt = (b: { n: number; c: number }, expected: number, label: string) => ({
+    confidence: label,
+    expected,
+    actual: b.n > 0 ? Math.round((b.c / b.n) * 100) : null,
+    n: b.n,
+  });
+  return c.json({
+    success: true,
+    data: [
+      fmt(buckets.guessing, 25, "Guessing"),
+      fmt(buckets.somewhat, 60, "Somewhat sure"),
+      fmt(buckets.confident, 90, "Confident"),
+    ],
+  });
 });
 
 // Record a practice session (authenticated)
@@ -1110,22 +1348,49 @@ app.post("/api/user/sessions", authMiddleware, async (c) => {
       await supabase.from("attempts").insert(attemptRows);
     }
 
-    // Update skill scores per topic
-    const topicStats: Record<string, { total: number; correct: number }> = {};
-    attempts.forEach((a: { topic: string; isCorrect: boolean }) => {
-      if (!topicStats[a.topic]) {
-        topicStats[a.topic] = { total: 0, correct: 0 };
-      }
-      topicStats[a.topic].total++;
-      if (a.isCorrect) topicStats[a.topic].correct++;
+    // Reconcile the user_sessions denormalization with what we actually just
+    // inserted. The body fields questions_total / questions_correct are
+    // accepted from the client without any cross-check, so a buggy or seeded
+    // payload could silently drift from `attempts`. Recompute from attemptRows
+    // — the row of truth — and write back. Migration 008 backfilled legacy
+    // sessions; this UPDATE keeps every future session honest by construction.
+    const realAttempted = attemptRows.length;
+    const realCorrect   = attemptRows.filter((r: { is_correct: boolean }) => r.is_correct).length;
+    if (realAttempted > 0) {
+      await supabase
+        .from("user_sessions")
+        .update({
+          questions_total: realAttempted,
+          questions_correct: realCorrect,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", sessionId);
+    }
+
+    // Aggregate by (topic=domain, skill=skill_slug). The skill column was
+    // added in migration 007 so the heatmap's get_user_skill_summary_by_skill
+    // RPC can read skill-level rows; the legacy get_user_skill_summary RPC
+    // continues to roll up by topic for section-score calculations. One row
+    // per (domain, skill) tuple — never duplicate as separate domain and
+    // skill rows, which would double-count in the domain rollup.
+    const tupleStats: Record<string, { topic: string; skill: string | null; total: number; correct: number }> = {};
+    attempts.forEach((a: { topic?: string; skill?: string | null; isCorrect: boolean }) => {
+      const topic = typeof a.topic === "string" && a.topic.length > 0 ? a.topic : null;
+      const skill = typeof a.skill === "string" && a.skill.length > 0 ? a.skill : null;
+      if (!topic) return; // domain is required to bucket; skip malformed rows.
+      const key = `${topic}::${skill ?? ""}`;
+      if (!tupleStats[key]) tupleStats[key] = { topic, skill, total: 0, correct: 0 };
+      tupleStats[key].total++;
+      if (a.isCorrect) tupleStats[key].correct++;
     });
 
-    const skillScoreRows = Object.entries(topicStats).map(([topic, stats]) => ({
+    const skillScoreRows = Object.values(tupleStats).map((s) => ({
       user_id: user.id,
       session_id: sessionId,
-      topic,
-      score: stats.total > 0 ? stats.correct / stats.total : 0,
-      questions_n: stats.total,
+      topic: s.topic,
+      skill: s.skill,
+      score: s.total > 0 ? s.correct / s.total : 0,
+      questions_n: s.total,
     }));
     if (skillScoreRows.length > 0) {
       await supabase.from("user_skill_scores").insert(skillScoreRows);
@@ -1938,10 +2203,11 @@ app.post("/api/agents/diagnostician", optionalAuthMiddleware, async (c) => {
   const supabase = getSupabaseAdmin();
 
   try {
+    const extraContext = await fetchStudentContext(supabase, user?.id);
     const result = await runAgent(
       diagnosticianAgent,
       input,
-      { userId: user?.id, sessionId },
+      { userId: user?.id, sessionId, extraContext },
       process.env.OPENAI_API_KEY,
       supabase
     );
@@ -2144,10 +2410,11 @@ app.post("/api/agents/coach", optionalAuthMiddleware, async (c) => {
         console.error("[coach route] failed to fetch studentContext:", err);
       }
     }
+    const extraContext = await fetchStudentContext(supabase, user?.id);
     const result = await runAgent(
       coachAgent,
       input,
-      { userId: user?.id },
+      { userId: user?.id, extraContext },
       process.env.OPENAI_API_KEY,
       supabase
     );
@@ -2743,6 +3010,45 @@ app.post("/api/agents/planner", authMiddleware, async (c) => {
   const bodyWeak = parseWeakSkills(body.weakSkills);
   const weakSkills = bodyWeak ?? (await fetchLatestWeaknesses(supabase, user.id));
 
+  // Practice summary at skill granularity, padded to all 29 skills so the
+  // planner sees explicit `attempted=0` rows for unpracticed gaps. The shared
+  // taxonomy is the source-of-truth slug list, so the planner's allocation
+  // decisions match what the heatmap and StudyPlan suggestions show the user.
+  // The RPC returns CB skill_desc strings; map them to slugs before bucketing
+  // so two raw variants that collapse to the same slug merge cleanly.
+  const { data: practiceRows } = await supabase.rpc("get_user_skill_summary_by_skill", {
+    p_user_id: user.id,
+  });
+  type SkillBySkillRow = {
+    domain: string;
+    skill: string;
+    total_attempted: number | null;
+    avg_score: number | null;
+    last_practiced: string | null;
+  };
+  const practicedMap = new Map<string, { attempted: number; mastery: number }>();
+  if (Array.isArray(practiceRows)) {
+    for (const row of practiceRows as SkillBySkillRow[]) {
+      if (!row.skill) continue;
+      practicedMap.set(row.skill, {
+        attempted: row.total_attempted ?? 0,
+        mastery: row.avg_score ?? 0,
+      });
+    }
+  }
+  const practiceSummary: PlannerPracticeRow[] = [];
+  for (const domain of DOMAINS_IN_ORDER) {
+    for (const skillMeta of SKILLS_BY_DOMAIN[domain.slug] ?? []) {
+      const m = practicedMap.get(skillMeta.slug);
+      practiceSummary.push({
+        skill: skillMeta.slug,
+        domain: domain.slug,
+        attempted: m?.attempted ?? 0,
+        mastery: m?.mastery ?? 0,
+      });
+    }
+  }
+
   // Pull last week's edits so the Planner can bias toward the user's preferred
   // distribution. We compare original_plan_json vs plan_json on the most
   // recent plan and surface skill-level moves.
@@ -2782,6 +3088,7 @@ app.post("/api/agents/planner", authMiddleware, async (c) => {
 
   const input: PlannerInput = {
     weakSkills,
+    practiceSummary,
     testDate,
     hoursPerWeek,
     weekStartDate,

@@ -817,6 +817,125 @@ const suggestPracticeSession: ToolDef<SuggestSessionArgs> = {
   },
 };
 
+// ─── getConfidenceCalibration ─────────────────────────────────────────────
+// Mirrors the /api/user/calibration aggregator. Tutor uses this to coach the
+// student about over/underconfidence ("you say you're confident but actually
+// score X%"). Buckets: guessing / somewhat / confident.
+
+const SKILL_SLUG_LIST = [
+  "linear_equations_one_var", "linear_functions", "linear_equations_two_var",
+  "systems_of_linear_equations", "linear_inequalities",
+  "equivalent_expressions", "nonlinear_equations", "nonlinear_functions",
+  "ratios_rates_proportions", "percentages", "one_variable_data",
+  "two_variable_data", "probability", "inference_statistics",
+  "evaluating_statistical_claims", "area_and_volume",
+  "lines_angles_triangles", "right_triangles_trigonometry", "circles",
+  "central_ideas_details", "command_of_evidence", "inferences",
+  "cross_text_connections", "text_structure_purpose", "words_in_context",
+  "rhetorical_synthesis", "transitions", "boundaries", "form_structure_sense",
+];
+const SKILL_SLUG_SET = new Set(SKILL_SLUG_LIST);
+
+const getConfidenceCalibration: ToolDef<Record<string, never>> = {
+  name: "getConfidenceCalibration",
+  description:
+    "Return the student's confidence calibration: per-bucket actual accuracy (Guessing, Somewhat sure, Confident) vs. the expected accuracy each label implies. Use when the student asks how well-calibrated they are, or when you want to call out over/underconfidence in a topic.",
+  parameters: { type: "object", properties: {}, additionalProperties: false },
+  validate: () => ({}),
+  execute: async (_args, ctx) => {
+    const userId = requireUser(ctx);
+    const { data: sessions } = await ctx.supabase
+      .from("user_sessions")
+      .select("id")
+      .eq("user_id", userId);
+    const sessionIds = (sessions ?? []).map((s) => s.id as number);
+    const buckets = {
+      guessing: { n: 0, c: 0 },
+      somewhat: { n: 0, c: 0 },
+      confident: { n: 0, c: 0 },
+    };
+    if (sessionIds.length > 0) {
+      const { data: rows, error } = await ctx.supabase
+        .from("attempts")
+        .select("confidence, is_correct")
+        .in("session_id", sessionIds)
+        .not("confidence", "is", null);
+      if (error) throw new Error(error.message);
+      for (const r of rows ?? []) {
+        const b = (buckets as Record<string, { n: number; c: number }>)[
+          r.confidence as string
+        ];
+        if (!b) continue;
+        b.n += 1;
+        if (r.is_correct) b.c += 1;
+      }
+    }
+    const fmt = (b: { n: number; c: number }, expected: number, label: string) => ({
+      bucket: label,
+      sampleSize: b.n,
+      expectedAccuracyPct: expected,
+      actualAccuracyPct: b.n > 0 ? Math.round((b.c / b.n) * 100) : null,
+      gapVsExpected: b.n > 0 ? Math.round((b.c / b.n) * 100) - expected : null,
+    });
+    return {
+      buckets: [
+        fmt(buckets.guessing, 25, "Guessing"),
+        fmt(buckets.somewhat, 60, "Somewhat sure"),
+        fmt(buckets.confident, 90, "Confident"),
+      ],
+    };
+  },
+};
+
+// ─── getMasteryDistribution ──────────────────────────────────────────────
+// Skill-level accuracy across the whole question history, sorted weakest
+// first so the tutor can recommend specific drills with concrete numbers.
+
+const getMasteryDistribution: ToolDef<{ limit: number }> = {
+  name: "getMasteryDistribution",
+  description:
+    "Return the student's per-skill mastery (accuracy and attempt count) across all sessions, sorted weakest first. Use when planning what to drill, or when the student asks 'where am I weakest?' with a concrete answer.",
+  parameters: {
+    type: "object",
+    properties: {
+      limit: {
+        type: "integer",
+        minimum: 1,
+        maximum: 30,
+        description: "How many skills to return (1-30). Default 10.",
+      },
+    },
+    additionalProperties: false,
+  },
+  validate: (raw) => {
+    const o = (raw ?? {}) as Record<string, unknown>;
+    return { limit: asInt(o.limit ?? 10, "limit", 1, 30) };
+  },
+  execute: async ({ limit }, ctx) => {
+    const userId = requireUser(ctx);
+    const { data, error } = await ctx.supabase.rpc("get_user_skill_summary", {
+      p_user_id: userId,
+    });
+    if (error) throw new Error(error.message);
+    const rows = (Array.isArray(data) ? data : []) as Array<{
+      topic?: string;
+      total_attempted?: number;
+      avg_score?: number;
+    }>;
+    const skills = rows
+      .filter((r) => typeof r.topic === "string" && SKILL_SLUG_SET.has(r.topic))
+      .filter((r) => (r.total_attempted ?? 0) > 0)
+      .sort((a, b) => (a.avg_score ?? 0) - (b.avg_score ?? 0))
+      .slice(0, limit)
+      .map((r) => ({
+        skillSlug: r.topic,
+        accuracyPct: Math.round((r.avg_score ?? 0) * 100),
+        attempts: r.total_attempted,
+      }));
+    return { skills };
+  },
+};
+
 // ─── Shared ──────────────────────────────────────────────────────────────
 
 function stripHtml(html: string): string {
@@ -830,6 +949,8 @@ export const tutorTools: AnyToolDef[] = [
   getRecentMistakes,
   getQuestionDetails,
   getRecentExplainerMisconceptions,
+  getConfidenceCalibration,
+  getMasteryDistribution,
   searchWeb,
   findSimilarQuestionsInBank,
   getStudyPlan,

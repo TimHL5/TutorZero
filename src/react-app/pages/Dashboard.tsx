@@ -243,13 +243,16 @@ export default function Dashboard() {
   const profile = user?.profile;
   const displayName = profile?.displayName || user?.google_user_data?.given_name || "Student";
 
-  // Calculate stats. Server-authoritative predicted scores live on the profile
-  // (Diagnostician seeds them, Reviewer updates them post-session). Fall back
-  // to the client-side progress estimate for anonymous / pre-diagnostic users.
-  const serverMath = profile?.estimatedMathScore;
-  const serverRW = profile?.estimatedRWScore;
-  const estimatedMath = serverMath ?? progress.estimatedMathScore;
-  const estimatedRW = serverRW ?? progress.estimatedRWScore;
+  // Estimated score — read from `sectionBreakdown` (server calcSection:
+  // Bayesian-smoothed, volume-weighted) so Dashboard, Progress headline,
+  // StudyPlan, and the Score Trend chart bars all show the same number
+  // derived from the user's actual practice. Previously this preferred
+  // profile.estimatedMathScore (LLM-emitted by Diagnostician/Reviewer)
+  // which could disagree with the deterministic source by hundreds of
+  // points for the same user. progress.estimatedMathScore is the
+  // optimistic client-side mirror used pre-server-refresh.
+  const estimatedMath = progress.sectionBreakdown?.math?.score ?? progress.estimatedMathScore;
+  const estimatedRW = progress.sectionBreakdown?.rw?.score ?? progress.estimatedRWScore;
   const estimatedTotal = estimatedMath + estimatedRW;
   // Real baseline: student's FIRST diagnosis total (math + rw). When the
   // baseline endpoint hasn't returned yet — or there's no diagnosis — leave
@@ -270,26 +273,27 @@ export default function Dashboard() {
     ? Math.round((weakestTopic.questionsCorrect / weakestTopic.questionsAttempted) * 100)
     : null;
 
-  // Get all topics sorted by weakness for progress bars
-  const allTopics = Object.entries(progress.topicProgress)
-    .map(([topic, data]) => ({
-      topic,
-      name: topicDisplayNames[topic] || topic,
-      accuracy: data.questionsAttempted > 0 
-        ? Math.round((data.questionsCorrect / data.questionsAttempted) * 100)
-        : 0,
-      attempted: data.questionsAttempted,
-    }))
-    .filter(t => t.attempted > 0)
-    .sort((a, b) => a.accuracy - b.accuracy)
-    .slice(0, 6);
-
-  const getBarColor = (accuracy: number) => {
-    if (accuracy < 40) return "bg-red-500";
-    if (accuracy < 65) return "bg-tz-orange";
-    if (accuracy < 85) return "bg-tz-blue";
-    return "bg-tz-green";
-  };
+  // Domain-level heatmap data for the dashboard's "Your Progress" card.
+  // Reads from `progress.domainProgress` (keyed by the 8 domain slugs).
+  // `progress.topicProgress` is now SKILL-keyed only (see migration 007 +
+  // hook filter), so a domain lookup there always returns undefined — that
+  // was the bug behind the "Your Progress" card being stuck on the
+  // skeleton even for users with rich practice data.
+  const domainHeatmap = DOMAINS_IN_ORDER.map((domain) => {
+    const data = progress.domainProgress[domain.slug];
+    const attempted = data?.attempted ?? 0;
+    const correct = data?.correct ?? 0;
+    const value = attempted > 0 ? Math.round((correct / attempted) * 100) : null;
+    return {
+      slug: domain.slug,
+      label: domain.displayName,
+      section: domain.section,
+      value,
+      attempted,
+      correct,
+    };
+  });
+  const hasAnyDomainData = domainHeatmap.some((d) => d.attempted > 0);
 
   return (
     <AppLayout>
@@ -364,14 +368,25 @@ export default function Dashboard() {
 
         {/* What's scheduled — pulled from the active study plan. Shows every
             session for today (or the next non-empty day), with a Start button
-            on each that goes straight to /practice/session?skills=<slug>. */}
+            on each that drives the same /practice/session route used by the
+            study plan page. Routing rules match StudyPlan exactly:
+              - timed_test → ?section=full (full mixed practice)
+              - section topic ("math"/"reading"/"writing") → ?section=<slug>
+              - everything else → ?skills=<slug>. */}
         {planSessions.length > 0 ? (
+          (() => {
+          const SECTION_TOPICS = new Set(["math", "reading", "writing"]);
+          const startUrlFor = (s: PlannedSession) =>
+            s.sessionType === "timed_test"
+              ? "/practice/session?section=full"
+              : SECTION_TOPICS.has(s.focusSkill)
+              ? `/practice/session?section=${encodeURIComponent(s.focusSkill)}`
+              : `/practice/session?skills=${encodeURIComponent(s.focusSkill)}`;
+          return (
           <div className="mb-6 sm:mb-8 space-y-3">
             {/* Hero card for the first session */}
             <button
-              onClick={() =>
-                navigate(`/practice/session?skills=${encodeURIComponent(planSessions[0].focusSkill)}`)
-              }
+              onClick={() => navigate(startUrlFor(planSessions[0]))}
               className="w-full text-left rounded-xl bg-tz-navy text-white p-4 sm:p-5 shadow-sm hover:bg-[#0c1a36] transition-colors"
             >
               <div className="flex items-center justify-between gap-3">
@@ -400,16 +415,16 @@ export default function Dashboard() {
                 {planSessions.slice(1).map((s, i) => (
                   <button
                     key={i}
-                    onClick={() =>
-                      navigate(`/practice/session?skills=${encodeURIComponent(s.focusSkill)}`)
-                    }
+                    onClick={() => navigate(startUrlFor(s))}
                     className="text-left rounded-lg bg-white border border-tz-gray-200 p-3 sm:p-4 hover:border-tz-blue hover:shadow-sm transition-all"
                   >
                     <div className="flex items-center justify-between gap-2">
                       <div className="min-w-0">
                         <div className="text-xs text-tz-gray-400">
                           {s.dayLabel === "Today" ? "Also today" : s.dayLabel}
-                          {s.sessionType ? ` · ${s.sessionType.replace("_", " ")}` : ""}
+                          {s.sessionType
+                            ? ` · ${s.sessionType === "timed_test" ? "timed test" : s.sessionType}`
+                            : ""}
                         </div>
                         <div className="text-sm font-medium text-tz-navy mt-0.5 truncate">
                           {s.durationMin} min · {topicDisplayNames[s.focusSkill] ?? s.focusSkillDisplay}
@@ -422,6 +437,8 @@ export default function Dashboard() {
               </div>
             )}
           </div>
+          );
+          })()
         ) : hasActivePlan === true ? (
           // Plan exists, but nothing scheduled in the next 7 days. Don't
           // pretend the user has no plan — direct them back to /study-plan
@@ -637,11 +654,12 @@ export default function Dashboard() {
           </div>
 
           {/* Empty-state precedence:
-              - progress.sessions.length === 0 → user genuinely has no data
-                yet (true empty state, friendly CTA).
-              - allTopics empty but sessions exist → topicProgress hasn't
-                hydrated yet from /api/user/progress; show a thin skeleton
-                instead of the misleading "no data" copy. */}
+              - progress.sessions.length === 0 → genuinely no data yet.
+              - sessions exist but no domain has attempts → topicProgress
+                hasn't hydrated yet from /api/user/progress; render a
+                shimmering 8-cell skeleton instead of the misleading
+                "no data" copy.
+              - otherwise render the full domain heatmap. */}
           {progress.sessions.length === 0 ? (
             <div className="bg-white rounded-lg border border-tz-gray-200 p-6 sm:p-8 text-center">
               <p className="text-body text-tz-gray-600 mb-2">No practice data yet</p>
@@ -649,38 +667,86 @@ export default function Dashboard() {
                 Start a practice session to see your progress by topic
               </p>
             </div>
-          ) : allTopics.length === 0 ? (
-            <div className="bg-white rounded-lg border border-tz-gray-200 p-4 sm:p-6 space-y-3 animate-pulse">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <div className="w-36 h-3 bg-tz-gray-100 rounded" />
-                  <div className="flex-1 h-2 bg-tz-gray-100 rounded-full" />
-                  <div className="w-10 h-3 bg-tz-gray-100 rounded" />
-                </div>
-              ))}
+          ) : !hasAnyDomainData ? (
+            <div className="bg-white rounded-lg border border-tz-gray-200 p-4 sm:p-6">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 animate-pulse">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="h-[68px] rounded-lg bg-tz-gray-100" />
+                ))}
+              </div>
             </div>
           ) : (
             <div className="bg-white rounded-lg border border-tz-gray-200 p-4 sm:p-6 space-y-4">
-              {allTopics.map((topic) => (
-                <div key={topic.topic} className="space-y-1.5 sm:space-y-0 sm:flex sm:items-center sm:gap-4">
-                  {/* Topic name - full width on mobile, fixed width on desktop */}
-                  <div className="sm:w-36 lg:w-44 flex-shrink-0">
-                    <span className="text-sm sm:text-body text-tz-navy line-clamp-1">{topic.name}</span>
-                  </div>
-                  {/* Bar and percentage */}
-                  <div className="flex items-center gap-3 flex-1">
-                    <div className="flex-1 h-2 bg-tz-gray-100 rounded-full overflow-hidden">
-                      <div
-                        className={cn("h-full rounded-full transition-all", getBarColor(topic.accuracy))}
-                        style={{ width: `${topic.accuracy}%` }}
-                      />
+              {/* Two rows: Math (4 domains) on top, Reading & Writing
+                  (4 domains) below. Same color thresholds and click-to-
+                  practice behavior as the Heat Map on /progress. */}
+              {(["math", "rw"] as const).map((row) => {
+                const cells = domainHeatmap.filter((d) =>
+                  row === "math" ? d.section === "math" : d.section !== "math"
+                );
+                const rowLabel = row === "math" ? "MATH" : "READING & WRITING";
+                return (
+                  <div key={row}>
+                    <div className="text-[10px] sm:text-label text-tz-gray-400 uppercase tracking-wide mb-2">
+                      {rowLabel}
                     </div>
-                    <div className="w-10 text-right">
-                      <span className="text-sm font-semibold text-tz-navy">{topic.accuracy}%</span>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      {cells.map((cell) => {
+                        const bg =
+                          cell.value === null ? "bg-tz-gray-100 border border-dashed border-tz-gray-300"
+                            : cell.value >= 70 ? "bg-tz-green"
+                            : cell.value >= 40 ? "bg-yellow-400"
+                            : "bg-red-400";
+                        const text = cell.value === null ? "text-tz-gray-400" : "text-white";
+                        const tooltip = cell.value === null
+                          ? `${cell.label} — never practiced. Click to start.`
+                          : `${cell.label} — ${cell.correct}/${cell.attempted} correct (${cell.value}% mastery). Click to practice.`;
+                        return (
+                          <button
+                            key={cell.slug}
+                            type="button"
+                            onClick={() =>
+                              navigate(`/practice/session?topic=${encodeURIComponent(cell.slug)}`)
+                            }
+                            title={tooltip}
+                            className={cn(
+                              "min-h-[68px] rounded-lg flex flex-col items-center justify-center px-2 py-2 text-center transition-all hover:scale-[1.03] hover:shadow-md cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-tz-blue",
+                              bg
+                            )}
+                          >
+                            <span className={cn("text-[11px] leading-tight font-medium line-clamp-2", text)}>
+                              {cell.label}
+                            </span>
+                            <span className={cn("text-base font-bold mt-1 leading-none", text)}>
+                              {cell.value === null ? "Not yet" : `${cell.value}%`}
+                            </span>
+                            <span className={cn("text-[10px] mt-0.5 leading-none", text, "opacity-90")}>
+                              {cell.attempted === 0 ? "0 attempted" : `${cell.correct}/${cell.attempted}`}
+                            </span>
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
+
+              {/* Legend — exact same color bands as the full Heat Map. */}
+              <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-tz-gray-100">
+                <span className="text-xs text-tz-gray-400">Mastery:</span>
+                <span className="inline-flex items-center gap-1.5 text-xs text-tz-gray-600">
+                  <span className="inline-block w-3 h-3 rounded bg-tz-gray-100 border border-dashed border-tz-gray-300" /> Not yet
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-xs text-tz-gray-600">
+                  <span className="inline-block w-3 h-3 rounded bg-red-400" /> 0–40%
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-xs text-tz-gray-600">
+                  <span className="inline-block w-3 h-3 rounded bg-yellow-400" /> 40–70%
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-xs text-tz-gray-600">
+                  <span className="inline-block w-3 h-3 rounded bg-tz-green" /> 70–100%
+                </span>
+              </div>
             </div>
           )}
         </div>

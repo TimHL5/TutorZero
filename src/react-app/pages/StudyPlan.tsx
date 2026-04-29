@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useMemo, useRef } from "react";
+import { useNavigate } from "react-router";
 import { AppLayout } from "@/react-app/components/layout/AppLayout";
 import { topicDisplayNames } from "@/data/questions";
 import {
@@ -27,6 +28,12 @@ interface StudyBlock {
   topic: string;
   duration: number; // minutes
   completed: boolean;
+  /** Carries the planner's session type + rationale through the StudyBlock
+   * conversion so the UI can render them. Without these, manually-added
+   * blocks default to "drill" and a blank rationale; agent-generated blocks
+   * keep their original metadata round-trip. Persisted in plan_json. */
+  sessionType?: PlannerSessionType;
+  rationale?: string;
 }
 
 interface DayPlan {
@@ -88,6 +95,8 @@ function plannerToDayPlan(week: PlannerDay[], fallbackStartIso: string): DayPlan
       topic: typeof s.focusSkill === "string" && s.focusSkill.length > 0 ? s.focusSkill : "algebra",
       duration: typeof s.durationMin === "number" && s.durationMin > 0 ? s.durationMin : 25,
       completed: false,
+      sessionType: s.sessionType,
+      rationale: typeof s.rationale === "string" ? s.rationale : "",
     }));
     return { date: dateIso, blocks };
   });
@@ -125,8 +134,11 @@ function projectPlanForSave(weekPlan: DayPlan[], original: PlannerOutput | null)
         durationMin: block.duration,
         focusSkill: block.topic,
         focusSkillDisplay: orig?.focusSkillDisplay ?? block.topic,
-        sessionType: orig?.sessionType ?? "drill",
-        rationale: orig?.rationale ?? "",
+        // Prefer block-level metadata so manual edits (e.g. user changes a
+        // drill to a review via UI) survive round-trip; fall back to the
+        // original planner output, then to safe defaults.
+        sessionType: block.sessionType ?? orig?.sessionType ?? "drill",
+        rationale: block.rationale ?? orig?.rationale ?? "",
       };
     });
     return { day: dayName, date: day.date, sessions };
@@ -189,6 +201,7 @@ function saveWeekToStorage(userId: string | undefined, weekStartIso: string, pla
 }
 
 export default function StudyPlan() {
+  const navigate = useNavigate();
   const { user } = useAuth();
   const { progress, getPriorityTopics } = useStudentProgress();
   const [weekOffset, setWeekOffset] = useState(0);
@@ -236,8 +249,12 @@ export default function StudyPlan() {
   const profile = user?.profile;
   const userId = user?.id;
   const testDate = profile?.testDate ? new Date(profile.testDate) : null;
-  const estimatedMath = profile?.estimatedMathScore ?? progress.estimatedMathScore;
-  const estimatedRW = profile?.estimatedRWScore ?? progress.estimatedRWScore;
+  // Estimated score — same source as Dashboard / Progress headline.
+  // Reads sectionBreakdown (deterministic, sample-size-aware) over
+  // profile.estimatedMathScore (LLM-emitted) so all three pages always
+  // agree.
+  const estimatedMath = progress.sectionBreakdown?.math?.score ?? progress.estimatedMathScore;
+  const estimatedRW = progress.sectionBreakdown?.rw?.score ?? progress.estimatedRWScore;
   const currentScore = estimatedMath + estimatedRW;
   const targetScore = profile?.targetScore || 1400;
 
@@ -576,7 +593,16 @@ export default function StudyPlan() {
             ...day,
             blocks: [
               ...day.blocks,
-              { id: blockId(day.date), topic, duration, completed: false },
+              {
+                id: blockId(day.date),
+                topic,
+                duration,
+                completed: false,
+                // Manually-added blocks default to a drill with no rationale.
+                // The block render hides the rationale row when it's empty.
+                sessionType: "drill",
+                rationale: "",
+              },
             ],
           };
         })
@@ -859,16 +885,50 @@ export default function StudyPlan() {
                     </div>
                   </div>
 
-                  {/* Tasks column — full-width topic names */}
+                  {/* Tasks column — rich block layout matches the dashboard
+                      hero card so users see the same data on both surfaces:
+                      skill name, session-type tag, agent rationale, duration,
+                      and a Start button that drops straight into practice. */}
                   <div className="flex-1 p-3 sm:p-4 space-y-2">
-                    {day.blocks.map((block, blockIndex) => (
+                    {day.blocks.map((block, blockIndex) => {
+                      const isUpNext = isCurrentDay && blockIndex === 0 && !block.completed;
+                      const sessionTypeStyle = block.sessionType === "review"
+                        ? "bg-orange-100 text-orange-700"
+                        : block.sessionType === "timed_test"
+                        ? "bg-tz-navy text-white"
+                        : block.sessionType === "mixed"
+                        ? "bg-tz-gray-200 text-tz-gray-700"
+                        : "bg-tz-blue/15 text-tz-blue"; // drill (default)
+                      const sessionTypeLabel = block.sessionType === "timed_test"
+                        ? "Timed test"
+                        : block.sessionType === "review"
+                        ? "Review"
+                        : block.sessionType === "mixed"
+                        ? "Mixed"
+                        : "Drill";
+
+                      // Routing rules:
+                      //  - timed_test  → full mixed practice (the "test
+                      //    simulator" experience), regardless of focus skill.
+                      //  - section topics ("math"/"reading"/"writing") →
+                      //    /practice/session?section=<slug>.
+                      //  - everything else (domain or skill slug) →
+                      //    /practice/session?skills=<slug>.
+                      const SECTION_TOPICS = new Set(["math", "reading", "writing"]);
+                      const startUrl =
+                        block.sessionType === "timed_test"
+                          ? "/practice/session?section=full"
+                          : SECTION_TOPICS.has(block.topic)
+                          ? `/practice/session?section=${encodeURIComponent(block.topic)}`
+                          : `/practice/session?skills=${encodeURIComponent(block.topic)}`;
+                      return (
                       <div
                         key={block.id}
                         draggable
                         onDragStart={() => handleDragStart(dayIndex, blockIndex)}
                         onDragEnd={handleDragEnd}
                         className={cn(
-                          "group flex items-center gap-3 rounded-lg px-3 py-2.5 cursor-grab active:cursor-grabbing transition-all border",
+                          "group rounded-lg px-3 py-2.5 cursor-grab active:cursor-grabbing transition-all border",
                           block.completed
                             ? "bg-green-50 border-green-200"
                             : "bg-tz-off-white border-transparent hover:border-tz-gray-200 hover:shadow-sm",
@@ -877,55 +937,103 @@ export default function StudyPlan() {
                             "opacity-50 scale-[0.98]"
                         )}
                       >
-                        <button
-                          onClick={() => toggleBlockCompletion(dayIndex, blockIndex)}
-                          className="flex-shrink-0 hover:scale-110 transition-transform"
-                          aria-label={block.completed ? "Mark incomplete" : "Mark complete"}
-                        >
-                          {block.completed ? (
-                            <CheckCircle className="w-5 h-5 text-tz-green" />
-                          ) : (
-                            <Circle className="w-5 h-5 text-tz-gray-300 hover:text-tz-blue" />
+                        <div className="flex items-center gap-3">
+                          <button
+                            onClick={() => toggleBlockCompletion(dayIndex, blockIndex)}
+                            className="flex-shrink-0 hover:scale-110 transition-transform"
+                            aria-label={block.completed ? "Mark incomplete" : "Mark complete"}
+                          >
+                            {block.completed ? (
+                              <CheckCircle className="w-5 h-5 text-tz-green" />
+                            ) : (
+                              <Circle className="w-5 h-5 text-tz-gray-300 hover:text-tz-blue" />
+                            )}
+                          </button>
+
+                          {/* Session type pill — same vocabulary the planner emits.
+                              Helps users see at a glance whether each slot is a
+                              drill, review, mixed, or timed test. */}
+                          <span
+                            className={cn(
+                              "flex-shrink-0 inline-flex items-center text-[10px] uppercase tracking-wide font-semibold px-1.5 py-0.5 rounded",
+                              sessionTypeStyle
+                            )}
+                          >
+                            {sessionTypeLabel}
+                          </span>
+
+                          <span
+                            className={cn(
+                              "flex-1 text-body font-medium leading-snug break-words min-w-0",
+                              block.completed ? "text-green-700 line-through" : "text-tz-navy"
+                            )}
+                          >
+                            {topicDisplayNames[block.topic] || block.topic}
+                            {isUpNext && (
+                              <span className="ml-2 inline-flex items-center text-[10px] uppercase tracking-wide font-semibold bg-tz-blue text-white rounded-full px-1.5 py-0.5 align-middle">
+                                Up next
+                              </span>
+                            )}
+                          </span>
+
+                          <select
+                            value={block.duration}
+                            onChange={(e) =>
+                              updateBlockDuration(dayIndex, blockIndex, Number(e.target.value))
+                            }
+                            onClick={(e) => e.stopPropagation()}
+                            className="flex-shrink-0 text-small text-tz-gray-600 bg-white border border-tz-gray-200 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-tz-blue cursor-pointer"
+                            aria-label="Duration"
+                          >
+                            {DURATION_OPTIONS.map((d) => (
+                              <option key={d} value={d}>
+                                {d} min
+                              </option>
+                            ))}
+                          </select>
+
+                          {/* Start CTA — same URL the dashboard uses, so both
+                              surfaces drive a single practice flow. Hidden
+                              when the block is already completed. */}
+                          {!block.completed && (
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                navigate(startUrl);
+                              }}
+                              className="flex-shrink-0 inline-flex items-center gap-0.5 text-xs font-semibold text-tz-blue hover:text-[#005a9e] transition-colors"
+                            >
+                              Start <ChevronRight className="w-3.5 h-3.5" />
+                            </button>
                           )}
-                        </button>
 
-                        <span
-                          className={cn(
-                            "flex-1 text-body font-medium leading-snug break-words min-w-0",
-                            block.completed ? "text-green-700 line-through" : "text-tz-navy"
-                          )}
-                        >
-                          {topicDisplayNames[block.topic] || block.topic}
-                        </span>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              removeBlock(dayIndex, blockIndex);
+                            }}
+                            className="flex-shrink-0 opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity rounded-full w-7 h-7 flex items-center justify-center hover:bg-red-50"
+                            aria-label="Remove task"
+                          >
+                            <X className="w-4 h-4 text-tz-gray-500 hover:text-red-500" />
+                          </button>
+                        </div>
 
-                        <select
-                          value={block.duration}
-                          onChange={(e) =>
-                            updateBlockDuration(dayIndex, blockIndex, Number(e.target.value))
-                          }
-                          onClick={(e) => e.stopPropagation()}
-                          className="flex-shrink-0 text-small text-tz-gray-600 bg-white border border-tz-gray-200 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-tz-blue cursor-pointer"
-                          aria-label="Duration"
-                        >
-                          {DURATION_OPTIONS.map((d) => (
-                            <option key={d} value={d}>
-                              {d} min
-                            </option>
-                          ))}
-                        </select>
-
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            removeBlock(dayIndex, blockIndex);
-                          }}
-                          className="flex-shrink-0 opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity rounded-full w-7 h-7 flex items-center justify-center hover:bg-red-50"
-                          aria-label="Remove task"
-                        >
-                          <X className="w-4 h-4 text-tz-gray-500 hover:text-red-500" />
-                        </button>
+                        {/* Rationale — agent-supplied "why this slot now". Only
+                            renders if non-empty (manually-added blocks have no
+                            rationale). Indented under the row so it doesn't
+                            clutter the title line. */}
+                        {block.rationale && !block.completed && (
+                          <p
+                            className="text-xs text-tz-gray-500 leading-snug mt-1.5 ml-[5.5rem] line-clamp-2"
+                            title={block.rationale}
+                          >
+                            {block.rationale}
+                          </p>
+                        )}
                       </div>
-                    ))}
+                      );
+                    })}
 
                     {/* Drop zone hint */}
                     {isDayDropTarget && (
@@ -964,15 +1072,26 @@ export default function StudyPlan() {
                             const sectionDomains = DOMAINS_IN_ORDER.filter(
                               (d) => d.section === section
                             );
+                            const sectionLabel =
+                              section === "reading" ? "Reading"
+                              : section === "writing" ? "Writing"
+                              : "Math";
                             return (
                               <div key={section} className="space-y-3">
-                                <div className="text-label text-tz-gray-400 uppercase tracking-wide">
-                                  {section === "reading"
-                                    ? "Reading"
-                                    : section === "writing"
-                                    ? "Writing"
-                                    : "Math"}
-                                </div>
+                                {/* Section header doubles as a one-click "add a
+                                    mixed block from this entire section"
+                                    button. The block topic is the section
+                                    slug ("math" / "reading" / "writing") so
+                                    its Start link routes to ?section=<slug>
+                                    instead of ?skills=<slug>. */}
+                                <button
+                                  onClick={() => addBlock(dayIndex, section, 25)}
+                                  className="w-full text-left px-2 py-1.5 rounded text-label text-tz-blue uppercase tracking-wide font-semibold hover:bg-tz-blue/10 transition-colors flex items-center justify-between gap-2"
+                                  title={`Add a ${sectionLabel} mixed-section block`}
+                                >
+                                  <span>+ {sectionLabel}</span>
+                                  <span className="text-[10px] normal-case font-normal text-tz-gray-400 tracking-normal">All {sectionLabel.toLowerCase()}</span>
+                                </button>
                                 {sectionDomains.map((d) => {
                                   const skills = SKILLS_BY_DOMAIN[d.slug] ?? [];
                                   return (

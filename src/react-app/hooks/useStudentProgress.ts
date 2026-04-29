@@ -61,11 +61,17 @@ export interface SessionRecord {
   skillTrackedCorrect?: number;
   topics: string[];
   timeSpentSeconds: number;
-  /** From ai_session_reviews when present. Lets Score Trend plot the same
-   * "estimated total score" the dashboard stat card uses, so the chart and
-   * the headline number agree. */
+  /** Per-session Reviewer LLM snapshot. Kept for backwards-compat with any
+   * external consumer; the Progress chart now prefers cumulative*Score
+   * below so its bars use the same formula as the headline card. */
   estimatedMathScore?: number | null;
   estimatedRWScore?: number | null;
+  /** Cumulative deterministic score AS OF this session — same Bayesian-
+   * smoothed, volume-weighted formula the headline `sectionBreakdown`
+   * uses. Each bar in the Score Trend reads these so the chart and the
+   * headline can never disagree by source-of-truth, only by chronology. */
+  cumulativeMathScore?: number | null;
+  cumulativeRWScore?: number | null;
 }
 
 export interface DomainProgress {

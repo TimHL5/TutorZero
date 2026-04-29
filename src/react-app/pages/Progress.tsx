@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
+import { useNavigate } from "react-router";
 import { AppLayout } from "@/react-app/components/layout/AppLayout";
 import { useStudentProgress } from "@/react-app/hooks/useStudentProgress";
 import { topicDisplayNames } from "@/data/questions";
@@ -31,8 +32,16 @@ interface CalibrationRow {
 }
 
 export default function Progress() {
+  const navigate = useNavigate();
   const { user } = useAuth();
-  const { progress, getOverallStats } = useStudentProgress();
+  const { progress, getOverallStats, isLoaded } = useStudentProgress();
+  // Score card stays in skeleton state until the server has actually
+  // responded — sectionBreakdown is undefined on initial mount and after
+  // localStorage hydration alone, then becomes a {math, rw} object on
+  // server fetch. Gating on this (not just isLoaded) eliminates the
+  // brief flicker where a stale localStorage value paints, then snaps
+  // to the fresh server value a moment later.
+  const scoreReady = isLoaded && progress.sectionBreakdown !== undefined;
   const [activeTab, setActiveTab] = useState<"overview" | "topics" | "history">("overview");
 
   const profile = user?.profile;
@@ -60,20 +69,25 @@ export default function Progress() {
     };
   }, [user]);
 
-  // One bar per session, plotting the per-session estimated total score
-  // (from ai_session_reviews) so this chart, the stat card, and the
-  // trajectory all speak the same units. Falls back to an accuracy-derived
-  // estimate for any session without a review yet. Micro-sessions (<3 q)
-  // are filtered so a single accidental answer can't drop a 400-score bar.
+  // One bar per session, plotting the CUMULATIVE deterministic score
+  // computed by the worker — same Bayesian-smoothed, volume-weighted
+  // formula the headline card uses, snapshotted at each session boundary.
+  // The latest bar therefore equals the headline currentScore: chart,
+  // score-change pill, trajectory, and headline are all reading the same
+  // source of truth. Falls back to per-session accuracy-derived (400-1600
+  // band) only when cumulative isn't available — that path runs for
+  // users who haven't refetched since the worker change. Micro-sessions
+  // (<3 q) still filter out so single accidental answers don't deflate
+  // a bar.
   const scoreHistory = useMemo(() => {
     if (progress.sessions.length === 0) return [];
     return [...progress.sessions]
       .filter((s) => s.questionsAttempted >= 3)
       .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
       .map((session) => {
-        const review =
-          session.estimatedMathScore != null && session.estimatedRWScore != null
-            ? session.estimatedMathScore + session.estimatedRWScore
+        const cumulative =
+          session.cumulativeMathScore != null && session.cumulativeRWScore != null
+            ? session.cumulativeMathScore + session.cumulativeRWScore
             : null;
         const acc =
           session.questionsAttempted > 0
@@ -82,7 +96,7 @@ export default function Progress() {
         const accDerived = Math.round(400 + Math.min(1, Math.max(0, acc)) * 1200);
         return {
           date: formatRelativeDate(session.date),
-          score: review ?? accDerived,
+          score: cumulative ?? accDerived,
           timestamp: new Date(session.date).getTime(),
         };
       });
@@ -270,36 +284,67 @@ export default function Progress() {
                 <span className="hidden sm:inline">Estimated Score</span>
                 <span className="sm:hidden">Score</span>
               </div>
-              <div className={cn(
-                "text-small flex items-center gap-1",
-                scoreChange >= 0 ? "text-tz-green" : "text-red-500"
-              )}>
-                <TrendingUp className={cn("w-4 h-4", scoreChange < 0 && "rotate-180")} />
-                {scoreChange >= 0 ? "+" : ""}{scoreChange}
+              {/* Score-change pill is hidden until data loads — pre-load it
+                  would always read +0 (currentScore is the default 800 and
+                  scoreHistory is empty), which is meaningless noise. */}
+              {scoreReady && scoreHistory.length >= 2 && (
+                <div className={cn(
+                  "text-small flex items-center gap-1",
+                  scoreChange >= 0 ? "text-tz-green" : "text-red-500"
+                )}>
+                  <TrendingUp className={cn("w-4 h-4", scoreChange < 0 && "rotate-180")} />
+                  {scoreChange >= 0 ? "+" : ""}{scoreChange}
+                </div>
+              )}
+            </div>
+            {/* Score skeleton — same dimensions as the resolved numbers, so the
+                card doesn't jump when real data lands. The 800 → 933 flash from
+                rendering DEFAULT_PROGRESS values pre-hydration was the worst
+                offender; this guard removes it entirely. */}
+            {scoreReady ? (
+              <div className="text-2xl lg:text-display font-bold text-tz-navy leading-none">
+                {currentScore}
               </div>
-            </div>
-            <div className="text-2xl lg:text-display font-bold text-tz-navy leading-none">
-              {currentScore}
-            </div>
+            ) : (
+              <div className="h-8 lg:h-10 w-24 bg-tz-gray-100 rounded animate-pulse" />
+            )}
             <div className="text-xs text-tz-gray-400 mt-0.5">out of 1600</div>
             <div className="mt-3 grid grid-cols-2 gap-2">
               <div className="bg-tz-blue/5 border border-tz-blue/15 rounded-lg px-2 py-1.5">
                 <div className="text-[10px] uppercase tracking-wide text-tz-gray-500">Math</div>
-                <div className="text-base font-bold text-tz-navy leading-none mt-0.5">{estimatedMath}</div>
-                <div className="text-[10px] text-tz-gray-500 mt-0.5">
-                  {mathBreakdown.attempted > 0
-                    ? `${mathBreakdown.correct}/${mathBreakdown.attempted} · ${Math.round(mathBreakdown.accuracy * 100)}%`
-                    : "no practice yet"}
-                </div>
+                {scoreReady ? (
+                  <>
+                    <div className="text-base font-bold text-tz-navy leading-none mt-0.5">{estimatedMath}</div>
+                    <div className="text-[10px] text-tz-gray-500 mt-0.5">
+                      {mathBreakdown.attempted > 0
+                        ? `${mathBreakdown.correct}/${mathBreakdown.attempted} · ${Math.round(mathBreakdown.accuracy * 100)}%`
+                        : "no practice yet"}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="h-4 w-10 bg-tz-gray-200 rounded animate-pulse mt-0.5" />
+                    <div className="h-2.5 w-16 bg-tz-gray-100 rounded animate-pulse mt-1.5" />
+                  </>
+                )}
               </div>
               <div className="bg-tz-blue/5 border border-tz-blue/15 rounded-lg px-2 py-1.5">
                 <div className="text-[10px] uppercase tracking-wide text-tz-gray-500">R&amp;W</div>
-                <div className="text-base font-bold text-tz-navy leading-none mt-0.5">{estimatedRW}</div>
-                <div className="text-[10px] text-tz-gray-500 mt-0.5">
-                  {rwBreakdown.attempted > 0
-                    ? `${rwBreakdown.correct}/${rwBreakdown.attempted} · ${Math.round(rwBreakdown.accuracy * 100)}%`
-                    : "no practice yet"}
-                </div>
+                {scoreReady ? (
+                  <>
+                    <div className="text-base font-bold text-tz-navy leading-none mt-0.5">{estimatedRW}</div>
+                    <div className="text-[10px] text-tz-gray-500 mt-0.5">
+                      {rwBreakdown.attempted > 0
+                        ? `${rwBreakdown.correct}/${rwBreakdown.attempted} · ${Math.round(rwBreakdown.accuracy * 100)}%`
+                        : "no practice yet"}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="h-4 w-10 bg-tz-gray-200 rounded animate-pulse mt-0.5" />
+                    <div className="h-2.5 w-16 bg-tz-gray-100 rounded animate-pulse mt-1.5" />
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -692,6 +737,9 @@ export default function Progress() {
                                         attempted={attempted}
                                         correct={correct}
                                         lastPracticed={data?.lastPracticed ?? null}
+                                        onClick={() =>
+                                          navigate(`/practice/session?skills=${encodeURIComponent(skill.slug)}`)
+                                        }
                                       />
                                     );
                                   })}
@@ -1080,12 +1128,17 @@ function HeatMapCell({
   attempted,
   correct,
   lastPracticed,
+  onClick,
 }: {
   label: string;
   value: number | null;
   attempted: number;
   correct: number;
   lastPracticed: string | null;
+  /** When supplied, the cell renders as a button — clicking jumps straight
+   * into a practice session for this skill. Cells with no data still call
+   * onClick: practicing an untouched skill is the natural next step. */
+  onClick?: () => void;
 }) {
   const bg =
     value === null ? "bg-tz-gray-100 border border-dashed border-tz-gray-300"
@@ -1102,17 +1155,16 @@ function HeatMapCell({
     ? new Date(lastPracticed).toLocaleDateString("en-US", { month: "short", day: "numeric" })
     : "never";
   const tooltip = value === null
-    ? `${label} — never practiced`
-    : `${label} — ${correct}/${attempted} correct (${value}% mastery). Last practiced: ${lastSeen}.`;
+    ? `${label} — never practiced. Click to start.`
+    : `${label} — ${correct}/${attempted} correct (${value}% mastery). Last practiced: ${lastSeen}. Click to practice.`;
 
-  return (
-    <div
-      className={cn(
-        "min-h-[68px] rounded-lg flex flex-col items-center justify-center px-2 py-2 text-center transition-all",
-        bg
-      )}
-      title={tooltip}
-    >
+  const baseClass = cn(
+    "min-h-[68px] rounded-lg flex flex-col items-center justify-center px-2 py-2 text-center transition-all",
+    bg,
+    onClick && "hover:scale-[1.03] hover:shadow-md cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-tz-blue"
+  );
+  const inner = (
+    <>
       <span className={cn("text-[11px] leading-tight font-medium line-clamp-2", text)}>
         {label}
       </span>
@@ -1122,6 +1174,18 @@ function HeatMapCell({
       <span className={cn("text-[10px] mt-0.5 leading-none", text, "opacity-90")}>
         {attempted === 0 ? "0 attempted" : `${correct}/${attempted}`}
       </span>
+    </>
+  );
+  if (onClick) {
+    return (
+      <button type="button" onClick={onClick} className={baseClass} title={tooltip}>
+        {inner}
+      </button>
+    );
+  }
+  return (
+    <div className={baseClass} title={tooltip}>
+      {inner}
     </div>
   );
 }

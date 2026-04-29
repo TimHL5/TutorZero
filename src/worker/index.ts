@@ -77,6 +77,7 @@ interface SessionRow {
   questions_total: number | null;
   questions_correct: number | null;
   metadata: unknown;
+  completed_at: string | null;
 }
 
 interface SupabaseUser {
@@ -1091,6 +1092,77 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
       }
     }
 
+    // Per-session CUMULATIVE deterministic score — same Bayesian-smoothed,
+    // volume-weighted formula the headline card uses (calcSection above),
+    // snapshotted at each session boundary. Score Trend chart, score-change
+    // pill, trajectory, and headline all read from this map so they can
+    // never disagree by source-of-truth, only by chronology.
+    //
+    // Attribution by session_id, NOT by user_skill_scores.created_at: the
+    // diagnostician backfill (and migration 008) inserted rows retroactively,
+    // so a row's created_at no longer tracks when the practice happened.
+    // Each row's session_id points at the right session, which has the
+    // correct started_at for ordering.
+    const cumulativeBySessionId: Record<number, { math: number; rw: number; total: number }> = {};
+    if (sessionIds.length > 0) {
+      const { data: allSkillRows } = await supabase
+        .from("user_skill_scores")
+        .select("session_id, topic, questions_n, score")
+        .eq("user_id", user.id);
+
+      const skillRowsBySessionId = new Map<number, Array<{ topic: string; qn: number; sc: number }>>();
+      for (const r of (allSkillRows ?? []) as Array<{ session_id: number | null; topic: string; questions_n: number | null; score: number | null }>) {
+        if (typeof r.session_id !== "number") continue;
+        const arr = skillRowsBySessionId.get(r.session_id) ?? [];
+        arr.push({ topic: r.topic, qn: r.questions_n ?? 0, sc: r.score ?? 0 });
+        skillRowsBySessionId.set(r.session_id, arr);
+      }
+
+      const PRIOR_N = 5;
+      const PRIOR_P = 0.5;
+      const sectionScore = (
+        domains: Record<string, { attempted: number; correct: number }>,
+        list: string[]
+      ): number => {
+        let weightedSmoothed = 0;
+        let totalWeight = 0;
+        for (const d of list) {
+          const c = domains[d];
+          if (!c || c.attempted <= 0) continue;
+          const smoothed = (c.correct + PRIOR_N * PRIOR_P) / (c.attempted + PRIOR_N);
+          weightedSmoothed += smoothed * c.attempted;
+          totalWeight += c.attempted;
+        }
+        if (totalWeight === 0) return 200;
+        const proficiency = Math.min(1, Math.max(0, weightedSmoothed / totalWeight));
+        return Math.round(200 + proficiency * 600);
+      };
+
+      const MATH_DOMS = ["algebra", "advanced_math", "problem_solving", "geometry"];
+      const RW_DOMS = ["information_ideas", "craft_structure", "expression", "conventions"];
+
+      // Walk sessions oldest → newest; absorb that session's skill rows
+      // into the running cumDomains, then snapshot. Each session_id maps
+      // to "your score after this session's attempts were graded."
+      const cumDomains: Record<string, { attempted: number; correct: number }> = {};
+      const sessionsByStartTime = (sessions ?? [])
+        .filter((s): s is SessionRow & { id: number } => typeof s.id === "number" && !!s.started_at)
+        .sort((a, b) => new Date(a.started_at as string).getTime() - new Date(b.started_at as string).getTime());
+
+      for (const sess of sessionsByStartTime) {
+        const rows = skillRowsBySessionId.get(sess.id) ?? [];
+        for (const r of rows) {
+          const cur = cumDomains[r.topic] ?? { attempted: 0, correct: 0 };
+          cur.attempted += r.qn;
+          cur.correct += Math.round(r.qn * r.sc);
+          cumDomains[r.topic] = cur;
+        }
+        const mScore = sectionScore(cumDomains, MATH_DOMS);
+        const rScore = sectionScore(cumDomains, RW_DOMS);
+        cumulativeBySessionId[sess.id] = { math: mScore, rw: rScore, total: mScore + rScore };
+      }
+    }
+
     // Get latest diagnostic result
     const { data: diagnosticResult } = await supabase
       .from("user_diagnostic_results")
@@ -1246,21 +1318,25 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
         sessions: (sessions || []).map((s: SessionRow) => {
           const review = reviewsBySessionId[s.id as number];
           const tracked = skillTrackedBySessionId[s.id as number];
+          const cum = cumulativeBySessionId[s.id as number];
           return {
             id: `session_${s.id}`,
             date: s.started_at,
             type: s.session_type,
             questionsAttempted: s.questions_total || 0,
             questionsCorrect: s.questions_correct || 0,
-            // Subset of questionsAttempted that has skill-level identity in
-            // user_skill_scores. The history row uses this to render a
-            // "(N skill-tracked)" footnote when N is less than the total.
             skillTrackedAttempted: tracked?.attempted ?? 0,
             skillTrackedCorrect: tracked?.correct ?? 0,
             topics: safeParseTopics(s.metadata),
             timeSpentSeconds: safeParseTimeSpent(s.metadata),
+            // estimated*Score retains the per-session Reviewer LLM snapshot
+            // for backwards-compat callers, but the chart now prefers the
+            // cumulative deterministic score below — same formula as the
+            // headline card, so the bars and the headline always agree.
             estimatedMathScore: review?.math ?? null,
             estimatedRWScore: review?.rw ?? null,
+            cumulativeMathScore: cum?.math ?? null,
+            cumulativeRWScore: cum?.rw ?? null,
           };
         }),
         diagnosticCompleted: profile?.has_completed_diagnostic === true,

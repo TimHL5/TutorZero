@@ -1156,19 +1156,66 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
     const mathDomains = ["algebra", "advanced_math", "problem_solving", "geometry"];
     const rwDomains = ["information_ideas", "craft_structure", "expression", "conventions"];
 
-    const calcScore = (domains: string[]) => {
-      let total = 0;
-      let count = 0;
-      domains.forEach(t => {
-        const p = domainProgress[t];
-        if (p && p.attempted > 0) {
-          total += p.correct / p.attempted;
-          count++;
-        }
-      });
-      const accuracy = count > 0 ? Math.min(1, Math.max(0, total / count)) : 0.5;
-      return Math.round(200 + accuracy * 600);
+    // Per-section score derived from real practice + diagnostic attempts.
+    //
+    // Inputs per domain in the section:
+    //   - attempted, correct (from get_user_skill_summary, which sums every
+    //     user_skill_scores row regardless of skill granularity, so legacy
+    //     rows still contribute).
+    //
+    // Formula:
+    //   - Bayesian smoothing per domain. Treat each domain's accuracy as if
+    //     it had also seen `prior_n` "neutral" questions at the section's
+    //     baseline rate. A domain with 2 attempts at 100% no longer pins
+    //     the section to the ceiling; one with 200 attempts barely shifts.
+    //   - Volume-weighted aggregation across the 4 domains in the section,
+    //     so a heavily-practiced domain dominates a sparsely-practiced one.
+    //   - Linear projection onto the 200–800 SAT band: score = 200 + 600·p.
+    //   - When the section has zero attempts AND a profile score exists
+    //     (Diagnostician/Reviewer LLM-set), prefer that over the 0.5 default.
+    //
+    // Returns the score plus the underlying counts so the UI can show
+    // "X / Y in Math · 73%" without recomputing client-side.
+    const PRIOR_N = 5;
+    const PRIOR_P = 0.5;
+    const calcSection = (
+      domains: string[],
+      profileFallback: number | null
+    ): { score: number; attempted: number; correct: number; accuracy: number } => {
+      let attempted = 0;
+      let correct = 0;
+      let weightedSmoothed = 0;
+      let totalWeight = 0;
+      for (const d of domains) {
+        const p = domainProgress[d];
+        if (!p || p.attempted <= 0) continue;
+        attempted += p.attempted;
+        correct += p.correct;
+        const smoothed = (p.correct + PRIOR_N * PRIOR_P) / (p.attempted + PRIOR_N);
+        weightedSmoothed += smoothed * p.attempted;
+        totalWeight += p.attempted;
+      }
+      if (totalWeight === 0) {
+        return {
+          score: profileFallback ?? 400,
+          attempted: 0,
+          correct: 0,
+          accuracy: 0,
+        };
+      }
+      const proficiency = Math.min(1, Math.max(0, weightedSmoothed / totalWeight));
+      return {
+        score: Math.round(200 + proficiency * 600),
+        attempted,
+        correct,
+        accuracy: correct / attempted,
+      };
     };
+
+    const profileMath = (profile?.estimated_math_score as number | undefined) ?? null;
+    const profileRW = (profile?.estimated_rw_score as number | undefined) ?? null;
+    const mathSection = calcSection(mathDomains, profileMath);
+    const rwSection = calcSection(rwDomains, profileRW);
 
     // Diagnostic-flagged weak skills, surfaced alongside topicProgress so the
     // frontend prioritizer doesn't need a second round-trip.
@@ -1188,8 +1235,14 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
         currentStreak: profile?.streak_days || 0,
         longestStreak: profile?.streak_days || 0,
         lastPracticeDate: profile?.streak_last_date || null,
-        estimatedMathScore: calcScore(mathDomains),
-        estimatedRWScore: calcScore(rwDomains),
+        estimatedMathScore: mathSection.score,
+        estimatedRWScore: rwSection.score,
+        // Section breakdown (raw counts + accuracy) so the headline card
+        // can render "Math 540 · 41/57 (72%)" without re-deriving anything.
+        sectionBreakdown: {
+          math: mathSection,
+          rw: rwSection,
+        },
         sessions: (sessions || []).map((s: SessionRow) => {
           const review = reviewsBySessionId[s.id as number];
           const tracked = skillTrackedBySessionId[s.id as number];

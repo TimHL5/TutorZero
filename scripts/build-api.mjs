@@ -43,7 +43,17 @@ async function run() {
     outfile: tmpOut,
     packages: "external",
     banner: {
-      js: "import { createRequire as __createRequire } from 'module'; const require = __createRequire(import.meta.url);",
+      // @ts-nocheck on the first line tells Vercel's post-bundle `tsc` pass
+      // to skip type-checking this file. The bundled output is concatenated
+      // generated JS — Hono's `Hono<AppEnv>` type parameters and per-handler
+      // `c.get<...>("user")` annotations don't survive the inlining, so
+      // every `c.get("user")` resolves to `unknown`, every destructured
+      // tool arg widens to `{}`, and our `AgentError` extra fields disappear.
+      // None of these are real bugs — esbuild has already produced valid JS
+      // by this point. The original sources still get strict checks via
+      // `tsc -b` during the Vite build, so suppression here is scoped only
+      // to the generated artifact.
+      js: "// @ts-nocheck\nimport { createRequire as __createRequire } from 'module'; const require = __createRequire(import.meta.url);",
     },
     logLevel: "info",
   });

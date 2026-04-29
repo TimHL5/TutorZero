@@ -73,6 +73,18 @@ export interface DomainProgress {
   correct: number;
 }
 
+/** Per-section snapshot — the deterministic, Bayesian-smoothed rollup the
+ * server returns for the headline card. The score field is the same value
+ * stored on `progress.estimatedMathScore` / `estimatedRWScore`; the rest is
+ * here so the UI can show counts and raw accuracy alongside the score
+ * without re-deriving them. */
+export interface SectionBreakdown {
+  score: number;
+  attempted: number;
+  correct: number;
+  accuracy: number;
+}
+
 export interface StudentProgress {
   /** Keyed by **skill slug** (29 entries). Heatmap, suggestions, and the
    * planner all read from this. The legacy domain-keyed shape lived only
@@ -91,6 +103,10 @@ export interface StudentProgress {
   lastPracticeDate: string | null;
   estimatedMathScore: number;
   estimatedRWScore: number;
+  /** Server-computed counts behind estimatedMathScore / estimatedRWScore.
+   * Optional because the optimistic post-recordSession path doesn't
+   * recompute these — the next server refresh fills them in. */
+  sectionBreakdown?: { math: SectionBreakdown; rw: SectionBreakdown };
   sessions: SessionRecord[];
   diagnosticCompleted: boolean;
   diagnosticDate: string | null;
@@ -250,9 +266,13 @@ export function useStudentProgress() {
           for (const [k, v] of Object.entries(incomingDomain)) {
             if (k in DEFAULT_DOMAIN_PROGRESS) filteredDomainProgress[k] = v;
           }
+          const sectionBreakdown = result.data.sectionBreakdown && typeof result.data.sectionBreakdown === "object"
+            ? (result.data.sectionBreakdown as { math: SectionBreakdown; rw: SectionBreakdown })
+            : undefined;
           const serverProgress: StudentProgress = {
             topicProgress: filteredTopicProgress,
             domainProgress: filteredDomainProgress,
+            sectionBreakdown,
             diagnosticWeaknesses: Array.isArray(result.data.diagnosticWeaknesses)
               ? (result.data.diagnosticWeaknesses as DiagnosticWeakness[])
               : [],
@@ -356,21 +376,38 @@ export function useStudentProgress() {
       newTopicProgress[skillSlug] = entry;
     });
 
-    // Section score: sum across the section's skill rollups so the chart
-    // moves the moment a student finishes a session, without waiting for
-    // the server roundtrip.
-    const calcSectionScore = (skillSlugs: string[]) => {
-      let totalAttempted = 0;
-      let totalCorrect = 0;
-      skillSlugs.forEach(slug => {
+    // Section score — same Bayesian-smoothed, volume-weighted formula the
+    // server uses (worker:1159 calcSection), but rolled up from skill-level
+    // entries instead of domain rollups since this runs before the server
+    // refresh. Domain-grouped: each domain's accuracy is smoothed toward
+    // 0.5 with a 5-question prior, then domains are averaged weighted by
+    // sample size. Falls back to the previously-displayed score (so a
+    // session with zero new attempts doesn't blink the headline).
+    const PRIOR_N = 5;
+    const PRIOR_P = 0.5;
+    const calcSectionScore = (skillSlugs: string[], fallback: number) => {
+      // Group skills by their domain and aggregate attempts.
+      const domainStats: Record<string, { attempted: number; correct: number }> = {};
+      for (const slug of skillSlugs) {
         const t = newTopicProgress[slug];
-        if (t) {
-          totalAttempted += t.questionsAttempted;
-          totalCorrect += t.questionsCorrect;
-        }
-      });
-      const accuracy = totalAttempted > 0 ? totalCorrect / totalAttempted : 0.5;
-      return calculateScoreFromAccuracy(accuracy);
+        if (!t || t.questionsAttempted === 0) continue;
+        const dom = domainForSkill(slug);
+        if (!dom) continue;
+        const cur = domainStats[dom] ?? { attempted: 0, correct: 0 };
+        cur.attempted += t.questionsAttempted;
+        cur.correct += t.questionsCorrect;
+        domainStats[dom] = cur;
+      }
+      let weightedSmoothed = 0;
+      let totalWeight = 0;
+      for (const { attempted, correct } of Object.values(domainStats)) {
+        const smoothed = (correct + PRIOR_N * PRIOR_P) / (attempted + PRIOR_N);
+        weightedSmoothed += smoothed * attempted;
+        totalWeight += attempted;
+      }
+      if (totalWeight === 0) return fallback;
+      const proficiency = Math.min(1, Math.max(0, weightedSmoothed / totalWeight));
+      return calculateScoreFromAccuracy(proficiency);
     };
 
     // Update streak
@@ -391,8 +428,8 @@ export function useStudentProgress() {
       topicProgress: newTopicProgress,
       domainProgress: newDomainProgress,
       sessions: [session, ...progress.sessions].slice(0, 50),
-      estimatedMathScore: calcSectionScore(MATH_SKILL_SLUGS),
-      estimatedRWScore: calcSectionScore(RW_SKILL_SLUGS),
+      estimatedMathScore: calcSectionScore(MATH_SKILL_SLUGS, progress.estimatedMathScore),
+      estimatedRWScore: calcSectionScore(RW_SKILL_SLUGS, progress.estimatedRWScore),
       diagnosticCompleted: type === "diagnostic" ? true : progress.diagnosticCompleted,
       diagnosticDate: type === "diagnostic" ? today : progress.diagnosticDate,
       currentStreak: newStreak,

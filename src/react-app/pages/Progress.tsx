@@ -150,6 +150,11 @@ export default function Progress() {
   const estimatedMath = profile?.estimatedMathScore ?? progress.estimatedMathScore;
   const estimatedRW = profile?.estimatedRWScore ?? progress.estimatedRWScore;
   const currentScore = estimatedMath + estimatedRW;
+  // Per-section attempted/correct from /api/user/progress so the headline
+  // card can render "41 / 57 · 72%" alongside the score. Falls back to 0s
+  // pre-server-refresh so the card never blinks empty.
+  const mathBreakdown = progress.sectionBreakdown?.math ?? { score: estimatedMath, attempted: 0, correct: 0, accuracy: 0 };
+  const rwBreakdown = progress.sectionBreakdown?.rw ?? { score: estimatedRW, attempted: 0, correct: 0, accuracy: 0 };
   const scoreChange = scoreHistory.length >= 2
     ? currentScore - scoreHistory[scoreHistory.length - 2].score
     : 0;
@@ -248,19 +253,48 @@ export default function Progress() {
 
         {/* Score Overview */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mb-8">
-          <div className="bg-white rounded-xl border border-tz-gray-200 p-4 lg:p-5">
-            <div className="flex items-center gap-2 text-small text-tz-gray-400 mb-2">
-              <Target className="w-4 h-4" />
-              <span className="hidden sm:inline">Estimated Score</span>
-              <span className="sm:hidden">Score</span>
+          {/* Estimated score card — totals + Math/R&W split. The total is
+              the sum of the two section scores; each section comes from a
+              Bayesian-smoothed, volume-weighted rollup of real practice
+              attempts (worker calcSection / hook calcSectionScore). */}
+          <div className="bg-white rounded-xl border border-tz-gray-200 p-4 lg:p-5 col-span-2 lg:col-span-1">
+            <div className="flex items-center justify-between gap-2 mb-2">
+              <div className="flex items-center gap-2 text-small text-tz-gray-400">
+                <Target className="w-4 h-4" />
+                <span className="hidden sm:inline">Estimated Score</span>
+                <span className="sm:hidden">Score</span>
+              </div>
+              <div className={cn(
+                "text-small flex items-center gap-1",
+                scoreChange >= 0 ? "text-tz-green" : "text-red-500"
+              )}>
+                <TrendingUp className={cn("w-4 h-4", scoreChange < 0 && "rotate-180")} />
+                {scoreChange >= 0 ? "+" : ""}{scoreChange}
+              </div>
             </div>
-            <div className="text-2xl lg:text-display font-bold text-tz-navy">{currentScore}</div>
-            <div className={cn(
-              "text-small flex items-center gap-1 mt-1",
-              scoreChange >= 0 ? "text-tz-green" : "text-red-500"
-            )}>
-              <TrendingUp className={cn("w-4 h-4", scoreChange < 0 && "rotate-180")} />
-              {scoreChange >= 0 ? "+" : ""}{scoreChange}
+            <div className="text-2xl lg:text-display font-bold text-tz-navy leading-none">
+              {currentScore}
+            </div>
+            <div className="text-xs text-tz-gray-400 mt-0.5">out of 1600</div>
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              <div className="bg-tz-blue/5 border border-tz-blue/15 rounded-lg px-2 py-1.5">
+                <div className="text-[10px] uppercase tracking-wide text-tz-gray-500">Math</div>
+                <div className="text-base font-bold text-tz-navy leading-none mt-0.5">{estimatedMath}</div>
+                <div className="text-[10px] text-tz-gray-500 mt-0.5">
+                  {mathBreakdown.attempted > 0
+                    ? `${mathBreakdown.correct}/${mathBreakdown.attempted} · ${Math.round(mathBreakdown.accuracy * 100)}%`
+                    : "no practice yet"}
+                </div>
+              </div>
+              <div className="bg-tz-blue/5 border border-tz-blue/15 rounded-lg px-2 py-1.5">
+                <div className="text-[10px] uppercase tracking-wide text-tz-gray-500">R&amp;W</div>
+                <div className="text-base font-bold text-tz-navy leading-none mt-0.5">{estimatedRW}</div>
+                <div className="text-[10px] text-tz-gray-500 mt-0.5">
+                  {rwBreakdown.attempted > 0
+                    ? `${rwBreakdown.correct}/${rwBreakdown.attempted} · ${Math.round(rwBreakdown.accuracy * 100)}%`
+                    : "no practice yet"}
+                </div>
+              </div>
             </div>
           </div>
 
@@ -693,14 +727,18 @@ export default function Progress() {
                   </div>
                 </div>
 
-                {/* Confidence Calibration */}
+                {/* Confidence Calibration — measures how well a student's
+                    self-rating ("guessing" / "somewhat sure" / "confident")
+                    predicts their actual accuracy. The single-scale-per-bucket
+                    layout shows their accuracy AND the calibration target
+                    side by side, with plain-English meaning + an action.  */}
                 <div className="bg-white rounded-xl border border-tz-gray-200 p-4 lg:p-6">
                   <div className="flex items-center gap-2 mb-2">
                     <Sparkles className="w-5 h-5 text-tz-orange" />
                     <h2 className="text-h3 text-tz-navy">Confidence Calibration</h2>
                   </div>
-                  <p className="text-small text-tz-gray-400 mb-6">
-                    Compare your confidence level with actual performance. Well-calibrated means the actual matches the expected.
+                  <p className="text-small text-tz-gray-600 mb-6 leading-relaxed">
+                    Your confidence rating is a prediction of how likely you'll get the question right. <strong>Calibration</strong> is how close that prediction comes to reality. The closer you sit to the target, the more you can trust your gut on test day.
                   </p>
 
                   {!calibrationData || calibrationData.every((r) => r.n === 0) ? (
@@ -716,67 +754,147 @@ export default function Progress() {
                           const gap = hasData ? actual - row.expected : 0;
                           const status: "calibrated" | "over" | "under" | "none" =
                             !hasData ? "none" : Math.abs(gap) <= 5 ? "calibrated" : gap > 0 ? "under" : "over";
-                          const badge = {
-                            calibrated: { label: "Well-calibrated", classes: "bg-tz-green/15 text-tz-green border-tz-green/30" },
-                            over:        { label: "Overconfident",  classes: "bg-orange-100 text-orange-700 border-orange-200" },
-                            under:       { label: "Underconfident", classes: "bg-blue-100 text-tz-blue border-blue-200" },
-                            none:        { label: "No data yet",    classes: "bg-tz-gray-100 text-tz-gray-400 border-tz-gray-200" },
+
+                          // Plain-English meaning of the bucket + status.
+                          // These are the most useful piece for a student —
+                          // they replace the abstract "expected accuracy"
+                          // framing with a concrete what-to-do.
+                          const meaning: { headline: string; advice: string } =
+                            !hasData
+                              ? {
+                                  headline: "No data yet",
+                                  advice: "Tag your confidence on a few more questions and this bucket will populate.",
+                                }
+                              : status === "calibrated"
+                              ? row.confidence === "Guessing"
+                                ? {
+                                    headline: "Right around random chance — normal.",
+                                    advice: "Guesses across 4 options should land near 25%. You're in that range, which means your confidence rating is honest. Use this label only when you truly have no idea.",
+                                  }
+                                : row.confidence === "Confident"
+                                ? {
+                                    headline: "Your gut is reliable.",
+                                    advice: "When you say you're confident, you really are. Lean on this on test day to move faster.",
+                                  }
+                                : {
+                                    headline: "Spot on.",
+                                    advice: "Your accuracy on these closely matches what \"somewhat sure\" usually implies. Keep going.",
+                                  }
+                              : status === "under"
+                              ? row.confidence === "Confident"
+                                ? {
+                                    headline: "You're underselling — your gut is sharper than you think.",
+                                    advice: "When you say you're confident you're getting more right than the typical \"confident\" student. Lock these in faster on test day; second-guessing costs time.",
+                                  }
+                                : row.confidence === "Somewhat sure"
+                                ? {
+                                    headline: "You know more than you think.",
+                                    advice: "Most students at \"somewhat sure\" land around 60%. You're well above. Trust your instincts on these — don't downgrade them to \"guessing\".",
+                                  }
+                                : {
+                                    headline: "Even your guesses aren't really guesses.",
+                                    advice: "You're scoring above random — you have real intuition on these. Try upgrading some of them to \"somewhat sure\" next time.",
+                                  }
+                              : /* over */ row.confidence === "Confident"
+                              ? {
+                                    headline: "Slow down before you lock in.",
+                                    advice: "When you say you're confident you're missing more than expected. Double-check the trap answer before committing — these are your biggest leakage on test day.",
+                                  }
+                                : row.confidence === "Somewhat sure"
+                                ? {
+                                    headline: "These hunches need verifying.",
+                                    advice: "You're below the typical hit rate for this label. Treat \"somewhat sure\" as a flag to reread the question, not a green light to commit.",
+                                  }
+                                : {
+                                    headline: "Worse than chance — something is misleading you.",
+                                    advice: "If you're getting fewer than 25% right when you say you're guessing, the answer choices might be designed to bait you. Slow down and eliminate the obvious wrong ones.",
+                                  };
+
+                          // Status pill: short label + colored gap.
+                          const statusBadge = {
+                            calibrated: { label: "On target",       classes: "bg-tz-green/15 text-tz-green" },
+                            over:        { label: "Overconfident",  classes: "bg-orange-100 text-orange-700" },
+                            under:       { label: "Underconfident", classes: "bg-blue-100 text-tz-blue" },
+                            none:        { label: "No data",        classes: "bg-tz-gray-100 text-tz-gray-400" },
                           }[status];
-                          const gapText =
-                            !hasData ? "" : gap === 0 ? "On target" : `${gap > 0 ? "+" : ""}${gap}%`;
+
+                          // Single-track scale with two markers: a tinted fill
+                          // up to the user's actual %, and a thin vertical
+                          // line at the calibration target. Putting both on
+                          // the same line is much easier to read than two
+                          // stacked bars.
+                          const targetLeftPct = Math.max(0, Math.min(100, row.expected));
+                          const fillColor =
+                            status === "calibrated" ? "bg-tz-green/70"
+                            : status === "under"      ? "bg-tz-blue/70"
+                            : status === "over"       ? "bg-orange-500/70"
+                            : "bg-tz-gray-200";
 
                           return (
-                            <div key={row.confidence} className={cn(!hasData && "opacity-60")}>
-                              <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                                <div className="flex items-center gap-2">
+                            <div
+                              key={row.confidence}
+                              className={cn(
+                                "border border-tz-gray-200 rounded-lg p-4",
+                                !hasData && "opacity-60"
+                              )}
+                            >
+                              {/* Header: bucket name + sample size + status pill */}
+                              <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <div className="flex items-baseline gap-2">
                                   <span className="text-body-strong text-tz-navy">{row.confidence}</span>
-                                  <span className={cn("text-xs font-medium px-2 py-0.5 rounded-full border", badge.classes)}>
-                                    {badge.label}
+                                  <span className="text-xs text-tz-gray-400">
+                                    {hasData ? `· ${row.n} answer${row.n === 1 ? "" : "s"}` : ""}
                                   </span>
                                 </div>
                                 {hasData && (
-                                  <span className={cn(
-                                    "text-small font-semibold",
-                                    status === "calibrated" ? "text-tz-green" :
-                                    status === "under"      ? "text-tz-blue"  : "text-orange-600"
-                                  )}>
-                                    {gapText}
+                                  <span className={cn("text-xs font-semibold px-2 py-0.5 rounded-full", statusBadge.classes)}>
+                                    {statusBadge.label}
+                                    {gap !== 0 && ` · ${gap > 0 ? "+" : ""}${gap}%`}
                                   </span>
                                 )}
                               </div>
 
-                              <div className="space-y-1.5">
-                                <div>
-                                  <div className="flex justify-between text-xs text-tz-gray-400 mb-0.5">
-                                    <span>Expected accuracy</span>
-                                    <span>{row.expected}%</span>
-                                  </div>
-                                  <div className="h-2.5 bg-tz-gray-100 rounded">
-                                    <div className="h-full bg-tz-blue/40 rounded" style={{ width: `${row.expected}%` }} />
-                                  </div>
-                                </div>
-                                <div>
-                                  <div className="flex justify-between text-xs text-tz-gray-400 mb-0.5">
-                                    <span>Your actual accuracy</span>
-                                    <span>{hasData ? `${actual}%` : "—"}</span>
-                                  </div>
-                                  <div className="h-2.5 bg-tz-gray-100 rounded">
+                              {/* Headline meaning */}
+                              <p className="text-sm text-tz-navy font-medium mt-1">{meaning.headline}</p>
+
+                              {/* Single calibration scale with both markers */}
+                              {hasData && (
+                                <div className="mt-3">
+                                  <div className="relative h-3 bg-tz-gray-100 rounded">
+                                    {/* Filled bar: 0% → user's actual */}
                                     <div
-                                      className={cn(
-                                        "h-full rounded",
-                                        status === "calibrated" ? "bg-tz-green" :
-                                        status === "under"      ? "bg-tz-blue"  :
-                                        status === "over"       ? "bg-orange-500" : ""
-                                      )}
+                                      className={cn("absolute top-0 bottom-0 left-0 rounded", fillColor)}
                                       style={{ width: `${actual}%` }}
                                     />
+                                    {/* Target marker: vertical pin at expected% */}
+                                    <div
+                                      className="absolute top-[-3px] bottom-[-3px] w-0.5 bg-tz-navy"
+                                      style={{ left: `${targetLeftPct}%` }}
+                                      aria-label={`Calibration target ${row.expected}%`}
+                                    />
+                                  </div>
+                                  {/* Marker legend below the scale */}
+                                  <div className="flex justify-between text-xs mt-1.5">
+                                    <span className="text-tz-gray-400">0%</span>
+                                    <div className="flex items-center gap-3">
+                                      <span className="inline-flex items-center gap-1 text-tz-gray-600">
+                                        <span className={cn("inline-block w-2 h-2 rounded-sm", fillColor.replace("/70", ""))} />
+                                        You: {actual}%
+                                      </span>
+                                      <span className="inline-flex items-center gap-1 text-tz-gray-600">
+                                        <span className="inline-block w-0.5 h-3 bg-tz-navy" />
+                                        Target: {row.expected}%
+                                      </span>
+                                    </div>
+                                    <span className="text-tz-gray-400">100%</span>
                                   </div>
                                 </div>
-                              </div>
+                              )}
 
-                              <div className="text-xs text-tz-gray-400 mt-1.5">
-                                {hasData ? `Based on ${row.n} answer${row.n === 1 ? "" : "s"}` : "Tag confidence on more questions to populate this bucket."}
-                              </div>
+                              {/* Action sentence */}
+                              <p className="text-xs text-tz-gray-600 mt-3 leading-relaxed">
+                                {meaning.advice}
+                              </p>
                             </div>
                           );
                         })}
@@ -784,22 +902,22 @@ export default function Progress() {
 
                       <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
                         <p className="text-small text-tz-navy">
-                          <strong>Insight:</strong> {(() => {
+                          <strong>What this means for test day:</strong> {(() => {
                             const populated = calibrationData.filter((r) => r.actual !== null && r.n >= 3);
                             if (populated.length === 0) {
-                              return "Keep tagging your confidence on each question — your calibration profile sharpens as the sample grows.";
+                              return "Tag your confidence on every practice question — once each bucket has 3+ answers, you'll see exactly where to trust your gut and where to slow down.";
                             }
                             const worst = populated.reduce((acc, r) =>
                               Math.abs((r.actual! - r.expected)) > Math.abs((acc.actual! - acc.expected)) ? r : acc
                             );
                             const gap = (worst.actual ?? 0) - worst.expected;
                             if (Math.abs(gap) <= 5) {
-                              return "Your self-rating tracks your accuracy across all three confidence levels. That's well-calibrated — a real strength on test day.";
+                              return "Your self-rating tracks your accuracy across all three confidence levels. That's well-calibrated — a real strength under time pressure. Lean on it.";
                             }
                             if (gap > 0) {
-                              return `Your biggest gap is on "${worst.confidence}" questions — you're scoring ${worst.actual}% when ~${worst.expected}% would match your self-rating. Trust yourself a bit more on those; you're underselling.`;
+                              return `Your gut is sharper than you think on "${worst.confidence}" questions (${worst.actual}% vs. the typical ${worst.expected}%). On test day, commit to those answers faster instead of second-guessing — you're losing time to doubt.`;
                             }
-                            return `Your biggest gap is on "${worst.confidence}" questions — you rate yourself for ~${worst.expected}% but actually score ${worst.actual}%. Slow down and double-check before locking in those answers.`;
+                            return `Watch out on "${worst.confidence}" questions — you only get ${worst.actual}% right when most students at that confidence get ${worst.expected}%. The label is misleading you. Build a habit of one extra check (re-read the question stem, eliminate trap answers) before locking these in.`;
                           })()}
                         </p>
                       </div>

@@ -140,21 +140,27 @@ export default function Progress() {
     });
   };
 
-  // Current estimated score. Match Dashboard's logic: prefer the
-  // server-authoritative value on profile (Diagnostician/Reviewer keep this
-  // updated post-session) and fall back to the client-side calc only when
-  // the server hasn't filled it in yet (anonymous / pre-diagnostic users).
-  // Without this fallback, Dashboard and Progress could show different
-  // current scores after the server updates the profile but before the
-  // client re-runs its own estimate.
-  const estimatedMath = profile?.estimatedMathScore ?? progress.estimatedMathScore;
-  const estimatedRW = profile?.estimatedRWScore ?? progress.estimatedRWScore;
+  // Current estimated score — derived from the same Bayesian-smoothed,
+  // volume-weighted formula the sub-cards' raw counts come from, so a
+  // student looking at "Math 438 · 2/10 · 20%" can hand-verify the score
+  // matches the underlying accuracy. The previous version preferred the
+  // profile.estimatedMathScore (LLM-emitted by Diagnostician/Reviewer)
+  // which produced a card like "Math 640 · 2/10 · 20%" — a 73%-implying
+  // score sitting above 20% raw accuracy, with no way for the student to
+  // tell where the gap came from. sectionBreakdown is computed server-side
+  // in /api/user/progress (worker:1156-1218); progress.estimatedMathScore
+  // is the optimistic client-side mirror used pre-server-refresh.
+  const mathBreakdown = progress.sectionBreakdown?.math ?? {
+    score: progress.estimatedMathScore,
+    attempted: 0, correct: 0, accuracy: 0,
+  };
+  const rwBreakdown = progress.sectionBreakdown?.rw ?? {
+    score: progress.estimatedRWScore,
+    attempted: 0, correct: 0, accuracy: 0,
+  };
+  const estimatedMath = mathBreakdown.score;
+  const estimatedRW = rwBreakdown.score;
   const currentScore = estimatedMath + estimatedRW;
-  // Per-section attempted/correct from /api/user/progress so the headline
-  // card can render "41 / 57 · 72%" alongside the score. Falls back to 0s
-  // pre-server-refresh so the card never blinks empty.
-  const mathBreakdown = progress.sectionBreakdown?.math ?? { score: estimatedMath, attempted: 0, correct: 0, accuracy: 0 };
-  const rwBreakdown = progress.sectionBreakdown?.rw ?? { score: estimatedRW, attempted: 0, correct: 0, accuracy: 0 };
   const scoreChange = scoreHistory.length >= 2
     ? currentScore - scoreHistory[scoreHistory.length - 2].score
     : 0;

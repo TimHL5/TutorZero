@@ -1107,21 +1107,27 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
     if (sessionIds.length > 0) {
       const { data: allSkillRows } = await supabase
         .from("user_skill_scores")
-        .select("session_id, topic, questions_n, score")
+        .select("session_id, topic, questions_n, score, weighted_correct")
         .eq("user_id", user.id);
 
-      const skillRowsBySessionId = new Map<number, Array<{ topic: string; qn: number; sc: number }>>();
-      for (const r of (allSkillRows ?? []) as Array<{ session_id: number | null; topic: string; questions_n: number | null; score: number | null }>) {
+      const skillRowsBySessionId = new Map<number, Array<{ topic: string; qn: number; correct: number; weightedCorrect: number }>>();
+      for (const r of (allSkillRows ?? []) as Array<{ session_id: number | null; topic: string; questions_n: number | null; score: number | null; weighted_correct: number | null }>) {
         if (typeof r.session_id !== "number") continue;
         const arr = skillRowsBySessionId.get(r.session_id) ?? [];
-        arr.push({ topic: r.topic, qn: r.questions_n ?? 0, sc: r.score ?? 0 });
+        const qn = r.questions_n ?? 0;
+        const sc = r.score ?? 0;
+        const correct = Math.round(qn * sc);
+        const wc = typeof r.weighted_correct === "number" ? r.weighted_correct : correct;
+        arr.push({ topic: r.topic, qn, correct, weightedCorrect: wc });
         skillRowsBySessionId.set(r.session_id, arr);
       }
 
       const PRIOR_N = 5;
       const PRIOR_P = 0.5;
+      // Same confidence-weighted formula as calcSection above so the chart
+      // and the headline always agree on every session boundary.
       const sectionScore = (
-        domains: Record<string, { attempted: number; correct: number }>,
+        domains: Record<string, { attempted: number; weightedCorrect: number }>,
         list: string[]
       ): number => {
         let weightedSmoothed = 0;
@@ -1129,7 +1135,7 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
         for (const d of list) {
           const c = domains[d];
           if (!c || c.attempted <= 0) continue;
-          const smoothed = (c.correct + PRIOR_N * PRIOR_P) / (c.attempted + PRIOR_N);
+          const smoothed = (c.weightedCorrect + PRIOR_N * PRIOR_P) / (c.attempted + PRIOR_N);
           weightedSmoothed += smoothed * c.attempted;
           totalWeight += c.attempted;
         }
@@ -1144,7 +1150,7 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
       // Walk sessions oldest → newest; absorb that session's skill rows
       // into the running cumDomains, then snapshot. Each session_id maps
       // to "your score after this session's attempts were graded."
-      const cumDomains: Record<string, { attempted: number; correct: number }> = {};
+      const cumDomains: Record<string, { attempted: number; correct: number; weightedCorrect: number }> = {};
       const sessionsByStartTime = (sessions ?? [])
         .filter((s): s is SessionRow & { id: number } => typeof s.id === "number" && !!s.started_at)
         .sort((a, b) => new Date(a.started_at as string).getTime() - new Date(b.started_at as string).getTime());
@@ -1152,9 +1158,10 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
       for (const sess of sessionsByStartTime) {
         const rows = skillRowsBySessionId.get(sess.id) ?? [];
         for (const r of rows) {
-          const cur = cumDomains[r.topic] ?? { attempted: 0, correct: 0 };
+          const cur = cumDomains[r.topic] ?? { attempted: 0, correct: 0, weightedCorrect: 0 };
           cur.attempted += r.qn;
-          cur.correct += Math.round(r.qn * r.sc);
+          cur.correct += r.correct;
+          cur.weightedCorrect += r.weightedCorrect;
           cumDomains[r.topic] = cur;
         }
         const mScore = sectionScore(cumDomains, MATH_DOMS);
@@ -1203,25 +1210,57 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
 
     // Domain rollups still drive estimatedMathScore / estimatedRWScore so
     // legacy attempts (recorded pre-migration with skill=NULL) keep
-    // contributing to the headline number. Pulled from the original
-    // get_user_skill_summary RPC which sums every row regardless of
-    // whether the new skill column is set.
-    const domainProgress: Record<string, { attempted: number; correct: number }> = {};
+    // contributing to the headline number. Pulled directly from
+    // user_skill_scores so we can sum the new weighted_correct alongside
+    // raw correct — calcSection prefers the confidence-aware weight when
+    // available and falls back to raw for legacy rows where backfill
+    // didn't reach.
+    const domainProgress: Record<string, { attempted: number; correct: number; weightedCorrect: number; hasWeighted: boolean }> = {};
     const defaultDomains = [
       "algebra", "advanced_math", "problem_solving", "geometry",
       "information_ideas", "craft_structure", "expression", "conventions"
     ];
     defaultDomains.forEach((d) => {
-      domainProgress[d] = { attempted: 0, correct: 0 };
+      domainProgress[d] = { attempted: 0, correct: 0, weightedCorrect: 0, hasWeighted: false };
     });
+    const { data: rawSkillRows } = await supabase
+      .from("user_skill_scores")
+      .select("topic, questions_n, score, weighted_correct")
+      .eq("user_id", user.id);
+    if (Array.isArray(rawSkillRows)) {
+      for (const r of rawSkillRows as Array<{ topic: string; questions_n: number | null; score: number | null; weighted_correct: number | null }>) {
+        const dom = domainProgress[r.topic];
+        if (!dom) continue;
+        const qn = r.questions_n ?? 0;
+        const sc = r.score ?? 0;
+        const rowCorrect = Math.round(qn * sc);
+        dom.attempted += qn;
+        dom.correct += rowCorrect;
+        if (typeof r.weighted_correct === "number") {
+          dom.weightedCorrect += r.weighted_correct;
+          dom.hasWeighted = true;
+        } else {
+          // Legacy row → trust raw correct as the weighted equivalent so
+          // the smoothing math stays consistent across the section.
+          dom.weightedCorrect += rowCorrect;
+        }
+      }
+    }
     if (skillScores) {
       skillScores.forEach((row: SkillScoreRow) => {
         const accuracy = row.avg_score || 0;
         const attempted = row.total_attempted || 0;
-        domainProgress[row.topic] = {
-          attempted,
-          correct: Math.round(attempted * accuracy),
-        };
+        // Only override if the direct query above didn't pick up rows for
+        // this topic (defensive — the direct query is the new path).
+        if (domainProgress[row.topic]?.attempted === 0) {
+          const rowCorrect = Math.round(attempted * accuracy);
+          domainProgress[row.topic] = {
+            attempted,
+            correct: rowCorrect,
+            weightedCorrect: rowCorrect,
+            hasWeighted: false,
+          };
+        }
       });
     }
 
@@ -1250,12 +1289,19 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
     // "X / Y in Math · 73%" without recomputing client-side.
     const PRIOR_N = 5;
     const PRIOR_P = 0.5;
+    // Per-section score uses confidence-WEIGHTED correct counts in the
+    // smoothing math (lucky guesses count for less, confident-correct
+    // counts fully). The raw `attempted` and `correct` flow through
+    // unchanged so the UI's "X / Y · Z%" line still reflects the real
+    // counts the user can verify by hand. weightedCorrect falls back to
+    // raw correct for legacy rows where backfill didn't reach.
     const calcSection = (
       domains: string[],
       profileFallback: number | null
-    ): { score: number; attempted: number; correct: number; accuracy: number } => {
+    ): { score: number; attempted: number; correct: number; accuracy: number; weightedCorrect: number } => {
       let attempted = 0;
       let correct = 0;
+      let weightedCorrectTotal = 0;
       let weightedSmoothed = 0;
       let totalWeight = 0;
       for (const d of domains) {
@@ -1263,7 +1309,8 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
         if (!p || p.attempted <= 0) continue;
         attempted += p.attempted;
         correct += p.correct;
-        const smoothed = (p.correct + PRIOR_N * PRIOR_P) / (p.attempted + PRIOR_N);
+        weightedCorrectTotal += p.weightedCorrect;
+        const smoothed = (p.weightedCorrect + PRIOR_N * PRIOR_P) / (p.attempted + PRIOR_N);
         weightedSmoothed += smoothed * p.attempted;
         totalWeight += p.attempted;
       }
@@ -1273,6 +1320,7 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
           attempted: 0,
           correct: 0,
           accuracy: 0,
+          weightedCorrect: 0,
         };
       }
       const proficiency = Math.min(1, Math.max(0, weightedSmoothed / totalWeight));
@@ -1281,6 +1329,7 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
         attempted,
         correct,
         accuracy: correct / attempted,
+        weightedCorrect: weightedCorrectTotal,
       };
     };
 
@@ -1496,21 +1545,25 @@ app.post("/api/user/sessions", authMiddleware, async (c) => {
         .eq("id", sessionId);
     }
 
-    // Aggregate by (topic=domain, skill=skill_slug). The skill column was
-    // added in migration 007 so the heatmap's get_user_skill_summary_by_skill
-    // RPC can read skill-level rows; the legacy get_user_skill_summary RPC
-    // continues to roll up by topic for section-score calculations. One row
-    // per (domain, skill) tuple — never duplicate as separate domain and
-    // skill rows, which would double-count in the domain rollup.
-    const tupleStats: Record<string, { topic: string; skill: string | null; total: number; correct: number }> = {};
-    attempts.forEach((a: { topic?: string; skill?: string | null; isCorrect: boolean }) => {
+    // Aggregate by (topic=domain, skill=skill_slug). One row per (domain,
+    // skill) tuple — never duplicate as separate domain and skill rows.
+    // Also accumulate weighted_correct (migration 009) so the estimated
+    // score's smoothed formula can credit confident-correct fully and
+    // discount lucky guesses (per-attempt weight: guessing 0.5, somewhat
+    // 1.0, confident 1.0, missing 1.0 for legacy clients).
+    const tupleStats: Record<string, { topic: string; skill: string | null; total: number; correct: number; weightedCorrect: number }> = {};
+    attempts.forEach((a: { topic?: string; skill?: string | null; isCorrect: boolean; confidence?: string }) => {
       const topic = typeof a.topic === "string" && a.topic.length > 0 ? a.topic : null;
       const skill = typeof a.skill === "string" && a.skill.length > 0 ? a.skill : null;
       if (!topic) return; // domain is required to bucket; skip malformed rows.
       const key = `${topic}::${skill ?? ""}`;
-      if (!tupleStats[key]) tupleStats[key] = { topic, skill, total: 0, correct: 0 };
+      if (!tupleStats[key]) tupleStats[key] = { topic, skill, total: 0, correct: 0, weightedCorrect: 0 };
       tupleStats[key].total++;
-      if (a.isCorrect) tupleStats[key].correct++;
+      if (a.isCorrect) {
+        tupleStats[key].correct++;
+        const w = a.confidence === "guessing" ? 0.5 : 1.0;
+        tupleStats[key].weightedCorrect += w;
+      }
     });
 
     const skillScoreRows = Object.values(tupleStats).map((s) => ({
@@ -1520,6 +1573,7 @@ app.post("/api/user/sessions", authMiddleware, async (c) => {
       skill: s.skill,
       score: s.total > 0 ? s.correct / s.total : 0,
       questions_n: s.total,
+      weighted_correct: s.weightedCorrect,
     }));
     if (skillScoreRows.length > 0) {
       await supabase.from("user_skill_scores").insert(skillScoreRows);

@@ -744,77 +744,79 @@ export default function Practice() {
                 </div>
               </div>
 
-              {/* Answer Choices */}
+              {/* Answer Choices — confidence selector is inlined under the
+                  selected option so the user doesn't have to scroll past
+                  every choice to find it. The panel slides in/out as
+                  selection changes; the parent flex still spaces options
+                  consistently because the inline panel is part of the
+                  same vertical flow. */}
               <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                 {currentQuestion.options.map((option, index) => {
                   const letter = String.fromCharCode(65 + index);
                   const isSelected = selectedIndex === index;
-                  
+
                   return (
-                    <button
-                      key={index}
-                      onClick={() => handleSelectAnswer(index)}
-                      className={cn(
-                        "w-full flex items-start sm:items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg border-2 text-left transition-all duration-200",
-                        isSelected
-                          ? "border-tz-blue bg-blue-50"
-                          : "border-tz-gray-200 hover:border-tz-gray-400 hover:bg-tz-gray-100"
+                    <div key={index}>
+                      <button
+                        onClick={() => handleSelectAnswer(index)}
+                        className={cn(
+                          "w-full flex items-start sm:items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg border-2 text-left transition-all duration-200",
+                          isSelected
+                            ? "border-tz-blue bg-blue-50"
+                            : "border-tz-gray-200 hover:border-tz-gray-400 hover:bg-tz-gray-100"
+                        )}
+                      >
+                        <div className={cn(
+                          "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold flex-shrink-0 transition-colors",
+                          isSelected ? "bg-tz-blue text-white" : "bg-tz-gray-100 text-tz-gray-600"
+                        )}>
+                          {letter}
+                        </div>
+                        <span className={cn("text-sm sm:text-body flex-1 sat-content", isSelected ? "text-tz-navy" : "text-tz-gray-600")}>
+                          <MathText text={option} />
+                        </span>
+                      </button>
+
+                      {isSelected && (
+                        <div className="mt-2 ml-10 sm:ml-12 animate-in fade-in slide-in-from-top-2 duration-200">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-xs sm:text-small text-tz-gray-500 font-medium">
+                              How sure?
+                            </span>
+                            <div className="flex flex-1 gap-1.5 sm:gap-2">
+                              {[
+                                { id: "guessing" as const, label: "Guessing", color: "red" },
+                                { id: "somewhat" as const, label: "Somewhat", color: "orange" },
+                                { id: "confident" as const, label: "Confident", color: "green" },
+                              ].map((level) => {
+                                const isConfSelected = confidence === level.id;
+                                return (
+                                  <button
+                                    key={level.id}
+                                    onClick={() => setConfidence(level.id)}
+                                    className={cn(
+                                      "flex-1 py-1.5 px-2 sm:px-3 rounded-md text-[11px] sm:text-xs font-medium border transition-all duration-150",
+                                      isConfSelected
+                                        ? level.color === "red"
+                                          ? "border-red-400 bg-red-50 text-red-700"
+                                          : level.color === "orange"
+                                          ? "border-tz-orange bg-orange-50 text-orange-700"
+                                          : "border-tz-green bg-green-50 text-green-700"
+                                        : "border-tz-gray-200 text-tz-gray-500 hover:border-tz-gray-400 hover:text-tz-gray-700"
+                                    )}
+                                  >
+                                    {level.label}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </div>
                       )}
-                    >
-                      <div className={cn(
-                        "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold flex-shrink-0 transition-colors",
-                        isSelected ? "bg-tz-blue text-white" : "bg-tz-gray-100 text-tz-gray-600"
-                      )}>
-                        {letter}
-                      </div>
-                      <span className={cn("text-sm sm:text-body flex-1 sat-content", isSelected ? "text-tz-navy" : "text-tz-gray-600")}>
-                        <MathText text={option} />
-                      </span>
-                    </button>
+                    </div>
                   );
                 })}
               </div>
-
-              {/* Confidence Panel - Shows after answer is selected */}
-              {selectedIndex !== null && (
-                <div className="bg-tz-off-white rounded-lg p-4 sm:p-6 mb-6 sm:mb-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
-                  <label className="text-body-strong text-tz-navy block mb-3 sm:mb-4 text-sm sm:text-base">
-                    How sure are you?
-                  </label>
-                  
-                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4">
-                    {[
-                      { id: "guessing" as const, label: "Guessing", color: "red" },
-                      { id: "somewhat" as const, label: "Somewhat sure", color: "orange" },
-                      { id: "confident" as const, label: "Confident", color: "green" },
-                    ].map((level) => {
-                      const isSelected = confidence === level.id;
-                      return (
-                        <button
-                          key={level.id}
-                          onClick={() => setConfidence(level.id)}
-                          className={cn(
-                            "flex-1 py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium border-2 transition-all duration-200",
-                            isSelected
-                              ? level.color === "red"
-                                ? "border-red-400 bg-red-50 text-red-700"
-                                : level.color === "orange"
-                                ? "border-tz-orange bg-orange-50 text-orange-700"
-                                : "border-tz-green bg-green-50 text-green-700"
-                              : "border-tz-gray-200 text-tz-gray-600 hover:border-tz-gray-400"
-                          )}
-                        >
-                          {level.label}
-                        </button>
-                      );
-                    })}
-                  </div>
-                  
-                  <p className="text-[11px] sm:text-small text-tz-gray-400">
-                    This helps identify blind spots — topics you're confident about but may need work.
-                  </p>
-                </div>
-              )}
 
               {/* Submit */}
               <div className="flex justify-end">

@@ -71,6 +71,16 @@ export default function Practice() {
   const [sessionStartTime] = useState(Date.now());
   const [totalSessionTime, setTotalSessionTime] = useState(0);
 
+  // Auto-save: keep the server-issued session id so subsequent saves can
+  // UPDATE the same row instead of creating duplicates. Initialized null;
+  // first save returns an id, every later save (per-question, periodic,
+  // beforeunload) reuses it. `isAutoSaving` drives the small "Saving…"
+  // toast so the user has visible feedback that data is being persisted.
+  const sessionIdRef = useRef<number | null>(null);
+  const lastSavedHashRef = useRef<string>("");
+  const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isAutoSaving, setIsAutoSaving] = useState(false);
+
   // Frustration detection state — still client-side. When it trips we call
   // the Coach agent for the intervention copy + actions.
   const [frustrationTopic, setFrustrationTopic] = useState<string | null>(null);
@@ -214,6 +224,97 @@ export default function Practice() {
     }, 1000);
     return () => clearInterval(interval);
   }, [sessionStartTime, isPaused]);
+
+  // Auto-save attempts mid-session. Every time the attempt list grows,
+  // debounce 800 ms then post a snapshot to /api/user/sessions. The
+  // server upserts on sessionId so we end up with one session row per
+  // practice run, no duplicates. If the user closes the tab between the
+  // last completed question and the next save, beforeunload below
+  // flushes via sendBeacon. handleEndSession (the explicit "End session"
+  // button) still does its own final save with reviewer/etc.
+  useEffect(() => {
+    if (attemptedQuestions.length === 0) return;
+    // De-dupe rapid re-fires by hashing the attempts list. recordSession
+    // is async and stable enough that an unchanged attempts ref need not
+    // re-fire the network call.
+    const hash = JSON.stringify(
+      attemptedQuestions.map((a) => [a.question.questionId, a.isCorrect, a.confidence, a.understood])
+    );
+    if (hash === lastSavedHashRef.current) return;
+
+    if (autoSaveTimerRef.current) clearTimeout(autoSaveTimerRef.current);
+    autoSaveTimerRef.current = setTimeout(async () => {
+      const snapshotAttempts = attemptedQuestions.map((a) => ({
+        topic: a.question.topic,
+        skill: a.question.skill,
+        isCorrect: a.isCorrect,
+        confidence: a.confidence,
+        timeSpentSec: Math.round(a.timeSpent / 1000),
+      }));
+      setIsAutoSaving(true);
+      try {
+        const result = await recordSession(
+          "practice",
+          snapshotAttempts,
+          Math.floor(totalSessionTime / 1000),
+          sessionIdRef.current,
+        );
+        if (typeof result?.sessionId === "number") {
+          sessionIdRef.current = result.sessionId;
+        }
+        lastSavedHashRef.current = hash;
+      } catch (e) {
+        console.error("auto-save failed:", e);
+      } finally {
+        setIsAutoSaving(false);
+      }
+    }, 800);
+
+    return () => {
+      if (autoSaveTimerRef.current) clearTimeout(autoSaveTimerRef.current);
+    };
+  }, [attemptedQuestions, recordSession, totalSessionTime]);
+
+  // Final flush on tab close / navigation. sendBeacon fires synchronously
+  // and doesn't await a response, so we can't read back a sessionId —
+  // but we already have one cached from the periodic save above, which
+  // is exactly what the worker needs to upsert correctly.
+  useEffect(() => {
+    const flush = () => {
+      if (attemptedQuestions.length === 0) return;
+      const snapshotAttempts = attemptedQuestions.map((a) => ({
+        topic: a.question.topic,
+        skill: a.question.skill,
+        isCorrect: a.isCorrect,
+        confidence: a.confidence,
+        timeSpentSec: Math.round(a.timeSpent / 1000),
+      }));
+      const payload = JSON.stringify({
+        sessionType: "practice",
+        attempts: snapshotAttempts,
+        timeSpentSeconds: Math.floor(totalSessionTime / 1000),
+        sessionId: sessionIdRef.current,
+      });
+      try {
+        navigator.sendBeacon(
+          "/api/user/sessions",
+          new Blob([payload], { type: "application/json" })
+        );
+      } catch {
+        // sendBeacon is best-effort; if it errors there's nothing we can do
+        // — the browser is already tearing the page down.
+      }
+    };
+    const onVisibility = () => {
+      if (document.visibilityState === "hidden") flush();
+    };
+    window.addEventListener("beforeunload", flush);
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      window.removeEventListener("beforeunload", flush);
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
+  }, [attemptedQuestions, totalSessionTime]);
 
   // Focus management
   useEffect(() => {
@@ -463,14 +564,20 @@ export default function Practice() {
       confidence: a.confidence,
       timeSpentSec: Math.round(a.timeSpent / 1000),
     }));
-    let sessionId: number | null = null;
+    // Reuse the auto-save's sessionId so the explicit End-session call
+    // updates the same row instead of creating a duplicate.
+    let sessionId: number | null = sessionIdRef.current;
     try {
       const recordResult = await recordSession(
         "practice",
         recordAttempts,
-        Math.floor(totalSessionTime / 1000)
+        Math.floor(totalSessionTime / 1000),
+        sessionIdRef.current,
       );
-      sessionId = recordResult?.sessionId ?? null;
+      sessionId = recordResult?.sessionId ?? sessionIdRef.current;
+      if (typeof recordResult?.sessionId === "number") {
+        sessionIdRef.current = recordResult.sessionId;
+      }
     } catch (e) {
       console.error("recordSession failed:", e);
     }
@@ -560,11 +667,20 @@ export default function Practice() {
       if (e.key === "Enter" && !showFeedback && selectedIndex !== null && confidence !== null) {
         e.preventDefault();
         handleSubmit();
+        return;
+      }
+
+      // Enter advances out of the feedback view. Skip while the
+      // explanation chat is open (the chat owns its own input) and while
+      // the reviewer overlay is up. Maps to "Got it" → next question.
+      if (e.key === "Enter" && showFeedback && !showExplanationChat && !isReviewing) {
+        e.preventDefault();
+        handleFeedbackResponse(true);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isPaused, showFeedback, selectedIndex, currentQuestion, handleSelectAnswer, handleSubmit]);
+  }, [isPaused, showFeedback, showExplanationChat, isReviewing, selectedIndex, confidence, currentQuestion, handleSelectAnswer, handleSubmit, handleFeedbackResponse]);
 
   // Stats
   const correctCount = attemptedQuestions.filter(a => a.isCorrect).length;
@@ -590,6 +706,22 @@ export default function Practice() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
+      {/* Auto-save toast — small, non-blocking. Anchored top-right so it
+          doesn't compete with the question or the "Got it" CTA. The
+          actual data write is debounced ~800ms after the last attempt
+          completes; this toast just makes the persistence visible so a
+          user closing the tab knows their progress survived. */}
+      {isAutoSaving && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="fixed top-4 right-4 z-40 bg-white border border-tz-gray-200 shadow-md rounded-full px-3 py-1.5 flex items-center gap-2 text-xs text-tz-gray-600 animate-in fade-in slide-in-from-top-2 duration-200"
+        >
+          <Loader2 className="w-3.5 h-3.5 text-tz-blue animate-spin" />
+          <span>Saving…</span>
+        </div>
+      )}
+
       {/* Reviewer overlay — covers the screen while /api/agents/reviewer runs */}
       {isReviewing && (
         <div
@@ -837,27 +969,42 @@ export default function Practice() {
           ) : (
             /* Feedback View */
             <div ref={feedbackRef} tabIndex={-1} className="outline-none animate-in fade-in duration-300">
-              {/* Result Banner */}
+              {/* Result Banner — primary CTA lives inline on the banner so
+                  the user never has to scroll past the explanation to
+                  advance. The same Got it/Still confused row is kept at
+                  the bottom too for users who want to read everything
+                  before deciding. */}
               <div className={cn(
-                "rounded-lg p-4 sm:p-5 mb-5 sm:mb-6 flex items-start gap-3 sm:gap-4",
+                "rounded-lg p-4 sm:p-5 mb-5 sm:mb-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4",
                 isCorrect ? "bg-green-50 border border-green-200" : "bg-red-50 border border-red-200"
               )}>
-                {isCorrect ? (
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-tz-green flex-shrink-0 mt-0.5" />
-                ) : (
-                  <XCircle className="w-5 h-5 sm:w-6 sm:h-6 text-red-500 flex-shrink-0 mt-0.5" />
-                )}
-                <div>
-                  <p className={cn("text-base sm:text-h3 font-semibold", isCorrect ? "text-green-800" : "text-red-800")}>
-                    {isCorrect ? "Correct!" : "Not quite"}
-                  </p>
-                  <p className={cn("text-sm sm:text-body mt-1", isCorrect ? "text-green-700" : "text-red-700")}>
-                    {isCorrect 
-                      ? `You selected ${String.fromCharCode(65 + selectedIndex!)}, which is correct.`
-                      : `The correct answer is ${String.fromCharCode(65 + currentQuestion.correctIndex)}.`
-                    }
-                  </p>
+                <div className="flex items-start gap-3 sm:gap-4 flex-1">
+                  {isCorrect ? (
+                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-tz-green flex-shrink-0 mt-0.5" />
+                  ) : (
+                    <XCircle className="w-5 h-5 sm:w-6 sm:h-6 text-red-500 flex-shrink-0 mt-0.5" />
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <p className={cn("text-base sm:text-h3 font-semibold", isCorrect ? "text-green-800" : "text-red-800")}>
+                      {isCorrect ? "Correct!" : "Not quite"}
+                    </p>
+                    <p className={cn("text-sm sm:text-body mt-1", isCorrect ? "text-green-700" : "text-red-700")}>
+                      {isCorrect
+                        ? `You selected ${String.fromCharCode(65 + selectedIndex!)}, which is correct.`
+                        : `The correct answer is ${String.fromCharCode(65 + currentQuestion.correctIndex)}.`
+                      }
+                    </p>
+                  </div>
                 </div>
+                <button
+                  onClick={() => handleFeedbackResponse(true)}
+                  className="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-tz-green text-white rounded-lg px-4 sm:px-5 py-2 sm:py-2.5 font-medium hover:bg-tz-green/90 hover-scale transition-all text-sm sm:text-base"
+                  title="Press Enter"
+                >
+                  Got it
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="hidden md:inline text-[10px] opacity-70 ml-1">Enter</span>
+                </button>
               </div>
 
               {/* Question stem + Answer review — let students re-examine the

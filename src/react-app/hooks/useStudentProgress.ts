@@ -325,7 +325,12 @@ export function useStudentProgress() {
       timeSpentSec?: number;
       confidence?: string;
     }>,
-    timeSpentSeconds: number
+    timeSpentSeconds: number,
+    /** When set, the worker UPDATES that session row (replacing its
+     * attempts + skill rollups) instead of inserting a new one. Lets
+     * Practice.tsx auto-save mid-session without creating duplicate
+     * session rows. The same call returns sessionId either way. */
+    existingSessionId?: number | null
   ) => {
     const today = new Date().toISOString();
     const topics = [...new Set(attempts.map(a => a.topic))];
@@ -458,7 +463,8 @@ export function useStudentProgress() {
           body: JSON.stringify({
             sessionType: type,
             attempts,
-            timeSpentSeconds
+            timeSpentSeconds,
+            sessionId: existingSessionId ?? null,
           })
         });
         if (res.ok) {

@@ -1111,15 +1111,17 @@ app.get("/api/user/progress", authMiddleware, async (c) => {
         .eq("user_id", user.id);
 
       const skillRowsBySessionId = new Map<number, Array<{ topic: string; qn: number; correct: number; weightedCorrect: number }>>();
-      for (const r of (allSkillRows ?? []) as Array<{ session_id: number | null; topic: string; questions_n: number | null; score: number | null; weighted_correct: number | null }>) {
-        if (typeof r.session_id !== "number") continue;
-        const arr = skillRowsBySessionId.get(r.session_id) ?? [];
+      for (const r of (allSkillRows ?? []) as Array<{ session_id: number | string | null; topic: string; questions_n: number | null; score: number | null; weighted_correct: number | null }>) {
+        if (r.session_id == null) continue;
+        const sid = Number(r.session_id);
+        if (!Number.isFinite(sid)) continue;
+        const arr = skillRowsBySessionId.get(sid) ?? [];
         const qn = r.questions_n ?? 0;
         const sc = r.score ?? 0;
         const correct = Math.round(qn * sc);
         const wc = typeof r.weighted_correct === "number" ? r.weighted_correct : correct;
         arr.push({ topic: r.topic, qn, correct, weightedCorrect: wc });
-        skillRowsBySessionId.set(r.session_id, arr);
+        skillRowsBySessionId.set(sid, arr);
       }
 
       const PRIOR_N = 5;
@@ -1460,7 +1462,7 @@ app.post("/api/user/sessions", authMiddleware, async (c) => {
 
   try {
     const body = await c.req.json();
-    const { sessionType, attempts, timeSpentSeconds } = body;
+    const { sessionType, attempts, timeSpentSeconds, sessionId: bodySessionId } = body;
 
     if (!sessionType || !attempts) {
       return c.json({ error: "Missing required fields" }, 400);
@@ -1493,25 +1495,57 @@ app.post("/api/user/sessions", authMiddleware, async (c) => {
     const questionsCorrect = attempts.filter((a: { isCorrect: boolean }) => a.isCorrect).length;
     const topics = [...new Set(attempts.map((a: { topic: string }) => a.topic))];
 
-    // Create session record and get the ID back
-    const { data: sessionData, error: sessionError } = await supabase
-      .from("user_sessions")
-      .insert({
-        user_id: user.id,
-        session_type: sessionType,
-        questions_total: questionsTotal,
-        questions_correct: questionsCorrect,
-        metadata: JSON.stringify({ topics, timeSpentSeconds }),
-      })
-      .select("id")
-      .single();
+    // Create-new vs replace-existing. The replace path lets the client
+    // auto-save mid-session (Practice.tsx posts after every completed
+    // question and via sendBeacon on beforeunload, passing the sessionId
+    // it got from the first call). Wipe the session's attempts and
+    // skill rollups, then re-insert the full snapshot. Idempotent and
+    // bounded — a session has at most a few dozen questions.
+    let sessionId: number;
+    if (typeof bodySessionId === "number" && Number.isInteger(bodySessionId)) {
+      const { data: ownerCheck } = await supabase
+        .from("user_sessions")
+        .select("id, user_id")
+        .eq("id", bodySessionId)
+        .maybeSingle();
+      if (!ownerCheck) {
+        return c.json({ error: "Session not found" }, 404);
+      }
+      if (ownerCheck.user_id !== user.id) {
+        return c.json({ error: "Forbidden" }, 403);
+      }
+      sessionId = bodySessionId;
+      await supabase
+        .from("user_sessions")
+        .update({
+          session_type: sessionType,
+          questions_total: questionsTotal,
+          questions_correct: questionsCorrect,
+          metadata: JSON.stringify({ topics, timeSpentSeconds }),
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", sessionId);
+      await supabase.from("attempts").delete().eq("session_id", sessionId);
+      await supabase.from("user_skill_scores").delete().eq("session_id", sessionId);
+    } else {
+      const { data: sessionData, error: sessionError } = await supabase
+        .from("user_sessions")
+        .insert({
+          user_id: user.id,
+          session_type: sessionType,
+          questions_total: questionsTotal,
+          questions_correct: questionsCorrect,
+          metadata: JSON.stringify({ topics, timeSpentSeconds }),
+        })
+        .select("id")
+        .single();
 
-    if (sessionError || !sessionData) {
-      console.error("Error creating session:", sessionError);
-      return c.json({ error: "Failed to create session" }, 500);
+      if (sessionError || !sessionData) {
+        console.error("Error creating session:", sessionError);
+        return c.json({ error: "Failed to create session" }, 500);
+      }
+      sessionId = sessionData.id;
     }
-
-    const sessionId = sessionData.id;
 
     // Record attempts (array insert)
     const attemptRows = attempts.map((attempt: { questionId?: number; selectedIndex?: number; isCorrect: boolean; timeSpentSec?: number; confidence?: string }) => ({

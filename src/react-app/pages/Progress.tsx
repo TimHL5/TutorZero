@@ -85,10 +85,16 @@ export default function Progress() {
       .filter((s) => s.questionsAttempted >= 3)
       .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
       .map((session) => {
-        const cumulative =
+        const cumulativeRaw =
           session.cumulativeMathScore != null && session.cumulativeRWScore != null
             ? session.cumulativeMathScore + session.cumulativeRWScore
             : null;
+        // 400 = empty-cumDomains floor (math 200 + rw 200) from the worker's
+        // sectionScore. Treat as "no real signal" and fall through to the
+        // per-session accuracy-derived score so the bar still says something.
+        const cumulative = cumulativeRaw != null && cumulativeRaw > 400
+          ? cumulativeRaw
+          : null;
         const acc =
           session.questionsAttempted > 0
             ? session.questionsCorrect / session.questionsAttempted
